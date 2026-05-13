@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, Menu, X } from 'lucide-react';
+import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2 } from 'lucide-react';
 
 // --- 1. Synthetic Fake CV ---
 const SYNTHETIC_CV = `\\documentclass[a4paper,10pt]{article}
@@ -92,7 +92,7 @@ Tâches :
   },
   {
     id: 2,
-    title: "2. Lettre de Motivation (FR)",
+    title: "2. Lettre de Motivation (Français)",
     description: "Génère une lettre de motivation courte et percutante.",
     content: `Agis comme un expert en recrutement. Rédige une lettre de motivation courte (max 150 mots, 3 paragraphes) en français pour ce poste.
 Contraintes :
@@ -109,7 +109,7 @@ Garde un ton professionnel mais dynamique.
   },
   {
     id: 3,
-    title: "3. Cover Letter (EN)",
+    title: "3. Lettre de Motivation (Anglais)",
     description: "Génère une lettre de motivation en anglais professionnel.",
     content: `Act as an expert technical recruiter. Write a concise cover letter (max 150 words) in English for this position.
 Connect my background from the provided CV to the exact needs of the job description. Keep the tone highly professional, direct, and confident.
@@ -122,8 +122,8 @@ Connect my background from the provided CV to the exact needs of the job descrip
   },
   {
     id: 4,
-    title: "4. Questions d'Entretien (Q&A)",
-    description: "Génère les 10 questions probables avec des réponses STAR.",
+    title: "4. Préparation Entretien (Q&A)",
+    description: "Génère les 10 questions les plus probables pour ce poste avec les réponses STAR.",
     content: `En te basant sur la description de poste et mon CV, génère les 10 questions d'entretien les plus probables (techniques et comportementales) que l'on pourrait me poser.
 Pour chaque question, rédige une suggestion de réponse en utilisant la méthode STAR (Situation, Tâche, Action, Résultat), en piochant dans mes expériences.
 
@@ -136,7 +136,7 @@ Pour chaque question, rédige une suggestion de réponse en utilisant la méthod
   {
     id: 5,
     title: "5. Critique Sévère du CV",
-    description: "Trouve les failles de votre candidature.",
+    description: "Analyse critique pour trouver les failles de votre candidature.",
     content: `Agis comme un recruteur IT très exigeant. Analyse mon CV par rapport à l'offre d'emploi.
 1. Donne-moi une note sur 100 de matching.
 2. Liste impitoyablement les 3 plus grandes faiblesses ou manques de mon CV pour ce poste précis.
@@ -151,7 +151,7 @@ Pour chaque question, rédige une suggestion de réponse en utilisant la méthod
   {
     id: 6,
     title: "6. Optimisation LinkedIn",
-    description: "Crée une section 'Infos' attractive pour les recruteurs.",
+    description: "Crée une section 'Infos' LinkedIn attractive pour attirer ce type de recruteur.",
     content: `Je veux optimiser mon profil LinkedIn pour attirer les recruteurs qui publient ce type d'offre d'emploi.
 Rédige une section "Infos" (À propos) LinkedIn percutante à la première personne, en utilisant mon CV, optimisée avec les mots-clés de l'offre d'emploi. Inclut un "Call to Action" à la fin.
 
@@ -163,8 +163,8 @@ Rédige une section "Infos" (À propos) LinkedIn percutante à la première pers
   },
   {
     id: 7,
-    title: "7. Pitch de Présentation (30s)",
-    description: "Prépare la réponse à 'Parlez-moi de vous'.",
+    title: "7. Pitch de Présentation (30 sec)",
+    description: "Prépare votre réponse à la question 'Parlez-moi de vous'.",
     content: `Prépare-moi un pitch "Elevator Pitch" de 30 à 45 secondes pour répondre à la fameuse question d'entretien : "Parlez-moi de vous". 
 Il doit être naturel, en français, et lier immédiatement mon parcours (mon CV) au besoin principal de l'entreprise (l'offre d'emploi).
 
@@ -176,8 +176,8 @@ Il doit être naturel, en français, et lier immédiatement mon parcours (mon CV
   },
   {
     id: 8,
-    title: "8. Analyse des Lacunes (Skills)",
-    description: "Plan de révision de 2h avant l'entretien.",
+    title: "8. Analyse des Compétences Manquantes",
+    description: "Identifie les technologies que vous devez réviser avant l'entretien.",
     content: `Analyse les exigences du poste par rapport à mon CV.
 Fais une liste des technologies, outils ou compétences mentionnés dans l'offre que je NE possède PAS clairement dans mon CV.
 Pour chaque manque, propose-moi un plan d'action d'apprentissage express de 2 heures (concepts clés à googler, tutoriels à chercher) pour que je sois capable d'en parler intelligemment en entretien.
@@ -200,27 +200,16 @@ L'email doit remercier le recruteur pour son temps, réaffirmer mon enthousiasme
   },
   {
     id: 10,
-    title: "10. Prompt Personnalisé",
+    title: "10. Prompt Personnalisé (Libre)",
     description: "Écrivez votre propre requête à l'IA.",
-    content: `(Écrivez vos instructions ici. Utilisez {cv_content} et {job_description} pour injecter vos données automatiquement).
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
+    content: `(Écrivez vos instructions ici. Utilisez {cv_content} et {job_description} pour injecter vos données automatiquement).`
   }
 ];
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('templates');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  // Data States (Loaded from LocalStorage to persist without Firebase)
-  const [jobDescription, setJobDescription] = useState(() => localStorage.getItem('ujt_job') || '');
-  const [cvContent, setCvContent] = useState(() => localStorage.getItem('ujt_cv') || SYNTHETIC_CV);
-  
-  // UI States
+  const [jobDescription, setJobDescription] = useState('');
+  const [cvContent, setCvContent] = useState(SYNTHETIC_CV);
   const [toastMessage, setToastMessage] = useState('');
   
   // Templates State
@@ -229,20 +218,13 @@ export default function App() {
   const [compiledPrompt, setCompiledPrompt] = useState('');
 
   // AI State
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('ujt_gemini_key') || '');
+  const [apiKey, setApiKey] = useState(localStorage.getItem('gemini_api_key') || '');
   const [aiResponse, setAiResponse] = useState('');
   const [isAiLoading, setIsAiLoading] = useState(false);
 
   // PDF Form Ref
   const pdfFormRef = useRef(null);
   const [isPdfLoading, setIsPdfLoading] = useState(false);
-
-  // Persist Data
-  useEffect(() => {
-    localStorage.setItem('ujt_job', jobDescription);
-    localStorage.setItem('ujt_cv', cvContent);
-    localStorage.setItem('ujt_gemini_key', apiKey);
-  }, [jobDescription, cvContent, apiKey]);
 
   // Handle Template Selection
   useEffect(() => {
@@ -278,6 +260,12 @@ export default function App() {
     document.body.removeChild(textArea);
   };
 
+  const handleSaveApiKey = (e) => {
+    const val = e.target.value;
+    setApiKey(val);
+    localStorage.setItem('gemini_api_key', val);
+  };
+
   // --- AI Chat Function (Gemini API) ---
   const handleRunAI = async () => {
     if (!apiKey) {
@@ -292,8 +280,7 @@ export default function App() {
     setActiveTab('ai');
 
     try {
-      // Using gemini-2.5-flash as the fast, high-quality, free model
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -311,7 +298,7 @@ export default function App() {
       const reply = data.candidates[0].content.parts[0].text;
       setAiResponse(reply);
     } catch (error) {
-      setAiResponse(`❌ Erreur API: ${error.message}\n\nVérifiez que votre clé API Gemini est valide et correctement copiée.`);
+      setAiResponse(`❌ Erreur: ${error.message}\n\nVérifiez que votre clé API est valide et a des quotas disponibles.`);
     } finally {
       setIsAiLoading(false);
     }
@@ -322,62 +309,56 @@ export default function App() {
     if (pdfFormRef.current) {
       setIsPdfLoading(true);
       pdfFormRef.current.submit();
-      // Hide loader after a generous delay assuming compilation finished
-      setTimeout(() => setIsPdfLoading(false), 5000); 
+      // Hide loader after a short delay since it opens in a new tab
+      setTimeout(() => setIsPdfLoading(false), 2000); 
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-20 sm:pb-0 flex flex-col">
       
       {/* HEADER */}
-      <header className="bg-white shadow-sm sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <header className="bg-white shadow-sm sticky top-0 z-10">
+        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 text-indigo-600">
             <Briefcase size={28} />
             <h1 className="text-xl font-bold tracking-tight hidden sm:block">Ultimate Job Tool</h1>
-            <h1 className="text-lg font-bold tracking-tight sm:hidden">UJT</h1>
+            <h1 className="text-xl font-bold tracking-tight sm:hidden">Job Tool</h1>
           </div>
-          
           {/* API Key Input */}
           <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200">
-            <KeyRound size={16} className="text-slate-400 hidden sm:block" />
+            <KeyRound size={16} className="text-slate-400" />
             <input 
               type="password" 
               placeholder="Clé API Gemini..." 
-              className="bg-transparent border-none outline-none text-xs w-28 sm:w-48 text-slate-700"
+              className="bg-transparent border-none outline-none text-xs w-24 sm:w-48 text-slate-700"
               value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
+              onChange={handleSaveApiKey}
             />
           </div>
-
-          {/* Mobile Menu Toggle */}
-          <button className="sm:hidden p-2 text-slate-600" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
         
         {/* TAB NAVIGATION */}
-        <div className={`max-w-6xl mx-auto px-4 border-t border-slate-100 bg-white flex sm:flex-row flex-col overflow-x-auto ${isMobileMenuOpen ? 'block' : 'hidden sm:flex'}`}>
+        <div className="max-w-5xl mx-auto px-4 border-t border-slate-100 bg-white flex overflow-x-auto custom-scrollbar">
           {[
-            { id: 'templates', icon: Settings, label: 'Prompts & IA' },
-            { id: 'ai', icon: Bot, label: 'Réponses IA' },
-            { id: 'job', icon: FileText, label: 'Offre d\'Emploi' },
-            { id: 'cv', icon: User, label: 'Code CV LaTeX' },
-            { id: 'pdf', icon: FileOutput, label: 'Visualiseur PDF' },
+            { id: 'templates', icon: Settings, label: 'Prompts' },
+            { id: 'ai', icon: Bot, label: 'Assistant IA' },
+            { id: 'job', icon: FileText, label: 'Offre' },
+            { id: 'cv', icon: User, label: 'Mon CV' },
+            { id: 'pdf', icon: FileOutput, label: 'PDF Maker' },
           ].map(tab => (
             <button 
               key={tab.id}
-              onClick={() => { setActiveTab(tab.id); setIsMobileMenuOpen(false); }}
-              className={`flex-1 min-w-[120px] py-3 text-sm font-medium border-b-2 flex justify-start sm:justify-center items-center gap-2 transition-colors whitespace-nowrap px-2 ${activeTab === tab.id ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex-1 min-w-[100px] py-3 text-sm font-medium border-b-2 flex justify-center items-center gap-2 transition-colors whitespace-nowrap ${activeTab === tab.id ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
             >
-              <tab.icon size={16} /> <span>{tab.label}</span>
+              <tab.icon size={16} /> <span className="hidden sm:inline">{tab.label}</span>
             </button>
           ))}
         </div>
       </header>
 
-      {/* TOAST NOTIFICATION */}
+      {/* TOAST */}
       {toastMessage && (
         <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-slate-800 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-top-4">
           <CheckCircle2 size={18} className="text-green-400" />
@@ -386,25 +367,25 @@ export default function App() {
       )}
 
       {/* MAIN CONTENT AREA */}
-      <main className="max-w-6xl mx-auto p-4 sm:p-6 w-full flex-grow flex flex-col gap-6">
+      <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
 
         {/* --- VIEW: TEMPLATES & COMPILED PROMPT --- */}
         <div className={activeTab === 'templates' ? 'block' : 'hidden'}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[75vh]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             {/* Left Col: Top 10 Selection */}
-            <div className="lg:col-span-4 bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-[50vh] lg:h-full">
-              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4 text-slate-800">
-                <Settings size={20} className="text-indigo-600" /> Choisissez une stratégie
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-[70vh]">
+              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
+                <Settings size={20} className="text-indigo-600" /> Choisir une stratégie
               </h2>
-              <div className="flex-grow overflow-y-auto space-y-2 custom-scrollbar pr-2 pb-4">
+              <div className="flex-grow overflow-y-auto space-y-2 custom-scrollbar pr-2">
                 {PROMPT_TEMPLATES.map(t => (
                   <button 
                     key={t.id}
                     onClick={() => setSelectedTemplateId(t.id)}
-                    className={`w-full text-left p-4 rounded-xl border transition-all ${selectedTemplateId === t.id ? 'border-indigo-500 bg-indigo-50 shadow-sm ring-1 ring-indigo-500' : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}`}
+                    className={`w-full text-left p-4 rounded-xl border transition-all ${selectedTemplateId === t.id ? 'border-indigo-500 bg-indigo-50 shadow-sm' : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}`}
                   >
-                    <div className={`font-semibold text-sm ${selectedTemplateId === t.id ? 'text-indigo-900' : 'text-slate-800'}`}>{t.title}</div>
+                    <div className="font-semibold text-sm text-slate-800">{t.title}</div>
                     <div className="text-xs text-slate-500 mt-1">{t.description}</div>
                   </button>
                 ))}
@@ -412,27 +393,27 @@ export default function App() {
             </div>
 
             {/* Right Col: Editor & Preview */}
-            <div className="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col h-[60vh] lg:h-full">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col h-[70vh]">
               <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                <span className="font-semibold text-sm text-slate-800">Aperçu du Prompt & Éditeur</span>
-                <button onClick={() => copyToClipboard(compiledPrompt)} className="text-xs flex items-center gap-1.5 font-medium text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:text-indigo-600 hover:border-indigo-200 transition-colors">
-                  <Copy size={14}/> Copier le texte
+                <span className="font-semibold text-sm">Éditeur de Prompt</span>
+                <button onClick={() => copyToClipboard(compiledPrompt)} className="text-xs flex items-center gap-1 text-slate-600 hover:text-indigo-600">
+                  <Copy size={14}/> Copier le résultat final
                 </button>
               </div>
               
-              <div className="p-5 flex-grow flex flex-col gap-4">
+              <div className="p-4 flex-grow flex flex-col gap-4">
                 {/* Editable Template */}
                 <textarea
-                  className="w-full flex-1 resize-none rounded-xl border border-slate-200 p-4 text-sm font-mono focus:ring-2 focus:ring-indigo-500 outline-none custom-scrollbar leading-relaxed"
+                  className="w-full flex-1 resize-none rounded-xl border border-slate-200 p-3 text-xs font-mono focus:ring-2 focus:ring-indigo-500 outline-none custom-scrollbar"
                   value={customPrompt}
                   onChange={(e) => setCustomPrompt(e.target.value)}
                 />
                 
                 <button
                   onClick={handleRunAI}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md shadow-indigo-200"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md"
                 >
-                  <Sparkles size={18} /> Soumettre ce Prompt à l'IA
+                  <Sparkles size={18} /> Générer avec l'IA
                 </button>
               </div>
             </div>
@@ -440,66 +421,57 @@ export default function App() {
         </div>
 
         {/* --- VIEW: AI ASSISTANT --- */}
-        <div className={`${activeTab === 'ai' ? 'flex' : 'hidden'} flex-col h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-indigo-100 bg-indigo-50/80 flex justify-between items-center">
+        <div className={`${activeTab === 'ai' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
+          <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex justify-between items-center">
             <h2 className="text-lg font-semibold flex items-center gap-2 text-indigo-900">
-              <Bot size={20} className="text-indigo-600" /> Réponse Gemini
+              <Bot size={20} className="text-indigo-600" /> Réponse de l'IA (Gemini)
             </h2>
             <div className="flex gap-2">
-               <button onClick={handleRunAI} disabled={isAiLoading} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2 shadow-sm">
+               <button onClick={handleRunAI} disabled={isAiLoading} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2">
                   {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} Relancer
                 </button>
                {aiResponse && (
-                  <button onClick={() => copyToClipboard(aiResponse)} className="px-3 py-1.5 text-xs font-medium text-indigo-700 bg-white border border-indigo-200 rounded-lg hover:bg-indigo-50 flex items-center gap-2 shadow-sm">
-                    <Copy size={14} /> Copier la réponse
+                  <button onClick={() => copyToClipboard(aiResponse)} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
+                    <Copy size={14} /> Copier
                   </button>
                )}
             </div>
           </div>
           <div className="flex-grow p-6 overflow-y-auto bg-slate-50 custom-scrollbar">
-            {!apiKey ? (
+            {!apiKey && (
               <div className="h-full flex flex-col items-center justify-center text-center text-slate-500 space-y-4">
-                <div className="bg-slate-100 p-4 rounded-full">
-                  <KeyRound size={40} className="text-slate-400" />
-                </div>
+                <KeyRound size={48} className="text-slate-300" />
                 <div>
-                  <p className="font-semibold text-slate-700 text-lg">Clé API Google Gemini Requise</p>
-                  <p className="text-sm max-w-sm mt-2 leading-relaxed">
-                    Pour utiliser l'assistant IA intégré gratuitement, vous devez fournir une clé API. Collez-la dans la barre supérieure.
-                  </p>
-                  <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-1 mt-6 bg-white border border-slate-200 text-slate-700 hover:text-indigo-600 hover:border-indigo-300 font-medium py-2 px-4 rounded-lg transition-all shadow-sm">
-                    Obtenir une clé gratuite <ExternalLink size={14}/>
+                  <p className="font-semibold text-slate-700">Clé API Requise</p>
+                  <p className="text-sm max-w-sm mt-1">Vous devez fournir une clé API Google Gemini (gratuite) dans la barre du haut pour utiliser l'assistant intégré.</p>
+                  <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1 mt-4">
+                    Obtenir une clé gratuite ici <ExternalLink size={12}/>
                   </a>
                 </div>
               </div>
-            ) : isAiLoading ? (
-              <div className="h-full flex flex-col items-center justify-center text-indigo-600 space-y-4">
-                <Loader2 size={48} className="animate-spin" />
-                <p className="text-sm font-medium animate-pulse">L'IA de Google génère la réponse...</p>
+            )}
+            {isAiLoading && (
+              <div className="h-full flex flex-col items-center justify-center text-indigo-600 space-y-3">
+                <Loader2 size={40} className="animate-spin" />
+                <p className="text-sm font-medium animate-pulse">L'IA analyse votre profil...</p>
               </div>
-            ) : aiResponse ? (
-              <div className="prose prose-sm sm:prose-base prose-indigo max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-100">
-                <pre className="font-sans whitespace-pre-wrap">{aiResponse}</pre>
-              </div>
-            ) : (
-              <div className="h-full flex flex-col items-center justify-center text-center text-slate-400">
-                <Bot size={48} className="opacity-20 mb-4" />
-                <p>Aucune requête envoyée.</p>
-                <p className="text-sm mt-1">Allez dans l'onglet "Prompts & IA" pour lancer une génération.</p>
-              </div>
+            )}
+            {aiResponse && !isAiLoading && (
+              <pre className="text-sm font-sans text-slate-800 whitespace-pre-wrap leading-relaxed max-w-4xl mx-auto">
+                {aiResponse}
+              </pre>
             )}
           </div>
         </div>
 
         {/* --- VIEW: JOB DESCRIPTION --- */}
-        <div className={`${activeTab === 'job' ? 'flex' : 'hidden'} flex-col h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
+        <div className={`${activeTab === 'job' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200`}>
           <div className="p-4 border-b border-slate-100 bg-slate-50/50">
-             <h2 className="text-lg font-semibold flex items-center gap-2 text-slate-800"><FileText size={20} className="text-slate-500" /> Description de l'Offre d'Emploi</h2>
-             <p className="text-xs text-slate-500 mt-1">Collez ici l'offre pour laquelle vous postulez. L'IA s'en servira pour personnaliser votre CV.</p>
+             <h2 className="text-lg font-semibold flex items-center gap-2"><FileText size={20} className="text-slate-500" /> Description de l'Offre</h2>
           </div>
           <textarea
-            className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar leading-relaxed"
-            placeholder="Ex: Nous recherchons un Ingénieur Système..."
+            className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar"
+            placeholder="Collez ici le texte de l'offre d'emploi (Job Description)..."
             value={jobDescription}
             onChange={(e) => setJobDescription(e.target.value)}
           />
@@ -523,25 +495,25 @@ export default function App() {
           <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
              <div>
                 <h2 className="text-lg font-semibold flex items-center gap-2"><FileOutput size={20} className="text-slate-500" /> Générateur PDF</h2>
-                <p className="text-xs text-slate-500 mt-1">Via les serveurs publics LaTeXOnline</p>
+                <p className="text-xs text-slate-500 mt-1">Via les serveurs officiels TeXLive.net</p>
              </div>
           </div>
           
           <div className="flex-grow bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
             {/* Hidden form - Notice target="_blank" to force a new tab! */}
-            <form ref={pdfFormRef} target="_blank" action="https://latexonline.cc/compile" method="POST" className="hidden">
-              <input type="hidden" name="text" value={cvContent} />
-              <input type="hidden" name="command" value="pdflatex" />
+            <form ref={pdfFormRef} target="_blank" action="https://texlive.net/cgi-bin/latexcgi" method="POST" className="hidden">
+              <input type="hidden" name="filecontents[]" value={cvContent} />
+              <input type="hidden" name="filename[]" value="cv.tex" />
+              <input type="hidden" name="engine" value="pdflatex" />
+              <input type="hidden" name="return" value="pdf" />
             </form>
             
             <div className="max-w-md space-y-6">
               <div className="bg-blue-50 text-blue-800 p-5 rounded-xl border border-blue-100 text-sm leading-relaxed text-left">
                 <strong className="block mb-2 font-bold text-blue-900">À propos de la compilation PDF :</strong>
-                Les navigateurs modernes bloquent souvent l'intégration de compilateurs externes pour des raisons de sécurité. 
+                Les navigateurs bloquent souvent les compilateurs externes pour des raisons de sécurité. 
                 <br/><br/>
-                En cliquant sur le bouton ci-dessous, votre code LaTeX sera envoyé au compilateur gratuit et <strong>s'ouvrira dans un nouvel onglet</strong>. 
-                <br/><br/>
-                <span className="text-xs opacity-80"><em>Astuce: S'il y a une erreur dans votre code LaTeX, vous verrez les logs d'erreur détaillés dans ce nouvel onglet.</em></span>
+                En cliquant sur le bouton ci-dessous, votre code LaTeX sera envoyé au compilateur ultra-rapide TeXLive et <strong>s'ouvrira directement dans un nouvel onglet</strong>. Vous pourrez y visualiser et télécharger votre CV.
               </div>
               
               <button 
@@ -558,6 +530,7 @@ export default function App() {
 
       </main>
 
+      {/* Global Styles for Scrollbar */}
       <style dangerouslySetInnerHTML={{__html: `
         .custom-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
