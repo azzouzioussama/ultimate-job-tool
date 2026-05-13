@@ -506,59 +506,53 @@ export default function App() {
         </div>
 
         {/* --- VIEW: MY CV --- */}
-        <div className={`${activeTab === 'cv' ? 'flex' : 'hidden'} flex-col h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
+        <div className={`${activeTab === 'cv' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200`}>
            <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-             <div>
-               <h2 className="text-lg font-semibold flex items-center gap-2 text-slate-800"><User size={20} className="text-slate-500" /> Code Source du CV</h2>
-               <p className="text-xs text-slate-500 mt-1">Format LaTeX requis pour la compilation PDF.</p>
-             </div>
-             <button onClick={() => setCvContent(SYNTHETIC_CV)} className="text-xs font-medium text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:text-red-600 hover:border-red-200 transition-colors">
-               Réinitialiser CV Fake
-             </button>
+             <h2 className="text-lg font-semibold flex items-center gap-2"><User size={20} className="text-slate-500" /> Code source du CV (LaTeX)</h2>
+             <button onClick={() => setCvContent(SYNTHETIC_CV)} className="text-xs text-slate-500 hover:text-indigo-600 underline">Rétablir CV Fake</button>
           </div>
           <textarea
-            className="flex-grow w-full resize-none p-6 text-sm font-mono outline-none custom-scrollbar bg-slate-900 text-slate-100 leading-relaxed"
+            className="flex-grow w-full resize-none p-6 text-xs font-mono outline-none custom-scrollbar bg-slate-900 text-slate-100"
             value={cvContent}
             onChange={(e) => setCvContent(e.target.value)}
           />
         </div>
 
         {/* --- VIEW: PDF COMPILER --- */}
-        <div className={`${activeTab === 'pdf' ? 'flex' : 'hidden'} flex-col h-[85vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div className={`${activeTab === 'pdf' ? 'flex' : 'hidden'} flex-col h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
+          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
              <div>
-                <h2 className="text-lg font-semibold flex items-center gap-2 text-slate-800"><FileOutput size={20} className="text-slate-500" /> Visualiseur de PDF</h2>
-                <p className="text-xs text-slate-500 mt-1">Généré via LaTeXOnline.cc. Vous pouvez télécharger le résultat via les boutons du visualiseur.</p>
+                <h2 className="text-lg font-semibold flex items-center gap-2"><FileOutput size={20} className="text-slate-500" /> Générateur PDF</h2>
+                <p className="text-xs text-slate-500 mt-1">Via les serveurs publics LaTeXOnline</p>
              </div>
-             <button onClick={compilePDF} disabled={isPdfLoading} className="w-full sm:w-auto px-6 py-2.5 text-sm font-semibold text-white bg-red-600 rounded-xl hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-2 shadow-md shadow-red-200 transition-transform active:scale-[0.98]">
-                {isPdfLoading ? <Loader2 size={18} className="animate-spin" /> : <FileOutput size={18} />} Compiler en PDF
-             </button>
           </div>
           
-          <div className="flex-grow relative bg-slate-300">
-            {/* Hidden POST form to bypass long URL limits */}
-            <form ref={pdfFormRef} target="pdf-frame" action="https://latexonline.cc/compile" method="POST" className="hidden">
+          <div className="flex-grow bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
+            {/* Hidden form - Notice target="_blank" to force a new tab! */}
+            <form ref={pdfFormRef} target="_blank" action="https://latexonline.cc/compile" method="POST" className="hidden">
               <input type="hidden" name="text" value={cvContent} />
               <input type="hidden" name="command" value="pdflatex" />
             </form>
             
-            <iframe 
-              name="pdf-frame" 
-              className="w-full h-full border-none"
-              title="PDF Preview"
-            />
-            
-            {isPdfLoading && (
-              <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-10">
-                <div className="bg-white px-8 py-6 rounded-2xl shadow-2xl flex flex-col items-center gap-4 animate-in zoom-in-95">
-                  <Loader2 size={36} className="animate-spin text-red-600" />
-                  <div className="text-center">
-                    <span className="font-bold text-lg text-slate-800 block">Compilation en cours...</span>
-                    <span className="text-sm text-slate-500">Cela peut prendre jusqu'à 10 secondes.</span>
-                  </div>
-                </div>
+            <div className="max-w-md space-y-6">
+              <div className="bg-blue-50 text-blue-800 p-5 rounded-xl border border-blue-100 text-sm leading-relaxed text-left">
+                <strong className="block mb-2 font-bold text-blue-900">À propos de la compilation PDF :</strong>
+                Les navigateurs modernes bloquent souvent l'intégration de compilateurs externes pour des raisons de sécurité. 
+                <br/><br/>
+                En cliquant sur le bouton ci-dessous, votre code LaTeX sera envoyé au compilateur gratuit et <strong>s'ouvrira dans un nouvel onglet</strong>. 
+                <br/><br/>
+                <span className="text-xs opacity-80"><em>Astuce: S'il y a une erreur dans votre code LaTeX, vous verrez les logs d'erreur détaillés dans ce nouvel onglet.</em></span>
               </div>
-            )}
+              
+              <button 
+                onClick={compilePDF} 
+                disabled={isPdfLoading} 
+                className="w-full py-4 text-base font-bold text-white bg-red-600 rounded-xl hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg shadow-red-200 transition-all active:scale-[0.98]"
+              >
+                {isPdfLoading ? <Loader2 size={24} className="animate-spin" /> : <FileOutput size={24} />} 
+                Générer le PDF (Nouvel onglet)
+              </button>
+            </div>
           </div>
         </div>
 
