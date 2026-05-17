@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2 } from 'lucide-react';
+import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw } from 'lucide-react';
 
 // --- 1. Synthetic Fake CV ---
 const SYNTHETIC_CV = `\\documentclass[a4paper,10pt]{article}
@@ -25,7 +25,7 @@ const SYNTHETIC_CV = `\\documentclass[a4paper,10pt]{article}
 \\begin{center}
     {\\Huge \\textbf{Jean DUPONT}} \\\\
     \\vspace{4pt}
-    Île-de-France, France | **Permis B** \\\\
+    Île-de-France, France | \\textbf{Permis B} \\\\
     +33 6 12 34 56 78 | \\href{mailto:jean.dupont@email.fake}{jean.dupont@email.fake} \\\\
     \\href{https://linkedin.com/in/jeandupont-fake}{linkedin.com/in/jeandupont-fake} | \\href{https://github.com/jeandupont-fake}{github.com/jeandupont-fake} \\\\
     \\vspace{6pt}
@@ -218,7 +218,8 @@ export default function App() {
   const [compiledPrompt, setCompiledPrompt] = useState('');
 
   // AI State
-  const [apiKey, setApiKey] = useState(localStorage.getItem('gemini_api_key') || '');
+  const [aiProvider, setAiProvider] = useState(localStorage.getItem('ai_provider') || 'gemini');
+  const [apiKey, setApiKey] = useState(localStorage.getItem(`api_key_${localStorage.getItem('ai_provider') || 'gemini'}`) || '');
   const [aiResponse, setAiResponse] = useState('');
   const [isAiLoading, setIsAiLoading] = useState(false);
 
@@ -233,6 +234,12 @@ export default function App() {
       setCustomPrompt(template.content);
     }
   }, [selectedTemplateId]);
+
+  // Load correct API key when provider changes
+  useEffect(() => {
+    const key = localStorage.getItem(`api_key_${aiProvider}`) || '';
+    setApiKey(key);
+  }, [aiProvider]);
 
   // Update compiled prompt whenever inputs change
   useEffect(() => {
@@ -263,13 +270,38 @@ export default function App() {
   const handleSaveApiKey = (e) => {
     const val = e.target.value;
     setApiKey(val);
-    localStorage.setItem('gemini_api_key', val);
+    localStorage.setItem(`api_key_${aiProvider}`, val);
   };
 
-  // --- AI Chat Function (Gemini API) ---
+  const handleProviderChange = (provider) => {
+    setAiProvider(provider);
+    localStorage.setItem('ai_provider', provider);
+  };
+
+  const downloadAsTxt = () => {
+    const blob = new Blob([compiledPrompt], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `prompt_${selectedTemplateId}_${new Date().toISOString().slice(0,10)}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('Fichier téléchargé !');
+  };
+
+  const resetAll = () => {
+    setCvContent(SYNTHETIC_CV);
+    setSelectedTemplateId(1);
+    setCustomPrompt(PROMPT_TEMPLATES[0].content);
+    setJobDescription('');
+    setAiResponse('');
+    showToast('Tout réinitialisé aux valeurs par défaut.');
+  };
+
+  // --- AI Chat Function (Multi-Provider) ---
   const handleRunAI = async () => {
     if (!apiKey) {
-      showToast("Veuillez entrer une clé API Gemini.");
+      showToast(`Veuillez entrer une clé API ${aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'}.`);
       setActiveTab('ai');
       return;
     }
@@ -280,25 +312,42 @@ export default function App() {
     setActiveTab('ai');
 
     try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: compiledPrompt }] }],
-          generationConfig: { temperature: 0.7 }
-        })
-      });
+      let reply = '';
 
-      const data = await response.json();
-      
-      if (data.error) {
-        throw new Error(data.error.message || "Erreur API");
+      if (aiProvider === 'gemini') {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: compiledPrompt }] }],
+            generationConfig: { temperature: 0.7 }
+          })
+        });
+        const data = await response.json();
+        if (data.error) throw new Error(data.error.message || 'Erreur API Gemini');
+        reply = data.candidates[0].content.parts[0].text;
+      } else {
+        // DeepSeek (OpenAI-compatible API)
+        const response = await fetch('https://api.deepseek.com/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            model: 'deepseek-chat',
+            messages: [{ role: 'user', content: compiledPrompt }],
+            temperature: 0.7
+          })
+        });
+        const data = await response.json();
+        if (data.error) throw new Error(data.error.message || 'Erreur API DeepSeek');
+        reply = data.choices[0].message.content;
       }
 
-      const reply = data.candidates[0].content.parts[0].text;
       setAiResponse(reply);
     } catch (error) {
-      setAiResponse(`❌ Erreur: ${error.message}\n\nVérifiez que votre clé API est valide et a des quotas disponibles.`);
+      setAiResponse(`❌ Erreur: ${error.message}\n\nVérifiez que votre clé API ${aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'} est valide et a des quotas disponibles.`);
     } finally {
       setIsAiLoading(false);
     }
@@ -325,16 +374,26 @@ export default function App() {
             <h1 className="text-xl font-bold tracking-tight hidden sm:block">Ultimate Job Tool</h1>
             <h1 className="text-xl font-bold tracking-tight sm:hidden">Job Tool</h1>
           </div>
-          {/* API Key Input */}
-          <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200">
-            <KeyRound size={16} className="text-slate-400" />
-            <input 
-              type="password" 
-              placeholder="Clé API Gemini..." 
-              className="bg-transparent border-none outline-none text-xs w-24 sm:w-48 text-slate-700"
-              value={apiKey}
-              onChange={handleSaveApiKey}
-            />
+          {/* Provider Selector + API Key */}
+          <div className="flex items-center gap-2">
+            <select
+              value={aiProvider}
+              onChange={(e) => handleProviderChange(e.target.value)}
+              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
+            >
+              <option value="gemini">Gemini</option>
+              <option value="deepseek">DeepSeek</option>
+            </select>
+            <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200">
+              <KeyRound size={16} className="text-slate-400" />
+              <input 
+                type="password" 
+                placeholder={`Clé API ${aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'}...`}
+                className="bg-transparent border-none outline-none text-xs w-24 sm:w-40 text-slate-700"
+                value={apiKey}
+                onChange={handleSaveApiKey}
+              />
+            </div>
           </div>
         </div>
         
@@ -396,9 +455,17 @@ export default function App() {
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col h-[70vh]">
               <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                 <span className="font-semibold text-sm">Éditeur de Prompt</span>
-                <button onClick={() => copyToClipboard(compiledPrompt)} className="text-xs flex items-center gap-1 text-slate-600 hover:text-indigo-600">
-                  <Copy size={14}/> Copier le résultat final
-                </button>
+                <div className="flex items-center gap-2">
+                  <button onClick={resetAll} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600" title="Réinitialiser tout">
+                    <RotateCcw size={14}/> Reset
+                  </button>
+                  <button onClick={downloadAsTxt} className="text-xs flex items-center gap-1 text-slate-600 hover:text-indigo-600">
+                    <Download size={14}/> .txt
+                  </button>
+                  <button onClick={() => copyToClipboard(compiledPrompt)} className="text-xs flex items-center gap-1 text-slate-600 hover:text-indigo-600">
+                    <Copy size={14}/> Copier
+                  </button>
+                </div>
               </div>
               
               <div className="p-4 flex-grow flex flex-col gap-4">
@@ -424,7 +491,7 @@ export default function App() {
         <div className={`${activeTab === 'ai' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
           <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex justify-between items-center">
             <h2 className="text-lg font-semibold flex items-center gap-2 text-indigo-900">
-              <Bot size={20} className="text-indigo-600" /> Réponse de l'IA (Gemini)
+              <Bot size={20} className="text-indigo-600" /> Réponse de l'IA ({aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'})
             </h2>
             <div className="flex gap-2">
                <button onClick={handleRunAI} disabled={isAiLoading} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2">
@@ -443,10 +510,15 @@ export default function App() {
                 <KeyRound size={48} className="text-slate-300" />
                 <div>
                   <p className="font-semibold text-slate-700">Clé API Requise</p>
-                  <p className="text-sm max-w-sm mt-1">Vous devez fournir une clé API Google Gemini (gratuite) dans la barre du haut pour utiliser l'assistant intégré.</p>
-                  <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1 mt-4">
-                    Obtenir une clé gratuite ici <ExternalLink size={12}/>
-                  </a>
+                  <p className="text-sm max-w-sm mt-1">Choisissez un fournisseur (Gemini ou DeepSeek) dans la barre du haut, puis entrez votre clé API.</p>
+                  <div className="flex flex-col gap-2 mt-4">
+                    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
+                      Clé Gemini gratuite <ExternalLink size={12}/>
+                    </a>
+                    <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
+                      Clé DeepSeek <ExternalLink size={12}/>
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
@@ -501,9 +573,9 @@ export default function App() {
           
           <div className="flex-grow bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
             {/* Hidden form - Notice target="_blank" to force a new tab! */}
-            <form ref={pdfFormRef} target="_blank" action="https://texlive.net/cgi-bin/latexcgi" method="POST" className="hidden">
+            <form ref={pdfFormRef} target="_blank" action="https://texlive.net/cgi-bin/latexcgi" method="POST" encType="multipart/form-data" className="hidden">
               <input type="hidden" name="filecontents[]" value={cvContent} />
-              <input type="hidden" name="filename[]" value="cv.tex" />
+              <input type="hidden" name="filename[]" value="document.tex" />
               <input type="hidden" name="engine" value="pdflatex" />
               <input type="hidden" name="return" value="pdf" />
             </form>
