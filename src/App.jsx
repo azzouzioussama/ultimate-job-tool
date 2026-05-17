@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw } from 'lucide-react';
 
 // --- 1. Synthetic Fake CV ---
