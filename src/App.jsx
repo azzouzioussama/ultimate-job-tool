@@ -223,9 +223,10 @@ export default function App() {
   const [aiResponse, setAiResponse] = useState('');
   const [isAiLoading, setIsAiLoading] = useState(false);
 
-  // PDF Form Ref
-  const pdfFormRef = useRef(null);
+  // PDF State
+  const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
   const [isPdfLoading, setIsPdfLoading] = useState(false);
+  const [pdfError, setPdfError] = useState('');
 
   // Handle Template Selection
   useEffect(() => {
@@ -353,14 +354,57 @@ export default function App() {
     }
   };
 
-  // --- PDF Compilation Trigger ---
-  const compilePDF = () => {
-    if (pdfFormRef.current) {
-      setIsPdfLoading(true);
-      pdfFormRef.current.submit();
-      // Hide loader after a short delay since it opens in a new tab
-      setTimeout(() => setIsPdfLoading(false), 2000); 
+  // --- PDF Compilation via fetch ---
+  const compilePDF = async () => {
+    setIsPdfLoading(true);
+    setPdfError('');
+    // Revoke old blob URL to free memory
+    if (pdfBlobUrl) URL.revokeObjectURL(pdfBlobUrl);
+    setPdfBlobUrl(null);
+
+    try {
+      const formData = new FormData();
+      formData.append('filecontents[]', cvContent);
+      formData.append('filename[]', 'document.tex');
+      formData.append('engine', 'pdflatex');
+      formData.append('return', 'pdf');
+
+      const response = await fetch('https://texlive.net/cgi-bin/latexcgi', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erreur serveur (${response.status})`);
+      }
+
+      const contentType = response.headers.get('content-type') || '';
+      const blob = await response.blob();
+
+      if (!contentType.includes('pdf')) {
+        // Server returned an error page (HTML/text) instead of PDF
+        const text = await blob.text();
+        throw new Error('La compilation a échoué. Vérifiez votre code LaTeX.\n\n' + text.slice(0, 500));
+      }
+
+      const url = URL.createObjectURL(blob);
+      setPdfBlobUrl(url);
+      showToast('PDF compilé avec succès !');
+    } catch (error) {
+      setPdfError(error.message);
+      showToast('Erreur de compilation PDF.');
+    } finally {
+      setIsPdfLoading(false);
     }
+  };
+
+  const downloadPDF = () => {
+    if (!pdfBlobUrl) return;
+    const a = document.createElement('a');
+    a.href = pdfBlobUrl;
+    a.download = 'cv_compiled.pdf';
+    a.click();
+    showToast('PDF téléchargé !');
   };
 
   return (
@@ -569,34 +613,70 @@ export default function App() {
                 <h2 className="text-lg font-semibold flex items-center gap-2"><FileOutput size={20} className="text-slate-500" /> Générateur PDF</h2>
                 <p className="text-xs text-slate-500 mt-1">Via les serveurs officiels TeXLive.net</p>
              </div>
+             <div className="flex gap-2">
+               {pdfBlobUrl && (
+                 <button onClick={downloadPDF} className="px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 flex items-center gap-2">
+                   <Download size={14} /> Télécharger PDF
+                 </button>
+               )}
+               <button 
+                 onClick={compilePDF} 
+                 disabled={isPdfLoading} 
+                 className="px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
+               >
+                 {isPdfLoading ? <Loader2 size={14} className="animate-spin" /> : <FileOutput size={14} />}
+                 {pdfBlobUrl ? 'Recompiler' : 'Compiler le PDF'}
+               </button>
+             </div>
           </div>
           
-          <div className="flex-grow bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
-            {/* Hidden form - Notice target="_blank" to force a new tab! */}
-            <form ref={pdfFormRef} target="_blank" action="https://texlive.net/cgi-bin/latexcgi" method="POST" encType="multipart/form-data" className="hidden">
-              <input type="hidden" name="filecontents[]" value={cvContent} />
-              <input type="hidden" name="filename[]" value="document.tex" />
-              <input type="hidden" name="engine" value="pdflatex" />
-              <input type="hidden" name="return" value="pdf" />
-            </form>
-            
-            <div className="max-w-md space-y-6">
-              <div className="bg-blue-50 text-blue-800 p-5 rounded-xl border border-blue-100 text-sm leading-relaxed text-left">
-                <strong className="block mb-2 font-bold text-blue-900">À propos de la compilation PDF :</strong>
-                Les navigateurs bloquent souvent les compilateurs externes pour des raisons de sécurité. 
-                <br/><br/>
-                En cliquant sur le bouton ci-dessous, votre code LaTeX sera envoyé au compilateur ultra-rapide TeXLive et <strong>s'ouvrira directement dans un nouvel onglet</strong>. Vous pourrez y visualiser et télécharger votre CV.
+          <div className="flex-grow bg-slate-50 flex flex-col">
+            {/* Loading State */}
+            {isPdfLoading && (
+              <div className="flex-grow flex flex-col items-center justify-center text-red-600 space-y-3">
+                <Loader2 size={40} className="animate-spin" />
+                <p className="text-sm font-medium animate-pulse">Compilation en cours...</p>
+                <p className="text-xs text-slate-500">Cela peut prendre quelques secondes</p>
               </div>
-              
-              <button 
-                onClick={compilePDF} 
-                disabled={isPdfLoading} 
-                className="w-full py-4 text-base font-bold text-white bg-red-600 rounded-xl hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg shadow-red-200 transition-all active:scale-[0.98]"
-              >
-                {isPdfLoading ? <Loader2 size={24} className="animate-spin" /> : <FileOutput size={24} />} 
-                Générer le PDF (Nouvel onglet)
-              </button>
-            </div>
+            )}
+
+            {/* Error State */}
+            {pdfError && !isPdfLoading && (
+              <div className="flex-grow flex items-center justify-center p-6">
+                <div className="max-w-lg bg-red-50 text-red-800 p-5 rounded-xl border border-red-200 text-sm">
+                  <strong className="block mb-2 font-bold">❌ Erreur de compilation</strong>
+                  <pre className="text-xs whitespace-pre-wrap font-mono mt-2 max-h-48 overflow-y-auto">{pdfError}</pre>
+                </div>
+              </div>
+            )}
+
+            {/* PDF Viewer */}
+            {pdfBlobUrl && !isPdfLoading && (
+              <iframe 
+                src={pdfBlobUrl} 
+                className="flex-grow w-full border-none" 
+                title="PDF Preview"
+              />
+            )}
+
+            {/* Empty State */}
+            {!pdfBlobUrl && !isPdfLoading && !pdfError && (
+              <div className="flex-grow flex flex-col items-center justify-center p-6 text-center">
+                <div className="max-w-md space-y-6">
+                  <FileOutput size={48} className="text-slate-300 mx-auto" />
+                  <div>
+                    <p className="font-semibold text-slate-700">Compilez votre CV LaTeX en PDF</p>
+                    <p className="text-sm text-slate-500 mt-2">Votre code LaTeX de l'onglet "Mon CV" sera envoyé au compilateur TeXLive. Le PDF s'affichera ici directement.</p>
+                  </div>
+                  <button 
+                    onClick={compilePDF} 
+                    className="w-full py-4 text-base font-bold text-white bg-red-600 rounded-xl hover:bg-red-700 flex items-center justify-center gap-3 shadow-lg shadow-red-200 transition-all active:scale-[0.98]"
+                  >
+                    <FileOutput size={24} /> Compiler le PDF
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
