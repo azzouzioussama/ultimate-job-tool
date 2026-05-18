@@ -209,7 +209,9 @@ L'email doit remercier le recruteur pour son temps, réaffirmer mon enthousiasme
 export default function App() {
   const [activeTab, setActiveTab] = useState('templates');
   const [jobDescription, setJobDescription] = useState(localStorage.getItem('job_description') || '');
-  const [cvContent, setCvContent] = useState(localStorage.getItem('cv_content') || SYNTHETIC_CV);
+  const [cvOriginal, setCvOriginal] = useState(localStorage.getItem('cv_original') || localStorage.getItem('cv_content') || SYNTHETIC_CV);
+  const [cvGenerated, setCvGenerated] = useState(localStorage.getItem('cv_generated') || '');
+  const [pdfSource, setPdfSource] = useState('generated');
   const [toastMessage, setToastMessage] = useState('');
   
   // Templates State
@@ -267,7 +269,8 @@ export default function App() {
 
   // Autosave to localStorage
   useEffect(() => { localStorage.setItem('job_description', jobDescription); }, [jobDescription]);
-  useEffect(() => { localStorage.setItem('cv_content', cvContent); }, [cvContent]);
+  useEffect(() => { localStorage.setItem('cv_original', cvOriginal); }, [cvOriginal]);
+  useEffect(() => { localStorage.setItem('cv_generated', cvGenerated); }, [cvGenerated]);
   useEffect(() => { localStorage.setItem('ai_response', aiResponse); }, [aiResponse]);
 
   // PDF State
@@ -294,10 +297,10 @@ export default function App() {
 
   // Update compiled prompt whenever inputs change
   useEffect(() => {
-    let final = customPrompt.replace(/{cv_content}/g, cvContent || '[CV MANQUANT]');
+    let final = customPrompt.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
     final = final.replace(/{job_description}/g, jobDescription || '[OFFRE MANQUANTE]');
     setCompiledPrompt(final);
-  }, [customPrompt, cvContent, jobDescription]);
+  }, [customPrompt, cvOriginal, jobDescription]);
 
   const showToast = (message) => {
     setToastMessage(message);
@@ -347,7 +350,8 @@ export default function App() {
   };
 
   const resetAll = () => {
-    setCvContent(SYNTHETIC_CV);
+    setCvOriginal(SYNTHETIC_CV);
+    setCvGenerated('');
     setSelectedTemplateId(1);
     setCustomPrompt(PROMPT_TEMPLATES[0].content);
     setJobDescription('');
@@ -427,6 +431,17 @@ export default function App() {
     }
   };
 
+  const extractLatexAndSave = () => {
+    const match = aiResponse.match(/\\documentclass[\s\S]*?\\end\{document\}/);
+    if (match) {
+      setCvGenerated(match[0]);
+      showToast('CV Généré extrait et sauvegardé !');
+      setActiveTab('cv');
+    } else {
+      showToast('Aucun code LaTeX complet trouvé dans la réponse.');
+    }
+  };
+
   // --- PDF Compilation via fetch ---
   const compilePDF = async () => {
     setIsPdfLoading(true);
@@ -437,7 +452,8 @@ export default function App() {
 
     try {
       const formData = new FormData();
-      formData.append('filecontents[]', cvContent);
+      const contentToCompile = pdfSource === 'generated' && cvGenerated.trim() ? cvGenerated : cvOriginal;
+      formData.append('filecontents[]', contentToCompile);
       formData.append('filename[]', 'document.tex');
       formData.append('engine', 'pdflatex');
       formData.append('return', 'pdf');
@@ -634,6 +650,9 @@ export default function App() {
                 </button>
                {aiResponse && (
                   <>
+                    <button onClick={extractLatexAndSave} className="px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors" title="Extraire le code LaTeX et le mettre dans le CV Généré">
+                      <FileText size={14} /> Extraire CV
+                    </button>
                     <button onClick={() => copyToClipboard(aiResponse)} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
                       <Copy size={14} /> Copier
                     </button>
@@ -689,16 +708,34 @@ export default function App() {
         </div>
 
         {/* --- VIEW: MY CV --- */}
-        <div className={`${activeTab === 'cv' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200`}>
-           <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-             <h2 className="text-lg font-semibold flex items-center gap-2"><User size={20} className="text-slate-500" /> Code source du CV (LaTeX)</h2>
-             <button onClick={() => setCvContent(SYNTHETIC_CV)} className="text-xs text-slate-500 hover:text-indigo-600 underline">Rétablir CV Fake</button>
+        <div className={`${activeTab === 'cv' ? 'block' : 'hidden'}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Original CV */}
+            <div className="flex flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
+              <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+                <h2 className="text-sm font-semibold flex items-center gap-2"><User size={16} className="text-slate-500" /> CV Original (Source)</h2>
+                <button onClick={() => setCvOriginal(SYNTHETIC_CV)} className="text-xs text-slate-500 hover:text-red-600 underline">Rétablir CV Fake</button>
+              </div>
+              <textarea
+                className="flex-grow w-full resize-none p-4 text-xs font-mono outline-none custom-scrollbar bg-slate-900 text-slate-100 rounded-b-2xl"
+                value={cvOriginal}
+                onChange={(e) => setCvOriginal(e.target.value)}
+              />
+            </div>
+            {/* Generated CV */}
+            <div className="flex flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
+              <div className="p-4 border-b border-indigo-100 bg-indigo-50/50 flex justify-between items-center">
+                <h2 className="text-sm font-semibold flex items-center gap-2 text-indigo-900"><Sparkles size={16} className="text-indigo-600" /> CV Généré (Adapté)</h2>
+                <button onClick={() => setCvGenerated('')} className="text-xs text-slate-500 hover:text-red-600 underline">Vider</button>
+              </div>
+              <textarea
+                className="flex-grow w-full resize-none p-4 text-xs font-mono outline-none custom-scrollbar bg-indigo-950 text-indigo-100 rounded-b-2xl"
+                placeholder="Le code LaTeX généré par l'IA sera affiché ici. Utilisez le bouton 'Extraire CV' dans l'onglet Assistant IA."
+                value={cvGenerated}
+                onChange={(e) => setCvGenerated(e.target.value)}
+              />
+            </div>
           </div>
-          <textarea
-            className="flex-grow w-full resize-none p-6 text-xs font-mono outline-none custom-scrollbar bg-slate-900 text-slate-100"
-            value={cvContent}
-            onChange={(e) => setCvContent(e.target.value)}
-          />
         </div>
 
         {/* --- VIEW: PDF COMPILER --- */}
@@ -709,6 +746,14 @@ export default function App() {
                 <p className="text-xs text-slate-500 mt-1">Via les serveurs officiels TeXLive.net</p>
              </div>
              <div className="flex gap-2">
+               <select 
+                 value={pdfSource}
+                 onChange={(e) => setPdfSource(e.target.value)}
+                 className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
+               >
+                 <option value="generated">CV Généré</option>
+                 <option value="original">CV Original</option>
+               </select>
                {pdfBlobUrl && (
                  <button onClick={downloadPDF} className="px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 flex items-center gap-2">
                    <Download size={14} /> Télécharger PDF
