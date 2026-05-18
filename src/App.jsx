@@ -219,6 +219,15 @@ export default function App() {
 
   // --- AI Provider & Model Config ---
   const AI_PROVIDERS = {
+    openrouter: {
+      label: 'OpenRouter',
+      models: [
+        { id: 'deepseek/deepseek-v4-flash:free', label: 'DeepSeek V4 Flash', note: 'Gratuit' },
+        { id: 'openrouter/free', label: 'Auto (meilleur gratuit)', note: 'Gratuit' },
+      ],
+      keyLink: 'https://openrouter.ai/keys',
+      keyNote: 'Gratuit',
+    },
     gemini: {
       label: 'Gemini',
       models: [
@@ -373,17 +382,27 @@ export default function App() {
         if (data.error) throw new Error(data.error.message || 'Erreur API Gemini');
         reply = data.candidates[0].content.parts[0].text;
       } else {
-        // OpenAI & DeepSeek both use OpenAI-compatible format
-        const endpoint = aiProvider === 'openai'
-          ? 'https://api.openai.com/v1/chat/completions'
-          : 'https://api.deepseek.com/chat/completions';
+        // OpenAI, DeepSeek & OpenRouter all use OpenAI-compatible format
+        const endpoints = {
+          openai: 'https://api.openai.com/v1/chat/completions',
+          deepseek: 'https://api.deepseek.com/chat/completions',
+          openrouter: 'https://openrouter.ai/api/v1/chat/completions',
+        };
+        const endpoint = endpoints[aiProvider];
+
+        const headers = {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        };
+        // OpenRouter recommends these optional headers
+        if (aiProvider === 'openrouter') {
+          headers['HTTP-Referer'] = window.location.origin;
+          headers['X-Title'] = 'Ultimate Job Tool';
+        }
 
         const response = await fetch(endpoint, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
-          },
+          headers,
           body: JSON.stringify({
             model: aiModel,
             messages: [{ role: 'user', content: compiledPrompt }],
