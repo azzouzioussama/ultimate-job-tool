@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw } from 'lucide-react';
+import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw, Trash } from 'lucide-react';
 
 // --- 1. Synthetic Fake CV ---
 const SYNTHETIC_CV = `\\documentclass[a4paper,10pt]{article}
@@ -208,8 +208,8 @@ L'email doit remercier le recruteur pour son temps, réaffirmer mon enthousiasme
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('templates');
-  const [jobDescription, setJobDescription] = useState('');
-  const [cvContent, setCvContent] = useState(SYNTHETIC_CV);
+  const [jobDescription, setJobDescription] = useState(localStorage.getItem('job_description') || '');
+  const [cvContent, setCvContent] = useState(localStorage.getItem('cv_content') || SYNTHETIC_CV);
   const [toastMessage, setToastMessage] = useState('');
   
   // Templates State
@@ -262,8 +262,13 @@ export default function App() {
   const [aiProvider, setAiProvider] = useState(localStorage.getItem('ai_provider') || 'gemini');
   const [aiModel, setAiModel] = useState(localStorage.getItem('ai_model') || 'gemini-2.5-flash');
   const [apiKey, setApiKey] = useState(localStorage.getItem(`api_key_${localStorage.getItem('ai_provider') || 'gemini'}`) || '');
-  const [aiResponse, setAiResponse] = useState('');
+  const [aiResponse, setAiResponse] = useState(localStorage.getItem('ai_response') || '');
   const [isAiLoading, setIsAiLoading] = useState(false);
+
+  // Autosave to localStorage
+  useEffect(() => { localStorage.setItem('job_description', jobDescription); }, [jobDescription]);
+  useEffect(() => { localStorage.setItem('cv_content', cvContent); }, [cvContent]);
+  useEffect(() => { localStorage.setItem('ai_response', aiResponse); }, [aiResponse]);
 
   // PDF State
   const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
@@ -598,12 +603,20 @@ export default function App() {
                   onChange={(e) => setCustomPrompt(e.target.value)}
                 />
                 
-                <button
-                  onClick={handleRunAI}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md"
-                >
-                  <Sparkles size={18} /> Générer avec l'IA
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => copyToClipboard(compiledPrompt)}
+                    className="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] border border-slate-200 shadow-sm"
+                  >
+                    <Copy size={18} /> Copier (Externe)
+                  </button>
+                  <button
+                    onClick={handleRunAI}
+                    className="w-1/2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md"
+                  >
+                    <Sparkles size={18} /> Générer avec l'IA
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -620,9 +633,14 @@ export default function App() {
                   {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} Relancer
                 </button>
                {aiResponse && (
-                  <button onClick={() => copyToClipboard(aiResponse)} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
-                    <Copy size={14} /> Copier
-                  </button>
+                  <>
+                    <button onClick={() => copyToClipboard(aiResponse)} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
+                      <Copy size={14} /> Copier
+                    </button>
+                    <button onClick={() => setAiResponse('')} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-red-50 hover:text-red-600 flex items-center gap-2 transition-colors">
+                      <Trash size={14} /> Effacer
+                    </button>
+                  </>
                )}
             </div>
           </div>
