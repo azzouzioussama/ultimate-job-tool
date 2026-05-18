@@ -217,8 +217,41 @@ export default function App() {
   const [customPrompt, setCustomPrompt] = useState(PROMPT_TEMPLATES[0].content);
   const [compiledPrompt, setCompiledPrompt] = useState('');
 
+  // --- AI Provider & Model Config ---
+  const AI_PROVIDERS = {
+    gemini: {
+      label: 'Gemini',
+      models: [
+        { id: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash', note: 'Gratuit' },
+        { id: 'gemini-2.5-flash-lite', label: 'Gemini 2.5 Flash-Lite', note: 'Gratuit' },
+      ],
+      keyLink: 'https://aistudio.google.com/app/apikey',
+      keyNote: 'Gratuit',
+    },
+    openai: {
+      label: 'OpenAI',
+      models: [
+        { id: 'gpt-5.4-nano', label: 'GPT-5.4 Nano', note: '$0.20/M in' },
+        { id: 'gpt-5.4-mini', label: 'GPT-5.4 Mini', note: '$0.75/M in' },
+        { id: 'o4-mini', label: 'o4-mini (reasoning)', note: '$0.55/M in' },
+      ],
+      keyLink: 'https://platform.openai.com/api-keys',
+      keyNote: 'Payant',
+    },
+    deepseek: {
+      label: 'DeepSeek',
+      models: [
+        { id: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash', note: '$0.14/M in' },
+        { id: 'deepseek-v4-pro', label: 'DeepSeek V4 Pro', note: '$0.50/M in' },
+      ],
+      keyLink: 'https://platform.deepseek.com/api_keys',
+      keyNote: 'Payant',
+    },
+  };
+
   // AI State
   const [aiProvider, setAiProvider] = useState(localStorage.getItem('ai_provider') || 'gemini');
+  const [aiModel, setAiModel] = useState(localStorage.getItem('ai_model') || 'gemini-2.5-flash');
   const [apiKey, setApiKey] = useState(localStorage.getItem(`api_key_${localStorage.getItem('ai_provider') || 'gemini'}`) || '');
   const [aiResponse, setAiResponse] = useState('');
   const [isAiLoading, setIsAiLoading] = useState(false);
@@ -236,10 +269,13 @@ export default function App() {
     }
   }, [selectedTemplateId]);
 
-  // Load correct API key when provider changes
+  // Load correct API key + default model when provider changes
   useEffect(() => {
     const key = localStorage.getItem(`api_key_${aiProvider}`) || '';
     setApiKey(key);
+    const savedModel = localStorage.getItem(`ai_model_${aiProvider}`);
+    const defaultModel = AI_PROVIDERS[aiProvider]?.models[0]?.id;
+    setAiModel(savedModel || defaultModel);
   }, [aiProvider]);
 
   // Update compiled prompt whenever inputs change
@@ -279,6 +315,12 @@ export default function App() {
     localStorage.setItem('ai_provider', provider);
   };
 
+  const handleModelChange = (model) => {
+    setAiModel(model);
+    localStorage.setItem('ai_model', model);
+    localStorage.setItem(`ai_model_${aiProvider}`, model);
+  };
+
   const downloadAsTxt = () => {
     const blob = new Blob([compiledPrompt], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -299,10 +341,12 @@ export default function App() {
     showToast('Tout réinitialisé aux valeurs par défaut.');
   };
 
+  const providerLabel = AI_PROVIDERS[aiProvider]?.label || aiProvider;
+
   // --- AI Chat Function (Multi-Provider) ---
   const handleRunAI = async () => {
     if (!apiKey) {
-      showToast(`Veuillez entrer une clé API ${aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'}.`);
+      showToast(`Veuillez entrer une clé API ${providerLabel}.`);
       setActiveTab('ai');
       return;
     }
@@ -316,7 +360,8 @@ export default function App() {
       let reply = '';
 
       if (aiProvider === 'gemini') {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+        // Gemini uses its own API format
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${aiModel}:generateContent?key=${apiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -328,27 +373,31 @@ export default function App() {
         if (data.error) throw new Error(data.error.message || 'Erreur API Gemini');
         reply = data.candidates[0].content.parts[0].text;
       } else {
-        // DeepSeek (OpenAI-compatible API)
-        const response = await fetch('https://api.deepseek.com/chat/completions', {
+        // OpenAI & DeepSeek both use OpenAI-compatible format
+        const endpoint = aiProvider === 'openai'
+          ? 'https://api.openai.com/v1/chat/completions'
+          : 'https://api.deepseek.com/chat/completions';
+
+        const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`
           },
           body: JSON.stringify({
-            model: 'deepseek-chat',
+            model: aiModel,
             messages: [{ role: 'user', content: compiledPrompt }],
             temperature: 0.7
           })
         });
         const data = await response.json();
-        if (data.error) throw new Error(data.error.message || 'Erreur API DeepSeek');
+        if (data.error) throw new Error(data.error.message || `Erreur API ${providerLabel}`);
         reply = data.choices[0].message.content;
       }
 
       setAiResponse(reply);
     } catch (error) {
-      setAiResponse(`❌ Erreur: ${error.message}\n\nVérifiez que votre clé API ${aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'} est valide et a des quotas disponibles.`);
+      setAiResponse(`❌ Erreur: ${error.message}\n\nVérifiez que votre clé API ${providerLabel} est valide et a des quotas disponibles.`);
     } finally {
       setIsAiLoading(false);
     }
@@ -418,22 +467,32 @@ export default function App() {
             <h1 className="text-xl font-bold tracking-tight hidden sm:block">Ultimate Job Tool</h1>
             <h1 className="text-xl font-bold tracking-tight sm:hidden">Job Tool</h1>
           </div>
-          {/* Provider Selector + API Key */}
-          <div className="flex items-center gap-2">
+          {/* Provider + Model + API Key */}
+          <div className="flex items-center gap-1.5">
             <select
               value={aiProvider}
               onChange={(e) => handleProviderChange(e.target.value)}
               className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
             >
-              <option value="gemini">Gemini</option>
-              <option value="deepseek">DeepSeek</option>
+              {Object.entries(AI_PROVIDERS).map(([key, p]) => (
+                <option key={key} value={key}>{p.label}</option>
+              ))}
+            </select>
+            <select
+              value={aiModel}
+              onChange={(e) => handleModelChange(e.target.value)}
+              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer hidden sm:block"
+            >
+              {AI_PROVIDERS[aiProvider]?.models.map(m => (
+                <option key={m.id} value={m.id}>{m.label} ({m.note})</option>
+              ))}
             </select>
             <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200">
               <KeyRound size={16} className="text-slate-400" />
               <input 
                 type="password" 
-                placeholder={`Clé API ${aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'}...`}
-                className="bg-transparent border-none outline-none text-xs w-24 sm:w-40 text-slate-700"
+                placeholder={`Clé ${providerLabel}...`}
+                className="bg-transparent border-none outline-none text-xs w-20 sm:w-32 text-slate-700"
                 value={apiKey}
                 onChange={handleSaveApiKey}
               />
@@ -535,7 +594,7 @@ export default function App() {
         <div className={`${activeTab === 'ai' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
           <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex justify-between items-center">
             <h2 className="text-lg font-semibold flex items-center gap-2 text-indigo-900">
-              <Bot size={20} className="text-indigo-600" /> Réponse de l'IA ({aiProvider === 'gemini' ? 'Gemini' : 'DeepSeek'})
+              <Bot size={20} className="text-indigo-600" /> Réponse de l'IA ({providerLabel} — {aiModel})
             </h2>
             <div className="flex gap-2">
                <button onClick={handleRunAI} disabled={isAiLoading} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2">
@@ -554,14 +613,13 @@ export default function App() {
                 <KeyRound size={48} className="text-slate-300" />
                 <div>
                   <p className="font-semibold text-slate-700">Clé API Requise</p>
-                  <p className="text-sm max-w-sm mt-1">Choisissez un fournisseur (Gemini ou DeepSeek) dans la barre du haut, puis entrez votre clé API.</p>
+                  <p className="text-sm max-w-sm mt-1">Choisissez un fournisseur dans la barre du haut, puis entrez votre clé API.</p>
                   <div className="flex flex-col gap-2 mt-4">
-                    <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
-                      Clé Gemini gratuite <ExternalLink size={12}/>
-                    </a>
-                    <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
-                      Clé DeepSeek (nécessite un solde) <ExternalLink size={12}/>
-                    </a>
+                    {Object.entries(AI_PROVIDERS).map(([key, p]) => (
+                      <a key={key} href={p.keyLink} target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
+                        Clé {p.label} ({p.keyNote}) <ExternalLink size={12}/>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
