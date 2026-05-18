@@ -58,5 +58,14 @@ This document records every major technical problem encountered during the devel
 **Cause**: When refactoring the "Clé API Requise" warning box to support multiple provider links, an old `</a>` tag was accidentally left dangling outside the new `<div>` structure.
 **Fix**: Manually reviewed the DOM tree in `App.jsx` and removed the orphan closing tag.
 
+## 5. AI Hallucination & Regex Challenges
+
+### Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands)
+**Issue**: The AI response contains valid-looking LaTeX, but it fails to compile with errors like `Missing $ inserted` or `File ended while scanning use of \textbf`.
+**Cause**: LLMs frequently hallucinate brackets (e.g., `\textbf{Text]`) and forget to escape special LaTeX characters (e.g., generating `&` instead of `\&` or `%` instead of `\%`).
+**Fix**: 
+1. **Prompt Hardening**: Added a strict, all-caps warning to the system prompt explicitly instructing the model to escape `&` and to not confuse `{` with `[`.
+2. **Regex Auto-Correction**: Added a post-processing step in the `extractLatexAndSave` function. It uses a negative lookbehind regex `/(?<!\\)&/g` to automatically escape any `&` that isn't already escaped with a backslash before saving the code to the state.
+
 ---
 *Generated: May 2026*

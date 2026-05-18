@@ -20,20 +20,20 @@ The project began as a Python CLI tool (v1) and evolved into a web application (
 - **Icons**: Lucide React
 - **Build Tool**: Vite (configured with proxy routes for CORS bypass)
 - **Deployment**: Vercel
-- **Data Persistence**: `localStorage` (for API keys and model preferences)
+- **Data Persistence**: `localStorage` (for API keys, model preferences, CV content, job descriptions, and AI chat history)
 
 ## 3. Core Features & Implementation Details
 
-### A. The Synthetic CV System
-To protect the user's real identity, the app uses a `SYNTHETIC_CV` constant. This is a complete LaTeX CV template where real details have been replaced with placeholders (e.g., "Jean DUPONT", fake emails, generic company names like "Tech Innovators Corp").
-- **Implementation**: The LaTeX code uses standard formatting (`\textbf{}`, `\item`, etc.).
-- **User Control**: Users can edit the LaTeX source in the "Mon CV" tab. A reset button allows reverting to the default synthetic template.
+### A. The Dual CV System
+To protect the user's real identity, the app uses a `SYNTHETIC_CV` constant as a fallback. 
+- **CV Original (Source de vérité)**: The user's base CV. This is what the AI uses as context to adapt the application.
+- **CV Généré (Adapté)**: A separate workspace specifically for the AI's output, preventing the user's master CV from being overwritten.
+- **Implementation**: Both CVs are auto-saved to `localStorage` on every keystroke. A "Rétablir CV Fake" button allows reverting the Original CV to the safe, anonymized `SYNTHETIC_CV` template.
 
 ### B. Dynamic Prompt Engine
 The app ships with 10 pre-configured, expert-level prompt strategies (e.g., Cover Letter, Q&A Preparation, LinkedIn Outreach).
 - **Variable Injection**: The prompt templates use placeholders `{cv_content}` and `{job_description}`. The app dynamically replaces these with the current state of the CV and the user-pasted job offer.
-- **Live Preview**: The "Éditeur de Prompt" shows the final compiled prompt in real-time.
-- **Export**: Users can copy the prompt to the clipboard or download it as a `.txt` file using a Blob object.
+- **Live Preview & Export**: The "Éditeur de Prompt" shows the final compiled prompt in real-time. Users can download it as a `.txt` file, or copy the compiled version via a dedicated "Copier (Externe)" button to use with external AI tools.
 
 ### C. Multi-Provider AI Integration
 The app acts as a client to multiple LLM APIs. This allows users to bring their own API keys and choose the best/cheapest models.
@@ -57,6 +57,7 @@ One of the most complex features is compiling the user's LaTeX CV into a PDF wit
   - In production (`vercel.json`), serverless rewrites handle the same routing.
 - **The Redirect Challenge**: TeXLive responds with a `301 Moved Permanently` to a temporary PDF URL (e.g., `/latexcgi/document_XYZ.pdf`). The proxy config handles this by also forwarding `/latexcgi/*` paths.
 - **Inline Display**: Instead of forcing a new tab, the `fetch` request retrieves the PDF as a Blob. A local Object URL (`blob:http://...`) is generated and passed to an `<iframe>`, allowing seamless inline preview within the app.
+- **Source Selection**: The PDF Maker UI allows the user to choose whether they want to compile their "CV Original" or the newly adapted "CV Généré".
 
 ## 4. UI/UX Architecture
 
@@ -76,6 +77,7 @@ The app uses a modern, responsive layout divided into five main tabs:
 - **AI Iteration 1 (Gemini Only)**: Integrated Gemini 1.5 Flash.
 - **AI Iteration 2 (Multi-Model)**: Addressed API quota issues by expanding provider support. Added DeepSeek.
 - **AI Iteration 3 (OpenRouter & Updates)**: Added OpenRouter to provide guaranteed free tiers. Updated Gemini models to reflect the 2026 deprecation of 1.5/2.0 in favor of `gemini-2.5-flash`. Added OpenAI support.
+- **State & UX Iteration 4**: Implemented full `localStorage` auto-saving for job descriptions, CVs, and AI chat history. Separated the CV architecture into "Original" and "Generated" to preserve user templates. Added an "Extraire CV" regex tool to seamlessly pull LaTeX code from conversational AI responses.
 
 ## 6. Known Constraints & Future Considerations
 - **API Key Security**: Keys are stored in `localStorage`. Since this is a client-side only app, this is acceptable, but users must be warned not to share their screen while keys are visible.
