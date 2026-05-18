@@ -316,7 +316,7 @@ export default function App() {
       let reply = '';
 
       if (aiProvider === 'gemini') {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -560,7 +560,7 @@ export default function App() {
                       Clé Gemini gratuite <ExternalLink size={12}/>
                     </a>
                     <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
-                      Clé DeepSeek <ExternalLink size={12}/>
+                      Clé DeepSeek (nécessite un solde) <ExternalLink size={12}/>
                     </a>
                   </div>
                 </div>
