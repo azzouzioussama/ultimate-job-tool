@@ -3,6 +3,10 @@
     {
       "source": "/api/latex",
       "destination": "https://texlive.net/cgi-bin/latexcgi"
+    },
+    {
+      "source": "/latexcgi/:path*",
+      "destination": "https://texlive.net/latexcgi/:path*"
     }
   ]
 }

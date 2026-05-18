@@ -10,6 +10,10 @@ export default defineConfig({
         target: 'https://texlive.net',
         changeOrigin: true,
         rewrite: (path) => '/cgi-bin/latexcgi',
+      },
+      '/latexcgi': {
+        target: 'https://texlive.net',
+        changeOrigin: true,
       }
     }
   }
