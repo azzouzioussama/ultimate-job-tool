@@ -249,7 +249,12 @@ export default function App() {
       models: [
         { id: 'gpt-5.4-nano', label: 'GPT-5.4 Nano', note: '$0.20/M in' },
         { id: 'gpt-5.4-mini', label: 'GPT-5.4 Mini', note: '$0.75/M in' },
-        { id: 'o4-mini', label: 'o4-mini (reasoning)', note: '$0.55/M in' },
+        { id: 'gpt-5.4', label: 'GPT-5.4', note: '$2.50/M in' },
+        { id: 'gpt-5.5', label: 'GPT-5.5 (Flagship)', note: '$5.00/M in' },
+        { id: 'gpt-5.5-pro', label: 'GPT-5.5 Pro', note: '$30.00/M in' },
+        { id: 'o4-mini', label: 'o4-mini (Reasoning)', note: '$0.55/M in' },
+        { id: 'o3', label: 'o3 (Reasoning)', note: '$2.00/M in' },
+        { id: 'o3-pro', label: 'o3-pro (High Reasoning)', note: '$20.00/M in' },
       ],
       keyLink: 'https://platform.openai.com/api-keys',
       keyNote: 'Payant',
