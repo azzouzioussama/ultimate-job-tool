@@ -84,6 +84,11 @@ Tâches :
 2. Réécris mon CV ENTIER en LaTeX. Adapte les bullet points et le résumé pour refléter exactement les mots-clés de l'offre, tout en gardant le code LaTeX intact.
 3. Dis-moi quelle expérience je dois mettre en avant en entretien.
 
+ATTENTION - REGLES STRICTES POUR LE CODE LATEX :
+- Tu DOIS ABSOLUMENT échapper le caractère '&' en l'écrivant '\\&' dans le texte. Ne laisse jamais un '&' seul.
+- Assure-toi de bien fermer toutes les accolades '{ }' et de ne jamais les confondre avec des crochets '[ ]'.
+- Ne modifie pas la structure du préambule ni les balises d'environnement.
+
 --- MON CV LATEX ---
 {cv_content}
 
@@ -434,8 +439,12 @@ export default function App() {
   const extractLatexAndSave = () => {
     const match = aiResponse.match(/\\documentclass[\s\S]*?\\end\{document\}/);
     if (match) {
-      setCvGenerated(match[0]);
-      showToast('CV Généré extrait et sauvegardé !');
+      let extracted = match[0];
+      // Auto-fix common AI hallucinations: unescaped ampersands (assuming no tables in CV)
+      extracted = extracted.replace(/(?<!\\)&/g, '\\&');
+      
+      setCvGenerated(extracted);
+      showToast('CV Généré extrait et sauvegardé (Corrections appliquées) !');
       setActiveTab('cv');
     } else {
       showToast('Aucun code LaTeX complet trouvé dans la réponse.');
