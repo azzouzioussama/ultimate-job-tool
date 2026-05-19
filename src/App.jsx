@@ -263,7 +263,9 @@ export default function App() {
       label: 'DeepSeek',
       models: [
         { id: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash', note: '$0.14/M in' },
-        { id: 'deepseek-v4-pro', label: 'DeepSeek V4 Pro', note: '$0.50/M in' },
+        { id: 'deepseek-v4-pro', label: 'DeepSeek V4 Pro', note: '$1.74/M in' },
+        { id: 'deepseek-chat', label: 'DeepSeek Chat (Legacy)', note: 'Déprécié' },
+        { id: 'deepseek-reasoner', label: 'DeepSeek Reasoner (Legacy)', note: 'Déprécié' },
       ],
       keyLink: 'https://platform.deepseek.com/api_keys',
       keyNote: 'Payant',
