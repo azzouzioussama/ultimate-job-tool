@@ -278,6 +278,8 @@ export default function App() {
   const [apiKey, setApiKey] = useState(localStorage.getItem(`api_key_${localStorage.getItem('ai_provider') || 'gemini'}`) || '');
   const [aiResponse, setAiResponse] = useState(localStorage.getItem('ai_response') || '');
   const [isAiLoading, setIsAiLoading] = useState(false);
+  const [isScraping, setIsScraping] = useState(false);
+  const [jobUrl, setJobUrl] = useState('');
 
   // Autosave to localStorage
   useEffect(() => { localStorage.setItem('job_description', jobDescription); }, [jobDescription]);
@@ -310,7 +312,14 @@ export default function App() {
   // Update compiled prompt whenever inputs change
   useEffect(() => {
     let final = customPrompt.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
-    final = final.replace(/{job_description}/g, jobDescription || '[OFFRE MANQUANTE]');
+    
+    let jobContent = jobDescription || '[OFFRE MANQUANTE]';
+    // Method 3: If the user pasted a raw URL instead of text, add an explicit instruction to the AI
+    if (/^https?:\/\/\S+$/.test(jobContent.trim())) {
+      jobContent += "\n\n(IMPORTANT : La description de poste ci-dessus est une URL. Utilise tes outils de navigation web pour visiter ce lien et lire le contenu de l'offre d'emploi avant de générer ta réponse. Si tu ne peux pas naviguer, demande à l'utilisateur de fournir le texte.)";
+    }
+    
+    final = final.replace(/{job_description}/g, jobContent);
     setCompiledPrompt(final);
   }, [customPrompt, cvOriginal, jobDescription]);
 
@@ -455,6 +464,23 @@ export default function App() {
       setActiveTab('cv');
     } else {
       showToast('Aucun code LaTeX complet trouvé dans la réponse.');
+    }
+  };
+
+  const handleScrapeJina = async () => {
+    if (!jobUrl) return;
+    setIsScraping(true);
+    try {
+      const response = await fetch(`https://r.jina.ai/${jobUrl}`);
+      if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
+      const text = await response.text();
+      setJobDescription(text);
+      showToast('Offre extraite avec succès via Jina AI !');
+      setJobUrl('');
+    } catch (error) {
+      showToast('Erreur: Le site bloque l\'extraction (Captcha/Cloudflare). Essayez l\'autre méthode.');
+    } finally {
+      setIsScraping(false);
     }
   };
 
@@ -712,12 +738,34 @@ export default function App() {
 
         {/* --- VIEW: JOB DESCRIPTION --- */}
         <div className={`${activeTab === 'job' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200`}>
-          <div className="p-4 border-b border-slate-100 bg-slate-50/50">
+          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
              <h2 className="text-lg font-semibold flex items-center gap-2"><FileText size={20} className="text-slate-500" /> Description de l'Offre</h2>
+             <button onClick={() => setJobDescription('')} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600 border border-slate-200 px-2 py-1 rounded-md bg-white">
+               <Trash size={14}/> Effacer
+             </button>
           </div>
+          
+          <div className="p-4 bg-indigo-50/50 border-b border-indigo-100 flex flex-col sm:flex-row gap-2 items-center">
+             <input 
+               type="url" 
+               placeholder="Coller l'URL de l'offre (LinkedIn, Indeed...) pour l'extraire" 
+               className="flex-grow w-full sm:w-auto px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
+               value={jobUrl}
+               onChange={(e) => setJobUrl(e.target.value)}
+             />
+             <button 
+               onClick={handleScrapeJina}
+               disabled={isScraping || !jobUrl}
+               className="w-full sm:w-auto px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center gap-2"
+             >
+               {isScraping ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
+               Extraire
+             </button>
+          </div>
+
           <textarea
             className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar"
-            placeholder="Collez ici le texte de l'offre d'emploi (Job Description)..."
+            placeholder="Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet."
             value={jobDescription}
             onChange={(e) => setJobDescription(e.target.value)}
           />
