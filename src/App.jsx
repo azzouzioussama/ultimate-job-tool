@@ -280,12 +280,14 @@ export default function App() {
   const [isAiLoading, setIsAiLoading] = useState(false);
   const [isScraping, setIsScraping] = useState(false);
   const [jobUrl, setJobUrl] = useState('');
+  const [scraperType, setScraperType] = useState(localStorage.getItem('scraper_type') || 'jina');
 
   // Autosave to localStorage
   useEffect(() => { localStorage.setItem('job_description', jobDescription); }, [jobDescription]);
   useEffect(() => { localStorage.setItem('cv_original', cvOriginal); }, [cvOriginal]);
   useEffect(() => { localStorage.setItem('cv_generated', cvGenerated); }, [cvGenerated]);
   useEffect(() => { localStorage.setItem('ai_response', aiResponse); }, [aiResponse]);
+  useEffect(() => { localStorage.setItem('scraper_type', scraperType); }, [scraperType]);
 
   // PDF State
   const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
@@ -467,18 +469,47 @@ export default function App() {
     }
   };
 
-  const handleScrapeJina = async () => {
+  const handleScrape = async () => {
     if (!jobUrl) return;
     setIsScraping(true);
     try {
-      const response = await fetch(`https://r.jina.ai/${jobUrl}`);
-      if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
-      const text = await response.text();
-      setJobDescription(text);
-      showToast('Offre extraite avec succès via Jina AI !');
-      setJobUrl('');
+      if (scraperType === 'jina') {
+        const response = await fetch(`https://r.jina.ai/${jobUrl}`);
+        if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
+        const text = await response.text();
+        setJobDescription(text);
+        showToast('Offre extraite avec succès via Jina AI !');
+        setJobUrl('');
+      } else if (scraperType === 'scrapfly') {
+        let key = localStorage.getItem('scrapfly_key');
+        if (!key) {
+          key = prompt("Entrez votre clé API Scrapfly (commence par 'scp-live-...') :");
+          if (!key) throw new Error("Clé Scrapfly requise pour l'extraction.");
+          localStorage.setItem('scrapfly_key', key);
+        }
+        
+        const params = new URLSearchParams({
+          key: key,
+          url: jobUrl,
+          extraction_model: 'job',
+          render_js: 'true'
+        });
+        
+        const response = await fetch(`https://api.scrapfly.io/scrape?${params.toString()}`);
+        if (!response.ok) throw new Error('Erreur API Scrapfly (' + response.status + ')');
+        
+        const data = await response.json();
+        if (data.result && data.result.extracted_data) {
+          const extractedText = JSON.stringify(data.result.extracted_data, null, 2);
+          setJobDescription("--- DONNEES STRUCTUREES (SCRAPFLY) ---\n" + extractedText);
+          showToast('Offre extraite et structurée via Scrapfly !');
+          setJobUrl('');
+        } else {
+           throw new Error("Aucune donnée extraite par le modèle Scrapfly.");
+        }
+      }
     } catch (error) {
-      showToast('Erreur: Le site bloque l\'extraction (Captcha/Cloudflare). Essayez l\'autre méthode.');
+      showToast('Erreur: ' + error.message);
     } finally {
       setIsScraping(false);
     }
@@ -746,15 +777,23 @@ export default function App() {
           </div>
           
           <div className="p-4 bg-indigo-50/50 border-b border-indigo-100 flex flex-col sm:flex-row gap-2 items-center">
+             <select 
+               value={scraperType}
+               onChange={(e) => setScraperType(e.target.value)}
+               className="bg-white border border-slate-300 rounded-lg px-2 py-2 text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+             >
+               <option value="jina">Jina AI (Gratuit)</option>
+               <option value="scrapfly">Scrapfly (Clé API)</option>
+             </select>
              <input 
                type="url" 
-               placeholder="Coller l'URL de l'offre (LinkedIn, Indeed...) pour l'extraire" 
+               placeholder="Coller l'URL de l'offre pour l'extraire" 
                className="flex-grow w-full sm:w-auto px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
                value={jobUrl}
                onChange={(e) => setJobUrl(e.target.value)}
              />
              <button 
-               onClick={handleScrapeJina}
+               onClick={handleScrape}
                disabled={isScraping || !jobUrl}
                className="w-full sm:w-auto px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center gap-2"
              >
