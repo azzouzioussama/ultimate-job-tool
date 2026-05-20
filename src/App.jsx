@@ -1065,7 +1065,7 @@ export default function App() {
         </div>
 
         {/* --- VIEW: PDF COMPILER --- */}
-        <div className={`${activeTab === 'pdf' ? 'flex' : 'hidden'} flex-col h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
+        <div className={`${activeTab === 'pdf' ? 'flex' : 'hidden'} flex-col h-auto sm:h-[80vh] min-h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
           <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
              <div>
                 <h2 className="text-lg font-semibold flex items-center gap-2"><FileOutput size={20} className="text-slate-500" /> Générateur PDF</h2>
@@ -1119,7 +1119,7 @@ export default function App() {
             {/* PDF Viewer — mobile uses react-pdf canvas renderer, desktop uses native iframe */}
             {pdfBlobUrl && !isPdfLoading && (
               isMobile ? (
-                <div ref={pdfContainerRef} className="flex-grow overflow-y-auto bg-slate-100 p-2 min-h-0">
+                <div ref={pdfContainerRef} className="flex-grow bg-slate-100 p-2">
                   <Document
                     file={pdfBlobUrl}
                     onLoadSuccess={onDocumentLoadSuccess}
