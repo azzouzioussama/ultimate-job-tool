@@ -795,18 +795,20 @@ export default function App() {
       
       {/* HEADER */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-indigo-600">
-            <Briefcase size={28} />
-            <h1 className="text-xl font-bold tracking-tight hidden sm:block">Ultimate Job Tool</h1>
-            <h1 className="text-xl font-bold tracking-tight sm:hidden">Job Tool</h1>
+        <div className="max-w-5xl mx-auto px-4 py-3 sm:h-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+          <div className="flex items-center gap-2 text-indigo-600 w-full sm:w-auto justify-between">
+            <div className="flex items-center gap-2">
+              <Briefcase size={28} />
+              <h1 className="text-xl font-bold tracking-tight hidden sm:block">Ultimate Job Tool</h1>
+              <h1 className="text-xl font-bold tracking-tight sm:hidden">Job Tool</h1>
+            </div>
           </div>
           {/* Provider + Model + API Key */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
             <select
               value={aiProvider}
               onChange={(e) => handleProviderChange(e.target.value)}
-              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
+              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer flex-1 sm:flex-none"
             >
               {Object.entries(AI_PROVIDERS).map(([key, p]) => (
                 <option key={key} value={key}>{p.label}</option>
@@ -815,18 +817,18 @@ export default function App() {
             <select
               value={aiModel}
               onChange={(e) => handleModelChange(e.target.value)}
-              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer hidden sm:block"
+              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer flex-1 sm:flex-none"
             >
               {AI_PROVIDERS[aiProvider]?.models.map(m => (
                 <option key={m.id} value={m.id}>{m.label} ({m.note})</option>
               ))}
             </select>
-            <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200">
+            <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200 w-full sm:w-auto">
               <KeyRound size={16} className="text-slate-400" />
               <input 
                 type="password" 
                 placeholder={`Clé ${providerLabel}...`}
-                className="bg-transparent border-none outline-none text-xs w-20 sm:w-32 text-slate-700"
+                className="bg-transparent border-none outline-none text-xs w-full sm:w-32 text-slate-700"
                 value={apiKey}
                 onChange={handleSaveApiKey}
               />
@@ -846,9 +848,9 @@ export default function App() {
             <button 
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 min-w-[100px] py-3 text-sm font-medium border-b-2 flex justify-center items-center gap-2 transition-colors whitespace-nowrap ${activeTab === tab.id ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
+              className={`flex-1 min-w-[120px] py-3 text-sm font-medium border-b-2 flex justify-center items-center gap-2 transition-colors whitespace-nowrap ${activeTab === tab.id ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
             >
-              <tab.icon size={16} /> <span className="hidden sm:inline">{tab.label}</span>
+              <tab.icon size={16} /> <span>{tab.label}</span>
             </button>
           ))}
         </div>
@@ -934,24 +936,24 @@ export default function App() {
 
         {/* --- VIEW: AI ASSISTANT --- */}
         <div className={`${activeTab === 'ai' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex justify-between items-center">
+          <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <h2 className="text-lg font-semibold flex items-center gap-2 text-indigo-900">
-              <Bot size={20} className="text-indigo-600" /> Réponse de l'IA ({providerLabel} — {aiModel})
+              <Bot size={20} className="text-indigo-600" /> <span className="truncate">Réponse de l'IA ({providerLabel})</span>
             </h2>
-            <div className="flex gap-2">
-               <button onClick={handleRunAI} disabled={isAiLoading} className="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2">
+            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+               <button onClick={handleRunAI} disabled={isAiLoading} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2">
                   {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} Relancer
                 </button>
                {aiResponse && (
                   <>
-                    <button onClick={extractLatexAndSave} className="px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors" title="Extraire le code LaTeX et le mettre dans le CV Généré">
-                      <FileText size={14} /> Extraire CV
+                    <button onClick={extractLatexAndSave} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors" title="Extraire le code LaTeX et le mettre dans le CV Généré">
+                      <FileText size={14} /> <span className="hidden sm:inline">Extraire CV</span>
                     </button>
-                    <button onClick={() => copyToClipboard(aiResponse)} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
-                      <Copy size={14} /> Copier
+                    <button onClick={() => copyToClipboard(aiResponse)} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
+                      <Copy size={14} /> <span className="hidden sm:inline">Copier</span>
                     </button>
-                    <button onClick={() => setAiResponse('')} className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-red-50 hover:text-red-600 flex items-center gap-2 transition-colors">
-                      <Trash size={14} /> Effacer
+                    <button onClick={() => setAiResponse('')} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-red-50 hover:text-red-600 flex items-center gap-2 transition-colors">
+                      <Trash size={14} /> <span className="hidden sm:inline">Effacer</span>
                     </button>
                   </>
                )}
@@ -1035,7 +1037,7 @@ export default function App() {
         <div className={`${activeTab === 'cv' ? 'block' : 'hidden'}`}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Original CV */}
-            <div className="flex flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
               <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
                 <h2 className="text-sm font-semibold flex items-center gap-2"><User size={16} className="text-slate-500" /> CV Original (Source)</h2>
                 <button onClick={() => setCvOriginal(SYNTHETIC_CV)} className="text-xs text-slate-500 hover:text-red-600 underline">Rétablir CV Fake</button>
@@ -1047,7 +1049,7 @@ export default function App() {
               />
             </div>
             {/* Generated CV */}
-            <div className="flex flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
+            <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
               <div className="p-4 border-b border-indigo-100 bg-indigo-50/50 flex justify-between items-center">
                 <h2 className="text-sm font-semibold flex items-center gap-2 text-indigo-900"><Sparkles size={16} className="text-indigo-600" /> CV Généré (Adapté)</h2>
                 <button onClick={() => setCvGenerated('')} className="text-xs text-slate-500 hover:text-red-600 underline">Vider</button>
@@ -1064,29 +1066,29 @@ export default function App() {
 
         {/* --- VIEW: PDF COMPILER --- */}
         <div className={`${activeTab === 'pdf' ? 'flex' : 'hidden'} flex-col h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
+          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
              <div>
                 <h2 className="text-lg font-semibold flex items-center gap-2"><FileOutput size={20} className="text-slate-500" /> Générateur PDF</h2>
                 <p className="text-xs text-slate-500 mt-1">Via les serveurs officiels TeXLive.net</p>
              </div>
-             <div className="flex gap-2">
+             <div className="flex flex-wrap gap-2 w-full sm:w-auto">
                <select 
                  value={pdfSource}
                  onChange={(e) => setPdfSource(e.target.value)}
-                 className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
+                 className="flex-1 sm:flex-none bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
                >
                  <option value="generated">CV Généré</option>
                  <option value="original">CV Original</option>
                </select>
                {pdfBlobUrl && (
-                 <button onClick={downloadPDF} className="px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 flex items-center gap-2">
-                   <Download size={14} /> Télécharger PDF
+                 <button onClick={downloadPDF} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 flex items-center gap-2">
+                   <Download size={14} /> <span className="hidden sm:inline">Télécharger PDF</span>
                  </button>
                )}
                <button 
                  onClick={compilePDF} 
                  disabled={isPdfLoading} 
-                 className="px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
+                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
                >
                  {isPdfLoading ? <Loader2 size={14} className="animate-spin" /> : <FileOutput size={14} />}
                  {pdfBlobUrl ? 'Recompiler' : 'Compiler le PDF'}
