@@ -14,6 +14,11 @@ export default defineConfig({
       '/latexcgi': {
         target: 'https://texlive.net',
         changeOrigin: true,
+      },
+      '/api/scrapfly': {
+        target: 'https://api.scrapfly.io',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/scrapfly/, '/scrape'),
       }
     }
   }

@@ -7,6 +7,10 @@
     {
       "source": "/latexcgi/:path*",
       "destination": "https://texlive.net/latexcgi/:path*"
+    },
+    {
+      "source": "/api/scrapfly",
+      "destination": "https://api.scrapfly.io/scrape"
     }
   ]
 }

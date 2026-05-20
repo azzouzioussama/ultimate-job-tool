@@ -495,7 +495,7 @@ export default function App() {
           render_js: 'true'
         });
         
-        const response = await fetch(`https://api.scrapfly.io/scrape?${params.toString()}`);
+        const response = await fetch(`/api/scrapfly?${params.toString()}`);
         if (!response.ok) throw new Error('Erreur API Scrapfly (' + response.status + ')');
         
         const data = await response.json();
