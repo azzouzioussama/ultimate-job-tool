@@ -211,6 +211,157 @@ L'email doit remercier le recruteur pour son temps, réaffirmer mon enthousiasme
   }
 ];
 
+// Fonction pour nettoyer le markdown extrait par Jina AI des menus, formulaires et cookies de bas de page.
+function cleanJinaMarkdown(md) {
+  if (!md) return '';
+  const lines = md.split(/\r\n?|\n/);
+  const cleaned = [];
+  
+  const linkRegex = /\[.*?\]\(.*?\)/g;
+  
+  const cutoffHeadings = [
+    'ces offres',
+    'recherches similaires',
+    'recherche similaire',
+    'emplois similaires',
+    'offres similaires',
+    'offres associées',
+    'créez votre compte',
+    'creez votre compte',
+    'activez votre alerte',
+    'créer une alerte',
+    'creer une alerte',
+    'envoyez votre candidature',
+    'partager l\'offre',
+    'partager cette offre',
+    'vous aimerez aussi',
+    'autres offres',
+    'coach emploi',
+    'candidature',
+    'postuler en ligne',
+    'sign up',
+    'create an account',
+    'similar jobs',
+    'recommended jobs',
+    'more jobs',
+    'subscribe to',
+    'newsletter'
+  ];
+  
+  for (let line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      cleaned.push('');
+      continue;
+    }
+    
+    const lower = trimmed.toLowerCase();
+    
+    // Si on atteint un titre de fin de page ou de publicité/connexion, on s'arrête
+    if (trimmed.startsWith('#') || lower.includes('coach emploi')) {
+      const headingText = trimmed.replace(/^#+\s*/, '').toLowerCase();
+      const isCutoff = cutoffHeadings.some(keyword => headingText.includes(keyword) || lower.includes(keyword));
+      if (isCutoff) {
+        break;
+      }
+    }
+    
+    // 1. Filtrer les cases à cocher de menu
+    if (trimmed === '- [x]' || trimmed === '- [ ]' || trimmed === '* [x]' || trimmed === '* [ ]') {
+      continue;
+    }
+
+    // 2. Filtrer les réseaux sociaux
+    if (
+      lower.includes('facebook.com') ||
+      lower.includes('twitter.com') ||
+      lower.includes('linkedin.com/company') ||
+      lower.includes('youtube.com') ||
+      lower.includes('instagram.com') ||
+      lower.includes('pinterest.com') ||
+      lower.includes('glassdoor')
+    ) {
+      continue;
+    }
+    
+    // 3. Boutons de téléchargement d'app mobiles
+    if (lower.includes('play.google.com') || lower.includes('apps.apple.com')) {
+      continue;
+    }
+    
+    // 4. Mots-clés des portails de connexion et formulaires
+    if (
+      lower.includes('se connecter') ||
+      lower.includes('s\'inscrire') ||
+      lower.includes('mon espace') ||
+      lower.includes('mon profil') ||
+      lower.includes('créer un compte') ||
+      lower.includes('complétez votre profil') ||
+      lower.includes('completez votre profil') ||
+      lower.includes('accés recruteur') ||
+      lower.includes('acces recruteur') ||
+      lower.includes('déconnexion') ||
+      lower.includes('deconnexion') ||
+      lower.includes('mes candidatures') ||
+      lower.includes('mes alertes') ||
+      lower.includes('paramètres') ||
+      lower.includes('parametres') ||
+      lower.includes('créer mon alerte')
+    ) {
+      continue;
+    }
+    
+    // 5. Filtrer les lignes qui ne contiennent que des liens (menus de navigation)
+    const textWithoutLinks = trimmed.replace(linkRegex, '');
+    const hasAlphaNumeric = /[a-zA-Z0-9\u00C0-\u00FF]/.test(textWithoutLinks);
+    if (!hasAlphaNumeric && trimmed.includes('[')) {
+      continue;
+    }
+    
+    // 6. Filtrer les images et formats d'image restants
+    if (trimmed.startsWith('![') || (trimmed.startsWith('[') && (trimmed.endsWith('.jpg') || trimmed.endsWith('.png') || trimmed.endsWith('.gif')))) {
+      continue;
+    }
+    
+    // 7. Textes de RGPD, cookies et politique légale
+    if (
+      lower.includes('cookie') ||
+      lower.includes('traceur') ||
+      lower.includes('cgu') ||
+      lower.includes('politique de confidentialité') ||
+      lower.includes('privacy policy') ||
+      lower.includes('mentions légales') ||
+      lower.includes('tous droits réservés') ||
+      lower.includes('copyright') ||
+      lower.includes('données personnelles') ||
+      lower.includes('gérer les traceurs') ||
+      lower.includes('continuer sans accepter')
+    ) {
+      continue;
+    }
+    
+    // 8. Phrases génériques de navigation
+    if (
+      lower === 'lire dans l\'app' ||
+      lower === 'téléchargez l\'app et postulez dans les premiers !' ||
+      lower === 'c\'est noté' ||
+      lower === 'voir plus' ||
+      lower === 'lire la suite' ||
+      lower === 'voir plus d\'offres' ||
+      lower === 'lien copié' ||
+      lower === 'lien copie' ||
+      lower.includes("le job l'entreprise") ||
+      lower.includes("l'entreprise l'entreprise")
+    ) {
+      continue;
+    }
+    
+    cleaned.push(line);
+  }
+  
+  return cleaned.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('templates');
   const [jobDescription, setJobDescription] = useState(localStorage.getItem('job_description') || '');
@@ -477,7 +628,8 @@ export default function App() {
         const response = await fetch(`https://r.jina.ai/${jobUrl}`);
         if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
         const text = await response.text();
-        setJobDescription(text);
+        const cleanedText = cleanJinaMarkdown(text);
+        setJobDescription(cleanedText);
         showToast('Offre extraite avec succès via Jina AI !');
         setJobUrl('');
       } else if (scraperType === 'scrapfly') {

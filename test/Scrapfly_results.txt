@@ -1,0 +1,27 @@
+Le Groupe Objectware fondé en 1999 est une ESN (Entreprise de Services du Numérique) spécialisée dans le Conseil et l'Ingénierie en Systèmes d'Informations.
+Le groupe représentant plus de 1 000 collaborateurs en France (IDF, Strasbourg, Nancy, Lille, Bordeaux, Nantes) et à l'International (Luxembourg, Belgique) pour environ 105 M€ de CA.
+Objectware est un acteur historique du conseil IT en Finance, Banque et Assurance. Depuis 2012, nous développons de nouveaux d'autres secteurs d'activités tels que les Utilities, les Télécoms, l'Industrie et les Services Publics.
+Notre activité couvre la totalité des cycles de vie d'un Système d'information (Pilotage et Gestion de projet, Conseil en MOA, Conception Réalisation, Maintenance, Production Exploitation).
+Lien vers notre site : https://www.objectware.fr/
+
+Nous recherchons un référent support applicatif H/F pour une mission à Nantes.
+
+Missions : 
+
+Assurer la supervision des applications et le traitement des alertes
+Diagnostiquer et suivre les incidents de production
+Fournir un support technico-fonctionnel de niveau 2
+Accompagner les déploiements et opérations techniques sensibles
+Participer à l'optimisation des outils, procédures et environnements
+Produire et maintenir la documentation technique et opérationnelle
+Concevoir des scripts et outils d'analyse d'anomalies
+Collaborer avec les différentes équipes projets et partenaires
+
+Environnement technique
+
+Analyse de logs et monitoring
+Web Services
+AWS
+Datadog
+Atlassian
+Architecture Web.

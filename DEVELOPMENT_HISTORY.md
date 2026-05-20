@@ -59,12 +59,21 @@ One of the most complex features is compiling the user's LaTeX CV into a PDF wit
 - **Inline Display**: Instead of forcing a new tab, the `fetch` request retrieves the PDF as a Blob. A local Object URL (`blob:http://...`) is generated and passed to an `<iframe>`, allowing seamless inline preview within the app.
 - **Source Selection**: The PDF Maker UI allows the user to choose whether they want to compile their "CV Original" or the newly adapted "CV Généré".
 
+### E. Job Posting Scraping & Auto-Extraction
+To simplify adding job descriptions without copying and pasting manually, the app integrates job board scrapers.
+- **Services**: Supports Jina AI (free, text-based markdown reader) and Scrapfly (API-key based web scraping with JS rendering and AI-powered extraction).
+- **Scrapfly AI Model**: Uses Scrapfly's pre-trained `job_posting` model to parse messy web content into structured JSON data.
+- **The CORS & Proxy Solution**: To call the Scrapfly API directly without exposing keys or facing browser CORS blocks, the `/api/scrapfly` endpoint acts as a proxy:
+  - Vite server routes `/api/scrapfly` to `api.scrapfly.io` rewriting to the `/scrape` path in development.
+  - Vercel serverless rewrites handle it in production.
+- **Refined Data Extraction**: Rather than dumping raw structured JSON metadata (e.g. company, salary, quality indicators), the parser specifically extracts the target `jobDescription` string for use in the dynamic prompts, falling back to full JSON only when the field is absent.
+
 ## 4. UI/UX Architecture
 
 The app uses a modern, responsive layout divided into five main tabs:
 1. **Prompts**: The central hub. Left column for selecting strategies, right column for editing and compiling.
 2. **Assistant IA**: Displays the streaming/final response from the chosen LLM. Includes options to copy or regenerate.
-3. **Offre**: A simple, large text area for pasting the target job description.
+3. **Offre**: A simple, large text area for pasting the target job description. Supports scrapers (Jina AI & Scrapfly) via URL input.
 4. **Mon CV**: The LaTeX source editor.
 5. **PDF Maker**: The interface for compiling the CV and viewing the generated PDF inline.
 
@@ -78,6 +87,7 @@ The app uses a modern, responsive layout divided into five main tabs:
 - **AI Iteration 2 (Multi-Model)**: Addressed API quota issues by expanding provider support. Added DeepSeek.
 - **AI Iteration 3 (OpenRouter & Updates)**: Added OpenRouter to provide guaranteed free tiers. Updated Gemini models to reflect the 2026 deprecation of 1.5/2.0 in favor of `gemini-2.5-flash`. Added OpenAI support.
 - **State & UX Iteration 4**: Implemented full `localStorage` auto-saving for job descriptions, CVs, and AI chat history. Separated the CV architecture into "Original" and "Generated" to preserve user templates. Added an "Extraire CV" regex tool to seamlessly pull LaTeX code from conversational AI responses.
+- **Job Scraping Integration (May 2026)**: Integrated Jina AI and Scrapfly. Handled Scrapfly CORS rejections using proxy configurations (`/api/scrapfly`), fixed 422 API errors by using the correct `job_posting` model parameter, and targeted the parser specifically to the `jobDescription` JSON response field. Added a stateful Markdown cleanup heuristic (`cleanJinaMarkdown`) for Jina AI Reader to strip out website navigation menus, cookie consent popups, signup forms, social media widgets, and related jobs recommendations.
 
 ## 6. Known Constraints & Future Considerations
 - **API Key Security**: Keys are stored in `localStorage`. Since this is a client-side only app, this is acceptable, but users must be warned not to share their screen while keys are visible.
