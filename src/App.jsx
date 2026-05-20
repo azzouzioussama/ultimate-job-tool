@@ -644,7 +644,8 @@ export default function App() {
           key: key,
           url: jobUrl,
           extraction_model: 'job_posting',
-          render_js: 'true'
+          render_js: 'true',
+          asp: 'true'
         });
         
         const response = await fetch(`/api/scrapfly?${params.toString()}`);
