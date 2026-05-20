@@ -625,6 +625,9 @@ export default function App() {
     setIsScraping(true);
     try {
       if (scraperType === 'jina') {
+        if (jobUrl.toLowerCase().includes('indeed.com')) {
+          throw new Error("Jina AI est bloqué par les protections anti-bot (Cloudflare) d'Indeed. Veuillez sélectionner 'Scrapfly (Clé API)' pour ce site.");
+        }
         const response = await fetch(`https://r.jina.ai/${jobUrl}`);
         if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
         const text = await response.text();
