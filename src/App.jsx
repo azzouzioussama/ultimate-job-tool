@@ -491,12 +491,30 @@ export default function App() {
         const params = new URLSearchParams({
           key: key,
           url: jobUrl,
-          extraction_model: 'job',
+          extraction_model: 'job_posting',
           render_js: 'true'
         });
         
         const response = await fetch(`/api/scrapfly?${params.toString()}`);
-        if (!response.ok) throw new Error('Erreur API Scrapfly (' + response.status + ')');
+        if (!response.ok) {
+          let errMsg = `Erreur API Scrapfly (${response.status})`;
+          try {
+            const errData = await response.json();
+            if (errData.message) {
+              errMsg += `: ${errData.message}`;
+            } else if (errData.error && errData.error.message) {
+              errMsg += `: ${errData.error.message}`;
+            } else if (errData.error) {
+              errMsg += `: ${errData.error}`;
+            }
+          } catch (e) {
+            try {
+              const errText = await response.text();
+              if (errText) errMsg += `: ${errText.slice(0, 150)}`;
+            } catch (e2) {}
+          }
+          throw new Error(errMsg);
+        }
         
         const data = await response.json();
         if (data.result && data.result.extracted_data) {
