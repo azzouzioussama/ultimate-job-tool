@@ -1119,7 +1119,7 @@ export default function App() {
             {/* PDF Viewer — mobile uses react-pdf canvas renderer, desktop uses native iframe */}
             {pdfBlobUrl && !isPdfLoading && (
               isMobile ? (
-                <div ref={pdfContainerRef} className="flex-grow overflow-auto bg-slate-100 p-2">
+                <div ref={pdfContainerRef} className="flex-grow overflow-y-auto bg-slate-100 p-2 min-h-0">
                   <Document
                     file={pdfBlobUrl}
                     onLoadSuccess={onDocumentLoadSuccess}
@@ -1131,9 +1131,9 @@ export default function App() {
                         key={`page_${i + 1}`}
                         pageNumber={i + 1}
                         width={pdfContainerWidth ? pdfContainerWidth - 16 : undefined}
-                        className="mb-3 shadow-md rounded-lg overflow-hidden"
-                        renderTextLayer={false}
-                        renderAnnotationLayer={false}
+                        className="mb-3 shadow-md bg-white"
+                        renderTextLayer={true}
+                        renderAnnotationLayer={true}
                       />
                     ))}
                   </Document>
