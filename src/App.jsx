@@ -518,8 +518,9 @@ export default function App() {
         
         const data = await response.json();
         if (data.result && data.result.extracted_data) {
-          const extractedText = JSON.stringify(data.result.extracted_data, null, 2);
-          setJobDescription("--- DONNEES STRUCTUREES (SCRAPFLY) ---\n" + extractedText);
+          const extData = data.result.extracted_data.data || {};
+          const jobDescText = extData.jobDescription || JSON.stringify(data.result.extracted_data, null, 2);
+          setJobDescription(jobDescText);
           showToast('Offre extraite et structurée via Scrapfly !');
           setJobUrl('');
         } else {
