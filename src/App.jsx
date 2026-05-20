@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw, Trash } from 'lucide-react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 // --- 1. Synthetic Fake CV ---
 const SYNTHETIC_CV = `\\documentclass[a4paper,10pt]{article}
@@ -442,10 +450,29 @@ export default function App() {
 
   // PDF State
   const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
-  const [pdfBlobData, setPdfBlobData] = useState(null); // raw Blob for mobile download fallback
+  const [pdfBlobData, setPdfBlobData] = useState(null);
   const [isPdfLoading, setIsPdfLoading] = useState(false);
   const [pdfError, setPdfError] = useState('');
+  const [numPages, setNumPages] = useState(null);
+  const pdfContainerRef = useRef(null);
+  const [pdfContainerWidth, setPdfContainerWidth] = useState(0);
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // Measure the PDF container width for responsive page rendering
+  useEffect(() => {
+    if (!pdfContainerRef.current) return;
+    const observer = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        setPdfContainerWidth(entry.contentRect.width);
+      }
+    });
+    observer.observe(pdfContainerRef.current);
+    return () => observer.disconnect();
+  }, [pdfBlobUrl]);
+
+  const onDocumentLoadSuccess = useCallback(({ numPages: n }) => {
+    setNumPages(n);
+  }, []);
 
   // Handle Template Selection
   useEffect(() => {
@@ -1087,21 +1114,27 @@ export default function App() {
               </div>
             )}
 
-            {/* PDF Viewer — mobile gets download button, desktop gets inline preview */}
+            {/* PDF Viewer — mobile uses react-pdf canvas renderer, desktop uses native iframe */}
             {pdfBlobUrl && !isPdfLoading && (
               isMobile ? (
-                <div className="flex-grow flex flex-col items-center justify-center p-6 text-center space-y-4">
-                  <div className="bg-green-50 border border-green-200 rounded-xl p-6 max-w-sm space-y-3">
-                    <FileOutput size={40} className="text-green-600 mx-auto" />
-                    <p className="font-semibold text-green-800">PDF compilé avec succès !</p>
-                    <p className="text-sm text-green-700">La prévisualisation inline n'est pas supportée sur mobile. Téléchargez le PDF pour le consulter.</p>
-                    <button 
-                      onClick={downloadPDF} 
-                      className="w-full py-3 text-base font-bold text-white bg-green-600 rounded-xl hover:bg-green-700 flex items-center justify-center gap-3 shadow-lg shadow-green-200 transition-all active:scale-[0.98]"
-                    >
-                      <Download size={20} /> Ouvrir / Télécharger le PDF
-                    </button>
-                  </div>
+                <div ref={pdfContainerRef} className="flex-grow overflow-auto bg-slate-100 p-2">
+                  <Document
+                    file={pdfBlobUrl}
+                    onLoadSuccess={onDocumentLoadSuccess}
+                    loading={<div className="flex items-center justify-center p-8"><Loader2 size={30} className="animate-spin text-red-500" /></div>}
+                    error={<div className="text-red-600 text-sm p-4">Erreur lors du chargement du PDF.</div>}
+                  >
+                    {numPages && Array.from({ length: numPages }, (_, i) => (
+                      <Page
+                        key={`page_${i + 1}`}
+                        pageNumber={i + 1}
+                        width={pdfContainerWidth ? pdfContainerWidth - 16 : undefined}
+                        className="mb-3 shadow-md rounded-lg overflow-hidden"
+                        renderTextLayer={false}
+                        renderAnnotationLayer={false}
+                      />
+                    ))}
+                  </Document>
                 </div>
               ) : (
                 <iframe 
