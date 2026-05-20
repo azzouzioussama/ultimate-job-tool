@@ -95,5 +95,12 @@ This document records every major technical problem encountered during the devel
 2. **Pure link stripping**: Strips out lines that consist of nothing but markdown links (e.g. top/side navigation menus).
 3. **Keyword-based stripping**: Filters out lines containing RGPD cookies, dashboard links, social links, app store buttons, and UI feedback text (like `- [x]` checkboxes or `Lien copié`).
 
+### Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)
+**Issue**: When scraping Indeed URLs using Jina AI, the result was a Markdown file containing `Warning: Target URL returned error 403: Forbidden` and `# Just a moment... Additional Verification Required`.
+**Cause**: Indeed uses Cloudflare's aggressive anti-bot protection. Simple HTTP scrapers like Jina AI are instantly detected and served a CAPTCHA challenge instead of the job page.
+**Fix**: 
+1. Added a frontend guard in `App.jsx` that intercepts any `indeed.com` URL when Jina is selected, throwing a clear error asking the user to switch to Scrapfly.
+2. Enabled Anti Scraping Protection (ASP) in the Scrapfly fetch call (`asp: 'true'`) to guarantee that Scrapfly routes the Indeed request through residential proxies with headless browser fingerprinting to solve the Cloudflare CAPTCHA automatically.
+
 ---
 *Generated: May 2026*
