@@ -442,8 +442,10 @@ export default function App() {
 
   // PDF State
   const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
+  const [pdfBlobData, setPdfBlobData] = useState(null); // raw Blob for mobile download fallback
   const [isPdfLoading, setIsPdfLoading] = useState(false);
   const [pdfError, setPdfError] = useState('');
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   // Handle Template Selection
   useEffect(() => {
@@ -536,7 +538,7 @@ export default function App() {
   const providerLabel = AI_PROVIDERS[aiProvider]?.label || aiProvider;
 
   // --- AI Chat Function (Multi-Provider) ---
-  const handleRunAI = async () => {
+  const handleRunAI = async (retryCount = 0) => {
     if (!apiKey) {
       showToast(`Veuillez entrer une clé API ${providerLabel}.`);
       setActiveTab('ai');
@@ -548,6 +550,10 @@ export default function App() {
     setAiResponse('');
     setActiveTab('ai');
 
+    // AbortController with 120s timeout to handle mobile screen-off network drops
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 120000);
+
     try {
       let reply = '';
 
@@ -556,6 +562,7 @@ export default function App() {
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${aiModel}:generateContent?key=${apiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal,
           body: JSON.stringify({
             contents: [{ parts: [{ text: compiledPrompt }] }],
             generationConfig: { temperature: 0.7 }
@@ -586,6 +593,7 @@ export default function App() {
         const response = await fetch(endpoint, {
           method: 'POST',
           headers,
+          signal: controller.signal,
           body: JSON.stringify({
             model: aiModel,
             messages: [{ role: 'user', content: compiledPrompt }],
@@ -599,8 +607,18 @@ export default function App() {
 
       setAiResponse(reply);
     } catch (error) {
-      setAiResponse(`❌ Erreur: ${error.message}\n\nVérifiez que votre clé API ${providerLabel} est valide et a des quotas disponibles.`);
+      // Auto-retry once on network/abort errors (mobile screen-off scenario)
+      if ((error.name === 'AbortError' || error.name === 'TypeError') && retryCount < 1) {
+        showToast('Connexion interrompue, nouvelle tentative...');
+        clearTimeout(timeoutId);
+        return handleRunAI(retryCount + 1);
+      }
+      const msg = error.name === 'AbortError'
+        ? 'La requête a expiré (timeout). Vérifiez votre connexion et réessayez.'
+        : error.message;
+      setAiResponse(`❌ Erreur: ${msg}\n\nVérifiez que votre clé API ${providerLabel} est valide et a des quotas disponibles.`);
     } finally {
+      clearTimeout(timeoutId);
       setIsAiLoading(false);
     }
   };
@@ -726,6 +744,7 @@ export default function App() {
 
       const url = URL.createObjectURL(blob);
       setPdfBlobUrl(url);
+      setPdfBlobData(blob);
       showToast('PDF compilé avec succès !');
     } catch (error) {
       setPdfError(error.message);
@@ -1068,13 +1087,29 @@ export default function App() {
               </div>
             )}
 
-            {/* PDF Viewer */}
+            {/* PDF Viewer — mobile gets download button, desktop gets inline preview */}
             {pdfBlobUrl && !isPdfLoading && (
-              <iframe 
-                src={pdfBlobUrl} 
-                className="flex-grow w-full border-none" 
-                title="PDF Preview"
-              />
+              isMobile ? (
+                <div className="flex-grow flex flex-col items-center justify-center p-6 text-center space-y-4">
+                  <div className="bg-green-50 border border-green-200 rounded-xl p-6 max-w-sm space-y-3">
+                    <FileOutput size={40} className="text-green-600 mx-auto" />
+                    <p className="font-semibold text-green-800">PDF compilé avec succès !</p>
+                    <p className="text-sm text-green-700">La prévisualisation inline n'est pas supportée sur mobile. Téléchargez le PDF pour le consulter.</p>
+                    <button 
+                      onClick={downloadPDF} 
+                      className="w-full py-3 text-base font-bold text-white bg-green-600 rounded-xl hover:bg-green-700 flex items-center justify-center gap-3 shadow-lg shadow-green-200 transition-all active:scale-[0.98]"
+                    >
+                      <Download size={20} /> Ouvrir / Télécharger le PDF
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <iframe 
+                  src={pdfBlobUrl} 
+                  className="flex-grow w-full border-none" 
+                  title="PDF Preview"
+                />
+              )
             )}
 
             {/* Empty State */}
