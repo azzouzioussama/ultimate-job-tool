@@ -56,6 +56,7 @@ import { runAtsAnalysis } from './services/atsService';
 import { extractTextFromFile, buildLatexConversionPrompt } from './services/fileUploadService';
 import { extractLatexFromResponse } from './services/latexUtils';
 import * as storage from './services/storageService';
+import { createApplication, getApplication, updateApplication, getAllApplications } from './services/db';
 
 // ── Hooks ─────────────────────────────────────────────────────────────────────
 import { useLocalStorage } from './hooks/useLocalStorage';
@@ -67,6 +68,7 @@ import TabNavigation from './components/layout/TabNavigation';
 import Toast from './components/layout/Toast';
 
 // ── Tab Components ────────────────────────────────────────────────────────────
+import DashboardTab from './components/tabs/DashboardTab';
 import PromptsTab from './components/tabs/PromptsTab';
 import AiAssistantTab from './components/tabs/AiAssistantTab';
 import JobOfferTab from './components/tabs/JobOfferTab';
@@ -92,15 +94,17 @@ export default function App() {
   const { toastMessage, showToast } = useToast();
 
   // ── Navigation State ────────────────────────────────────────────────────────
-  const [activeTab, setActiveTab] = useState('templates');
+  const [activeTab, setActiveTab] = useState('dashboard');
 
-  // ── Core Data (auto-saved to localStorage) ──────────────────────────────────
-  const [jobDescription, setJobDescription] = useLocalStorage('job_description', '');
-  const [cvOriginal, setCvOriginal] = useLocalStorage(
-    'cv_original',
-    storage.getCvOriginal() || SYNTHETIC_CV
-  );
-  const [cvGenerated, setCvGenerated] = useLocalStorage('cv_generated', '');
+  // ── Database State ──────────────────────────────────────────────────────────
+  const [activeAppId, setActiveAppId] = useState(null);
+
+  // ── Core Data ───────────────────────────────────────────────────────────────
+  const [jobDescription, setJobDescription] = useState('');
+  const [cvOriginal, setCvOriginal] = useState(SYNTHETIC_CV);
+  const [cvGenerated, setCvGenerated] = useState('');
+
+  // ── Settings (auto-saved to localStorage) ───────────────────────────────────
   const [aiResponse, setAiResponse] = useLocalStorage('ai_response', '');
   const [scraperType, setScraperType] = useLocalStorage('scraper_type', 'jina');
 
@@ -137,6 +141,69 @@ export default function App() {
   const pdfContainerRef = useRef(null);
   const [pdfContainerWidth, setPdfContainerWidth] = useState(0);
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // DATABASE SYNCHRONIZATION
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // 1. One-time migration & initial load
+  useEffect(() => {
+    async function initDB() {
+      const allApps = await getAllApplications();
+      if (allApps.length === 0) {
+        // Migration from old localStorage
+        const oldCv = storage.getCvOriginal();
+        const oldJob = storage.getJobDescription();
+        const oldGenerated = storage.getCvGenerated();
+        
+        if (oldCv || oldJob || oldGenerated) {
+          const newAppId = await createApplication({
+            companyName: 'Ancienne Candidature',
+            jobTitle: 'Importée',
+            jobDescription: oldJob || '',
+            cvOriginal: oldCv || SYNTHETIC_CV,
+            cvGenerated: oldGenerated || ''
+          });
+          setActiveAppId(newAppId);
+        }
+      } else {
+        // Load the most recently updated application
+        setActiveAppId(allApps[0].id);
+      }
+    }
+    initDB();
+  }, []);
+
+  // 2. Load data when activeAppId changes
+  useEffect(() => {
+    if (activeAppId) {
+      getApplication(activeAppId).then(app => {
+        if (app) {
+          setJobDescription(app.jobDescription || '');
+          setCvOriginal(app.cvOriginal || SYNTHETIC_CV);
+          setCvGenerated(app.cvGenerated || '');
+        }
+      });
+    } else {
+      setJobDescription('');
+      setCvOriginal(SYNTHETIC_CV);
+      setCvGenerated('');
+    }
+  }, [activeAppId]);
+
+  // 3. Debounced auto-save back to Dexie when typing
+  useEffect(() => {
+    if (!activeAppId) return;
+    const timer = setTimeout(() => {
+      updateApplication(activeAppId, {
+        jobDescription,
+        cvOriginal,
+        cvGenerated
+      });
+    }, 500); // Wait 500ms after user stops typing
+    return () => clearTimeout(timer);
+  }, [activeAppId, jobDescription, cvOriginal, cvGenerated]);
 
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -470,6 +537,16 @@ export default function App() {
 
       {/* ── Main Content Area ──────────────────────────────────────── */}
       <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
+
+        {/* Dashboard Tab */}
+        <div className={activeTab === 'dashboard' ? 'block' : 'hidden'}>
+          <DashboardTab
+            onSelectApplication={(id) => {
+              setActiveAppId(id);
+              setActiveTab('templates'); // Auto-switch to Prompts after selecting
+            }}
+          />
+        </div>
 
         {/* Prompts Tab */}
         <div className={activeTab === 'templates' ? 'block' : 'hidden'}>

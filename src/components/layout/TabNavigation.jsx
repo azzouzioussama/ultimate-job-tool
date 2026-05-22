@@ -20,12 +20,13 @@
  */
 
 
-import { Settings, Bot, FileText, User, FileOutput, Activity } from 'lucide-react';
+import { Settings, Bot, FileText, User, FileOutput, Activity, LayoutDashboard } from 'lucide-react';
 
 // ── Tab Definitions ──────────────────────────────────────────────────────────
 // Each tab has an id (used for logic), an icon (from lucide-react),
 // and a label (displayed in the UI).
 const tabs = [
+  { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { id: 'templates', icon: Settings,   label: 'Prompts' },
   { id: 'ai',        icon: Bot,        label: 'Assistant IA' },
   { id: 'job',       icon: FileText,   label: 'Offre' },
