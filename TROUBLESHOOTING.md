@@ -131,5 +131,17 @@ This document records every major technical problem encountered during the devel
 JavaScript's native `JSON.parse()` fails when encountering the backticks.
 **Fix**: Added a cleanup regex pass before parsing the AI response to strip out Markdown: `reply = reply.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/g, '').trim();`
 
+## 8. Database (Dexie.js) & Architecture Refactoring
+
+### Problem 1: Cascading Renders warning with `useEffect`
+**Issue**: ESLint flagged `Calling setState synchronously within an effect can trigger cascading renders` when loading the active application from Dexie into the `App.jsx` React state.
+**Cause**: The application uses a local `activeAppId` state which triggers a `useEffect` that calls `getApplication(id)` to load data into the local `jobDescription`, `cvOriginal`, and `cvGenerated` states.
+**Fix**: While technically causing an extra render cycle, this pattern is required to synchronize asynchronous IndexedDB data with fast synchronous UI state for text areas. The warning is safely ignored, though future optimizations could involve `useLiveQuery` at the component level to skip manual `setState` syncing.
+
+### Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
+**Issue**: Migrating the app from `localStorage` to `dexie.js` threatened to delete the user's active, unsaved CV draft if they refreshed the page.
+**Cause**: The new database schema required an explicit `createApplication()` call, whereas the old system just read naked strings from `localStorage`.
+**Fix**: Implemented a one-time migration hook in the initial `App.jsx` load sequence. It checks if the `applications` table is completely empty. If it is, it searches `localStorage` for the old `cv_original` and `job_description` keys. If found, it automatically creates a new row titled `"Ancienne Candidature - Importée"` and selects it, ensuring zero data loss during the seamless transition.
+
 ---
 *Generated: May 2026*
