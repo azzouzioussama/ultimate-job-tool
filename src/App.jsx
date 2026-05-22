@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw, Trash } from 'lucide-react';
+import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw, Trash, Activity, Upload } from 'lucide-react';
+import * as mammoth from 'mammoth';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -441,6 +442,11 @@ export default function App() {
   const [jobUrl, setJobUrl] = useState('');
   const [scraperType, setScraperType] = useState(localStorage.getItem('scraper_type') || 'jina');
 
+  // New ATS & Upload State
+  const [atsResult, setAtsResult] = useState(null);
+  const [isAtsLoading, setIsAtsLoading] = useState(false);
+  const [isUploadingCv, setIsUploadingCv] = useState(false);
+
   // Autosave to localStorage
   useEffect(() => { localStorage.setItem('job_description', jobDescription); }, [jobDescription]);
   useEffect(() => { localStorage.setItem('cv_original', cvOriginal); }, [cvOriginal]);
@@ -564,6 +570,53 @@ export default function App() {
 
   const providerLabel = AI_PROVIDERS[aiProvider]?.label || aiProvider;
 
+  const callAIProvider = async (promptText, signal) => {
+    if (aiProvider === 'gemini') {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${aiModel}:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal,
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: promptText }] }],
+          generationConfig: { temperature: 0.7 }
+        })
+      });
+      const data = await response.json();
+      if (data.error) throw new Error(data.error.message || 'Erreur API Gemini');
+      return data.candidates[0].content.parts[0].text;
+    } else {
+      const endpoints = {
+        openai: 'https://api.openai.com/v1/chat/completions',
+        deepseek: 'https://api.deepseek.com/chat/completions',
+        openrouter: 'https://openrouter.ai/api/v1/chat/completions',
+      };
+      const endpoint = endpoints[aiProvider];
+
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      };
+      if (aiProvider === 'openrouter') {
+        headers['HTTP-Referer'] = window.location.origin;
+        headers['X-Title'] = 'Ultimate Job Tool';
+      }
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers,
+        signal,
+        body: JSON.stringify({
+          model: aiModel,
+          messages: [{ role: 'user', content: promptText }],
+          temperature: 0.7
+        })
+      });
+      const data = await response.json();
+      if (data.error) throw new Error(data.error.message || `Erreur API ${providerLabel}`);
+      return data.choices[0].message.content;
+    }
+  };
+
   // --- AI Chat Function (Multi-Provider) ---
   const handleRunAI = async (retryCount = 0) => {
     if (!apiKey) {
@@ -582,56 +635,7 @@ export default function App() {
     const timeoutId = setTimeout(() => controller.abort(), 120000);
 
     try {
-      let reply = '';
-
-      if (aiProvider === 'gemini') {
-        // Gemini uses its own API format
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${aiModel}:generateContent?key=${apiKey}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          signal: controller.signal,
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: compiledPrompt }] }],
-            generationConfig: { temperature: 0.7 }
-          })
-        });
-        const data = await response.json();
-        if (data.error) throw new Error(data.error.message || 'Erreur API Gemini');
-        reply = data.candidates[0].content.parts[0].text;
-      } else {
-        // OpenAI, DeepSeek & OpenRouter all use OpenAI-compatible format
-        const endpoints = {
-          openai: 'https://api.openai.com/v1/chat/completions',
-          deepseek: 'https://api.deepseek.com/chat/completions',
-          openrouter: 'https://openrouter.ai/api/v1/chat/completions',
-        };
-        const endpoint = endpoints[aiProvider];
-
-        const headers = {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
-        };
-        // OpenRouter recommends these optional headers
-        if (aiProvider === 'openrouter') {
-          headers['HTTP-Referer'] = window.location.origin;
-          headers['X-Title'] = 'Ultimate Job Tool';
-        }
-
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers,
-          signal: controller.signal,
-          body: JSON.stringify({
-            model: aiModel,
-            messages: [{ role: 'user', content: compiledPrompt }],
-            temperature: 0.7
-          })
-        });
-        const data = await response.json();
-        if (data.error) throw new Error(data.error.message || `Erreur API ${providerLabel}`);
-        reply = data.choices[0].message.content;
-      }
-
+      const reply = await callAIProvider(compiledPrompt, controller.signal);
       setAiResponse(reply);
     } catch (error) {
       // Auto-retry once on network/abort errors (mobile screen-off scenario)
@@ -662,6 +666,126 @@ export default function App() {
       setActiveTab('cv');
     } else {
       showToast('Aucun code LaTeX complet trouvé dans la réponse.');
+    }
+  };
+
+  const handleRunATS = async () => {
+    if (!apiKey) { showToast(`Veuillez configurer une clé API ${providerLabel}.`); return; }
+    if (!jobDescription.trim() || (!cvGenerated.trim() && !cvOriginal.trim())) {
+      showToast('Il faut une offre d\'emploi et un CV pour faire le test ATS.');
+      return;
+    }
+    
+    setIsAtsLoading(true);
+    setAtsResult(null);
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 120000);
+
+    try {
+      const cvToTest = cvGenerated || cvOriginal;
+      const atsPrompt = `Agis comme un système ATS strict (Applicant Tracking System).
+Compare le CV suivant avec l'offre d'emploi suivante.
+Donne un score global sur 100 de compatibilité.
+Identifie les mots-clés importants de l'offre qui MANQUENT dans le CV.
+Donne 3 conseils brefs pour améliorer le CV.
+
+Tu DOIS répondre UNIQUEMENT avec un objet JSON valide, sans markdown (pas de backticks), sans commentaires.
+Format strict attendu:
+{
+  "score": 85,
+  "missingKeywords": ["Mot clé 1", "Mot clé 2"],
+  "advice": ["Conseil 1", "Conseil 2", "Conseil 3"]
+}
+
+--- OFFRE D'EMPLOI ---
+${jobDescription}
+
+--- CV ---
+${cvToTest}`;
+
+      let reply = await callAIProvider(atsPrompt, controller.signal);
+      
+      // Clean up markdown code blocks if the AI hallucinates them
+      reply = reply.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/g, '').trim();
+      
+      const parsed = JSON.parse(reply);
+      setAtsResult(parsed);
+      showToast('Analyse ATS terminée !');
+    } catch (error) {
+      console.error(error);
+      showToast('Erreur lors de l\'analyse ATS. Le format JSON retourné est invalide ou la requête a échoué.');
+    } finally {
+      clearTimeout(timeoutId);
+      setIsAtsLoading(false);
+    }
+  };
+
+  const handleFileUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    if (!apiKey) {
+      showToast(`Veuillez configurer votre clé API IA dans l'en-tête d'abord.`);
+      return;
+    }
+
+    setIsUploadingCv(true);
+    showToast('Lecture du fichier en cours...');
+
+    try {
+      let extractedText = '';
+      
+      if (file.type === 'application/pdf') {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+        let fullText = '';
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const textContent = await page.getTextContent();
+          const pageText = textContent.items.map(item => item.str).join(' ');
+          fullText += pageText + '\\n\\n';
+        }
+        extractedText = fullText;
+      } else if (file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || file.name.endsWith('.docx')) {
+        const arrayBuffer = await file.arrayBuffer();
+        const result = await mammoth.extractRawText({ arrayBuffer });
+        extractedText = result.value;
+      } else {
+        throw new Error('Format non supporté. Veuillez utiliser un PDF ou un DOCX.');
+      }
+
+      if (!extractedText.trim()) throw new Error('Aucun texte trouvé dans le fichier.');
+
+      showToast("Texte extrait ! Génération LaTeX en cours par l'IA...");
+      
+      const prompt = `Voici le texte brut extrait de mon CV non-formaté. 
+Convertis ce texte en un code LaTeX propre et structuré en utilisant la classe article.
+Organise-le en sections claires (Résumé, Expériences, Compétences, Éducation).
+Échappe correctement les caractères spéciaux LaTeX comme le & en l'écrivant \\& et le % en \\%.
+Ne réponds QUE par le code LaTeX complet (commençant par \\documentclass et finissant par \\end{document}). Ne dis absolument rien d'autre.
+
+--- TEXTE DU CV ---
+${extractedText}`;
+
+      const controller = new AbortController();
+      let reply = await callAIProvider(prompt, controller.signal);
+      
+      const match = reply.match(/\\documentclass[\s\S]*?\\end\{document\}/);
+      if (match) {
+        let cleanLatex = match[0].replace(/(?<!\\)&/g, '\\&');
+        setCvOriginal(cleanLatex);
+        showToast('CV importé et converti avec succès en LaTeX !');
+      } else {
+        throw new Error("L'IA n'a pas renvoyé de code LaTeX valide.");
+      }
+
+    } catch (err) {
+      console.error(err);
+      showToast(`Erreur d'import : ${err.message}`);
+    } finally {
+      setIsUploadingCv(false);
+      event.target.value = '';
     }
   };
 
@@ -844,6 +968,7 @@ export default function App() {
             { id: 'job', icon: FileText, label: 'Offre' },
             { id: 'cv', icon: User, label: 'Mon CV' },
             { id: 'pdf', icon: FileOutput, label: 'PDF Maker' },
+            { id: 'ats', icon: Activity, label: 'Test ATS' },
           ].map(tab => (
             <button 
               key={tab.id}
@@ -1038,8 +1163,15 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Original CV */}
             <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
-              <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-                <h2 className="text-sm font-semibold flex items-center gap-2"><User size={16} className="text-slate-500" /> CV Original (Source)</h2>
+              <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center flex-wrap gap-2">
+                <div className="flex items-center gap-3">
+                  <h2 className="text-sm font-semibold flex items-center gap-2"><User size={16} className="text-slate-500" /> CV Original (Source)</h2>
+                  <label className="cursor-pointer text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-2 py-1.5 rounded-md flex items-center gap-1.5 transition-colors">
+                    {isUploadingCv ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
+                    {isUploadingCv ? 'Import...' : 'Importer (PDF/Word)'}
+                    <input type="file" className="hidden" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onChange={handleFileUpload} disabled={isUploadingCv} />
+                  </label>
+                </div>
                 <button onClick={() => setCvOriginal(SYNTHETIC_CV)} className="text-xs text-slate-500 hover:text-red-600 underline">Rétablir CV Fake</button>
               </div>
               <textarea
@@ -1163,6 +1295,79 @@ export default function App() {
                     <FileOutput size={24} /> Compiler le PDF
                   </button>
                 </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* --- VIEW: ATS TEST --- */}
+        <div className={`${activeTab === 'ats' ? 'flex' : 'hidden'} flex-col min-h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
+          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+             <div>
+                <h2 className="text-lg font-semibold flex items-center gap-2"><Activity size={20} className="text-indigo-600" /> Testeur ATS</h2>
+                <p className="text-xs text-slate-500 mt-1">Évaluez la compatibilité entre votre CV et l'offre d'emploi.</p>
+             </div>
+             <button 
+               onClick={handleRunATS} 
+               disabled={isAtsLoading || !jobDescription || (!cvGenerated && !cvOriginal)} 
+               className="w-full sm:w-auto px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center gap-2"
+             >
+               {isAtsLoading ? <Loader2 size={16} className="animate-spin" /> : <Sparkles size={16} />}
+               Lancer l'Analyse ATS
+             </button>
+          </div>
+          
+          <div className="flex-grow p-6 bg-slate-50">
+            {isAtsLoading ? (
+              <div className="flex flex-col items-center justify-center py-12 text-indigo-600 space-y-3">
+                <Loader2 size={40} className="animate-spin" />
+                <p className="text-sm font-medium animate-pulse">L'IA analyse les mots-clés...</p>
+              </div>
+            ) : atsResult ? (
+              <div className="max-w-3xl mx-auto space-y-6">
+                <div className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-sm">
+                  <div className={`text-6xl font-black ${atsResult.score >= 80 ? 'text-green-500' : atsResult.score >= 60 ? 'text-yellow-500' : 'text-red-500'}`}>
+                    {atsResult.score}%
+                  </div>
+                  <div className="text-center sm:text-left mt-2 sm:mt-0">
+                    <h3 className="text-lg font-bold text-slate-800">Score de compatibilité</h3>
+                    <p className="text-sm text-slate-500 mt-1">Un score supérieur à 80% maximise vos chances de passer les filtres automatiques (ATS) des recruteurs.</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 className="font-bold text-slate-800 flex items-center gap-2 mb-4"><FileText size={16} className="text-red-500"/> Mots-clés manquants</h3>
+                    {atsResult.missingKeywords?.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {atsResult.missingKeywords.map((kw, i) => (
+                          <span key={i} className="px-2.5 py-1 bg-red-50 text-red-700 text-xs font-semibold rounded-md border border-red-100">{kw}</span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-green-600 font-medium">Excellent ! Votre CV contient tous les mots-clés essentiels demandés dans l'offre.</p>
+                    )}
+                  </div>
+                  
+                  <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 className="font-bold text-slate-800 flex items-center gap-2 mb-4"><Sparkles size={16} className="text-indigo-500"/> Conseils d'amélioration</h3>
+                    <ul className="space-y-3">
+                      {atsResult.advice?.map((adv, i) => (
+                        <li key={i} className="text-sm text-slate-600 flex items-start gap-2.5">
+                          <CheckCircle2 size={16} className="text-indigo-400 mt-0.5 shrink-0" />
+                          <span className="leading-relaxed">{adv}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center py-16 text-center">
+                <Activity size={48} className="text-slate-300 mb-4" />
+                <p className="text-slate-500 max-w-sm">
+                  {!jobDescription ? "Il vous manque une offre d'emploi. Allez dans l'onglet 'Offre'." : (!cvGenerated && !cvOriginal) ? "Il vous manque un CV. Allez dans l'onglet 'Mon CV'." : "Cliquez sur 'Lancer l'Analyse ATS' pour évaluer votre CV par rapport à l'offre."}
+                </p>
               </div>
             )}
           </div>
