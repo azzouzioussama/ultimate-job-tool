@@ -57,6 +57,7 @@ One of the most complex features is compiling the user's LaTeX CV into a PDF wit
   - In production (`vercel.json`), serverless rewrites handle the same routing.
 - **The Redirect Challenge**: TeXLive responds with a `301 Moved Permanently` to a temporary PDF URL (e.g., `/latexcgi/document_XYZ.pdf`). The proxy config handles this by also forwarding `/latexcgi/*` paths.
 - **Inline Display**: Instead of forcing a new tab, the `fetch` request retrieves the PDF as a Blob. A local Object URL (`blob:http://...`) is generated and passed to an `<iframe>`, allowing seamless inline preview within the app.
+- **Mobile Canvas Rendering**: Mobile browsers natively block `blob:` URLs in `<iframe>` tags. To solve this, the app detects mobile devices and dynamically swaps the `iframe` for `react-pdf` (a React wrapper for Mozilla's `pdf.js`). This renders the PDF directly onto HTML `<canvas>` elements, fully bypassing mobile restrictions.
 - **Source Selection**: The PDF Maker UI allows the user to choose whether they want to compile their "CV Original" or the newly adapted "CV Généré".
 
 ### E. Job Posting Scraping & Auto-Extraction
@@ -87,6 +88,7 @@ The app uses a modern, responsive layout divided into five main tabs:
 - **AI Iteration 2 (Multi-Model)**: Addressed API quota issues by expanding provider support. Added DeepSeek.
 - **AI Iteration 3 (OpenRouter & Updates)**: Added OpenRouter to provide guaranteed free tiers. Updated Gemini models to reflect the 2026 deprecation of 1.5/2.0 in favor of `gemini-2.5-flash`. Added OpenAI support.
 - **State & UX Iteration 4**: Implemented full `localStorage` auto-saving for job descriptions, CVs, and AI chat history. Separated the CV architecture into "Original" and "Generated" to preserve user templates. Added an "Extraire CV" regex tool to seamlessly pull LaTeX code from conversational AI responses.
+- **Mobile PDF & Responsive UI Iteration 5**: Fixed mobile layout squishing by refactoring flex containers to wrap properly. Resolved mobile `iframe` PDF blocking by integrating `react-pdf` (`pdf.js`) for canvas-based rendering specifically on mobile devices. Fixed mobile scroll trapping by unbounding the container height (`h-auto`) to utilize native window scrolling, and re-enabled `renderTextLayer` to allow text selection on the mobile canvas.
 - **Job Scraping Integration (May 2026)**: Integrated Jina AI and Scrapfly. Handled Scrapfly CORS rejections using proxy configurations (`/api/scrapfly`), fixed 422 API errors by using the correct `job_posting` model parameter, and targeted the parser specifically to the `jobDescription` JSON response field. Added a stateful Markdown cleanup heuristic (`cleanJinaMarkdown`) for Jina AI Reader to strip out website navigation menus, cookie consent popups, signup forms, social media widgets, and related jobs recommendations. Added an explicit block to prevent Jina AI from being used on Indeed due to 403 Cloudflare restrictions, and enabled Anti Scraping Protection (`asp: 'true'`) for Scrapfly to ensure reliable scraping of bot-protected sites.
 
 ## 6. Known Constraints & Future Considerations

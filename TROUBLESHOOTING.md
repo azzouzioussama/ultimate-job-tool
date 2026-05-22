@@ -31,6 +31,23 @@ This document records every major technical problem encountered during the devel
 4. Instead of opening the URL, we intercept the response as a Blob (`await response.blob()`).
 5. We create a local URL via `URL.createObjectURL(blob)` and pass *that* to the iframe. Since the Blob is local to the browser, it entirely bypasses `X-Frame-Options`.
 
+### Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs
+**Issue**: While the `Blob` + `iframe` method works perfectly on desktop, mobile browsers (iOS Safari, Chrome Android) natively refuse to render PDF blobs inside `<iframe>` elements due to security/plugin policies, showing a blank screen instead.
+**Attempted Fix**: Added a download-only fallback button for mobile users, but this degraded the user experience.
+**Final Fix (Canvas Rendering)**: 
+1. Installed `react-pdf` (Mozilla's `pdf.js` wrapper).
+2. On mobile devices, we bypass the `iframe` entirely and use `react-pdf` to render each page of the PDF onto an HTML `<canvas>` element. This works universally across all mobile browsers.
+3. Desktop continues to use the fast native `iframe` method.
+
+### Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs
+**Issue**: The `react-pdf` canvas viewer on mobile trapped the user on the first page (no scrolling) and prevented copying text.
+**Cause**:
+1. **Scrolling**: CSS Flexbox rules (`flex-grow` inside a fixed `80vh` container) caused nested scrollbars to fail on mobile.
+2. **Copying**: The `react-pdf` component disabled its invisible HTML text overlay layer by default for performance.
+**Fix**: 
+1. Changed the mobile container layout from a fixed height to `h-auto`. This allows the PDF container to grow naturally, meaning the user can scroll through the pages using the native browser window scroll instead of a rigid inner scrollbox.
+2. Re-enabled `renderTextLayer={true}` on the `Page` component to overlay selectable text on top of the rendered canvas.
+
 ## 3. AI API Quota & Provider Issues
 
 ### Problem 1: Gemini "Model Not Found" / Deprecation
