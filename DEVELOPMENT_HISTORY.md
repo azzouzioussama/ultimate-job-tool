@@ -69,14 +69,21 @@ To simplify adding job descriptions without copying and pasting manually, the ap
   - Vercel serverless rewrites handle it in production.
 - **Refined Data Extraction**: Rather than dumping raw structured JSON metadata (e.g. company, salary, quality indicators), the parser specifically extracts the target `jobDescription` string for use in the dynamic prompts, falling back to full JSON only when the field is absent.
 
+### F. CV Converter & ATS Testing
+To assist non-technical users, the app provides tools to import existing documents and test their performance:
+- **Client-Side Document Parsing**: Uses `pdf.js` for PDF files and `mammoth` for Word (`.docx`) files to extract raw text completely locally in the browser, preserving user privacy.
+- **AI LaTeX Conversion**: The extracted raw text is sent to the user's configured LLM with a strict prompt to format the unstructured text into a clean LaTeX document.
+- **ATS Compatibility Tool**: A dedicated tab that cross-references the current Job Description with the CV (Original or Generated). The AI acts as a strict Applicant Tracking System, returning a parsed JSON response containing a compatibility score out of 100, a list of missing keywords, and actionable advice.
+
 ## 4. UI/UX Architecture
 
 The app uses a modern, responsive layout divided into five main tabs:
 1. **Prompts**: The central hub. Left column for selecting strategies, right column for editing and compiling.
 2. **Assistant IA**: Displays the streaming/final response from the chosen LLM. Includes options to copy or regenerate.
 3. **Offre**: A simple, large text area for pasting the target job description. Supports scrapers (Jina AI & Scrapfly) via URL input.
-4. **Mon CV**: The LaTeX source editor.
+4. **Mon CV**: The LaTeX source editor, including the PDF/Word CV import tool.
 5. **PDF Maker**: The interface for compiling the CV and viewing the generated PDF inline.
+6. **Test ATS**: A dashboard displaying the AI-generated compatibility score, missing keywords, and advice.
 
 ## 5. Development Timeline & Key Decisions
 
@@ -90,6 +97,7 @@ The app uses a modern, responsive layout divided into five main tabs:
 - **State & UX Iteration 4**: Implemented full `localStorage` auto-saving for job descriptions, CVs, and AI chat history. Separated the CV architecture into "Original" and "Generated" to preserve user templates. Added an "Extraire CV" regex tool to seamlessly pull LaTeX code from conversational AI responses.
 - **Mobile PDF & Responsive UI Iteration 5**: Fixed mobile layout squishing by refactoring flex containers to wrap properly. Resolved mobile `iframe` PDF blocking by integrating `react-pdf` (`pdf.js`) for canvas-based rendering specifically on mobile devices. Fixed mobile scroll trapping by unbounding the container height (`h-auto`) to utilize native window scrolling, and re-enabled `renderTextLayer` to allow text selection on the mobile canvas.
 - **Job Scraping Integration (May 2026)**: Integrated Jina AI and Scrapfly. Handled Scrapfly CORS rejections using proxy configurations (`/api/scrapfly`), fixed 422 API errors by using the correct `job_posting` model parameter, and targeted the parser specifically to the `jobDescription` JSON response field. Added a stateful Markdown cleanup heuristic (`cleanJinaMarkdown`) for Jina AI Reader to strip out website navigation menus, cookie consent popups, signup forms, social media widgets, and related jobs recommendations. Added an explicit block to prevent Jina AI from being used on Indeed due to 403 Cloudflare restrictions, and enabled Anti Scraping Protection (`asp: 'true'`) for Scrapfly to ensure reliable scraping of bot-protected sites.
+- **CV Import & ATS Iteration 6**: Added local file parsing (`pdfjs-dist` and `mammoth`) to extract text from PDFs and Word documents without backend processing, converting them to LaTeX via AI. Added a new ATS testing interface that evaluates the CV against the job description, strictly parsing JSON from the AI to display compatibility scores and missing keywords.
 
 ## 6. Known Constraints & Future Considerations
 - **API Key Security**: Keys are stored in `localStorage`. Since this is a client-side only app, this is acceptable, but users must be warned not to share their screen while keys are visible.

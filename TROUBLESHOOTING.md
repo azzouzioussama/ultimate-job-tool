@@ -116,8 +116,20 @@ This document records every major technical problem encountered during the devel
 **Issue**: When scraping Indeed URLs using Jina AI, the result was a Markdown file containing `Warning: Target URL returned error 403: Forbidden` and `# Just a moment... Additional Verification Required`.
 **Cause**: Indeed uses Cloudflare's aggressive anti-bot protection. Simple HTTP scrapers like Jina AI are instantly detected and served a CAPTCHA challenge instead of the job page.
 **Fix**: 
-1. Added a frontend guard in `App.jsx` that intercepts any `indeed.com` URL when Jina is selected, throwing a clear error asking the user to switch to Scrapfly.
 2. Enabled Anti Scraping Protection (ASP) in the Scrapfly fetch call (`asp: 'true'`) to guarantee that Scrapfly routes the Indeed request through residential proxies with headless browser fingerprinting to solve the Cloudflare CAPTCHA automatically.
+
+## 7. JSON Parsing from AI (ATS Tester)
+
+### Problem: AI Hallucinating Markdown in JSON Responses
+**Issue**: When the ATS Tester requested a strict JSON output from the AI, the JSON parser sometimes threw a `SyntaxError: Unexpected token` crashing the ATS feature.
+**Cause**: LLMs (like Gemini or OpenAI) often wrap JSON outputs in Markdown code blocks, even when strictly instructed not to. They return:
+\`\`\`json
+{
+  "score": 85
+}
+\`\`\`
+JavaScript's native `JSON.parse()` fails when encountering the backticks.
+**Fix**: Added a cleanup regex pass before parsing the AI response to strip out Markdown: `reply = reply.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/g, '').trim();`
 
 ---
 *Generated: May 2026*

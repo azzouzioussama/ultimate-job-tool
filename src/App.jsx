@@ -1,462 +1,136 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Briefcase, Sparkles, Copy, Download, FileText, CheckCircle2, User, Settings, Bot, FileOutput, KeyRound, ExternalLink, Loader2, RotateCcw, Trash, Activity, Upload } from 'lucide-react';
-import * as mammoth from 'mammoth';
-import { Document, Page, pdfjs } from 'react-pdf';
+/**
+ * ============================================================================
+ * FILE: App.jsx
+ * PURPOSE: The main application shell that wires all services and components.
+ * ============================================================================
+ *
+ * WHAT IS THIS?
+ * This is the "brain" of the app. It does NOT contain business logic or
+ * UI rendering — those live in the services/ and components/ folders.
+ *
+ * Instead, App.jsx does three things:
+ *   1. Declares all shared state (using React hooks).
+ *   2. Wires service functions to component callbacks.
+ *   3. Renders the layout (Header, Tabs, active tab content, Toast).
+ *
+ * ARCHITECTURE OVERVIEW:
+ *
+ *   ┌─────────────────────────────────────────────────────────┐
+ *   │                        App.jsx                          │
+ *   │  (State Management + Wiring)                            │
+ *   │                                                         │
+ *   │  ┌──────────┐  ┌──────────┐  ┌──────────┐              │
+ *   │  │ constants │  │ services │  │  hooks   │              │
+ *   │  │ (data)    │  │ (logic)  │  │ (state)  │              │
+ *   │  └──────────┘  └──────────┘  └──────────┘              │
+ *   │                      │                                  │
+ *   │              ┌───────┴────────┐                         │
+ *   │              │   components   │                         │
+ *   │              │   (UI only)    │                         │
+ *   │              └────────────────┘                         │
+ *   └─────────────────────────────────────────────────────────┘
+ *
+ * HOW TO ADD A NEW FEATURE:
+ * 1. If it needs new data/config → add to constants/
+ * 2. If it needs new business logic → add to services/
+ * 3. If it needs a new UI → add to components/tabs/
+ * 4. Wire them together here in App.jsx
+ * 5. See CONTRIBUTORS_GUIDE.md for step-by-step examples.
+ */
+
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 
+// ── Constants ─────────────────────────────────────────────────────────────────
+import SYNTHETIC_CV from './constants/syntheticCv';
+import PROMPT_TEMPLATES from './constants/promptTemplates';
+import AI_PROVIDERS from './constants/aiProviders';
+
+// ── Services ──────────────────────────────────────────────────────────────────
+import { callAIProvider } from './services/aiService';
+import { scrapeWithJina, scrapeWithScrapfly } from './services/scraperService';
+import { compilePdfFromLatex, downloadBlobAsPdf } from './services/pdfService';
+import { runAtsAnalysis } from './services/atsService';
+import { extractTextFromFile, buildLatexConversionPrompt } from './services/fileUploadService';
+import { extractLatexFromResponse } from './services/latexUtils';
+import * as storage from './services/storageService';
+
+// ── Hooks ─────────────────────────────────────────────────────────────────────
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { useToast } from './hooks/useToast';
+
+// ── Layout Components ─────────────────────────────────────────────────────────
+import Header from './components/layout/Header';
+import TabNavigation from './components/layout/TabNavigation';
+import Toast from './components/layout/Toast';
+
+// ── Tab Components ────────────────────────────────────────────────────────────
+import PromptsTab from './components/tabs/PromptsTab';
+import AiAssistantTab from './components/tabs/AiAssistantTab';
+import JobOfferTab from './components/tabs/JobOfferTab';
+import MyCvTab from './components/tabs/MyCvTab';
+import PdfMakerTab from './components/tabs/PdfMakerTab';
+import AtsTestTab from './components/tabs/AtsTestTab';
+
+// ── pdf.js Worker Setup ───────────────────────────────────────────────────────
+// pdf.js needs a Web Worker to process PDF files in a background thread.
+// This line tells it where to find the worker script.
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
   import.meta.url,
 ).toString();
 
-// --- 1. Synthetic Fake CV ---
-const SYNTHETIC_CV = `\\documentclass[a4paper,10pt]{article}
 
-% --- Paquets ---
-\\usepackage[utf8]{inputenc}
-\\usepackage[T1]{fontenc}
-\\usepackage[french]{babel}
-\\usepackage[margin=0.5in]{geometry}
-\\usepackage{hyperref}
-\\usepackage{titlesec}
-\\usepackage{enumitem}
-\\usepackage{xcolor}
-
-% --- Configuration ---
-\\hypersetup{colorlinks=true, urlcolor=blue}
-\\titleformat{\\section}{\\large\\bfseries\\scshape}{}{0em}{}[\\titlerule]
-\\titlespacing{\\section}{0pt}{8pt}{4pt}
-
-\\begin{document}
-
-% --- En-tête ---
-\\begin{center}
-    {\\Huge \\textbf{Jean DUPONT}} \\\\
-    \\vspace{4pt}
-    Île-de-France, France | \\textbf{Permis B} \\\\
-    +33 6 12 34 56 78 | \\href{mailto:jean.dupont@email.fake}{jean.dupont@email.fake} \\\\
-    \\href{https://linkedin.com/in/jeandupont-fake}{linkedin.com/in/jeandupont-fake} | \\href{https://github.com/jeandupont-fake}{github.com/jeandupont-fake} \\\\
-    \\vspace{6pt}
-    \\textbf{\\Large Technicien Support Informatique \\& Systèmes}
-\\end{center}
-
-\\section{Résumé Professionnel}
-Technicien support rigoureux doté d'un excellent sens du relationnel. Spécialisé dans le support de proximité et la gestion d'environnements hybrides (AD/M365). Mon expérience actuelle m'a forgé une solide résistance au stress, tandis que mon expertise technique acquise chez TechCorp me permet d'automatiser la résolution d'incidents via le scripting. Orienté satisfaction utilisateur et respect des SLA.
-
-\\section{Compétences Support \\& Techniques}
-\\begin{itemize}[leftmargin=0.15in, labelsep=0.5em]
-    \\item \\textbf{Support \\& Helpdesk :} Gestion d'incidents via Jira / GLPI, diagnostic matériel/logiciel, prise en main à distance (TeamViewer).
-    \\item \\textbf{Administration Système :} Active Directory (GPO, OU, DNS), Microsoft Entra ID (Azure AD), Microsoft 365, Microsoft Intune (MDM).
-    \\item \\textbf{Réseau \\& Connectivité :} Dépannage IPv4, DNS, DHCP, VPN, pare-feu.
-    \\item \\textbf{Langues :} Français (Maternel), Anglais (Courant - C1).
-\\end{itemize}
-
-\\section{Expériences Professionnelles}
-
-\\textbf{RetailStore France} | \\textit{Responsable de point de vente} \\hfill \\textit{01/2025 -- Présent}
-\\begin{itemize}[noitemsep]
-    \\item \\textbf{Service Client :} Gestion des situations complexes et résolution de conflits.
-    \\item \\textbf{Support Niveau 1 :} Diagnostic sur les systèmes d'encaissement et terminaux (TPE).
-\\end{itemize}
-
-\\textbf{TechCorp Internationale} | \\textit{Stagiaire Support Technique \\& Automatisation} \\hfill \\textit{04/2024 -- 10/2024}
-\\begin{itemize}[noitemsep]
-    \\item \\textbf{Support Client :} Support technique pour des clients européens.
-    \\item \\textbf{Fiabilisation :} Validation de services Cloud pour la continuité en production.
-\\end{itemize}
-
-\\section{Projets Techniques (Labs)}
-\\textbf{Lab Infrastructure Entreprise Hybride}
-\\begin{itemize}[noitemsep, topsep=2pt]
-    \\item Déploiement d'un DC (Windows Server 2022), masterisation de postes Windows 10 Pro.
-    \\item Résolution d'incidents (verrouillages, DNS) et gestion de comptes via Active Directory.
-\\end{itemize}
-
-\\section{Éducation \\& Certifications}
-\\begin{itemize}[leftmargin=0.15in, labelsep=0.5em]
-    \\item \\textbf{Certifications :} AWS Certified Cloud Practitioner.
-    \\item \\textbf{Master 2 Informatique :} Université de Paris \\hfill \\textit{2024}
-\\end{itemize}
-
-\\end{document}`;
-
-// --- 2. Top 10 Prompt Templates ---
-const PROMPT_TEMPLATES = [
-  {
-    id: 1,
-    title: "1. Refonte du CV (LaTeX)",
-    description: "Adapte votre CV LaTeX aux mots-clés exacts de l'offre d'emploi.",
-    content: `Agis comme un recruteur expert IT. Analyse la description de poste et mon CV LaTeX ci-dessous.
-Tâches :
-1. Identifie les 3 compétences techniques les plus recherchées.
-2. Réécris mon CV ENTIER en LaTeX. Adapte les bullet points et le résumé pour refléter exactement les mots-clés de l'offre, tout en gardant le code LaTeX intact.
-3. Dis-moi quelle expérience je dois mettre en avant en entretien.
-
-ATTENTION - REGLES STRICTES POUR LE CODE LATEX :
-- Tu DOIS ABSOLUMENT échapper le caractère '&' en l'écrivant '\\&' dans le texte. Ne laisse jamais un '&' seul.
-- Assure-toi de bien fermer toutes les accolades '{ }' et de ne jamais les confondre avec des crochets '[ ]'.
-- Ne modifie pas la structure du préambule ni les balises d'environnement.
-
---- MON CV LATEX ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 2,
-    title: "2. Lettre de Motivation (Français)",
-    description: "Génère une lettre de motivation courte et percutante.",
-    content: `Agis comme un expert en recrutement. Rédige une lettre de motivation courte (max 150 mots, 3 paragraphes) en français pour ce poste.
-Contraintes :
-- Paragraphe 1 : Intérêt pour le rôle.
-- Paragraphe 2 : Relie 2 de mes forces (issues du CV) aux besoins du poste.
-- Paragraphe 3 : Disponibilité et appel à l'action.
-Garde un ton professionnel mais dynamique.
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 3,
-    title: "3. Lettre de Motivation (Anglais)",
-    description: "Génère une lettre de motivation en anglais professionnel.",
-    content: `Act as an expert technical recruiter. Write a concise cover letter (max 150 words) in English for this position.
-Connect my background from the provided CV to the exact needs of the job description. Keep the tone highly professional, direct, and confident.
-
---- MY CV ---
-{cv_content}
-
---- JOB DESCRIPTION ---
-{job_description}`
-  },
-  {
-    id: 4,
-    title: "4. Préparation Entretien (Q&A)",
-    description: "Génère les 10 questions les plus probables pour ce poste avec les réponses STAR.",
-    content: `En te basant sur la description de poste et mon CV, génère les 10 questions d'entretien les plus probables (techniques et comportementales) que l'on pourrait me poser.
-Pour chaque question, rédige une suggestion de réponse en utilisant la méthode STAR (Situation, Tâche, Action, Résultat), en piochant dans mes expériences.
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 5,
-    title: "5. Critique Sévère du CV",
-    description: "Analyse critique pour trouver les failles de votre candidature.",
-    content: `Agis comme un recruteur IT très exigeant. Analyse mon CV par rapport à l'offre d'emploi.
-1. Donne-moi une note sur 100 de matching.
-2. Liste impitoyablement les 3 plus grandes faiblesses ou manques de mon CV pour ce poste précis.
-3. Donne-moi une stratégie pour contourner ces faiblesses lors de l'entretien.
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 6,
-    title: "6. Optimisation LinkedIn",
-    description: "Crée une section 'Infos' LinkedIn attractive pour attirer ce type de recruteur.",
-    content: `Je veux optimiser mon profil LinkedIn pour attirer les recruteurs qui publient ce type d'offre d'emploi.
-Rédige une section "Infos" (À propos) LinkedIn percutante à la première personne, en utilisant mon CV, optimisée avec les mots-clés de l'offre d'emploi. Inclut un "Call to Action" à la fin.
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 7,
-    title: "7. Pitch de Présentation (30 sec)",
-    description: "Prépare votre réponse à la question 'Parlez-moi de vous'.",
-    content: `Prépare-moi un pitch "Elevator Pitch" de 30 à 45 secondes pour répondre à la fameuse question d'entretien : "Parlez-moi de vous". 
-Il doit être naturel, en français, et lier immédiatement mon parcours (mon CV) au besoin principal de l'entreprise (l'offre d'emploi).
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 8,
-    title: "8. Analyse des Compétences Manquantes",
-    description: "Identifie les technologies que vous devez réviser avant l'entretien.",
-    content: `Analyse les exigences du poste par rapport à mon CV.
-Fais une liste des technologies, outils ou compétences mentionnés dans l'offre que je NE possède PAS clairement dans mon CV.
-Pour chaque manque, propose-moi un plan d'action d'apprentissage express de 2 heures (concepts clés à googler, tutoriels à chercher) pour que je sois capable d'en parler intelligemment en entretien.
-
---- MON CV ---
-{cv_content}
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 9,
-    title: "9. Email de Remerciement",
-    description: "Rédige un email post-entretien percutant.",
-    content: `Rédige un e-mail de remerciement post-entretien court et professionnel.
-L'email doit remercier le recruteur pour son temps, réaffirmer mon enthousiasme pour ce poste spécifique, et rappeler brièvement en une ligne pourquoi ma compétence principale fait de moi un excellent choix.
-
---- DESCRIPTION DU POSTE ---
-{job_description}`
-  },
-  {
-    id: 10,
-    title: "10. Prompt Personnalisé (Libre)",
-    description: "Écrivez votre propre requête à l'IA.",
-    content: `(Écrivez vos instructions ici. Utilisez {cv_content} et {job_description} pour injecter vos données automatiquement).`
-  }
-];
-
-// Fonction pour nettoyer le markdown extrait par Jina AI des menus, formulaires et cookies de bas de page.
-function cleanJinaMarkdown(md) {
-  if (!md) return '';
-  const lines = md.split(/\r\n?|\n/);
-  const cleaned = [];
-  
-  const linkRegex = /\[.*?\]\(.*?\)/g;
-  
-  const cutoffHeadings = [
-    'ces offres',
-    'recherches similaires',
-    'recherche similaire',
-    'emplois similaires',
-    'offres similaires',
-    'offres associées',
-    'créez votre compte',
-    'creez votre compte',
-    'activez votre alerte',
-    'créer une alerte',
-    'creer une alerte',
-    'envoyez votre candidature',
-    'partager l\'offre',
-    'partager cette offre',
-    'vous aimerez aussi',
-    'autres offres',
-    'coach emploi',
-    'candidature',
-    'postuler en ligne',
-    'sign up',
-    'create an account',
-    'similar jobs',
-    'recommended jobs',
-    'more jobs',
-    'subscribe to',
-    'newsletter'
-  ];
-  
-  for (let line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed) {
-      cleaned.push('');
-      continue;
-    }
-    
-    const lower = trimmed.toLowerCase();
-    
-    // Si on atteint un titre de fin de page ou de publicité/connexion, on s'arrête
-    if (trimmed.startsWith('#') || lower.includes('coach emploi')) {
-      const headingText = trimmed.replace(/^#+\s*/, '').toLowerCase();
-      const isCutoff = cutoffHeadings.some(keyword => headingText.includes(keyword) || lower.includes(keyword));
-      if (isCutoff) {
-        break;
-      }
-    }
-    
-    // 1. Filtrer les cases à cocher de menu
-    if (trimmed === '- [x]' || trimmed === '- [ ]' || trimmed === '* [x]' || trimmed === '* [ ]') {
-      continue;
-    }
-
-    // 2. Filtrer les réseaux sociaux
-    if (
-      lower.includes('facebook.com') ||
-      lower.includes('twitter.com') ||
-      lower.includes('linkedin.com/company') ||
-      lower.includes('youtube.com') ||
-      lower.includes('instagram.com') ||
-      lower.includes('pinterest.com') ||
-      lower.includes('glassdoor')
-    ) {
-      continue;
-    }
-    
-    // 3. Boutons de téléchargement d'app mobiles
-    if (lower.includes('play.google.com') || lower.includes('apps.apple.com')) {
-      continue;
-    }
-    
-    // 4. Mots-clés des portails de connexion et formulaires
-    if (
-      lower.includes('se connecter') ||
-      lower.includes('s\'inscrire') ||
-      lower.includes('mon espace') ||
-      lower.includes('mon profil') ||
-      lower.includes('créer un compte') ||
-      lower.includes('complétez votre profil') ||
-      lower.includes('completez votre profil') ||
-      lower.includes('accés recruteur') ||
-      lower.includes('acces recruteur') ||
-      lower.includes('déconnexion') ||
-      lower.includes('deconnexion') ||
-      lower.includes('mes candidatures') ||
-      lower.includes('mes alertes') ||
-      lower.includes('paramètres') ||
-      lower.includes('parametres') ||
-      lower.includes('créer mon alerte')
-    ) {
-      continue;
-    }
-    
-    // 5. Filtrer les lignes qui ne contiennent que des liens (menus de navigation)
-    const textWithoutLinks = trimmed.replace(linkRegex, '');
-    const hasAlphaNumeric = /[a-zA-Z0-9\u00C0-\u00FF]/.test(textWithoutLinks);
-    if (!hasAlphaNumeric && trimmed.includes('[')) {
-      continue;
-    }
-    
-    // 6. Filtrer les images et formats d'image restants
-    if (trimmed.startsWith('![') || (trimmed.startsWith('[') && (trimmed.endsWith('.jpg') || trimmed.endsWith('.png') || trimmed.endsWith('.gif')))) {
-      continue;
-    }
-    
-    // 7. Textes de RGPD, cookies et politique légale
-    if (
-      lower.includes('cookie') ||
-      lower.includes('traceur') ||
-      lower.includes('cgu') ||
-      lower.includes('politique de confidentialité') ||
-      lower.includes('privacy policy') ||
-      lower.includes('mentions légales') ||
-      lower.includes('tous droits réservés') ||
-      lower.includes('copyright') ||
-      lower.includes('données personnelles') ||
-      lower.includes('gérer les traceurs') ||
-      lower.includes('continuer sans accepter')
-    ) {
-      continue;
-    }
-    
-    // 8. Phrases génériques de navigation
-    if (
-      lower === 'lire dans l\'app' ||
-      lower === 'téléchargez l\'app et postulez dans les premiers !' ||
-      lower === 'c\'est noté' ||
-      lower === 'voir plus' ||
-      lower === 'lire la suite' ||
-      lower === 'voir plus d\'offres' ||
-      lower === 'lien copié' ||
-      lower === 'lien copie' ||
-      lower.includes("le job l'entreprise") ||
-      lower.includes("l'entreprise l'entreprise")
-    ) {
-      continue;
-    }
-    
-    cleaned.push(line);
-  }
-  
-  return cleaned.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-}
+// ═══════════════════════════════════════════════════════════════════════════════
+// MAIN APP COMPONENT
+// ═══════════════════════════════════════════════════════════════════════════════
 
 export default function App() {
+  // ── Toast Notifications ─────────────────────────────────────────────────────
+  const { toastMessage, showToast } = useToast();
+
+  // ── Navigation State ────────────────────────────────────────────────────────
   const [activeTab, setActiveTab] = useState('templates');
-  const [jobDescription, setJobDescription] = useState(localStorage.getItem('job_description') || '');
-  const [cvOriginal, setCvOriginal] = useState(localStorage.getItem('cv_original') || localStorage.getItem('cv_content') || SYNTHETIC_CV);
-  const [cvGenerated, setCvGenerated] = useState(localStorage.getItem('cv_generated') || '');
-  const [pdfSource, setPdfSource] = useState('generated');
-  const [toastMessage, setToastMessage] = useState('');
-  
-  // Templates State
+
+  // ── Core Data (auto-saved to localStorage) ──────────────────────────────────
+  const [jobDescription, setJobDescription] = useLocalStorage('job_description', '');
+  const [cvOriginal, setCvOriginal] = useLocalStorage(
+    'cv_original',
+    storage.getCvOriginal() || SYNTHETIC_CV
+  );
+  const [cvGenerated, setCvGenerated] = useLocalStorage('cv_generated', '');
+  const [aiResponse, setAiResponse] = useLocalStorage('ai_response', '');
+  const [scraperType, setScraperType] = useLocalStorage('scraper_type', 'jina');
+
+  // ── AI Provider Configuration ───────────────────────────────────────────────
+  const [aiProvider, setAiProvider] = useState(storage.getAiProvider());
+  const [aiModel, setAiModel] = useState(
+    storage.getAiModel(storage.getAiProvider()) ||
+    AI_PROVIDERS[storage.getAiProvider()]?.models[0]?.id
+  );
+  const [apiKey, setApiKey] = useState(storage.getApiKey(storage.getAiProvider()));
+
+  // ── Template State ──────────────────────────────────────────────────────────
   const [selectedTemplateId, setSelectedTemplateId] = useState(1);
   const [customPrompt, setCustomPrompt] = useState(PROMPT_TEMPLATES[0].content);
-  const [compiledPrompt, setCompiledPrompt] = useState('');
 
-  // --- AI Provider & Model Config ---
-  const AI_PROVIDERS = {
-    openrouter: {
-      label: 'OpenRouter',
-      models: [
-        { id: 'deepseek/deepseek-v4-flash:free', label: 'DeepSeek V4 Flash', note: 'Gratuit' },
-        { id: 'openrouter/free', label: 'Auto (meilleur gratuit)', note: 'Gratuit' },
-      ],
-      keyLink: 'https://openrouter.ai/keys',
-      keyNote: 'Gratuit',
-    },
-    gemini: {
-      label: 'Gemini',
-      models: [
-        { id: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash', note: 'Gratuit' },
-        { id: 'gemini-2.5-flash-lite', label: 'Gemini 2.5 Flash-Lite', note: 'Gratuit' },
-      ],
-      keyLink: 'https://aistudio.google.com/app/apikey',
-      keyNote: 'Gratuit',
-    },
-    openai: {
-      label: 'OpenAI',
-      models: [
-        { id: 'gpt-5.4-nano', label: 'GPT-5.4 Nano', note: '$0.20/M in' },
-        { id: 'gpt-5.4-mini', label: 'GPT-5.4 Mini', note: '$0.75/M in' },
-        { id: 'gpt-5.4', label: 'GPT-5.4', note: '$2.50/M in' },
-        { id: 'gpt-5.5', label: 'GPT-5.5 (Flagship)', note: '$5.00/M in' },
-        { id: 'gpt-5.5-pro', label: 'GPT-5.5 Pro', note: '$30.00/M in' },
-        { id: 'o4-mini', label: 'o4-mini (Reasoning)', note: '$0.55/M in' },
-        { id: 'o3', label: 'o3 (Reasoning)', note: '$2.00/M in' },
-        { id: 'o3-pro', label: 'o3-pro (High Reasoning)', note: '$20.00/M in' },
-      ],
-      keyLink: 'https://platform.openai.com/api-keys',
-      keyNote: 'Payant',
-    },
-    deepseek: {
-      label: 'DeepSeek',
-      models: [
-        { id: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash', note: '$0.14/M in' },
-        { id: 'deepseek-v4-pro', label: 'DeepSeek V4 Pro', note: '$1.74/M in' },
-        { id: 'deepseek-chat', label: 'DeepSeek Chat (Legacy)', note: 'Déprécié' },
-        { id: 'deepseek-reasoner', label: 'DeepSeek Reasoner (Legacy)', note: 'Déprécié' },
-      ],
-      keyLink: 'https://platform.deepseek.com/api_keys',
-      keyNote: 'Payant',
-    },
-  };
-
-  // AI State
-  const [aiProvider, setAiProvider] = useState(localStorage.getItem('ai_provider') || 'gemini');
-  const [aiModel, setAiModel] = useState(localStorage.getItem('ai_model') || 'gemini-2.5-flash');
-  const [apiKey, setApiKey] = useState(localStorage.getItem(`api_key_${localStorage.getItem('ai_provider') || 'gemini'}`) || '');
-  const [aiResponse, setAiResponse] = useState(localStorage.getItem('ai_response') || '');
+  // ── Loading States ──────────────────────────────────────────────────────────
   const [isAiLoading, setIsAiLoading] = useState(false);
   const [isScraping, setIsScraping] = useState(false);
-  const [jobUrl, setJobUrl] = useState('');
-  const [scraperType, setScraperType] = useState(localStorage.getItem('scraper_type') || 'jina');
-
-  // New ATS & Upload State
-  const [atsResult, setAtsResult] = useState(null);
   const [isAtsLoading, setIsAtsLoading] = useState(false);
   const [isUploadingCv, setIsUploadingCv] = useState(false);
 
-  // Autosave to localStorage
-  useEffect(() => { localStorage.setItem('job_description', jobDescription); }, [jobDescription]);
-  useEffect(() => { localStorage.setItem('cv_original', cvOriginal); }, [cvOriginal]);
-  useEffect(() => { localStorage.setItem('cv_generated', cvGenerated); }, [cvGenerated]);
-  useEffect(() => { localStorage.setItem('ai_response', aiResponse); }, [aiResponse]);
-  useEffect(() => { localStorage.setItem('scraper_type', scraperType); }, [scraperType]);
+  // ── Scraper State ───────────────────────────────────────────────────────────
+  const [jobUrl, setJobUrl] = useState('');
 
-  // PDF State
+  // ── ATS State ───────────────────────────────────────────────────────────────
+  const [atsResult, setAtsResult] = useState(null);
+
+  // ── PDF State ───────────────────────────────────────────────────────────────
+  const [pdfSource, setPdfSource] = useState('generated');
   const [pdfBlobUrl, setPdfBlobUrl] = useState(null);
-  const [pdfBlobData, setPdfBlobData] = useState(null);
   const [isPdfLoading, setIsPdfLoading] = useState(false);
   const [pdfError, setPdfError] = useState('');
   const [numPages, setNumPages] = useState(null);
@@ -464,7 +138,39 @@ export default function App() {
   const [pdfContainerWidth, setPdfContainerWidth] = useState(0);
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // Measure the PDF container width for responsive page rendering
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // EFFECTS (Reactive logic that runs when state changes)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // When the user selects a different prompt template, load its content
+  useEffect(() => {
+    const template = PROMPT_TEMPLATES.find(t => t.id === selectedTemplateId);
+    if (template) setCustomPrompt(template.content);
+  }, [selectedTemplateId]);
+
+  // When the user switches AI provider, load the correct API key and model
+  useEffect(() => {
+    setApiKey(storage.getApiKey(aiProvider));
+    const savedModel = storage.getAiModel(aiProvider);
+    const defaultModel = AI_PROVIDERS[aiProvider]?.models[0]?.id;
+    setAiModel(savedModel || defaultModel);
+  }, [aiProvider]);
+
+  // Compile the final prompt by replacing placeholders with actual data
+  const compiledPrompt = useMemo(() => {
+    let final = customPrompt.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
+    let jobContent = jobDescription || '[OFFRE MANQUANTE]';
+
+    // If the user pasted a raw URL instead of text, add an instruction for the AI
+    if (/^https?:\/\/\S+$/.test(jobContent.trim())) {
+      jobContent += "\n\n(IMPORTANT : La description de poste ci-dessus est une URL. Utilise tes outils de navigation web pour visiter ce lien et lire le contenu de l'offre d'emploi avant de générer ta réponse. Si tu ne peux pas naviguer, demande à l'utilisateur de fournir le texte.)";
+    }
+
+    return final.replace(/{job_description}/g, jobContent);
+  }, [customPrompt, cvOriginal, jobDescription]);
+
+  // Measure the PDF container width for responsive page rendering (mobile)
   useEffect(() => {
     if (!pdfContainerRef.current) return;
     const observer = new ResizeObserver(entries => {
@@ -480,42 +186,12 @@ export default function App() {
     setNumPages(n);
   }, []);
 
-  // Handle Template Selection
-  useEffect(() => {
-    const template = PROMPT_TEMPLATES.find(t => t.id === selectedTemplateId);
-    if (template) {
-      setCustomPrompt(template.content);
-    }
-  }, [selectedTemplateId]);
 
-  // Load correct API key + default model when provider changes
-  useEffect(() => {
-    const key = localStorage.getItem(`api_key_${aiProvider}`) || '';
-    setApiKey(key);
-    const savedModel = localStorage.getItem(`ai_model_${aiProvider}`);
-    const defaultModel = AI_PROVIDERS[aiProvider]?.models[0]?.id;
-    setAiModel(savedModel || defaultModel);
-  }, [aiProvider]);
+  // ═══════════════════════════════════════════════════════════════════════════
+  // HANDLER FUNCTIONS (Wire services to UI actions)
+  // ═══════════════════════════════════════════════════════════════════════════
 
-  // Update compiled prompt whenever inputs change
-  useEffect(() => {
-    let final = customPrompt.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
-    
-    let jobContent = jobDescription || '[OFFRE MANQUANTE]';
-    // Method 3: If the user pasted a raw URL instead of text, add an explicit instruction to the AI
-    if (/^https?:\/\/\S+$/.test(jobContent.trim())) {
-      jobContent += "\n\n(IMPORTANT : La description de poste ci-dessus est une URL. Utilise tes outils de navigation web pour visiter ce lien et lire le contenu de l'offre d'emploi avant de générer ta réponse. Si tu ne peux pas naviguer, demande à l'utilisateur de fournir le texte.)";
-    }
-    
-    final = final.replace(/{job_description}/g, jobContent);
-    setCompiledPrompt(final);
-  }, [customPrompt, cvOriginal, jobDescription]);
-
-  const showToast = (message) => {
-    setToastMessage(message);
-    setTimeout(() => setToastMessage(''), 3000);
-  };
-
+  // ── Clipboard ───────────────────────────────────────────────────────────────
   const copyToClipboard = (text) => {
     const textArea = document.createElement("textarea");
     textArea.value = text;
@@ -524,29 +200,13 @@ export default function App() {
     try {
       document.execCommand('copy');
       showToast('Copié dans le presse-papiers !');
-    } catch (err) {
+    } catch {
       showToast('Échec de la copie.');
     }
     document.body.removeChild(textArea);
   };
 
-  const handleSaveApiKey = (e) => {
-    const val = e.target.value;
-    setApiKey(val);
-    localStorage.setItem(`api_key_${aiProvider}`, val);
-  };
-
-  const handleProviderChange = (provider) => {
-    setAiProvider(provider);
-    localStorage.setItem('ai_provider', provider);
-  };
-
-  const handleModelChange = (model) => {
-    setAiModel(model);
-    localStorage.setItem('ai_model', model);
-    localStorage.setItem(`ai_model_${aiProvider}`, model);
-  };
-
+  // ── Download Prompt as .txt ─────────────────────────────────────────────────
   const downloadAsTxt = () => {
     const blob = new Blob([compiledPrompt], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -558,6 +218,7 @@ export default function App() {
     showToast('Fichier téléchargé !');
   };
 
+  // ── Reset Everything ────────────────────────────────────────────────────────
   const resetAll = () => {
     setCvOriginal(SYNTHETIC_CV);
     setCvGenerated('');
@@ -568,56 +229,37 @@ export default function App() {
     showToast('Tout réinitialisé aux valeurs par défaut.');
   };
 
-  const providerLabel = AI_PROVIDERS[aiProvider]?.label || aiProvider;
-
-  const callAIProvider = async (promptText, signal) => {
-    if (aiProvider === 'gemini') {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${aiModel}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        signal,
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: promptText }] }],
-          generationConfig: { temperature: 0.7 }
-        })
-      });
-      const data = await response.json();
-      if (data.error) throw new Error(data.error.message || 'Erreur API Gemini');
-      return data.candidates[0].content.parts[0].text;
-    } else {
-      const endpoints = {
-        openai: 'https://api.openai.com/v1/chat/completions',
-        deepseek: 'https://api.deepseek.com/chat/completions',
-        openrouter: 'https://openrouter.ai/api/v1/chat/completions',
-      };
-      const endpoint = endpoints[aiProvider];
-
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      };
-      if (aiProvider === 'openrouter') {
-        headers['HTTP-Referer'] = window.location.origin;
-        headers['X-Title'] = 'Ultimate Job Tool';
-      }
-
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers,
-        signal,
-        body: JSON.stringify({
-          model: aiModel,
-          messages: [{ role: 'user', content: promptText }],
-          temperature: 0.7
-        })
-      });
-      const data = await response.json();
-      if (data.error) throw new Error(data.error.message || `Erreur API ${providerLabel}`);
-      return data.choices[0].message.content;
-    }
+  // ── AI Provider/Model/Key Management ────────────────────────────────────────
+  const handleProviderChange = (provider) => {
+    setAiProvider(provider);
+    storage.saveAiProvider(provider);
   };
 
-  // --- AI Chat Function (Multi-Provider) ---
+  const handleModelChange = (model) => {
+    setAiModel(model);
+    storage.saveAiModel(aiProvider, model);
+  };
+
+  const handleSaveApiKey = (e) => {
+    const val = e.target.value;
+    setApiKey(val);
+    storage.saveApiKey(aiProvider, val);
+  };
+
+  // ── AI Helper: call the current provider ────────────────────────────────────
+  const providerLabel = AI_PROVIDERS[aiProvider]?.label || aiProvider;
+
+  const callCurrentAI = async (promptText, signal) => {
+    return callAIProvider({
+      provider: aiProvider,
+      model: aiModel,
+      apiKey,
+      promptText,
+      signal,
+    });
+  };
+
+  // ── Run AI Generation ───────────────────────────────────────────────────────
   const handleRunAI = async (retryCount = 0) => {
     if (!apiKey) {
       showToast(`Veuillez entrer une clé API ${providerLabel}.`);
@@ -630,15 +272,14 @@ export default function App() {
     setAiResponse('');
     setActiveTab('ai');
 
-    // AbortController with 120s timeout to handle mobile screen-off network drops
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 120000);
 
     try {
-      const reply = await callAIProvider(compiledPrompt, controller.signal);
+      const reply = await callCurrentAI(compiledPrompt, controller.signal);
       setAiResponse(reply);
     } catch (error) {
-      // Auto-retry once on network/abort errors (mobile screen-off scenario)
+      // Auto-retry once on network/abort errors (e.g., mobile screen-off)
       if ((error.name === 'AbortError' || error.name === 'TypeError') && retryCount < 1) {
         showToast('Connexion interrompue, nouvelle tentative...');
         clearTimeout(timeoutId);
@@ -654,13 +295,10 @@ export default function App() {
     }
   };
 
-  const extractLatexAndSave = () => {
-    const match = aiResponse.match(/\\documentclass[\s\S]*?\\end\{document\}/);
-    if (match) {
-      let extracted = match[0];
-      // Auto-fix common AI hallucinations: unescaped ampersands (assuming no tables in CV)
-      extracted = extracted.replace(/(?<!\\)&/g, '\\&');
-      
+  // ── Extract LaTeX from AI Response ──────────────────────────────────────────
+  const handleExtractLatex = () => {
+    const extracted = extractLatexFromResponse(aiResponse);
+    if (extracted) {
       setCvGenerated(extracted);
       showToast('CV Généré extrait et sauvegardé (Corrections appliquées) !');
       setActiveTab('cv');
@@ -669,189 +307,31 @@ export default function App() {
     }
   };
 
-  const handleRunATS = async () => {
-    if (!apiKey) { showToast(`Veuillez configurer une clé API ${providerLabel}.`); return; }
-    if (!jobDescription.trim() || (!cvGenerated.trim() && !cvOriginal.trim())) {
-      showToast('Il faut une offre d\'emploi et un CV pour faire le test ATS.');
-      return;
-    }
-    
-    setIsAtsLoading(true);
-    setAtsResult(null);
-
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 120000);
-
-    try {
-      const cvToTest = cvGenerated || cvOriginal;
-      const atsPrompt = `Agis comme un système ATS strict (Applicant Tracking System).
-Compare le CV suivant avec l'offre d'emploi suivante.
-Donne un score global sur 100 de compatibilité.
-Identifie les mots-clés importants de l'offre qui MANQUENT dans le CV.
-Donne 3 conseils brefs pour améliorer le CV.
-
-Tu DOIS répondre UNIQUEMENT avec un objet JSON valide, sans markdown (pas de backticks), sans commentaires.
-Format strict attendu:
-{
-  "score": 85,
-  "missingKeywords": ["Mot clé 1", "Mot clé 2"],
-  "advice": ["Conseil 1", "Conseil 2", "Conseil 3"]
-}
-
---- OFFRE D'EMPLOI ---
-${jobDescription}
-
---- CV ---
-${cvToTest}`;
-
-      let reply = await callAIProvider(atsPrompt, controller.signal);
-      
-      // Clean up markdown code blocks if the AI hallucinates them
-      reply = reply.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/g, '').trim();
-      
-      const parsed = JSON.parse(reply);
-      setAtsResult(parsed);
-      showToast('Analyse ATS terminée !');
-    } catch (error) {
-      console.error(error);
-      showToast('Erreur lors de l\'analyse ATS. Le format JSON retourné est invalide ou la requête a échoué.');
-    } finally {
-      clearTimeout(timeoutId);
-      setIsAtsLoading(false);
-    }
-  };
-
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    if (!apiKey) {
-      showToast(`Veuillez configurer votre clé API IA dans l'en-tête d'abord.`);
-      return;
-    }
-
-    setIsUploadingCv(true);
-    showToast('Lecture du fichier en cours...');
-
-    try {
-      let extractedText = '';
-      
-      if (file.type === 'application/pdf') {
-        const arrayBuffer = await file.arrayBuffer();
-        const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
-        let fullText = '';
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const textContent = await page.getTextContent();
-          const pageText = textContent.items.map(item => item.str).join(' ');
-          fullText += pageText + '\\n\\n';
-        }
-        extractedText = fullText;
-      } else if (file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || file.name.endsWith('.docx')) {
-        const arrayBuffer = await file.arrayBuffer();
-        const result = await mammoth.extractRawText({ arrayBuffer });
-        extractedText = result.value;
-      } else {
-        throw new Error('Format non supporté. Veuillez utiliser un PDF ou un DOCX.');
-      }
-
-      if (!extractedText.trim()) throw new Error('Aucun texte trouvé dans le fichier.');
-
-      showToast("Texte extrait ! Génération LaTeX en cours par l'IA...");
-      
-      const prompt = `Voici le texte brut extrait de mon CV non-formaté. 
-Convertis ce texte en un code LaTeX propre et structuré en utilisant la classe article.
-Organise-le en sections claires (Résumé, Expériences, Compétences, Éducation).
-Échappe correctement les caractères spéciaux LaTeX comme le & en l'écrivant \\& et le % en \\%.
-Ne réponds QUE par le code LaTeX complet (commençant par \\documentclass et finissant par \\end{document}). Ne dis absolument rien d'autre.
-
---- TEXTE DU CV ---
-${extractedText}`;
-
-      const controller = new AbortController();
-      let reply = await callAIProvider(prompt, controller.signal);
-      
-      const match = reply.match(/\\documentclass[\s\S]*?\\end\{document\}/);
-      if (match) {
-        let cleanLatex = match[0].replace(/(?<!\\)&/g, '\\&');
-        setCvOriginal(cleanLatex);
-        showToast('CV importé et converti avec succès en LaTeX !');
-      } else {
-        throw new Error("L'IA n'a pas renvoyé de code LaTeX valide.");
-      }
-
-    } catch (err) {
-      console.error(err);
-      showToast(`Erreur d'import : ${err.message}`);
-    } finally {
-      setIsUploadingCv(false);
-      event.target.value = '';
-    }
-  };
-
+  // ── Job Scraping ────────────────────────────────────────────────────────────
   const handleScrape = async () => {
     if (!jobUrl) return;
     setIsScraping(true);
+
     try {
+      let result;
+
       if (scraperType === 'jina') {
-        if (jobUrl.toLowerCase().includes('indeed.com')) {
-          throw new Error("Jina AI est bloqué par les protections anti-bot (Cloudflare) d'Indeed. Veuillez sélectionner 'Scrapfly (Clé API)' pour ce site.");
-        }
-        const response = await fetch(`https://r.jina.ai/${jobUrl}`);
-        if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
-        const text = await response.text();
-        const cleanedText = cleanJinaMarkdown(text);
-        setJobDescription(cleanedText);
-        showToast('Offre extraite avec succès via Jina AI !');
-        setJobUrl('');
+        result = await scrapeWithJina(jobUrl);
       } else if (scraperType === 'scrapfly') {
-        let key = localStorage.getItem('scrapfly_key');
+        let key = storage.getScrapflyKey();
         if (!key) {
-          key = prompt("Entrez votre clé API Scrapfly (commence par 'scp-live-...') :");
+          // TODO(security): Replace browser prompt() with a React modal component
+          key = window.prompt("Entrez votre clé API Scrapfly (commence par 'scp-live-...') :");
           if (!key) throw new Error("Clé Scrapfly requise pour l'extraction.");
-          localStorage.setItem('scrapfly_key', key);
+          storage.saveScrapflyKey(key);
         }
-        
-        const params = new URLSearchParams({
-          key: key,
-          url: jobUrl,
-          extraction_model: 'job_posting',
-          render_js: 'true',
-          asp: 'true'
-        });
-        
-        const response = await fetch(`/api/scrapfly?${params.toString()}`);
-        if (!response.ok) {
-          let errMsg = `Erreur API Scrapfly (${response.status})`;
-          try {
-            const errData = await response.json();
-            if (errData.message) {
-              errMsg += `: ${errData.message}`;
-            } else if (errData.error && errData.error.message) {
-              errMsg += `: ${errData.error.message}`;
-            } else if (errData.error) {
-              errMsg += `: ${errData.error}`;
-            }
-          } catch (e) {
-            try {
-              const errText = await response.text();
-              if (errText) errMsg += `: ${errText.slice(0, 150)}`;
-            } catch (e2) {}
-          }
-          throw new Error(errMsg);
-        }
-        
-        const data = await response.json();
-        if (data.result && data.result.extracted_data) {
-          const extData = data.result.extracted_data.data || {};
-          const jobDescText = extData.jobDescription || JSON.stringify(data.result.extracted_data, null, 2);
-          setJobDescription(jobDescText);
-          showToast('Offre extraite et structurée via Scrapfly !');
-          setJobUrl('');
-        } else {
-           throw new Error("Aucune donnée extraite par le modèle Scrapfly.");
-        }
+        result = await scrapeWithScrapfly(jobUrl, key);
       }
+
+      setJobDescription(result);
+      showToast(`Offre extraite avec succès via ${scraperType === 'jina' ? 'Jina AI' : 'Scrapfly'} !`);
+      setJobUrl('');
+
     } catch (error) {
       showToast('Erreur: ' + error.message);
     } finally {
@@ -859,43 +339,21 @@ ${extractedText}`;
     }
   };
 
-  // --- PDF Compilation via fetch ---
-  const compilePDF = async () => {
+  // ── PDF Compilation ─────────────────────────────────────────────────────────
+  const handleCompilePDF = async () => {
     setIsPdfLoading(true);
     setPdfError('');
-    // Revoke old blob URL to free memory
     if (pdfBlobUrl) URL.revokeObjectURL(pdfBlobUrl);
     setPdfBlobUrl(null);
 
     try {
-      const formData = new FormData();
-      const contentToCompile = pdfSource === 'generated' && cvGenerated.trim() ? cvGenerated : cvOriginal;
-      formData.append('filecontents[]', contentToCompile);
-      formData.append('filename[]', 'document.tex');
-      formData.append('engine', 'pdflatex');
-      formData.append('return', 'pdf');
+      const contentToCompile = pdfSource === 'generated' && cvGenerated.trim()
+        ? cvGenerated
+        : cvOriginal;
 
-      const response = await fetch('/api/latex', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (!response.ok) {
-        throw new Error(`Erreur serveur (${response.status})`);
-      }
-
-      const contentType = response.headers.get('content-type') || '';
-      const blob = await response.blob();
-
-      if (!contentType.includes('pdf')) {
-        // Server returned an error page (HTML/text) instead of PDF
-        const text = await blob.text();
-        throw new Error('La compilation a échoué. Vérifiez votre code LaTeX.\n\n' + text.slice(0, 500));
-      }
-
+      const blob = await compilePdfFromLatex(contentToCompile);
       const url = URL.createObjectURL(blob);
       setPdfBlobUrl(url);
-      setPdfBlobData(blob);
       showToast('PDF compilé avec succès !');
     } catch (error) {
       setPdfError(error.message);
@@ -905,483 +363,204 @@ ${extractedText}`;
     }
   };
 
-  const downloadPDF = () => {
+  const handleDownloadPDF = () => {
     if (!pdfBlobUrl) return;
-    const a = document.createElement('a');
-    a.href = pdfBlobUrl;
-    a.download = 'cv_compiled.pdf';
-    a.click();
+    downloadBlobAsPdf(pdfBlobUrl);
     showToast('PDF téléchargé !');
   };
 
+  // ── ATS Analysis ────────────────────────────────────────────────────────────
+  const handleRunATS = async () => {
+    if (!apiKey) {
+      showToast(`Veuillez configurer une clé API ${providerLabel}.`);
+      return;
+    }
+    if (!jobDescription.trim() || (!cvGenerated.trim() && !cvOriginal.trim())) {
+      showToast("Il faut une offre d'emploi et un CV pour faire le test ATS.");
+      return;
+    }
+
+    setIsAtsLoading(true);
+    setAtsResult(null);
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 120000);
+
+    try {
+      const cvToTest = cvGenerated || cvOriginal;
+      const result = await runAtsAnalysis(callCurrentAI, jobDescription, cvToTest, controller.signal);
+      setAtsResult(result);
+      showToast('Analyse ATS terminée !');
+    } catch (error) {
+      console.error(error);
+      showToast("Erreur lors de l'analyse ATS. Le format JSON retourné est invalide ou la requête a échoué.");
+    } finally {
+      clearTimeout(timeoutId);
+      setIsAtsLoading(false);
+    }
+  };
+
+  // ── File Upload (CV Import) ─────────────────────────────────────────────────
+  const handleFileUpload = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    if (!apiKey) {
+      showToast("Veuillez configurer votre clé API IA dans l'en-tête d'abord.");
+      return;
+    }
+
+    setIsUploadingCv(true);
+    showToast('Lecture du fichier en cours...');
+
+    try {
+      // Step 1: Extract raw text from the file (locally, no server)
+      const extractedText = await extractTextFromFile(file);
+
+      showToast("Texte extrait ! Génération LaTeX en cours par l'IA...");
+
+      // Step 2: Send extracted text to AI for LaTeX conversion
+      const prompt = buildLatexConversionPrompt(extractedText);
+      const controller = new AbortController();
+      const reply = await callCurrentAI(prompt, controller.signal);
+
+      // Step 3: Extract the LaTeX code from the AI response
+      const cleanLatex = extractLatexFromResponse(reply);
+      if (cleanLatex) {
+        setCvOriginal(cleanLatex);
+        showToast('CV importé et converti avec succès en LaTeX !');
+      } else {
+        throw new Error("L'IA n'a pas renvoyé de code LaTeX valide.");
+      }
+    } catch (err) {
+      console.error(err);
+      showToast(`Erreur d'import : ${err.message}`);
+    } finally {
+      setIsUploadingCv(false);
+      event.target.value = '';
+    }
+  };
+
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // RENDER
+  // ═══════════════════════════════════════════════════════════════════════════
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-20 sm:pb-0 flex flex-col">
-      
-      {/* HEADER */}
+
+      {/* ── Header (Logo + AI Config) ──────────────────────────────── */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-4 py-3 sm:h-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
-          <div className="flex items-center gap-2 text-indigo-600 w-full sm:w-auto justify-between">
-            <div className="flex items-center gap-2">
-              <Briefcase size={28} />
-              <h1 className="text-xl font-bold tracking-tight hidden sm:block">Ultimate Job Tool</h1>
-              <h1 className="text-xl font-bold tracking-tight sm:hidden">Job Tool</h1>
-            </div>
-          </div>
-          {/* Provider + Model + API Key */}
-          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-            <select
-              value={aiProvider}
-              onChange={(e) => handleProviderChange(e.target.value)}
-              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer flex-1 sm:flex-none"
-            >
-              {Object.entries(AI_PROVIDERS).map(([key, p]) => (
-                <option key={key} value={key}>{p.label}</option>
-              ))}
-            </select>
-            <select
-              value={aiModel}
-              onChange={(e) => handleModelChange(e.target.value)}
-              className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer flex-1 sm:flex-none"
-            >
-              {AI_PROVIDERS[aiProvider]?.models.map(m => (
-                <option key={m.id} value={m.id}>{m.label} ({m.note})</option>
-              ))}
-            </select>
-            <div className="flex items-center gap-2 bg-slate-100 rounded-lg px-3 py-1.5 border border-slate-200 w-full sm:w-auto">
-              <KeyRound size={16} className="text-slate-400" />
-              <input 
-                type="password" 
-                placeholder={`Clé ${providerLabel}...`}
-                className="bg-transparent border-none outline-none text-xs w-full sm:w-32 text-slate-700"
-                value={apiKey}
-                onChange={handleSaveApiKey}
-              />
-            </div>
-          </div>
-        </div>
-        
-        {/* TAB NAVIGATION */}
-        <div className="max-w-5xl mx-auto px-4 border-t border-slate-100 bg-white flex overflow-x-auto custom-scrollbar">
-          {[
-            { id: 'templates', icon: Settings, label: 'Prompts' },
-            { id: 'ai', icon: Bot, label: 'Assistant IA' },
-            { id: 'job', icon: FileText, label: 'Offre' },
-            { id: 'cv', icon: User, label: 'Mon CV' },
-            { id: 'pdf', icon: FileOutput, label: 'PDF Maker' },
-            { id: 'ats', icon: Activity, label: 'Test ATS' },
-          ].map(tab => (
-            <button 
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 min-w-[120px] py-3 text-sm font-medium border-b-2 flex justify-center items-center gap-2 transition-colors whitespace-nowrap ${activeTab === tab.id ? 'border-indigo-600 text-indigo-600' : 'border-transparent text-slate-500 hover:text-slate-700'}`}
-            >
-              <tab.icon size={16} /> <span>{tab.label}</span>
-            </button>
-          ))}
-        </div>
+        <Header
+          aiProvider={aiProvider}
+          aiModel={aiModel}
+          apiKey={apiKey}
+          onProviderChange={handleProviderChange}
+          onModelChange={handleModelChange}
+          onApiKeyChange={handleSaveApiKey}
+        />
+        <TabNavigation
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+        />
       </header>
 
-      {/* TOAST */}
-      {toastMessage && (
-        <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-slate-800 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-top-4">
-          <CheckCircle2 size={18} className="text-green-400" />
-          <span className="text-sm font-medium">{toastMessage}</span>
-        </div>
-      )}
+      {/* ── Toast Notification ─────────────────────────────────────── */}
+      <Toast message={toastMessage} />
 
-      {/* MAIN CONTENT AREA */}
+      {/* ── Main Content Area ──────────────────────────────────────── */}
       <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
 
-        {/* --- VIEW: TEMPLATES & COMPILED PROMPT --- */}
+        {/* Prompts Tab */}
         <div className={activeTab === 'templates' ? 'block' : 'hidden'}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            
-            {/* Left Col: Top 10 Selection */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-[70vh]">
-              <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
-                <Settings size={20} className="text-indigo-600" /> Choisir une stratégie
-              </h2>
-              <div className="flex-grow overflow-y-auto space-y-2 custom-scrollbar pr-2">
-                {PROMPT_TEMPLATES.map(t => (
-                  <button 
-                    key={t.id}
-                    onClick={() => setSelectedTemplateId(t.id)}
-                    className={`w-full text-left p-4 rounded-xl border transition-all ${selectedTemplateId === t.id ? 'border-indigo-500 bg-indigo-50 shadow-sm' : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50'}`}
-                  >
-                    <div className="font-semibold text-sm text-slate-800">{t.title}</div>
-                    <div className="text-xs text-slate-500 mt-1">{t.description}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Col: Editor & Preview */}
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col h-[70vh]">
-              <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                <span className="font-semibold text-sm">Éditeur de Prompt</span>
-                <div className="flex items-center gap-2">
-                  <button onClick={resetAll} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600" title="Réinitialiser tout">
-                    <RotateCcw size={14}/> Reset
-                  </button>
-                  <button onClick={downloadAsTxt} className="text-xs flex items-center gap-1 text-slate-600 hover:text-indigo-600">
-                    <Download size={14}/> .txt
-                  </button>
-                  <button onClick={() => copyToClipboard(compiledPrompt)} className="text-xs flex items-center gap-1 text-slate-600 hover:text-indigo-600">
-                    <Copy size={14}/> Copier
-                  </button>
-                </div>
-              </div>
-              
-              <div className="p-4 flex-grow flex flex-col gap-4">
-                {/* Editable Template */}
-                <textarea
-                  className="w-full flex-1 resize-none rounded-xl border border-slate-200 p-3 text-xs font-mono focus:ring-2 focus:ring-indigo-500 outline-none custom-scrollbar"
-                  value={customPrompt}
-                  onChange={(e) => setCustomPrompt(e.target.value)}
-                />
-                
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => copyToClipboard(compiledPrompt)}
-                    className="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] border border-slate-200 shadow-sm"
-                  >
-                    <Copy size={18} /> Copier (Externe)
-                  </button>
-                  <button
-                    onClick={handleRunAI}
-                    className="w-1/2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md"
-                  >
-                    <Sparkles size={18} /> Générer avec l'IA
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* --- VIEW: AI ASSISTANT --- */}
-        <div className={`${activeTab === 'ai' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-            <h2 className="text-lg font-semibold flex items-center gap-2 text-indigo-900">
-              <Bot size={20} className="text-indigo-600" /> <span className="truncate">Réponse de l'IA ({providerLabel})</span>
-            </h2>
-            <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-               <button onClick={handleRunAI} disabled={isAiLoading} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2">
-                  {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} Relancer
-                </button>
-               {aiResponse && (
-                  <>
-                    <button onClick={extractLatexAndSave} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors" title="Extraire le code LaTeX et le mettre dans le CV Généré">
-                      <FileText size={14} /> <span className="hidden sm:inline">Extraire CV</span>
-                    </button>
-                    <button onClick={() => copyToClipboard(aiResponse)} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2">
-                      <Copy size={14} /> <span className="hidden sm:inline">Copier</span>
-                    </button>
-                    <button onClick={() => setAiResponse('')} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-red-50 hover:text-red-600 flex items-center gap-2 transition-colors">
-                      <Trash size={14} /> <span className="hidden sm:inline">Effacer</span>
-                    </button>
-                  </>
-               )}
-            </div>
-          </div>
-          <div className="flex-grow p-6 overflow-y-auto bg-slate-50 custom-scrollbar">
-            {!apiKey && (
-              <div className="h-full flex flex-col items-center justify-center text-center text-slate-500 space-y-4">
-                <KeyRound size={48} className="text-slate-300" />
-                <div>
-                  <p className="font-semibold text-slate-700">Clé API Requise</p>
-                  <p className="text-sm max-w-sm mt-1">Choisissez un fournisseur dans la barre du haut, puis entrez votre clé API.</p>
-                  <div className="flex flex-col gap-2 mt-4">
-                    {Object.entries(AI_PROVIDERS).map(([key, p]) => (
-                      <a key={key} href={p.keyLink} target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
-                        Clé {p.label} ({p.keyNote}) <ExternalLink size={12}/>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-            {isAiLoading && (
-              <div className="h-full flex flex-col items-center justify-center text-indigo-600 space-y-3">
-                <Loader2 size={40} className="animate-spin" />
-                <p className="text-sm font-medium animate-pulse">L'IA analyse votre profil...</p>
-              </div>
-            )}
-            {aiResponse && !isAiLoading && (
-              <pre className="text-sm font-sans text-slate-800 whitespace-pre-wrap leading-relaxed max-w-4xl mx-auto">
-                {aiResponse}
-              </pre>
-            )}
-          </div>
-        </div>
-
-        {/* --- VIEW: JOB DESCRIPTION --- */}
-        <div className={`${activeTab === 'job' ? 'flex' : 'hidden'} flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200`}>
-          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-             <h2 className="text-lg font-semibold flex items-center gap-2"><FileText size={20} className="text-slate-500" /> Description de l'Offre</h2>
-             <button onClick={() => setJobDescription('')} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600 border border-slate-200 px-2 py-1 rounded-md bg-white">
-               <Trash size={14}/> Effacer
-             </button>
-          </div>
-          
-          <div className="p-4 bg-indigo-50/50 border-b border-indigo-100 flex flex-col sm:flex-row gap-2 items-center">
-             <select 
-               value={scraperType}
-               onChange={(e) => setScraperType(e.target.value)}
-               className="bg-white border border-slate-300 rounded-lg px-2 py-2 text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
-             >
-               <option value="jina">Jina AI (Gratuit)</option>
-               <option value="scrapfly">Scrapfly (Clé API)</option>
-             </select>
-             <input 
-               type="url" 
-               placeholder="Coller l'URL de l'offre pour l'extraire" 
-               className="flex-grow w-full sm:w-auto px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
-               value={jobUrl}
-               onChange={(e) => setJobUrl(e.target.value)}
-             />
-             <button 
-               onClick={handleScrape}
-               disabled={isScraping || !jobUrl}
-               className="w-full sm:w-auto px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center gap-2"
-             >
-               {isScraping ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
-               Extraire
-             </button>
-          </div>
-
-          <textarea
-            className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar"
-            placeholder="Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet."
-            value={jobDescription}
-            onChange={(e) => setJobDescription(e.target.value)}
+          <PromptsTab
+            templates={PROMPT_TEMPLATES}
+            selectedTemplateId={selectedTemplateId}
+            onSelectTemplate={setSelectedTemplateId}
+            customPrompt={customPrompt}
+            onCustomPromptChange={setCustomPrompt}
+            compiledPrompt={compiledPrompt}
+            onCopy={copyToClipboard}
+            onDownload={downloadAsTxt}
+            onRunAI={handleRunAI}
+            onReset={resetAll}
           />
         </div>
 
-        {/* --- VIEW: MY CV --- */}
-        <div className={`${activeTab === 'cv' ? 'block' : 'hidden'}`}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Original CV */}
-            <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
-              <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center flex-wrap gap-2">
-                <div className="flex items-center gap-3">
-                  <h2 className="text-sm font-semibold flex items-center gap-2"><User size={16} className="text-slate-500" /> CV Original (Source)</h2>
-                  <label className="cursor-pointer text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-2 py-1.5 rounded-md flex items-center gap-1.5 transition-colors">
-                    {isUploadingCv ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
-                    {isUploadingCv ? 'Import...' : 'Importer (PDF/Word)'}
-                    <input type="file" className="hidden" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onChange={handleFileUpload} disabled={isUploadingCv} />
-                  </label>
-                </div>
-                <button onClick={() => setCvOriginal(SYNTHETIC_CV)} className="text-xs text-slate-500 hover:text-red-600 underline">Rétablir CV Fake</button>
-              </div>
-              <textarea
-                className="flex-grow w-full resize-none p-4 text-xs font-mono outline-none custom-scrollbar bg-slate-900 text-slate-100 rounded-b-2xl"
-                value={cvOriginal}
-                onChange={(e) => setCvOriginal(e.target.value)}
-              />
-            </div>
-            {/* Generated CV */}
-            <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
-              <div className="p-4 border-b border-indigo-100 bg-indigo-50/50 flex justify-between items-center">
-                <h2 className="text-sm font-semibold flex items-center gap-2 text-indigo-900"><Sparkles size={16} className="text-indigo-600" /> CV Généré (Adapté)</h2>
-                <button onClick={() => setCvGenerated('')} className="text-xs text-slate-500 hover:text-red-600 underline">Vider</button>
-              </div>
-              <textarea
-                className="flex-grow w-full resize-none p-4 text-xs font-mono outline-none custom-scrollbar bg-indigo-950 text-indigo-100 rounded-b-2xl"
-                placeholder="Le code LaTeX généré par l'IA sera affiché ici. Utilisez le bouton 'Extraire CV' dans l'onglet Assistant IA."
-                value={cvGenerated}
-                onChange={(e) => setCvGenerated(e.target.value)}
-              />
-            </div>
-          </div>
+        {/* AI Assistant Tab */}
+        <div className={activeTab === 'ai' ? 'block' : 'hidden'}>
+          <AiAssistantTab
+            aiResponse={aiResponse}
+            isAiLoading={isAiLoading}
+            apiKey={apiKey}
+            providerLabel={providerLabel}
+            onRunAI={handleRunAI}
+            onExtractLatex={handleExtractLatex}
+            onCopy={copyToClipboard}
+            onClear={() => setAiResponse('')}
+          />
         </div>
 
-        {/* --- VIEW: PDF COMPILER --- */}
-        <div className={`${activeTab === 'pdf' ? 'flex' : 'hidden'} flex-col h-auto sm:h-[80vh] min-h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-             <div>
-                <h2 className="text-lg font-semibold flex items-center gap-2"><FileOutput size={20} className="text-slate-500" /> Générateur PDF</h2>
-                <p className="text-xs text-slate-500 mt-1">Via les serveurs officiels TeXLive.net</p>
-             </div>
-             <div className="flex flex-wrap gap-2 w-full sm:w-auto">
-               <select 
-                 value={pdfSource}
-                 onChange={(e) => setPdfSource(e.target.value)}
-                 className="flex-1 sm:flex-none bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
-               >
-                 <option value="generated">CV Généré</option>
-                 <option value="original">CV Original</option>
-               </select>
-               {pdfBlobUrl && (
-                 <button onClick={downloadPDF} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 flex items-center gap-2">
-                   <Download size={14} /> <span className="hidden sm:inline">Télécharger PDF</span>
-                 </button>
-               )}
-               <button 
-                 onClick={compilePDF} 
-                 disabled={isPdfLoading} 
-                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
-               >
-                 {isPdfLoading ? <Loader2 size={14} className="animate-spin" /> : <FileOutput size={14} />}
-                 {pdfBlobUrl ? 'Recompiler' : 'Compiler le PDF'}
-               </button>
-             </div>
-          </div>
-          
-          <div className="flex-grow bg-slate-50 flex flex-col">
-            {/* Loading State */}
-            {isPdfLoading && (
-              <div className="flex-grow flex flex-col items-center justify-center text-red-600 space-y-3">
-                <Loader2 size={40} className="animate-spin" />
-                <p className="text-sm font-medium animate-pulse">Compilation en cours...</p>
-                <p className="text-xs text-slate-500">Cela peut prendre quelques secondes</p>
-              </div>
-            )}
-
-            {/* Error State */}
-            {pdfError && !isPdfLoading && (
-              <div className="flex-grow flex items-center justify-center p-6">
-                <div className="max-w-lg bg-red-50 text-red-800 p-5 rounded-xl border border-red-200 text-sm">
-                  <strong className="block mb-2 font-bold">❌ Erreur de compilation</strong>
-                  <pre className="text-xs whitespace-pre-wrap font-mono mt-2 max-h-48 overflow-y-auto">{pdfError}</pre>
-                </div>
-              </div>
-            )}
-
-            {/* PDF Viewer — mobile uses react-pdf canvas renderer, desktop uses native iframe */}
-            {pdfBlobUrl && !isPdfLoading && (
-              isMobile ? (
-                <div ref={pdfContainerRef} className="flex-grow bg-slate-100 p-2">
-                  <Document
-                    file={pdfBlobUrl}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    loading={<div className="flex items-center justify-center p-8"><Loader2 size={30} className="animate-spin text-red-500" /></div>}
-                    error={<div className="text-red-600 text-sm p-4">Erreur lors du chargement du PDF.</div>}
-                  >
-                    {numPages && Array.from({ length: numPages }, (_, i) => (
-                      <Page
-                        key={`page_${i + 1}`}
-                        pageNumber={i + 1}
-                        width={pdfContainerWidth ? pdfContainerWidth - 16 : undefined}
-                        className="mb-3 shadow-md bg-white"
-                        renderTextLayer={true}
-                        renderAnnotationLayer={true}
-                      />
-                    ))}
-                  </Document>
-                </div>
-              ) : (
-                <iframe 
-                  src={pdfBlobUrl} 
-                  className="flex-grow w-full border-none" 
-                  title="PDF Preview"
-                />
-              )
-            )}
-
-            {/* Empty State */}
-            {!pdfBlobUrl && !isPdfLoading && !pdfError && (
-              <div className="flex-grow flex flex-col items-center justify-center p-6 text-center">
-                <div className="max-w-md space-y-6">
-                  <FileOutput size={48} className="text-slate-300 mx-auto" />
-                  <div>
-                    <p className="font-semibold text-slate-700">Compilez votre CV LaTeX en PDF</p>
-                    <p className="text-sm text-slate-500 mt-2">Votre code LaTeX de l'onglet "Mon CV" sera envoyé au compilateur TeXLive. Le PDF s'affichera ici directement.</p>
-                  </div>
-                  <button 
-                    onClick={compilePDF} 
-                    className="w-full py-4 text-base font-bold text-white bg-red-600 rounded-xl hover:bg-red-700 flex items-center justify-center gap-3 shadow-lg shadow-red-200 transition-all active:scale-[0.98]"
-                  >
-                    <FileOutput size={24} /> Compiler le PDF
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+        {/* Job Offer Tab */}
+        <div className={activeTab === 'job' ? 'block' : 'hidden'}>
+          <JobOfferTab
+            jobDescription={jobDescription}
+            onJobDescriptionChange={setJobDescription}
+            jobUrl={jobUrl}
+            onJobUrlChange={setJobUrl}
+            scraperType={scraperType}
+            onScraperTypeChange={setScraperType}
+            onScrape={handleScrape}
+            isScraping={isScraping}
+            onClear={() => setJobDescription('')}
+          />
         </div>
 
-        {/* --- VIEW: ATS TEST --- */}
-        <div className={`${activeTab === 'ats' ? 'flex' : 'hidden'} flex-col min-h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden`}>
-          <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-             <div>
-                <h2 className="text-lg font-semibold flex items-center gap-2"><Activity size={20} className="text-indigo-600" /> Testeur ATS</h2>
-                <p className="text-xs text-slate-500 mt-1">Évaluez la compatibilité entre votre CV et l'offre d'emploi.</p>
-             </div>
-             <button 
-               onClick={handleRunATS} 
-               disabled={isAtsLoading || !jobDescription || (!cvGenerated && !cvOriginal)} 
-               className="w-full sm:w-auto px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center gap-2"
-             >
-               {isAtsLoading ? <Loader2 size={16} className="animate-spin" /> : <Sparkles size={16} />}
-               Lancer l'Analyse ATS
-             </button>
-          </div>
-          
-          <div className="flex-grow p-6 bg-slate-50">
-            {isAtsLoading ? (
-              <div className="flex flex-col items-center justify-center py-12 text-indigo-600 space-y-3">
-                <Loader2 size={40} className="animate-spin" />
-                <p className="text-sm font-medium animate-pulse">L'IA analyse les mots-clés...</p>
-              </div>
-            ) : atsResult ? (
-              <div className="max-w-3xl mx-auto space-y-6">
-                <div className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-sm">
-                  <div className={`text-6xl font-black ${atsResult.score >= 80 ? 'text-green-500' : atsResult.score >= 60 ? 'text-yellow-500' : 'text-red-500'}`}>
-                    {atsResult.score}%
-                  </div>
-                  <div className="text-center sm:text-left mt-2 sm:mt-0">
-                    <h3 className="text-lg font-bold text-slate-800">Score de compatibilité</h3>
-                    <p className="text-sm text-slate-500 mt-1">Un score supérieur à 80% maximise vos chances de passer les filtres automatiques (ATS) des recruteurs.</p>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                    <h3 className="font-bold text-slate-800 flex items-center gap-2 mb-4"><FileText size={16} className="text-red-500"/> Mots-clés manquants</h3>
-                    {atsResult.missingKeywords?.length > 0 ? (
-                      <div className="flex flex-wrap gap-2">
-                        {atsResult.missingKeywords.map((kw, i) => (
-                          <span key={i} className="px-2.5 py-1 bg-red-50 text-red-700 text-xs font-semibold rounded-md border border-red-100">{kw}</span>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="text-sm text-green-600 font-medium">Excellent ! Votre CV contient tous les mots-clés essentiels demandés dans l'offre.</p>
-                    )}
-                  </div>
-                  
-                  <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                    <h3 className="font-bold text-slate-800 flex items-center gap-2 mb-4"><Sparkles size={16} className="text-indigo-500"/> Conseils d'amélioration</h3>
-                    <ul className="space-y-3">
-                      {atsResult.advice?.map((adv, i) => (
-                        <li key={i} className="text-sm text-slate-600 flex items-start gap-2.5">
-                          <CheckCircle2 size={16} className="text-indigo-400 mt-0.5 shrink-0" />
-                          <span className="leading-relaxed">{adv}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center justify-center py-16 text-center">
-                <Activity size={48} className="text-slate-300 mb-4" />
-                <p className="text-slate-500 max-w-sm">
-                  {!jobDescription ? "Il vous manque une offre d'emploi. Allez dans l'onglet 'Offre'." : (!cvGenerated && !cvOriginal) ? "Il vous manque un CV. Allez dans l'onglet 'Mon CV'." : "Cliquez sur 'Lancer l'Analyse ATS' pour évaluer votre CV par rapport à l'offre."}
-                </p>
-              </div>
-            )}
-          </div>
+        {/* My CV Tab */}
+        <div className={activeTab === 'cv' ? 'block' : 'hidden'}>
+          <MyCvTab
+            cvOriginal={cvOriginal}
+            onCvOriginalChange={setCvOriginal}
+            cvGenerated={cvGenerated}
+            onCvGeneratedChange={setCvGenerated}
+            onResetToSynthetic={() => setCvOriginal(SYNTHETIC_CV)}
+            onFileUpload={handleFileUpload}
+            isUploadingCv={isUploadingCv}
+          />
+        </div>
+
+        {/* PDF Maker Tab */}
+        <div className={activeTab === 'pdf' ? 'block' : 'hidden'}>
+          <PdfMakerTab
+            pdfSource={pdfSource}
+            onPdfSourceChange={setPdfSource}
+            pdfBlobUrl={pdfBlobUrl}
+            isPdfLoading={isPdfLoading}
+            pdfError={pdfError}
+            onCompile={handleCompilePDF}
+            onDownload={handleDownloadPDF}
+            isMobile={isMobile}
+            numPages={numPages}
+            onDocumentLoadSuccess={onDocumentLoadSuccess}
+            pdfContainerRef={pdfContainerRef}
+            pdfContainerWidth={pdfContainerWidth}
+          />
+        </div>
+
+        {/* ATS Test Tab */}
+        <div className={activeTab === 'ats' ? 'block' : 'hidden'}>
+          <AtsTestTab
+            atsResult={atsResult}
+            isAtsLoading={isAtsLoading}
+            onRunATS={handleRunATS}
+            canRunATS={!!(jobDescription && (cvGenerated || cvOriginal))}
+            jobDescription={jobDescription}
+            cvGenerated={cvGenerated}
+            cvOriginal={cvOriginal}
+          />
         </div>
 
       </main>
-
-      {/* Global Styles for Scrollbar */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .custom-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-      `}} />
     </div>
   );
 }
