@@ -143,5 +143,22 @@ JavaScript's native `JSON.parse()` fails when encountering the backticks.
 **Cause**: The new database schema required an explicit `createApplication()` call, whereas the old system just read naked strings from `localStorage`.
 **Fix**: Implemented a one-time migration hook in the initial `App.jsx` load sequence. It checks if the `applications` table is completely empty. If it is, it searches `localStorage` for the old `cv_original` and `job_description` keys. If found, it automatically creates a new row titled `"Ancienne Candidature - Importée"` and selects it, ensuring zero data loss during the seamless transition.
 
+## 9. Graphify Knowledge Graph Generation
+
+### Problem 1: `openai` package missing during extraction
+**Issue**: Running `graphify .` with the Gemini backend crashed with: `Gemini/Kimi/Ollama/OpenAI-compatible extraction requires the openai package. Run: pip install openai`.
+**Cause**: The Graphify pip installation handles core dependencies (like `tree-sitter`), but leaves LLM provider SDKs (like `openai`) as optional dependencies depending on which API key the user provides.
+**Fix**: Ran `pip install openai`.
+
+### Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)
+**Issue**: After installing the `openai` package, Graphify (and Python itself when attempting to `import openai`) crashed with: `ImportError: cannot import name 'version_short' from 'pydantic.version'`.
+**Cause**: A conflict in the local Anaconda environment where older `pydantic v1` shared object (`.so`) files were clashing with `pydantic v2` requirements expected by the newly installed `openai` SDK, corrupting the module namespace.
+**Fix**: Purged both versions completely and reinstalled them cleanly:
+```bash
+pip uninstall -y pydantic pydantic-core
+rm -rf ~/anaconda3/lib/python3.11/site-packages/pydantic*
+pip install pydantic pydantic-core openai
+```
+
 ---
 *Generated: May 2026*
