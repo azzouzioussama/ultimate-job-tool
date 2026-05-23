@@ -1,6 +1,61 @@
 {
   "communities": {
     "0": [
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_rules_graphify_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_workflows_graphify_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_app_old_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_contributors_guide_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_development_history_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_eslint_config_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_graphify_guide_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_index_html",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_package_json",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_postcss_config_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_project_summary_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_public_favicon_svg",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_public_icons_svg",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_ast_hash",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_app_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_hero_png",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_react_svg",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_vite_svg",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_layout_header_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_layout_tabnavigation_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_layout_toast_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_aiassistanttab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_atstesttab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_dashboardtab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_joboffertab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_mycvtab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_pdfmakertab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_promptstab_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_uselocalstorage_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_usetoast_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_main_jsx",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_aiservice_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_atsservice_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_db_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_fileuploadservice_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_latexutils_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_pdfservice_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_storageservice_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_tailwind_config_js",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_test_jina_cleaned_txt",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_test_jina_results_txt",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_test_scrapfly_results_txt",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_troubleshooting_md",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json",
+      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vite_config_js",
+      "manifest_json"
+    ],
+    "1": [
       "2026_05_23_3_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_rules_graphify_md",
       "2026_05_23_3_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_workflows_graphify_md",
       "2026_05_23_3_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_app_old_jsx",
@@ -54,81 +109,7 @@
       "2026_05_23_3_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vite_config_js",
       "2026_05_23_3_manifest_json"
     ],
-    "1": [
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_contributors_guide_md",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_project_summary_md",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_ast_hash",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_uselocalstorage_js",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_latexutils_js",
-      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
-      "2026_05_23_2_manifest_json",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_uselocalstorage_js",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_latexutils_js",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json_ast_hash",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json_mtime",
-      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json_semantic_hash",
-      "2026_05_23_manifest_json",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_rules_graphify_md",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_contributors_guide_md",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_graphify_guide_md",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_project_summary_md",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_hash",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime_ns",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_size",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
-      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
-      "cache_stat_index_json"
-    ],
     "2": [
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_rules_graphify_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_workflows_graphify_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_contributors_guide_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_development_history_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_graphify_guide_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_package_json",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_postcss_config_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_project_summary_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_public_favicon_svg",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_ast_hash",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_app_jsx",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_hero_png",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_react_svg",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_vite_svg",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_layout_tabnavigation_jsx",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_aiassistanttab_jsx",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_uselocalstorage_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_usetoast_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_aiservice_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_atsservice_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_fileuploadservice_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_latexutils_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_pdfservice_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_storageservice_js",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_test_scrapfly_results_txt",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json",
-      "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vite_config_js",
-      "manifest_json"
-    ],
-    "3": [
       "2026_05_23_2_graphify_analysis_cohesion",
       "2026_05_23_2_graphify_analysis_cohesion_0",
       "2026_05_23_2_graphify_analysis_cohesion_1",
@@ -164,7 +145,7 @@
       "2026_05_23_2_graphify_analysis_tokens_input",
       "2026_05_23_2_graphify_analysis_tokens_output"
     ],
-    "4": [
+    "3": [
       "2026_05_23_3_graphify_analysis_cohesion",
       "2026_05_23_3_graphify_analysis_cohesion_0",
       "2026_05_23_3_graphify_analysis_cohesion_1",
@@ -200,7 +181,7 @@
       "2026_05_23_3_graphify_analysis_tokens_input",
       "2026_05_23_3_graphify_analysis_tokens_output"
     ],
-    "5": [
+    "4": [
       "2026_05_23_graphify_analysis_cohesion",
       "2026_05_23_graphify_analysis_cohesion_0",
       "2026_05_23_graphify_analysis_cohesion_1",
@@ -236,7 +217,7 @@
       "2026_05_23_graphify_analysis_tokens_input",
       "2026_05_23_graphify_analysis_tokens_output"
     ],
-    "6": [
+    "5": [
       "graphify_analysis_json",
       "graphify_out_graphify_analysis_cohesion",
       "graphify_out_graphify_analysis_cohesion_0",
@@ -271,6 +252,40 @@
       "graphify_out_graphify_analysis_tokens",
       "graphify_out_graphify_analysis_tokens_input",
       "graphify_out_graphify_analysis_tokens_output"
+    ],
+    "6": [
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_contributors_guide_md",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_project_summary_md",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_ast_hash",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_uselocalstorage_js",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_latexutils_js",
+      "2026_05_23_2_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
+      "2026_05_23_2_manifest_json",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_rules_graphify_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_agents_workflows_graphify_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_contributors_guide_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_development_history_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_graphify_guide_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_project_summary_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_public_favicon_svg",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_hash",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime_ns",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_size",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_hero_png",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_react_svg",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_assets_vite_svg",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
+      "cache_stat_index_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_test_scrapfly_results_txt",
+      "cache_stat_index_json"
     ],
     "7": [
       "obsidian_core_plugins_json",
@@ -372,6 +387,31 @@
       "2026_05_23_2_graphify_labels_json"
     ],
     "10": [
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_package_json",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_postcss_config_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_app_jsx",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_layout_tabnavigation_jsx",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_components_tabs_aiassistanttab_jsx",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_aiproviders_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_prompttemplates_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_constants_syntheticcv_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_uselocalstorage_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_hooks_usetoast_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_aiservice_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_atsservice_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_fileuploadservice_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_latexutils_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_pdfservice_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_scraperservice_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_src_services_storageservice_js",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json_ast_hash",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json_mtime",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vercel_json_semantic_hash",
+      "2026_05_23_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_vite_config_js",
+      "2026_05_23_manifest_json"
+    ],
+    "11": [
       "graphify_labels_json",
       "graphify_out_graphify_labels_0",
       "graphify_out_graphify_labels_1",
@@ -393,7 +433,7 @@
       "graphify_out_graphify_labels_8",
       "graphify_out_graphify_labels_9"
     ],
-    "11": [
+    "12": [
       "2026_05_23_3_graphify_labels_0",
       "2026_05_23_3_graphify_labels_1",
       "2026_05_23_3_graphify_labels_11",
@@ -413,7 +453,7 @@
       "2026_05_23_3_graphify_labels_8",
       "2026_05_23_3_graphify_labels_json"
     ],
-    "12": [
+    "13": [
       "graphify_detect_json",
       "graphify_out_graphify_detect_files",
       "graphify_out_graphify_detect_files_code",
@@ -429,7 +469,7 @@
       "graphify_out_graphify_detect_total_words",
       "graphify_out_graphify_detect_warning"
     ],
-    "13": [
+    "14": [
       "2026_05_23_2_graph_built_at_commit",
       "2026_05_23_2_graph_directed",
       "2026_05_23_2_graph_graph",
@@ -439,7 +479,7 @@
       "2026_05_23_2_graph_multigraph",
       "2026_05_23_2_graph_nodes"
     ],
-    "14": [
+    "15": [
       "2026_05_23_3_graph_built_at_commit",
       "2026_05_23_3_graph_directed",
       "2026_05_23_3_graph_graph",
@@ -449,7 +489,7 @@
       "2026_05_23_3_graph_multigraph",
       "2026_05_23_3_graph_nodes"
     ],
-    "15": [
+    "16": [
       "2026_05_23_graph_built_at_commit",
       "2026_05_23_graph_directed",
       "2026_05_23_graph_graph",
@@ -459,7 +499,7 @@
       "2026_05_23_graph_multigraph",
       "2026_05_23_graph_nodes"
     ],
-    "16": [
+    "17": [
       "graph_json",
       "graphify_out_graph_built_at_commit",
       "graphify_out_graph_directed",
@@ -469,23 +509,12 @@
       "graphify_out_graph_multigraph",
       "graphify_out_graph_nodes"
     ],
-    "17": [
-      "graph_html",
-      "graph_report_md",
-      "pdf_service",
-      "scraper_service",
-      "storageservice_js",
-      "ultimate_job_tool_job_posting_scraper_issues",
-      "ultimate_job_tool_texlive_pdf_compilation_failures",
-      "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures"
-    ],
     "18": [
-      "atsservice_js",
-      "atstesttab_jsx",
-      "query_ats_scoring_md",
-      "ultimate_job_tool_buildatsprompt",
-      "ultimate_job_tool_cleanjsonresponse",
-      "ultimate_job_tool_runatsanalysis"
+      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_edges",
+      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_input_tokens",
+      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_nodes",
+      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_output_tokens",
+      "cache_ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_json"
     ],
     "19": [
       "ast_abfbd7113f7e2794577f7136725d5baa12eb5c1dc404768045d7045e26e697ad_edges",
@@ -502,55 +531,54 @@
       "cache_ast_ebb679dcd5a968e3c9e4e942cd7049aaa9c76a40f7eab88fbac07aa0dc4b76eb_json"
     ],
     "21": [
-      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_edges",
-      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_input_tokens",
-      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_nodes",
-      "ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_output_tokens",
-      "cache_ast_1b9dff5a13a066737128f225466aca11f9959e0434ddd9446192202c999d951b_json"
-    ],
-    "22": [
       "ast_26f2577a68d808f7f33ec3e418b95b635aec180d93b22b975e9ae67c47e361c8_edges",
       "ast_26f2577a68d808f7f33ec3e418b95b635aec180d93b22b975e9ae67c47e361c8_input_tokens",
       "ast_26f2577a68d808f7f33ec3e418b95b635aec180d93b22b975e9ae67c47e361c8_nodes",
       "ast_26f2577a68d808f7f33ec3e418b95b635aec180d93b22b975e9ae67c47e361c8_output_tokens",
       "cache_ast_26f2577a68d808f7f33ec3e418b95b635aec180d93b22b975e9ae67c47e361c8_json"
     ],
-    "23": [
+    "22": [
       "ast_e539d73848bfbe1d3a377d9bbf5df23c8213b7024467ebae93b05d4250bbae0f_edges",
       "ast_e539d73848bfbe1d3a377d9bbf5df23c8213b7024467ebae93b05d4250bbae0f_input_tokens",
       "ast_e539d73848bfbe1d3a377d9bbf5df23c8213b7024467ebae93b05d4250bbae0f_nodes",
       "ast_e539d73848bfbe1d3a377d9bbf5df23c8213b7024467ebae93b05d4250bbae0f_output_tokens",
       "cache_ast_e539d73848bfbe1d3a377d9bbf5df23c8213b7024467ebae93b05d4250bbae0f_json"
     ],
-    "24": [
+    "23": [
       "cache_semantic_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_json",
       "semantic_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_edges",
       "semantic_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_hyperedges",
       "semantic_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_nodes"
     ],
-    "25": [
+    "24": [
       "cache_semantic_06259aabef14b11267356833ab9036f3415fccf92cc83110fd1f66027d6806dd_json",
       "semantic_06259aabef14b11267356833ab9036f3415fccf92cc83110fd1f66027d6806dd_edges",
       "semantic_06259aabef14b11267356833ab9036f3415fccf92cc83110fd1f66027d6806dd_hyperedges",
       "semantic_06259aabef14b11267356833ab9036f3415fccf92cc83110fd1f66027d6806dd_nodes"
     ],
-    "26": [
+    "25": [
       "cache_semantic_1a8f2df476ce28bceea3a1a4f8a1839a6b3e477097a0b8b881f4d07cca8803b7_json",
       "semantic_1a8f2df476ce28bceea3a1a4f8a1839a6b3e477097a0b8b881f4d07cca8803b7_edges",
       "semantic_1a8f2df476ce28bceea3a1a4f8a1839a6b3e477097a0b8b881f4d07cca8803b7_hyperedges",
       "semantic_1a8f2df476ce28bceea3a1a4f8a1839a6b3e477097a0b8b881f4d07cca8803b7_nodes"
     ],
-    "27": [
+    "26": [
       "cache_semantic_1e47a345640ee2939d6d39d767c789dff845eed8d24d0899e39ad1bf798fab0b_json",
       "semantic_1e47a345640ee2939d6d39d767c789dff845eed8d24d0899e39ad1bf798fab0b_edges",
       "semantic_1e47a345640ee2939d6d39d767c789dff845eed8d24d0899e39ad1bf798fab0b_hyperedges",
       "semantic_1e47a345640ee2939d6d39d767c789dff845eed8d24d0899e39ad1bf798fab0b_nodes"
     ],
-    "28": [
+    "27": [
       "cache_semantic_26a91e7e530382f4d771f567cac62243eb9d4d777d3bad08a97225211c786676_json",
       "semantic_26a91e7e530382f4d771f567cac62243eb9d4d777d3bad08a97225211c786676_edges",
       "semantic_26a91e7e530382f4d771f567cac62243eb9d4d777d3bad08a97225211c786676_hyperedges",
       "semantic_26a91e7e530382f4d771f567cac62243eb9d4d777d3bad08a97225211c786676_nodes"
+    ],
+    "28": [
+      "cache_semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_json",
+      "semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_edges",
+      "semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_hyperedges",
+      "semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_nodes"
     ],
     "29": [
       "cache_semantic_952ba47366a15d3e04f57290ccdb7827109b9ded3a63d4dba4cda485af93f570_json",
@@ -565,34 +593,34 @@
       "semantic_9f9916d8c32597ada7d8353f583e9773b39bb7f092da4f0738eb08a9aa5f6f28_nodes"
     ],
     "31": [
+      "cache_semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_json",
+      "semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_edges",
+      "semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_hyperedges",
+      "semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_nodes"
+    ],
+    "32": [
       "cache_semantic_c4472b0163bfff962c4779573c1ccf4bdd0f63d7ef994f3e30a6fda39929511d_json",
       "semantic_c4472b0163bfff962c4779573c1ccf4bdd0f63d7ef994f3e30a6fda39929511d_edges",
       "semantic_c4472b0163bfff962c4779573c1ccf4bdd0f63d7ef994f3e30a6fda39929511d_hyperedges",
       "semantic_c4472b0163bfff962c4779573c1ccf4bdd0f63d7ef994f3e30a6fda39929511d_nodes"
     ],
-    "32": [
+    "33": [
       "cache_semantic_fae6a2eaf25a884a080d1109ab414dfcc254bcc579e7d8aeaf7965cb0b7b4f30_json",
       "semantic_fae6a2eaf25a884a080d1109ab414dfcc254bcc579e7d8aeaf7965cb0b7b4f30_edges",
       "semantic_fae6a2eaf25a884a080d1109ab414dfcc254bcc579e7d8aeaf7965cb0b7b4f30_hyperedges",
       "semantic_fae6a2eaf25a884a080d1109ab414dfcc254bcc579e7d8aeaf7965cb0b7b4f30_nodes"
     ],
-    "33": [
+    "34": [
       "cache_semantic_fb2926ae8b845aed1f34b5a31ce889be889a726a2f4d65b00a5e6e17ca365dd9_json",
       "semantic_fb2926ae8b845aed1f34b5a31ce889be889a726a2f4d65b00a5e6e17ca365dd9_edges",
       "semantic_fb2926ae8b845aed1f34b5a31ce889be889a726a2f4d65b00a5e6e17ca365dd9_hyperedges",
       "semantic_fb2926ae8b845aed1f34b5a31ce889be889a726a2f4d65b00a5e6e17ca365dd9_nodes"
     ],
-    "34": [
-      "cache_semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_json",
-      "semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_edges",
-      "semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_hyperedges",
-      "semantic_35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf_nodes"
-    ],
     "35": [
-      "cache_semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_json",
-      "semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_edges",
-      "semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_hyperedges",
-      "semantic_b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0_nodes"
+      "cache_semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_json",
+      "semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_edges",
+      "semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_hyperedges",
+      "semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_nodes"
     ],
     "36": [
       "cache_semantic_d639b2a34e7e23fcbd7bbd87dee9e104556e77c497ec2c4f68016b55236c8379_json",
@@ -601,166 +629,177 @@
       "semantic_d639b2a34e7e23fcbd7bbd87dee9e104556e77c497ec2c4f68016b55236c8379_nodes"
     ],
     "37": [
-      "cache_semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_json",
-      "semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_edges",
-      "semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_hyperedges",
-      "semantic_fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32_nodes"
+      "ultimate_job_tool_atstest_tab",
+      "ultimate_job_tool_buildatsprompt",
+      "ultimate_job_tool_cleanjsonresponse",
+      "ultimate_job_tool_runatsanalysis"
     ],
     "38": [
-      "ast_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_edges",
-      "ast_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_nodes",
-      "cache_ast_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_json"
-    ],
-    "39": [
       "ast_5c0347aabbe0b642d34e769077467df9027861ca5dbddea700f43cece1501b85_edges",
       "ast_5c0347aabbe0b642d34e769077467df9027861ca5dbddea700f43cece1501b85_nodes",
       "cache_ast_5c0347aabbe0b642d34e769077467df9027861ca5dbddea700f43cece1501b85_json"
     ],
+    "39": [
+      "ast_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_edges",
+      "ast_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_nodes",
+      "cache_ast_03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14_json"
+    ],
     "40": [
-      "graph_tree_html",
-      "graphify_workflow_md"
+      "pdf_service",
+      "ultimate_job_tool_texlive_pdf_compilation_failures",
+      "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures"
     ],
     "41": [
       "app_jsx_app",
       "hooks_usetoast_js_usetoast"
     ],
     "42": [
-      "obsidian_app_json"
+      "scraper_service",
+      "ultimate_job_tool_job_posting_scraper_issues"
     ],
     "43": [
-      "obsidian_appearance_json"
+      "obsidian_app_json"
     ],
     "44": [
-      "ujt_vault_obsidian_app_json"
+      "obsidian_appearance_json"
     ],
     "45": [
-      "ujt_vault_obsidian_appearance_json"
+      "ujt_vault_obsidian_app_json"
     ],
     "46": [
-      "development_history_md"
+      "ujt_vault_obsidian_appearance_json"
     ],
     "47": [
-      "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history"
+      "development_history_md"
     ],
     "48": [
-      "ultimate_job_tool_development_history_1_project_overview_evolution"
+      "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history"
     ],
     "49": [
-      "ultimate_job_tool_development_history_core_objectives_of_v3"
+      "ultimate_job_tool_development_history_1_project_overview_evolution"
     ],
     "50": [
-      "ultimate_job_tool_development_history_2_technical_stack"
+      "ultimate_job_tool_development_history_core_objectives_of_v3"
     ],
     "51": [
-      "ultimate_job_tool_development_history_3_core_features_implementation_details"
+      "ultimate_job_tool_development_history_2_technical_stack"
     ],
     "52": [
-      "ultimate_job_tool_development_history_a_the_dual_cv_system"
+      "ultimate_job_tool_development_history_3_core_features_implementation_details"
     ],
     "53": [
-      "ultimate_job_tool_development_history_b_dynamic_prompt_engine"
+      "ultimate_job_tool_development_history_a_the_dual_cv_system"
     ],
     "54": [
-      "ultimate_job_tool_development_history_c_multi_provider_ai_integration"
+      "ultimate_job_tool_development_history_b_dynamic_prompt_engine"
     ],
     "55": [
-      "ultimate_job_tool_development_history_d_in_browser_pdf_compilation"
+      "ultimate_job_tool_development_history_c_multi_provider_ai_integration"
     ],
     "56": [
-      "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction"
+      "ultimate_job_tool_development_history_d_in_browser_pdf_compilation"
     ],
     "57": [
-      "ultimate_job_tool_development_history_f_cv_converter_ats_testing"
+      "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction"
     ],
     "58": [
-      "ultimate_job_tool_development_history_4_ui_ux_architecture"
+      "ultimate_job_tool_development_history_f_cv_converter_ats_testing"
     ],
     "59": [
-      "ultimate_job_tool_development_history_5_development_timeline_key_decisions"
+      "ultimate_job_tool_development_history_4_ui_ux_architecture"
     ],
     "60": [
-      "ultimate_job_tool_development_history_6_known_constraints_future_considerations"
+      "ultimate_job_tool_development_history_5_development_timeline_key_decisions"
     ],
     "61": [
-      "troubleshooting_md"
+      "ultimate_job_tool_development_history_6_known_constraints_future_considerations"
     ],
     "62": [
-      "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes"
+      "troubleshooting_md"
     ],
     "63": [
-      "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting"
+      "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes"
     ],
     "64": [
-      "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding"
+      "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting"
     ],
     "65": [
-      "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax"
+      "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding"
     ],
     "66": [
-      "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge"
+      "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax"
     ],
     "67": [
-      "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking"
+      "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge"
     ],
     "68": [
-      "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls"
+      "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking"
     ],
     "69": [
-      "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs"
+      "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls"
     ],
     "70": [
-      "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues"
+      "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs"
     ],
     "71": [
-      "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation"
+      "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues"
     ],
     "72": [
-      "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance"
+      "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation"
     ],
     "73": [
-      "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers"
+      "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance"
     ],
     "74": [
-      "ultimate_job_tool_troubleshooting_4_ui_ux_bugs"
+      "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers"
     ],
     "75": [
-      "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags"
+      "ultimate_job_tool_troubleshooting_4_ui_ux_bugs"
     ],
     "76": [
-      "ultimate_job_tool_ai_service"
+      "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags"
     ],
     "77": [
-      "ultimate_job_tool_graphify_knowledge_graph_guide"
+      "ultimate_job_tool_storage_service"
     ],
     "78": [
+      "ultimate_job_tool_ats_service"
+    ],
+    "79": [
+      "ultimate_job_tool_ai_service"
+    ],
+    "80": [
+      "ultimate_job_tool_graphify_knowledge_graph_guide"
+    ],
+    "81": [
       "agents_rules_graphify_md_graphify"
     ]
   },
   "cohesion": {
-    "0": 0.14479638009049775,
-    "1": 0.17478991596638654,
-    "2": 0.20840336134453782,
+    "0": 0.14223512336719885,
+    "1": 0.14479638009049775,
+    "2": 0.1051693404634581,
     "3": 0.1051693404634581,
     "4": 0.1051693404634581,
     "5": 0.1051693404634581,
-    "6": 0.1051693404634581,
+    "6": 0.20967741935483872,
     "7": 0.0625,
     "8": 0.0625,
     "9": 0.06896551724137931,
-    "10": 0.1,
-    "11": 0.1111111111111111,
-    "12": 0.14285714285714285,
-    "13": 0.25,
+    "10": 0.30039525691699603,
+    "11": 0.1,
+    "12": 0.1111111111111111,
+    "13": 0.14285714285714285,
     "14": 0.25,
     "15": 0.25,
     "16": 0.25,
     "17": 0.25,
-    "18": 0.3333333333333333,
+    "18": 0.4,
     "19": 0.4,
     "20": 0.4,
     "21": 0.4,
     "22": 0.4,
-    "23": 0.4,
+    "23": 0.5,
     "24": 0.5,
     "25": 0.5,
     "26": 0.5,
@@ -777,7 +816,7 @@
     "37": 0.5,
     "38": 0.6666666666666666,
     "39": 0.6666666666666666,
-    "40": 1.0,
+    "40": 0.6666666666666666,
     "41": 1.0,
     "42": 1.0,
     "43": 1.0,
@@ -815,9 +854,27 @@
     "75": 1.0,
     "76": 1.0,
     "77": 1.0,
-    "78": 1.0
+    "78": 1.0,
+    "79": 1.0,
+    "80": 1.0,
+    "81": 1.0
   },
   "gods": [
+    {
+      "id": "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
+      "label": "mtime",
+      "degree": 51
+    },
+    {
+      "id": "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_ast_hash",
+      "label": "ast_hash",
+      "degree": 51
+    },
+    {
+      "id": "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
+      "label": "semantic_hash",
+      "degree": 51
+    },
     {
       "id": "2026_05_23_3_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
       "label": "mtime",
@@ -832,21 +889,6 @@
       "id": "2026_05_23_3_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
       "label": "semantic_hash",
       "degree": 48
-    },
-    {
-      "id": "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_mtime",
-      "label": "mtime",
-      "degree": 33
-    },
-    {
-      "id": "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_ast_hash",
-      "label": "ast_hash",
-      "degree": 33
-    },
-    {
-      "id": "graphify_out_manifest_home_koukou_helpdesk_job_prompt_generator_ultimate_job_tool_readme_md_semantic_hash",
-      "label": "semantic_hash",
-      "degree": 33
     },
     {
       "id": "graphify_out_graphify_analysis_communities",
@@ -902,32 +944,10 @@
       "confidence": "INFERRED",
       "relation": "conceptually_related_to",
       "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories"
-    },
-    {
-      "source": "how_does_the_ats_scoring_logic_work.md",
-      "target": "ATS Service",
-      "source_files": [
-        "memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
-        "src/services/atsService.js"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "references",
-      "why": "crosses file types (doc \u2194 code); connects across different repos/directories"
-    },
-    {
-      "source": "AtsTestTab()",
-      "target": "ATS Service",
-      "source_files": [
-        "src/components/tabs/AtsTestTab.jsx",
-        "src/services/atsService.js"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "cross-file semantic connection"
     }
   ],
   "tokens": {
-    "input": 19372,
-    "output": 1790
+    "input": 18085,
+    "output": 3763
   }
 }
