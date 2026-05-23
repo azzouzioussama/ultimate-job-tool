@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>/ — graphify tree viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      margin: 20px 0 0 24px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #1e3a56;
+    }
+    .controls {
+      margin: 20px 0 15px 24px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 18px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:active {
+      background: #004085;
+    }
+    #tree-container {
+      width: calc(100vw - 48px); /* Adjust for body margin/padding */
+      height: 85vh;
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      margin-left: 24px;
+      margin-right: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+    }
+    svg {
+      background: #fff;
+      border-radius: 8px;
+      display: block; /* Important for D3 */
+    }
+    .node circle {
+      stroke-width: 2.5px;
+    }
+    .node text { /* Base style for the <text> container */
+      font: 13px 'Segoe UI', sans-serif;
+      paint-order: stroke fill; /* Ensures text is readable over lines */
+      stroke: #fff; /* White halo */
+      stroke-width: 3px; /* Halo thickness */
+      stroke-linejoin: round;
+      stroke-opacity: 0.85; /* Halo opacity */
+    }
+    .link {
+      fill: none;
+      stroke-opacity: 0.7;
+      stroke-width: 2px;
+    }
+  </style>
+</head>
+<body>
+  <h1>/ — Knowledge Graph</h1>
+  <div class="controls">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="resetView()">Reset View</button>
+  </div>
+  <div id="tree-container">
+    <svg id="tree-svg" width="6000" height="8000"></svg>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    const initialJsonData = {"name":"/","total_count":433,"children":[{"name":".graphify_analysis.json","total_count":33,"children":[{"name":"0","total_count":1,"children":[]},{"name":"1","total_count":1,"children":[]},{"name":"10","total_count":1,"children":[]},{"name":"11","total_count":1,"children":[]},{"name":"12","total_count":1,"children":[]},{"name":"13","total_count":1,"children":[]},{"name":"14","total_count":1,"children":[]},{"name":"15","total_count":1,"children":[]},{"name":"16","total_count":1,"children":[]},{"name":"17","total_count":1,"children":[]},{"name":"18","total_count":1,"children":[]},{"name":"19","total_count":1,"children":[]},{"name":"2","total_count":1,"children":[]},{"name":"20","total_count":1,"children":[]},{"name":"21","total_count":1,"children":[]},{"name":"22","total_count":1,"children":[]},{"name":"23","total_count":1,"children":[]},{"name":"24","total_count":1,"children":[]},{"name":"25","total_count":1,"children":[]},{"name":"3","total_count":1,"children":[]},{"name":"4","total_count":1,"children":[]},{"name":"5","total_count":1,"children":[]},{"name":"6","total_count":1,"children":[]},{"name":"7","total_count":1,"children":[]},{"name":"8","total_count":1,"children":[]},{"name":"9","total_count":1,"children":[]},{"name":"cohesion","total_count":1,"children":[]},{"name":"communities","total_count":1,"children":[]},{"name":"gods","total_count":1,"children":[]},{"name":"input","total_count":1,"children":[]},{"name":"output","total_count":1,"children":[]},{"name":"surprises","total_count":1,"children":[]},{"name":"tokens","total_count":1,"children":[]}]},{"name":".graphify_labels.json","total_count":17,"children":[{"name":"0","total_count":1,"children":[]},{"name":"1","total_count":1,"children":[]},{"name":"11","total_count":1,"children":[]},{"name":"18","total_count":1,"children":[]},{"name":"19","total_count":1,"children":[]},{"name":"2","total_count":1,"children":[]},{"name":"20","total_count":1,"children":[]},{"name":"21","total_count":1,"children":[]},{"name":"25","total_count":1,"children":[]},{"name":"26","total_count":1,"children":[]},{"name":"27","total_count":1,"children":[]},{"name":"3","total_count":1,"children":[]},{"name":"4","total_count":1,"children":[]},{"name":"5","total_count":1,"children":[]},{"name":"6","total_count":1,"children":[]},{"name":"7","total_count":1,"children":[]},{"name":"8","total_count":1,"children":[]}]},{"name":".obsidian","total_count":33,"children":[{"name":"core-plugins.json","total_count":31,"children":[{"name":"audio-recorder","total_count":1,"children":[]},{"name":"backlink","total_count":1,"children":[]},{"name":"bases","total_count":1,"children":[]},{"name":"bookmarks","total_count":1,"children":[]},{"name":"canvas","total_count":1,"children":[]},{"name":"command-palette","total_count":1,"children":[]},{"name":"daily-notes","total_count":1,"children":[]},{"name":"editor-status","total_count":1,"children":[]},{"name":"file-explorer","total_count":1,"children":[]},{"name":"file-recovery","total_count":1,"children":[]},{"name":"footnotes","total_count":1,"children":[]},{"name":"global-search","total_count":1,"children":[]},{"name":"graph","total_count":1,"children":[]},{"name":"markdown-importer","total_count":1,"children":[]},{"name":"note-composer","total_count":1,"children":[]},{"name":"outgoing-link","total_count":1,"children":[]},{"name":"outline","total_count":1,"children":[]},{"name":"page-preview","total_count":1,"children":[]},{"name":"properties","total_count":1,"children":[]},{"name":"publish","total_count":1,"children":[]},{"name":"random-note","total_count":1,"children":[]},{"name":"slash-command","total_count":1,"children":[]},{"name":"slides","total_count":1,"children":[]},{"name":"switcher","total_count":1,"children":[]},{"name":"sync","total_count":1,"children":[]},{"name":"tag-pane","total_count":1,"children":[]},{"name":"templates","total_count":1,"children":[]},{"name":"webviewer","total_count":1,"children":[]},{"name":"word-count","total_count":1,"children":[]},{"name":"workspaces","total_count":1,"children":[]},{"name":"zk-prefixer","total_count":1,"children":[]}]},{"name":"app.json","total_count":1,"children":[]},{"name":"appearance.json","total_count":1,"children":[]}]},{"name":"2026-05-23","total_count":63,"children":[{"name":".graphify_analysis.json","total_count":33,"children":[{"name":"0","total_count":1,"children":[]},{"name":"1","total_count":1,"children":[]},{"name":"10","total_count":1,"children":[]},{"name":"11","total_count":1,"children":[]},{"name":"12","total_count":1,"children":[]},{"name":"13","total_count":1,"children":[]},{"name":"14","total_count":1,"children":[]},{"name":"15","total_count":1,"children":[]},{"name":"16","total_count":1,"children":[]},{"name":"17","total_count":1,"children":[]},{"name":"18","total_count":1,"children":[]},{"name":"19","total_count":1,"children":[]},{"name":"2","total_count":1,"children":[]},{"name":"20","total_count":1,"children":[]},{"name":"21","total_count":1,"children":[]},{"name":"22","total_count":1,"children":[]},{"name":"23","total_count":1,"children":[]},{"name":"24","total_count":1,"children":[]},{"name":"25","total_count":1,"children":[]},{"name":"3","total_count":1,"children":[]},{"name":"4","total_count":1,"children":[]},{"name":"5","total_count":1,"children":[]},{"name":"6","total_count":1,"children":[]},{"name":"7","total_count":1,"children":[]},{"name":"8","total_count":1,"children":[]},{"name":"9","total_count":1,"children":[]},{"name":"cohesion","total_count":1,"children":[]},{"name":"communities","total_count":1,"children":[]},{"name":"gods","total_count":1,"children":[]},{"name":"input","total_count":1,"children":[]},{"name":"output","total_count":1,"children":[]},{"name":"surprises","total_count":1,"children":[]},{"name":"tokens","total_count":1,"children":[]}]},{"name":"graph.json","total_count":7,"children":[{"name":"built_at_commit","total_count":1,"children":[]},{"name":"directed","total_count":1,"children":[]},{"name":"graph","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"links","total_count":1,"children":[]},{"name":"multigraph","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"manifest.json","total_count":23,"children":[{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/package.json","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/postcss.config.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/App.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/layout/TabNavigation.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/AiAssistantTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DashboardTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/aiProviders.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/promptTemplates.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/syntheticCv.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useLocalStorage.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useToast.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/aiService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/atsService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/fileUploadService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/latexUtils.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/pdfService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/scraperService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/storageService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/vercel.json","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/vite.config.js","total_count":1,"children":[]},{"name":"ast_hash","total_count":1,"children":[]},{"name":"mtime","total_count":1,"children":[]},{"name":"semantic_hash","total_count":1,"children":[]}]}]},{"name":"2026-05-23_2","total_count":119,"children":[{"name":".graphify_analysis.json","total_count":33,"children":[{"name":"0","total_count":1,"children":[]},{"name":"1","total_count":1,"children":[]},{"name":"10","total_count":1,"children":[]},{"name":"11","total_count":1,"children":[]},{"name":"12","total_count":1,"children":[]},{"name":"13","total_count":1,"children":[]},{"name":"14","total_count":1,"children":[]},{"name":"15","total_count":1,"children":[]},{"name":"16","total_count":1,"children":[]},{"name":"17","total_count":1,"children":[]},{"name":"18","total_count":1,"children":[]},{"name":"19","total_count":1,"children":[]},{"name":"2","total_count":1,"children":[]},{"name":"20","total_count":1,"children":[]},{"name":"21","total_count":1,"children":[]},{"name":"22","total_count":1,"children":[]},{"name":"23","total_count":1,"children":[]},{"name":"24","total_count":1,"children":[]},{"name":"25","total_count":1,"children":[]},{"name":"3","total_count":1,"children":[]},{"name":"4","total_count":1,"children":[]},{"name":"5","total_count":1,"children":[]},{"name":"6","total_count":1,"children":[]},{"name":"7","total_count":1,"children":[]},{"name":"8","total_count":1,"children":[]},{"name":"9","total_count":1,"children":[]},{"name":"cohesion","total_count":1,"children":[]},{"name":"communities","total_count":1,"children":[]},{"name":"gods","total_count":1,"children":[]},{"name":"input","total_count":1,"children":[]},{"name":"output","total_count":1,"children":[]},{"name":"surprises","total_count":1,"children":[]},{"name":"tokens","total_count":1,"children":[]}]},{"name":".graphify_labels.json","total_count":28,"children":[{"name":"0","total_count":1,"children":[]},{"name":"1","total_count":1,"children":[]},{"name":"10","total_count":1,"children":[]},{"name":"11","total_count":1,"children":[]},{"name":"12","total_count":1,"children":[]},{"name":"13","total_count":1,"children":[]},{"name":"14","total_count":1,"children":[]},{"name":"15","total_count":1,"children":[]},{"name":"16","total_count":1,"children":[]},{"name":"17","total_count":1,"children":[]},{"name":"18","total_count":1,"children":[]},{"name":"19","total_count":1,"children":[]},{"name":"2","total_count":1,"children":[]},{"name":"20","total_count":1,"children":[]},{"name":"21","total_count":1,"children":[]},{"name":"22","total_count":1,"children":[]},{"name":"23","total_count":1,"children":[]},{"name":"24","total_count":1,"children":[]},{"name":"25","total_count":1,"children":[]},{"name":"26","total_count":1,"children":[]},{"name":"27","total_count":1,"children":[]},{"name":"3","total_count":1,"children":[]},{"name":"4","total_count":1,"children":[]},{"name":"5","total_count":1,"children":[]},{"name":"6","total_count":1,"children":[]},{"name":"7","total_count":1,"children":[]},{"name":"8","total_count":1,"children":[]},{"name":"9","total_count":1,"children":[]}]},{"name":"graph.json","total_count":7,"children":[{"name":"built_at_commit","total_count":1,"children":[]},{"name":"directed","total_count":1,"children":[]},{"name":"graph","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"links","total_count":1,"children":[]},{"name":"multigraph","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"manifest.json","total_count":51,"children":[{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/.agents/rules/graphify.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/.agents/workflows/graphify.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/App_old.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/CONTRIBUTORS_GUIDE.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/DEVELOPMENT_HISTORY.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/eslint.config.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/index.html","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/package.json","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/postcss.config.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/Project_Summary.MD","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/public/favicon.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/public/icons.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/README.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/App.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/assets/hero.png","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/assets/react.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/assets/vite.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/layout/Header.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/layout/TabNavigation.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/layout/Toast.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/AiAssistantTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/AtsTestTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DashboardTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/JobOfferTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/MyCvTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/PdfMakerTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/PromptsTab.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/aiProviders.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/promptTemplates.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/syntheticCv.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useLocalStorage.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useToast.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/main.jsx","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/aiService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/atsService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/db.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/fileUploadService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/latexUtils.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/pdfService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/scraperService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/storageService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/tailwind.config.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/test/Jina_cleaned.txt","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/test/Jina_results.txt","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/test/Scrapfly_results.txt","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/TROUBLESHOOTING.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/vercel.json","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/vite.config.js","total_count":1,"children":[]},{"name":"ast_hash","total_count":1,"children":[]},{"name":"mtime","total_count":1,"children":[]},{"name":"semantic_hash","total_count":1,"children":[]}]}]},{"name":"cache","total_count":81,"children":[{"name":"ast","total_count":20,"children":[{"name":"03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14.json","total_count":2,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"26f2577a68d808f7f33ec3e418b95b635aec180d93b22b975e9ae67c47e361c8.json","total_count":4,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"input_tokens","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]},{"name":"output_tokens","total_count":1,"children":[]}]},{"name":"5c0347aabbe0b642d34e769077467df9027861ca5dbddea700f43cece1501b85.json","total_count":2,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"abfbd7113f7e2794577f7136725d5baa12eb5c1dc404768045d7045e26e697ad.json","total_count":4,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"input_tokens","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]},{"name":"output_tokens","total_count":1,"children":[]}]},{"name":"e539d73848bfbe1d3a377d9bbf5df23c8213b7024467ebae93b05d4250bbae0f.json","total_count":4,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"input_tokens","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]},{"name":"output_tokens","total_count":1,"children":[]}]},{"name":"ebb679dcd5a968e3c9e4e942cd7049aaa9c76a40f7eab88fbac07aa0dc4b76eb.json","total_count":4,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"input_tokens","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]},{"name":"output_tokens","total_count":1,"children":[]}]}]},{"name":"semantic","total_count":42,"children":[{"name":"03830b7a76566af184e5718b027e5bbdb225a4c1017f24a34c946ada48dceb14.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"06259aabef14b11267356833ab9036f3415fccf92cc83110fd1f66027d6806dd.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"1a8f2df476ce28bceea3a1a4f8a1839a6b3e477097a0b8b881f4d07cca8803b7.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"1e47a345640ee2939d6d39d767c789dff845eed8d24d0899e39ad1bf798fab0b.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"26a91e7e530382f4d771f567cac62243eb9d4d777d3bad08a97225211c786676.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"35b9c2de1e90c236bc18e49b835381f692fcd7a4c865186fda944b144105ecbf.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"952ba47366a15d3e04f57290ccdb7827109b9ded3a63d4dba4cda485af93f570.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"9f9916d8c32597ada7d8353f583e9773b39bb7f092da4f0738eb08a9aa5f6f28.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"b0167b1366b2575ec2e455cc98d39caac971b4d00b349afa5d824826203a44f0.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"c4472b0163bfff962c4779573c1ccf4bdd0f63d7ef994f3e30a6fda39929511d.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"d639b2a34e7e23fcbd7bbd87dee9e104556e77c497ec2c4f68016b55236c8379.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"fae6a2eaf25a884a080d1109ab414dfcc254bcc579e7d8aeaf7965cb0b7b4f30.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"fb2926ae8b845aed1f34b5a31ce889be889a726a2f4d65b00a5e6e17ca365dd9.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"fdec69f5f83eb5eaa4dfbb9abcfd86a89296eac1dd6d0665912e8f6d635faa32.json","total_count":3,"children":[{"name":"edges","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]}]},{"name":"stat-index.json","total_count":19,"children":[{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/.agents/rules/graphify.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/.agents/workflows/graphify.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/CONTRIBUTORS_GUIDE.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/DEVELOPMENT_HISTORY.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/Project_Summary.MD","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/public/favicon.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/README.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/assets/hero.png","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/assets/react.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/assets/vite.svg","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/aiProviders.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/promptTemplates.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/syntheticCv.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/scraperService.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/test/Jina_cleaned.txt","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/test/Scrapfly_results.txt","total_count":1,"children":[]},{"name":"hash","total_count":1,"children":[]},{"name":"mtime_ns","total_count":1,"children":[]},{"name":"size","total_count":1,"children":[]}]}]},{"name":"DEVELOPMENT_HISTORY.md","total_count":15,"children":[{"name":"1. Project Overview & Evolution","total_count":1,"children":[]},{"name":"2. Technical Stack","total_count":1,"children":[]},{"name":"3. Core Features & Implementation Details","total_count":1,"children":[]},{"name":"4. UI/UX Architecture","total_count":1,"children":[]},{"name":"5. Development Timeline & Key Decisions","total_count":1,"children":[]},{"name":"6. Known Constraints & Future Considerations","total_count":1,"children":[]},{"name":"A. The Dual CV System","total_count":1,"children":[]},{"name":"B. Dynamic Prompt Engine","total_count":1,"children":[]},{"name":"C. Multi-Provider AI Integration","total_count":1,"children":[]},{"name":"Core Objectives of v3","total_count":1,"children":[]},{"name":"D. In-Browser PDF Compilation","total_count":1,"children":[]},{"name":"DEVELOPMENT_HISTORY.md","total_count":1,"children":[]},{"name":"E. Job Posting Scraping & Auto-Extraction","total_count":1,"children":[]},{"name":"F. CV Converter & ATS Testing","total_count":1,"children":[]},{"name":"Ultimate Job Hunting Tool - Architecture & Development History","total_count":1,"children":[]}]},{"name":"graph.json","total_count":7,"children":[{"name":"built_at_commit","total_count":1,"children":[]},{"name":"directed","total_count":1,"children":[]},{"name":"graph","total_count":1,"children":[]},{"name":"hyperedges","total_count":1,"children":[]},{"name":"links","total_count":1,"children":[]},{"name":"multigraph","total_count":1,"children":[]},{"name":"nodes","total_count":1,"children":[]}]},{"name":"manifest.json","total_count":11,"children":[{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/CONTRIBUTORS_GUIDE.md","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/Project_Summary.MD","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/aiProviders.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/promptTemplates.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/syntheticCv.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useLocalStorage.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/latexUtils.js","total_count":1,"children":[]},{"name":"/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/scraperService.js","total_count":1,"children":[]},{"name":"ast_hash","total_count":1,"children":[]},{"name":"mtime","total_count":1,"children":[]},{"name":"semantic_hash","total_count":1,"children":[]}]},{"name":"src","total_count":4,"children":[{"name":"App.jsx","total_count":1,"children":[{"name":"App()","total_count":1,"children":[]}]},{"name":"hooks","total_count":1,"children":[{"name":"useToast.js","total_count":1,"children":[{"name":"useToast()","total_count":1,"children":[]}]}]},{"name":"services","total_count":2,"children":[{"name":"pdfService.js","total_count":1,"children":[{"name":"PDF Service","total_count":1,"children":[]}]},{"name":"scraperService.js","total_count":1,"children":[{"name":"Scraper Service","total_count":1,"children":[]}]}]}]},{"name":"TROUBLESHOOTING.md","total_count":17,"children":[{"name":"1. The TeXLive PDF Compilation Failures","total_count":1,"children":[]},{"name":"2. The PDF Inline Display Challenge","total_count":1,"children":[]},{"name":"3. AI API Quota & Provider Issues","total_count":1,"children":[]},{"name":"4. UI/UX Bugs","total_count":1,"children":[]},{"name":"Job Posting Scraper Issues","total_count":1,"children":[]},{"name":"Problem 1: `filename[]` Array Formatting","total_count":1,"children":[]},{"name":"Problem 1: Gemini \"Model Not Found\" / Deprecation","total_count":1,"children":[]},{"name":"Problem 2: DeepSeek \"Insufficient Balance\"","total_count":1,"children":[]},{"name":"Problem 2: Missing Multipart Encoding","total_count":1,"children":[]},{"name":"Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs","total_count":1,"children":[]},{"name":"Problem 3: Invalid LaTeX Syntax","total_count":1,"children":[]},{"name":"Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs","total_count":1,"children":[]},{"name":"Problem 3: React State Stagnation Across Providers","total_count":1,"children":[]},{"name":"Problem: CORS & `X-Frame-Options` Blocking","total_count":1,"children":[]},{"name":"Problem: Stale JSX Tags","total_count":1,"children":[]},{"name":"Troubleshooting Log & Bug Fixes","total_count":1,"children":[]},{"name":"TROUBLESHOOTING.md","total_count":1,"children":[]}]},{"name":"UJT-vault","total_count":33,"children":[{"name":".obsidian","total_count":33,"children":[{"name":"core-plugins.json","total_count":31,"children":[{"name":"audio-recorder","total_count":1,"children":[]},{"name":"backlink","total_count":1,"children":[]},{"name":"bases","total_count":1,"children":[]},{"name":"bookmarks","total_count":1,"children":[]},{"name":"canvas","total_count":1,"children":[]},{"name":"command-palette","total_count":1,"children":[]},{"name":"daily-notes","total_count":1,"children":[]},{"name":"editor-status","total_count":1,"children":[]},{"name":"file-explorer","total_count":1,"children":[]},{"name":"file-recovery","total_count":1,"children":[]},{"name":"footnotes","total_count":1,"children":[]},{"name":"global-search","total_count":1,"children":[]},{"name":"graph","total_count":1,"children":[]},{"name":"markdown-importer","total_count":1,"children":[]},{"name":"note-composer","total_count":1,"children":[]},{"name":"outgoing-link","total_count":1,"children":[]},{"name":"outline","total_count":1,"children":[]},{"name":"page-preview","total_count":1,"children":[]},{"name":"properties","total_count":1,"children":[]},{"name":"publish","total_count":1,"children":[]},{"name":"random-note","total_count":1,"children":[]},{"name":"slash-command","total_count":1,"children":[]},{"name":"slides","total_count":1,"children":[]},{"name":"switcher","total_count":1,"children":[]},{"name":"sync","total_count":1,"children":[]},{"name":"tag-pane","total_count":1,"children":[]},{"name":"templates","total_count":1,"children":[]},{"name":"webviewer","total_count":1,"children":[]},{"name":"word-count","total_count":1,"children":[]},{"name":"workspaces","total_count":1,"children":[]},{"name":"zk-prefixer","total_count":1,"children":[]}]},{"name":"app.json","total_count":1,"children":[]},{"name":"appearance.json","total_count":1,"children":[]}]}]}]};
+
+    function transformData(jsonData) {
+        // Helper function to recursively build the children structure
+        function processNode(node, parentL1StageName) {
+            let displayName = node.name;
+            // Append total_count if it exists and is not already in the name
+            if (node.total_count !== undefined) {
+                if (!/\(Total Count: \d+\)$/.test(displayName)) {
+                    displayName += ` (Total Count: ${node.total_count})`;
+                }
+            }
+
+            const newNode = { name: displayName };
+
+            if (parentL1StageName === "Root") {
+                 newNode.originalStageName = node.name;
+            } else {
+                newNode.originalStageName = parentL1StageName;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const stageNameToPass = (parentL1StageName === "Root") ? node.name : parentL1StageName;
+                newNode.children = node.children.map(child => processNode(child, stageNameToPass));
+            }
+
+            return newNode;
+        }
+
+        let rootDisplayName = jsonData.name;
+        if (jsonData.total_count !== undefined && !/\(Total Count: \d+\)$/.test(rootDisplayName)) {
+            rootDisplayName += ` (Total Count: ${jsonData.total_count})`;
+        }
+
+        return {
+            name: rootDisplayName,
+            originalStageName: "Root",
+            children: (jsonData.children || []).map(child => processNode(child, "Root"))
+        };
+    }
+
+    const treeData = transformData(initialJsonData);
+
+    // Auto-populated phaseColors: every depth-1 child of the root gets
+    // a stable colour from a bigger palette so all top-level dirs are
+    // distinguishable.
+    const PALETTE = [
+      ["#3498DB","#2980B9","#AED6F1"], ["#2ECC71","#27AE60","#A9DFBF"],
+      ["#E74C3C","#C0392B","#F5B7B1"], ["#9B59B6","#8E44AD","#D7BDE2"],
+      ["#F39C12","#D68910","#FAD7A0"], ["#1ABC9C","#117864","#A2D9CE"],
+      ["#34495E","#1B2631","#ABB2B9"], ["#E67E22","#BA4A00","#F5CBA7"],
+      ["#16A085","#0E6655","#A2D9CE"], ["#D35400","#A04000","#EDBB99"],
+      ["#7F8C8D","#566573","#D5DBDB"], ["#C0392B","#7B241C","#F5B7B1"],
+      ["#2E86C1","#1B4F72","#A9CCE3"], ["#28B463","#196F3D","#A9DFBF"],
+      ["#AF7AC5","#6C3483","#D2B4DE"],
+    ];
+    const phaseColors = { "Root": { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+                          "Default": { fill: "#BDC3C7", stroke: "#95A5A6", collapsedFill: "#ECF0F1" } };
+    (initialJsonData.children || []).forEach((c, i) => {
+      const pal = PALETTE[i % PALETTE.length];
+      phaseColors[c.name] = { fill: pal[0], stroke: pal[1], collapsedFill: pal[2] };
+    });
+
+    const levelSpecificPalettes = {
+      0: { fill: "#4A4A4A", stroke: "#333333", collapsedFill: "#6C757D" },
+      2: { fill: "#6ab04c", stroke: "#508a38", collapsedFill: "#a3d391" },
+      3: { fill: "#f0932b", stroke: "#d0730f", collapsedFill: "#f6c07e" },
+      4: { fill: "#be2edd", stroke: "#a01cb3", collapsedFill: "#e08bf2" },
+      5: { fill: "#00a8ff", stroke: "#007ac1", collapsedFill: "#74d2ff" },
+      6: { fill: "#e55039", stroke: "#c23620", collapsedFill: "#f09a8d" },
+      default: { fill: "#747d8c", stroke: "#57606f", collapsedFill: "#a4b0be" }
+    };
+
+    const svgElement = d3.select("#tree-svg");
+    const initialSvgWidth = +svgElement.attr("width");
+    const initialSvgHeight = +svgElement.attr("height");
+    const margin = { top: 40, right: 120, bottom: 80, left: 450 };
+    let width = initialSvgWidth - margin.left - margin.right;
+    let height = initialSvgHeight - margin.top - margin.bottom;
+    const duration = 500;
+    let nodeCounter = 0;
+    const g = svgElement.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const treemap = d3.tree().nodeSize([40, 0]);
+    let rootNode = d3.hierarchy(treeData, d => d.children);
+    rootNode.x0 = 0;
+    rootNode.y0 = 0;
+
+    if (rootNode.children) {
+      rootNode.children.forEach(d_child => {
+        if (d_child.children) { collapseBranch(d_child); }
+      });
+    }
+    updateTree(rootNode);
+
+    function collapseBranch(d) { if (d.children) { d._children = d.children; d._children.forEach(collapseBranch); d.children = null; } }
+    function expandBranch(d) { if (d._children) { d.children = d._children; d._children = null; } if (d.children) { d.children.forEach(expandBranch); } }
+    window.expandAll = () => { expandBranch(rootNode); updateTree(rootNode); };
+    window.collapseAll = () => { if (rootNode.children) { rootNode.children.forEach(collapseBranch); } updateTree(rootNode); };
+    window.resetView = () => { if (rootNode.children) { rootNode.children.forEach(d_child => { if (d_child.children || d_child._children) { collapseBranch(d_child); } }); } if (rootNode._children && !rootNode.children) { rootNode.children = rootNode._children; rootNode._children = null; } updateTree(rootNode); };
+
+    function updateTree(source) {
+      const treeLayoutData = treemap(rootNode);
+      let nodes = treeLayoutData.descendants();
+      let links = treeLayoutData.descendants().slice(1);
+
+      let minX = 0;
+      let maxX = 0;
+      if (nodes.length > 0) {
+        minX = d3.min(nodes, d => d.x);
+        maxX = d3.max(nodes, d => d.x);
+      }
+
+      let neededHeight = Math.max(initialSvgHeight, maxX - minX + margin.top + margin.bottom + 100);
+      svgElement.transition().duration(duration / 2).attr("height", neededHeight);
+      g.transition().duration(duration / 2).attr("transform", `translate(${margin.left},${margin.top - minX + 40})`);
+
+      nodes.forEach(d => { d.y = d.depth * 400; }); // Adjust horizontal separation if needed
+
+      const node = g.selectAll('g.node').data(nodes, d => d.id || (d.id = ++nodeCounter));
+      const nodeEnter = node.enter().append('g')
+        .attr('class', d => "node" + (d.children || d._children ? " node--internal" : " node--leaf") + (d._children ? " _children" : ""))
+        .attr('transform', d => `translate(${source.y0},${source.x0})`)
+        .on('click', (event, d) => { if (d.children) { d._children = d.children; d.children = null; } else if (d._children) { d.children = d._children; d._children = null; } updateTree(d); })
+        .style('cursor', d => (d.children || d._children) ? 'pointer' : 'default');
+
+      nodeEnter.append('circle').attr('r', 1e-6);
+
+      nodeEnter.append('text')
+        .attr('dy', '.35em')
+        .attr('x', d => d.children || d._children ? -14 : 14)
+        .attr('text-anchor', d => d.children || d._children ? 'end' : 'start')
+        .style("fill-opacity", 1e-6)
+        .call(wrapText, 380);
+
+      const nodeUpdate = nodeEnter.merge(node);
+      nodeUpdate.transition().duration(duration)
+        .attr('transform', d => `translate(${d.y},${d.x})`)
+        .attr('class', d => "node" + (d.children ? " node--internal" : " node--leaf") + (d._children ? " node--internal _children" : ""));
+
+      nodeUpdate.select('circle').attr('r', 8.5)
+        .style('fill', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            if (d._children) return palette.collapsedFill;
+            if (d.children) return palette.fill;
+            return "#fff";
+        })
+        .style('stroke', d => {
+            let palette;
+            if (d.depth === 0) {
+                palette = levelSpecificPalettes[0];
+            } else if (d.depth === 1) {
+                palette = phaseColors[d.data.originalStageName] || phaseColors.Default;
+            } else {
+                palette = levelSpecificPalettes[d.depth] || levelSpecificPalettes.default;
+            }
+            return palette.stroke;
+        });
+      nodeUpdate.select('text').style("fill-opacity", 1).call(wrapText, 380);
+
+      const nodeExit = node.exit().transition().duration(duration).attr('transform', d => `translate(${source.y},${source.x})`).remove();
+      nodeExit.select('circle').attr('r', 1e-6);
+      nodeExit.select('text').style('fill-opacity', 1e-6);
+
+      const link = g.selectAll('path.link').data(links, d => d.id);
+      const linkEnter = link.enter().insert('path', "g").attr('class', 'link').attr('d', d => { const o = { x: source.x0, y: source.y0 }; return diagonal(o, o); });
+
+      linkEnter.merge(link).transition().duration(duration).attr('d', d => diagonal(d, d.parent))
+        .style('stroke', d => {
+            const sourceNode = d.parent;
+            if (!sourceNode) return phaseColors.Default.stroke;
+            const l1AncestorName = sourceNode.data.originalStageName;
+            const colorPalette = phaseColors[l1AncestorName] || phaseColors.Default;
+            return colorPalette.stroke;
+        });
+      link.exit().transition().duration(duration).attr('d', d => { const o = { x: source.x, y: source.y }; return diagonal(o, o); }).remove();
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function diagonal(s, d) { return `M ${s.y} ${s.x} C ${(s.y + d.y) / 2} ${s.x}, ${(s.y + d.y) / 2} ${d.x}, ${d.y} ${d.x}`; }
+
+    function wrapText(textElements, maxWidth) {
+        const textPartColors = {
+            name: '#343a40',
+            count: '#0056b3'
+        };
+        const countRegex = /(\s\(Total Count: \d+\))$/;
+
+        textElements.each(function () {
+            const textD3 = d3.select(this);
+            const originalNodeText = textD3.datum().data.name;
+            const x = parseFloat(textD3.attr("x") || 0);
+            const initialDy = textD3.attr("dy");
+            const textAnchor = textD3.attr("text-anchor");
+            const lineHeight = 1.1;
+
+            textD3.text(null);
+
+            let namePart = originalNodeText;
+            let countPartText = "";
+
+            const countMatch = originalNodeText.match(countRegex);
+            if (countMatch && originalNodeText.endsWith(countMatch[0])) {
+                namePart = originalNodeText.substring(0, originalNodeText.length - countMatch[0].length).trim();
+                countPartText = countMatch[0].trim();
+            }
+
+            const tokens = [];
+            namePart.split(/\s+/).filter(Boolean).forEach(word => {
+                tokens.push({ text: word, type: 'name' });
+            });
+            if (countPartText) {
+                tokens.push({ text: countPartText, type: 'count' });
+            }
+
+            if (tokens.length === 0 && originalNodeText) {
+                tokens.push({ text: originalNodeText, type: 'name' });
+            }
+
+            let currentTspan = textD3.append("tspan").attr("x", x).attr("dy", initialDy);
+            if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+
+            let lineTokens = [];
+
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenObj = tokens[i];
+
+                lineTokens.push(tokenObj);
+                currentTspan.text(lineTokens.map(t => t.text).join(" "));
+
+                if (currentTspan.node().getComputedTextLength() > maxWidth && lineTokens.length > 1) {
+                    lineTokens.pop();
+
+                    currentTspan.text(null);
+                    lineTokens.forEach((prevToken, idx) => {
+                        currentTspan.append("tspan")
+                            .text((idx > 0 ? " " : "") + prevToken.text)
+                            .style("fill", textPartColors[prevToken.type] || textPartColors.name)
+                            .style("font-weight", prevToken.type === 'count' ? "bold" : "normal");
+                    });
+
+                    lineTokens = [tokenObj];
+                    currentTspan = textD3.append("tspan").attr("x", x).attr("dy", lineHeight + "em");
+                    if (textAnchor === "end") currentTspan.attr("text-anchor", "end");
+                }
+            }
+
+            currentTspan.text(null);
+            lineTokens.forEach((token, idx) => {
+                currentTspan.append("tspan")
+                    .text((idx > 0 ? " " : "") + token.text)
+                    .style("fill", textPartColors[token.type] || textPartColors.name)
+                    .style("font-weight", token.type === 'count' ? "bold" : "normal");
+            });
+
+            if (textD3.selectAll("tspan > tspan").empty() && textD3.select("tspan").text().length === 0 && originalNodeText) {
+                let t = textD3.select("tspan");
+                let displayText = originalNodeText;
+                t.text(displayText).style("fill", textPartColors.name);
+                if (t.node() && t.node().getComputedTextLength() > maxWidth && displayText.length > 20) {
+                    let estimatedChars = Math.floor(maxWidth / (t.node().getComputedTextLength()/displayText.length) );
+                    displayText = displayText.substring(0, Math.max(0, estimatedChars - 3)) + "...";
+                    t.text(displayText);
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>
