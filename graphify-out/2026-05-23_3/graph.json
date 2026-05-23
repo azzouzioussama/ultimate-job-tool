@@ -4,598 +4,436 @@
   "graph": {},
   "nodes": [
     {
-      "label": "GRAPHIFY_GUIDE.md",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L1",
-      "id": "graphify_guide_md",
-      "community": 5,
-      "norm_label": "graphify_guide.md"
-    },
-    {
-      "label": "Graphify Knowledge Graph Guide",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L1",
-      "id": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "community": 5,
-      "norm_label": "graphify knowledge graph guide"
-    },
-    {
-      "label": "1. What is Graphify?",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L5",
-      "id": "ultimate_job_tool_graphify_guide_1_what_is_graphify",
-      "community": 5,
-      "norm_label": "1. what is graphify?"
-    },
-    {
-      "label": "2. Basic Installation & Setup (One-Time)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L8",
-      "id": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "community": 5,
-      "norm_label": "2. basic installation & setup (one-time)"
-    },
-    {
-      "label": "code:bash (pip install graphifyy)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L12",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_1",
-      "community": 5,
-      "norm_label": "code:bash (pip install graphifyy)"
-    },
-    {
-      "label": "code:bash (graphify antigravity install)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L17",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_2",
-      "community": 5,
-      "norm_label": "code:bash (graphify antigravity install)"
-    },
-    {
-      "label": "code:bash (graphify hook install)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L23",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_3",
-      "community": 5,
-      "norm_label": "code:bash (graphify hook install)"
-    },
-    {
-      "label": "3. How to Query the Graph (As a Developer)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L28",
-      "id": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "community": 5,
-      "norm_label": "3. how to query the graph (as a developer)"
-    },
-    {
-      "label": "Using the AI Assistant (Easiest)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L30",
-      "id": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest",
-      "community": 5,
-      "norm_label": "using the ai assistant (easiest)"
-    },
-    {
-      "label": "Using the Terminal",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L35",
-      "id": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "community": 5,
-      "norm_label": "using the terminal"
-    },
-    {
-      "label": "code:bash (graphify tree)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L39",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_4",
-      "community": 5,
-      "norm_label": "code:bash (graphify tree)"
-    },
-    {
-      "label": "code:bash (graphify query \"How does the Dexie database synchronize with)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L45",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_5",
-      "community": 5,
-      "norm_label": "code:bash (graphify query \"how does the dexie database synchronize with)"
-    },
-    {
-      "label": "code:bash (graphify affected \"storageService\")",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L50",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_6",
-      "community": 5,
-      "norm_label": "code:bash (graphify affected \"storageservice\")"
-    },
-    {
-      "label": "4. How to Update the Graph",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L54",
-      "id": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
-      "community": 5,
-      "norm_label": "4. how to update the graph"
-    },
-    {
-      "label": "code:bash (graphify update .)",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L56",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_7",
-      "community": 5,
-      "norm_label": "code:bash (graphify update .)"
-    },
-    {
-      "label": "5. \ud83d\udca1 PRO TIP: Changing the LLM Backend for Semantic Extraction",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L61",
-      "id": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "community": 5,
-      "norm_label": "5. \ud83d\udca1 pro tip: changing the llm backend for semantic extraction"
-    },
-    {
-      "label": "code:bash (# Example: Using Anthropic (Claude))",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L66",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_8",
-      "community": 5,
-      "norm_label": "code:bash (# example: using anthropic (claude))"
-    },
-    {
-      "label": "Supported Backends:",
-      "file_type": "document",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L83",
-      "id": "ultimate_job_tool_graphify_guide_supported_backends",
-      "community": 5,
-      "norm_label": "supported backends:"
-    },
-    {
       "label": "DEVELOPMENT_HISTORY.md",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L1",
+      "id": "development_history_md",
       "community": 8,
-      "norm_label": "development_history.md",
-      "id": "development_history_md"
+      "norm_label": "development_history.md"
     },
     {
       "label": "Ultimate Job Hunting Tool - Architecture & Development History",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L1",
+      "id": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
       "community": 8,
-      "norm_label": "ultimate job hunting tool - architecture & development history",
-      "id": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history"
+      "norm_label": "ultimate job hunting tool - architecture & development history"
     },
     {
       "label": "1. Project Overview & Evolution",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L5",
+      "id": "ultimate_job_tool_development_history_1_project_overview_evolution",
       "community": 8,
-      "norm_label": "1. project overview & evolution",
-      "id": "ultimate_job_tool_development_history_1_project_overview_evolution"
+      "norm_label": "1. project overview & evolution"
     },
     {
       "label": "Core Objectives of v3",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L9",
+      "id": "ultimate_job_tool_development_history_core_objectives_of_v3",
       "community": 8,
-      "norm_label": "core objectives of v3",
-      "id": "ultimate_job_tool_development_history_core_objectives_of_v3"
+      "norm_label": "core objectives of v3"
     },
     {
       "label": "2. Technical Stack",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L16",
+      "id": "ultimate_job_tool_development_history_2_technical_stack",
       "community": 8,
-      "norm_label": "2. technical stack",
-      "id": "ultimate_job_tool_development_history_2_technical_stack"
+      "norm_label": "2. technical stack"
     },
     {
       "label": "3. Core Features & Implementation Details",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L25",
+      "id": "ultimate_job_tool_development_history_3_core_features_implementation_details",
       "community": 8,
-      "norm_label": "3. core features & implementation details",
-      "id": "ultimate_job_tool_development_history_3_core_features_implementation_details"
+      "norm_label": "3. core features & implementation details"
     },
     {
       "label": "A. The Dual CV System",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L27",
+      "id": "ultimate_job_tool_development_history_a_the_dual_cv_system",
       "community": 8,
-      "norm_label": "a. the dual cv system",
-      "id": "ultimate_job_tool_development_history_a_the_dual_cv_system"
+      "norm_label": "a. the dual cv system"
     },
     {
       "label": "B. Dynamic Prompt Engine",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L33",
+      "id": "ultimate_job_tool_development_history_b_dynamic_prompt_engine",
       "community": 8,
-      "norm_label": "b. dynamic prompt engine",
-      "id": "ultimate_job_tool_development_history_b_dynamic_prompt_engine"
+      "norm_label": "b. dynamic prompt engine"
     },
     {
       "label": "C. Multi-Provider AI Integration",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L38",
+      "id": "ultimate_job_tool_development_history_c_multi_provider_ai_integration",
       "community": 8,
-      "norm_label": "c. multi-provider ai integration",
-      "id": "ultimate_job_tool_development_history_c_multi_provider_ai_integration"
+      "norm_label": "c. multi-provider ai integration"
     },
     {
       "label": "D. In-Browser PDF Compilation",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L51",
+      "id": "ultimate_job_tool_development_history_d_in_browser_pdf_compilation",
       "community": 8,
-      "norm_label": "d. in-browser pdf compilation",
-      "id": "ultimate_job_tool_development_history_d_in_browser_pdf_compilation"
+      "norm_label": "d. in-browser pdf compilation"
     },
     {
       "label": "E. Job Posting Scraping & Auto-Extraction",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L63",
+      "id": "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction",
       "community": 8,
-      "norm_label": "e. job posting scraping & auto-extraction",
-      "id": "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction"
+      "norm_label": "e. job posting scraping & auto-extraction"
     },
     {
       "label": "F. CV Converter & ATS Testing",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L72",
+      "id": "ultimate_job_tool_development_history_f_cv_converter_ats_testing",
       "community": 8,
-      "norm_label": "f. cv converter & ats testing",
-      "id": "ultimate_job_tool_development_history_f_cv_converter_ats_testing"
+      "norm_label": "f. cv converter & ats testing"
     },
     {
       "label": "4. UI/UX Architecture",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L78",
+      "id": "ultimate_job_tool_development_history_4_ui_ux_architecture",
       "community": 8,
-      "norm_label": "4. ui/ux architecture",
-      "id": "ultimate_job_tool_development_history_4_ui_ux_architecture"
+      "norm_label": "4. ui/ux architecture"
     },
     {
       "label": "5. Development Timeline & Key Decisions",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L88",
+      "id": "ultimate_job_tool_development_history_5_development_timeline_key_decisions",
       "community": 8,
-      "norm_label": "5. development timeline & key decisions",
-      "id": "ultimate_job_tool_development_history_5_development_timeline_key_decisions"
+      "norm_label": "5. development timeline & key decisions"
     },
     {
       "label": "6. Known Constraints & Future Considerations",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L105",
+      "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
       "community": 8,
-      "norm_label": "6. known constraints & future considerations",
-      "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations"
+      "norm_label": "6. known constraints & future considerations"
     },
     {
       "label": "TROUBLESHOOTING.md",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L1",
+      "id": "troubleshooting_md",
       "community": 7,
-      "norm_label": "troubleshooting.md",
-      "id": "troubleshooting_md"
+      "norm_label": "troubleshooting.md"
     },
     {
       "label": "Troubleshooting Log & Bug Fixes",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L1",
+      "id": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
       "community": 7,
-      "norm_label": "troubleshooting log & bug fixes",
-      "id": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes"
+      "norm_label": "troubleshooting log & bug fixes"
     },
     {
       "label": "1. The TeXLive PDF Compilation Failures",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L5",
+      "id": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
       "community": 7,
-      "norm_label": "1. the texlive pdf compilation failures",
-      "id": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures"
+      "norm_label": "1. the texlive pdf compilation failures"
     },
     {
       "label": "Problem 1: `filename[]` Array Formatting",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L7",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting",
       "community": 7,
-      "norm_label": "problem 1: `filename[]` array formatting",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting"
+      "norm_label": "problem 1: `filename[]` array formatting"
     },
     {
       "label": "Problem 2: Missing Multipart Encoding",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L12",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding",
       "community": 7,
-      "norm_label": "problem 2: missing multipart encoding",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding"
+      "norm_label": "problem 2: missing multipart encoding"
     },
     {
       "label": "Problem 3: Invalid LaTeX Syntax",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L17",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax",
       "community": 7,
-      "norm_label": "problem 3: invalid latex syntax",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax"
+      "norm_label": "problem 3: invalid latex syntax"
     },
     {
       "label": "2. The PDF Inline Display Challenge",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L22",
+      "id": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
       "community": 7,
-      "norm_label": "2. the pdf inline display challenge",
-      "id": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge"
+      "norm_label": "2. the pdf inline display challenge"
     },
     {
       "label": "Problem: CORS & `X-Frame-Options` Blocking",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L24",
+      "id": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking",
       "community": 7,
-      "norm_label": "problem: cors & `x-frame-options` blocking",
-      "id": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking"
+      "norm_label": "problem: cors & `x-frame-options` blocking"
     },
     {
       "label": "Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L34",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls",
       "community": 7,
-      "norm_label": "problem 2: mobile browsers blocking inline pdf `blob:` urls",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls"
+      "norm_label": "problem 2: mobile browsers blocking inline pdf `blob:` urls"
     },
     {
       "label": "Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L42",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs",
       "community": 7,
-      "norm_label": "problem 3: mobile pdf viewer scrolling & text selection bugs",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs"
+      "norm_label": "problem 3: mobile pdf viewer scrolling & text selection bugs"
     },
     {
       "label": "3. AI API Quota & Provider Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L51",
+      "id": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
       "community": 7,
-      "norm_label": "3. ai api quota & provider issues",
-      "id": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues"
+      "norm_label": "3. ai api quota & provider issues"
     },
     {
       "label": "Problem 1: Gemini \"Model Not Found\" / Deprecation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L53",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation",
       "community": 7,
-      "norm_label": "problem 1: gemini \"model not found\" / deprecation",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation"
+      "norm_label": "problem 1: gemini \"model not found\" / deprecation"
     },
     {
       "label": "Problem 2: DeepSeek \"Insufficient Balance\"",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L58",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance",
       "community": 7,
-      "norm_label": "problem 2: deepseek \"insufficient balance\"",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance"
+      "norm_label": "problem 2: deepseek \"insufficient balance\""
     },
     {
       "label": "Problem 3: React State Stagnation Across Providers",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L65",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers",
       "community": 7,
-      "norm_label": "problem 3: react state stagnation across providers",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers"
+      "norm_label": "problem 3: react state stagnation across providers"
     },
     {
       "label": "4. UI/UX Bugs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L71",
+      "id": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs",
       "community": 7,
-      "norm_label": "4. ui/ux bugs",
-      "id": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs"
+      "norm_label": "4. ui/ux bugs"
     },
     {
       "label": "Problem: Stale JSX Tags",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L73",
+      "id": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags",
       "community": 7,
-      "norm_label": "problem: stale jsx tags",
-      "id": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags"
+      "norm_label": "problem: stale jsx tags"
     },
     {
       "label": "5. AI Hallucination & Regex Challenges",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L78",
+      "id": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges",
       "community": 7,
-      "norm_label": "5. ai hallucination & regex challenges",
-      "id": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges"
+      "norm_label": "5. ai hallucination & regex challenges"
     },
     {
       "label": "Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L80",
+      "id": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands",
       "community": 7,
-      "norm_label": "problem: ai generates invalid latex (mismatched brackets & unescaped ampersands)",
-      "id": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands"
+      "norm_label": "problem: ai generates invalid latex (mismatched brackets & unescaped ampersands)"
     },
     {
       "label": "6. Job Posting Scraper (Jina AI & Scrapfly) Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L87",
+      "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
       "community": 7,
-      "norm_label": "6. job posting scraper (jina ai & scrapfly) issues",
-      "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
+      "norm_label": "6. job posting scraper (jina ai & scrapfly) issues"
     },
     {
       "label": "Problem 1: Scrapfly CORS / Direct Fetch Rejection",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L89",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection",
       "community": 7,
-      "norm_label": "problem 1: scrapfly cors / direct fetch rejection",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
+      "norm_label": "problem 1: scrapfly cors / direct fetch rejection"
     },
     {
       "label": "Problem 2: Scrapfly 422 Unprocessable Entity",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L97",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity",
       "community": 7,
-      "norm_label": "problem 2: scrapfly 422 unprocessable entity",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
+      "norm_label": "problem 2: scrapfly 422 unprocessable entity"
     },
     {
       "label": "Problem 3: Extracted Job Description Format",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L102",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format",
       "community": 7,
-      "norm_label": "problem 3: extracted job description format",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
+      "norm_label": "problem 3: extracted job description format"
     },
     {
       "label": "Problem 4: Jina AI Extractor Boilerplate Noise",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L107",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise",
       "community": 7,
-      "norm_label": "problem 4: jina ai extractor boilerplate noise",
-      "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
+      "norm_label": "problem 4: jina ai extractor boilerplate noise"
     },
     {
       "label": "Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L115",
+      "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai",
       "community": 7,
-      "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)",
-      "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
+      "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)"
     },
     {
       "label": "7. JSON Parsing from AI (ATS Tester)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L121",
+      "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester",
       "community": 7,
-      "norm_label": "7. json parsing from ai (ats tester)",
-      "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester"
+      "norm_label": "7. json parsing from ai (ats tester)"
     },
     {
       "label": "Problem: AI Hallucinating Markdown in JSON Responses",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L123",
+      "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses",
       "community": 7,
-      "norm_label": "problem: ai hallucinating markdown in json responses",
-      "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses"
+      "norm_label": "problem: ai hallucinating markdown in json responses"
     },
     {
       "label": "8. Database (Dexie.js) & Architecture Refactoring",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L134",
+      "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
       "community": 7,
-      "norm_label": "8. database (dexie.js) & architecture refactoring",
-      "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring"
+      "norm_label": "8. database (dexie.js) & architecture refactoring"
     },
     {
       "label": "Problem 1: Cascading Renders warning with `useEffect`",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L136",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
       "community": 7,
-      "norm_label": "problem 1: cascading renders warning with `useeffect`",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect"
+      "norm_label": "problem 1: cascading renders warning with `useeffect`"
     },
     {
       "label": "Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
       "community": 7,
-      "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration"
+      "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
     },
     {
       "label": "9. Graphify Knowledge Graph Generation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L146",
+      "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
       "community": 7,
-      "norm_label": "9. graphify knowledge graph generation",
-      "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation"
+      "norm_label": "9. graphify knowledge graph generation"
     },
     {
       "label": "Problem 1: `openai` package missing during extraction",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L148",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction",
       "community": 7,
-      "norm_label": "problem 1: `openai` package missing during extraction",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction"
+      "norm_label": "problem 1: `openai` package missing during extraction"
     },
     {
       "label": "Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L153",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror",
       "community": 7,
-      "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror"
+      "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)"
     },
     {
       "label": "code:bash (pip uninstall -y pydantic pydantic-core)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L157",
+      "id": "ultimate_job_tool_troubleshooting_codeblock_1",
       "community": 7,
-      "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)",
-      "id": "ultimate_job_tool_troubleshooting_codeblock_1"
+      "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)"
     },
     {
       "label": "graphify.md",
@@ -1070,7 +908,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L30",
-      "community": 9,
+      "community": 2,
       "norm_label": "buildatsprompt()",
       "id": "services_atsservice_buildatsprompt"
     },
@@ -1079,7 +917,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L62",
-      "community": 9,
+      "community": 2,
       "norm_label": "cleanjsonresponse()",
       "id": "services_atsservice_cleanjsonresponse"
     },
@@ -1088,7 +926,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L82",
-      "community": 9,
+      "community": 2,
       "norm_label": "runatsanalysis()",
       "id": "services_atsservice_runatsanalysis"
     },
@@ -1124,7 +962,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L1",
-      "community": 10,
+      "community": 2,
       "norm_label": "latexutils.js",
       "id": "src_services_latexutils_js"
     },
@@ -1133,7 +971,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L33",
-      "community": 10,
+      "community": 2,
       "norm_label": "extractlatexfromresponse()",
       "id": "services_latexutils_extractlatexfromresponse"
     },
@@ -1142,7 +980,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L63",
-      "community": 10,
+      "community": 2,
       "norm_label": "escapeampersands()",
       "id": "services_latexutils_escapeampersands"
     },
@@ -1340,7 +1178,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L1",
-      "community": 2,
+      "community": 5,
       "norm_label": "db.js",
       "id": "src_services_db_js"
     },
@@ -1349,7 +1187,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L18",
-      "community": 2,
+      "community": 5,
       "norm_label": "db",
       "id": "services_db_db"
     },
@@ -1358,7 +1196,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L28",
-      "community": 2,
+      "community": 5,
       "norm_label": "createapplication()",
       "id": "services_db_createapplication"
     },
@@ -1367,7 +1205,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L37",
-      "community": 2,
+      "community": 5,
       "norm_label": "getapplication()",
       "id": "services_db_getapplication"
     },
@@ -1376,7 +1214,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L41",
-      "community": 2,
+      "community": 5,
       "norm_label": "updateapplication()",
       "id": "services_db_updateapplication"
     },
@@ -1385,7 +1223,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L48",
-      "community": 2,
+      "community": 5,
       "norm_label": "deleteapplication()",
       "id": "services_db_deleteapplication"
     },
@@ -1394,7 +1232,7 @@
       "file_type": "code",
       "source_file": "src/services/db.js",
       "source_location": "L52",
-      "community": 2,
+      "community": 5,
       "norm_label": "getallapplications()",
       "id": "services_db_getallapplications"
     },
@@ -1475,7 +1313,7 @@
       "file_type": "code",
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L13",
-      "community": 2,
+      "community": 5,
       "norm_label": "dashboardtab()",
       "id": "tabs_dashboardtab_dashboardtab"
     },
@@ -1641,7 +1479,7 @@
       "label": "ATS Service",
       "file_type": "code",
       "source_file": "src/services/atsService.js",
-      "community": 9,
+      "community": 2,
       "norm_label": "ats service",
       "id": "ats_service"
     },
@@ -1725,182 +1563,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "graphify_guide_md",
-      "target": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_1_what_is_graphify",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L61",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_1",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_2",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_3",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "target": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "target": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_4",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L45",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_5",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_6",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_7",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L66",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_8",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "GRAPHIFY_GUIDE.md",
-      "source_location": "L83",
-      "weight": 1.0,
-      "source": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "target": "ultimate_job_tool_graphify_guide_supported_backends",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "development_history_md",
-      "target": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history"
+      "target": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1908,9 +1576,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
-      "target": "ultimate_job_tool_development_history_1_project_overview_evolution"
+      "target": "ultimate_job_tool_development_history_1_project_overview_evolution",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1918,9 +1586,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
-      "target": "ultimate_job_tool_development_history_2_technical_stack"
+      "target": "ultimate_job_tool_development_history_2_technical_stack",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1928,9 +1596,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
-      "target": "ultimate_job_tool_development_history_3_core_features_implementation_details"
+      "target": "ultimate_job_tool_development_history_3_core_features_implementation_details",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1938,9 +1606,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L78",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
-      "target": "ultimate_job_tool_development_history_4_ui_ux_architecture"
+      "target": "ultimate_job_tool_development_history_4_ui_ux_architecture",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1948,9 +1616,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L88",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
-      "target": "ultimate_job_tool_development_history_5_development_timeline_key_decisions"
+      "target": "ultimate_job_tool_development_history_5_development_timeline_key_decisions",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1958,9 +1626,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L105",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
-      "target": "ultimate_job_tool_development_history_6_known_constraints_future_considerations"
+      "target": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1968,9 +1636,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_1_project_overview_evolution",
-      "target": "ultimate_job_tool_development_history_core_objectives_of_v3"
+      "target": "ultimate_job_tool_development_history_core_objectives_of_v3",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1978,9 +1646,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L27",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_3_core_features_implementation_details",
-      "target": "ultimate_job_tool_development_history_a_the_dual_cv_system"
+      "target": "ultimate_job_tool_development_history_a_the_dual_cv_system",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1988,9 +1656,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L33",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_3_core_features_implementation_details",
-      "target": "ultimate_job_tool_development_history_b_dynamic_prompt_engine"
+      "target": "ultimate_job_tool_development_history_b_dynamic_prompt_engine",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1998,9 +1666,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L38",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_3_core_features_implementation_details",
-      "target": "ultimate_job_tool_development_history_c_multi_provider_ai_integration"
+      "target": "ultimate_job_tool_development_history_c_multi_provider_ai_integration",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2008,9 +1676,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L51",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_3_core_features_implementation_details",
-      "target": "ultimate_job_tool_development_history_d_in_browser_pdf_compilation"
+      "target": "ultimate_job_tool_development_history_d_in_browser_pdf_compilation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2018,9 +1686,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L63",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_3_core_features_implementation_details",
-      "target": "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction"
+      "target": "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2028,9 +1696,9 @@
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L72",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_development_history_3_core_features_implementation_details",
-      "target": "ultimate_job_tool_development_history_f_cv_converter_ats_testing"
+      "target": "ultimate_job_tool_development_history_f_cv_converter_ats_testing",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2038,9 +1706,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "troubleshooting_md",
-      "target": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes"
+      "target": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2048,9 +1716,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures"
+      "target": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2058,9 +1726,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge"
+      "target": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2068,9 +1736,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L51",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues"
+      "target": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2078,9 +1746,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L71",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs"
+      "target": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2088,9 +1756,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L78",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges"
+      "target": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2098,9 +1766,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L87",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
+      "target": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2108,9 +1776,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L121",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester"
+      "target": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2118,9 +1786,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L134",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring"
+      "target": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2128,9 +1796,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L146",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation"
+      "target": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2138,9 +1806,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting"
+      "target": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2148,9 +1816,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding"
+      "target": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2158,9 +1826,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
-      "target": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax"
+      "target": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2168,9 +1836,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L24",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
-      "target": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking"
+      "target": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2178,9 +1846,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L34",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls"
+      "target": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2188,9 +1856,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L42",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
-      "target": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs"
+      "target": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2198,9 +1866,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L53",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation"
+      "target": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2208,9 +1876,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L58",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance"
+      "target": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2218,9 +1886,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L65",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers"
+      "target": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2228,9 +1896,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L73",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs",
-      "target": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags"
+      "target": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2238,9 +1906,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges",
-      "target": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands"
+      "target": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2248,9 +1916,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L89",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
+      "target": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2258,9 +1926,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L97",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
+      "target": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2268,9 +1936,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L102",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
+      "target": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2278,9 +1946,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L107",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
+      "target": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2288,9 +1956,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L115",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
-      "target": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
+      "target": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2298,9 +1966,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester",
-      "target": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses"
+      "target": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2308,9 +1976,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L136",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect"
+      "target": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2318,9 +1986,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration"
+      "target": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2328,9 +1996,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L148",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction"
+      "target": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2338,9 +2006,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L153",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror"
+      "target": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2348,9 +2016,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L157",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror",
-      "target": "ultimate_job_tool_troubleshooting_codeblock_1"
+      "target": "ultimate_job_tool_troubleshooting_codeblock_1",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -4014,5 +3682,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7aef4e57908584a68b2181b17ebeaac3710300da"
+  "built_at_commit": "70471c7b900922dbdd16984bb31c1052c3ba3bbf"
 }
