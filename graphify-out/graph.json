@@ -4,166 +4,238 @@
   "graph": {},
   "nodes": [
     {
+      "label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L1",
+      "id": "graphify_out_memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_md",
+      "community": 12,
+      "norm_label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md"
+    },
+    {
+      "label": "Q: How does the ATS scoring logic work?",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L9",
+      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
+      "community": 12,
+      "norm_label": "q: how does the ats scoring logic work?"
+    },
+    {
+      "label": "Answer",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L11",
+      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_answer",
+      "community": 12,
+      "norm_label": "answer"
+    },
+    {
+      "label": "Source Nodes",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L15",
+      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_source_nodes",
+      "community": 12,
+      "norm_label": "source nodes"
+    },
+    {
+      "label": "query_20260523_215924_how_the_database_work.md",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L1",
+      "id": "graphify_out_memory_query_20260523_215924_how_the_database_work_md",
+      "community": 13,
+      "norm_label": "query_20260523_215924_how_the_database_work.md"
+    },
+    {
+      "label": "Q: How the database work",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L9",
+      "id": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
+      "community": 13,
+      "norm_label": "q: how the database work"
+    },
+    {
+      "label": "Answer",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L11",
+      "id": "memory_query_20260523_215924_how_the_database_work_answer",
+      "community": 13,
+      "norm_label": "answer"
+    },
+    {
+      "label": "Source Nodes",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L15",
+      "id": "memory_query_20260523_215924_how_the_database_work_source_nodes",
+      "community": 13,
+      "norm_label": "source nodes"
+    },
+    {
       "label": "GRAPHIFY_GUIDE.md",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L1",
-      "id": "graphify_guide_md",
       "community": 5,
-      "norm_label": "graphify_guide.md"
+      "norm_label": "graphify_guide.md",
+      "id": "graphify_guide_md"
     },
     {
       "label": "Graphify Knowledge Graph Guide",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L1",
-      "id": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
       "community": 5,
-      "norm_label": "graphify knowledge graph guide"
+      "norm_label": "graphify knowledge graph guide",
+      "id": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide"
     },
     {
       "label": "1. What is Graphify?",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L5",
-      "id": "ultimate_job_tool_graphify_guide_1_what_is_graphify",
       "community": 5,
-      "norm_label": "1. what is graphify?"
+      "norm_label": "1. what is graphify?",
+      "id": "ultimate_job_tool_graphify_guide_1_what_is_graphify"
     },
     {
       "label": "2. Basic Installation & Setup (One-Time)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L8",
-      "id": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
       "community": 5,
-      "norm_label": "2. basic installation & setup (one-time)"
+      "norm_label": "2. basic installation & setup (one-time)",
+      "id": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time"
     },
     {
       "label": "code:bash (pip install graphifyy)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L12",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_1",
       "community": 5,
-      "norm_label": "code:bash (pip install graphifyy)"
+      "norm_label": "code:bash (pip install graphifyy)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_1"
     },
     {
       "label": "code:bash (graphify antigravity install)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L17",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_2",
       "community": 5,
-      "norm_label": "code:bash (graphify antigravity install)"
+      "norm_label": "code:bash (graphify antigravity install)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_2"
     },
     {
       "label": "code:bash (graphify hook install)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L23",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_3",
       "community": 5,
-      "norm_label": "code:bash (graphify hook install)"
+      "norm_label": "code:bash (graphify hook install)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_3"
     },
     {
       "label": "3. How to Query the Graph (As a Developer)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L28",
-      "id": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
       "community": 5,
-      "norm_label": "3. how to query the graph (as a developer)"
+      "norm_label": "3. how to query the graph (as a developer)",
+      "id": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer"
     },
     {
       "label": "Using the AI Assistant (Easiest)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L30",
-      "id": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest",
       "community": 5,
-      "norm_label": "using the ai assistant (easiest)"
+      "norm_label": "using the ai assistant (easiest)",
+      "id": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest"
     },
     {
       "label": "Using the Terminal",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L35",
-      "id": "ultimate_job_tool_graphify_guide_using_the_terminal",
       "community": 5,
-      "norm_label": "using the terminal"
+      "norm_label": "using the terminal",
+      "id": "ultimate_job_tool_graphify_guide_using_the_terminal"
     },
     {
       "label": "code:bash (graphify tree)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L39",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_4",
       "community": 5,
-      "norm_label": "code:bash (graphify tree)"
+      "norm_label": "code:bash (graphify tree)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_4"
     },
     {
       "label": "code:bash (graphify query \"How does the Dexie database synchronize with)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L45",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_5",
       "community": 5,
-      "norm_label": "code:bash (graphify query \"how does the dexie database synchronize with)"
+      "norm_label": "code:bash (graphify query \"how does the dexie database synchronize with)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_5"
     },
     {
       "label": "code:bash (graphify affected \"storageService\")",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L50",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_6",
       "community": 5,
-      "norm_label": "code:bash (graphify affected \"storageservice\")"
+      "norm_label": "code:bash (graphify affected \"storageservice\")",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_6"
     },
     {
       "label": "4. How to Update the Graph",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L54",
-      "id": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
       "community": 5,
-      "norm_label": "4. how to update the graph"
+      "norm_label": "4. how to update the graph",
+      "id": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph"
     },
     {
       "label": "code:bash (graphify update .)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L56",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_7",
       "community": 5,
-      "norm_label": "code:bash (graphify update .)"
+      "norm_label": "code:bash (graphify update .)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_7"
     },
     {
       "label": "5. \ud83d\udca1 PRO TIP: Changing the LLM Backend for Semantic Extraction",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L61",
-      "id": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
       "community": 5,
-      "norm_label": "5. \ud83d\udca1 pro tip: changing the llm backend for semantic extraction"
+      "norm_label": "5. \ud83d\udca1 pro tip: changing the llm backend for semantic extraction",
+      "id": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction"
     },
     {
       "label": "code:bash (# Example: Using Anthropic (Claude))",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L66",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_8",
       "community": 5,
-      "norm_label": "code:bash (# example: using anthropic (claude))"
+      "norm_label": "code:bash (# example: using anthropic (claude))",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_8"
     },
     {
       "label": "Supported Backends:",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L83",
-      "id": "ultimate_job_tool_graphify_guide_supported_backends",
       "community": 5,
-      "norm_label": "supported backends:"
+      "norm_label": "supported backends:",
+      "id": "ultimate_job_tool_graphify_guide_supported_backends"
     },
     {
       "label": "DEVELOPMENT_HISTORY.md",
@@ -467,7 +539,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L87",
-      "community": 7,
+      "community": 10,
       "norm_label": "6. job posting scraper (jina ai & scrapfly) issues",
       "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
     },
@@ -476,7 +548,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L89",
-      "community": 7,
+      "community": 10,
       "norm_label": "problem 1: scrapfly cors / direct fetch rejection",
       "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
     },
@@ -485,7 +557,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L97",
-      "community": 7,
+      "community": 10,
       "norm_label": "problem 2: scrapfly 422 unprocessable entity",
       "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
     },
@@ -494,7 +566,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L102",
-      "community": 7,
+      "community": 10,
       "norm_label": "problem 3: extracted job description format",
       "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
     },
@@ -503,7 +575,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L107",
-      "community": 7,
+      "community": 10,
       "norm_label": "problem 4: jina ai extractor boilerplate noise",
       "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
     },
@@ -512,7 +584,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L115",
-      "community": 7,
+      "community": 10,
       "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)",
       "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
     },
@@ -1124,7 +1196,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L1",
-      "community": 10,
+      "community": 2,
       "norm_label": "latexutils.js",
       "id": "src_services_latexutils_js"
     },
@@ -1133,7 +1205,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L33",
-      "community": 10,
+      "community": 2,
       "norm_label": "extractlatexfromresponse()",
       "id": "services_latexutils_extractlatexfromresponse"
     },
@@ -1142,7 +1214,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L63",
-      "community": 10,
+      "community": 2,
       "norm_label": "escapeampersands()",
       "id": "services_latexutils_escapeampersands"
     },
@@ -1725,12 +1797,72 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "graphify_out_memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_md",
+      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
+      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_answer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
+      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_source_nodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "graphify_out_memory_query_20260523_215924_how_the_database_work_md",
+      "target": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
+      "target": "memory_query_20260523_215924_how_the_database_work_answer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
+      "target": "memory_query_20260523_215924_how_the_database_work_source_nodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_guide_md",
-      "target": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide"
     },
     {
       "relation": "contains",
@@ -1738,9 +1870,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_1_what_is_graphify",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_1_what_is_graphify"
     },
     {
       "relation": "contains",
@@ -1748,9 +1880,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time"
     },
     {
       "relation": "contains",
@@ -1758,9 +1890,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer"
     },
     {
       "relation": "contains",
@@ -1768,9 +1900,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph"
     },
     {
       "relation": "contains",
@@ -1778,9 +1910,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
-      "target": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction"
     },
     {
       "relation": "contains",
@@ -1788,9 +1920,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_1",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_1"
     },
     {
       "relation": "contains",
@@ -1798,9 +1930,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_2",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_2"
     },
     {
       "relation": "contains",
@@ -1808,9 +1940,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_3",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_3"
     },
     {
       "relation": "contains",
@@ -1818,9 +1950,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "target": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest"
     },
     {
       "relation": "contains",
@@ -1828,9 +1960,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
-      "target": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_using_the_terminal"
     },
     {
       "relation": "contains",
@@ -1838,9 +1970,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_4",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_4"
     },
     {
       "relation": "contains",
@@ -1848,9 +1980,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_5",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_5"
     },
     {
       "relation": "contains",
@@ -1858,9 +1990,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_using_the_terminal",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_6",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_6"
     },
     {
       "relation": "contains",
@@ -1868,9 +2000,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_7",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_7"
     },
     {
       "relation": "contains",
@@ -1878,9 +2010,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "target": "ultimate_job_tool_graphify_guide_codeblock_8",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_codeblock_8"
     },
     {
       "relation": "contains",
@@ -1888,9 +2020,9 @@
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
-      "target": "ultimate_job_tool_graphify_guide_supported_backends",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_graphify_guide_supported_backends"
     },
     {
       "relation": "contains",
@@ -4014,5 +4146,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7aef4e57908584a68b2181b17ebeaac3710300da"
+  "built_at_commit": "5aa4a1c612063bad566d8572ee4520382de87b38"
 }

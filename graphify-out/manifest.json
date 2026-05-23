@@ -243,5 +243,15 @@
     "mtime": 1779565674.752812,
     "ast_hash": "a9d7f34224d6db9f3e1f645a1ee38c83",
     "semantic_hash": ""
+  },
+  "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md": {
+    "mtime": 1779568047.9530427,
+    "ast_hash": "ce56a2a507cd4e0e9453a7ca65c70bce",
+    "semantic_hash": ""
+  },
+  "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/graphify-out/memory/query_20260523_215924_how_the_database_work.md": {
+    "mtime": 1779573564.3135917,
+    "ast_hash": "1302d15c7c8eb216eb0fb023b0a39725",
+    "semantic_hash": ""
   }
 }
