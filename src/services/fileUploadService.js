@@ -77,15 +77,22 @@ export async function extractTextFromFile(file) {
  * Build the AI prompt that converts raw extracted text into LaTeX.
  *
  * @param {string} rawText - Plain text extracted from the user's document.
- * @returns {string} A prompt instructing the AI to format it as LaTeX.
+ * @param {string} templateLatex - The base LaTeX template code to use.
+ * @returns {string} A prompt instructing the AI to format it as LaTeX using the template.
  */
-export function buildLatexConversionPrompt(rawText) {
+export function buildLatexConversionPrompt(rawText, templateLatex) {
   return `Voici le texte brut extrait de mon CV non-formaté. 
-Convertis ce texte en un code LaTeX propre et structuré en utilisant la classe article.
-Organise-le en sections claires (Résumé, Expériences, Compétences, Éducation).
+Je souhaite que tu convertisses ce texte en code LaTeX. 
+
+IMPORTANT : Tu DOIS utiliser la structure, le préambule et la mise en page EXACTE du modèle LaTeX fourni ci-dessous. 
+Ne modifie pas les packages, les marges, ou les commandes de sectionnement du modèle. 
+Contente-toi de remplacer les données factices du modèle par les informations extraites de mon texte brut.
 Échappe correctement les caractères spéciaux LaTeX comme le & en l'écrivant \\& et le % en \\%.
 Ne réponds QUE par le code LaTeX complet (commençant par \\documentclass et finissant par \\end{document}). Ne dis absolument rien d'autre.
 
---- TEXTE DU CV ---
+--- MODÈLE LATEX À UTILISER COMME BASE ---
+${templateLatex}
+
+--- TEXTE DU CV À INTÉGRER ---
 ${rawText}`;
 }

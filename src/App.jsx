@@ -47,6 +47,7 @@ import 'react-pdf/dist/Page/TextLayer.css';
 import SYNTHETIC_CV from './constants/syntheticCv';
 import PROMPT_TEMPLATES from './constants/promptTemplates';
 import AI_PROVIDERS from './constants/aiProviders';
+import CV_TEMPLATES from './constants/cvTemplates';
 
 // ── Services ──────────────────────────────────────────────────────────────────
 import { callAIProvider } from './services/aiService';
@@ -119,6 +120,7 @@ export default function App() {
   // ── Template State ──────────────────────────────────────────────────────────
   const [selectedTemplateId, setSelectedTemplateId] = useState(1);
   const [customPrompt, setCustomPrompt] = useState(PROMPT_TEMPLATES[0].content);
+  const [selectedCvTemplateId, setSelectedCvTemplateId] = useLocalStorage('cv_template_id', 'french-ats');
 
   // ── Loading States ──────────────────────────────────────────────────────────
   const [isAiLoading, setIsAiLoading] = useState(false);
@@ -487,7 +489,8 @@ export default function App() {
       showToast("Texte extrait ! Génération LaTeX en cours par l'IA...");
 
       // Step 2: Send extracted text to AI for LaTeX conversion
-      const prompt = buildLatexConversionPrompt(extractedText);
+      const selectedTemplate = CV_TEMPLATES.find(t => t.id === selectedCvTemplateId) || CV_TEMPLATES[0];
+      const prompt = buildLatexConversionPrompt(extractedText, selectedTemplate.latex);
       const controller = new AbortController();
       const reply = await callCurrentAI(prompt, controller.signal);
 
@@ -603,6 +606,8 @@ export default function App() {
             onResetToSynthetic={() => setCvOriginal(SYNTHETIC_CV)}
             onFileUpload={handleFileUpload}
             isUploadingCv={isUploadingCv}
+            selectedCvTemplateId={selectedCvTemplateId}
+            onSelectedCvTemplateIdChange={setSelectedCvTemplateId}
           />
         </div>
 
