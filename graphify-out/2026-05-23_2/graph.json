@@ -1,0 +1,2855 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L1",
+      "id": "agents_rules_graphify_md",
+      "community": 26,
+      "norm_label": "graphify.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "id": "rules_graphify_graphify",
+      "community": 26,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L1",
+      "id": "agents_workflows_graphify_md",
+      "community": 27,
+      "norm_label": "graphify.md"
+    },
+    {
+      "label": "Workflow: graphify",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "id": "workflows_graphify_workflow_graphify",
+      "community": 27,
+      "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "tailwind.config.js",
+      "file_type": "code",
+      "source_file": "tailwind.config.js",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "tailwind.config.js",
+      "id": "tailwind_config_js"
+    },
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "eslint.config.js",
+      "source_location": "L1",
+      "community": 19,
+      "norm_label": "eslint.config.js",
+      "id": "eslint_config_js"
+    },
+    {
+      "label": "vercel.json",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "vercel.json",
+      "id": "vercel_json"
+    },
+    {
+      "label": "rewrites",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "community": 4,
+      "norm_label": "rewrites",
+      "id": "ultimate_job_tool_vercel_rewrites"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "vite.config.js",
+      "id": "vite_config_js"
+    },
+    {
+      "label": "App_old.jsx",
+      "file_type": "code",
+      "source_file": "App_old.jsx",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "app_old.jsx",
+      "id": "app_old_jsx"
+    },
+    {
+      "label": "firebaseConfig",
+      "file_type": "code",
+      "source_file": "App_old.jsx",
+      "source_location": "L138",
+      "community": 11,
+      "norm_label": "firebaseconfig",
+      "id": "ultimate_job_tool_app_old_firebaseconfig"
+    },
+    {
+      "label": "app",
+      "file_type": "code",
+      "source_file": "App_old.jsx",
+      "source_location": "L139",
+      "community": 11,
+      "norm_label": "app",
+      "id": "ultimate_job_tool_app_old_app"
+    },
+    {
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "postcss.config.js",
+      "source_location": "L1",
+      "community": 21,
+      "norm_label": "postcss.config.js",
+      "id": "postcss_config_js"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "package.json",
+      "id": "package_json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "community": 1,
+      "norm_label": "name",
+      "id": "ultimate_job_tool_package_name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "community": 1,
+      "norm_label": "private",
+      "id": "ultimate_job_tool_package_private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "community": 1,
+      "norm_label": "version",
+      "id": "ultimate_job_tool_package_version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "community": 1,
+      "norm_label": "type",
+      "id": "ultimate_job_tool_package_type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "community": 1,
+      "norm_label": "scripts",
+      "id": "ultimate_job_tool_package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "community": 1,
+      "norm_label": "dev",
+      "id": "ultimate_job_tool_package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "community": 1,
+      "norm_label": "build",
+      "id": "ultimate_job_tool_package_scripts_build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "community": 1,
+      "norm_label": "lint",
+      "id": "ultimate_job_tool_package_scripts_lint"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "community": 1,
+      "norm_label": "preview",
+      "id": "ultimate_job_tool_package_scripts_preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "community": 1,
+      "norm_label": "dependencies",
+      "id": "ultimate_job_tool_package_dependencies"
+    },
+    {
+      "label": "dexie",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "community": 1,
+      "norm_label": "dexie",
+      "id": "ultimate_job_tool_package_dependencies_dexie"
+    },
+    {
+      "label": "dexie-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "community": 1,
+      "norm_label": "dexie-react-hooks",
+      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "community": 1,
+      "norm_label": "lucide-react",
+      "id": "ultimate_job_tool_package_dependencies_lucide_react"
+    },
+    {
+      "label": "mammoth",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "community": 1,
+      "norm_label": "mammoth",
+      "id": "ultimate_job_tool_package_dependencies_mammoth"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "community": 1,
+      "norm_label": "react",
+      "id": "ultimate_job_tool_package_dependencies_react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "community": 1,
+      "norm_label": "react-dom",
+      "id": "ultimate_job_tool_package_dependencies_react_dom"
+    },
+    {
+      "label": "react-pdf",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "react-pdf",
+      "id": "ultimate_job_tool_package_dependencies_react_pdf"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "community": 3,
+      "norm_label": "devdependencies",
+      "id": "ultimate_job_tool_package_devdependencies"
+    },
+    {
+      "label": "@eslint/js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "community": 3,
+      "norm_label": "@eslint/js",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_js"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "community": 3,
+      "norm_label": "@types/react",
+      "id": "ultimate_job_tool_package_devdependencies_types_react"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "community": 3,
+      "norm_label": "@vitejs/plugin-react",
+      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "community": 3,
+      "norm_label": "autoprefixer",
+      "id": "ultimate_job_tool_package_devdependencies_autoprefixer"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "community": 3,
+      "norm_label": "eslint",
+      "id": "ultimate_job_tool_package_devdependencies_eslint"
+    },
+    {
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "community": 3,
+      "norm_label": "eslint-plugin-react-hooks",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks"
+    },
+    {
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "community": 3,
+      "norm_label": "eslint-plugin-react-refresh",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh"
+    },
+    {
+      "label": "globals",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "community": 3,
+      "norm_label": "globals",
+      "id": "ultimate_job_tool_package_devdependencies_globals"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "community": 3,
+      "norm_label": "postcss",
+      "id": "ultimate_job_tool_package_devdependencies_postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "community": 3,
+      "norm_label": "tailwindcss",
+      "id": "ultimate_job_tool_package_devdependencies_tailwindcss"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "community": 3,
+      "norm_label": "vite",
+      "id": "ultimate_job_tool_package_devdependencies_vite"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "main.jsx",
+      "id": "src_main_jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L92",
+      "community": 9,
+      "norm_label": "app()",
+      "id": "src_app_app"
+    },
+    {
+      "label": "fileUploadService.js",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "fileuploadservice.js",
+      "id": "src_services_fileuploadservice_js"
+    },
+    {
+      "label": "extractTextFromFile()",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L34",
+      "community": 2,
+      "norm_label": "extracttextfromfile()",
+      "id": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "label": "buildLatexConversionPrompt()",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L82",
+      "community": 2,
+      "norm_label": "buildlatexconversionprompt()",
+      "id": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
+      "label": "compilePdfFromLatex()",
+      "file_type": "code",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L31",
+      "community": 7,
+      "norm_label": "compilepdffromlatex()",
+      "id": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "label": "downloadBlobAsPdf()",
+      "file_type": "code",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L78",
+      "community": 7,
+      "norm_label": "downloadblobaspdf()",
+      "id": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "label": "aiService.js",
+      "file_type": "code",
+      "source_file": "src/services/aiService.js",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "aiservice.js",
+      "id": "src_services_aiservice_js"
+    },
+    {
+      "label": "callAIProvider()",
+      "file_type": "code",
+      "source_file": "src/services/aiService.js",
+      "source_location": "L44",
+      "community": 2,
+      "norm_label": "callaiprovider()",
+      "id": "services_aiservice_callaiprovider"
+    },
+    {
+      "label": "buildAtsPrompt()",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L30",
+      "community": 8,
+      "norm_label": "buildatsprompt()",
+      "id": "services_atsservice_buildatsprompt"
+    },
+    {
+      "label": "cleanJsonResponse()",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L62",
+      "community": 8,
+      "norm_label": "cleanjsonresponse()",
+      "id": "services_atsservice_cleanjsonresponse"
+    },
+    {
+      "label": "runAtsAnalysis()",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L82",
+      "community": 8,
+      "norm_label": "runatsanalysis()",
+      "id": "services_atsservice_runatsanalysis"
+    },
+    {
+      "label": "scrapeWithJina()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L40",
+      "community": 4,
+      "norm_label": "scrapewithjina()",
+      "id": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "label": "scrapeWithScrapfly()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L78",
+      "community": 4,
+      "norm_label": "scrapewithscrapfly()",
+      "id": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "label": "cleanJinaMarkdown()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L146",
+      "community": 4,
+      "norm_label": "cleanjinamarkdown()",
+      "id": "services_scraperservice_cleanjinamarkdown"
+    },
+    {
+      "label": "latexUtils.js",
+      "file_type": "code",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L1",
+      "community": 10,
+      "norm_label": "latexutils.js",
+      "id": "src_services_latexutils_js"
+    },
+    {
+      "label": "extractLatexFromResponse()",
+      "file_type": "code",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L33",
+      "community": 10,
+      "norm_label": "extractlatexfromresponse()",
+      "id": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "label": "escapeAmpersands()",
+      "file_type": "code",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L63",
+      "community": 10,
+      "norm_label": "escapeampersands()",
+      "id": "services_latexutils_escapeampersands"
+    },
+    {
+      "label": "KEYS",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L27",
+      "community": 0,
+      "norm_label": "keys",
+      "id": "services_storageservice_keys"
+    },
+    {
+      "label": "getItem()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L47",
+      "community": 0,
+      "norm_label": "getitem()",
+      "id": "services_storageservice_getitem"
+    },
+    {
+      "label": "setItem()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L56",
+      "community": 0,
+      "norm_label": "setitem()",
+      "id": "services_storageservice_setitem"
+    },
+    {
+      "label": "getJobDescription()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L62",
+      "community": 0,
+      "norm_label": "getjobdescription()",
+      "id": "services_storageservice_getjobdescription"
+    },
+    {
+      "label": "saveJobDescription()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L66",
+      "community": 0,
+      "norm_label": "savejobdescription()",
+      "id": "services_storageservice_savejobdescription"
+    },
+    {
+      "label": "getCvOriginal()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L77",
+      "community": 0,
+      "norm_label": "getcvoriginal()",
+      "id": "services_storageservice_getcvoriginal"
+    },
+    {
+      "label": "saveCvOriginal()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L81",
+      "community": 0,
+      "norm_label": "savecvoriginal()",
+      "id": "services_storageservice_savecvoriginal"
+    },
+    {
+      "label": "getCvGenerated()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L85",
+      "community": 0,
+      "norm_label": "getcvgenerated()",
+      "id": "services_storageservice_getcvgenerated"
+    },
+    {
+      "label": "saveCvGenerated()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L89",
+      "community": 0,
+      "norm_label": "savecvgenerated()",
+      "id": "services_storageservice_savecvgenerated"
+    },
+    {
+      "label": "getApiKey()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L101",
+      "community": 0,
+      "norm_label": "getapikey()",
+      "id": "services_storageservice_getapikey"
+    },
+    {
+      "label": "saveApiKey()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L110",
+      "community": 0,
+      "norm_label": "saveapikey()",
+      "id": "services_storageservice_saveapikey"
+    },
+    {
+      "label": "getAiProvider()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L114",
+      "community": 0,
+      "norm_label": "getaiprovider()",
+      "id": "services_storageservice_getaiprovider"
+    },
+    {
+      "label": "saveAiProvider()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L118",
+      "community": 0,
+      "norm_label": "saveaiprovider()",
+      "id": "services_storageservice_saveaiprovider"
+    },
+    {
+      "label": "getAiModel()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L127",
+      "community": 0,
+      "norm_label": "getaimodel()",
+      "id": "services_storageservice_getaimodel"
+    },
+    {
+      "label": "saveAiModel()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L135",
+      "community": 0,
+      "norm_label": "saveaimodel()",
+      "id": "services_storageservice_saveaimodel"
+    },
+    {
+      "label": "getAiResponse()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L142",
+      "community": 0,
+      "norm_label": "getairesponse()",
+      "id": "services_storageservice_getairesponse"
+    },
+    {
+      "label": "saveAiResponse()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L146",
+      "community": 0,
+      "norm_label": "saveairesponse()",
+      "id": "services_storageservice_saveairesponse"
+    },
+    {
+      "label": "getScraperType()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L152",
+      "community": 0,
+      "norm_label": "getscrapertype()",
+      "id": "services_storageservice_getscrapertype"
+    },
+    {
+      "label": "saveScraperType()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L156",
+      "community": 0,
+      "norm_label": "savescrapertype()",
+      "id": "services_storageservice_savescrapertype"
+    },
+    {
+      "label": "getScrapflyKey()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L160",
+      "community": 0,
+      "norm_label": "getscrapflykey()",
+      "id": "services_storageservice_getscrapflykey"
+    },
+    {
+      "label": "saveScrapflyKey()",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L164",
+      "community": 0,
+      "norm_label": "savescrapflykey()",
+      "id": "services_storageservice_savescrapflykey"
+    },
+    {
+      "label": "db.js",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "db.js",
+      "id": "src_services_db_js"
+    },
+    {
+      "label": "db",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L18",
+      "community": 5,
+      "norm_label": "db",
+      "id": "services_db_db"
+    },
+    {
+      "label": "createApplication()",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L28",
+      "community": 5,
+      "norm_label": "createapplication()",
+      "id": "services_db_createapplication"
+    },
+    {
+      "label": "getApplication()",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L37",
+      "community": 5,
+      "norm_label": "getapplication()",
+      "id": "services_db_getapplication"
+    },
+    {
+      "label": "updateApplication()",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L41",
+      "community": 5,
+      "norm_label": "updateapplication()",
+      "id": "services_db_updateapplication"
+    },
+    {
+      "label": "deleteApplication()",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L48",
+      "community": 5,
+      "norm_label": "deleteapplication()",
+      "id": "services_db_deleteapplication"
+    },
+    {
+      "label": "getAllApplications()",
+      "file_type": "code",
+      "source_file": "src/services/db.js",
+      "source_location": "L52",
+      "community": 5,
+      "norm_label": "getallapplications()",
+      "id": "services_db_getallapplications"
+    },
+    {
+      "label": "aiProviders.js",
+      "file_type": "code",
+      "source_file": "src/constants/aiProviders.js",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "aiproviders.js",
+      "id": "src_constants_aiproviders_js"
+    },
+    {
+      "label": "AI_PROVIDERS",
+      "file_type": "code",
+      "source_file": "src/constants/aiProviders.js",
+      "source_location": "L30",
+      "community": 6,
+      "norm_label": "ai_providers",
+      "id": "constants_aiproviders_ai_providers"
+    },
+    {
+      "label": "syntheticCv.js",
+      "file_type": "code",
+      "source_file": "src/constants/syntheticCv.js",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "syntheticcv.js",
+      "id": "src_constants_syntheticcv_js"
+    },
+    {
+      "label": "useToast.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useToast.js",
+      "source_location": "L1",
+      "community": 9,
+      "norm_label": "usetoast.js",
+      "id": "src_hooks_usetoast_js"
+    },
+    {
+      "label": "useToast()",
+      "file_type": "code",
+      "source_file": "src/hooks/useToast.js",
+      "source_location": "L34",
+      "community": 9,
+      "norm_label": "usetoast()",
+      "id": "hooks_usetoast_usetoast"
+    },
+    {
+      "label": "useLocalStorage.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useLocalStorage.js",
+      "source_location": "L1",
+      "community": 9,
+      "norm_label": "uselocalstorage.js",
+      "id": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "label": "PdfMakerTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PdfMakerTab.jsx",
+      "source_location": "L1",
+      "community": 14,
+      "norm_label": "pdfmakertab.jsx",
+      "id": "src_components_tabs_pdfmakertab_jsx"
+    },
+    {
+      "label": "PdfMakerTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PdfMakerTab.jsx",
+      "source_location": "L40",
+      "community": 14,
+      "norm_label": "pdfmakertab()",
+      "id": "tabs_pdfmakertab_pdfmakertab"
+    },
+    {
+      "label": "DashboardTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L13",
+      "community": 5,
+      "norm_label": "dashboardtab()",
+      "id": "tabs_dashboardtab_dashboardtab"
+    },
+    {
+      "label": "AtsTestTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/AtsTestTab.jsx",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "atstesttab.jsx",
+      "id": "src_components_tabs_atstesttab_jsx"
+    },
+    {
+      "label": "AtsTestTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/AtsTestTab.jsx",
+      "source_location": "L28",
+      "community": 15,
+      "norm_label": "atstesttab()",
+      "id": "tabs_atstesttab_atstesttab"
+    },
+    {
+      "label": "JobOfferTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/JobOfferTab.jsx",
+      "source_location": "L32",
+      "community": 2,
+      "norm_label": "joboffertab()",
+      "id": "tabs_joboffertab_joboffertab"
+    },
+    {
+      "label": "MyCvTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L1",
+      "community": 12,
+      "norm_label": "mycvtab.jsx",
+      "id": "src_components_tabs_mycvtab_jsx"
+    },
+    {
+      "label": "MyCvTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L31",
+      "community": 12,
+      "norm_label": "mycvtab()",
+      "id": "tabs_mycvtab_mycvtab"
+    },
+    {
+      "label": "PromptsTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PromptsTab.jsx",
+      "source_location": "L29",
+      "community": 2,
+      "norm_label": "promptstab()",
+      "id": "tabs_promptstab_promptstab"
+    },
+    {
+      "label": "AiAssistantTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "aiassistanttab.jsx",
+      "id": "src_components_tabs_aiassistanttab_jsx"
+    },
+    {
+      "label": "AiAssistantTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
+      "source_location": "L33",
+      "community": 6,
+      "norm_label": "aiassistanttab()",
+      "id": "tabs_aiassistanttab_aiassistanttab"
+    },
+    {
+      "label": "tabs",
+      "file_type": "code",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L28",
+      "community": 16,
+      "norm_label": "tabs",
+      "id": "layout_tabnavigation_tabs"
+    },
+    {
+      "label": "TabNavigation()",
+      "file_type": "code",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L38",
+      "community": 16,
+      "norm_label": "tabnavigation()",
+      "id": "layout_tabnavigation_tabnavigation"
+    },
+    {
+      "label": "Toast.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Toast.jsx",
+      "source_location": "L1",
+      "community": 17,
+      "norm_label": "toast.jsx",
+      "id": "src_components_layout_toast_jsx"
+    },
+    {
+      "label": "Toast()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Toast.jsx",
+      "source_location": "L21",
+      "community": 17,
+      "norm_label": "toast()",
+      "id": "layout_toast_toast"
+    },
+    {
+      "label": "Header.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Header.jsx",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "header.jsx",
+      "id": "src_components_layout_header_jsx"
+    },
+    {
+      "label": "Header()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Header.jsx",
+      "source_location": "L28",
+      "community": 6,
+      "norm_label": "header()",
+      "id": "layout_header_header"
+    },
+    {
+      "label": "TeXLive PDF Compilation Failures",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "1",
+      "community": 7,
+      "norm_label": "texlive pdf compilation failures",
+      "id": "troubleshooting_texlive_pdf_compilation"
+    },
+    {
+      "label": "PDF Inline Display Challenge",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "2",
+      "community": 22,
+      "norm_label": "pdf inline display challenge",
+      "id": "troubleshooting_pdf_inline_display"
+    },
+    {
+      "label": "AI API Quota & Provider Issues",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "3",
+      "community": 23,
+      "norm_label": "ai api quota & provider issues",
+      "id": "troubleshooting_ai_api_quota"
+    },
+    {
+      "label": "Job Posting Scraper Issues",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "6",
+      "community": 4,
+      "norm_label": "job posting scraper issues",
+      "id": "troubleshooting_job_scraper"
+    },
+    {
+      "label": "Ultimate Job Tool v3 Architecture",
+      "file_type": "document",
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source_location": "1",
+      "community": 24,
+      "norm_label": "ultimate job tool v3 architecture",
+      "id": "development_history_v3"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "community": 2,
+      "norm_label": "app.jsx",
+      "id": "app_jsx"
+    },
+    {
+      "label": "AI Service",
+      "file_type": "code",
+      "source_file": "src/services/aiService.js",
+      "community": 13,
+      "norm_label": "ai service",
+      "id": "ai_service"
+    },
+    {
+      "label": "Scraper Service",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "community": 4,
+      "norm_label": "scraper service",
+      "id": "scraper_service"
+    },
+    {
+      "label": "PDF Service",
+      "file_type": "code",
+      "source_file": "src/services/pdfService.js",
+      "community": 7,
+      "norm_label": "pdf service",
+      "id": "pdf_service"
+    },
+    {
+      "label": "ATS Service",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "community": 8,
+      "norm_label": "ats service",
+      "id": "ats_service"
+    },
+    {
+      "label": "Storage Service",
+      "file_type": "code",
+      "source_file": "src/services/storageService.js",
+      "community": 0,
+      "norm_label": "storage service",
+      "id": "storage_service"
+    },
+    {
+      "label": "Synthetic CV Template",
+      "file_type": "code",
+      "source_file": "src/constants/syntheticCv.js",
+      "community": 2,
+      "norm_label": "synthetic cv template",
+      "id": "synthetic_cv"
+    },
+    {
+      "label": "Prompt Templates",
+      "file_type": "code",
+      "source_file": "src/constants/promptTemplates.js",
+      "community": 2,
+      "norm_label": "prompt templates",
+      "id": "prompt_templates"
+    },
+    {
+      "label": "AI Provider Configs",
+      "file_type": "code",
+      "source_file": "src/constants/aiProviders.js",
+      "community": 25,
+      "norm_label": "ai provider configs",
+      "id": "ai_providers"
+    },
+    {
+      "label": "Vite Configuration",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "community": 7,
+      "norm_label": "vite configuration",
+      "id": "vite_config"
+    },
+    {
+      "label": "TeXLive.net API",
+      "file_type": "concept",
+      "community": 7,
+      "norm_label": "texlive.net api",
+      "id": "texlive_net"
+    },
+    {
+      "label": "Jina AI Reader",
+      "file_type": "concept",
+      "community": 4,
+      "norm_label": "jina ai reader",
+      "id": "jina_ai"
+    },
+    {
+      "label": "Scrapfly API",
+      "file_type": "concept",
+      "community": 4,
+      "norm_label": "scrapfly api",
+      "id": "scrapfly"
+    },
+    {
+      "label": "OpenRouter",
+      "file_type": "concept",
+      "community": 13,
+      "norm_label": "openrouter",
+      "id": "openrouter"
+    },
+    {
+      "label": "Dexie.js (IndexedDB)",
+      "file_type": "concept",
+      "community": 0,
+      "norm_label": "dexie.js (indexeddb)",
+      "id": "dexie_js"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "agents_rules_graphify_md",
+      "target": "rules_graphify_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "agents_workflows_graphify_md",
+      "target": "workflows_graphify_workflow_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vercel_json",
+      "target": "ultimate_job_tool_vercel_rewrites"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "TROUBLESHOOTING.md",
+      "source": "vercel_json",
+      "target": "scrapfly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App_old.jsx",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_old_jsx",
+      "target": "ultimate_job_tool_app_old_firebaseconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App_old.jsx",
+      "source_location": "L145",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_old_jsx",
+      "target": "ultimate_job_tool_app_old_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "ultimate_job_tool_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_scripts",
+      "target": "ultimate_job_tool_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_scripts",
+      "target": "ultimate_job_tool_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_scripts",
+      "target": "ultimate_job_tool_package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_scripts",
+      "target": "ultimate_job_tool_package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_dexie"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_dexie_react_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_lucide_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_mammoth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_dependencies",
+      "target": "ultimate_job_tool_package_dependencies_react_pdf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_eslint_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_autoprefixer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_eslint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_globals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ultimate_job_tool_package_devdependencies",
+      "target": "ultimate_job_tool_package_devdependencies_vite"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main_jsx",
+      "target": "app_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_services_fileuploadservice_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_fileuploadservice_js",
+      "target": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_fileuploadservice_js",
+      "target": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pdf_service",
+      "target": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pdf_service",
+      "target": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_services_aiservice_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/aiService.js",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_aiservice_js",
+      "target": "services_aiservice_callaiprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_aiservice_callaiprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ats_service",
+      "target": "services_atsservice_buildatsprompt"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_atsservice_runatsanalysis",
+      "target": "services_atsservice_buildatsprompt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ats_service",
+      "target": "services_atsservice_cleanjsonresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_atsservice_runatsanalysis",
+      "target": "services_atsservice_cleanjsonresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_atsservice_runatsanalysis"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ats_service",
+      "target": "services_atsservice_runatsanalysis"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scraper_service",
+      "target": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_scraperservice_scrapewithjina",
+      "target": "services_scraperservice_cleanjinamarkdown"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scraper_service",
+      "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L146",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scraper_service",
+      "target": "services_scraperservice_cleanjinamarkdown"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_services_latexutils_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_latexutils_js",
+      "target": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_latexutils_js",
+      "target": "services_latexutils_escapeampersands"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_latexutils_extractlatexfromresponse",
+      "target": "services_latexutils_escapeampersands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_keys"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getjobdescription",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getcvoriginal",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L86",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getcvgenerated",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getapikey",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L115",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getaiprovider",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getaimodel",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getairesponse",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L153",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getscrapertype",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L161",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_getscrapflykey",
+      "target": "services_storageservice_getitem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_savejobdescription",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_savecvoriginal",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_savecvgenerated",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L111",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_saveapikey",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L119",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_saveaiprovider",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L136",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_saveaimodel",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L147",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_saveairesponse",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_savescrapertype",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L165",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_storageservice_savescrapflykey",
+      "target": "services_storageservice_setitem"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getjobdescription"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_savejobdescription"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getcvoriginal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L81",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_savecvoriginal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getcvgenerated"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L89",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_savecvgenerated"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getapikey"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_saveapikey"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getaiprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L118",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_saveaiprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getaimodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L135",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_saveaimodel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L142",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getairesponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L146",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_saveairesponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L152",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getscrapertype"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_savescrapertype"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L160",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_getscrapflykey"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/storageService.js",
+      "source_location": "L164",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "storage_service",
+      "target": "services_storageservice_savescrapflykey"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_services_db_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/db.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_db_js",
+      "target": "services_db_db"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/db.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_db_js",
+      "target": "services_db_createapplication"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/db.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_db_js",
+      "target": "services_db_getapplication"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/db.js",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_db_js",
+      "target": "services_db_updateapplication"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/db.js",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_db_js",
+      "target": "services_db_deleteapplication"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/db.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_db_js",
+      "target": "services_db_getallapplications"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tabs_dashboardtab_dashboardtab",
+      "target": "src_services_db_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tabs_dashboardtab_dashboardtab",
+      "target": "services_db_db"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_db_createapplication"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tabs_dashboardtab_dashboardtab",
+      "target": "services_db_createapplication"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_db_getapplication"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_db_updateapplication"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tabs_dashboardtab_dashboardtab",
+      "target": "services_db_deleteapplication"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "services_db_getallapplications"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_constants_aiproviders_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/aiProviders.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_aiproviders_js",
+      "target": "constants_aiproviders_ai_providers"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_aiassistanttab_jsx",
+      "target": "src_constants_aiproviders_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Header.jsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_header_jsx",
+      "target": "src_constants_aiproviders_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_constants_syntheticcv_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_hooks_usetoast_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useToast.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_usetoast_js",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_components_tabs_pdfmakertab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/PdfMakerTab.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_pdfmakertab_jsx",
+      "target": "tabs_pdfmakertab_pdfmakertab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "tabs_dashboardtab_dashboardtab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_components_tabs_atstesttab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/AtsTestTab.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_atstesttab_jsx",
+      "target": "tabs_atstesttab_atstesttab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "tabs_joboffertab_joboffertab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L75",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_components_tabs_mycvtab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_mycvtab_jsx",
+      "target": "tabs_mycvtab_mycvtab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "tabs_promptstab_promptstab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_components_tabs_aiassistanttab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_aiassistanttab_jsx",
+      "target": "tabs_aiassistanttab_aiassistanttab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_tabnavigation_tabnavigation",
+      "target": "layout_tabnavigation_tabs"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "layout_tabnavigation_tabnavigation"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_components_layout_toast_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Toast.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_toast_jsx",
+      "target": "layout_toast_toast"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "src_components_layout_header_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Header.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_header_jsx",
+      "target": "layout_header_header"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "TROUBLESHOOTING.md",
+      "source": "troubleshooting_texlive_pdf_compilation",
+      "target": "pdf_service"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "TROUBLESHOOTING.md",
+      "source": "troubleshooting_job_scraper",
+      "target": "scraper_service"
+    },
+    {
+      "relation": "references",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "prompt_templates"
+    },
+    {
+      "relation": "calls",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTORS_GUIDE.md",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "scraper_service"
+    },
+    {
+      "relation": "calls",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTORS_GUIDE.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "pdf_service"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "ats_service"
+    },
+    {
+      "relation": "calls",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTORS_GUIDE.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_jsx",
+      "target": "storage_service"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTORS_GUIDE.md",
+      "source": "app_jsx",
+      "target": "ai_service"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source": "app_jsx",
+      "target": "synthetic_cv"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source": "ai_service",
+      "target": "openrouter"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source": "scraper_service",
+      "target": "jina_ai"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source": "scraper_service",
+      "target": "scrapfly"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DEVELOPMENT_HISTORY.md",
+      "source": "pdf_service",
+      "target": "texlive_net"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "TROUBLESHOOTING.md",
+      "source": "storage_service",
+      "target": "dexie_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "TROUBLESHOOTING.md",
+      "source": "vite_config",
+      "target": "texlive_net"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "593740211a402c9d66425108b6b58fcc9afe9b31"
+}

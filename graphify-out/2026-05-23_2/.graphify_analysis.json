@@ -1,0 +1,303 @@
+{
+  "communities": {
+    "0": [
+      "dexie_js",
+      "services_storageservice_getaimodel",
+      "services_storageservice_getaiprovider",
+      "services_storageservice_getairesponse",
+      "services_storageservice_getapikey",
+      "services_storageservice_getcvgenerated",
+      "services_storageservice_getcvoriginal",
+      "services_storageservice_getitem",
+      "services_storageservice_getjobdescription",
+      "services_storageservice_getscrapertype",
+      "services_storageservice_getscrapflykey",
+      "services_storageservice_keys",
+      "services_storageservice_saveaimodel",
+      "services_storageservice_saveaiprovider",
+      "services_storageservice_saveairesponse",
+      "services_storageservice_saveapikey",
+      "services_storageservice_savecvgenerated",
+      "services_storageservice_savecvoriginal",
+      "services_storageservice_savejobdescription",
+      "services_storageservice_savescrapertype",
+      "services_storageservice_savescrapflykey",
+      "services_storageservice_setitem",
+      "storage_service"
+    ],
+    "1": [
+      "package_json",
+      "ultimate_job_tool_package_dependencies",
+      "ultimate_job_tool_package_dependencies_dexie",
+      "ultimate_job_tool_package_dependencies_dexie_react_hooks",
+      "ultimate_job_tool_package_dependencies_lucide_react",
+      "ultimate_job_tool_package_dependencies_mammoth",
+      "ultimate_job_tool_package_dependencies_react",
+      "ultimate_job_tool_package_dependencies_react_dom",
+      "ultimate_job_tool_package_dependencies_react_pdf",
+      "ultimate_job_tool_package_name",
+      "ultimate_job_tool_package_private",
+      "ultimate_job_tool_package_scripts",
+      "ultimate_job_tool_package_scripts_build",
+      "ultimate_job_tool_package_scripts_dev",
+      "ultimate_job_tool_package_scripts_lint",
+      "ultimate_job_tool_package_scripts_preview",
+      "ultimate_job_tool_package_type",
+      "ultimate_job_tool_package_version"
+    ],
+    "2": [
+      "app_jsx",
+      "hooks_usetoast_usetoast",
+      "prompt_templates",
+      "services_aiservice_callaiprovider",
+      "src_app_app",
+      "src_constants_syntheticcv_js",
+      "src_hooks_uselocalstorage_js",
+      "src_hooks_usetoast_js",
+      "src_main_jsx",
+      "src_services_aiservice_js",
+      "synthetic_cv",
+      "tabs_joboffertab_joboffertab",
+      "tabs_promptstab_promptstab"
+    ],
+    "3": [
+      "ultimate_job_tool_package_devdependencies",
+      "ultimate_job_tool_package_devdependencies_autoprefixer",
+      "ultimate_job_tool_package_devdependencies_eslint",
+      "ultimate_job_tool_package_devdependencies_eslint_js",
+      "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks",
+      "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh",
+      "ultimate_job_tool_package_devdependencies_globals",
+      "ultimate_job_tool_package_devdependencies_postcss",
+      "ultimate_job_tool_package_devdependencies_tailwindcss",
+      "ultimate_job_tool_package_devdependencies_types_react",
+      "ultimate_job_tool_package_devdependencies_vite",
+      "ultimate_job_tool_package_devdependencies_vitejs_plugin_react"
+    ],
+    "4": [
+      "jina_ai",
+      "scraper_service",
+      "scrapfly",
+      "services_scraperservice_cleanjinamarkdown",
+      "services_scraperservice_scrapewithjina",
+      "services_scraperservice_scrapewithscrapfly",
+      "troubleshooting_job_scraper",
+      "ultimate_job_tool_vercel_rewrites",
+      "vercel_json"
+    ],
+    "5": [
+      "services_db_createapplication",
+      "services_db_db",
+      "services_db_deleteapplication",
+      "services_db_getallapplications",
+      "services_db_getapplication",
+      "services_db_updateapplication",
+      "src_services_db_js",
+      "tabs_dashboardtab_dashboardtab"
+    ],
+    "6": [
+      "constants_aiproviders_ai_providers",
+      "layout_header_header",
+      "src_components_layout_header_jsx",
+      "src_components_tabs_aiassistanttab_jsx",
+      "src_constants_aiproviders_js",
+      "tabs_aiassistanttab_aiassistanttab"
+    ],
+    "7": [
+      "pdf_service",
+      "services_pdfservice_compilepdffromlatex",
+      "services_pdfservice_downloadblobaspdf",
+      "texlive_net",
+      "troubleshooting_texlive_pdf_compilation",
+      "vite_config"
+    ],
+    "8": [
+      "ats_service",
+      "services_atsservice_buildatsprompt",
+      "services_atsservice_cleanjsonresponse",
+      "services_atsservice_runatsanalysis"
+    ],
+    "9": [
+      "services_fileuploadservice_buildlatexconversionprompt",
+      "services_fileuploadservice_extracttextfromfile",
+      "src_services_fileuploadservice_js"
+    ],
+    "10": [
+      "services_latexutils_escapeampersands",
+      "services_latexutils_extractlatexfromresponse",
+      "src_services_latexutils_js"
+    ],
+    "11": [
+      "app_old_jsx",
+      "ultimate_job_tool_app_old_app",
+      "ultimate_job_tool_app_old_firebaseconfig"
+    ],
+    "12": [
+      "src_components_tabs_mycvtab_jsx",
+      "tabs_mycvtab_mycvtab"
+    ],
+    "13": [
+      "ai_service",
+      "openrouter"
+    ],
+    "14": [
+      "src_components_tabs_pdfmakertab_jsx",
+      "tabs_pdfmakertab_pdfmakertab"
+    ],
+    "15": [
+      "src_components_tabs_atstesttab_jsx",
+      "tabs_atstesttab_atstesttab"
+    ],
+    "16": [
+      "layout_tabnavigation_tabnavigation",
+      "layout_tabnavigation_tabs"
+    ],
+    "17": [
+      "layout_toast_toast",
+      "src_components_layout_toast_jsx"
+    ],
+    "18": [
+      "tailwind_config_js"
+    ],
+    "19": [
+      "eslint_config_js"
+    ],
+    "20": [
+      "vite_config_js"
+    ],
+    "21": [
+      "postcss_config_js"
+    ],
+    "22": [
+      "troubleshooting_pdf_inline_display"
+    ],
+    "23": [
+      "troubleshooting_ai_api_quota"
+    ],
+    "24": [
+      "development_history_v3"
+    ],
+    "25": [
+      "ai_providers"
+    ]
+  },
+  "cohesion": {
+    "0": 0.15810276679841898,
+    "1": 0.1111111111111111,
+    "2": 0.20512820512820512,
+    "3": 0.16666666666666666,
+    "4": 0.25,
+    "5": 0.35714285714285715,
+    "6": 0.3333333333333333,
+    "7": 0.3333333333333333,
+    "8": 0.8333333333333334,
+    "9": 0.6666666666666666,
+    "10": 1.0,
+    "11": 0.6666666666666666,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0
+  },
+  "gods": [
+    {
+      "id": "storage_service",
+      "label": "Storage Service",
+      "degree": 23
+    },
+    {
+      "id": "services_storageservice_getitem",
+      "label": "getItem()",
+      "degree": 10
+    },
+    {
+      "id": "services_storageservice_setitem",
+      "label": "setItem()",
+      "degree": 10
+    },
+    {
+      "id": "scraper_service",
+      "label": "Scraper Service",
+      "degree": 7
+    },
+    {
+      "id": "ultimate_job_tool_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "tabs_dashboardtab_dashboardtab",
+      "label": "DashboardTab()",
+      "degree": 5
+    },
+    {
+      "id": "pdf_service",
+      "label": "PDF Service",
+      "degree": 5
+    },
+    {
+      "id": "services_atsservice_runatsanalysis",
+      "label": "runAtsAnalysis()",
+      "degree": 4
+    },
+    {
+      "id": "ats_service",
+      "label": "ATS Service",
+      "degree": 4
+    },
+    {
+      "id": "src_app_app",
+      "label": "App()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "TeXLive PDF Compilation Failures",
+      "target": "PDF Service",
+      "source_files": [
+        "TROUBLESHOOTING.md",
+        "src/services/pdfService.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `TeXLive PDF Compilation Failures` unexpectedly reaches hub `PDF Service`"
+    },
+    {
+      "source": "Job Posting Scraper Issues",
+      "target": "Scraper Service",
+      "source_files": [
+        "TROUBLESHOOTING.md",
+        "src/services/scraperService.js"
+      ],
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc \u2194 code); connects across different repos/directories; peripheral node `Job Posting Scraper Issues` unexpectedly reaches hub `Scraper Service`"
+    },
+    {
+      "source": "App()",
+      "target": "useToast()",
+      "source_files": [
+        "src/App.jsx",
+        "src/hooks/useToast.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 46856,
+    "output": 2254
+  }
+}
