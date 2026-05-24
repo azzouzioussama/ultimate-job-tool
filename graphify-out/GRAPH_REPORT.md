@@ -1,7 +1,7 @@
 # Graph Report - ultimate-job-tool  (2026-05-24)
 
 ## Corpus Check
-- 43 files · ~28,659 words
+- 43 files · ~28,660 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ad2417f1`
+- Built from commit: `ed1c87fb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -64,7 +64,7 @@ Nodes (23): Dexie.js (IndexedDB), getAiModel(), getAiProvider(), getAiResponse()
 
 ### Community 1 - "Community 1"
 Cohesion: 0.10
-Nodes (19): dependencies, @clerk/clerk-react, dexie, dexie-react-hooks, lucide-react, mammoth, react, react-dom (+11 more)
+Nodes (19): dependencies, @clerk/react, dexie, dexie-react-hooks, lucide-react, mammoth, react, react-dom (+11 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.07
@@ -107,7 +107,7 @@ Cohesion: 0.33
 Nodes (6): 6. Job Posting Scraper (Jina AI & Scrapfly) Issues, Problem 1: Scrapfly CORS / Direct Fetch Rejection, Problem 2: Scrapfly 422 Unprocessable Entity, Problem 3: Extracted Job Description Format, Problem 4: Jina AI Extractor Boilerplate Noise, Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)
 
 ## Knowledge Gaps
-- **100 isolated node(s):** `puppeteer`, `name`, `version`, `main`, `test` (+95 more)
+- **100 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+95 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -118,7 +118,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 3` to `Community 1`?**
   _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **What connects `puppeteer`, `name`, `version` to the rest of the system?**
+- **What connects `name`, `private`, `version` to the rest of the system?**
   _100 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._

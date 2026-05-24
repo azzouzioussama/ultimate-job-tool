@@ -4,490 +4,490 @@
   "graph": {},
   "nodes": [
     {
-      "label": "debug.js",
-      "file_type": "code",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "id": "scratch_debug_js",
-      "community": 31,
-      "norm_label": "debug.js"
-    },
-    {
-      "label": "puppeteer",
-      "file_type": "code",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "id": "scratch_debug_puppeteer",
-      "community": 31,
-      "norm_label": "puppeteer"
-    },
-    {
       "label": "package.json",
       "file_type": "code",
-      "source_file": "scratch/package.json",
+      "source_file": "package.json",
       "source_location": "L1",
-      "id": "scratch_package_json",
-      "community": 4,
+      "id": "package_json",
+      "community": 1,
       "norm_label": "package.json"
     },
     {
       "label": "name",
       "file_type": "code",
-      "source_file": "scratch/package.json",
+      "source_file": "package.json",
       "source_location": "L2",
-      "id": "scratch_package_name",
-      "community": 4,
+      "id": "ultimate_job_tool_package_name",
+      "community": 1,
       "norm_label": "name"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L3",
-      "id": "scratch_package_version",
-      "community": 4,
-      "norm_label": "version"
-    },
-    {
-      "label": "main",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L4",
-      "id": "scratch_package_main",
-      "community": 4,
-      "norm_label": "main"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L5",
-      "id": "scratch_package_scripts",
-      "community": 4,
-      "norm_label": "scripts"
-    },
-    {
-      "label": "test",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L6",
-      "id": "scratch_package_scripts_test",
-      "community": 4,
-      "norm_label": "test"
-    },
-    {
-      "label": "keywords",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L8",
-      "id": "scratch_package_keywords",
-      "community": 4,
-      "norm_label": "keywords"
-    },
-    {
-      "label": "author",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L9",
-      "id": "scratch_package_author",
-      "community": 4,
-      "norm_label": "author"
-    },
-    {
-      "label": "license",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L10",
-      "id": "scratch_package_license",
-      "community": 4,
-      "norm_label": "license"
-    },
-    {
-      "label": "description",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L11",
-      "id": "scratch_package_description",
-      "community": 4,
-      "norm_label": "description"
-    },
-    {
-      "label": "DashboardTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L1",
-      "id": "src_components_tabs_dashboardtab_jsx",
-      "community": 2,
-      "norm_label": "dashboardtab.jsx"
-    },
-    {
-      "label": "DashboardTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L12",
-      "id": "tabs_dashboardtab_dashboardtab",
-      "community": 2,
-      "norm_label": "dashboardtab()"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "community": 1,
-      "norm_label": "package.json",
-      "id": "package_json"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "community": 1,
-      "norm_label": "name",
-      "id": "ultimate_job_tool_package_name"
     },
     {
       "label": "private",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
+      "id": "ultimate_job_tool_package_private",
       "community": 1,
-      "norm_label": "private",
-      "id": "ultimate_job_tool_package_private"
+      "norm_label": "private"
     },
     {
       "label": "version",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
+      "id": "ultimate_job_tool_package_version",
       "community": 1,
-      "norm_label": "version",
-      "id": "ultimate_job_tool_package_version"
+      "norm_label": "version"
     },
     {
       "label": "type",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L5",
+      "id": "ultimate_job_tool_package_type",
       "community": 1,
-      "norm_label": "type",
-      "id": "ultimate_job_tool_package_type"
+      "norm_label": "type"
     },
     {
       "label": "scripts",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L6",
+      "id": "ultimate_job_tool_package_scripts",
       "community": 1,
-      "norm_label": "scripts",
-      "id": "ultimate_job_tool_package_scripts"
+      "norm_label": "scripts"
     },
     {
       "label": "dev",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
+      "id": "ultimate_job_tool_package_scripts_dev",
       "community": 1,
-      "norm_label": "dev",
-      "id": "ultimate_job_tool_package_scripts_dev"
+      "norm_label": "dev"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
+      "id": "ultimate_job_tool_package_scripts_build",
       "community": 1,
-      "norm_label": "build",
-      "id": "ultimate_job_tool_package_scripts_build"
+      "norm_label": "build"
     },
     {
       "label": "lint",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
+      "id": "ultimate_job_tool_package_scripts_lint",
       "community": 1,
-      "norm_label": "lint",
-      "id": "ultimate_job_tool_package_scripts_lint"
+      "norm_label": "lint"
     },
     {
       "label": "preview",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L10",
+      "id": "ultimate_job_tool_package_scripts_preview",
       "community": 1,
-      "norm_label": "preview",
-      "id": "ultimate_job_tool_package_scripts_preview"
+      "norm_label": "preview"
     },
     {
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L12",
+      "id": "ultimate_job_tool_package_dependencies",
       "community": 1,
-      "norm_label": "dependencies",
-      "id": "ultimate_job_tool_package_dependencies"
+      "norm_label": "dependencies"
     },
     {
-      "label": "@clerk/clerk-react",
+      "label": "@clerk/react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L13",
+      "id": "ultimate_job_tool_package_dependencies_clerk_react",
       "community": 1,
-      "norm_label": "@clerk/clerk-react",
-      "id": "ultimate_job_tool_package_dependencies_clerk_clerk_react"
+      "norm_label": "@clerk/react"
     },
     {
       "label": "@supabase/supabase-js",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L14",
+      "id": "ultimate_job_tool_package_dependencies_supabase_supabase_js",
       "community": 1,
-      "norm_label": "@supabase/supabase-js",
-      "id": "ultimate_job_tool_package_dependencies_supabase_supabase_js"
+      "norm_label": "@supabase/supabase-js"
     },
     {
       "label": "dexie",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L15",
+      "id": "ultimate_job_tool_package_dependencies_dexie",
       "community": 1,
-      "norm_label": "dexie",
-      "id": "ultimate_job_tool_package_dependencies_dexie"
+      "norm_label": "dexie"
     },
     {
       "label": "dexie-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
+      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks",
       "community": 1,
-      "norm_label": "dexie-react-hooks",
-      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks"
+      "norm_label": "dexie-react-hooks"
     },
     {
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
+      "id": "ultimate_job_tool_package_dependencies_lucide_react",
       "community": 1,
-      "norm_label": "lucide-react",
-      "id": "ultimate_job_tool_package_dependencies_lucide_react"
+      "norm_label": "lucide-react"
     },
     {
       "label": "mammoth",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
+      "id": "ultimate_job_tool_package_dependencies_mammoth",
       "community": 1,
-      "norm_label": "mammoth",
-      "id": "ultimate_job_tool_package_dependencies_mammoth"
+      "norm_label": "mammoth"
     },
     {
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
+      "id": "ultimate_job_tool_package_dependencies_react",
       "community": 1,
-      "norm_label": "react",
-      "id": "ultimate_job_tool_package_dependencies_react"
+      "norm_label": "react"
     },
     {
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
+      "id": "ultimate_job_tool_package_dependencies_react_dom",
       "community": 1,
-      "norm_label": "react-dom",
-      "id": "ultimate_job_tool_package_dependencies_react_dom"
+      "norm_label": "react-dom"
     },
     {
       "label": "react-pdf",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L21",
+      "id": "ultimate_job_tool_package_dependencies_react_pdf",
       "community": 1,
-      "norm_label": "react-pdf",
-      "id": "ultimate_job_tool_package_dependencies_react_pdf"
+      "norm_label": "react-pdf"
     },
     {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L23",
+      "id": "ultimate_job_tool_package_devdependencies",
       "community": 3,
-      "norm_label": "devdependencies",
-      "id": "ultimate_job_tool_package_devdependencies"
+      "norm_label": "devdependencies"
     },
     {
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L24",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_js",
       "community": 3,
-      "norm_label": "@eslint/js",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_js"
+      "norm_label": "@eslint/js"
     },
     {
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
+      "id": "ultimate_job_tool_package_devdependencies_types_react",
       "community": 3,
-      "norm_label": "@types/react",
-      "id": "ultimate_job_tool_package_devdependencies_types_react"
+      "norm_label": "@types/react"
     },
     {
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
+      "id": "ultimate_job_tool_package_devdependencies_types_react_dom",
       "community": 3,
-      "norm_label": "@types/react-dom",
-      "id": "ultimate_job_tool_package_devdependencies_types_react_dom"
+      "norm_label": "@types/react-dom"
     },
     {
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L27",
+      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react",
       "community": 3,
-      "norm_label": "@vitejs/plugin-react",
-      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react"
+      "norm_label": "@vitejs/plugin-react"
     },
     {
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L28",
+      "id": "ultimate_job_tool_package_devdependencies_autoprefixer",
       "community": 3,
-      "norm_label": "autoprefixer",
-      "id": "ultimate_job_tool_package_devdependencies_autoprefixer"
+      "norm_label": "autoprefixer"
     },
     {
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L29",
+      "id": "ultimate_job_tool_package_devdependencies_eslint",
       "community": 3,
-      "norm_label": "eslint",
-      "id": "ultimate_job_tool_package_devdependencies_eslint"
+      "norm_label": "eslint"
     },
     {
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L30",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks",
       "community": 3,
-      "norm_label": "eslint-plugin-react-hooks",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks"
+      "norm_label": "eslint-plugin-react-hooks"
     },
     {
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L31",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh",
       "community": 3,
-      "norm_label": "eslint-plugin-react-refresh",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh"
+      "norm_label": "eslint-plugin-react-refresh"
     },
     {
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L32",
+      "id": "ultimate_job_tool_package_devdependencies_globals",
       "community": 3,
-      "norm_label": "globals",
-      "id": "ultimate_job_tool_package_devdependencies_globals"
+      "norm_label": "globals"
     },
     {
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L33",
+      "id": "ultimate_job_tool_package_devdependencies_postcss",
       "community": 3,
-      "norm_label": "postcss",
-      "id": "ultimate_job_tool_package_devdependencies_postcss"
+      "norm_label": "postcss"
     },
     {
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L34",
+      "id": "ultimate_job_tool_package_devdependencies_tailwindcss",
       "community": 3,
-      "norm_label": "tailwindcss",
-      "id": "ultimate_job_tool_package_devdependencies_tailwindcss"
+      "norm_label": "tailwindcss"
     },
     {
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L35",
+      "id": "ultimate_job_tool_package_devdependencies_vite",
       "community": 3,
-      "norm_label": "vite",
-      "id": "ultimate_job_tool_package_devdependencies_vite"
+      "norm_label": "vite"
     },
     {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L1",
+      "id": "src_app_jsx",
       "community": 2,
-      "norm_label": "app.jsx",
-      "id": "src_app_jsx"
+      "norm_label": "app.jsx"
     },
     {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L91",
+      "id": "src_app_app",
       "community": 2,
-      "norm_label": "app()",
-      "id": "src_app_app"
+      "norm_label": "app()"
     },
     {
       "label": "Header.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L1",
+      "id": "src_components_layout_header_jsx",
       "community": 6,
-      "norm_label": "header.jsx",
-      "id": "src_components_layout_header_jsx"
+      "norm_label": "header.jsx"
     },
     {
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L29",
+      "id": "layout_header_header",
       "community": 6,
-      "norm_label": "header()",
-      "id": "layout_header_header"
+      "norm_label": "header()"
     },
     {
       "label": "useDatabase.js",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L1",
+      "id": "src_hooks_usedatabase_js",
       "community": 2,
-      "norm_label": "usedatabase.js",
-      "id": "src_hooks_usedatabase_js"
+      "norm_label": "usedatabase.js"
     },
     {
       "label": "useDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L5",
+      "id": "hooks_usedatabase_usedatabase",
       "community": 2,
-      "norm_label": "usedatabase()",
-      "id": "hooks_usedatabase_usedatabase"
+      "norm_label": "usedatabase()"
     },
     {
       "label": "main.jsx",
       "file_type": "code",
       "source_file": "src/main.jsx",
       "source_location": "L1",
+      "id": "src_main_jsx",
       "community": 2,
-      "norm_label": "main.jsx",
-      "id": "src_main_jsx"
+      "norm_label": "main.jsx"
+    },
+    {
+      "label": "debug.js",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "debug.js",
+      "id": "scratch_debug_js"
+    },
+    {
+      "label": "puppeteer",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "puppeteer",
+      "id": "scratch_debug_puppeteer"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "package.json",
+      "id": "scratch_package_json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L2",
+      "community": 4,
+      "norm_label": "name",
+      "id": "scratch_package_name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L3",
+      "community": 4,
+      "norm_label": "version",
+      "id": "scratch_package_version"
+    },
+    {
+      "label": "main",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L4",
+      "community": 4,
+      "norm_label": "main",
+      "id": "scratch_package_main"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L5",
+      "community": 4,
+      "norm_label": "scripts",
+      "id": "scratch_package_scripts"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L6",
+      "community": 4,
+      "norm_label": "test",
+      "id": "scratch_package_scripts_test"
+    },
+    {
+      "label": "keywords",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L8",
+      "community": 4,
+      "norm_label": "keywords",
+      "id": "scratch_package_keywords"
+    },
+    {
+      "label": "author",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L9",
+      "community": 4,
+      "norm_label": "author",
+      "id": "scratch_package_author"
+    },
+    {
+      "label": "license",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L10",
+      "community": 4,
+      "norm_label": "license",
+      "id": "scratch_package_license"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L11",
+      "community": 4,
+      "norm_label": "description",
+      "id": "scratch_package_description"
+    },
+    {
+      "label": "DashboardTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "dashboardtab.jsx",
+      "id": "src_components_tabs_dashboardtab_jsx"
+    },
+    {
+      "label": "DashboardTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "community": 2,
+      "norm_label": "dashboardtab()",
+      "id": "tabs_dashboardtab_dashboardtab"
     },
     {
       "label": "supabaseClient.js",
@@ -1942,127 +1942,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "scratch_debug_js",
-      "target": "scratch_debug_puppeteer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_name",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_version",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_main",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_scripts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_keywords",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_author",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_license",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "scratch_package_json",
-      "target": "scratch_package_description",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "scratch_package_scripts",
-      "target": "scratch_package_scripts_test",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "tabs_dashboardtab_dashboardtab"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
@@ -2176,9 +2055,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ultimate_job_tool_package_dependencies",
-      "target": "ultimate_job_tool_package_dependencies_clerk_clerk_react"
+      "target": "ultimate_job_tool_package_dependencies_clerk_react",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2632,17 +2511,6 @@
       "target": "src_constants_aiproviders_js"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useDatabase.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_hooks_usedatabase_js",
-      "target": "src_services_supabaseclient_js"
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -2662,6 +2530,138 @@
       "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
       "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDatabase.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_usedatabase_js",
+      "target": "src_services_supabaseclient_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_debug_js",
+      "target": "scratch_debug_puppeteer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_keywords"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_author"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_license"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_description"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_package_scripts",
+      "target": "scratch_package_scripts_test"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "tabs_dashboardtab_dashboardtab"
     },
     {
       "relation": "contains",
@@ -4175,5 +4175,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ad2417f184eccdccbcff62b05aba739deed08503"
+  "built_at_commit": "ed1c87fb724d0042eb5f501b8c6040d977d15ab1"
 }
