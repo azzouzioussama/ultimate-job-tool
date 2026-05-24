@@ -1,16 +1,16 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error("Missing Supabase environment variables")
+if (!supabaseUrl || !supabaseKey) {
+  console.warn("Missing Supabase environment variables. Database features will not work.")
 }
 
 // Global Supabase client (used for simple anon requests if needed)
 export const supabase = createClient(
   supabaseUrl || '',
-  supabaseAnonKey || ''
+  supabaseKey || ''
 )
 
 /**
@@ -23,7 +23,7 @@ export const supabase = createClient(
 export const createAuthenticatedSupabaseClient = (clerkToken) => {
   return createClient(
     supabaseUrl || '',
-    supabaseAnonKey || '',
+    supabaseKey || '',
     {
       global: {
         headers: {
