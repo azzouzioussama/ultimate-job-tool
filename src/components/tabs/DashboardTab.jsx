@@ -5,9 +5,8 @@
  * ============================================================================
  */
 
-import { useState } from 'react';
-import { useLiveQuery } from 'dexie-react-hooks';
-import { db, createApplication, deleteApplication } from '../../services/db';
+import { useState, useEffect } from 'react';
+import { useDatabase } from '../../hooks/useDatabase';
 import { Plus, Trash2, Briefcase, Calendar, ChevronRight } from 'lucide-react';
 
 export default function DashboardTab({ onSelectApplication }) {
@@ -15,8 +14,17 @@ export default function DashboardTab({ onSelectApplication }) {
   const [newCompany, setNewCompany] = useState('');
   const [newJobTitle, setNewJobTitle] = useState('');
 
-  // Automatically re-render when the database changes
-  const applications = useLiveQuery(() => db.applications.orderBy('lastUpdated').reverse().toArray());
+  const [applications, setApplications] = useState(null);
+  const { createApplication, deleteApplication, getAllApplications } = useDatabase();
+
+  const loadApps = async () => {
+    const apps = await getAllApplications();
+    setApplications(apps);
+  };
+
+  useEffect(() => {
+    loadApps();
+  }, [getAllApplications]);
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -40,6 +48,7 @@ export default function DashboardTab({ onSelectApplication }) {
     e.stopPropagation(); // Prevent opening the application
     if (confirm('Êtes-vous sûr de vouloir supprimer cette candidature ?')) {
       await deleteApplication(id);
+      loadApps();
     }
   };
 
