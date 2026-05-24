@@ -15,9 +15,9 @@
     "semantic_hash": "c58766e4e3c2cc7793186f398f766fe7"
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/vite.config.js": {
-    "mtime": 1779307329.7720137,
-    "ast_hash": "057c19364f5539ed377ad6de485ef7a4",
-    "semantic_hash": "057c19364f5539ed377ad6de485ef7a4"
+    "mtime": 1779656536.1973329,
+    "ast_hash": "7f2aea63b32fec2f46ac0af744cf03e4",
+    "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/App_old.jsx": {
     "mtime": 1779054148.0943625,
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/main.jsx": {
-    "mtime": 1779656312.1010256,
-    "ast_hash": "0678dc003b0c648bd490a150b90bdce4",
+    "mtime": 1779656932.2698913,
+    "ast_hash": "d2277dd61ae28917a9d8ab2ce692a39b",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/App.jsx": {
@@ -255,8 +255,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/supabaseClient.js": {
-    "mtime": 1779651622.0835726,
-    "ast_hash": "0884e663d1dcd02dc22a1fbf4eb35e35",
+    "mtime": 1779656943.3659048,
+    "ast_hash": "a30c4433b51f110b1f60626ebc147444",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useDatabase.js": {

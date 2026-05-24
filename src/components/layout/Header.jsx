@@ -23,8 +23,19 @@
 
 
 import { Briefcase, KeyRound } from 'lucide-react';
-import { UserButton, Show } from '@clerk/react';
 import AI_PROVIDERS from '../../constants/aiProviders';
+
+const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+// Lazy component that only loads Clerk when available
+function ClerkUserButton() {
+  const { UserButton } = require('@clerk/react');
+  return (
+    <div className="ml-1 flex items-center justify-center">
+      <UserButton afterSignOutUrl="/" />
+    </div>
+  );
+}
 
 export default function Header({
   aiProvider,
@@ -87,11 +98,7 @@ export default function Header({
           />
         </div>
 
-        <Show when="signed-in">
-          <div className="ml-1 flex items-center justify-center">
-            <UserButton afterSignOutUrl="/" />
-          </div>
-        </Show>
+        {isClerkAvailable && <ClerkUserButton />}
       </div>
     </div>
   );
