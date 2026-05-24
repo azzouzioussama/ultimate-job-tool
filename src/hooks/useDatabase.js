@@ -82,48 +82,63 @@ function useCloudDatabase() {
   }, [getToken]);
 
   const createApplication = async (data) => {
-    if (!user) return null;
-    const client = await getClient();
-    const newApp = { ...data, user_id: user.id };
-    const { data: insertedData, error } = await client
-      .from('applications').insert([newApp]).select().single();
-    if (error) { console.error("Error creating application:", error); throw error; }
-    return insertedData.id;
+    try {
+      if (!user) return null;
+      const client = await getClient();
+      if (!client) return null;
+      const newApp = { ...data, user_id: user.id };
+      const { data: insertedData, error } = await client
+        .from('applications').insert([newApp]).select().single();
+      if (error) { console.error("Error creating application:", error); throw error; }
+      return insertedData.id;
+    } catch (e) { console.error(e); return null; }
   };
 
   const getApplication = async (id) => {
-    const client = await getClient();
-    const { data, error } = await client
-      .from('applications').select('*').eq('id', id).single();
-    if (error) { console.error("Error getting application:", error); return null; }
-    return data;
+    try {
+      const client = await getClient();
+      if (!client) return null;
+      const { data, error } = await client
+        .from('applications').select('*').eq('id', id).single();
+      if (error) { console.error("Error getting application:", error); return null; }
+      return data;
+    } catch (e) { console.error(e); return null; }
   };
 
   const updateApplication = async (id, updates) => {
-    const client = await getClient();
-    const { error } = await client
-      .from('applications')
-      .update({ ...updates, lastUpdated: new Date().toISOString() })
-      .eq('id', id);
-    if (error) { console.error("Error updating application:", error); throw error; }
+    try {
+      const client = await getClient();
+      if (!client) return;
+      const { error } = await client
+        .from('applications')
+        .update({ ...updates, lastUpdated: new Date().toISOString() })
+        .eq('id', id);
+      if (error) { console.error("Error updating application:", error); throw error; }
+    } catch (e) { console.error(e); }
   };
 
   const deleteApplication = async (id) => {
-    const client = await getClient();
-    const { error } = await client
-      .from('applications').delete().eq('id', id);
-    if (error) { console.error("Error deleting application:", error); throw error; }
+    try {
+      const client = await getClient();
+      if (!client) return;
+      const { error } = await client
+        .from('applications').delete().eq('id', id);
+      if (error) { console.error("Error deleting application:", error); throw error; }
+    } catch (e) { console.error(e); }
   };
 
   const getAllApplications = async () => {
-    if (!user) return [];
-    const client = await getClient();
-    const { data, error } = await client
-      .from('applications').select('*')
-      .eq('user_id', user.id)
-      .order('lastUpdated', { ascending: false });
-    if (error) { console.error("Error fetching applications:", error); return []; }
-    return data;
+    try {
+      if (!user) return [];
+      const client = await getClient();
+      if (!client) return [];
+      const { data, error } = await client
+        .from('applications').select('*')
+        .eq('user_id', user.id)
+        .order('lastUpdated', { ascending: false });
+      if (error) { console.error("Error fetching applications:", error); return []; }
+      return data || [];
+    } catch (e) { console.error(e); return []; }
   };
 
   return { createApplication, getApplication, updateApplication, deleteApplication, getAllApplications };

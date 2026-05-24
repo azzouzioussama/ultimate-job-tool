@@ -4,94 +4,148 @@
   "graph": {},
   "nodes": [
     {
+      "label": "debug.js",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "id": "scratch_debug_js",
+      "community": 31,
+      "norm_label": "debug.js"
+    },
+    {
+      "label": "{ chromium }",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "id": "scratch_debug_chromium",
+      "community": 31,
+      "norm_label": "{ chromium }"
+    },
+    {
+      "label": "test-supa.js",
+      "file_type": "code",
+      "source_file": "scratch/test-supa.js",
+      "source_location": "L1",
+      "id": "scratch_test_supa_js",
+      "community": 33,
+      "norm_label": "test-supa.js"
+    },
+    {
+      "label": "{ createClient }",
+      "file_type": "code",
+      "source_file": "scratch/test-supa.js",
+      "source_location": "L1",
+      "id": "scratch_test_supa_createclient",
+      "community": 33,
+      "norm_label": "{ createclient }"
+    },
+    {
+      "label": "supabaseClient.js",
+      "file_type": "code",
+      "source_file": "src/services/supabaseClient.js",
+      "source_location": "L1",
+      "id": "src_services_supabaseclient_js",
+      "community": 24,
+      "norm_label": "supabaseclient.js"
+    },
+    {
+      "label": "createAuthenticatedSupabaseClient()",
+      "file_type": "code",
+      "source_file": "src/services/supabaseClient.js",
+      "source_location": "L22",
+      "id": "services_supabaseclient_createauthenticatedsupabaseclient",
+      "community": 24,
+      "norm_label": "createauthenticatedsupabaseclient()"
+    },
+    {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L1",
-      "id": "src_app_jsx",
       "community": 2,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "id": "src_app_jsx"
     },
     {
       "label": "AuthGate()",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L72",
-      "id": "src_app_authgate",
       "community": 2,
-      "norm_label": "authgate()"
+      "norm_label": "authgate()",
+      "id": "src_app_authgate"
     },
     {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L121",
-      "id": "src_app_app",
       "community": 2,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "id": "src_app_app"
     },
     {
       "label": "Header.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L1",
-      "id": "src_components_layout_header_jsx",
       "community": 6,
-      "norm_label": "header.jsx"
+      "norm_label": "header.jsx",
+      "id": "src_components_layout_header_jsx"
     },
     {
       "label": "ClerkUserButton()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L32",
-      "id": "layout_header_clerkuserbutton",
       "community": 6,
-      "norm_label": "clerkuserbutton()"
+      "norm_label": "clerkuserbutton()",
+      "id": "layout_header_clerkuserbutton"
     },
     {
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L40",
-      "id": "layout_header_header",
       "community": 6,
-      "norm_label": "header()"
+      "norm_label": "header()",
+      "id": "layout_header_header"
     },
     {
       "label": "useDatabase.js",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L1",
-      "id": "src_hooks_usedatabase_js",
       "community": 24,
-      "norm_label": "usedatabase.js"
+      "norm_label": "usedatabase.js",
+      "id": "src_hooks_usedatabase_js"
     },
     {
       "label": "useDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L13",
-      "id": "hooks_usedatabase_usedatabase",
       "community": 24,
-      "norm_label": "usedatabase()"
+      "norm_label": "usedatabase()",
+      "id": "hooks_usedatabase_usedatabase"
     },
     {
       "label": "useLocalDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L23",
-      "id": "hooks_usedatabase_uselocaldatabase",
       "community": 24,
-      "norm_label": "uselocaldatabase()"
+      "norm_label": "uselocaldatabase()",
+      "id": "hooks_usedatabase_uselocaldatabase"
     },
     {
       "label": "useCloudDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L75",
-      "id": "hooks_usedatabase_useclouddatabase",
       "community": 24,
-      "norm_label": "useclouddatabase()"
+      "norm_label": "useclouddatabase()",
+      "id": "hooks_usedatabase_useclouddatabase"
     },
     {
       "label": "main.jsx",
@@ -409,24 +463,6 @@
       "id": "ultimate_job_tool_package_devdependencies_vite"
     },
     {
-      "label": "debug.js",
-      "file_type": "code",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "community": 31,
-      "norm_label": "debug.js",
-      "id": "scratch_debug_js"
-    },
-    {
-      "label": "puppeteer",
-      "file_type": "code",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "community": 31,
-      "norm_label": "puppeteer",
-      "id": "scratch_debug_puppeteer"
-    },
-    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "scratch/package.json",
@@ -533,33 +569,6 @@
       "community": 24,
       "norm_label": "dashboardtab()",
       "id": "tabs_dashboardtab_dashboardtab"
-    },
-    {
-      "label": "supabaseClient.js",
-      "file_type": "code",
-      "source_file": "src/services/supabaseClient.js",
-      "source_location": "L1",
-      "community": 24,
-      "norm_label": "supabaseclient.js",
-      "id": "src_services_supabaseclient_js"
-    },
-    {
-      "label": "supabase",
-      "file_type": "code",
-      "source_file": "src/services/supabaseClient.js",
-      "source_location": "L11",
-      "community": 24,
-      "norm_label": "supabase",
-      "id": "services_supabaseclient_supabase"
-    },
-    {
-      "label": "createAuthenticatedSupabaseClient()",
-      "file_type": "code",
-      "source_file": "src/services/supabaseClient.js",
-      "source_location": "L23",
-      "community": 24,
-      "norm_label": "createauthenticatedsupabaseclient()",
-      "id": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "label": "MyCvTab.jsx",
@@ -1448,7 +1457,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L30",
-      "community": 2,
+      "community": 9,
       "norm_label": "buildatsprompt()",
       "id": "services_atsservice_buildatsprompt"
     },
@@ -1457,7 +1466,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L62",
-      "community": 2,
+      "community": 9,
       "norm_label": "cleanjsonresponse()",
       "id": "services_atsservice_cleanjsonresponse"
     },
@@ -1466,7 +1475,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L82",
-      "community": 2,
+      "community": 9,
       "norm_label": "runatsanalysis()",
       "id": "services_atsservice_runatsanalysis"
     },
@@ -1903,7 +1912,7 @@
       "label": "ATS Service",
       "file_type": "code",
       "source_file": "src/services/atsService.js",
-      "community": 2,
+      "community": 9,
       "norm_label": "ats service",
       "id": "ats_service"
     },
@@ -1984,6 +1993,58 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scratch_debug_js",
+      "target": "scratch_debug_chromium",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test-supa.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scratch_test_supa_js",
+      "target": "scratch_test_supa_createclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/supabaseClient.js",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_supabaseclient_js",
+      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDatabase.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_usedatabase_js",
+      "target": "src_services_supabaseclient_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useDatabase.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_usedatabase_js",
+      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
+    },
     {
       "relation": "imports",
       "context": "import",
@@ -2256,17 +2317,6 @@
       "target": "src_constants_aiproviders_js"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useDatabase.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_hooks_usedatabase_js",
-      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/useDatabase.js",
@@ -2295,17 +2345,6 @@
       "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
       "target": "hooks_usedatabase_useclouddatabase"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useDatabase.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_hooks_usedatabase_js",
-      "target": "src_services_supabaseclient_js"
     },
     {
       "relation": "calls",
@@ -2673,16 +2712,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scratch_debug_js",
-      "target": "scratch_debug_puppeteer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "scratch/package.json",
       "source_location": "L2",
       "weight": 1.0,
@@ -2779,26 +2808,6 @@
       "confidence_score": 1.0,
       "source": "src_components_tabs_dashboardtab_jsx",
       "target": "tabs_dashboardtab_dashboardtab"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/supabaseClient.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_services_supabaseclient_js",
-      "target": "services_supabaseclient_supabase"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/supabaseClient.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_services_supabaseclient_js",
-      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "relation": "imports_from",
@@ -4292,5 +4301,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4bda96ee6f7c759f1344e66ed0cd6a41a32db127"
+  "built_at_commit": "fa6505a009e9c718a922e13459c19846cae30661"
 }

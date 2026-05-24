@@ -255,8 +255,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/supabaseClient.js": {
-    "mtime": 1779656943.3659048,
-    "ast_hash": "a30c4433b51f110b1f60626ebc147444",
+    "mtime": 1779658671.5039039,
+    "ast_hash": "5e72418db058cf47d74c8558f6e950c3",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useDatabase.js": {
@@ -265,13 +265,18 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/scratch/debug.js": {
-    "mtime": 1779655406.2396991,
-    "ast_hash": "804b8579421d2bbfc40c3b7cfd69a439",
+    "mtime": 1779658616.6078434,
+    "ast_hash": "16320dbf5ef215071e6ea9a5d6e01ce1",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/scratch/package.json": {
     "mtime": 1779655389.003675,
     "ast_hash": "19276382afcbe1c5ae86eb3ea9dbdfb4",
+    "semantic_hash": ""
+  },
+  "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/scratch/test-supa.js": {
+    "mtime": 1779658653.1638837,
+    "ast_hash": "66ccb41ed65c5fd5c00aed936c5362af",
     "semantic_hash": ""
   }
 }
