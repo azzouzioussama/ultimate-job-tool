@@ -67,6 +67,35 @@ import { useToast } from './hooks/useToast';
 // ── Auth (Clerk) — optional, only active when env var is set ──────────────────
 const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
+// Auth gate component: shows login page when signed out, children when signed in
+function AuthGate({ children }) {
+  if (!isClerkAvailable) return children;
+  
+  const { Show, SignInButton } = require('@clerk/react');
+  return (
+    <>
+      <Show when="signed-in">
+        {children}
+      </Show>
+      <Show when="signed-out">
+        <main className="flex-grow flex items-center justify-center p-4">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center max-w-md w-full">
+            <h1 className="text-2xl font-bold text-slate-800 mb-4">Bienvenue !</h1>
+            <p className="text-slate-600 mb-8">
+              Connectez-vous pour gérer vos candidatures, générer des lettres de motivation, et adapter vos CV avec l'IA.
+            </p>
+            <SignInButton mode="modal">
+              <button className="bg-indigo-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors w-full">
+                Se connecter
+              </button>
+            </SignInButton>
+          </div>
+        </main>
+      </Show>
+    </>
+  );
+}
+
 // ── Layout Components ─────────────────────────────────────────────────────────
 import Header from './components/layout/Header';
 import TabNavigation from './components/layout/TabNavigation';
@@ -542,6 +571,7 @@ export default function App() {
       <Toast message={toastMessage} />
 
       {/* ── Main Content Area ──────────────────────────────────────── */}
+      <AuthGate>
         <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
 
           {/* Dashboard Tab */}
@@ -646,6 +676,7 @@ export default function App() {
           </div>
 
         </main>
+      </AuthGate>
 
 
     </div>
