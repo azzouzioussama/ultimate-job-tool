@@ -13,10 +13,19 @@
       "norm_label": "app.jsx"
     },
     {
+      "label": "AuthGate()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L71",
+      "id": "src_app_authgate",
+      "community": 2,
+      "norm_label": "authgate()"
+    },
+    {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L93",
+      "source_location": "L122",
       "id": "src_app_app",
       "community": 2,
       "norm_label": "app()"
@@ -26,81 +35,81 @@
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L1",
-      "id": "src_components_layout_header_jsx",
       "community": 6,
-      "norm_label": "header.jsx"
+      "norm_label": "header.jsx",
+      "id": "src_components_layout_header_jsx"
     },
     {
       "label": "ClerkUserButton()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L31",
-      "id": "layout_header_clerkuserbutton",
       "community": 6,
-      "norm_label": "clerkuserbutton()"
+      "norm_label": "clerkuserbutton()",
+      "id": "layout_header_clerkuserbutton"
     },
     {
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L40",
-      "id": "layout_header_header",
       "community": 6,
-      "norm_label": "header()"
+      "norm_label": "header()",
+      "id": "layout_header_header"
     },
     {
       "label": "useDatabase.js",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L1",
-      "id": "src_hooks_usedatabase_js",
       "community": 24,
-      "norm_label": "usedatabase.js"
+      "norm_label": "usedatabase.js",
+      "id": "src_hooks_usedatabase_js"
     },
     {
       "label": "useDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L11",
-      "id": "hooks_usedatabase_usedatabase",
       "community": 24,
-      "norm_label": "usedatabase()"
+      "norm_label": "usedatabase()",
+      "id": "hooks_usedatabase_usedatabase"
     },
     {
       "label": "useLocalDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L21",
-      "id": "hooks_usedatabase_uselocaldatabase",
       "community": 24,
-      "norm_label": "uselocaldatabase()"
+      "norm_label": "uselocaldatabase()",
+      "id": "hooks_usedatabase_uselocaldatabase"
     },
     {
       "label": "useCloudDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L73",
-      "id": "hooks_usedatabase_useclouddatabase",
       "community": 24,
-      "norm_label": "useclouddatabase()"
+      "norm_label": "useclouddatabase()",
+      "id": "hooks_usedatabase_useclouddatabase"
     },
     {
       "label": "main.jsx",
       "file_type": "code",
       "source_file": "src/main.jsx",
       "source_location": "L1",
-      "id": "src_main_jsx",
       "community": 2,
-      "norm_label": "main.jsx"
+      "norm_label": "main.jsx",
+      "id": "src_main_jsx"
     },
     {
       "label": "renderApp()",
       "file_type": "code",
       "source_file": "src/main.jsx",
       "source_location": "L9",
-      "id": "src_main_renderapp",
       "community": 2,
-      "norm_label": "renderapp()"
+      "norm_label": "renderapp()",
+      "id": "src_main_renderapp"
     },
     {
       "label": "package.json",
@@ -1439,7 +1448,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L30",
-      "community": 9,
+      "community": 2,
       "norm_label": "buildatsprompt()",
       "id": "services_atsservice_buildatsprompt"
     },
@@ -1448,7 +1457,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L62",
-      "community": 9,
+      "community": 2,
       "norm_label": "cleanjsonresponse()",
       "id": "services_atsservice_cleanjsonresponse"
     },
@@ -1457,7 +1466,7 @@
       "file_type": "code",
       "source_file": "src/services/atsService.js",
       "source_location": "L82",
-      "community": 9,
+      "community": 2,
       "norm_label": "runatsanalysis()",
       "id": "services_atsservice_runatsanalysis"
     },
@@ -1894,7 +1903,7 @@
       "label": "ATS Service",
       "file_type": "code",
       "source_file": "src/services/atsService.js",
-      "community": 9,
+      "community": 2,
       "norm_label": "ats service",
       "id": "ats_service"
     },
@@ -2075,17 +2084,6 @@
       "target": "services_latexutils_extractlatexfromresponse"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_usedatabase_js"
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -2108,15 +2106,14 @@
       "target": "hooks_usetoast_usetoast"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
+      "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L69",
+      "source_location": "L71",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_layout_header_jsx"
+      "target": "src_app_authgate",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2127,6 +2124,28 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_usedatabase_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_header_jsx"
     },
     {
       "relation": "imports_from",
@@ -2211,9 +2230,9 @@
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_layout_header_jsx",
-      "target": "layout_header_clerkuserbutton",
-      "confidence_score": 1.0
+      "target": "layout_header_clerkuserbutton"
     },
     {
       "relation": "contains",
@@ -2252,9 +2271,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
-      "target": "hooks_usedatabase_uselocaldatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_uselocaldatabase"
     },
     {
       "relation": "contains",
@@ -2262,9 +2281,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
-      "target": "hooks_usedatabase_useclouddatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_useclouddatabase"
     },
     {
       "relation": "imports",
@@ -2295,9 +2314,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_usedatabase_usedatabase",
-      "target": "hooks_usedatabase_useclouddatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_useclouddatabase"
     },
     {
       "relation": "calls",
@@ -2306,9 +2325,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_usedatabase_usedatabase",
-      "target": "hooks_usedatabase_uselocaldatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_uselocaldatabase"
     },
     {
       "relation": "imports",
@@ -2327,9 +2346,9 @@
       "source_file": "src/main.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main_jsx",
-      "target": "src_main_renderapp",
-      "confidence_score": 1.0
+      "target": "src_main_renderapp"
     },
     {
       "relation": "contains",
@@ -4273,5 +4292,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bef744bbcd6758c727e09475cc020268e8fdcbec"
+  "built_at_commit": "60d94db3b96c29021e29c07361aca5836f01bb01"
 }

@@ -63,6 +63,7 @@ import { useDatabase } from './hooks/useDatabase';
 // ── Hooks ─────────────────────────────────────────────────────────────────────
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useToast } from './hooks/useToast';
+import { Show, SignInButton } from '@clerk/react';
 
 // ── Auth (Clerk) — optional, only active when env var is set ──────────────────
 const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -70,8 +71,6 @@ const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 // Auth gate component: shows login page when signed out, children when signed in
 function AuthGate({ children }) {
   if (!isClerkAvailable) return children;
-  
-  const { Show, SignInButton } = require('@clerk/react');
   return (
     <>
       <Show when="signed-in">

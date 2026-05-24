@@ -1,4 +1,6 @@
 import { useCallback } from 'react';
+import { useAuth, useUser } from '@clerk/react';
+import { createAuthenticatedSupabaseClient } from '../services/supabaseClient';
 
 const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 const isSupabaseAvailable = !!import.meta.env.VITE_SUPABASE_URL && !!import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
@@ -71,10 +73,6 @@ function useLocalDatabase() {
 
 // ── Cloud Database (Clerk + Supabase) ───────────────────────────────────────
 function useCloudDatabase() {
-  // Dynamic imports to avoid crashing when Clerk isn't loaded
-  const { useAuth, useUser } = require('@clerk/react');
-  const { createAuthenticatedSupabaseClient } = require('../services/supabaseClient');
-  
   const { getToken } = useAuth();
   const { user } = useUser();
 
