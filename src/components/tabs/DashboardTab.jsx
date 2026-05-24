@@ -24,7 +24,8 @@ export default function DashboardTab({ onSelectApplication }) {
 
   useEffect(() => {
     loadApps();
-  }, [getAllApplications]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleCreate = async (e) => {
     e.preventDefault();

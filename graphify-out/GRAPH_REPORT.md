@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-05-24)
 
 ## Corpus Check
-- 41 files · ~28,514 words
+- 41 files · ~28,528 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 204 nodes · 208 edges · 31 communities (22 shown, 9 thin omitted)
+- 205 nodes · 210 edges · 29 communities (20 shown, 9 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `21ea58d8`
+- Built from commit: `88933595`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,7 +19,6 @@
 - [[_COMMUNITY_Community 1|Community 1]]
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
-- [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
@@ -54,7 +53,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (31 total, 9 thin omitted)
+## Communities (29 total, 9 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.16
@@ -65,16 +64,12 @@ Cohesion: 0.10
 Nodes (19): dependencies, @clerk/clerk-react, dexie, dexie-react-hooks, lucide-react, mammoth, react, react-dom (+11 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.10
-Nodes (16): CV_TEMPLATES, useDatabase(), useToast(), PDF Service, callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), escapeAmpersands() (+8 more)
+Cohesion: 0.07
+Nodes (23): CV_TEMPLATES, useDatabase(), useToast(), Jina AI Reader, PDF Service, Scraper Service, Scrapfly API, callAIProvider() (+15 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.15
 Nodes (13): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+5 more)
-
-### Community 4 - "Community 4"
-Cohesion: 0.29
-Nodes (7): Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), rewrites
 
 ### Community 5 - "Community 5"
 Cohesion: 0.11
@@ -115,7 +110,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06827880512091039 - nodes in this community are weakly interconnected._
 - **Should `Community 5` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `Community 7` be split into smaller, more focused modules?**

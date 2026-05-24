@@ -4,391 +4,409 @@
   "graph": {},
   "nodes": [
     {
+      "label": "DashboardTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L1",
+      "id": "src_components_tabs_dashboardtab_jsx",
+      "community": 2,
+      "norm_label": "dashboardtab.jsx"
+    },
+    {
+      "label": "DashboardTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "id": "tabs_dashboardtab_dashboardtab",
+      "community": 2,
+      "norm_label": "dashboardtab()"
+    },
+    {
       "label": "package.json",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L1",
-      "id": "package_json",
       "community": 1,
-      "norm_label": "package.json"
+      "norm_label": "package.json",
+      "id": "package_json"
     },
     {
       "label": "name",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L2",
-      "id": "ultimate_job_tool_package_name",
       "community": 1,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "ultimate_job_tool_package_name"
     },
     {
       "label": "private",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
-      "id": "ultimate_job_tool_package_private",
       "community": 1,
-      "norm_label": "private"
+      "norm_label": "private",
+      "id": "ultimate_job_tool_package_private"
     },
     {
       "label": "version",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
-      "id": "ultimate_job_tool_package_version",
       "community": 1,
-      "norm_label": "version"
+      "norm_label": "version",
+      "id": "ultimate_job_tool_package_version"
     },
     {
       "label": "type",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L5",
-      "id": "ultimate_job_tool_package_type",
       "community": 1,
-      "norm_label": "type"
+      "norm_label": "type",
+      "id": "ultimate_job_tool_package_type"
     },
     {
       "label": "scripts",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L6",
-      "id": "ultimate_job_tool_package_scripts",
       "community": 1,
-      "norm_label": "scripts"
+      "norm_label": "scripts",
+      "id": "ultimate_job_tool_package_scripts"
     },
     {
       "label": "dev",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
-      "id": "ultimate_job_tool_package_scripts_dev",
       "community": 1,
-      "norm_label": "dev"
+      "norm_label": "dev",
+      "id": "ultimate_job_tool_package_scripts_dev"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
-      "id": "ultimate_job_tool_package_scripts_build",
       "community": 1,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "ultimate_job_tool_package_scripts_build"
     },
     {
       "label": "lint",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
-      "id": "ultimate_job_tool_package_scripts_lint",
       "community": 1,
-      "norm_label": "lint"
+      "norm_label": "lint",
+      "id": "ultimate_job_tool_package_scripts_lint"
     },
     {
       "label": "preview",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L10",
-      "id": "ultimate_job_tool_package_scripts_preview",
       "community": 1,
-      "norm_label": "preview"
+      "norm_label": "preview",
+      "id": "ultimate_job_tool_package_scripts_preview"
     },
     {
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L12",
-      "id": "ultimate_job_tool_package_dependencies",
       "community": 1,
-      "norm_label": "dependencies"
+      "norm_label": "dependencies",
+      "id": "ultimate_job_tool_package_dependencies"
     },
     {
       "label": "@clerk/clerk-react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L13",
-      "id": "ultimate_job_tool_package_dependencies_clerk_clerk_react",
       "community": 1,
-      "norm_label": "@clerk/clerk-react"
+      "norm_label": "@clerk/clerk-react",
+      "id": "ultimate_job_tool_package_dependencies_clerk_clerk_react"
     },
     {
       "label": "@supabase/supabase-js",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L14",
-      "id": "ultimate_job_tool_package_dependencies_supabase_supabase_js",
       "community": 1,
-      "norm_label": "@supabase/supabase-js"
+      "norm_label": "@supabase/supabase-js",
+      "id": "ultimate_job_tool_package_dependencies_supabase_supabase_js"
     },
     {
       "label": "dexie",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L15",
-      "id": "ultimate_job_tool_package_dependencies_dexie",
       "community": 1,
-      "norm_label": "dexie"
+      "norm_label": "dexie",
+      "id": "ultimate_job_tool_package_dependencies_dexie"
     },
     {
       "label": "dexie-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
-      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks",
       "community": 1,
-      "norm_label": "dexie-react-hooks"
+      "norm_label": "dexie-react-hooks",
+      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks"
     },
     {
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
-      "id": "ultimate_job_tool_package_dependencies_lucide_react",
       "community": 1,
-      "norm_label": "lucide-react"
+      "norm_label": "lucide-react",
+      "id": "ultimate_job_tool_package_dependencies_lucide_react"
     },
     {
       "label": "mammoth",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
-      "id": "ultimate_job_tool_package_dependencies_mammoth",
       "community": 1,
-      "norm_label": "mammoth"
+      "norm_label": "mammoth",
+      "id": "ultimate_job_tool_package_dependencies_mammoth"
     },
     {
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
-      "id": "ultimate_job_tool_package_dependencies_react",
       "community": 1,
-      "norm_label": "react"
+      "norm_label": "react",
+      "id": "ultimate_job_tool_package_dependencies_react"
     },
     {
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
-      "id": "ultimate_job_tool_package_dependencies_react_dom",
       "community": 1,
-      "norm_label": "react-dom"
+      "norm_label": "react-dom",
+      "id": "ultimate_job_tool_package_dependencies_react_dom"
     },
     {
       "label": "react-pdf",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L21",
-      "id": "ultimate_job_tool_package_dependencies_react_pdf",
       "community": 1,
-      "norm_label": "react-pdf"
+      "norm_label": "react-pdf",
+      "id": "ultimate_job_tool_package_dependencies_react_pdf"
     },
     {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L23",
-      "id": "ultimate_job_tool_package_devdependencies",
       "community": 3,
-      "norm_label": "devdependencies"
+      "norm_label": "devdependencies",
+      "id": "ultimate_job_tool_package_devdependencies"
     },
     {
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L24",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_js",
       "community": 3,
-      "norm_label": "@eslint/js"
+      "norm_label": "@eslint/js",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_js"
     },
     {
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
-      "id": "ultimate_job_tool_package_devdependencies_types_react",
       "community": 3,
-      "norm_label": "@types/react"
+      "norm_label": "@types/react",
+      "id": "ultimate_job_tool_package_devdependencies_types_react"
     },
     {
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
-      "id": "ultimate_job_tool_package_devdependencies_types_react_dom",
       "community": 3,
-      "norm_label": "@types/react-dom"
+      "norm_label": "@types/react-dom",
+      "id": "ultimate_job_tool_package_devdependencies_types_react_dom"
     },
     {
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L27",
-      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react",
       "community": 3,
-      "norm_label": "@vitejs/plugin-react"
+      "norm_label": "@vitejs/plugin-react",
+      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react"
     },
     {
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L28",
-      "id": "ultimate_job_tool_package_devdependencies_autoprefixer",
       "community": 3,
-      "norm_label": "autoprefixer"
+      "norm_label": "autoprefixer",
+      "id": "ultimate_job_tool_package_devdependencies_autoprefixer"
     },
     {
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L29",
-      "id": "ultimate_job_tool_package_devdependencies_eslint",
       "community": 3,
-      "norm_label": "eslint"
+      "norm_label": "eslint",
+      "id": "ultimate_job_tool_package_devdependencies_eslint"
     },
     {
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L30",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks",
       "community": 3,
-      "norm_label": "eslint-plugin-react-hooks"
+      "norm_label": "eslint-plugin-react-hooks",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks"
     },
     {
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L31",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh",
       "community": 3,
-      "norm_label": "eslint-plugin-react-refresh"
+      "norm_label": "eslint-plugin-react-refresh",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh"
     },
     {
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L32",
-      "id": "ultimate_job_tool_package_devdependencies_globals",
       "community": 3,
-      "norm_label": "globals"
+      "norm_label": "globals",
+      "id": "ultimate_job_tool_package_devdependencies_globals"
     },
     {
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L33",
-      "id": "ultimate_job_tool_package_devdependencies_postcss",
       "community": 3,
-      "norm_label": "postcss"
+      "norm_label": "postcss",
+      "id": "ultimate_job_tool_package_devdependencies_postcss"
     },
     {
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L34",
-      "id": "ultimate_job_tool_package_devdependencies_tailwindcss",
       "community": 3,
-      "norm_label": "tailwindcss"
+      "norm_label": "tailwindcss",
+      "id": "ultimate_job_tool_package_devdependencies_tailwindcss"
     },
     {
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L35",
-      "id": "ultimate_job_tool_package_devdependencies_vite",
       "community": 3,
-      "norm_label": "vite"
+      "norm_label": "vite",
+      "id": "ultimate_job_tool_package_devdependencies_vite"
     },
     {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L1",
-      "id": "src_app_jsx",
       "community": 2,
-      "norm_label": "app.jsx"
+      "norm_label": "app.jsx",
+      "id": "src_app_jsx"
     },
     {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
       "source_location": "L91",
-      "id": "src_app_app",
       "community": 2,
-      "norm_label": "app()"
+      "norm_label": "app()",
+      "id": "src_app_app"
     },
     {
       "label": "Header.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L1",
-      "id": "src_components_layout_header_jsx",
       "community": 6,
-      "norm_label": "header.jsx"
+      "norm_label": "header.jsx",
+      "id": "src_components_layout_header_jsx"
     },
     {
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L29",
-      "id": "layout_header_header",
       "community": 6,
-      "norm_label": "header()"
+      "norm_label": "header()",
+      "id": "layout_header_header"
     },
     {
       "label": "useDatabase.js",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L1",
-      "id": "src_hooks_usedatabase_js",
       "community": 2,
-      "norm_label": "usedatabase.js"
+      "norm_label": "usedatabase.js",
+      "id": "src_hooks_usedatabase_js"
     },
     {
       "label": "useDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L5",
-      "id": "hooks_usedatabase_usedatabase",
       "community": 2,
-      "norm_label": "usedatabase()"
+      "norm_label": "usedatabase()",
+      "id": "hooks_usedatabase_usedatabase"
     },
     {
       "label": "main.jsx",
       "file_type": "code",
       "source_file": "src/main.jsx",
       "source_location": "L1",
-      "id": "src_main_jsx",
       "community": 2,
-      "norm_label": "main.jsx"
+      "norm_label": "main.jsx",
+      "id": "src_main_jsx"
     },
     {
       "label": "supabaseClient.js",
       "file_type": "code",
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L1",
-      "id": "src_services_supabaseclient_js",
       "community": 2,
-      "norm_label": "supabaseclient.js"
+      "norm_label": "supabaseclient.js",
+      "id": "src_services_supabaseclient_js"
     },
     {
       "label": "supabase",
       "file_type": "code",
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L11",
-      "id": "services_supabaseclient_supabase",
       "community": 2,
-      "norm_label": "supabase"
+      "norm_label": "supabase",
+      "id": "services_supabaseclient_supabase"
     },
     {
       "label": "createAuthenticatedSupabaseClient()",
       "file_type": "code",
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L23",
-      "id": "services_supabaseclient_createauthenticatedsupabaseclient",
       "community": 2,
-      "norm_label": "createauthenticatedsupabaseclient()"
+      "norm_label": "createauthenticatedsupabaseclient()",
+      "id": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "label": "MyCvTab.jsx",
@@ -1178,7 +1196,7 @@
       "file_type": "code",
       "source_file": "vercel.json",
       "source_location": "L1",
-      "community": 4,
+      "community": 2,
       "norm_label": "vercel.json",
       "id": "vercel_json"
     },
@@ -1187,7 +1205,7 @@
       "file_type": "code",
       "source_file": "vercel.json",
       "source_location": "L2",
-      "community": 4,
+      "community": 2,
       "norm_label": "rewrites",
       "id": "ultimate_job_tool_vercel_rewrites"
     },
@@ -1304,7 +1322,7 @@
       "file_type": "code",
       "source_file": "src/services/scraperService.js",
       "source_location": "L40",
-      "community": 4,
+      "community": 2,
       "norm_label": "scrapewithjina()",
       "id": "services_scraperservice_scrapewithjina"
     },
@@ -1313,7 +1331,7 @@
       "file_type": "code",
       "source_file": "src/services/scraperService.js",
       "source_location": "L78",
-      "community": 4,
+      "community": 2,
       "norm_label": "scrapewithscrapfly()",
       "id": "services_scraperservice_scrapewithscrapfly"
     },
@@ -1322,7 +1340,7 @@
       "file_type": "code",
       "source_file": "src/services/scraperService.js",
       "source_location": "L146",
-      "community": 4,
+      "community": 2,
       "norm_label": "cleanjinamarkdown()",
       "id": "services_scraperservice_cleanjinamarkdown"
     },
@@ -1615,15 +1633,6 @@
       "id": "tabs_pdfmakertab_pdfmakertab"
     },
     {
-      "label": "DashboardTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L13",
-      "community": 24,
-      "norm_label": "dashboardtab()",
-      "id": "tabs_dashboardtab_dashboardtab"
-    },
-    {
       "label": "AtsTestTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/AtsTestTab.jsx",
@@ -1725,7 +1734,7 @@
       "label": "Scraper Service",
       "file_type": "code",
       "source_file": "src/services/scraperService.js",
-      "community": 4,
+      "community": 2,
       "norm_label": "scraper service",
       "id": "scraper_service"
     },
@@ -1795,14 +1804,14 @@
     {
       "label": "Jina AI Reader",
       "file_type": "concept",
-      "community": 4,
+      "community": 2,
       "norm_label": "jina ai reader",
       "id": "jina_ai"
     },
     {
       "label": "Scrapfly API",
       "file_type": "concept",
-      "community": 4,
+      "community": 2,
       "norm_label": "scrapfly api",
       "id": "scrapfly"
     },
@@ -1822,6 +1831,27 @@
     }
   ],
   "links": [
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "hooks_usedatabase_usedatabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "tabs_dashboardtab_dashboardtab",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1938,9 +1968,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_package_dependencies",
-      "target": "ultimate_job_tool_package_dependencies_clerk_clerk_react",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_package_dependencies_clerk_clerk_react"
     },
     {
       "relation": "contains",
@@ -1948,9 +1978,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_package_dependencies",
-      "target": "ultimate_job_tool_package_dependencies_supabase_supabase_js",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_package_dependencies_supabase_supabase_js"
     },
     {
       "relation": "contains",
@@ -2048,9 +2078,9 @@
       "source_file": "package.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_package_devdependencies",
-      "target": "ultimate_job_tool_package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_package_devdependencies_types_react_dom"
     },
     {
       "relation": "contains",
@@ -2248,9 +2278,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_hooks_usedatabase_js",
-      "confidence_score": 1.0
+      "target": "src_hooks_usedatabase_js"
     },
     {
       "relation": "imports",
@@ -2259,9 +2289,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "hooks_usedatabase_usedatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_usedatabase"
     },
     {
       "relation": "imports",
@@ -2281,9 +2311,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_layout_header_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_layout_header_jsx"
     },
     {
       "relation": "contains",
@@ -2302,9 +2332,9 @@
       "source_file": "src/main.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main_jsx",
-      "target": "src_app_jsx",
-      "confidence_score": 1.0
+      "target": "src_app_jsx"
     },
     {
       "relation": "imports_from",
@@ -2400,9 +2430,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
-      "target": "src_services_supabaseclient_js",
-      "confidence_score": 1.0
+      "target": "src_services_supabaseclient_js"
     },
     {
       "relation": "imports",
@@ -2411,9 +2441,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
-      "target": "services_supabaseclient_createauthenticatedsupabaseclient",
-      "confidence_score": 1.0
+      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "relation": "contains",
@@ -2421,9 +2451,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_hooks_usedatabase_js",
-      "target": "hooks_usedatabase_usedatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_usedatabase"
     },
     {
       "relation": "contains",
@@ -2431,9 +2461,9 @@
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_supabaseclient_js",
-      "target": "services_supabaseclient_supabase",
-      "confidence_score": 1.0
+      "target": "services_supabaseclient_supabase"
     },
     {
       "relation": "contains",
@@ -2441,9 +2471,9 @@
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_supabaseclient_js",
-      "target": "services_supabaseclient_createauthenticatedsupabaseclient",
-      "confidence_score": 1.0
+      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "relation": "imports_from",
@@ -3937,5 +3967,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "21ea58d8c292290bf31ce82d04673b079d4ae3cb"
+  "built_at_commit": "889335958934ccd9f01f6404fe9df085626225ad"
 }
