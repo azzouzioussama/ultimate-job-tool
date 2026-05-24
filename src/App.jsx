@@ -63,7 +63,7 @@ import { useDatabase } from './hooks/useDatabase';
 // ── Hooks ─────────────────────────────────────────────────────────────────────
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useToast } from './hooks/useToast';
-import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react';
+import { Show, SignInButton } from '@clerk/react';
 
 // ── Layout Components ─────────────────────────────────────────────────────────
 import Header from './components/layout/Header';
@@ -540,7 +540,7 @@ export default function App() {
       <Toast message={toastMessage} />
 
       {/* ── Main Content Area ──────────────────────────────────────── */}
-      <SignedIn>
+      <Show when="signed-in">
         <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
 
           {/* Dashboard Tab */}
@@ -645,9 +645,9 @@ export default function App() {
           </div>
 
         </main>
-      </SignedIn>
+      </Show>
 
-      <SignedOut>
+      <Show when="signed-out">
         <main className="flex-grow flex items-center justify-center p-4">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center max-w-md w-full">
             <h1 className="text-2xl font-bold text-slate-800 mb-4">Bienvenue !</h1>
@@ -661,7 +661,7 @@ export default function App() {
             </SignInButton>
           </div>
         </main>
-      </SignedOut>
+      </Show>
     </div>
   );
 }

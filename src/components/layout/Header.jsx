@@ -23,7 +23,7 @@
 
 
 import { Briefcase, KeyRound } from 'lucide-react';
-import { UserButton, SignedIn } from '@clerk/clerk-react';
+import { UserButton, Show } from '@clerk/react';
 import AI_PROVIDERS from '../../constants/aiProviders';
 
 export default function Header({
@@ -87,11 +87,11 @@ export default function Header({
           />
         </div>
 
-        <SignedIn>
+        <Show when="signed-in">
           <div className="ml-1 flex items-center justify-center">
             <UserButton afterSignOutUrl="/" />
           </div>
-        </SignedIn>
+        </Show>
       </div>
     </div>
   );

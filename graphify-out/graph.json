@@ -4,6 +4,114 @@
   "graph": {},
   "nodes": [
     {
+      "label": "debug.js",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "id": "scratch_debug_js",
+      "community": 31,
+      "norm_label": "debug.js"
+    },
+    {
+      "label": "puppeteer",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "id": "scratch_debug_puppeteer",
+      "community": 31,
+      "norm_label": "puppeteer"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L1",
+      "id": "scratch_package_json",
+      "community": 4,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L2",
+      "id": "scratch_package_name",
+      "community": 4,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L3",
+      "id": "scratch_package_version",
+      "community": 4,
+      "norm_label": "version"
+    },
+    {
+      "label": "main",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L4",
+      "id": "scratch_package_main",
+      "community": 4,
+      "norm_label": "main"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L5",
+      "id": "scratch_package_scripts",
+      "community": 4,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L6",
+      "id": "scratch_package_scripts_test",
+      "community": 4,
+      "norm_label": "test"
+    },
+    {
+      "label": "keywords",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L8",
+      "id": "scratch_package_keywords",
+      "community": 4,
+      "norm_label": "keywords"
+    },
+    {
+      "label": "author",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L9",
+      "id": "scratch_package_author",
+      "community": 4,
+      "norm_label": "author"
+    },
+    {
+      "label": "license",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L10",
+      "id": "scratch_package_license",
+      "community": 4,
+      "norm_label": "license"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L11",
+      "id": "scratch_package_description",
+      "community": 4,
+      "norm_label": "description"
+    },
+    {
       "label": "DashboardTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/DashboardTab.jsx",
@@ -1007,7 +1115,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L87",
-      "community": 7,
+      "community": 24,
       "norm_label": "6. job posting scraper (jina ai & scrapfly) issues",
       "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
     },
@@ -1016,7 +1124,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L89",
-      "community": 7,
+      "community": 24,
       "norm_label": "problem 1: scrapfly cors / direct fetch rejection",
       "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
     },
@@ -1025,7 +1133,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L97",
-      "community": 7,
+      "community": 24,
       "norm_label": "problem 2: scrapfly 422 unprocessable entity",
       "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
     },
@@ -1034,7 +1142,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L102",
-      "community": 7,
+      "community": 24,
       "norm_label": "problem 3: extracted job description format",
       "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
     },
@@ -1043,7 +1151,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L107",
-      "community": 7,
+      "community": 24,
       "norm_label": "problem 4: jina ai extractor boilerplate noise",
       "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
     },
@@ -1052,7 +1160,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L115",
-      "community": 7,
+      "community": 24,
       "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)",
       "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
     },
@@ -1832,15 +1940,115 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scratch_debug_js",
+      "target": "scratch_debug_puppeteer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_keywords",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_author",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "scratch_package_json",
+      "target": "scratch_package_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scratch_package_scripts",
+      "target": "scratch_package_scripts_test",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "hooks_usedatabase_usedatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_usedatabase"
     },
     {
       "relation": "contains",
@@ -1848,9 +2056,9 @@
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "tabs_dashboardtab_dashboardtab",
-      "confidence_score": 1.0
+      "target": "tabs_dashboardtab_dashboardtab"
     },
     {
       "relation": "contains",
@@ -3967,5 +4175,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "889335958934ccd9f01f6404fe9df085626225ad"
+  "built_at_commit": "ad2417f184eccdccbcff62b05aba739deed08503"
 }

@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^5.61.7",
+    "@clerk/react": "^6.7.1",
     "@supabase/supabase-js": "^2.106.1",
     "dexie": "^4.4.2",
     "dexie-react-hooks": "^4.4.0",
