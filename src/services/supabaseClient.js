@@ -8,10 +8,9 @@ if (!supabaseUrl || !supabaseKey) {
 }
 
 // Global Supabase client (used for simple anon requests if needed)
-export const supabase = createClient(
-  supabaseUrl || '',
-  supabaseKey || ''
-)
+export const supabase = (supabaseUrl && supabaseKey)
+  ? createClient(supabaseUrl, supabaseKey)
+  : null;
 
 /**
  * Creates an authenticated Supabase client using a Clerk JWT.
@@ -21,9 +20,11 @@ export const supabase = createClient(
  * @returns SupabaseClient
  */
 export const createAuthenticatedSupabaseClient = (clerkToken) => {
+  if (!supabaseUrl || !supabaseKey) return null;
+  
   return createClient(
-    supabaseUrl || '',
-    supabaseKey || '',
+    supabaseUrl,
+    supabaseKey,
     {
       global: {
         headers: {
