@@ -4,76 +4,157 @@
   "graph": {},
   "nodes": [
     {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "id": "src_app_jsx",
+      "community": 2,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "id": "src_app_app",
+      "community": 2,
+      "norm_label": "app()"
+    },
+    {
+      "label": "MyCvTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L1",
+      "id": "src_components_tabs_mycvtab_jsx",
+      "community": 2,
+      "norm_label": "mycvtab.jsx"
+    },
+    {
+      "label": "MyCvTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L32",
+      "id": "tabs_mycvtab_mycvtab",
+      "community": 2,
+      "norm_label": "mycvtab()"
+    },
+    {
+      "label": "cvTemplates.js",
+      "file_type": "code",
+      "source_file": "src/constants/cvTemplates.js",
+      "source_location": "L1",
+      "id": "src_constants_cvtemplates_js",
+      "community": 2,
+      "norm_label": "cvtemplates.js"
+    },
+    {
+      "label": "CV_TEMPLATES",
+      "file_type": "code",
+      "source_file": "src/constants/cvTemplates.js",
+      "source_location": "L10",
+      "id": "constants_cvtemplates_cv_templates",
+      "community": 2,
+      "norm_label": "cv_templates"
+    },
+    {
+      "label": "fileUploadService.js",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L1",
+      "id": "src_services_fileuploadservice_js",
+      "community": 2,
+      "norm_label": "fileuploadservice.js"
+    },
+    {
+      "label": "extractTextFromFile()",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L34",
+      "id": "services_fileuploadservice_extracttextfromfile",
+      "community": 2,
+      "norm_label": "extracttextfromfile()"
+    },
+    {
+      "label": "buildLatexConversionPrompt()",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L83",
+      "id": "services_fileuploadservice_buildlatexconversionprompt",
+      "community": 2,
+      "norm_label": "buildlatexconversionprompt()"
+    },
+    {
       "label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L1",
-      "id": "graphify_out_memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_md",
       "community": 12,
-      "norm_label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md"
+      "norm_label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
+      "id": "graphify_out_memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_md"
     },
     {
       "label": "Q: How does the ATS scoring logic work?",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L9",
-      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
       "community": 12,
-      "norm_label": "q: how does the ats scoring logic work?"
+      "norm_label": "q: how does the ats scoring logic work?",
+      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work"
     },
     {
       "label": "Answer",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L11",
-      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_answer",
       "community": 12,
-      "norm_label": "answer"
+      "norm_label": "answer",
+      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_answer"
     },
     {
       "label": "Source Nodes",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L15",
-      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_source_nodes",
       "community": 12,
-      "norm_label": "source nodes"
+      "norm_label": "source nodes",
+      "id": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_source_nodes"
     },
     {
       "label": "query_20260523_215924_how_the_database_work.md",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L1",
-      "id": "graphify_out_memory_query_20260523_215924_how_the_database_work_md",
       "community": 13,
-      "norm_label": "query_20260523_215924_how_the_database_work.md"
+      "norm_label": "query_20260523_215924_how_the_database_work.md",
+      "id": "graphify_out_memory_query_20260523_215924_how_the_database_work_md"
     },
     {
       "label": "Q: How the database work",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L9",
-      "id": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
       "community": 13,
-      "norm_label": "q: how the database work"
+      "norm_label": "q: how the database work",
+      "id": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work"
     },
     {
       "label": "Answer",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L11",
-      "id": "memory_query_20260523_215924_how_the_database_work_answer",
       "community": 13,
-      "norm_label": "answer"
+      "norm_label": "answer",
+      "id": "memory_query_20260523_215924_how_the_database_work_answer"
     },
     {
       "label": "Source Nodes",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L15",
-      "id": "memory_query_20260523_215924_how_the_database_work_source_nodes",
       "community": 13,
-      "norm_label": "source nodes"
+      "norm_label": "source nodes",
+      "id": "memory_query_20260523_215924_how_the_database_work_source_nodes"
     },
     {
       "label": "GRAPHIFY_GUIDE.md",
@@ -539,7 +620,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L87",
-      "community": 10,
+      "community": 7,
       "norm_label": "6. job posting scraper (jina ai & scrapfly) issues",
       "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
     },
@@ -548,7 +629,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L89",
-      "community": 10,
+      "community": 7,
       "norm_label": "problem 1: scrapfly cors / direct fetch rejection",
       "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
     },
@@ -557,7 +638,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L97",
-      "community": 10,
+      "community": 7,
       "norm_label": "problem 2: scrapfly 422 unprocessable entity",
       "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
     },
@@ -566,7 +647,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L102",
-      "community": 10,
+      "community": 7,
       "norm_label": "problem 3: extracted job description format",
       "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
     },
@@ -575,7 +656,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L107",
-      "community": 10,
+      "community": 7,
       "norm_label": "problem 4: jina ai extractor boilerplate noise",
       "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
     },
@@ -584,7 +665,7 @@
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L115",
-      "community": 10,
+      "community": 7,
       "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)",
       "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
     },
@@ -1061,45 +1142,9 @@
       "file_type": "code",
       "source_file": "src/main.jsx",
       "source_location": "L1",
-      "community": 2,
+      "community": 24,
       "norm_label": "main.jsx",
       "id": "src_main_jsx"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "src/App.jsx",
-      "source_location": "L92",
-      "community": 2,
-      "norm_label": "app()",
-      "id": "src_app_app"
-    },
-    {
-      "label": "fileUploadService.js",
-      "file_type": "code",
-      "source_file": "src/services/fileUploadService.js",
-      "source_location": "L1",
-      "community": 2,
-      "norm_label": "fileuploadservice.js",
-      "id": "src_services_fileuploadservice_js"
-    },
-    {
-      "label": "extractTextFromFile()",
-      "file_type": "code",
-      "source_file": "src/services/fileUploadService.js",
-      "source_location": "L34",
-      "community": 2,
-      "norm_label": "extracttextfromfile()",
-      "id": "services_fileuploadservice_extracttextfromfile"
-    },
-    {
-      "label": "buildLatexConversionPrompt()",
-      "file_type": "code",
-      "source_file": "src/services/fileUploadService.js",
-      "source_location": "L82",
-      "community": 2,
-      "norm_label": "buildlatexconversionprompt()",
-      "id": "services_fileuploadservice_buildlatexconversionprompt"
     },
     {
       "label": "compilePdfFromLatex()",
@@ -1493,7 +1538,7 @@
       "file_type": "code",
       "source_file": "src/constants/syntheticCv.js",
       "source_location": "L1",
-      "community": 2,
+      "community": 23,
       "norm_label": "syntheticcv.js",
       "id": "src_constants_syntheticcv_js"
     },
@@ -1529,7 +1574,7 @@
       "file_type": "code",
       "source_file": "src/components/tabs/PdfMakerTab.jsx",
       "source_location": "L1",
-      "community": 2,
+      "community": 17,
       "norm_label": "pdfmakertab.jsx",
       "id": "src_components_tabs_pdfmakertab_jsx"
     },
@@ -1538,7 +1583,7 @@
       "file_type": "code",
       "source_file": "src/components/tabs/PdfMakerTab.jsx",
       "source_location": "L40",
-      "community": 2,
+      "community": 17,
       "norm_label": "pdfmakertab()",
       "id": "tabs_pdfmakertab_pdfmakertab"
     },
@@ -1556,7 +1601,7 @@
       "file_type": "code",
       "source_file": "src/components/tabs/AtsTestTab.jsx",
       "source_location": "L1",
-      "community": 2,
+      "community": 16,
       "norm_label": "atstesttab.jsx",
       "id": "src_components_tabs_atstesttab_jsx"
     },
@@ -1565,7 +1610,7 @@
       "file_type": "code",
       "source_file": "src/components/tabs/AtsTestTab.jsx",
       "source_location": "L28",
-      "community": 2,
+      "community": 16,
       "norm_label": "atstesttab()",
       "id": "tabs_atstesttab_atstesttab"
     },
@@ -1574,34 +1619,16 @@
       "file_type": "code",
       "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L32",
-      "community": 2,
+      "community": 29,
       "norm_label": "joboffertab()",
       "id": "tabs_joboffertab_joboffertab"
-    },
-    {
-      "label": "MyCvTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/MyCvTab.jsx",
-      "source_location": "L1",
-      "community": 2,
-      "norm_label": "mycvtab.jsx",
-      "id": "src_components_tabs_mycvtab_jsx"
-    },
-    {
-      "label": "MyCvTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/MyCvTab.jsx",
-      "source_location": "L31",
-      "community": 2,
-      "norm_label": "mycvtab()",
-      "id": "tabs_mycvtab_mycvtab"
     },
     {
       "label": "PromptsTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/PromptsTab.jsx",
       "source_location": "L29",
-      "community": 2,
+      "community": 30,
       "norm_label": "promptstab()",
       "id": "tabs_promptstab_promptstab"
     },
@@ -1628,7 +1655,7 @@
       "file_type": "code",
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L28",
-      "community": 2,
+      "community": 14,
       "norm_label": "tabs",
       "id": "layout_tabnavigation_tabs"
     },
@@ -1637,7 +1664,7 @@
       "file_type": "code",
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L38",
-      "community": 2,
+      "community": 14,
       "norm_label": "tabnavigation()",
       "id": "layout_tabnavigation_tabnavigation"
     },
@@ -1646,7 +1673,7 @@
       "file_type": "code",
       "source_file": "src/components/layout/Toast.jsx",
       "source_location": "L1",
-      "community": 2,
+      "community": 15,
       "norm_label": "toast.jsx",
       "id": "src_components_layout_toast_jsx"
     },
@@ -1655,7 +1682,7 @@
       "file_type": "code",
       "source_file": "src/components/layout/Toast.jsx",
       "source_location": "L21",
-      "community": 2,
+      "community": 15,
       "norm_label": "toast()",
       "id": "layout_toast_toast"
     },
@@ -1678,18 +1705,10 @@
       "id": "layout_header_header"
     },
     {
-      "label": "App.jsx",
-      "file_type": "code",
-      "source_file": "src/App.jsx",
-      "community": 2,
-      "norm_label": "app.jsx",
-      "id": "app_jsx"
-    },
-    {
       "label": "AI Service",
       "file_type": "code",
       "source_file": "src/services/aiService.js",
-      "community": 2,
+      "community": 10,
       "norm_label": "ai service",
       "id": "ai_service"
     },
@@ -1729,7 +1748,7 @@
       "label": "Synthetic CV Template",
       "file_type": "code",
       "source_file": "src/constants/syntheticCv.js",
-      "community": 2,
+      "community": 28,
       "norm_label": "synthetic cv template",
       "id": "synthetic_cv"
     },
@@ -1737,7 +1756,7 @@
       "label": "Prompt Templates",
       "file_type": "code",
       "source_file": "src/constants/promptTemplates.js",
-      "community": 2,
+      "community": 22,
       "norm_label": "prompt templates",
       "id": "prompt_templates"
     },
@@ -1781,7 +1800,7 @@
     {
       "label": "OpenRouter",
       "file_type": "concept",
-      "community": 2,
+      "community": 10,
       "norm_label": "openrouter",
       "id": "openrouter"
     },
@@ -1795,14 +1814,284 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_cvtemplates_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_aiservice_callaiprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithjina",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithscrapfly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_pdfservice_compilepdffromlatex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_pdfservice_downloadblobaspdf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_atsservice_runatsanalysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_fileuploadservice_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_fileuploadservice_extracttextfromfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_fileuploadservice_buildlatexconversionprompt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_latexutils_extractlatexfromresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_db_createapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_db_getapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_db_updateapplication",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_db_getallapplications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_usetoast_usetoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_mycvtab_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "src_components_tabs_mycvtab_jsx",
+      "target": "src_constants_cvtemplates_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/MyCvTab.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_mycvtab_jsx",
+      "target": "tabs_mycvtab_mycvtab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/cvTemplates.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_constants_cvtemplates_js",
+      "target": "constants_cvtemplates_cv_templates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_fileuploadservice_js",
+      "target": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_fileuploadservice_js",
+      "target": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_out_memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_md",
-      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
-      "confidence_score": 1.0
+      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work"
     },
     {
       "relation": "contains",
@@ -1810,9 +2099,9 @@
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
-      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_answer",
-      "confidence_score": 1.0
+      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_answer"
     },
     {
       "relation": "contains",
@@ -1820,9 +2109,9 @@
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_q_how_does_the_ats_scoring_logic_work",
-      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_source_nodes",
-      "confidence_score": 1.0
+      "target": "memory_query_20260523_202727_how_does_the_ats_scoring_logic_work_source_nodes"
     },
     {
       "relation": "contains",
@@ -1830,9 +2119,9 @@
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "graphify_out_memory_query_20260523_215924_how_the_database_work_md",
-      "target": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
-      "confidence_score": 1.0
+      "target": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work"
     },
     {
       "relation": "contains",
@@ -1840,9 +2129,9 @@
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
-      "target": "memory_query_20260523_215924_how_the_database_work_answer",
-      "confidence_score": 1.0
+      "target": "memory_query_20260523_215924_how_the_database_work_answer"
     },
     {
       "relation": "contains",
@@ -1850,9 +2139,9 @@
       "source_file": "graphify-out/memory/query_20260523_215924_how_the_database_work.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "memory_query_20260523_215924_how_the_database_work_q_how_the_database_work",
-      "target": "memory_query_20260523_215924_how_the_database_work_source_nodes",
-      "confidence_score": 1.0
+      "target": "memory_query_20260523_215924_how_the_database_work_source_nodes"
     },
     {
       "relation": "contains",
@@ -2833,113 +3122,6 @@
       "target": "ultimate_job_tool_package_devdependencies_vite"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/main.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_main_jsx",
-      "target": "app_jsx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L94",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "src_hooks_uselocalstorage_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_services_fileuploadservice_js"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/fileUploadService.js",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_services_fileuploadservice_js",
-      "target": "services_fileuploadservice_extracttextfromfile"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/fileUploadService.js",
-      "source_location": "L82",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_services_fileuploadservice_js",
-      "target": "services_fileuploadservice_buildlatexconversionprompt"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_fileuploadservice_extracttextfromfile"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_fileuploadservice_buildlatexconversionprompt"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_pdfservice_compilepdffromlatex"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/pdfService.js",
@@ -2948,17 +3130,6 @@
       "confidence_score": 1.0,
       "source": "pdf_service",
       "target": "services_pdfservice_compilepdffromlatex"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_pdfservice_downloadblobaspdf"
     },
     {
       "relation": "contains",
@@ -2971,17 +3142,6 @@
       "target": "services_pdfservice_downloadblobaspdf"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_services_aiservice_js"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/aiService.js",
@@ -2989,17 +3149,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_services_aiservice_js",
-      "target": "services_aiservice_callaiprovider"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L52",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
       "target": "services_aiservice_callaiprovider"
     },
     {
@@ -3045,17 +3194,6 @@
       "target": "services_atsservice_cleanjsonresponse"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_atsservice_runatsanalysis"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/atsService.js",
@@ -3064,17 +3202,6 @@
       "confidence_score": 1.0,
       "source": "ats_service",
       "target": "services_atsservice_runatsanalysis"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_scraperservice_scrapewithjina"
     },
     {
       "relation": "contains",
@@ -3098,17 +3225,6 @@
       "target": "services_scraperservice_cleanjinamarkdown"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_scraperservice_scrapewithscrapfly"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/scraperService.js",
@@ -3129,17 +3245,6 @@
       "target": "services_scraperservice_cleanjinamarkdown"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_services_latexutils_js"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/latexUtils.js",
@@ -3158,17 +3263,6 @@
       "confidence_score": 1.0,
       "source": "src_services_latexutils_js",
       "target": "services_latexutils_escapeampersands"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_latexutils_extractlatexfromresponse"
     },
     {
       "relation": "calls",
@@ -3590,17 +3684,6 @@
       "target": "services_storageservice_savescrapflykey"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_services_db_js"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/db.js",
@@ -3686,45 +3769,12 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_db_createapplication"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tabs_dashboardtab_dashboardtab",
       "target": "services_db_createapplication"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_db_getapplication"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_db_updateapplication"
     },
     {
       "relation": "imports",
@@ -3736,28 +3786,6 @@
       "confidence_score": 1.0,
       "source": "tabs_dashboardtab_dashboardtab",
       "target": "services_db_deleteapplication"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "services_db_getallapplications"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_constants_aiproviders_js"
     },
     {
       "relation": "contains",
@@ -3792,28 +3820,6 @@
       "target": "src_constants_aiproviders_js"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L47",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_constants_syntheticcv_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_hooks_usetoast_js"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/useToast.js",
@@ -3822,39 +3828,6 @@
       "confidence_score": 1.0,
       "source": "src_hooks_usetoast_js",
       "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_hooks_uselocalstorage_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_components_tabs_pdfmakertab_jsx"
     },
     {
       "relation": "contains",
@@ -3867,28 +3840,6 @@
       "target": "tabs_pdfmakertab_pdfmakertab"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "tabs_dashboardtab_dashboardtab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_components_tabs_atstesttab_jsx"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/tabs/AtsTestTab.jsx",
@@ -3897,60 +3848,6 @@
       "confidence_score": 1.0,
       "source": "src_components_tabs_atstesttab_jsx",
       "target": "tabs_atstesttab_atstesttab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "tabs_joboffertab_joboffertab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L75",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_components_tabs_mycvtab_jsx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/MyCvTab.jsx",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_mycvtab_jsx",
-      "target": "tabs_mycvtab_mycvtab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L72",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "tabs_promptstab_promptstab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L73",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_components_tabs_aiassistanttab_jsx"
     },
     {
       "relation": "contains",
@@ -3973,28 +3870,6 @@
       "target": "layout_tabnavigation_tabs"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "layout_tabnavigation_tabnavigation"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L68",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_components_layout_toast_jsx"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Toast.jsx",
@@ -4005,17 +3880,6 @@
       "target": "layout_toast_toast"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L66",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "src_components_layout_header_jsx"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/Header.jsx",
@@ -4024,77 +3888,6 @@
       "confidence_score": 1.0,
       "source": "src_components_layout_header_jsx",
       "target": "layout_header_header"
-    },
-    {
-      "relation": "references",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "DEVELOPMENT_HISTORY.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "prompt_templates"
-    },
-    {
-      "relation": "calls",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTRIBUTORS_GUIDE.md",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "scraper_service"
-    },
-    {
-      "relation": "calls",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTRIBUTORS_GUIDE.md",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "pdf_service"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "ats_service"
-    },
-    {
-      "relation": "calls",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "CONTRIBUTORS_GUIDE.md",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_jsx",
-      "target": "storage_service"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CONTRIBUTORS_GUIDE.md",
-      "source": "app_jsx",
-      "target": "ai_service"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DEVELOPMENT_HISTORY.md",
-      "source": "app_jsx",
-      "target": "synthetic_cv"
     },
     {
       "relation": "references",
@@ -4146,5 +3939,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5aa4a1c612063bad566d8572ee4520382de87b38"
+  "built_at_commit": "46533d047dd30d4d8b4270581f156a6c748906d4"
 }

@@ -26,3 +26,7 @@ dist-ssr
 # Graphify output
 graphify-out/
 graphify-out/graphify-out/
+.env.local.example
+.gitignore
+.gitignore
+.gitignore

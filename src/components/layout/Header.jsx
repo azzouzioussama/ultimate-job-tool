@@ -23,6 +23,7 @@
 
 
 import { Briefcase, KeyRound } from 'lucide-react';
+import { UserButton, SignedIn } from '@clerk/clerk-react';
 import AI_PROVIDERS from '../../constants/aiProviders';
 
 export default function Header({
@@ -85,6 +86,12 @@ export default function Header({
             onChange={onApiKeyChange}
           />
         </div>
+
+        <SignedIn>
+          <div className="ml-1 flex items-center justify-center">
+            <UserButton afterSignOutUrl="/" />
+          </div>
+        </SignedIn>
       </div>
     </div>
   );

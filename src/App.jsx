@@ -57,11 +57,13 @@ import { runAtsAnalysis } from './services/atsService';
 import { extractTextFromFile, buildLatexConversionPrompt } from './services/fileUploadService';
 import { extractLatexFromResponse } from './services/latexUtils';
 import * as storage from './services/storageService';
-import { createApplication, getApplication, updateApplication, getAllApplications } from './services/db';
+// DB hook replaced with useDatabase
+import { useDatabase } from './hooks/useDatabase';
 
 // ── Hooks ─────────────────────────────────────────────────────────────────────
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useToast } from './hooks/useToast';
+import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react';
 
 // ── Layout Components ─────────────────────────────────────────────────────────
 import Header from './components/layout/Header';
@@ -86,11 +88,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// MAIN APP COMPONENT
-// ═══════════════════════════════════════════════════════════════════════════════
-
 export default function App() {
+  // ── Database Hook ───────────────────────────────────────────────────────────
+  const { createApplication, getApplication, updateApplication, getAllApplications } = useDatabase();
+
   // ── Toast Notifications ─────────────────────────────────────────────────────
   const { toastMessage, showToast } = useToast();
 
@@ -539,110 +540,128 @@ export default function App() {
       <Toast message={toastMessage} />
 
       {/* ── Main Content Area ──────────────────────────────────────── */}
-      <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
+      <SignedIn>
+        <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
 
-        {/* Dashboard Tab */}
-        <div className={activeTab === 'dashboard' ? 'block' : 'hidden'}>
-          <DashboardTab
-            onSelectApplication={(id) => {
-              setActiveAppId(id);
-              setActiveTab('templates'); // Auto-switch to Prompts after selecting
-            }}
-          />
-        </div>
+          {/* Dashboard Tab */}
+          <div className={activeTab === 'dashboard' ? 'block' : 'hidden'}>
+            <DashboardTab
+              onSelectApplication={(id) => {
+                setActiveAppId(id);
+                setActiveTab('templates'); // Auto-switch to Prompts after selecting
+              }}
+            />
+          </div>
 
-        {/* Prompts Tab */}
-        <div className={activeTab === 'templates' ? 'block' : 'hidden'}>
-          <PromptsTab
-            templates={PROMPT_TEMPLATES}
-            selectedTemplateId={selectedTemplateId}
-            onSelectTemplate={setSelectedTemplateId}
-            customPrompt={customPrompt}
-            onCustomPromptChange={setCustomPrompt}
-            compiledPrompt={compiledPrompt}
-            onCopy={copyToClipboard}
-            onDownload={downloadAsTxt}
-            onRunAI={handleRunAI}
-            onReset={resetAll}
-          />
-        </div>
+          {/* Prompts Tab */}
+          <div className={activeTab === 'templates' ? 'block' : 'hidden'}>
+            <PromptsTab
+              templates={PROMPT_TEMPLATES}
+              selectedTemplateId={selectedTemplateId}
+              onSelectTemplate={setSelectedTemplateId}
+              customPrompt={customPrompt}
+              onCustomPromptChange={setCustomPrompt}
+              compiledPrompt={compiledPrompt}
+              onCopy={copyToClipboard}
+              onDownload={downloadAsTxt}
+              onRunAI={handleRunAI}
+              onReset={resetAll}
+            />
+          </div>
 
-        {/* AI Assistant Tab */}
-        <div className={activeTab === 'ai' ? 'block' : 'hidden'}>
-          <AiAssistantTab
-            aiResponse={aiResponse}
-            isAiLoading={isAiLoading}
-            apiKey={apiKey}
-            providerLabel={providerLabel}
-            onRunAI={handleRunAI}
-            onExtractLatex={handleExtractLatex}
-            onCopy={copyToClipboard}
-            onClear={() => setAiResponse('')}
-          />
-        </div>
+          {/* AI Assistant Tab */}
+          <div className={activeTab === 'ai' ? 'block' : 'hidden'}>
+            <AiAssistantTab
+              aiResponse={aiResponse}
+              isAiLoading={isAiLoading}
+              apiKey={apiKey}
+              providerLabel={providerLabel}
+              onRunAI={handleRunAI}
+              onExtractLatex={handleExtractLatex}
+              onCopy={copyToClipboard}
+              onClear={() => setAiResponse('')}
+            />
+          </div>
 
-        {/* Job Offer Tab */}
-        <div className={activeTab === 'job' ? 'block' : 'hidden'}>
-          <JobOfferTab
-            jobDescription={jobDescription}
-            onJobDescriptionChange={setJobDescription}
-            jobUrl={jobUrl}
-            onJobUrlChange={setJobUrl}
-            scraperType={scraperType}
-            onScraperTypeChange={setScraperType}
-            onScrape={handleScrape}
-            isScraping={isScraping}
-            onClear={() => setJobDescription('')}
-          />
-        </div>
+          {/* Job Offer Tab */}
+          <div className={activeTab === 'job' ? 'block' : 'hidden'}>
+            <JobOfferTab
+              jobDescription={jobDescription}
+              onJobDescriptionChange={setJobDescription}
+              jobUrl={jobUrl}
+              onJobUrlChange={setJobUrl}
+              scraperType={scraperType}
+              onScraperTypeChange={setScraperType}
+              onScrape={handleScrape}
+              isScraping={isScraping}
+              onClear={() => setJobDescription('')}
+            />
+          </div>
 
-        {/* My CV Tab */}
-        <div className={activeTab === 'cv' ? 'block' : 'hidden'}>
-          <MyCvTab
-            cvOriginal={cvOriginal}
-            onCvOriginalChange={setCvOriginal}
-            cvGenerated={cvGenerated}
-            onCvGeneratedChange={setCvGenerated}
-            onResetToSynthetic={() => setCvOriginal(SYNTHETIC_CV)}
-            onFileUpload={handleFileUpload}
-            isUploadingCv={isUploadingCv}
-            selectedCvTemplateId={selectedCvTemplateId}
-            onSelectedCvTemplateIdChange={setSelectedCvTemplateId}
-          />
-        </div>
+          {/* My CV Tab */}
+          <div className={activeTab === 'cv' ? 'block' : 'hidden'}>
+            <MyCvTab
+              cvOriginal={cvOriginal}
+              onCvOriginalChange={setCvOriginal}
+              cvGenerated={cvGenerated}
+              onCvGeneratedChange={setCvGenerated}
+              onResetToSynthetic={() => setCvOriginal(SYNTHETIC_CV)}
+              onFileUpload={handleFileUpload}
+              isUploadingCv={isUploadingCv}
+              selectedCvTemplateId={selectedCvTemplateId}
+              onSelectedCvTemplateIdChange={setSelectedCvTemplateId}
+            />
+          </div>
 
-        {/* PDF Maker Tab */}
-        <div className={activeTab === 'pdf' ? 'block' : 'hidden'}>
-          <PdfMakerTab
-            pdfSource={pdfSource}
-            onPdfSourceChange={setPdfSource}
-            pdfBlobUrl={pdfBlobUrl}
-            isPdfLoading={isPdfLoading}
-            pdfError={pdfError}
-            onCompile={handleCompilePDF}
-            onDownload={handleDownloadPDF}
-            isMobile={isMobile}
-            numPages={numPages}
-            onDocumentLoadSuccess={onDocumentLoadSuccess}
-            pdfContainerRef={pdfContainerRef}
-            pdfContainerWidth={pdfContainerWidth}
-          />
-        </div>
+          {/* PDF Maker Tab */}
+          <div className={activeTab === 'pdf' ? 'block' : 'hidden'}>
+            <PdfMakerTab
+              pdfSource={pdfSource}
+              onPdfSourceChange={setPdfSource}
+              pdfBlobUrl={pdfBlobUrl}
+              isPdfLoading={isPdfLoading}
+              pdfError={pdfError}
+              onCompile={handleCompilePDF}
+              onDownload={handleDownloadPDF}
+              isMobile={isMobile}
+              numPages={numPages}
+              onDocumentLoadSuccess={onDocumentLoadSuccess}
+              pdfContainerRef={pdfContainerRef}
+              pdfContainerWidth={pdfContainerWidth}
+            />
+          </div>
 
-        {/* ATS Test Tab */}
-        <div className={activeTab === 'ats' ? 'block' : 'hidden'}>
-          <AtsTestTab
-            atsResult={atsResult}
-            isAtsLoading={isAtsLoading}
-            onRunATS={handleRunATS}
-            canRunATS={!!(jobDescription && (cvGenerated || cvOriginal))}
-            jobDescription={jobDescription}
-            cvGenerated={cvGenerated}
-            cvOriginal={cvOriginal}
-          />
-        </div>
+          {/* ATS Test Tab */}
+          <div className={activeTab === 'ats' ? 'block' : 'hidden'}>
+            <AtsTestTab
+              atsResult={atsResult}
+              isAtsLoading={isAtsLoading}
+              onRunATS={handleRunATS}
+              canRunATS={!!(jobDescription && (cvGenerated || cvOriginal))}
+              jobDescription={jobDescription}
+              cvGenerated={cvGenerated}
+              cvOriginal={cvOriginal}
+            />
+          </div>
 
-      </main>
+        </main>
+      </SignedIn>
+
+      <SignedOut>
+        <main className="flex-grow flex items-center justify-center p-4">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center max-w-md w-full">
+            <h1 className="text-2xl font-bold text-slate-800 mb-4">Bienvenue !</h1>
+            <p className="text-slate-600 mb-8">
+              Connectez-vous pour gérer vos candidatures, générer des lettres de motivation, et adapter vos CV avec l'IA.
+            </p>
+            <SignInButton mode="modal">
+              <button className="bg-indigo-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors w-full">
+                Se connecter
+              </button>
+            </SignInButton>
+          </div>
+        </main>
+      </SignedOut>
     </div>
   );
 }
