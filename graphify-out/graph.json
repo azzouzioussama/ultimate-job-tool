@@ -31,33 +31,6 @@
       "norm_label": "app()"
     },
     {
-      "label": "TabNavigation.jsx",
-      "file_type": "code",
-      "source_file": "src/components/layout/TabNavigation.jsx",
-      "source_location": "L1",
-      "id": "src_components_layout_tabnavigation_jsx",
-      "community": 15,
-      "norm_label": "tabnavigation.jsx"
-    },
-    {
-      "label": "tabs",
-      "file_type": "code",
-      "source_file": "src/components/layout/TabNavigation.jsx",
-      "source_location": "L29",
-      "id": "layout_tabnavigation_tabs",
-      "community": 15,
-      "norm_label": "tabs"
-    },
-    {
-      "label": "TabNavigation()",
-      "file_type": "code",
-      "source_file": "src/components/layout/TabNavigation.jsx",
-      "source_location": "L40",
-      "id": "layout_tabnavigation_tabnavigation",
-      "community": 15,
-      "norm_label": "tabnavigation()"
-    },
-    {
       "label": "AiAssistantTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/AiAssistantTab.jsx",
@@ -94,58 +67,22 @@
       "norm_label": "dashboardtab()"
     },
     {
-      "label": "DocumentsTab.jsx",
+      "label": "JobOfferTab.jsx",
       "file_type": "code",
-      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_documentstab_jsx",
+      "id": "src_components_tabs_joboffertab_jsx",
       "community": 2,
-      "norm_label": "documentstab.jsx"
+      "norm_label": "joboffertab.jsx"
     },
     {
-      "label": "DocumentsTab()",
+      "label": "JobOfferTab()",
       "file_type": "code",
-      "source_file": "src/components/tabs/DocumentsTab.jsx",
-      "source_location": "L4",
-      "id": "tabs_documentstab_documentstab",
+      "source_file": "src/components/tabs/JobOfferTab.jsx",
+      "source_location": "L33",
+      "id": "tabs_joboffertab_joboffertab",
       "community": 2,
-      "norm_label": "documentstab()"
-    },
-    {
-      "label": "PdfMakerTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/PdfMakerTab.jsx",
-      "source_location": "L1",
-      "id": "src_components_tabs_pdfmakertab_jsx",
-      "community": 2,
-      "norm_label": "pdfmakertab.jsx"
-    },
-    {
-      "label": "PdfMakerTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/PdfMakerTab.jsx",
-      "source_location": "L41",
-      "id": "tabs_pdfmakertab_pdfmakertab",
-      "community": 2,
-      "norm_label": "pdfmakertab()"
-    },
-    {
-      "label": "PromptsTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/PromptsTab.jsx",
-      "source_location": "L1",
-      "id": "src_components_tabs_promptstab_jsx",
-      "community": 2,
-      "norm_label": "promptstab.jsx"
-    },
-    {
-      "label": "PromptsTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/PromptsTab.jsx",
-      "source_location": "L30",
-      "id": "tabs_promptstab_promptstab",
-      "community": 2,
-      "norm_label": "promptstab()"
+      "norm_label": "joboffertab()"
     },
     {
       "label": "en.json",
@@ -180,7 +117,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L5",
       "id": "locales_en_tabs",
-      "community": 51,
+      "community": 3,
       "norm_label": "tabs"
     },
     {
@@ -189,7 +126,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L6",
       "id": "locales_en_tabs_dashboard",
-      "community": 51,
+      "community": 3,
       "norm_label": "dashboard"
     },
     {
@@ -198,7 +135,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L7",
       "id": "locales_en_tabs_prompts",
-      "community": 51,
+      "community": 3,
       "norm_label": "prompts"
     },
     {
@@ -207,7 +144,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L8",
       "id": "locales_en_tabs_aiassistant",
-      "community": 51,
+      "community": 3,
       "norm_label": "aiassistant"
     },
     {
@@ -216,7 +153,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L9",
       "id": "locales_en_tabs_joboffer",
-      "community": 51,
+      "community": 3,
       "norm_label": "joboffer"
     },
     {
@@ -225,7 +162,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L10",
       "id": "locales_en_tabs_mycv",
-      "community": 51,
+      "community": 3,
       "norm_label": "mycv"
     },
     {
@@ -234,7 +171,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L11",
       "id": "locales_en_tabs_pdfmaker",
-      "community": 51,
+      "community": 3,
       "norm_label": "pdfmaker"
     },
     {
@@ -243,7 +180,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L12",
       "id": "locales_en_tabs_atstest",
-      "community": 51,
+      "community": 3,
       "norm_label": "atstest"
     },
     {
@@ -252,7 +189,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L13",
       "id": "locales_en_tabs_documents",
-      "community": 51,
+      "community": 3,
       "norm_label": "documents"
     },
     {
@@ -261,7 +198,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L15",
       "id": "locales_en_app",
-      "community": 30,
+      "community": 40,
       "norm_label": "app"
     },
     {
@@ -270,7 +207,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L16",
       "id": "locales_en_app_auth",
-      "community": 30,
+      "community": 40,
       "norm_label": "auth"
     },
     {
@@ -279,7 +216,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L17",
       "id": "locales_en_auth_welcometitle",
-      "community": 30,
+      "community": 40,
       "norm_label": "welcometitle"
     },
     {
@@ -288,7 +225,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L18",
       "id": "locales_en_auth_welcomedesc",
-      "community": 30,
+      "community": 40,
       "norm_label": "welcomedesc"
     },
     {
@@ -297,7 +234,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L19",
       "id": "locales_en_auth_loginbutton",
-      "community": 30,
+      "community": 40,
       "norm_label": "loginbutton"
     },
     {
@@ -306,7 +243,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L21",
       "id": "locales_en_app_prompts",
-      "community": 30,
+      "community": 40,
       "norm_label": "prompts"
     },
     {
@@ -315,7 +252,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L22",
       "id": "locales_en_prompts_missingcv",
-      "community": 30,
+      "community": 40,
       "norm_label": "missingcv"
     },
     {
@@ -324,7 +261,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L23",
       "id": "locales_en_prompts_missingjob",
-      "community": 30,
+      "community": 40,
       "norm_label": "missingjob"
     },
     {
@@ -333,7 +270,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L24",
       "id": "locales_en_prompts_urlinstruction",
-      "community": 30,
+      "community": 40,
       "norm_label": "urlinstruction"
     },
     {
@@ -571,91 +508,118 @@
       "norm_label": "docssaved"
     },
     {
-      "label": "ai",
+      "label": "compilingMultipleStart",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L52",
+      "id": "locales_en_toast_compilingmultiplestart",
+      "community": 30,
+      "norm_label": "compilingmultiplestart"
+    },
+    {
+      "label": "compilingMultipleDone",
       "file_type": "code",
       "source_file": "src/locales/en.json",
       "source_location": "L53",
-      "id": "locales_en_app_ai",
+      "id": "locales_en_toast_compilingmultipledone",
       "community": 30,
+      "norm_label": "compilingmultipledone"
+    },
+    {
+      "label": "compileMultipleError",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L54",
+      "id": "locales_en_toast_compilemultipleerror",
+      "community": 30,
+      "norm_label": "compilemultipleerror"
+    },
+    {
+      "label": "ai",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L56",
+      "id": "locales_en_app_ai",
+      "community": 40,
       "norm_label": "ai"
     },
     {
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L54",
+      "source_location": "L57",
       "id": "locales_en_ai_error",
-      "community": 30,
+      "community": 40,
       "norm_label": "error"
     },
     {
       "label": "errorTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L55",
+      "source_location": "L58",
       "id": "locales_en_ai_errortitle",
-      "community": 30,
+      "community": 40,
       "norm_label": "errortitle"
     },
     {
       "label": "apiError",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L56",
+      "source_location": "L59",
       "id": "locales_en_ai_apierror",
-      "community": 30,
+      "community": 40,
       "norm_label": "apierror"
     },
     {
       "label": "prompt",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L58",
+      "source_location": "L61",
       "id": "locales_en_app_prompt",
-      "community": 30,
+      "community": 40,
       "norm_label": "prompt"
     },
     {
       "label": "scrapflyKey",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L59",
+      "source_location": "L62",
       "id": "locales_en_prompt_scrapflykey",
-      "community": 30,
+      "community": 40,
       "norm_label": "scrapflykey"
     },
     {
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L61",
+      "source_location": "L64",
       "id": "locales_en_app_error",
-      "community": 30,
+      "community": 40,
       "norm_label": "error"
     },
     {
       "label": "scrapflyRequired",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L62",
+      "source_location": "L65",
       "id": "locales_en_error_scrapflyrequired",
-      "community": 30,
+      "community": 40,
       "norm_label": "scrapflyrequired"
     },
     {
       "label": "invalidLatex",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L63",
+      "source_location": "L66",
       "id": "locales_en_error_invalidlatex",
-      "community": 30,
+      "community": 40,
       "norm_label": "invalidlatex"
     },
     {
       "label": "dashboard",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L66",
+      "source_location": "L69",
       "id": "locales_en_dashboard",
       "community": 34,
       "norm_label": "dashboard"
@@ -664,7 +628,7 @@
       "label": "confirmDelete",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L67",
+      "source_location": "L70",
       "id": "locales_en_dashboard_confirmdelete",
       "community": 34,
       "norm_label": "confirmdelete"
@@ -673,7 +637,7 @@
       "label": "unknown",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L68",
+      "source_location": "L71",
       "id": "locales_en_dashboard_unknown",
       "community": 34,
       "norm_label": "unknown"
@@ -682,7 +646,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L69",
+      "source_location": "L72",
       "id": "locales_en_dashboard_title",
       "community": 34,
       "norm_label": "title"
@@ -691,7 +655,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L70",
+      "source_location": "L73",
       "id": "locales_en_dashboard_subtitle",
       "community": 34,
       "norm_label": "subtitle"
@@ -700,7 +664,7 @@
       "label": "newApp",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L71",
+      "source_location": "L74",
       "id": "locales_en_dashboard_newapp",
       "community": 34,
       "norm_label": "newapp"
@@ -709,7 +673,7 @@
       "label": "form",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L72",
+      "source_location": "L75",
       "id": "locales_en_dashboard_form",
       "community": 34,
       "norm_label": "form"
@@ -718,7 +682,7 @@
       "label": "company",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L73",
+      "source_location": "L76",
       "id": "locales_en_form_company",
       "community": 34,
       "norm_label": "company"
@@ -727,7 +691,7 @@
       "label": "companyPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L74",
+      "source_location": "L77",
       "id": "locales_en_form_companyplaceholder",
       "community": 34,
       "norm_label": "companyplaceholder"
@@ -736,7 +700,7 @@
       "label": "jobTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L75",
+      "source_location": "L78",
       "id": "locales_en_form_jobtitle",
       "community": 34,
       "norm_label": "jobtitle"
@@ -745,7 +709,7 @@
       "label": "jobTitlePlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L76",
+      "source_location": "L79",
       "id": "locales_en_form_jobtitleplaceholder",
       "community": 34,
       "norm_label": "jobtitleplaceholder"
@@ -754,7 +718,7 @@
       "label": "cancel",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L77",
+      "source_location": "L80",
       "id": "locales_en_form_cancel",
       "community": 34,
       "norm_label": "cancel"
@@ -763,7 +727,7 @@
       "label": "create",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L78",
+      "source_location": "L81",
       "id": "locales_en_form_create",
       "community": 34,
       "norm_label": "create"
@@ -772,7 +736,7 @@
       "label": "loading",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L80",
+      "source_location": "L83",
       "id": "locales_en_dashboard_loading",
       "community": 34,
       "norm_label": "loading"
@@ -781,7 +745,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L81",
+      "source_location": "L84",
       "id": "locales_en_dashboard_emptytitle",
       "community": 34,
       "norm_label": "emptytitle"
@@ -790,7 +754,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L82",
+      "source_location": "L85",
       "id": "locales_en_dashboard_emptydesc",
       "community": 34,
       "norm_label": "emptydesc"
@@ -799,7 +763,7 @@
       "label": "card",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L83",
+      "source_location": "L86",
       "id": "locales_en_dashboard_card",
       "community": 34,
       "norm_label": "card"
@@ -808,7 +772,7 @@
       "label": "delete",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L84",
+      "source_location": "L87",
       "id": "locales_en_card_delete",
       "community": 34,
       "norm_label": "delete"
@@ -817,7 +781,7 @@
       "label": "modified",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L85",
+      "source_location": "L88",
       "id": "locales_en_card_modified",
       "community": 34,
       "norm_label": "modified"
@@ -826,7 +790,7 @@
       "label": "open",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L86",
+      "source_location": "L89",
       "id": "locales_en_card_open",
       "community": 34,
       "norm_label": "open"
@@ -835,7 +799,7 @@
       "label": "noCompany",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L88",
+      "source_location": "L91",
       "id": "locales_en_dashboard_nocompany",
       "community": 34,
       "norm_label": "nocompany"
@@ -844,7 +808,7 @@
       "label": "badge",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L89",
+      "source_location": "L92",
       "id": "locales_en_dashboard_badge",
       "community": 34,
       "norm_label": "badge"
@@ -853,7 +817,7 @@
       "label": "job",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L90",
+      "source_location": "L93",
       "id": "locales_en_badge_job",
       "community": 34,
       "norm_label": "job"
@@ -862,7 +826,7 @@
       "label": "cv",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L91",
+      "source_location": "L94",
       "id": "locales_en_badge_cv",
       "community": 34,
       "norm_label": "cv"
@@ -871,115 +835,196 @@
       "label": "docs",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L92",
+      "source_location": "L95",
       "id": "locales_en_badge_docs",
       "community": 34,
       "norm_label": "docs"
     },
     {
+      "label": "table",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L97",
+      "id": "locales_en_dashboard_table",
+      "community": 34,
+      "norm_label": "table"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L98",
+      "id": "locales_en_table_date",
+      "community": 34,
+      "norm_label": "date"
+    },
+    {
+      "label": "jobTitle",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L99",
+      "id": "locales_en_table_jobtitle",
+      "community": 34,
+      "norm_label": "jobtitle"
+    },
+    {
+      "label": "company",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L100",
+      "id": "locales_en_table_company",
+      "community": 34,
+      "norm_label": "company"
+    },
+    {
+      "label": "offer",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L101",
+      "id": "locales_en_table_offer",
+      "community": 34,
+      "norm_label": "offer"
+    },
+    {
+      "label": "cv",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L102",
+      "id": "locales_en_table_cv",
+      "community": 34,
+      "norm_label": "cv"
+    },
+    {
+      "label": "docs",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L103",
+      "id": "locales_en_table_docs",
+      "community": 34,
+      "norm_label": "docs"
+    },
+    {
+      "label": "ats",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L104",
+      "id": "locales_en_table_ats",
+      "community": 34,
+      "norm_label": "ats"
+    },
+    {
+      "label": "actions",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L105",
+      "id": "locales_en_table_actions",
+      "community": 34,
+      "norm_label": "actions"
+    },
+    {
       "label": "prompts",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L95",
+      "source_location": "L108",
       "id": "locales_en_prompts",
-      "community": 41,
+      "community": 3,
       "norm_label": "prompts"
     },
     {
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L96",
+      "source_location": "L109",
       "id": "locales_en_prompts_title",
-      "community": 41,
+      "community": 3,
       "norm_label": "title"
     },
     {
       "label": "editorTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L97",
+      "source_location": "L110",
       "id": "locales_en_prompts_editortitle",
-      "community": 41,
+      "community": 3,
       "norm_label": "editortitle"
     },
     {
       "label": "resetAll",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L98",
+      "source_location": "L111",
       "id": "locales_en_prompts_resetall",
-      "community": 41,
+      "community": 3,
       "norm_label": "resetall"
     },
     {
       "label": "reset",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L99",
+      "source_location": "L112",
       "id": "locales_en_prompts_reset",
-      "community": 41,
+      "community": 3,
       "norm_label": "reset"
     },
     {
       "label": "empty",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L100",
+      "source_location": "L113",
       "id": "locales_en_prompts_empty",
-      "community": 41,
+      "community": 3,
       "norm_label": "empty"
     },
     {
       "label": "download",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L101",
+      "source_location": "L114",
       "id": "locales_en_prompts_download",
-      "community": 41,
+      "community": 3,
       "norm_label": "download"
     },
     {
       "label": "copy",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L102",
+      "source_location": "L115",
       "id": "locales_en_prompts_copy",
-      "community": 41,
+      "community": 3,
       "norm_label": "copy"
     },
     {
       "label": "copyAll",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L103",
+      "source_location": "L116",
       "id": "locales_en_prompts_copyall",
-      "community": 41,
+      "community": 3,
       "norm_label": "copyall"
     },
     {
       "label": "generate",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L104",
+      "source_location": "L117",
       "id": "locales_en_prompts_generate",
-      "community": 41,
+      "community": 3,
       "norm_label": "generate"
     },
     {
       "label": "requireLatex",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L105",
+      "source_location": "L118",
       "id": "locales_en_prompts_requirelatex",
-      "community": 41,
+      "community": 3,
       "norm_label": "requirelatex"
     },
     {
       "label": "ai",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L107",
+      "source_location": "L120",
       "id": "locales_en_ai",
       "community": 39,
       "norm_label": "ai"
@@ -988,7 +1033,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L108",
+      "source_location": "L121",
       "id": "locales_en_ai_title",
       "community": 39,
       "norm_label": "title"
@@ -997,7 +1042,7 @@
       "label": "rerun",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L109",
+      "source_location": "L122",
       "id": "locales_en_ai_rerun",
       "community": 39,
       "norm_label": "rerun"
@@ -1006,7 +1051,7 @@
       "label": "compileSelected",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L110",
+      "source_location": "L123",
       "id": "locales_en_ai_compileselected",
       "community": 39,
       "norm_label": "compileselected"
@@ -1015,7 +1060,7 @@
       "label": "compileTooltip",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L111",
+      "source_location": "L124",
       "id": "locales_en_ai_compiletooltip",
       "community": 39,
       "norm_label": "compiletooltip"
@@ -1024,7 +1069,7 @@
       "label": "copyAll",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L112",
+      "source_location": "L125",
       "id": "locales_en_ai_copyall",
       "community": 39,
       "norm_label": "copyall"
@@ -1033,7 +1078,7 @@
       "label": "clearAll",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L113",
+      "source_location": "L126",
       "id": "locales_en_ai_clearall",
       "community": 39,
       "norm_label": "clearall"
@@ -1042,7 +1087,7 @@
       "label": "keyRequired",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L114",
+      "source_location": "L127",
       "id": "locales_en_ai_keyrequired",
       "community": 39,
       "norm_label": "keyrequired"
@@ -1051,7 +1096,7 @@
       "label": "keyDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L115",
+      "source_location": "L128",
       "id": "locales_en_ai_keydesc",
       "community": 39,
       "norm_label": "keydesc"
@@ -1060,7 +1105,7 @@
       "label": "keyLink",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L116",
+      "source_location": "L129",
       "id": "locales_en_ai_keylink",
       "community": 39,
       "norm_label": "keylink"
@@ -1069,7 +1114,7 @@
       "label": "analyzing",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L117",
+      "source_location": "L130",
       "id": "locales_en_ai_analyzing",
       "community": 39,
       "norm_label": "analyzing"
@@ -1078,16 +1123,52 @@
       "label": "includeInPdf",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L118",
+      "source_location": "L131",
       "id": "locales_en_ai_includeinpdf",
       "community": 39,
       "norm_label": "includeinpdf"
     },
     {
+      "label": "compileMultipleTooltip",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L132",
+      "id": "locales_en_ai_compilemultipletooltip",
+      "community": 39,
+      "norm_label": "compilemultipletooltip"
+    },
+    {
+      "label": "compileMultiple",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L133",
+      "id": "locales_en_ai_compilemultiple",
+      "community": 39,
+      "norm_label": "compilemultiple"
+    },
+    {
+      "label": "extractCv",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L134",
+      "id": "locales_en_ai_extractcv",
+      "community": 39,
+      "norm_label": "extractcv"
+    },
+    {
+      "label": "extractTooltip",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L135",
+      "id": "locales_en_ai_extracttooltip",
+      "community": 39,
+      "norm_label": "extracttooltip"
+    },
+    {
       "label": "job",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L120",
+      "source_location": "L137",
       "id": "locales_en_job",
       "community": 3,
       "norm_label": "job"
@@ -1096,7 +1177,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L121",
+      "source_location": "L138",
       "id": "locales_en_job_title",
       "community": 3,
       "norm_label": "title"
@@ -1105,7 +1186,7 @@
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L122",
+      "source_location": "L139",
       "id": "locales_en_job_clear",
       "community": 3,
       "norm_label": "clear"
@@ -1114,7 +1195,7 @@
       "label": "jina",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L123",
+      "source_location": "L140",
       "id": "locales_en_job_jina",
       "community": 3,
       "norm_label": "jina"
@@ -1123,7 +1204,7 @@
       "label": "scrapfly",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L124",
+      "source_location": "L141",
       "id": "locales_en_job_scrapfly",
       "community": 3,
       "norm_label": "scrapfly"
@@ -1132,7 +1213,7 @@
       "label": "urlPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L125",
+      "source_location": "L142",
       "id": "locales_en_job_urlplaceholder",
       "community": 3,
       "norm_label": "urlplaceholder"
@@ -1141,7 +1222,7 @@
       "label": "extract",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L126",
+      "source_location": "L143",
       "id": "locales_en_job_extract",
       "community": 3,
       "norm_label": "extract"
@@ -1150,7 +1231,7 @@
       "label": "placeholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L127",
+      "source_location": "L144",
       "id": "locales_en_job_placeholder",
       "community": 3,
       "norm_label": "placeholder"
@@ -1159,7 +1240,7 @@
       "label": "cv",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L129",
+      "source_location": "L146",
       "id": "locales_en_cv",
       "community": 3,
       "norm_label": "cv"
@@ -1168,7 +1249,7 @@
       "label": "templateTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L130",
+      "source_location": "L147",
       "id": "locales_en_cv_templatetitle",
       "community": 3,
       "norm_label": "templatetitle"
@@ -1177,7 +1258,7 @@
       "label": "templateDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L131",
+      "source_location": "L148",
       "id": "locales_en_cv_templatedesc",
       "community": 3,
       "norm_label": "templatedesc"
@@ -1186,7 +1267,7 @@
       "label": "originalTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L132",
+      "source_location": "L149",
       "id": "locales_en_cv_originaltitle",
       "community": 3,
       "norm_label": "originaltitle"
@@ -1195,7 +1276,7 @@
       "label": "importBtn",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L133",
+      "source_location": "L150",
       "id": "locales_en_cv_importbtn",
       "community": 3,
       "norm_label": "importbtn"
@@ -1204,7 +1285,7 @@
       "label": "importing",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L134",
+      "source_location": "L151",
       "id": "locales_en_cv_importing",
       "community": 3,
       "norm_label": "importing"
@@ -1213,7 +1294,7 @@
       "label": "resetFake",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L135",
+      "source_location": "L152",
       "id": "locales_en_cv_resetfake",
       "community": 3,
       "norm_label": "resetfake"
@@ -1222,7 +1303,7 @@
       "label": "generatedTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L136",
+      "source_location": "L153",
       "id": "locales_en_cv_generatedtitle",
       "community": 3,
       "norm_label": "generatedtitle"
@@ -1231,7 +1312,7 @@
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L137",
+      "source_location": "L154",
       "id": "locales_en_cv_clear",
       "community": 3,
       "norm_label": "clear"
@@ -1240,7 +1321,7 @@
       "label": "generatedPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L138",
+      "source_location": "L155",
       "id": "locales_en_cv_generatedplaceholder",
       "community": 3,
       "norm_label": "generatedplaceholder"
@@ -1249,142 +1330,142 @@
       "label": "pdf",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L140",
+      "source_location": "L157",
       "id": "locales_en_pdf",
-      "community": 3,
+      "community": 41,
       "norm_label": "pdf"
     },
     {
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L141",
+      "source_location": "L158",
       "id": "locales_en_pdf_title",
-      "community": 3,
+      "community": 41,
       "norm_label": "title"
     },
     {
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L142",
+      "source_location": "L159",
       "id": "locales_en_pdf_subtitle",
-      "community": 3,
+      "community": 41,
       "norm_label": "subtitle"
     },
     {
       "label": "sourceGenerated",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L143",
+      "source_location": "L160",
       "id": "locales_en_pdf_sourcegenerated",
-      "community": 3,
+      "community": 41,
       "norm_label": "sourcegenerated"
     },
     {
       "label": "sourceOriginal",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L144",
+      "source_location": "L161",
       "id": "locales_en_pdf_sourceoriginal",
-      "community": 3,
+      "community": 41,
       "norm_label": "sourceoriginal"
     },
     {
       "label": "download",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L145",
+      "source_location": "L162",
       "id": "locales_en_pdf_download",
-      "community": 3,
+      "community": 41,
       "norm_label": "download"
     },
     {
       "label": "compile",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L146",
+      "source_location": "L163",
       "id": "locales_en_pdf_compile",
-      "community": 3,
+      "community": 41,
       "norm_label": "compile"
     },
     {
       "label": "recompile",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L147",
+      "source_location": "L164",
       "id": "locales_en_pdf_recompile",
-      "community": 3,
+      "community": 41,
       "norm_label": "recompile"
     },
     {
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L148",
+      "source_location": "L165",
       "id": "locales_en_pdf_compiling",
-      "community": 3,
+      "community": 41,
       "norm_label": "compiling"
     },
     {
       "label": "wait",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L149",
+      "source_location": "L166",
       "id": "locales_en_pdf_wait",
-      "community": 3,
+      "community": 41,
       "norm_label": "wait"
     },
     {
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L150",
+      "source_location": "L167",
       "id": "locales_en_pdf_error",
-      "community": 3,
+      "community": 41,
       "norm_label": "error"
     },
     {
       "label": "loadingError",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L151",
+      "source_location": "L168",
       "id": "locales_en_pdf_loadingerror",
-      "community": 3,
+      "community": 41,
       "norm_label": "loadingerror"
     },
     {
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L152",
+      "source_location": "L169",
       "id": "locales_en_pdf_emptytitle",
-      "community": 3,
+      "community": 41,
       "norm_label": "emptytitle"
     },
     {
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L153",
+      "source_location": "L170",
       "id": "locales_en_pdf_emptydesc",
-      "community": 3,
+      "community": 41,
       "norm_label": "emptydesc"
     },
     {
       "label": "sourceDoc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L154",
+      "source_location": "L171",
       "id": "locales_en_pdf_sourcedoc",
-      "community": 3,
+      "community": 41,
       "norm_label": "sourcedoc"
     },
     {
       "label": "ats",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L156",
+      "source_location": "L173",
       "id": "locales_en_ats",
       "community": 36,
       "norm_label": "ats"
@@ -1393,7 +1474,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L157",
+      "source_location": "L174",
       "id": "locales_en_ats_title",
       "community": 36,
       "norm_label": "title"
@@ -1402,7 +1483,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L158",
+      "source_location": "L175",
       "id": "locales_en_ats_subtitle",
       "community": 36,
       "norm_label": "subtitle"
@@ -1411,7 +1492,7 @@
       "label": "run",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L159",
+      "source_location": "L176",
       "id": "locales_en_ats_run",
       "community": 36,
       "norm_label": "run"
@@ -1420,7 +1501,7 @@
       "label": "analyzing",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L160",
+      "source_location": "L177",
       "id": "locales_en_ats_analyzing",
       "community": 36,
       "norm_label": "analyzing"
@@ -1429,7 +1510,7 @@
       "label": "scoreTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L161",
+      "source_location": "L178",
       "id": "locales_en_ats_scoretitle",
       "community": 36,
       "norm_label": "scoretitle"
@@ -1438,7 +1519,7 @@
       "label": "scoreDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L162",
+      "source_location": "L179",
       "id": "locales_en_ats_scoredesc",
       "community": 36,
       "norm_label": "scoredesc"
@@ -1447,7 +1528,7 @@
       "label": "missingTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L163",
+      "source_location": "L180",
       "id": "locales_en_ats_missingtitle",
       "community": 36,
       "norm_label": "missingtitle"
@@ -1456,7 +1537,7 @@
       "label": "missingGood",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L164",
+      "source_location": "L181",
       "id": "locales_en_ats_missinggood",
       "community": 36,
       "norm_label": "missinggood"
@@ -1465,7 +1546,7 @@
       "label": "adviceTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L165",
+      "source_location": "L182",
       "id": "locales_en_ats_advicetitle",
       "community": 36,
       "norm_label": "advicetitle"
@@ -1474,7 +1555,7 @@
       "label": "missingJob",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L166",
+      "source_location": "L183",
       "id": "locales_en_ats_missingjob",
       "community": 36,
       "norm_label": "missingjob"
@@ -1483,7 +1564,7 @@
       "label": "missingCv",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L167",
+      "source_location": "L184",
       "id": "locales_en_ats_missingcv",
       "community": 36,
       "norm_label": "missingcv"
@@ -1492,7 +1573,7 @@
       "label": "clickToRun",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L168",
+      "source_location": "L185",
       "id": "locales_en_ats_clicktorun",
       "community": 36,
       "norm_label": "clicktorun"
@@ -1501,7 +1582,7 @@
       "label": "templates",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L170",
+      "source_location": "L187",
       "id": "locales_en_templates",
       "community": 23,
       "norm_label": "templates"
@@ -1510,7 +1591,7 @@
       "label": "1",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L171",
+      "source_location": "L188",
       "id": "locales_en_templates_1",
       "community": 23,
       "norm_label": "1"
@@ -1519,7 +1600,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L172",
+      "source_location": "L189",
       "id": "locales_en_1_title",
       "community": 23,
       "norm_label": "title"
@@ -1528,7 +1609,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L173",
+      "source_location": "L190",
       "id": "locales_en_1_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1537,7 +1618,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L174",
+      "source_location": "L191",
       "id": "locales_en_1_content",
       "community": 23,
       "norm_label": "content"
@@ -1546,7 +1627,7 @@
       "label": "2",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L176",
+      "source_location": "L193",
       "id": "locales_en_templates_2",
       "community": 23,
       "norm_label": "2"
@@ -1555,7 +1636,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L177",
+      "source_location": "L194",
       "id": "locales_en_2_title",
       "community": 23,
       "norm_label": "title"
@@ -1564,7 +1645,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L178",
+      "source_location": "L195",
       "id": "locales_en_2_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1573,7 +1654,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L179",
+      "source_location": "L196",
       "id": "locales_en_2_content",
       "community": 23,
       "norm_label": "content"
@@ -1582,7 +1663,7 @@
       "label": "3",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L181",
+      "source_location": "L198",
       "id": "locales_en_templates_3",
       "community": 23,
       "norm_label": "3"
@@ -1591,7 +1672,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L182",
+      "source_location": "L199",
       "id": "locales_en_3_title",
       "community": 23,
       "norm_label": "title"
@@ -1600,7 +1681,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L183",
+      "source_location": "L200",
       "id": "locales_en_3_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1609,7 +1690,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L184",
+      "source_location": "L201",
       "id": "locales_en_3_content",
       "community": 23,
       "norm_label": "content"
@@ -1618,7 +1699,7 @@
       "label": "4",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L186",
+      "source_location": "L203",
       "id": "locales_en_templates_4",
       "community": 23,
       "norm_label": "4"
@@ -1627,7 +1708,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L187",
+      "source_location": "L204",
       "id": "locales_en_4_title",
       "community": 23,
       "norm_label": "title"
@@ -1636,7 +1717,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L188",
+      "source_location": "L205",
       "id": "locales_en_4_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1645,7 +1726,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L189",
+      "source_location": "L206",
       "id": "locales_en_4_content",
       "community": 23,
       "norm_label": "content"
@@ -1654,7 +1735,7 @@
       "label": "5",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L191",
+      "source_location": "L208",
       "id": "locales_en_templates_5",
       "community": 23,
       "norm_label": "5"
@@ -1663,7 +1744,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L192",
+      "source_location": "L209",
       "id": "locales_en_5_title",
       "community": 23,
       "norm_label": "title"
@@ -1672,7 +1753,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L193",
+      "source_location": "L210",
       "id": "locales_en_5_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1681,7 +1762,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L194",
+      "source_location": "L211",
       "id": "locales_en_5_content",
       "community": 23,
       "norm_label": "content"
@@ -1690,7 +1771,7 @@
       "label": "6",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L196",
+      "source_location": "L213",
       "id": "locales_en_templates_6",
       "community": 23,
       "norm_label": "6"
@@ -1699,7 +1780,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L197",
+      "source_location": "L214",
       "id": "locales_en_6_title",
       "community": 23,
       "norm_label": "title"
@@ -1708,7 +1789,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L198",
+      "source_location": "L215",
       "id": "locales_en_6_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1717,7 +1798,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L199",
+      "source_location": "L216",
       "id": "locales_en_6_content",
       "community": 23,
       "norm_label": "content"
@@ -1726,7 +1807,7 @@
       "label": "7",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L201",
+      "source_location": "L218",
       "id": "locales_en_templates_7",
       "community": 23,
       "norm_label": "7"
@@ -1735,7 +1816,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L202",
+      "source_location": "L219",
       "id": "locales_en_7_title",
       "community": 23,
       "norm_label": "title"
@@ -1744,7 +1825,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L203",
+      "source_location": "L220",
       "id": "locales_en_7_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1753,7 +1834,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L204",
+      "source_location": "L221",
       "id": "locales_en_7_content",
       "community": 23,
       "norm_label": "content"
@@ -1762,7 +1843,7 @@
       "label": "8",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L206",
+      "source_location": "L223",
       "id": "locales_en_templates_8",
       "community": 23,
       "norm_label": "8"
@@ -1771,7 +1852,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L207",
+      "source_location": "L224",
       "id": "locales_en_8_title",
       "community": 23,
       "norm_label": "title"
@@ -1780,7 +1861,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L208",
+      "source_location": "L225",
       "id": "locales_en_8_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1789,7 +1870,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L209",
+      "source_location": "L226",
       "id": "locales_en_8_content",
       "community": 23,
       "norm_label": "content"
@@ -1798,7 +1879,7 @@
       "label": "9",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L211",
+      "source_location": "L228",
       "id": "locales_en_templates_9",
       "community": 23,
       "norm_label": "9"
@@ -1807,7 +1888,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L212",
+      "source_location": "L229",
       "id": "locales_en_9_title",
       "community": 23,
       "norm_label": "title"
@@ -1816,7 +1897,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L213",
+      "source_location": "L230",
       "id": "locales_en_9_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1825,7 +1906,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L214",
+      "source_location": "L231",
       "id": "locales_en_9_content",
       "community": 23,
       "norm_label": "content"
@@ -1834,7 +1915,7 @@
       "label": "10",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L216",
+      "source_location": "L233",
       "id": "locales_en_templates_10",
       "community": 23,
       "norm_label": "10"
@@ -1843,7 +1924,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L217",
+      "source_location": "L234",
       "id": "locales_en_10_title",
       "community": 23,
       "norm_label": "title"
@@ -1852,7 +1933,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L218",
+      "source_location": "L235",
       "id": "locales_en_10_desc",
       "community": 23,
       "norm_label": "desc"
@@ -1861,7 +1942,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L219",
+      "source_location": "L236",
       "id": "locales_en_10_content",
       "community": 23,
       "norm_label": "content"
@@ -1870,7 +1951,7 @@
       "label": "documents",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L222",
+      "source_location": "L239",
       "id": "locales_en_documents",
       "community": 3,
       "norm_label": "documents"
@@ -1879,7 +1960,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L223",
+      "source_location": "L240",
       "id": "locales_en_documents_title",
       "community": 3,
       "norm_label": "title"
@@ -1888,7 +1969,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L224",
+      "source_location": "L241",
       "id": "locales_en_documents_subtitle",
       "community": 3,
       "norm_label": "subtitle"
@@ -1897,7 +1978,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L225",
+      "source_location": "L242",
       "id": "locales_en_documents_emptytitle",
       "community": 3,
       "norm_label": "emptytitle"
@@ -1906,7 +1987,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L226",
+      "source_location": "L243",
       "id": "locales_en_documents_emptydesc",
       "community": 3,
       "norm_label": "emptydesc"
@@ -1915,7 +1996,7 @@
       "label": "delete",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L227",
+      "source_location": "L244",
       "id": "locales_en_documents_delete",
       "community": 3,
       "norm_label": "delete"
@@ -1924,7 +2005,7 @@
       "label": "confirmDelete",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L228",
+      "source_location": "L245",
       "id": "locales_en_documents_confirmdelete",
       "community": 3,
       "norm_label": "confirmdelete"
@@ -1962,7 +2043,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L5",
       "id": "locales_fr_tabs",
-      "community": 14,
+      "community": 51,
       "norm_label": "tabs"
     },
     {
@@ -1971,7 +2052,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L6",
       "id": "locales_fr_tabs_dashboard",
-      "community": 14,
+      "community": 51,
       "norm_label": "dashboard"
     },
     {
@@ -1980,7 +2061,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L7",
       "id": "locales_fr_tabs_prompts",
-      "community": 14,
+      "community": 51,
       "norm_label": "prompts"
     },
     {
@@ -1989,7 +2070,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L8",
       "id": "locales_fr_tabs_aiassistant",
-      "community": 14,
+      "community": 51,
       "norm_label": "aiassistant"
     },
     {
@@ -1998,7 +2079,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L9",
       "id": "locales_fr_tabs_joboffer",
-      "community": 14,
+      "community": 51,
       "norm_label": "joboffer"
     },
     {
@@ -2007,7 +2088,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L10",
       "id": "locales_fr_tabs_mycv",
-      "community": 14,
+      "community": 51,
       "norm_label": "mycv"
     },
     {
@@ -2016,7 +2097,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L11",
       "id": "locales_fr_tabs_pdfmaker",
-      "community": 14,
+      "community": 51,
       "norm_label": "pdfmaker"
     },
     {
@@ -2025,7 +2106,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L12",
       "id": "locales_fr_tabs_atstest",
-      "community": 14,
+      "community": 51,
       "norm_label": "atstest"
     },
     {
@@ -2034,7 +2115,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L13",
       "id": "locales_fr_tabs_documents",
-      "community": 14,
+      "community": 51,
       "norm_label": "documents"
     },
     {
@@ -2353,10 +2434,37 @@
       "norm_label": "docssaved"
     },
     {
-      "label": "ai",
+      "label": "compilingMultipleStart",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L52",
+      "id": "locales_fr_toast_compilingmultiplestart",
+      "community": 22,
+      "norm_label": "compilingmultiplestart"
+    },
+    {
+      "label": "compilingMultipleDone",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
       "source_location": "L53",
+      "id": "locales_fr_toast_compilingmultipledone",
+      "community": 22,
+      "norm_label": "compilingmultipledone"
+    },
+    {
+      "label": "compileMultipleError",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L54",
+      "id": "locales_fr_toast_compilemultipleerror",
+      "community": 22,
+      "norm_label": "compilemultipleerror"
+    },
+    {
+      "label": "ai",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L56",
       "id": "locales_fr_app_ai",
       "community": 22,
       "norm_label": "ai"
@@ -2365,7 +2473,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L54",
+      "source_location": "L57",
       "id": "locales_fr_ai_error",
       "community": 22,
       "norm_label": "error"
@@ -2374,7 +2482,7 @@
       "label": "errorTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L55",
+      "source_location": "L58",
       "id": "locales_fr_ai_errortitle",
       "community": 22,
       "norm_label": "errortitle"
@@ -2383,7 +2491,7 @@
       "label": "apiError",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L56",
+      "source_location": "L59",
       "id": "locales_fr_ai_apierror",
       "community": 22,
       "norm_label": "apierror"
@@ -2392,7 +2500,7 @@
       "label": "prompt",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L58",
+      "source_location": "L61",
       "id": "locales_fr_app_prompt",
       "community": 22,
       "norm_label": "prompt"
@@ -2401,7 +2509,7 @@
       "label": "scrapflyKey",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L59",
+      "source_location": "L62",
       "id": "locales_fr_prompt_scrapflykey",
       "community": 22,
       "norm_label": "scrapflykey"
@@ -2410,7 +2518,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L61",
+      "source_location": "L64",
       "id": "locales_fr_app_error",
       "community": 22,
       "norm_label": "error"
@@ -2419,7 +2527,7 @@
       "label": "scrapflyRequired",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L62",
+      "source_location": "L65",
       "id": "locales_fr_error_scrapflyrequired",
       "community": 22,
       "norm_label": "scrapflyrequired"
@@ -2428,7 +2536,7 @@
       "label": "invalidLatex",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L63",
+      "source_location": "L66",
       "id": "locales_fr_error_invalidlatex",
       "community": 22,
       "norm_label": "invalidlatex"
@@ -2437,7 +2545,7 @@
       "label": "dashboard",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L66",
+      "source_location": "L69",
       "id": "locales_fr_dashboard",
       "community": 35,
       "norm_label": "dashboard"
@@ -2446,7 +2554,7 @@
       "label": "confirmDelete",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L67",
+      "source_location": "L70",
       "id": "locales_fr_dashboard_confirmdelete",
       "community": 35,
       "norm_label": "confirmdelete"
@@ -2455,7 +2563,7 @@
       "label": "unknown",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L68",
+      "source_location": "L71",
       "id": "locales_fr_dashboard_unknown",
       "community": 35,
       "norm_label": "unknown"
@@ -2464,7 +2572,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L69",
+      "source_location": "L72",
       "id": "locales_fr_dashboard_title",
       "community": 35,
       "norm_label": "title"
@@ -2473,7 +2581,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L70",
+      "source_location": "L73",
       "id": "locales_fr_dashboard_subtitle",
       "community": 35,
       "norm_label": "subtitle"
@@ -2482,7 +2590,7 @@
       "label": "newApp",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L71",
+      "source_location": "L74",
       "id": "locales_fr_dashboard_newapp",
       "community": 35,
       "norm_label": "newapp"
@@ -2491,7 +2599,7 @@
       "label": "form",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L72",
+      "source_location": "L75",
       "id": "locales_fr_dashboard_form",
       "community": 35,
       "norm_label": "form"
@@ -2500,7 +2608,7 @@
       "label": "company",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L73",
+      "source_location": "L76",
       "id": "locales_fr_form_company",
       "community": 35,
       "norm_label": "company"
@@ -2509,7 +2617,7 @@
       "label": "companyPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L74",
+      "source_location": "L77",
       "id": "locales_fr_form_companyplaceholder",
       "community": 35,
       "norm_label": "companyplaceholder"
@@ -2518,7 +2626,7 @@
       "label": "jobTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L75",
+      "source_location": "L78",
       "id": "locales_fr_form_jobtitle",
       "community": 35,
       "norm_label": "jobtitle"
@@ -2527,7 +2635,7 @@
       "label": "jobTitlePlaceholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L76",
+      "source_location": "L79",
       "id": "locales_fr_form_jobtitleplaceholder",
       "community": 35,
       "norm_label": "jobtitleplaceholder"
@@ -2536,7 +2644,7 @@
       "label": "cancel",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L77",
+      "source_location": "L80",
       "id": "locales_fr_form_cancel",
       "community": 35,
       "norm_label": "cancel"
@@ -2545,7 +2653,7 @@
       "label": "create",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L78",
+      "source_location": "L81",
       "id": "locales_fr_form_create",
       "community": 35,
       "norm_label": "create"
@@ -2554,7 +2662,7 @@
       "label": "loading",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L80",
+      "source_location": "L83",
       "id": "locales_fr_dashboard_loading",
       "community": 35,
       "norm_label": "loading"
@@ -2563,7 +2671,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L81",
+      "source_location": "L84",
       "id": "locales_fr_dashboard_emptytitle",
       "community": 35,
       "norm_label": "emptytitle"
@@ -2572,7 +2680,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L82",
+      "source_location": "L85",
       "id": "locales_fr_dashboard_emptydesc",
       "community": 35,
       "norm_label": "emptydesc"
@@ -2581,7 +2689,7 @@
       "label": "card",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L83",
+      "source_location": "L86",
       "id": "locales_fr_dashboard_card",
       "community": 35,
       "norm_label": "card"
@@ -2590,7 +2698,7 @@
       "label": "delete",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L84",
+      "source_location": "L87",
       "id": "locales_fr_card_delete",
       "community": 35,
       "norm_label": "delete"
@@ -2599,7 +2707,7 @@
       "label": "modified",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L85",
+      "source_location": "L88",
       "id": "locales_fr_card_modified",
       "community": 35,
       "norm_label": "modified"
@@ -2608,7 +2716,7 @@
       "label": "open",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L86",
+      "source_location": "L89",
       "id": "locales_fr_card_open",
       "community": 35,
       "norm_label": "open"
@@ -2617,7 +2725,7 @@
       "label": "noCompany",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L88",
+      "source_location": "L91",
       "id": "locales_fr_dashboard_nocompany",
       "community": 35,
       "norm_label": "nocompany"
@@ -2626,7 +2734,7 @@
       "label": "badge",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L89",
+      "source_location": "L92",
       "id": "locales_fr_dashboard_badge",
       "community": 35,
       "norm_label": "badge"
@@ -2635,7 +2743,7 @@
       "label": "job",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L90",
+      "source_location": "L93",
       "id": "locales_fr_badge_job",
       "community": 35,
       "norm_label": "job"
@@ -2644,7 +2752,7 @@
       "label": "cv",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L91",
+      "source_location": "L94",
       "id": "locales_fr_badge_cv",
       "community": 35,
       "norm_label": "cv"
@@ -2653,16 +2761,97 @@
       "label": "docs",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L92",
+      "source_location": "L95",
       "id": "locales_fr_badge_docs",
       "community": 35,
       "norm_label": "docs"
     },
     {
+      "label": "table",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L97",
+      "id": "locales_fr_dashboard_table",
+      "community": 35,
+      "norm_label": "table"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L98",
+      "id": "locales_fr_table_date",
+      "community": 35,
+      "norm_label": "date"
+    },
+    {
+      "label": "jobTitle",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L99",
+      "id": "locales_fr_table_jobtitle",
+      "community": 35,
+      "norm_label": "jobtitle"
+    },
+    {
+      "label": "company",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L100",
+      "id": "locales_fr_table_company",
+      "community": 35,
+      "norm_label": "company"
+    },
+    {
+      "label": "offer",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L101",
+      "id": "locales_fr_table_offer",
+      "community": 35,
+      "norm_label": "offer"
+    },
+    {
+      "label": "cv",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L102",
+      "id": "locales_fr_table_cv",
+      "community": 35,
+      "norm_label": "cv"
+    },
+    {
+      "label": "docs",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L103",
+      "id": "locales_fr_table_docs",
+      "community": 35,
+      "norm_label": "docs"
+    },
+    {
+      "label": "ats",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L104",
+      "id": "locales_fr_table_ats",
+      "community": 35,
+      "norm_label": "ats"
+    },
+    {
+      "label": "actions",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L105",
+      "id": "locales_fr_table_actions",
+      "community": 35,
+      "norm_label": "actions"
+    },
+    {
       "label": "prompts",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L95",
+      "source_location": "L108",
       "id": "locales_fr_prompts",
       "community": 42,
       "norm_label": "prompts"
@@ -2671,7 +2860,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L96",
+      "source_location": "L109",
       "id": "locales_fr_prompts_title",
       "community": 42,
       "norm_label": "title"
@@ -2680,7 +2869,7 @@
       "label": "editorTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L97",
+      "source_location": "L110",
       "id": "locales_fr_prompts_editortitle",
       "community": 42,
       "norm_label": "editortitle"
@@ -2689,7 +2878,7 @@
       "label": "resetAll",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L98",
+      "source_location": "L111",
       "id": "locales_fr_prompts_resetall",
       "community": 42,
       "norm_label": "resetall"
@@ -2698,7 +2887,7 @@
       "label": "reset",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L99",
+      "source_location": "L112",
       "id": "locales_fr_prompts_reset",
       "community": 42,
       "norm_label": "reset"
@@ -2707,7 +2896,7 @@
       "label": "empty",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L100",
+      "source_location": "L113",
       "id": "locales_fr_prompts_empty",
       "community": 42,
       "norm_label": "empty"
@@ -2716,7 +2905,7 @@
       "label": "download",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L101",
+      "source_location": "L114",
       "id": "locales_fr_prompts_download",
       "community": 42,
       "norm_label": "download"
@@ -2725,7 +2914,7 @@
       "label": "copy",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L102",
+      "source_location": "L115",
       "id": "locales_fr_prompts_copy",
       "community": 42,
       "norm_label": "copy"
@@ -2734,7 +2923,7 @@
       "label": "copyAll",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L103",
+      "source_location": "L116",
       "id": "locales_fr_prompts_copyall",
       "community": 42,
       "norm_label": "copyall"
@@ -2743,7 +2932,7 @@
       "label": "generate",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L104",
+      "source_location": "L117",
       "id": "locales_fr_prompts_generate",
       "community": 42,
       "norm_label": "generate"
@@ -2752,7 +2941,7 @@
       "label": "requireLatex",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L105",
+      "source_location": "L118",
       "id": "locales_fr_prompts_requirelatex",
       "community": 42,
       "norm_label": "requirelatex"
@@ -2761,115 +2950,151 @@
       "label": "ai",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L107",
+      "source_location": "L120",
       "id": "locales_fr_ai",
-      "community": 40,
+      "community": 14,
       "norm_label": "ai"
     },
     {
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L108",
+      "source_location": "L121",
       "id": "locales_fr_ai_title",
-      "community": 40,
+      "community": 14,
       "norm_label": "title"
     },
     {
       "label": "rerun",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L109",
+      "source_location": "L122",
       "id": "locales_fr_ai_rerun",
-      "community": 40,
+      "community": 14,
       "norm_label": "rerun"
     },
     {
       "label": "compileSelected",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L110",
+      "source_location": "L123",
       "id": "locales_fr_ai_compileselected",
-      "community": 40,
+      "community": 14,
       "norm_label": "compileselected"
     },
     {
       "label": "compileTooltip",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L111",
+      "source_location": "L124",
       "id": "locales_fr_ai_compiletooltip",
-      "community": 40,
+      "community": 14,
       "norm_label": "compiletooltip"
     },
     {
       "label": "copyAll",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L112",
+      "source_location": "L125",
       "id": "locales_fr_ai_copyall",
-      "community": 40,
+      "community": 14,
       "norm_label": "copyall"
     },
     {
       "label": "clearAll",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L113",
+      "source_location": "L126",
       "id": "locales_fr_ai_clearall",
-      "community": 40,
+      "community": 14,
       "norm_label": "clearall"
     },
     {
       "label": "keyRequired",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L114",
+      "source_location": "L127",
       "id": "locales_fr_ai_keyrequired",
-      "community": 40,
+      "community": 14,
       "norm_label": "keyrequired"
     },
     {
       "label": "keyDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L115",
+      "source_location": "L128",
       "id": "locales_fr_ai_keydesc",
-      "community": 40,
+      "community": 14,
       "norm_label": "keydesc"
     },
     {
       "label": "keyLink",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L116",
+      "source_location": "L129",
       "id": "locales_fr_ai_keylink",
-      "community": 40,
+      "community": 14,
       "norm_label": "keylink"
     },
     {
       "label": "analyzing",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L117",
+      "source_location": "L130",
       "id": "locales_fr_ai_analyzing",
-      "community": 40,
+      "community": 14,
       "norm_label": "analyzing"
     },
     {
       "label": "includeInPdf",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L118",
+      "source_location": "L131",
       "id": "locales_fr_ai_includeinpdf",
-      "community": 40,
+      "community": 14,
       "norm_label": "includeinpdf"
+    },
+    {
+      "label": "compileMultipleTooltip",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L132",
+      "id": "locales_fr_ai_compilemultipletooltip",
+      "community": 14,
+      "norm_label": "compilemultipletooltip"
+    },
+    {
+      "label": "compileMultiple",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L133",
+      "id": "locales_fr_ai_compilemultiple",
+      "community": 14,
+      "norm_label": "compilemultiple"
+    },
+    {
+      "label": "extractCv",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L134",
+      "id": "locales_fr_ai_extractcv",
+      "community": 14,
+      "norm_label": "extractcv"
+    },
+    {
+      "label": "extractTooltip",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L135",
+      "id": "locales_fr_ai_extracttooltip",
+      "community": 14,
+      "norm_label": "extracttooltip"
     },
     {
       "label": "job",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L120",
+      "source_location": "L137",
       "id": "locales_fr_job",
       "community": 14,
       "norm_label": "job"
@@ -2878,7 +3103,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L121",
+      "source_location": "L138",
       "id": "locales_fr_job_title",
       "community": 14,
       "norm_label": "title"
@@ -2887,7 +3112,7 @@
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L122",
+      "source_location": "L139",
       "id": "locales_fr_job_clear",
       "community": 14,
       "norm_label": "clear"
@@ -2896,7 +3121,7 @@
       "label": "jina",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L123",
+      "source_location": "L140",
       "id": "locales_fr_job_jina",
       "community": 14,
       "norm_label": "jina"
@@ -2905,7 +3130,7 @@
       "label": "scrapfly",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L124",
+      "source_location": "L141",
       "id": "locales_fr_job_scrapfly",
       "community": 14,
       "norm_label": "scrapfly"
@@ -2914,7 +3139,7 @@
       "label": "urlPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L125",
+      "source_location": "L142",
       "id": "locales_fr_job_urlplaceholder",
       "community": 14,
       "norm_label": "urlplaceholder"
@@ -2923,7 +3148,7 @@
       "label": "extract",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L126",
+      "source_location": "L143",
       "id": "locales_fr_job_extract",
       "community": 14,
       "norm_label": "extract"
@@ -2932,7 +3157,7 @@
       "label": "placeholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L127",
+      "source_location": "L144",
       "id": "locales_fr_job_placeholder",
       "community": 14,
       "norm_label": "placeholder"
@@ -2941,7 +3166,7 @@
       "label": "cv",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L129",
+      "source_location": "L146",
       "id": "locales_fr_cv",
       "community": 14,
       "norm_label": "cv"
@@ -2950,7 +3175,7 @@
       "label": "templateTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L130",
+      "source_location": "L147",
       "id": "locales_fr_cv_templatetitle",
       "community": 14,
       "norm_label": "templatetitle"
@@ -2959,7 +3184,7 @@
       "label": "templateDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L131",
+      "source_location": "L148",
       "id": "locales_fr_cv_templatedesc",
       "community": 14,
       "norm_label": "templatedesc"
@@ -2968,7 +3193,7 @@
       "label": "originalTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L132",
+      "source_location": "L149",
       "id": "locales_fr_cv_originaltitle",
       "community": 14,
       "norm_label": "originaltitle"
@@ -2977,7 +3202,7 @@
       "label": "importBtn",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L133",
+      "source_location": "L150",
       "id": "locales_fr_cv_importbtn",
       "community": 14,
       "norm_label": "importbtn"
@@ -2986,7 +3211,7 @@
       "label": "importing",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L134",
+      "source_location": "L151",
       "id": "locales_fr_cv_importing",
       "community": 14,
       "norm_label": "importing"
@@ -2995,7 +3220,7 @@
       "label": "resetFake",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L135",
+      "source_location": "L152",
       "id": "locales_fr_cv_resetfake",
       "community": 14,
       "norm_label": "resetfake"
@@ -3004,7 +3229,7 @@
       "label": "generatedTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L136",
+      "source_location": "L153",
       "id": "locales_fr_cv_generatedtitle",
       "community": 14,
       "norm_label": "generatedtitle"
@@ -3013,7 +3238,7 @@
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L137",
+      "source_location": "L154",
       "id": "locales_fr_cv_clear",
       "community": 14,
       "norm_label": "clear"
@@ -3022,7 +3247,7 @@
       "label": "generatedPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L138",
+      "source_location": "L155",
       "id": "locales_fr_cv_generatedplaceholder",
       "community": 14,
       "norm_label": "generatedplaceholder"
@@ -3031,7 +3256,7 @@
       "label": "pdf",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L140",
+      "source_location": "L157",
       "id": "locales_fr_pdf",
       "community": 37,
       "norm_label": "pdf"
@@ -3040,7 +3265,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L141",
+      "source_location": "L158",
       "id": "locales_fr_pdf_title",
       "community": 37,
       "norm_label": "title"
@@ -3049,7 +3274,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L142",
+      "source_location": "L159",
       "id": "locales_fr_pdf_subtitle",
       "community": 37,
       "norm_label": "subtitle"
@@ -3058,7 +3283,7 @@
       "label": "sourceGenerated",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L143",
+      "source_location": "L160",
       "id": "locales_fr_pdf_sourcegenerated",
       "community": 37,
       "norm_label": "sourcegenerated"
@@ -3067,7 +3292,7 @@
       "label": "sourceOriginal",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L144",
+      "source_location": "L161",
       "id": "locales_fr_pdf_sourceoriginal",
       "community": 37,
       "norm_label": "sourceoriginal"
@@ -3076,7 +3301,7 @@
       "label": "download",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L145",
+      "source_location": "L162",
       "id": "locales_fr_pdf_download",
       "community": 37,
       "norm_label": "download"
@@ -3085,7 +3310,7 @@
       "label": "compile",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L146",
+      "source_location": "L163",
       "id": "locales_fr_pdf_compile",
       "community": 37,
       "norm_label": "compile"
@@ -3094,7 +3319,7 @@
       "label": "recompile",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L147",
+      "source_location": "L164",
       "id": "locales_fr_pdf_recompile",
       "community": 37,
       "norm_label": "recompile"
@@ -3103,7 +3328,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L148",
+      "source_location": "L165",
       "id": "locales_fr_pdf_compiling",
       "community": 37,
       "norm_label": "compiling"
@@ -3112,7 +3337,7 @@
       "label": "wait",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L149",
+      "source_location": "L166",
       "id": "locales_fr_pdf_wait",
       "community": 37,
       "norm_label": "wait"
@@ -3121,7 +3346,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L150",
+      "source_location": "L167",
       "id": "locales_fr_pdf_error",
       "community": 37,
       "norm_label": "error"
@@ -3130,7 +3355,7 @@
       "label": "loadingError",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L151",
+      "source_location": "L168",
       "id": "locales_fr_pdf_loadingerror",
       "community": 37,
       "norm_label": "loadingerror"
@@ -3139,7 +3364,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L152",
+      "source_location": "L169",
       "id": "locales_fr_pdf_emptytitle",
       "community": 37,
       "norm_label": "emptytitle"
@@ -3148,7 +3373,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L153",
+      "source_location": "L170",
       "id": "locales_fr_pdf_emptydesc",
       "community": 37,
       "norm_label": "emptydesc"
@@ -3157,7 +3382,7 @@
       "label": "sourceDoc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L154",
+      "source_location": "L171",
       "id": "locales_fr_pdf_sourcedoc",
       "community": 37,
       "norm_label": "sourcedoc"
@@ -3166,7 +3391,7 @@
       "label": "ats",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L156",
+      "source_location": "L173",
       "id": "locales_fr_ats",
       "community": 38,
       "norm_label": "ats"
@@ -3175,7 +3400,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L157",
+      "source_location": "L174",
       "id": "locales_fr_ats_title",
       "community": 38,
       "norm_label": "title"
@@ -3184,7 +3409,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L158",
+      "source_location": "L175",
       "id": "locales_fr_ats_subtitle",
       "community": 38,
       "norm_label": "subtitle"
@@ -3193,7 +3418,7 @@
       "label": "run",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L159",
+      "source_location": "L176",
       "id": "locales_fr_ats_run",
       "community": 38,
       "norm_label": "run"
@@ -3202,7 +3427,7 @@
       "label": "analyzing",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L160",
+      "source_location": "L177",
       "id": "locales_fr_ats_analyzing",
       "community": 38,
       "norm_label": "analyzing"
@@ -3211,7 +3436,7 @@
       "label": "scoreTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L161",
+      "source_location": "L178",
       "id": "locales_fr_ats_scoretitle",
       "community": 38,
       "norm_label": "scoretitle"
@@ -3220,7 +3445,7 @@
       "label": "scoreDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L162",
+      "source_location": "L179",
       "id": "locales_fr_ats_scoredesc",
       "community": 38,
       "norm_label": "scoredesc"
@@ -3229,7 +3454,7 @@
       "label": "missingTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L163",
+      "source_location": "L180",
       "id": "locales_fr_ats_missingtitle",
       "community": 38,
       "norm_label": "missingtitle"
@@ -3238,7 +3463,7 @@
       "label": "missingGood",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L164",
+      "source_location": "L181",
       "id": "locales_fr_ats_missinggood",
       "community": 38,
       "norm_label": "missinggood"
@@ -3247,7 +3472,7 @@
       "label": "adviceTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L165",
+      "source_location": "L182",
       "id": "locales_fr_ats_advicetitle",
       "community": 38,
       "norm_label": "advicetitle"
@@ -3256,7 +3481,7 @@
       "label": "missingJob",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L166",
+      "source_location": "L183",
       "id": "locales_fr_ats_missingjob",
       "community": 38,
       "norm_label": "missingjob"
@@ -3265,7 +3490,7 @@
       "label": "missingCv",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L167",
+      "source_location": "L184",
       "id": "locales_fr_ats_missingcv",
       "community": 38,
       "norm_label": "missingcv"
@@ -3274,7 +3499,7 @@
       "label": "clickToRun",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L168",
+      "source_location": "L185",
       "id": "locales_fr_ats_clicktorun",
       "community": 38,
       "norm_label": "clicktorun"
@@ -3283,7 +3508,7 @@
       "label": "templates",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L170",
+      "source_location": "L187",
       "id": "locales_fr_templates",
       "community": 29,
       "norm_label": "templates"
@@ -3292,7 +3517,7 @@
       "label": "1",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L171",
+      "source_location": "L188",
       "id": "locales_fr_templates_1",
       "community": 29,
       "norm_label": "1"
@@ -3301,7 +3526,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L172",
+      "source_location": "L189",
       "id": "locales_fr_1_title",
       "community": 29,
       "norm_label": "title"
@@ -3310,7 +3535,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L173",
+      "source_location": "L190",
       "id": "locales_fr_1_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3319,7 +3544,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L174",
+      "source_location": "L191",
       "id": "locales_fr_1_content",
       "community": 29,
       "norm_label": "content"
@@ -3328,7 +3553,7 @@
       "label": "2",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L176",
+      "source_location": "L193",
       "id": "locales_fr_templates_2",
       "community": 29,
       "norm_label": "2"
@@ -3337,7 +3562,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L177",
+      "source_location": "L194",
       "id": "locales_fr_2_title",
       "community": 29,
       "norm_label": "title"
@@ -3346,7 +3571,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L178",
+      "source_location": "L195",
       "id": "locales_fr_2_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3355,7 +3580,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L179",
+      "source_location": "L196",
       "id": "locales_fr_2_content",
       "community": 29,
       "norm_label": "content"
@@ -3364,7 +3589,7 @@
       "label": "3",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L181",
+      "source_location": "L198",
       "id": "locales_fr_templates_3",
       "community": 29,
       "norm_label": "3"
@@ -3373,7 +3598,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L182",
+      "source_location": "L199",
       "id": "locales_fr_3_title",
       "community": 29,
       "norm_label": "title"
@@ -3382,7 +3607,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L183",
+      "source_location": "L200",
       "id": "locales_fr_3_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3391,7 +3616,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L184",
+      "source_location": "L201",
       "id": "locales_fr_3_content",
       "community": 29,
       "norm_label": "content"
@@ -3400,7 +3625,7 @@
       "label": "4",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L186",
+      "source_location": "L203",
       "id": "locales_fr_templates_4",
       "community": 29,
       "norm_label": "4"
@@ -3409,7 +3634,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L187",
+      "source_location": "L204",
       "id": "locales_fr_4_title",
       "community": 29,
       "norm_label": "title"
@@ -3418,7 +3643,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L188",
+      "source_location": "L205",
       "id": "locales_fr_4_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3427,7 +3652,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L189",
+      "source_location": "L206",
       "id": "locales_fr_4_content",
       "community": 29,
       "norm_label": "content"
@@ -3436,7 +3661,7 @@
       "label": "5",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L191",
+      "source_location": "L208",
       "id": "locales_fr_templates_5",
       "community": 29,
       "norm_label": "5"
@@ -3445,7 +3670,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L192",
+      "source_location": "L209",
       "id": "locales_fr_5_title",
       "community": 29,
       "norm_label": "title"
@@ -3454,7 +3679,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L193",
+      "source_location": "L210",
       "id": "locales_fr_5_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3463,7 +3688,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L194",
+      "source_location": "L211",
       "id": "locales_fr_5_content",
       "community": 29,
       "norm_label": "content"
@@ -3472,7 +3697,7 @@
       "label": "6",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L196",
+      "source_location": "L213",
       "id": "locales_fr_templates_6",
       "community": 29,
       "norm_label": "6"
@@ -3481,7 +3706,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L197",
+      "source_location": "L214",
       "id": "locales_fr_6_title",
       "community": 29,
       "norm_label": "title"
@@ -3490,7 +3715,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L198",
+      "source_location": "L215",
       "id": "locales_fr_6_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3499,7 +3724,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L199",
+      "source_location": "L216",
       "id": "locales_fr_6_content",
       "community": 29,
       "norm_label": "content"
@@ -3508,7 +3733,7 @@
       "label": "7",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L201",
+      "source_location": "L218",
       "id": "locales_fr_templates_7",
       "community": 29,
       "norm_label": "7"
@@ -3517,7 +3742,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L202",
+      "source_location": "L219",
       "id": "locales_fr_7_title",
       "community": 29,
       "norm_label": "title"
@@ -3526,7 +3751,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L203",
+      "source_location": "L220",
       "id": "locales_fr_7_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3535,7 +3760,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L204",
+      "source_location": "L221",
       "id": "locales_fr_7_content",
       "community": 29,
       "norm_label": "content"
@@ -3544,7 +3769,7 @@
       "label": "8",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L206",
+      "source_location": "L223",
       "id": "locales_fr_templates_8",
       "community": 29,
       "norm_label": "8"
@@ -3553,7 +3778,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L207",
+      "source_location": "L224",
       "id": "locales_fr_8_title",
       "community": 29,
       "norm_label": "title"
@@ -3562,7 +3787,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L208",
+      "source_location": "L225",
       "id": "locales_fr_8_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3571,7 +3796,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L209",
+      "source_location": "L226",
       "id": "locales_fr_8_content",
       "community": 29,
       "norm_label": "content"
@@ -3580,7 +3805,7 @@
       "label": "9",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L211",
+      "source_location": "L228",
       "id": "locales_fr_templates_9",
       "community": 29,
       "norm_label": "9"
@@ -3589,7 +3814,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L212",
+      "source_location": "L229",
       "id": "locales_fr_9_title",
       "community": 29,
       "norm_label": "title"
@@ -3598,7 +3823,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L213",
+      "source_location": "L230",
       "id": "locales_fr_9_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3607,7 +3832,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L214",
+      "source_location": "L231",
       "id": "locales_fr_9_content",
       "community": 29,
       "norm_label": "content"
@@ -3616,7 +3841,7 @@
       "label": "10",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L216",
+      "source_location": "L233",
       "id": "locales_fr_templates_10",
       "community": 29,
       "norm_label": "10"
@@ -3625,7 +3850,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L217",
+      "source_location": "L234",
       "id": "locales_fr_10_title",
       "community": 29,
       "norm_label": "title"
@@ -3634,7 +3859,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L218",
+      "source_location": "L235",
       "id": "locales_fr_10_desc",
       "community": 29,
       "norm_label": "desc"
@@ -3643,7 +3868,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L219",
+      "source_location": "L236",
       "id": "locales_fr_10_content",
       "community": 29,
       "norm_label": "content"
@@ -3652,7 +3877,7 @@
       "label": "documents",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L222",
+      "source_location": "L239",
       "id": "locales_fr_documents",
       "community": 14,
       "norm_label": "documents"
@@ -3661,7 +3886,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L223",
+      "source_location": "L240",
       "id": "locales_fr_documents_title",
       "community": 14,
       "norm_label": "title"
@@ -3670,7 +3895,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L224",
+      "source_location": "L241",
       "id": "locales_fr_documents_subtitle",
       "community": 14,
       "norm_label": "subtitle"
@@ -3679,7 +3904,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L225",
+      "source_location": "L242",
       "id": "locales_fr_documents_emptytitle",
       "community": 14,
       "norm_label": "emptytitle"
@@ -3688,7 +3913,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L226",
+      "source_location": "L243",
       "id": "locales_fr_documents_emptydesc",
       "community": 14,
       "norm_label": "emptydesc"
@@ -3697,7 +3922,7 @@
       "label": "delete",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L227",
+      "source_location": "L244",
       "id": "locales_fr_documents_delete",
       "community": 14,
       "norm_label": "delete"
@@ -3706,73 +3931,181 @@
       "label": "confirmDelete",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L228",
+      "source_location": "L245",
       "id": "locales_fr_documents_confirmdelete",
       "community": 14,
       "norm_label": "confirmdelete"
+    },
+    {
+      "label": "update-translations-3.js",
+      "file_type": "code",
+      "source_file": "update-translations-3.js",
+      "source_location": "L1",
+      "id": "update_translations_3_js",
+      "community": 54,
+      "norm_label": "update-translations-3.js"
+    },
+    {
+      "label": "fr",
+      "file_type": "code",
+      "source_file": "update-translations-3.js",
+      "source_location": "L3",
+      "id": "ultimate_job_tool_update_translations_3_fr",
+      "community": 54,
+      "norm_label": "fr"
+    },
+    {
+      "label": "en",
+      "file_type": "code",
+      "source_file": "update-translations-3.js",
+      "source_location": "L4",
+      "id": "ultimate_job_tool_update_translations_3_en",
+      "community": 54,
+      "norm_label": "en"
+    },
+    {
+      "label": "TabNavigation.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L1",
+      "community": 15,
+      "norm_label": "tabnavigation.jsx",
+      "id": "src_components_layout_tabnavigation_jsx"
+    },
+    {
+      "label": "tabs",
+      "file_type": "code",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L29",
+      "community": 15,
+      "norm_label": "tabs",
+      "id": "layout_tabnavigation_tabs"
+    },
+    {
+      "label": "TabNavigation()",
+      "file_type": "code",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L40",
+      "community": 15,
+      "norm_label": "tabnavigation()",
+      "id": "layout_tabnavigation_tabnavigation"
+    },
+    {
+      "label": "DocumentsTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "documentstab.jsx",
+      "id": "src_components_tabs_documentstab_jsx"
+    },
+    {
+      "label": "DocumentsTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L4",
+      "community": 2,
+      "norm_label": "documentstab()",
+      "id": "tabs_documentstab_documentstab"
+    },
+    {
+      "label": "PdfMakerTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PdfMakerTab.jsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "pdfmakertab.jsx",
+      "id": "src_components_tabs_pdfmakertab_jsx"
+    },
+    {
+      "label": "PdfMakerTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PdfMakerTab.jsx",
+      "source_location": "L41",
+      "community": 2,
+      "norm_label": "pdfmakertab()",
+      "id": "tabs_pdfmakertab_pdfmakertab"
+    },
+    {
+      "label": "PromptsTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PromptsTab.jsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "promptstab.jsx",
+      "id": "src_components_tabs_promptstab_jsx"
+    },
+    {
+      "label": "PromptsTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/PromptsTab.jsx",
+      "source_location": "L30",
+      "community": 2,
+      "norm_label": "promptstab()",
+      "id": "tabs_promptstab_promptstab"
     },
     {
       "label": "strip-latex.js",
       "file_type": "code",
       "source_file": "strip-latex.js",
       "source_location": "L1",
-      "id": "strip_latex_js",
       "community": 52,
-      "norm_label": "strip-latex.js"
+      "norm_label": "strip-latex.js",
+      "id": "strip_latex_js"
     },
     {
       "label": "fr",
       "file_type": "code",
       "source_file": "strip-latex.js",
       "source_location": "L3",
-      "id": "ultimate_job_tool_strip_latex_fr",
       "community": 52,
-      "norm_label": "fr"
+      "norm_label": "fr",
+      "id": "ultimate_job_tool_strip_latex_fr"
     },
     {
       "label": "en",
       "file_type": "code",
       "source_file": "strip-latex.js",
       "source_location": "L4",
-      "id": "ultimate_job_tool_strip_latex_en",
       "community": 52,
-      "norm_label": "en"
+      "norm_label": "en",
+      "id": "ultimate_job_tool_strip_latex_en"
     },
     {
       "label": "stripLatexInstruction()",
       "file_type": "code",
       "source_file": "strip-latex.js",
       "source_location": "L6",
-      "id": "ultimate_job_tool_strip_latex_striplatexinstruction",
       "community": 52,
-      "norm_label": "striplatexinstruction()"
+      "norm_label": "striplatexinstruction()",
+      "id": "ultimate_job_tool_strip_latex_striplatexinstruction"
     },
     {
       "label": "update-translations.js",
       "file_type": "code",
       "source_file": "update-translations.js",
       "source_location": "L1",
-      "id": "update_translations_js",
       "community": 53,
-      "norm_label": "update-translations.js"
+      "norm_label": "update-translations.js",
+      "id": "update_translations_js"
     },
     {
       "label": "fr",
       "file_type": "code",
       "source_file": "update-translations.js",
       "source_location": "L3",
-      "id": "ultimate_job_tool_update_translations_fr",
       "community": 53,
-      "norm_label": "fr"
+      "norm_label": "fr",
+      "id": "ultimate_job_tool_update_translations_fr"
     },
     {
       "label": "en",
       "file_type": "code",
       "source_file": "update-translations.js",
       "source_location": "L4",
-      "id": "ultimate_job_tool_update_translations_en",
       "community": 53,
-      "norm_label": "en"
+      "norm_label": "en",
+      "id": "ultimate_job_tool_update_translations_en"
     },
     {
       "label": "DEVELOPMENT_HISTORY.md",
@@ -4655,24 +4988,6 @@
       "community": 2,
       "norm_label": "atstesttab()",
       "id": "tabs_atstesttab_atstesttab"
-    },
-    {
-      "label": "JobOfferTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/JobOfferTab.jsx",
-      "source_location": "L1",
-      "community": 2,
-      "norm_label": "joboffertab.jsx",
-      "id": "src_components_tabs_joboffertab_jsx"
-    },
-    {
-      "label": "JobOfferTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/JobOfferTab.jsx",
-      "source_location": "L33",
-      "community": 2,
-      "norm_label": "joboffertab()",
-      "id": "tabs_joboffertab_joboffertab"
     },
     {
       "label": "MyCvTab.jsx",
@@ -6428,33 +6743,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L100",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_tabnavigation_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
       "source_location": "L104",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_components_tabs_dashboardtab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_promptstab_jsx"
     },
     {
       "relation": "imports_from",
@@ -6472,11 +6765,54 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_joboffertab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_tabnavigation_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_promptstab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_tabs_documentstab_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_tabs_documentstab_jsx"
     },
     {
       "relation": "imports_from",
@@ -6488,16 +6824,6 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_components_tabs_pdfmakertab_jsx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L93",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_app_app"
     },
     {
       "relation": "imports_from",
@@ -6520,17 +6846,6 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_components_layout_header_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_joboffertab_jsx"
     },
     {
       "relation": "imports_from",
@@ -6777,36 +7092,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/TabNavigation.jsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_layout_tabnavigation_jsx",
-      "target": "layout_tabnavigation_tabs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/TabNavigation.jsx",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_layout_tabnavigation_jsx",
-      "target": "layout_tabnavigation_tabnavigation"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/layout/TabNavigation.jsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "layout_tabnavigation_tabnavigation",
-      "target": "layout_tabnavigation_tabs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/tabs/AiAssistantTab.jsx",
       "source_location": "L33",
       "weight": 1.0,
@@ -6871,32 +7156,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DocumentsTab.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "src_components_tabs_documentstab_jsx",
-      "target": "tabs_documentstab_documentstab",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/PdfMakerTab.jsx",
-      "source_location": "L40",
+      "source_file": "src/components/tabs/JobOfferTab.jsx",
+      "source_location": "L32",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_components_tabs_pdfmakertab_jsx",
-      "target": "tabs_pdfmakertab_pdfmakertab"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/PromptsTab.jsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_promptstab_jsx",
-      "target": "tabs_promptstab_promptstab"
+      "source": "src_components_tabs_joboffertab_jsx",
+      "target": "tabs_joboffertab_joboffertab"
     },
     {
       "relation": "contains",
@@ -7014,9 +7279,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_locales_en_json",
-      "target": "locales_en_documents",
-      "confidence_score": 1.0
+      "target": "locales_en_documents"
     },
     {
       "relation": "imports_from",
@@ -7115,9 +7380,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_tabs",
-      "target": "locales_en_tabs_documents",
-      "confidence_score": 1.0
+      "target": "locales_en_tabs_documents"
     },
     {
       "relation": "contains",
@@ -7485,8 +7750,38 @@
       "source_file": "src/locales/en.json",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_app_toast",
-      "target": "locales_en_toast_docssaved",
+      "target": "locales_en_toast_docssaved"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "locales_en_app_toast",
+      "target": "locales_en_toast_compilingmultiplestart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "locales_en_app_toast",
+      "target": "locales_en_toast_compilingmultipledone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "locales_en_app_toast",
+      "target": "locales_en_toast_compilemultipleerror",
       "confidence_score": 1.0
     },
     {
@@ -7655,9 +7950,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_dashboard",
-      "target": "locales_en_dashboard_nocompany",
-      "confidence_score": 1.0
+      "target": "locales_en_dashboard_nocompany"
     },
     {
       "relation": "contains",
@@ -7665,8 +7960,18 @@
       "source_file": "src/locales/en.json",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_dashboard",
-      "target": "locales_en_dashboard_badge",
+      "target": "locales_en_dashboard_badge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "locales_en_dashboard",
+      "target": "locales_en_dashboard_table",
       "confidence_score": 1.0
     },
     {
@@ -7765,9 +8070,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_dashboard_badge",
-      "target": "locales_en_badge_job",
-      "confidence_score": 1.0
+      "target": "locales_en_badge_job"
     },
     {
       "relation": "contains",
@@ -7775,9 +8080,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_dashboard_badge",
-      "target": "locales_en_badge_cv",
-      "confidence_score": 1.0
+      "target": "locales_en_badge_cv"
     },
     {
       "relation": "contains",
@@ -7785,8 +8090,88 @@
       "source_file": "src/locales/en.json",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_dashboard_badge",
-      "target": "locales_en_badge_docs",
+      "target": "locales_en_badge_docs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_date",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_jobtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_company",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_offer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_cv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_docs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_ats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "locales_en_dashboard_table",
+      "target": "locales_en_table_actions",
       "confidence_score": 1.0
     },
     {
@@ -7885,9 +8270,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_prompts",
-      "target": "locales_en_prompts_requirelatex",
-      "confidence_score": 1.0
+      "target": "locales_en_prompts_requirelatex"
     },
     {
       "relation": "contains",
@@ -7998,6 +8383,46 @@
       "confidence_score": 1.0,
       "source": "locales_en_ai",
       "target": "locales_en_ai_includeinpdf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "locales_en_ai",
+      "target": "locales_en_ai_compilemultipletooltip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "locales_en_ai",
+      "target": "locales_en_ai_compilemultiple",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "locales_en_ai",
+      "target": "locales_en_ai_extractcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "locales_en_ai",
+      "target": "locales_en_ai_extracttooltip",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8295,9 +8720,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_pdf",
-      "target": "locales_en_pdf_sourcedoc",
-      "confidence_score": 1.0
+      "target": "locales_en_pdf_sourcedoc"
     },
     {
       "relation": "contains",
@@ -8825,9 +9250,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_documents",
-      "target": "locales_en_documents_title",
-      "confidence_score": 1.0
+      "target": "locales_en_documents_title"
     },
     {
       "relation": "contains",
@@ -8835,9 +9260,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L224",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_documents",
-      "target": "locales_en_documents_subtitle",
-      "confidence_score": 1.0
+      "target": "locales_en_documents_subtitle"
     },
     {
       "relation": "contains",
@@ -8845,9 +9270,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_documents",
-      "target": "locales_en_documents_emptytitle",
-      "confidence_score": 1.0
+      "target": "locales_en_documents_emptytitle"
     },
     {
       "relation": "contains",
@@ -8855,9 +9280,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L226",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_documents",
-      "target": "locales_en_documents_emptydesc",
-      "confidence_score": 1.0
+      "target": "locales_en_documents_emptydesc"
     },
     {
       "relation": "contains",
@@ -8865,9 +9290,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L227",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_documents",
-      "target": "locales_en_documents_delete",
-      "confidence_score": 1.0
+      "target": "locales_en_documents_delete"
     },
     {
       "relation": "contains",
@@ -8875,9 +9300,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_documents",
-      "target": "locales_en_documents_confirmdelete",
-      "confidence_score": 1.0
+      "target": "locales_en_documents_confirmdelete"
     },
     {
       "relation": "contains",
@@ -8995,9 +9420,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L222",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_locales_fr_json",
-      "target": "locales_fr_documents",
-      "confidence_score": 1.0
+      "target": "locales_fr_documents"
     },
     {
       "relation": "imports_from",
@@ -9096,9 +9521,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_tabs",
-      "target": "locales_fr_tabs_documents",
-      "confidence_score": 1.0
+      "target": "locales_fr_tabs_documents"
     },
     {
       "relation": "contains",
@@ -9466,8 +9891,38 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_app_toast",
-      "target": "locales_fr_toast_docssaved",
+      "target": "locales_fr_toast_docssaved"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "locales_fr_app_toast",
+      "target": "locales_fr_toast_compilingmultiplestart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "locales_fr_app_toast",
+      "target": "locales_fr_toast_compilingmultipledone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "locales_fr_app_toast",
+      "target": "locales_fr_toast_compilemultipleerror",
       "confidence_score": 1.0
     },
     {
@@ -9636,9 +10091,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_dashboard",
-      "target": "locales_fr_dashboard_nocompany",
-      "confidence_score": 1.0
+      "target": "locales_fr_dashboard_nocompany"
     },
     {
       "relation": "contains",
@@ -9646,8 +10101,18 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_dashboard",
-      "target": "locales_fr_dashboard_badge",
+      "target": "locales_fr_dashboard_badge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard",
+      "target": "locales_fr_dashboard_table",
       "confidence_score": 1.0
     },
     {
@@ -9746,9 +10211,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_dashboard_badge",
-      "target": "locales_fr_badge_job",
-      "confidence_score": 1.0
+      "target": "locales_fr_badge_job"
     },
     {
       "relation": "contains",
@@ -9756,9 +10221,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_dashboard_badge",
-      "target": "locales_fr_badge_cv",
-      "confidence_score": 1.0
+      "target": "locales_fr_badge_cv"
     },
     {
       "relation": "contains",
@@ -9766,8 +10231,88 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_dashboard_badge",
-      "target": "locales_fr_badge_docs",
+      "target": "locales_fr_badge_docs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_date",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_jobtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_company",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_offer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_cv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_docs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_ats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "locales_fr_dashboard_table",
+      "target": "locales_fr_table_actions",
       "confidence_score": 1.0
     },
     {
@@ -9866,9 +10411,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_prompts",
-      "target": "locales_fr_prompts_requirelatex",
-      "confidence_score": 1.0
+      "target": "locales_fr_prompts_requirelatex"
     },
     {
       "relation": "contains",
@@ -9979,6 +10524,46 @@
       "confidence_score": 1.0,
       "source": "locales_fr_ai",
       "target": "locales_fr_ai_includeinpdf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L132",
+      "weight": 1.0,
+      "source": "locales_fr_ai",
+      "target": "locales_fr_ai_compilemultipletooltip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "locales_fr_ai",
+      "target": "locales_fr_ai_compilemultiple",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "locales_fr_ai",
+      "target": "locales_fr_ai_extractcv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "locales_fr_ai",
+      "target": "locales_fr_ai_extracttooltip",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10276,9 +10861,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_pdf",
-      "target": "locales_fr_pdf_sourcedoc",
-      "confidence_score": 1.0
+      "target": "locales_fr_pdf_sourcedoc"
     },
     {
       "relation": "contains",
@@ -10806,9 +11391,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_documents",
-      "target": "locales_fr_documents_title",
-      "confidence_score": 1.0
+      "target": "locales_fr_documents_title"
     },
     {
       "relation": "contains",
@@ -10816,9 +11401,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L224",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_documents",
-      "target": "locales_fr_documents_subtitle",
-      "confidence_score": 1.0
+      "target": "locales_fr_documents_subtitle"
     },
     {
       "relation": "contains",
@@ -10826,9 +11411,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_documents",
-      "target": "locales_fr_documents_emptytitle",
-      "confidence_score": 1.0
+      "target": "locales_fr_documents_emptytitle"
     },
     {
       "relation": "contains",
@@ -10836,9 +11421,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L226",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_documents",
-      "target": "locales_fr_documents_emptydesc",
-      "confidence_score": 1.0
+      "target": "locales_fr_documents_emptydesc"
     },
     {
       "relation": "contains",
@@ -10846,9 +11431,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L227",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_documents",
-      "target": "locales_fr_documents_delete",
-      "confidence_score": 1.0
+      "target": "locales_fr_documents_delete"
     },
     {
       "relation": "contains",
@@ -10856,9 +11441,89 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_documents",
-      "target": "locales_fr_documents_confirmdelete",
+      "target": "locales_fr_documents_confirmdelete"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "update-translations-3.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "update_translations_3_js",
+      "target": "ultimate_job_tool_update_translations_3_fr",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "update-translations-3.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "update_translations_3_js",
+      "target": "ultimate_job_tool_update_translations_3_en",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_tabnavigation_jsx",
+      "target": "layout_tabnavigation_tabs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_tabnavigation_jsx",
+      "target": "layout_tabnavigation_tabnavigation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/TabNavigation.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "layout_tabnavigation_tabnavigation",
+      "target": "layout_tabnavigation_tabs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_documentstab_jsx",
+      "target": "tabs_documentstab_documentstab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/PdfMakerTab.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_pdfmakertab_jsx",
+      "target": "tabs_pdfmakertab_pdfmakertab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/PromptsTab.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_promptstab_jsx",
+      "target": "tabs_promptstab_promptstab"
     },
     {
       "relation": "contains",
@@ -10866,9 +11531,9 @@
       "source_file": "strip-latex.js",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "strip_latex_js",
-      "target": "ultimate_job_tool_strip_latex_fr",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_strip_latex_fr"
     },
     {
       "relation": "contains",
@@ -10876,9 +11541,9 @@
       "source_file": "strip-latex.js",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "strip_latex_js",
-      "target": "ultimate_job_tool_strip_latex_en",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_strip_latex_en"
     },
     {
       "relation": "contains",
@@ -10886,9 +11551,9 @@
       "source_file": "strip-latex.js",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "strip_latex_js",
-      "target": "ultimate_job_tool_strip_latex_striplatexinstruction",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_strip_latex_striplatexinstruction"
     },
     {
       "relation": "contains",
@@ -10896,9 +11561,9 @@
       "source_file": "update-translations.js",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "update_translations_js",
-      "target": "ultimate_job_tool_update_translations_fr",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_update_translations_fr"
     },
     {
       "relation": "contains",
@@ -10906,9 +11571,9 @@
       "source_file": "update-translations.js",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "update_translations_js",
-      "target": "ultimate_job_tool_update_translations_en",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_update_translations_en"
     },
     {
       "relation": "contains",
@@ -11850,16 +12515,6 @@
       "confidence_score": 1.0,
       "source": "src_components_tabs_atstesttab_jsx",
       "target": "tabs_atstesttab_atstesttab"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/JobOfferTab.jsx",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_joboffertab_jsx",
-      "target": "tabs_joboffertab_joboffertab"
     },
     {
       "relation": "contains",
@@ -13822,5 +14477,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "690825029d5ef4bc0922ca89440f6c5c82b76921"
+  "built_at_commit": "1981d455780300bb3e7e836ee8de94713babc367"
 }
