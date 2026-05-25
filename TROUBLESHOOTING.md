@@ -160,5 +160,36 @@ rm -rf ~/anaconda3/lib/python3.11/site-packages/pydantic*
 pip install pydantic pydantic-core openai
 ```
 
+## 10. Clerk + Supabase Integration Issues
+
+### Problem 1: Vite Crash with `require()`
+**Issue**: Using dynamic `require('@clerk/react')` to optionally load Clerk crashed the entire Vite build in production (white screen) and threw `ReferenceError: require is not defined`.
+**Cause**: Vite is an ES Module bundler and does not support Node.js `require()` for importing modules in the browser out of the box.
+**Fix**: Removed all `require()` calls and switched back to standard top-level `import`. We discovered that statically importing Clerk components does not crash the app even if the API keys are missing; it only crashes if you try to *render* them or *call their hooks* without a `<ClerkProvider>`. So we conditionally render a custom `<AuthGate>` component instead.
+
+### Problem 2: Supabase Client Instantiation Crash
+**Issue**: The Vercel production server showed a white screen because the Supabase client threw `Error: supabaseUrl is required`.
+**Cause**: When deploying without environment variables (to test the fallback local mode), `import.meta.env.VITE_SUPABASE_URL` was `undefined`. The official `@supabase/supabase-js` `createClient` throws a fatal synchronous error if the URL is an empty string during module evaluation.
+**Fix**: Wrapped the client initialization in a condition: `export const supabase = (supabaseUrl && supabaseKey) ? createClient(...) : null;`. The `useDatabase` hook already gracefully falls back to localStorage if the client is `null`.
+
+### Problem 3: Dashboard Stuck on "Chargement..."
+**Issue**: When successfully logged in via Clerk, the dashboard completely froze on "Chargement..." and no applications loaded.
+**Cause**: The user logged in, but their brand new Supabase project didn't have the `applications` table created yet. When the client requested the table, Supabase threw an error. The `getAllApplications` function in `useDatabase.js` had no `try/catch` block, causing an unhandled promise rejection that stopped the React state from updating.
+**Fix**: 
+1. Added robust `try/catch` blocks and null-checks to all database hooks in `useDatabase.js` so they safely return `[]` or `null` instead of crashing the UI.
+2. Executed the `CREATE TABLE` and RLS policy SQL script in the user's Supabase dashboard.
+
+### Problem 4: Missing Clerk JWT Template & Invalid JWT Secret
+**Issue**: Even after creating the table, the database rejected all INSERTS silently.
+**Cause**: Supabase uses Row Level Security (RLS) to verify identity. If Supabase doesn't know the Clerk JWT secret, or if Clerk isn't configured to generate a "supabase" template token, Supabase rejects the requests as Unauthorized.
+**Fix**:
+1. In Clerk Dashboard: Created a new JWT Template named `supabase`.
+2. In Supabase Dashboard: Navigated to `Authentication -> Providers -> Custom JWT`, enabled it, and pasted the Clerk JWKS Public Key.
+
+### Problem 5: RLS Type Mismatch (`uuid = text`)
+**Issue**: The SQL query to create the RLS policies threw `ERROR: 42883: operator does not exist: uuid = text`.
+**Cause**: The initial SQL used `USING (auth.uid() = user_id)`. `auth.uid()` expects a standard UUID format, but Clerk user IDs are strings (e.g., `user_2Nne...`), which were stored in a `text` column.
+**Fix**: Modified the RLS policies to extract the user ID directly from the Clerk JWT payload as text using `(auth.jwt() ->> 'sub') = user_id`.
+
 ---
 *Generated: May 2026*
