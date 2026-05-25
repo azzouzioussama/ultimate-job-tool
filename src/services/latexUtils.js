@@ -63,3 +63,44 @@ export function extractLatexFromResponse(responseText) {
 export function escapeAmpersands(latex) {
   return latex.replace(/(?<!\\)&/g, '\\&');
 }
+
+/**
+ * Merge multiple AI LaTeX responses into a single valid LaTeX document.
+ * It extracts the preamble from `baseLatex`, and appends the document body
+ * content from each response in `responsesTextArray`.
+ *
+ * @param {string} baseLatex - The base CV LaTeX containing the preamble and document environment.
+ * @param {string[]} responsesTextArray - Array of raw AI responses (can be full documents or snippets).
+ * @returns {string|null} A single concatenated LaTeX document, or null if the base lacks \begin{document}.
+ */
+export function mergeLatexResponses(baseLatex, responsesTextArray) {
+  const docStartIdx = baseLatex.indexOf('\\begin{document}');
+  if (docStartIdx === -1) return null;
+  
+  const preambleAndStart = baseLatex.substring(0, docStartIdx + '\\begin{document}'.length);
+  
+  let combinedBody = '\n\n% --- COMPILED RESPONSES ---\n\n';
+  
+  for (let i = 0; i < responsesTextArray.length; i++) {
+    const resp = responsesTextArray[i];
+    if (!resp) continue;
+
+    combinedBody += `\n% --- RESPONSE ${i + 1} ---\n`;
+
+    const startIdx = resp.indexOf('\\begin{document}');
+    const endIdx = resp.indexOf('\\end{document}');
+    
+    if (startIdx !== -1 && endIdx !== -1 && endIdx > startIdx) {
+      // It's a full document, extract just the body
+      combinedBody += resp.substring(startIdx + '\\begin{document}'.length, endIdx).trim() + '\n\n';
+    } else {
+      // It's likely a raw snippet. Strip markdown code block ticks if present.
+      let clean = resp.replace(/```latex/gi, '').replace(/```/g, '').trim();
+      combinedBody += clean + '\n\n';
+    }
+  }
+  
+  const tail = '\n\\end{document}\n';
+  
+  return escapeAmpersands(preambleAndStart + combinedBody + tail);
+}

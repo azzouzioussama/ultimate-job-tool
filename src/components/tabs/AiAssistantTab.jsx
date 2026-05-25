@@ -16,14 +16,15 @@
  * to get API keys from each provider.
  *
  * PROPS:
- *   - aiResponse:    The AI's text response (string)
+ *   - aiResponses:   Array of AI responses (objects with id, title, content, isSelectedForPdf)
+ *   - setAiResponses: Function to update the responses array (for toggling selection)
  *   - isAiLoading:   Boolean, true while waiting for AI
  *   - apiKey:        Current API key (empty string = not configured)
  *   - providerLabel: Human-readable provider name (e.g., "Gemini")
  *   - onRunAI:       Function to trigger AI generation
- *   - onExtractLatex: Function to extract LaTeX from response
- *   - onCopy:        Function to copy text to clipboard
- *   - onClear:       Function to clear the AI response
+ *   - onExtractLatex: Function to extract LaTeX from selected responses
+ *   - onCopy:        Function to copy all text to clipboard
+ *   - onClear:       Function to clear the AI responses
  */
 
 
@@ -31,7 +32,8 @@ import { Bot, Sparkles, FileText, Copy, Trash, KeyRound, ExternalLink, Loader2 }
 import AI_PROVIDERS from '../../constants/aiProviders';
 
 export default function AiAssistantTab({
-  aiResponse,
+  aiResponses = [],
+  setAiResponses,
   isAiLoading,
   apiKey,
   providerLabel,
@@ -40,6 +42,12 @@ export default function AiAssistantTab({
   onCopy,
   onClear,
 }) {
+  const toggleSelection = (id) => {
+    setAiResponses(prev => prev.map(r => r.id === id ? { ...r, isSelectedForPdf: !r.isSelectedForPdf } : r));
+  };
+
+  const hasResponses = aiResponses.length > 0;
+  const selectedCount = aiResponses.filter(r => r.isSelectedForPdf).length;
   return (
     <div className="flex flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
 
@@ -60,27 +68,28 @@ export default function AiAssistantTab({
             {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} Relancer
           </button>
 
-          {/* Action buttons (only visible when there's a response) */}
-          {aiResponse && (
+          {/* Action buttons (only visible when there are responses) */}
+          {hasResponses && (
             <>
               <button
                 onClick={onExtractLatex}
-                className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors"
-                title="Extraire le code LaTeX et le mettre dans le CV Généré"
+                disabled={selectedCount === 0}
+                className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                title="Compiler la sélection en PDF et le mettre dans le CV Généré"
               >
-                <FileText size={14} /> <span className="hidden sm:inline">Extraire CV</span>
+                <FileText size={14} /> <span className="hidden sm:inline">Compiler Sélection ({selectedCount})</span>
               </button>
               <button
-                onClick={() => onCopy(aiResponse)}
+                onClick={() => onCopy(aiResponses.map(r => r.content).join('\n\n---\n\n'))}
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2"
               >
-                <Copy size={14} /> <span className="hidden sm:inline">Copier</span>
+                <Copy size={14} /> <span className="hidden sm:inline">Tout Copier</span>
               </button>
               <button
                 onClick={onClear}
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-red-50 hover:text-red-600 flex items-center gap-2 transition-colors"
               >
-                <Trash size={14} /> <span className="hidden sm:inline">Effacer</span>
+                <Trash size={14} /> <span className="hidden sm:inline">Tout Effacer</span>
               </button>
             </>
           )}
@@ -117,10 +126,33 @@ export default function AiAssistantTab({
         )}
 
         {/* State: Response ready */}
-        {aiResponse && !isAiLoading && (
-          <pre className="text-sm font-sans text-slate-800 whitespace-pre-wrap leading-relaxed max-w-4xl mx-auto">
-            {aiResponse}
-          </pre>
+        {hasResponses && !isAiLoading && (
+          <div className="flex flex-col gap-6 max-w-4xl mx-auto">
+            {aiResponses.map(resp => (
+              <div key={resp.id} className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div className="bg-slate-50 px-4 py-2 border-b border-slate-200 flex justify-between items-center">
+                  <div className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      checked={resp.isSelectedForPdf}
+                      onChange={() => toggleSelection(resp.id)}
+                      className="h-4 w-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500 cursor-pointer"
+                      title="Inclure dans la compilation PDF"
+                    />
+                    <span className="font-semibold text-sm text-slate-700">{resp.title}</span>
+                  </div>
+                  <button onClick={() => onCopy(resp.content)} className="text-slate-400 hover:text-indigo-600">
+                    <Copy size={14} />
+                  </button>
+                </div>
+                <div className="p-4">
+                  <pre className="text-sm font-sans text-slate-800 whitespace-pre-wrap leading-relaxed">
+                    {resp.content}
+                  </pre>
+                </div>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

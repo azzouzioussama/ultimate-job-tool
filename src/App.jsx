@@ -55,7 +55,7 @@ import { scrapeWithJina, scrapeWithScrapfly } from './services/scraperService';
 import { compilePdfFromLatex, downloadBlobAsPdf } from './services/pdfService';
 import { runAtsAnalysis } from './services/atsService';
 import { extractTextFromFile, buildLatexConversionPrompt } from './services/fileUploadService';
-import { extractLatexFromResponse } from './services/latexUtils';
+import { extractLatexFromResponse, mergeLatexResponses } from './services/latexUtils';
 import * as storage from './services/storageService';
 // DB hook replaced with useDatabase
 import { useDatabase } from './hooks/useDatabase';
@@ -137,7 +137,7 @@ export default function App() {
   const [cvGenerated, setCvGenerated] = useState('');
 
   // ── Settings (auto-saved to localStorage) ───────────────────────────────────
-  const [aiResponse, setAiResponse] = useLocalStorage('ai_response', '');
+  const [aiResponses, setAiResponses] = useState([]);
   const [scraperType, setScraperType] = useLocalStorage('scraper_type', 'jina');
 
   // ── AI Provider Configuration ───────────────────────────────────────────────
@@ -149,8 +149,8 @@ export default function App() {
   const [apiKey, setApiKey] = useState(storage.getApiKey(storage.getAiProvider()));
 
   // ── Template State ──────────────────────────────────────────────────────────
-  const [selectedTemplateId, setSelectedTemplateId] = useState(1);
-  const [customPrompt, setCustomPrompt] = useState(PROMPT_TEMPLATES[0].content);
+  const [selectedTemplateIds, setSelectedTemplateIds] = useState([1]);
+  const [customPrompts, setCustomPrompts] = useState({ 1: PROMPT_TEMPLATES[0].content });
   const [selectedCvTemplateId, setSelectedCvTemplateId] = useLocalStorage('cv_template_id', 'french-ats');
 
   // ── Loading States ──────────────────────────────────────────────────────────
@@ -243,11 +243,19 @@ export default function App() {
   // EFFECTS (Reactive logic that runs when state changes)
   // ═══════════════════════════════════════════════════════════════════════════
 
-  // When the user selects a different prompt template, load its content
+  // When the user selects different prompt templates, load their content
   useEffect(() => {
-    const template = PROMPT_TEMPLATES.find(t => t.id === selectedTemplateId);
-    if (template) setCustomPrompt(template.content);
-  }, [selectedTemplateId]);
+    setCustomPrompts(prev => {
+      const next = { ...prev };
+      selectedTemplateIds.forEach(id => {
+        if (!next[id]) {
+          const template = PROMPT_TEMPLATES.find(t => t.id === id);
+          if (template) next[id] = template.content;
+        }
+      });
+      return next;
+    });
+  }, [selectedTemplateIds]);
 
   // When the user switches AI provider, load the correct API key and model
   useEffect(() => {
@@ -258,8 +266,8 @@ export default function App() {
   }, [aiProvider]);
 
   // Compile the final prompt by replacing placeholders with actual data
-  const compiledPrompt = useMemo(() => {
-    let final = customPrompt.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
+  const getCompiledPrompt = useCallback((promptText) => {
+    let final = promptText.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
     let jobContent = jobDescription || '[OFFRE MANQUANTE]';
 
     // If the user pasted a raw URL instead of text, add an instruction for the AI
@@ -268,7 +276,7 @@ export default function App() {
     }
 
     return final.replace(/{job_description}/g, jobContent);
-  }, [customPrompt, cvOriginal, jobDescription]);
+  }, [cvOriginal, jobDescription]);
 
   // Measure the PDF container width for responsive page rendering (mobile)
   useEffect(() => {
@@ -307,12 +315,12 @@ export default function App() {
   };
 
   // ── Download Prompt as .txt ─────────────────────────────────────────────────
-  const downloadAsTxt = () => {
-    const blob = new Blob([compiledPrompt], { type: 'text/plain' });
+  const downloadAsTxt = (text, id) => {
+    const blob = new Blob([text], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `prompt_${selectedTemplateId}_${new Date().toISOString().slice(0,10)}.txt`;
+    a.download = `prompt_${id}_${new Date().toISOString().slice(0,10)}.txt`;
     a.click();
     URL.revokeObjectURL(url);
     showToast('Fichier téléchargé !');
@@ -322,10 +330,10 @@ export default function App() {
   const resetAll = () => {
     setCvOriginal(SYNTHETIC_CV);
     setCvGenerated('');
-    setSelectedTemplateId(1);
-    setCustomPrompt(PROMPT_TEMPLATES[0].content);
+    setSelectedTemplateIds([1]);
+    setCustomPrompts({ 1: PROMPT_TEMPLATES[0].content });
     setJobDescription('');
-    setAiResponse('');
+    setAiResponses([]);
     showToast('Tout réinitialisé aux valeurs par défaut.');
   };
 
@@ -366,20 +374,51 @@ export default function App() {
       setActiveTab('ai');
       return;
     }
-    if (!compiledPrompt.trim()) return;
+    if (selectedTemplateIds.length === 0) return;
 
     setIsAiLoading(true);
-    setAiResponse('');
+    setAiResponses([]);
     setActiveTab('ai');
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 120000);
 
     try {
-      const reply = await callCurrentAI(compiledPrompt, controller.signal);
-      setAiResponse(reply);
+      const promises = selectedTemplateIds.map(async (id) => {
+        const template = PROMPT_TEMPLATES.find(t => t.id === id);
+        const text = customPrompts[id] || template.content;
+        const compiled = getCompiledPrompt(text);
+        const reply = await callCurrentAI(compiled, controller.signal);
+        return {
+          id: Date.now() + Math.random(),
+          templateId: id,
+          title: template.title,
+          content: reply,
+          isSelectedForPdf: true
+        };
+      });
+
+      const results = await Promise.allSettled(promises);
+      const successfulResponses = [];
+      
+      results.forEach((res, index) => {
+        if (res.status === 'fulfilled') {
+          successfulResponses.push(res.value);
+        } else {
+          // Handle individual failure
+          successfulResponses.push({
+            id: Date.now() + Math.random(),
+            templateId: selectedTemplateIds[index],
+            title: PROMPT_TEMPLATES.find(t => t.id === selectedTemplateIds[index])?.title,
+            content: `❌ Erreur: ${res.reason.message}`,
+            isSelectedForPdf: false
+          });
+        }
+      });
+      
+      setAiResponses(successfulResponses);
     } catch (error) {
-      // Auto-retry once on network/abort errors (e.g., mobile screen-off)
+      // Auto-retry once on network/abort errors
       if ((error.name === 'AbortError' || error.name === 'TypeError') && retryCount < 1) {
         showToast('Connexion interrompue, nouvelle tentative...');
         clearTimeout(timeoutId);
@@ -388,7 +427,7 @@ export default function App() {
       const msg = error.name === 'AbortError'
         ? 'La requête a expiré (timeout). Vérifiez votre connexion et réessayez.'
         : error.message;
-      setAiResponse(`❌ Erreur: ${msg}\n\nVérifiez que votre clé API ${providerLabel} est valide et a des quotas disponibles.`);
+      setAiResponses([{ id: Date.now(), title: 'Erreur', content: `❌ Erreur: ${msg}\n\nVérifiez que votre clé API ${providerLabel} est valide.`, isSelectedForPdf: false }]);
     } finally {
       clearTimeout(timeoutId);
       setIsAiLoading(false);
@@ -397,13 +436,28 @@ export default function App() {
 
   // ── Extract LaTeX from AI Response ──────────────────────────────────────────
   const handleExtractLatex = () => {
-    const extracted = extractLatexFromResponse(aiResponse);
+    const selectedTexts = aiResponses.filter(r => r.isSelectedForPdf).map(r => r.content);
+    if (selectedTexts.length === 0) {
+      showToast('Aucune réponse sélectionnée.');
+      return;
+    }
+    
+    // Try to merge if there are multiple or if the text isn't a full doc
+    const extracted = mergeLatexResponses(cvOriginal, selectedTexts);
     if (extracted) {
       setCvGenerated(extracted);
-      showToast('CV Généré extrait et sauvegardé (Corrections appliquées) !');
+      showToast('CV Généré extrait et sauvegardé (Fusion réussie) !');
       setActiveTab('cv');
     } else {
-      showToast('Aucun code LaTeX complet trouvé dans la réponse.');
+      // Fallback if merge fails (e.g., base CV has no \begin{document})
+      const fallback = extractLatexFromResponse(selectedTexts[0]);
+      if (fallback) {
+        setCvGenerated(fallback);
+        showToast('Premier CV extrait (Fusion impossible, pas de base document) !');
+        setActiveTab('cv');
+      } else {
+        showToast('Aucun code LaTeX complet trouvé ou fusion impossible.');
+      }
     }
   };
 
@@ -587,11 +641,15 @@ export default function App() {
           <div className={activeTab === 'templates' ? 'block' : 'hidden'}>
             <PromptsTab
               templates={PROMPT_TEMPLATES}
-              selectedTemplateId={selectedTemplateId}
-              onSelectTemplate={setSelectedTemplateId}
-              customPrompt={customPrompt}
-              onCustomPromptChange={setCustomPrompt}
-              compiledPrompt={compiledPrompt}
+              selectedTemplateIds={selectedTemplateIds}
+              onSelectTemplate={(id) => {
+                setSelectedTemplateIds(prev => 
+                  prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+                );
+              }}
+              customPrompts={customPrompts}
+              onCustomPromptChange={(id, value) => setCustomPrompts(prev => ({ ...prev, [id]: value }))}
+              getCompiledPrompt={getCompiledPrompt}
               onCopy={copyToClipboard}
               onDownload={downloadAsTxt}
               onRunAI={handleRunAI}
@@ -602,14 +660,15 @@ export default function App() {
           {/* AI Assistant Tab */}
           <div className={activeTab === 'ai' ? 'block' : 'hidden'}>
             <AiAssistantTab
-              aiResponse={aiResponse}
+              aiResponses={aiResponses}
+              setAiResponses={setAiResponses}
               isAiLoading={isAiLoading}
               apiKey={apiKey}
               providerLabel={providerLabel}
               onRunAI={handleRunAI}
               onExtractLatex={handleExtractLatex}
               onCopy={copyToClipboard}
-              onClear={() => setAiResponse('')}
+              onClear={() => setAiResponses([])}
             />
           </div>
 

@@ -12,7 +12,9 @@
  * HOW DO PLACEHOLDERS WORK?
  * Each template's `content` string contains two special placeholders:
  *   - {cv_content}       → Gets replaced with the user's current CV text.
- *   - {job_description}  → Gets replaced with the pasted job offer text.
+ *   - {job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.  → Gets replaced with the pasted job offer text.
  *
  * The replacement happens in App.jsx's compiled prompt logic, NOT here.
  * This file only stores the raw templates.
@@ -21,7 +23,9 @@
  * 1. Copy one of the objects below as a starting point.
  * 2. Give it the next `id` number (e.g., 11).
  * 3. Write a `title`, `description`, and `content`.
- * 4. Use {cv_content} and {job_description} in your content where needed.
+ * 4. Use {cv_content} and {job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide. in your content where needed.
  * 5. Save this file — the new prompt will automatically appear in the UI.
  *
  * HOW TO REMOVE A PROMPT:
@@ -48,7 +52,9 @@ ATTENTION - REGLES STRICTES POUR LE CODE LATEX :
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 2,
@@ -65,7 +71,9 @@ Garde un ton professionnel mais dynamique.
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 3,
@@ -78,7 +86,9 @@ Connect my background from the provided CV to the exact needs of the job descrip
 {cv_content}
 
 --- JOB DESCRIPTION ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 4,
@@ -91,7 +101,9 @@ Pour chaque question, rédige une suggestion de réponse en utilisant la méthod
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 5,
@@ -106,7 +118,9 @@ Pour chaque question, rédige une suggestion de réponse en utilisant la méthod
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 6,
@@ -119,7 +133,9 @@ Rédige une section "Infos" (À propos) LinkedIn percutante à la première pers
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 7,
@@ -132,7 +148,9 @@ Il doit être naturel, en français, et lier immédiatement mon parcours (mon CV
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 8,
@@ -146,7 +164,9 @@ Pour chaque manque, propose-moi un plan d'action d'apprentissage express de 2 he
 {cv_content}
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 9,
@@ -156,13 +176,17 @@ Pour chaque manque, propose-moi un plan d'action d'apprentissage express de 2 he
 L'email doit remercier le recruteur pour son temps, réaffirmer mon enthousiasme pour ce poste spécifique, et rappeler brièvement en une ligne pourquoi ma compétence principale fait de moi un excellent choix.
 
 --- DESCRIPTION DU POSTE ---
-{job_description}`
+{job_description}
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   },
   {
     id: 10,
     title: "10. Prompt Personnalisé (Libre)",
     description: "Écrivez votre propre requête à l'IA.",
-    content: `(Écrivez vos instructions ici. Utilisez {cv_content} et {job_description} pour injecter vos données automatiquement).`
+    content: `(Écrivez vos instructions ici. Utilisez {cv_content} et {job_description} pour injecter vos données automatiquement).
+
+IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.`
   }
 ];
 
