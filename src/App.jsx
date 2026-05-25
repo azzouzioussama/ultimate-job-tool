@@ -154,7 +154,7 @@ export default function App() {
 
   // ── Template State ──────────────────────────────────────────────────────────
   const [selectedTemplateIds, setSelectedTemplateIds] = useState([1]);
-  const [customPrompts, setCustomPrompts] = useState({ 1: PROMPT_TEMPLATES[0].content });
+  const [customPrompts, setCustomPrompts] = useState({});
   const [selectedCvTemplateId, setSelectedCvTemplateId] = useLocalStorage('cv_template_id', 'french-ats');
 
   // ── Loading States ──────────────────────────────────────────────────────────
@@ -335,7 +335,7 @@ export default function App() {
     setCvOriginal(SYNTHETIC_CV);
     setCvGenerated('');
     setSelectedTemplateIds([1]);
-    setCustomPrompts({ 1: PROMPT_TEMPLATES[0].content });
+    setCustomPrompts({});
     setJobDescription('');
     setAiResponses([]);
     showToast(t('app.toast.reset', 'Tout réinitialisé aux valeurs par défaut.'));
