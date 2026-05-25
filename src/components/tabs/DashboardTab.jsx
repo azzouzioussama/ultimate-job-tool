@@ -129,65 +129,88 @@ export default function DashboardTab({ onSelectApplication }) {
           <p className="text-sm text-slate-500 mt-1">{t('dashboard.emptyDesc', 'Créez votre première candidature pour commencer à adapter votre CV.')}</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {applications.map(app => (
-            <div 
-              key={app.id}
-              onClick={() => onSelectApplication(app.id)}
-              className="group cursor-pointer bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all rounded-xl p-5 flex flex-col"
-            >
-              <div className="flex justify-between items-start mb-3">
-                <div className="bg-indigo-50 text-indigo-700 p-2 rounded-lg">
-                  <Briefcase size={20} />
-                </div>
-                <button 
-                  onClick={(e) => handleDelete(app.id, e)}
-                  className="text-slate-300 hover:text-red-500 transition-colors p-1"
-                  title={t('dashboard.card.delete', 'Supprimer')}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse whitespace-nowrap">
+            <thead>
+              <tr className="bg-slate-50 border-b border-slate-200 text-xs text-slate-500 uppercase tracking-wider">
+                <th className="p-4 font-semibold rounded-tl-xl">{t('dashboard.table.date', 'Date')}</th>
+                <th className="p-4 font-semibold">{t('dashboard.table.jobTitle', 'Objectif / Poste')}</th>
+                <th className="p-4 font-semibold">{t('dashboard.table.company', 'Entreprise')}</th>
+                <th className="p-4 font-semibold text-center">{t('dashboard.table.offer', 'Offre')}</th>
+                <th className="p-4 font-semibold text-center">{t('dashboard.table.cv', 'CV')}</th>
+                <th className="p-4 font-semibold text-center">{t('dashboard.table.docs', 'Docs')}</th>
+                <th className="p-4 font-semibold text-center">{t('dashboard.table.ats', 'ATS')}</th>
+                <th className="p-4 font-semibold text-right rounded-tr-xl">{t('dashboard.table.actions', 'Actions')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100">
+              {applications.map(app => (
+                <tr 
+                  key={app.id} 
+                  onClick={() => onSelectApplication(app.id)}
+                  className="hover:bg-slate-50 cursor-pointer transition-colors group"
                 >
-                  <Trash2 size={16} />
-                </button>
-              </div>
-              
-              <h3 className="text-lg font-bold text-slate-800 line-clamp-1" title={app.jobTitle}>
-                {app.jobTitle}
-              </h3>
-              <p className="text-slate-600 text-sm font-medium mb-4 line-clamp-1">
-                {app.companyName || <span className="italic text-slate-400">{t('dashboard.noCompany', 'Projet libre')}</span>}
-              </p>
-
-              {/* Badges / Metadata Tracker */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {app.jobDescription?.length > 10 ? (
-                  <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-semibold rounded-md border border-green-100">{t('dashboard.badge.job', 'Offre ✅')}</span>
-                ) : (
-                  <span className="px-2 py-0.5 bg-slate-50 text-slate-500 text-xs font-semibold rounded-md border border-slate-100">{t('dashboard.badge.job', 'Offre ❌')}</span>
-                )}
-                {app.cvGenerated?.length > 10 ? (
-                  <span className="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-md border border-indigo-100">{t('dashboard.badge.cv', 'CV ✅')}</span>
-                ) : (
-                  <span className="px-2 py-0.5 bg-slate-50 text-slate-500 text-xs font-semibold rounded-md border border-slate-100">{t('dashboard.badge.cv', 'CV ❌')}</span>
-                )}
-                {app.documents?.length > 0 && (
-                  <span className="px-2 py-0.5 bg-purple-50 text-purple-700 text-xs font-semibold rounded-md border border-purple-100">{app.documents.length} {t('dashboard.badge.docs', 'Doc(s)')}</span>
-                )}
-                {app.atsResult && (
-                  <span className={`px-2 py-0.5 text-xs font-semibold rounded-md border ${app.atsResult.score >= 80 ? 'bg-green-50 text-green-700 border-green-100' : 'bg-yellow-50 text-yellow-700 border-yellow-100'}`}>
-                    ATS: {app.atsResult.score}%
-                  </span>
-                )}
-              </div>
-              
-              <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
-                <span className="flex items-center gap-1">
-                  <Calendar size={12} /> {t('dashboard.card.modified', { date: formatDate(app.lastUpdated), defaultValue: `Modifié le ${formatDate(app.lastUpdated)}` })}
-                </span>
-                <span className="flex items-center text-indigo-600 font-medium group-hover:translate-x-1 transition-transform">
-                  {t('dashboard.card.open', 'Ouvrir')} <ChevronRight size={14} />
-                </span>
-              </div>
-            </div>
-          ))}
+                  <td className="p-4 text-xs text-slate-500">{formatDate(app.lastUpdated)}</td>
+                  <td className="p-4 font-bold text-slate-800">
+                    <div className="flex items-center gap-2">
+                      <Briefcase size={16} className="text-indigo-400" />
+                      {app.jobTitle}
+                    </div>
+                  </td>
+                  <td className="p-4 text-sm text-slate-600">
+                    {app.companyName || <span className="italic text-slate-400">{t('dashboard.noCompany', 'Projet libre')}</span>}
+                  </td>
+                  <td className="p-4 text-center">
+                    {app.jobDescription?.length > 10 ? (
+                      <span className="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded-md border border-green-100">✅</span>
+                    ) : (
+                      <span className="inline-block px-2 py-1 bg-slate-50 text-slate-400 text-xs font-semibold rounded-md border border-slate-100">❌</span>
+                    )}
+                  </td>
+                  <td className="p-4 text-center">
+                    {app.cvGenerated?.length > 10 ? (
+                      <span className="inline-block px-2 py-1 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-md border border-indigo-100">✅</span>
+                    ) : (
+                      <span className="inline-block px-2 py-1 bg-slate-50 text-slate-400 text-xs font-semibold rounded-md border border-slate-100">❌</span>
+                    )}
+                  </td>
+                  <td className="p-4 text-center">
+                    {app.documents?.length > 0 ? (
+                      <span className="inline-block px-2 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-md border border-purple-100">
+                        {app.documents.length}
+                      </span>
+                    ) : (
+                      <span className="text-slate-300 text-xs">-</span>
+                    )}
+                  </td>
+                  <td className="p-4 text-center">
+                    {app.atsResult ? (
+                      <span className={`inline-block px-2 py-1 text-xs font-bold rounded-md border ${app.atsResult.score >= 80 ? 'bg-green-50 text-green-700 border-green-100' : 'bg-yellow-50 text-yellow-700 border-yellow-100'}`}>
+                        {app.atsResult.score}%
+                      </span>
+                    ) : (
+                      <span className="text-slate-300 text-xs">-</span>
+                    )}
+                  </td>
+                  <td className="p-4 text-right">
+                    <button 
+                      onClick={(e) => handleDelete(app.id, e)}
+                      className="text-slate-300 hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-red-50"
+                      title={t('dashboard.card.delete', 'Supprimer')}
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                    <button 
+                      className="text-slate-300 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-indigo-50 ml-1"
+                      title={t('dashboard.card.open', 'Ouvrir')}
+                    >
+                      <ChevronRight size={16} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>

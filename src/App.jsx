@@ -493,7 +493,61 @@ export default function App() {
     }
   };
 
-  // ── Job Scraping ────────────────────────────────────────────────────────────
+  // ── Compile Multiple PDFs ───────────────────────────────────────────────────
+  const handleCompileMultiplePdfs = async () => {
+    const selectedResponses = aiResponses.filter(r => r.isSelectedForPdf);
+    if (selectedResponses.length === 0) {
+      showToast(t('app.toast.noResponseSelected', 'Aucune réponse sélectionnée.'));
+      return;
+    }
+
+    showToast(t('app.toast.compilingMultipleStart', { count: selectedResponses.length, defaultValue: `Compilation de ${selectedResponses.length} PDFs en cours...` }));
+    
+    let successCount = 0;
+    
+    for (const [index, resp] of selectedResponses.entries()) {
+      try {
+        // Try to extract LaTeX from the response. If not found, compile the raw text if it contains \documentclass, else fallback to cvOriginal merge.
+        // For simplicity, we assume they are either full LaTeX docs or we attempt to merge them.
+        let latexToCompile = extractLatexFromResponse(resp.content);
+        
+        if (!latexToCompile && resp.content.includes('\\documentclass')) {
+          latexToCompile = resp.content;
+        }
+
+        if (!latexToCompile) {
+          // If it's a snippet, merge it with cvOriginal
+          latexToCompile = mergeLatexResponses(cvOriginal, [resp.content]);
+        }
+        
+        if (!latexToCompile) {
+          console.warn('Could not extract or merge LaTeX for response', resp.title);
+          continue;
+        }
+
+        const blob = await compilePdfFromLatex(latexToCompile);
+        const url = URL.createObjectURL(blob);
+        
+        // Add a slight delay to avoid browser blocking multiple downloads
+        setTimeout(() => {
+          downloadBlobAsPdf(url, `Doc_${index + 1}_${new Date().getTime()}.pdf`);
+        }, index * 800);
+        
+        successCount++;
+      } catch (err) {
+        console.error('Error compiling response:', err);
+        showToast(t('app.toast.compileMultipleError', { title: resp.title, error: err.message, defaultValue: `Erreur pour "${resp.title}": ${err.message}` }));
+      }
+    }
+
+    if (successCount > 0) {
+      showToast(t('app.toast.compilingMultipleDone', { count: successCount, defaultValue: `${successCount} PDF(s) compilé(s) et téléchargé(s) !` }));
+      // Deselect them after success
+      setAiResponses(prev => prev.map(r => r.isSelectedForPdf ? { ...r, isSelectedForPdf: false } : r));
+    }
+  };
+
+  // ── Scrape Job ────────────────────────────────────────────────────────────
   const handleScrape = async () => {
     if (!jobUrl) return;
     setIsScraping(true);
@@ -708,6 +762,7 @@ export default function App() {
               providerLabel={providerLabel}
               onRunAI={handleRunAI}
               onExtractLatex={handleExtractLatex}
+              onCompileMultiple={handleCompileMultiplePdfs}
               onSaveToDocuments={() => {
                 const selected = aiResponses.filter(r => r.isSelectedForPdf);
                 if (selected.length === 0) return;

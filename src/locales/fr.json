@@ -48,7 +48,10 @@
       "generatingLatex": "Texte extrait ! Génération LaTeX en cours par l'IA...",
       "cvImported": "CV importé et converti avec succès en LaTeX !",
       "importError": "Erreur d'import : {{error}}",
-      "docsSaved": "{{count}} document(s) sauvegardé(s)"
+      "docsSaved": "{{count}} document(s) sauvegardé(s)",
+      "compilingMultipleStart": "Compilation de {{count}} PDFs en cours...",
+      "compilingMultipleDone": "{{count}} PDF(s) compilé(s) et téléchargé(s) !",
+      "compileMultipleError": "Erreur pour \"{{title}}\": {{error}}"
     },
     "ai": {
       "error": "❌ Erreur: {{error}}",
@@ -90,6 +93,16 @@
       "job": "Offre",
       "cv": "CV",
       "docs": "Doc(s)"
+    },
+    "table": {
+      "date": "Date",
+      "jobTitle": "Objectif / Poste",
+      "company": "Entreprise",
+      "offer": "Offre",
+      "cv": "CV",
+      "docs": "Docs",
+      "ats": "ATS",
+      "actions": "Actions"
     }
   },
   "prompts": {
@@ -115,7 +128,11 @@
     "keyDesc": "Choisissez un fournisseur dans la barre du haut, puis entrez votre clé API.",
     "keyLink": "Clé {{provider}} ({{note}})",
     "analyzing": "L'IA analyse votre profil...",
-    "includeInPdf": "Inclure dans la compilation PDF"
+    "includeInPdf": "Inclure dans la compilation PDF",
+    "compileMultipleTooltip": "Compiler chaque réponse sélectionnée en un PDF distinct",
+    "compileMultiple": "Compiler Séparément ({{count}})",
+    "extractCv": "Fusionner CV ({{count}})",
+    "extractTooltip": "Fusionner la sélection et remplacer le CV Généré"
   },
   "job": {
     "title": "Description de l'Offre",

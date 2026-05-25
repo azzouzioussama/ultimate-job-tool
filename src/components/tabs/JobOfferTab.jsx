@@ -73,11 +73,20 @@ export default function JobOfferTab({
 
         {/* URL input */}
         <input
-          type="url"
+          type="text"
           placeholder={t('job.urlPlaceholder', "Coller l'URL de l'offre pour l'extraire")}
           className="flex-grow w-full sm:w-auto px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
           value={jobUrl}
-          onChange={(e) => onJobUrlChange(e.target.value)}
+          onChange={(e) => {
+            const val = e.target.value;
+            // Extract URL if the user pasted extra text (e.g. from mobile app share)
+            const urlMatch = val.match(/(https?:\/\/[^\s]+|www\.[^\s]+)/i);
+            if (urlMatch) {
+              onJobUrlChange(urlMatch[0]);
+            } else {
+              onJobUrlChange(val);
+            }
+          }}
         />
 
         {/* Extract button */}

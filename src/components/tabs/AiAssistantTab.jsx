@@ -40,6 +40,7 @@ export default function AiAssistantTab({
   providerLabel,
   onRunAI,
   onExtractLatex,
+  onCompileMultiple,
   onSaveToDocuments,
   onCopy,
   onClear,
@@ -78,9 +79,17 @@ export default function AiAssistantTab({
                 onClick={onExtractLatex}
                 disabled={selectedCount === 0}
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                title={t('ai.compileTooltip', 'Compiler la sélection en PDF et le mettre dans le CV Généré')}
+                title={t('ai.extractTooltip', 'Fusionner la sélection et remplacer le CV Généré')}
               >
-                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.compileSelected', { count: selectedCount, defaultValue: `Extraire CV (${selectedCount})` })}</span>
+                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.extractCv', { count: selectedCount, defaultValue: `Fusionner CV (${selectedCount})` })}</span>
+              </button>
+              <button
+                onClick={onCompileMultiple}
+                disabled={selectedCount === 0}
+                className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-red-700 bg-red-50 border border-red-200 rounded-lg hover:bg-red-100 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                title={t('ai.compileMultipleTooltip', 'Compiler chaque réponse sélectionnée en un PDF distinct')}
+              >
+                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.compileMultiple', { count: selectedCount, defaultValue: `Compiler Séparément (${selectedCount})` })}</span>
               </button>
               <button
                 onClick={onSaveToDocuments}

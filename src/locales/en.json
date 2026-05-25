@@ -48,7 +48,10 @@
       "generatingLatex": "Text extracted! Generating LaTeX with AI...",
       "cvImported": "CV successfully imported and converted to LaTeX!",
       "importError": "Import error: {{error}}",
-      "docsSaved": "{{count}} document(s) saved"
+      "docsSaved": "{{count}} document(s) saved",
+      "compilingMultipleStart": "Compiling {{count}} PDFs...",
+      "compilingMultipleDone": "{{count}} PDF(s) compiled and downloaded!",
+      "compileMultipleError": "Error for \"{{title}}\": {{error}}"
     },
     "ai": {
       "error": "❌ Error: {{error}}",
@@ -90,6 +93,16 @@
       "job": "Job",
       "cv": "CV",
       "docs": "Doc(s)"
+    },
+    "table": {
+      "date": "Date",
+      "jobTitle": "Goal / Target Position",
+      "company": "Company",
+      "offer": "Offer",
+      "cv": "CV",
+      "docs": "Docs",
+      "ats": "ATS",
+      "actions": "Actions"
     }
   },
   "prompts": {
@@ -115,7 +128,11 @@
     "keyDesc": "Choose a provider in the top bar, then enter your API key.",
     "keyLink": "{{provider}} Key ({{note}})",
     "analyzing": "AI is analyzing your profile...",
-    "includeInPdf": "Include in PDF compilation"
+    "includeInPdf": "Include in PDF compilation",
+    "compileMultipleTooltip": "Compile each selected response into a distinct PDF",
+    "compileMultiple": "Compile Separately ({{count}})",
+    "extractCv": "Merge CV ({{count}})",
+    "extractTooltip": "Merge the selection and replace the Generated CV"
   },
   "job": {
     "title": "Job Description",
