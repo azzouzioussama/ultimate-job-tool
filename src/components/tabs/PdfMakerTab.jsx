@@ -35,6 +35,7 @@
 
 
 import { FileOutput, Download, Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Document, Page } from 'react-pdf';
 
 export default function PdfMakerTab({
@@ -51,6 +52,7 @@ export default function PdfMakerTab({
   pdfContainerRef,
   pdfContainerWidth,
 }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col h-auto sm:h-[80vh] min-h-[80vh] bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
 
@@ -58,9 +60,9 @@ export default function PdfMakerTab({
       <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <div>
           <h2 className="text-lg font-semibold flex items-center gap-2">
-            <FileOutput size={20} className="text-slate-500" /> Générateur PDF
+            <FileOutput size={20} className="text-slate-500" /> {t('pdf.title', 'Générateur PDF')}
           </h2>
-          <p className="text-xs text-slate-500 mt-1">Via les serveurs officiels TeXLive.net</p>
+          <p className="text-xs text-slate-500 mt-1">{t('pdf.subtitle', 'Via les serveurs officiels TeXLive.net')}</p>
         </div>
 
         <div className="flex flex-wrap gap-2 w-full sm:w-auto">
@@ -70,14 +72,14 @@ export default function PdfMakerTab({
             onChange={(e) => onPdfSourceChange(e.target.value)}
             className="flex-1 sm:flex-none bg-slate-100 border border-slate-200 rounded-lg px-2 py-1.5 text-xs font-medium text-slate-700 outline-none cursor-pointer"
           >
-            <option value="generated">CV Généré</option>
-            <option value="original">CV Original</option>
+            <option value="generated">{t('pdf.sourceGenerated', 'CV Généré')}</option>
+            <option value="original">{t('pdf.sourceOriginal', 'CV Original')}</option>
           </select>
 
           {/* Download button (only visible after compilation) */}
           {pdfBlobUrl && (
             <button onClick={onDownload} className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 flex items-center gap-2">
-              <Download size={14} /> <span className="hidden sm:inline">Télécharger PDF</span>
+              <Download size={14} /> <span className="hidden sm:inline">{t('pdf.download', 'Télécharger PDF')}</span>
             </button>
           )}
 
@@ -88,7 +90,7 @@ export default function PdfMakerTab({
             className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
           >
             {isPdfLoading ? <Loader2 size={14} className="animate-spin" /> : <FileOutput size={14} />}
-            {pdfBlobUrl ? 'Recompiler' : 'Compiler le PDF'}
+            {pdfBlobUrl ? t('pdf.recompile', 'Recompiler') : t('pdf.compile', 'Compiler le PDF')}
           </button>
         </div>
       </div>
@@ -100,8 +102,8 @@ export default function PdfMakerTab({
         {isPdfLoading && (
           <div className="flex-grow flex flex-col items-center justify-center text-red-600 space-y-3">
             <Loader2 size={40} className="animate-spin" />
-            <p className="text-sm font-medium animate-pulse">Compilation en cours...</p>
-            <p className="text-xs text-slate-500">Cela peut prendre quelques secondes</p>
+            <p className="text-sm font-medium animate-pulse">{t('pdf.compiling', 'Compilation en cours...')}</p>
+            <p className="text-xs text-slate-500">{t('pdf.wait', 'Cela peut prendre quelques secondes')}</p>
           </div>
         )}
 
@@ -109,7 +111,7 @@ export default function PdfMakerTab({
         {pdfError && !isPdfLoading && (
           <div className="flex-grow flex items-center justify-center p-6">
             <div className="max-w-lg bg-red-50 text-red-800 p-5 rounded-xl border border-red-200 text-sm">
-              <strong className="block mb-2 font-bold">❌ Erreur de compilation</strong>
+              <strong className="block mb-2 font-bold">{t('pdf.error', '❌ Erreur de compilation')}</strong>
               <pre className="text-xs whitespace-pre-wrap font-mono mt-2 max-h-48 overflow-y-auto">{pdfError}</pre>
             </div>
           </div>
@@ -126,7 +128,7 @@ export default function PdfMakerTab({
                 file={pdfBlobUrl}
                 onLoadSuccess={onDocumentLoadSuccess}
                 loading={<div className="flex items-center justify-center p-8"><Loader2 size={30} className="animate-spin text-red-500" /></div>}
-                error={<div className="text-red-600 text-sm p-4">Erreur lors du chargement du PDF.</div>}
+                error={<div className="text-red-600 text-sm p-4">{t('pdf.loadingError', 'Erreur lors du chargement du PDF.')}</div>}
               >
                 {numPages && Array.from({ length: numPages }, (_, i) => (
                   <Page
@@ -158,16 +160,16 @@ export default function PdfMakerTab({
             <div className="max-w-md space-y-6">
               <FileOutput size={48} className="text-slate-300 mx-auto" />
               <div>
-                <p className="font-semibold text-slate-700">Compilez votre CV LaTeX en PDF</p>
+                <p className="font-semibold text-slate-700">{t('pdf.emptyTitle', 'Compilez votre CV LaTeX en PDF')}</p>
                 <p className="text-sm text-slate-500 mt-2">
-                  Votre code LaTeX de l'onglet "Mon CV" sera envoyé au compilateur TeXLive. Le PDF s'affichera ici directement.
+                  {t('pdf.emptyDesc', 'Votre code LaTeX de l\'onglet "Mon CV" sera envoyé au compilateur TeXLive. Le PDF s\'affichera ici directement.')}
                 </p>
               </div>
               <button
                 onClick={onCompile}
                 className="w-full py-4 text-base font-bold text-white bg-red-600 rounded-xl hover:bg-red-700 flex items-center justify-center gap-3 shadow-lg shadow-red-200 transition-all active:scale-[0.98]"
               >
-                <FileOutput size={24} /> Compiler le PDF
+                <FileOutput size={24} /> {t('pdf.compile', 'Compiler le PDF')}
               </button>
             </div>
           </div>

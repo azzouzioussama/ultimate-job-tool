@@ -191,5 +191,27 @@ pip install pydantic pydantic-core openai
 **Cause**: The initial SQL used `USING (auth.uid() = user_id)`. `auth.uid()` expects a standard UUID format, but Clerk user IDs are strings (e.g., `user_2Nne...`), which were stored in a `text` column.
 **Fix**: Modified the RLS policies to extract the user ID directly from the Clerk JWT payload as text using `(auth.jwt() ->> 'sub') = user_id`.
 
+## 11. WSL2 Development Server Blank Page
+
+### Problem 1: Vite 8 `allowedHosts` Syntax Change
+**Issue**: When accessing the Vite dev server through a Cloudflare tunnel or any non-localhost hostname, the browser displayed: `Blocked request. This host ("...trycloudflare.com") is not allowed.`
+**Cause**: The `vite.config.js` used `allowedHosts: 'all'`, which was valid syntax in **Vite 5/6** but silently ignored in **Vite 8**. Vite 8 changed the API to accept a boolean `true` instead of the string `'all'`. With the old syntax, Vite fell back to its default behavior of only allowing `localhost` as a valid host header.
+**Fix**: Changed `allowedHosts: 'all'` to `allowedHosts: true` in `vite.config.js`.
+
+### Problem 2: WSL2 Port 5173 Forwarding Broken
+**Issue**: The app showed a completely blank page when accessed via `localhost:5173` from a Windows browser, even though `curl http://localhost:5173` from inside WSL returned the correct HTML. The Chrome console displayed: `Unsafe attempt to load URL http://172.21.151.162:5173/ from frame with URL chrome-error://chromewebdata/`.
+**Cause**: WSL2 runs inside a Hyper-V virtual machine with its own network stack. Windows automatically forwards some ports from `localhost` to the WSL2 VM, but **port 5173 was stuck/broken** in that forwarding layer. This is a known WSL2 bug where certain ports get "claimed" by Windows services (like Hyper-V Reserved Ports) or get stuck in a stale forwarding state. Other ports (e.g., 42917, 3001) forwarded correctly.
+**Fix**: Changed the Vite dev server port from the default `5173` to `3000` in `vite.config.js` (`server.port: 3000`). Vite auto-increments to the next available port if the configured one is occupied (e.g., 3001 if 3000 is in use).
+**Diagnostic tools used**:
+1. `curl -s http://localhost:5173` — confirmed Vite was serving correctly from inside WSL.
+2. `npx serve dist` — confirmed a static server on a random port (42917) was reachable from Windows, proving the issue was port-specific.
+3. `cloudflared tunnel --url http://localhost:5173` — confirmed Vite served correctly through a Cloudflare tunnel, proving the app code was not the issue.
+4. Error overlay injection in `index.html` — added `window.onerror` and `unhandledrejection` handlers to catch and display any silent JS crashes.
+
+### Problem 3: ClerkProvider Missing `publishableKey` Prop
+**Issue**: Potential white screen when Clerk fails to initialize.
+**Cause**: After refactoring `main.jsx` to conditionally load Clerk, the `<ClerkProvider>` was rendered without its required `publishableKey` prop. While Clerk v6 can auto-detect the key from environment variables, explicit passing is more reliable and prevents edge-case initialization failures.
+**Fix**: Added `publishableKey={PUBLISHABLE_KEY}` to the `<ClerkProvider>` component in `main.jsx`.
+
 ---
 *Generated: May 2026*

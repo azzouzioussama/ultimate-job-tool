@@ -22,8 +22,9 @@
  */
 
 
-import { Briefcase, KeyRound } from 'lucide-react';
+import { Briefcase, KeyRound, Globe } from 'lucide-react';
 import { UserButton } from '@clerk/react';
+import { useTranslation } from 'react-i18next';
 import AI_PROVIDERS from '../../constants/aiProviders';
 
 const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -45,8 +46,16 @@ export default function Header({
   onModelChange,
   onApiKeyChange,
 }) {
+  const { t, i18n } = useTranslation();
+
   // Get the human-readable label for the current provider (e.g., "Gemini")
   const providerLabel = AI_PROVIDERS[aiProvider]?.label || aiProvider;
+
+  const handleLanguageChange = (e) => {
+    const newLang = e.target.value;
+    i18n.changeLanguage(newLang);
+    localStorage.setItem('language', newLang);
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-3 sm:h-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
@@ -63,6 +72,19 @@ export default function Header({
 
       {/* ── Provider + Model + API Key Selectors ────────────────────── */}
       <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+
+        {/* Language Dropdown */}
+        <div className="flex items-center gap-1 bg-slate-100 rounded-lg px-2 py-1.5 border border-slate-200">
+          <Globe size={14} className="text-slate-500" />
+          <select
+            value={i18n.language || 'fr'}
+            onChange={handleLanguageChange}
+            className="bg-transparent text-xs font-medium text-slate-700 outline-none cursor-pointer"
+          >
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
 
         {/* Provider Dropdown */}
         <select
@@ -91,7 +113,7 @@ export default function Header({
           <KeyRound size={16} className="text-slate-400" />
           <input
             type="password"
-            placeholder={`Clé ${providerLabel}...`}
+            placeholder={t('header.apiKeyPlaceholder', { provider: providerLabel, defaultValue: `Clé ${providerLabel}...` })}
             className="bg-transparent border-none outline-none text-xs w-full sm:w-32 text-slate-700"
             value={apiKey}
             onChange={onApiKeyChange}

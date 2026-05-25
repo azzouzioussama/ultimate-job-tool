@@ -28,6 +28,7 @@
 
 
 import { FileText, Download, Trash, Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function JobOfferTab({
   jobDescription,
@@ -40,19 +41,20 @@ export default function JobOfferTab({
   isScraping,
   onClear,
 }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
 
       {/* ── Header ────────────────────────────────────────────────────── */}
       <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
         <h2 className="text-lg font-semibold flex items-center gap-2">
-          <FileText size={20} className="text-slate-500" /> Description de l'Offre
+          <FileText size={20} className="text-slate-500" /> {t('job.title', "Description de l'Offre")}
         </h2>
         <button
           onClick={onClear}
           className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600 border border-slate-200 px-2 py-1 rounded-md bg-white"
         >
-          <Trash size={14}/> Effacer
+          <Trash size={14}/> {t('job.clear', 'Effacer')}
         </button>
       </div>
 
@@ -65,14 +67,14 @@ export default function JobOfferTab({
           onChange={(e) => onScraperTypeChange(e.target.value)}
           className="bg-white border border-slate-300 rounded-lg px-2 py-2 text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
         >
-          <option value="jina">Jina AI (Gratuit)</option>
-          <option value="scrapfly">Scrapfly (Clé API)</option>
+          <option value="jina">{t('job.jina', 'Jina AI (Gratuit)')}</option>
+          <option value="scrapfly">{t('job.scrapfly', 'Scrapfly (Clé API)')}</option>
         </select>
 
         {/* URL input */}
         <input
           type="url"
-          placeholder="Coller l'URL de l'offre pour l'extraire"
+          placeholder={t('job.urlPlaceholder', "Coller l'URL de l'offre pour l'extraire")}
           className="flex-grow w-full sm:w-auto px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
           value={jobUrl}
           onChange={(e) => onJobUrlChange(e.target.value)}
@@ -85,14 +87,14 @@ export default function JobOfferTab({
           className="w-full sm:w-auto px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center justify-center gap-2"
         >
           {isScraping ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
-          Extraire
+          {t('job.extract', 'Extraire')}
         </button>
       </div>
 
       {/* ── Job Description Textarea ──────────────────────────────────── */}
       <textarea
         className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar"
-        placeholder="Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet."
+        placeholder={t('job.placeholder', "Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet.")}
         value={jobDescription}
         onChange={(e) => onJobDescriptionChange(e.target.value)}
       />

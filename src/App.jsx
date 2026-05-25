@@ -45,7 +45,7 @@ import 'react-pdf/dist/Page/TextLayer.css';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 import SYNTHETIC_CV from './constants/syntheticCv';
-import PROMPT_TEMPLATES from './constants/promptTemplates';
+import getPromptTemplates from './constants/promptTemplates';
 import AI_PROVIDERS from './constants/aiProviders';
 import CV_TEMPLATES from './constants/cvTemplates';
 
@@ -64,12 +64,14 @@ import { useDatabase } from './hooks/useDatabase';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useToast } from './hooks/useToast';
 import { Show, SignInButton } from '@clerk/react';
+import { useTranslation } from 'react-i18next';
 
 // ── Auth (Clerk) — optional, only active when env var is set ──────────────────
 const isClerkAvailable = !!import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 // Auth gate component: shows login page when signed out, children when signed in
 function AuthGate({ children }) {
+  const { t } = useTranslation();
   if (!isClerkAvailable) return children;
   return (
     <>
@@ -79,13 +81,13 @@ function AuthGate({ children }) {
       <Show when="signed-out">
         <main className="flex-grow flex items-center justify-center p-4">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center max-w-md w-full">
-            <h1 className="text-2xl font-bold text-slate-800 mb-4">Bienvenue !</h1>
+            <h1 className="text-2xl font-bold text-slate-800 mb-4">{t('app.auth.welcomeTitle', 'Bienvenue !')}</h1>
             <p className="text-slate-600 mb-8">
-              Connectez-vous pour gérer vos candidatures, générer des lettres de motivation, et adapter vos CV avec l'IA.
+              {t('app.auth.welcomeDesc', "Connectez-vous pour gérer vos candidatures, générer des lettres de motivation, et adapter vos CV avec l'IA.")}
             </p>
             <SignInButton mode="modal">
               <button className="bg-indigo-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors w-full">
-                Se connecter
+                {t('app.auth.loginButton', 'Se connecter')}
               </button>
             </SignInButton>
           </div>
@@ -119,6 +121,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 
 export default function App() {
+  const { t } = useTranslation();
+  const PROMPT_TEMPLATES = getPromptTemplates(t);
   // ── Database Hook ───────────────────────────────────────────────────────────
   const { createApplication, getApplication, updateApplication, getAllApplications } = useDatabase();
 
@@ -267,16 +271,16 @@ export default function App() {
 
   // Compile the final prompt by replacing placeholders with actual data
   const getCompiledPrompt = useCallback((promptText) => {
-    let final = promptText.replace(/{cv_content}/g, cvOriginal || '[CV MANQUANT]');
-    let jobContent = jobDescription || '[OFFRE MANQUANTE]';
+    let final = promptText.replace(/{cv_content}/g, cvOriginal || t('app.prompts.missingCv', '[CV MANQUANT]'));
+    let jobContent = jobDescription || t('app.prompts.missingJob', '[OFFRE MANQUANTE]');
 
     // If the user pasted a raw URL instead of text, add an instruction for the AI
     if (/^https?:\/\/\S+$/.test(jobContent.trim())) {
-      jobContent += "\n\n(IMPORTANT : La description de poste ci-dessus est une URL. Utilise tes outils de navigation web pour visiter ce lien et lire le contenu de l'offre d'emploi avant de générer ta réponse. Si tu ne peux pas naviguer, demande à l'utilisateur de fournir le texte.)";
+      jobContent += "\n\n" + t('app.prompts.urlInstruction', "(IMPORTANT : La description de poste ci-dessus est une URL. Utilise tes outils de navigation web pour visiter ce lien et lire le contenu de l'offre d'emploi avant de générer ta réponse. Si tu ne peux pas naviguer, demande à l'utilisateur de fournir le texte.)");
     }
 
     return final.replace(/{job_description}/g, jobContent);
-  }, [cvOriginal, jobDescription]);
+  }, [cvOriginal, jobDescription, t]);
 
   // Measure the PDF container width for responsive page rendering (mobile)
   useEffect(() => {
@@ -307,9 +311,9 @@ export default function App() {
     textArea.select();
     try {
       document.execCommand('copy');
-      showToast('Copié dans le presse-papiers !');
+      showToast(t('app.toast.copied', 'Copié dans le presse-papiers !'));
     } catch {
-      showToast('Échec de la copie.');
+      showToast(t('app.toast.copyFailed', 'Échec de la copie.'));
     }
     document.body.removeChild(textArea);
   };
@@ -323,7 +327,7 @@ export default function App() {
     a.download = `prompt_${id}_${new Date().toISOString().slice(0,10)}.txt`;
     a.click();
     URL.revokeObjectURL(url);
-    showToast('Fichier téléchargé !');
+    showToast(t('app.toast.downloaded', 'Fichier téléchargé !'));
   };
 
   // ── Reset Everything ────────────────────────────────────────────────────────
@@ -334,7 +338,7 @@ export default function App() {
     setCustomPrompts({ 1: PROMPT_TEMPLATES[0].content });
     setJobDescription('');
     setAiResponses([]);
-    showToast('Tout réinitialisé aux valeurs par défaut.');
+    showToast(t('app.toast.reset', 'Tout réinitialisé aux valeurs par défaut.'));
   };
 
   // ── AI Provider/Model/Key Management ────────────────────────────────────────
@@ -370,7 +374,7 @@ export default function App() {
   // ── Run AI Generation ───────────────────────────────────────────────────────
   const handleRunAI = async (retryCount = 0) => {
     if (!apiKey) {
-      showToast(`Veuillez entrer une clé API ${providerLabel}.`);
+      showToast(t('app.toast.apiKeyRequired', { provider: providerLabel, defaultValue: `Veuillez entrer une clé API ${providerLabel}.` }));
       setActiveTab('ai');
       return;
     }
@@ -410,7 +414,7 @@ export default function App() {
             id: Date.now() + Math.random(),
             templateId: selectedTemplateIds[index],
             title: PROMPT_TEMPLATES.find(t => t.id === selectedTemplateIds[index])?.title,
-            content: `❌ Erreur: ${res.reason.message}`,
+            content: t('app.ai.error', { error: res.reason.message, defaultValue: `❌ Erreur: ${res.reason.message}` }),
             isSelectedForPdf: false
           });
         }
@@ -420,14 +424,14 @@ export default function App() {
     } catch (error) {
       // Auto-retry once on network/abort errors
       if ((error.name === 'AbortError' || error.name === 'TypeError') && retryCount < 1) {
-        showToast('Connexion interrompue, nouvelle tentative...');
+        showToast(t('app.toast.retry', 'Connexion interrompue, nouvelle tentative...'));
         clearTimeout(timeoutId);
         return handleRunAI(retryCount + 1);
       }
       const msg = error.name === 'AbortError'
-        ? 'La requête a expiré (timeout). Vérifiez votre connexion et réessayez.'
+        ? t('app.toast.timeout', 'La requête a expiré (timeout). Vérifiez votre connexion et réessayez.')
         : error.message;
-      setAiResponses([{ id: Date.now(), title: 'Erreur', content: `❌ Erreur: ${msg}\n\nVérifiez que votre clé API ${providerLabel} est valide.`, isSelectedForPdf: false }]);
+      setAiResponses([{ id: Date.now(), title: t('app.ai.errorTitle', 'Erreur'), content: t('app.ai.apiError', { msg, provider: providerLabel, defaultValue: `❌ Erreur: ${msg}\n\nVérifiez que votre clé API ${providerLabel} est valide.` }), isSelectedForPdf: false }]);
     } finally {
       clearTimeout(timeoutId);
       setIsAiLoading(false);
@@ -438,7 +442,7 @@ export default function App() {
   const handleExtractLatex = () => {
     const selectedTexts = aiResponses.filter(r => r.isSelectedForPdf).map(r => r.content);
     if (selectedTexts.length === 0) {
-      showToast('Aucune réponse sélectionnée.');
+      showToast(t('app.toast.noResponseSelected', 'Aucune réponse sélectionnée.'));
       return;
     }
     
@@ -446,17 +450,17 @@ export default function App() {
     const extracted = mergeLatexResponses(cvOriginal, selectedTexts);
     if (extracted) {
       setCvGenerated(extracted);
-      showToast('CV Généré extrait et sauvegardé (Fusion réussie) !');
+      showToast(t('app.toast.cvMerged', 'CV Généré extrait et sauvegardé (Fusion réussie) !'));
       setActiveTab('cv');
     } else {
       // Fallback if merge fails (e.g., base CV has no \begin{document})
       const fallback = extractLatexFromResponse(selectedTexts[0]);
       if (fallback) {
         setCvGenerated(fallback);
-        showToast('Premier CV extrait (Fusion impossible, pas de base document) !');
+        showToast(t('app.toast.cvExtracted', 'Premier CV extrait (Fusion impossible, pas de base document) !'));
         setActiveTab('cv');
       } else {
-        showToast('Aucun code LaTeX complet trouvé ou fusion impossible.');
+        showToast(t('app.toast.latexNotFound', 'Aucun code LaTeX complet trouvé ou fusion impossible.'));
       }
     }
   };
@@ -475,19 +479,20 @@ export default function App() {
         let key = storage.getScrapflyKey();
         if (!key) {
           // TODO(security): Replace browser prompt() with a React modal component
-          key = window.prompt("Entrez votre clé API Scrapfly (commence par 'scp-live-...') :");
-          if (!key) throw new Error("Clé Scrapfly requise pour l'extraction.");
+          key = window.prompt(t('app.prompt.scrapflyKey', "Entrez votre clé API Scrapfly (commence par 'scp-live-...') :"));
+          if (!key) throw new Error(t('app.error.scrapflyRequired', "Clé Scrapfly requise pour l'extraction."));
           storage.saveScrapflyKey(key);
         }
         result = await scrapeWithScrapfly(jobUrl, key);
       }
 
       setJobDescription(result);
-      showToast(`Offre extraite avec succès via ${scraperType === 'jina' ? 'Jina AI' : 'Scrapfly'} !`);
+      const providerName = scraperType === 'jina' ? 'Jina AI' : 'Scrapfly';
+      showToast(t('app.toast.offerExtracted', { provider: providerName, defaultValue: `Offre extraite avec succès via ${providerName} !` }));
       setJobUrl('');
 
     } catch (error) {
-      showToast('Erreur: ' + error.message);
+      showToast(t('app.toast.error', 'Erreur: ') + error.message);
     } finally {
       setIsScraping(false);
     }
@@ -508,10 +513,10 @@ export default function App() {
       const blob = await compilePdfFromLatex(contentToCompile);
       const url = URL.createObjectURL(blob);
       setPdfBlobUrl(url);
-      showToast('PDF compilé avec succès !');
+      showToast(t('app.toast.pdfCompiled', 'PDF compilé avec succès !'));
     } catch (error) {
       setPdfError(error.message);
-      showToast('Erreur de compilation PDF.');
+      showToast(t('app.toast.pdfError', 'Erreur de compilation PDF.'));
     } finally {
       setIsPdfLoading(false);
     }
@@ -520,17 +525,17 @@ export default function App() {
   const handleDownloadPDF = () => {
     if (!pdfBlobUrl) return;
     downloadBlobAsPdf(pdfBlobUrl);
-    showToast('PDF téléchargé !');
+    showToast(t('app.toast.pdfDownloaded', 'PDF téléchargé !'));
   };
 
   // ── ATS Analysis ────────────────────────────────────────────────────────────
   const handleRunATS = async () => {
     if (!apiKey) {
-      showToast(`Veuillez configurer une clé API ${providerLabel}.`);
+      showToast(t('app.toast.apiKeyRequired', { provider: providerLabel, defaultValue: `Veuillez configurer une clé API ${providerLabel}.` }));
       return;
     }
     if (!jobDescription.trim() || (!cvGenerated.trim() && !cvOriginal.trim())) {
-      showToast("Il faut une offre d'emploi et un CV pour faire le test ATS.");
+      showToast(t('app.toast.atsMissingData', "Il faut une offre d'emploi et un CV pour faire le test ATS."));
       return;
     }
 
@@ -544,10 +549,10 @@ export default function App() {
       const cvToTest = cvGenerated || cvOriginal;
       const result = await runAtsAnalysis(callCurrentAI, jobDescription, cvToTest, controller.signal);
       setAtsResult(result);
-      showToast('Analyse ATS terminée !');
+      showToast(t('app.toast.atsSuccess', 'Analyse ATS terminée !'));
     } catch (error) {
       console.error(error);
-      showToast("Erreur lors de l'analyse ATS. Le format JSON retourné est invalide ou la requête a échoué.");
+      showToast(t('app.toast.atsError', "Erreur lors de l'analyse ATS. Le format JSON retourné est invalide ou la requête a échoué."));
     } finally {
       clearTimeout(timeoutId);
       setIsAtsLoading(false);
@@ -560,18 +565,18 @@ export default function App() {
     if (!file) return;
 
     if (!apiKey) {
-      showToast("Veuillez configurer votre clé API IA dans l'en-tête d'abord.");
+      showToast(t('app.toast.apiRequiredFirst', "Veuillez configurer votre clé API IA dans l'en-tête d'abord."));
       return;
     }
 
     setIsUploadingCv(true);
-    showToast('Lecture du fichier en cours...');
+    showToast(t('app.toast.readingFile', 'Lecture du fichier en cours...'));
 
     try {
       // Step 1: Extract raw text from the file (locally, no server)
       const extractedText = await extractTextFromFile(file);
 
-      showToast("Texte extrait ! Génération LaTeX en cours par l'IA...");
+      showToast(t('app.toast.generatingLatex', "Texte extrait ! Génération LaTeX en cours par l'IA..."));
 
       // Step 2: Send extracted text to AI for LaTeX conversion
       const selectedTemplate = CV_TEMPLATES.find(t => t.id === selectedCvTemplateId) || CV_TEMPLATES[0];
@@ -583,13 +588,13 @@ export default function App() {
       const cleanLatex = extractLatexFromResponse(reply);
       if (cleanLatex) {
         setCvOriginal(cleanLatex);
-        showToast('CV importé et converti avec succès en LaTeX !');
+        showToast(t('app.toast.cvImported', 'CV importé et converti avec succès en LaTeX !'));
       } else {
-        throw new Error("L'IA n'a pas renvoyé de code LaTeX valide.");
+        throw new Error(t('app.error.invalidLatex', "L'IA n'a pas renvoyé de code LaTeX valide."));
       }
     } catch (err) {
       console.error(err);
-      showToast(`Erreur d'import : ${err.message}`);
+      showToast(t('app.toast.importError', { error: err.message, defaultValue: `Erreur d'import : ${err.message}` }));
     } finally {
       setIsUploadingCv(false);
       event.target.value = '';

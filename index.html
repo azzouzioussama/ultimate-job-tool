@@ -7,6 +7,15 @@
     <title>ultimate-job-tool</title>
   </head>
   <body>
+    <!-- ERROR CATCHER FOR BLANK SCREENS -->
+    <script>
+      window.onerror = function(message, source, lineno, colno, error) {
+        document.body.innerHTML += '<div style="color:red; background:white; padding:20px; z-index:9999; position:absolute; top:0; left:0; width:100%;"><h3>Crash Error:</h3><pre>' + message + '\n' + (error && error.stack ? error.stack : '') + '</pre></div>';
+      };
+      window.addEventListener('unhandledrejection', function(event) {
+        document.body.innerHTML += '<div style="color:red; background:white; padding:20px; z-index:9999; position:absolute; top:0; left:0; width:100%;"><h3>Unhandled Promise Rejection:</h3><pre>' + (event.reason && event.reason.stack ? event.reason.stack : event.reason) + '</pre></div>';
+      });
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

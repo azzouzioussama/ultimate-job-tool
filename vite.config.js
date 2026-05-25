@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    allowedHosts: 'all',
+    port: 3000,
+    allowedHosts: true,
     proxy: {
       '/api/latex': {
         target: 'https://texlive.net',

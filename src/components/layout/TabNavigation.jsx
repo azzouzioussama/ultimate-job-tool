@@ -21,21 +21,23 @@
 
 
 import { Settings, Bot, FileText, User, FileOutput, Activity, LayoutDashboard } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // ── Tab Definitions ──────────────────────────────────────────────────────────
 // Each tab has an id (used for logic), an icon (from lucide-react),
 // and a label (displayed in the UI).
 const tabs = [
-  { id: 'dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { id: 'templates', icon: Settings,   label: 'Prompts' },
-  { id: 'ai',        icon: Bot,        label: 'Assistant IA' },
-  { id: 'job',       icon: FileText,   label: 'Offre' },
-  { id: 'cv',        icon: User,       label: 'Mon CV' },
-  { id: 'pdf',       icon: FileOutput, label: 'PDF Maker' },
-  { id: 'ats',       icon: Activity,   label: 'Test ATS' },
+  { id: 'dashboard', icon: LayoutDashboard, translationKey: 'tabs.dashboard', defaultLabel: 'Dashboard' },
+  { id: 'templates', icon: Settings,   translationKey: 'tabs.prompts', defaultLabel: 'Prompts' },
+  { id: 'ai',        icon: Bot,        translationKey: 'tabs.aiAssistant', defaultLabel: 'Assistant IA' },
+  { id: 'job',       icon: FileText,   translationKey: 'tabs.jobOffer', defaultLabel: 'Offre' },
+  { id: 'cv',        icon: User,       translationKey: 'tabs.myCv', defaultLabel: 'Mon CV' },
+  { id: 'pdf',       icon: FileOutput, translationKey: 'tabs.pdfMaker', defaultLabel: 'PDF Maker' },
+  { id: 'ats',       icon: Activity,   translationKey: 'tabs.atsTest', defaultLabel: 'Test ATS' },
 ];
 
 export default function TabNavigation({ activeTab, onTabChange }) {
+  const { t } = useTranslation();
   return (
     <div className="max-w-5xl mx-auto px-4 border-t border-slate-100 bg-white flex overflow-x-auto custom-scrollbar">
       {tabs.map(tab => (
@@ -48,7 +50,7 @@ export default function TabNavigation({ activeTab, onTabChange }) {
               : 'border-transparent text-slate-500 hover:text-slate-700'
           }`}
         >
-          <tab.icon size={16} /> <span>{tab.label}</span>
+          <tab.icon size={16} /> <span>{t(tab.translationKey, tab.defaultLabel)}</span>
         </button>
       ))}
     </div>

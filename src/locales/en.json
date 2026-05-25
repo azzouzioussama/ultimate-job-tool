@@ -1,0 +1,212 @@
+{
+  "header": {
+    "apiKeyPlaceholder": "{{provider}} API Key..."
+  },
+  "tabs": {
+    "dashboard": "Dashboard",
+    "prompts": "Prompts",
+    "aiAssistant": "AI Assistant",
+    "jobOffer": "Job Offer",
+    "myCv": "My Resume",
+    "pdfMaker": "PDF Maker",
+    "atsTest": "ATS Test"
+  },
+  "app": {
+    "auth": {
+      "welcomeTitle": "Welcome!",
+      "welcomeDesc": "Log in to manage your applications, generate cover letters, and adapt your resumes with AI.",
+      "loginButton": "Log in"
+    },
+    "prompts": {
+      "missingCv": "[MISSING CV]",
+      "missingJob": "[MISSING JOB OFFER]",
+      "urlInstruction": "(IMPORTANT: The job description above is a URL. Use your web browsing tools to visit this link and read the job offer content before generating your response. If you cannot browse, ask the user to provide the text.)"
+    },
+    "toast": {
+      "copied": "Copied to clipboard!",
+      "copyFailed": "Copy failed.",
+      "downloaded": "File downloaded!",
+      "reset": "Everything reset to defaults.",
+      "apiKeyRequired": "Please enter a {{provider}} API key.",
+      "retry": "Connection interrupted, retrying...",
+      "timeout": "Request timed out. Check your connection and try again.",
+      "noResponseSelected": "No response selected.",
+      "cvMerged": "Generated CV extracted and saved (Merge successful)!",
+      "cvExtracted": "First CV extracted (Merge impossible, no document base)!",
+      "latexNotFound": "No complete LaTeX code found or merge impossible.",
+      "offerExtracted": "Offer successfully extracted via {{provider}}!",
+      "error": "Error: ",
+      "pdfCompiled": "PDF successfully compiled!",
+      "pdfError": "PDF compilation error.",
+      "pdfDownloaded": "PDF downloaded!",
+      "atsMissingData": "A job offer and a resume are required for the ATS test.",
+      "atsSuccess": "ATS analysis complete!",
+      "atsError": "Error during ATS analysis. The returned JSON format is invalid or the request failed.",
+      "apiRequiredFirst": "Please configure your AI API key in the header first.",
+      "readingFile": "Reading file...",
+      "generatingLatex": "Text extracted! Generating LaTeX with AI...",
+      "cvImported": "CV successfully imported and converted to LaTeX!",
+      "importError": "Import error: {{error}}"
+    },
+    "ai": {
+      "error": "❌ Error: {{error}}",
+      "errorTitle": "Error",
+      "apiError": "❌ Error: {{msg}}\n\nCheck that your {{provider}} API key is valid."
+    },
+    "prompt": {
+      "scrapflyKey": "Enter your Scrapfly API key (starts with 'scp-live-...') :"
+    },
+    "error": {
+      "scrapflyRequired": "Scrapfly key required for extraction.",
+      "invalidLatex": "The AI did not return valid LaTeX code."
+    }
+  },
+  "dashboard": {
+    "confirmDelete": "Are you sure you want to delete this application?",
+    "unknown": "Unknown",
+    "title": "My Applications",
+    "subtitle": "Manage your different versions of CVs and job offers (Local storage).",
+    "newApp": "New Application",
+    "form": {
+      "company": "Company",
+      "companyPlaceholder": "E.g.: Google",
+      "jobTitle": "Target Position",
+      "jobTitlePlaceholder": "E.g.: Frontend Developer",
+      "cancel": "Cancel",
+      "create": "Create"
+    },
+    "loading": "Loading...",
+    "emptyTitle": "No application",
+    "emptyDesc": "Create your first application to start adapting your resume.",
+    "card": {
+      "delete": "Delete",
+      "modified": "Modified on {{date}}",
+      "open": "Open"
+    }
+  },
+  "prompts": {
+    "title": "Choose a strategy",
+    "editorTitle": "Prompt Editor",
+    "resetAll": "Reset all",
+    "reset": "Reset",
+    "empty": "Please select at least one strategy.",
+    "download": "Download",
+    "copy": "Copy",
+    "copyAll": "Copy All (External)",
+    "generate": "Generate ({{count}}) with AI"
+  },
+  "ai": {
+    "title": "AI Response ({{provider}})",
+    "rerun": "Rerun",
+    "compileSelected": "Compile Selection ({{count}})",
+    "compileTooltip": "Compile selection to PDF and place in Generated CV",
+    "copyAll": "Copy All",
+    "clearAll": "Clear All",
+    "keyRequired": "API Key Required",
+    "keyDesc": "Choose a provider in the top bar, then enter your API key.",
+    "keyLink": "{{provider}} Key ({{note}})",
+    "analyzing": "AI is analyzing your profile...",
+    "includeInPdf": "Include in PDF compilation"
+  },
+  "job": {
+    "title": "Job Description",
+    "clear": "Clear",
+    "jina": "Jina AI (Free)",
+    "scrapfly": "Scrapfly (API Key)",
+    "urlPlaceholder": "Paste the job offer URL to extract it",
+    "extract": "Extract",
+    "placeholder": "The job offer text will appear here. You can also paste it manually, or paste the job offer URL directly if using an AI with internet access."
+  },
+  "cv": {
+    "templateTitle": "Choose your base template",
+    "templateDesc": "This template will be used to structure your CV when importing your PDF/Word file.",
+    "originalTitle": "Original CV (Source)",
+    "importBtn": "Import (PDF/Word)",
+    "importing": "Importing...",
+    "resetFake": "Restore Fake CV",
+    "generatedTitle": "Generated CV (Adapted)",
+    "clear": "Clear",
+    "generatedPlaceholder": "The LaTeX code generated by the AI will be displayed here. Use the 'Extract CV' button in the AI Assistant tab."
+  },
+  "pdf": {
+    "title": "PDF Generator",
+    "subtitle": "Via official TeXLive.net servers",
+    "sourceGenerated": "Generated CV",
+    "sourceOriginal": "Original CV",
+    "download": "Download PDF",
+    "compile": "Compile PDF",
+    "recompile": "Recompile",
+    "compiling": "Compilation in progress...",
+    "wait": "This may take a few seconds",
+    "error": "❌ Compilation error",
+    "loadingError": "Error loading the PDF.",
+    "emptyTitle": "Compile your LaTeX CV to PDF",
+    "emptyDesc": "Your LaTeX code from the 'My CV' tab will be sent to the TeXLive compiler. The PDF will be displayed here directly."
+  },
+  "ats": {
+    "title": "ATS Tester",
+    "subtitle": "Evaluate the compatibility between your CV and the job offer.",
+    "run": "Run ATS Analysis",
+    "analyzing": "AI is analyzing the keywords...",
+    "scoreTitle": "Compatibility Score",
+    "scoreDesc": "A score above 80% maximizes your chances of passing recruiter automatic filters (ATS).",
+    "missingTitle": "Missing Keywords",
+    "missingGood": "Excellent! Your CV contains all the essential keywords requested in the offer.",
+    "adviceTitle": "Improvement Advice",
+    "missingJob": "You are missing a job offer. Go to the 'Job Offer' tab.",
+    "missingCv": "You are missing a CV. Go to the 'My CV' tab.",
+    "clickToRun": "Click on 'Run ATS Analysis' to evaluate your CV against the job offer."
+  },
+  "templates": {
+    "1": {
+      "title": "1. CV Redesign (LaTeX)",
+      "desc": "Adapts your LaTeX CV to the exact keywords of the job offer.",
+      "content": "Act as an expert IT recruiter. Analyze the job description and my LaTeX CV below.\nTasks:\n1. Identify the top 3 most sought-after technical skills.\n2. Rewrite my ENTIRE CV in LaTeX. Adapt the bullet points and summary to exactly reflect the keywords of the offer, while keeping the LaTeX code intact.\n3. Tell me which experience I should highlight in the interview.\n\nATTENTION - STRICT RULES FOR LATEX CODE:\n- You MUST ABSOLUTELY escape the '&' character by writing it '\\&' in the text. Never leave an '&' alone.\n- Make sure to properly close all curly braces '{ }' and never confuse them with brackets '[ ]'.\n- Do not modify the structure of the preamble or the environment tags.\n\n--- MY LATEX CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "2": {
+      "title": "2. Cover Letter (French)",
+      "desc": "Generates a short and impactful cover letter in French.",
+      "content": "Agis comme un expert en recrutement. Rédige une lettre de motivation courte (max 150 mots, 3 paragraphes) en français pour ce poste.\nContraintes :\n- Paragraphe 1 : Intérêt pour le rôle.\n- Paragraphe 2 : Relie 2 de mes forces (issues du CV) aux besoins du poste.\n- Paragraphe 3 : Disponibilité et appel à l'action.\nGarde un ton professionnel mais dynamique.\n\n--- MON CV ---\n{cv_content}\n\n--- DESCRIPTION DU POSTE ---\n{job_description}\n\nIMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide."
+    },
+    "3": {
+      "title": "3. Cover Letter (English)",
+      "desc": "Generates a professional cover letter in English.",
+      "content": "Act as an expert technical recruiter. Write a concise cover letter (max 150 words) in English for this position.\nConnect my background from the provided CV to the exact needs of the job description. Keep the tone highly professional, direct, and confident.\n\n--- MY CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide."
+    },
+    "4": {
+      "title": "4. Interview Preparation (Q&A)",
+      "desc": "Generates the 10 most likely questions for this position with STAR answers.",
+      "content": "Based on the job description and my CV, generate the 10 most likely interview questions (technical and behavioral) I might be asked.\nFor each question, write a suggested answer using the STAR method (Situation, Task, Action, Result), drawing from my experiences.\n\n--- MY CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "5": {
+      "title": "5. Severe CV Critique",
+      "desc": "Critical analysis to find the flaws in your application.",
+      "content": "Act as a very demanding IT recruiter. Analyze my CV against the job offer.\n1. Give me a matching score out of 100.\n2. Ruthlessly list the 3 biggest weaknesses or gaps in my CV for this specific position.\n3. Give me a strategy to overcome these weaknesses during the interview.\n\n--- MY CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "6": {
+      "title": "6. LinkedIn Optimization",
+      "desc": "Creates an attractive LinkedIn 'About' section to attract this type of recruiter.",
+      "content": "I want to optimize my LinkedIn profile to attract recruiters who post this type of job offer.\nWrite a powerful LinkedIn \"About\" section in the first person, using my CV, optimized with the keywords from the job offer. Include a \"Call to Action\" at the end.\n\n--- MY CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "7": {
+      "title": "7. Presentation Pitch (30 sec)",
+      "desc": "Prepares your answer to the 'Tell me about yourself' question.",
+      "content": "Prepare a 30 to 45-second \"Elevator Pitch\" for me to answer the famous interview question: \"Tell me about yourself\". \nIt must be natural, in English, and immediately link my background (my CV) to the company's main need (the job offer).\n\n--- MY CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "8": {
+      "title": "8. Missing Skills Analysis",
+      "desc": "Identifies the technologies you need to review before the interview.",
+      "content": "Analyze the job requirements against my CV.\nMake a list of the technologies, tools, or skills mentioned in the offer that I do NOT clearly have in my CV.\nFor each gap, propose a 2-hour crash-course action plan (key concepts to google, tutorials to find) so that I can talk about it intelligently in an interview.\n\n--- MY CV ---\n{cv_content}\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "9": {
+      "title": "9. Thank You Email",
+      "desc": "Writes a powerful post-interview email.",
+      "content": "Write a short and professional post-interview thank you email.\nThe email should thank the recruiter for their time, reaffirm my enthusiasm for this specific position, and briefly remind them in one sentence why my core skill makes me a great fit.\n\n--- JOB DESCRIPTION ---\n{job_description}\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    },
+    "10": {
+      "title": "10. Custom Prompt (Free)",
+      "desc": "Write your own request to the AI.",
+      "content": "(Write your instructions here. Use {cv_content} and {job_description} to inject your data automatically).\n\nIMPORTANT: Please provide your response strictly in valid LaTeX code."
+    }
+  }
+}

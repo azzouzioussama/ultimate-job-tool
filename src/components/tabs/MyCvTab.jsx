@@ -27,6 +27,7 @@
 
 
 import { User, Sparkles, Upload, Loader2, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import CV_TEMPLATES from '../../constants/cvTemplates';
 
 export default function MyCvTab({
@@ -40,14 +41,15 @@ export default function MyCvTab({
   selectedCvTemplateId,
   onSelectedCvTemplateIdChange,
 }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-6">
       {/* ── Top: Template Selector ──────────────────────────────────────── */}
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
         <div className="mb-4">
-          <h2 className="text-lg font-semibold text-slate-800">Choisissez votre modèle de base</h2>
+          <h2 className="text-lg font-semibold text-slate-800">{t('cv.templateTitle', 'Choisissez votre modèle de base')}</h2>
           <p className="text-sm text-slate-500">
-            Ce modèle sera utilisé pour structurer votre CV lors de l'importation de votre fichier PDF/Word.
+            {t('cv.templateDesc', "Ce modèle sera utilisé pour structurer votre CV lors de l'importation de votre fichier PDF/Word.")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -90,12 +92,12 @@ export default function MyCvTab({
           <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center flex-wrap gap-2">
             <div className="flex items-center gap-3">
               <h2 className="text-sm font-semibold flex items-center gap-2">
-                <User size={16} className="text-slate-500" /> CV Original (Source)
+                <User size={16} className="text-slate-500" /> {t('cv.originalTitle', 'CV Original (Source)')}
               </h2>
               {/* File upload button */}
               <label className="cursor-pointer text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-2 py-1.5 rounded-md flex items-center gap-1.5 transition-colors">
                 {isUploadingCv ? <Loader2 size={12} className="animate-spin" /> : <Upload size={12} />}
-                {isUploadingCv ? 'Import...' : 'Importer (PDF/Word)'}
+                {isUploadingCv ? t('cv.importing', 'Import...') : t('cv.importBtn', 'Importer (PDF/Word)')}
                 <input
                   type="file"
                   className="hidden"
@@ -109,7 +111,7 @@ export default function MyCvTab({
               onClick={onResetToSynthetic}
               className="text-xs text-slate-500 hover:text-red-600 underline"
             >
-              Rétablir CV Fake
+              {t('cv.resetFake', 'Rétablir CV Fake')}
             </button>
           </div>
           {/* Dark-themed LaTeX editor */}
@@ -124,19 +126,19 @@ export default function MyCvTab({
         <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
           <div className="p-4 border-b border-indigo-100 bg-indigo-50/50 flex justify-between items-center">
             <h2 className="text-sm font-semibold flex items-center gap-2 text-indigo-900">
-              <Sparkles size={16} className="text-indigo-600" /> CV Généré (Adapté)
+              <Sparkles size={16} className="text-indigo-600" /> {t('cv.generatedTitle', 'CV Généré (Adapté)')}
             </h2>
             <button
               onClick={() => onCvGeneratedChange('')}
               className="text-xs text-slate-500 hover:text-red-600 underline"
             >
-              Vider
+              {t('cv.clear', 'Vider')}
             </button>
           </div>
           {/* Indigo-themed LaTeX editor */}
           <textarea
             className="flex-grow w-full resize-none p-4 text-xs font-mono outline-none custom-scrollbar bg-indigo-950 text-indigo-100 rounded-b-2xl"
-            placeholder="Le code LaTeX généré par l'IA sera affiché ici. Utilisez le bouton 'Extraire CV' dans l'onglet Assistant IA."
+            placeholder={t('cv.generatedPlaceholder', "Le code LaTeX généré par l'IA sera affiché ici. Utilisez le bouton 'Extraire CV' dans l'onglet Assistant IA.")}
             value={cvGenerated}
             onChange={(e) => onCvGeneratedChange(e.target.value)}
           />

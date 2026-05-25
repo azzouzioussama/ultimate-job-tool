@@ -29,6 +29,7 @@
 
 
 import { Bot, Sparkles, FileText, Copy, Trash, KeyRound, ExternalLink, Loader2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import AI_PROVIDERS from '../../constants/aiProviders';
 
 export default function AiAssistantTab({
@@ -42,6 +43,7 @@ export default function AiAssistantTab({
   onCopy,
   onClear,
 }) {
+  const { t } = useTranslation();
   const toggleSelection = (id) => {
     setAiResponses(prev => prev.map(r => r.id === id ? { ...r, isSelectedForPdf: !r.isSelectedForPdf } : r));
   };
@@ -55,7 +57,7 @@ export default function AiAssistantTab({
       <div className="p-4 border-b border-slate-100 bg-indigo-50/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <h2 className="text-lg font-semibold flex items-center gap-2 text-indigo-900">
           <Bot size={20} className="text-indigo-600" />
-          <span className="truncate">Réponse de l'IA ({providerLabel})</span>
+          <span className="truncate">{t('ai.title', { provider: providerLabel, defaultValue: `Réponse de l'IA (${providerLabel})` })}</span>
         </h2>
 
         <div className="flex flex-wrap gap-2 w-full sm:w-auto">
@@ -65,7 +67,7 @@ export default function AiAssistantTab({
             disabled={isAiLoading}
             className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50 flex items-center gap-2"
           >
-            {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} Relancer
+            {isAiLoading ? <Loader2 size={14} className="animate-spin" /> : <Sparkles size={14} />} {t('ai.rerun', 'Relancer')}
           </button>
 
           {/* Action buttons (only visible when there are responses) */}
@@ -75,21 +77,21 @@ export default function AiAssistantTab({
                 onClick={onExtractLatex}
                 disabled={selectedCount === 0}
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                title="Compiler la sélection en PDF et le mettre dans le CV Généré"
+                title={t('ai.compileTooltip', 'Compiler la sélection en PDF et le mettre dans le CV Généré')}
               >
-                <FileText size={14} /> <span className="hidden sm:inline">Compiler Sélection ({selectedCount})</span>
+                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.compileSelected', { count: selectedCount, defaultValue: `Compiler Sélection (${selectedCount})` })}</span>
               </button>
               <button
                 onClick={() => onCopy(aiResponses.map(r => r.content).join('\n\n---\n\n'))}
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 flex items-center gap-2"
               >
-                <Copy size={14} /> <span className="hidden sm:inline">Tout Copier</span>
+                <Copy size={14} /> <span className="hidden sm:inline">{t('ai.copyAll', 'Tout Copier')}</span>
               </button>
               <button
                 onClick={onClear}
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-red-50 hover:text-red-600 flex items-center gap-2 transition-colors"
               >
-                <Trash size={14} /> <span className="hidden sm:inline">Tout Effacer</span>
+                <Trash size={14} /> <span className="hidden sm:inline">{t('ai.clearAll', 'Tout Effacer')}</span>
               </button>
             </>
           )}
@@ -104,12 +106,12 @@ export default function AiAssistantTab({
           <div className="h-full flex flex-col items-center justify-center text-center text-slate-500 space-y-4">
             <KeyRound size={48} className="text-slate-300" />
             <div>
-              <p className="font-semibold text-slate-700">Clé API Requise</p>
-              <p className="text-sm max-w-sm mt-1">Choisissez un fournisseur dans la barre du haut, puis entrez votre clé API.</p>
+              <p className="font-semibold text-slate-700">{t('ai.keyRequired', 'Clé API Requise')}</p>
+              <p className="text-sm max-w-sm mt-1">{t('ai.keyDesc', 'Choisissez un fournisseur dans la barre du haut, puis entrez votre clé API.')}</p>
               <div className="flex flex-col gap-2 mt-4">
                 {Object.entries(AI_PROVIDERS).map(([key, p]) => (
                   <a key={key} href={p.keyLink} target="_blank" rel="noreferrer" className="text-xs text-indigo-600 hover:underline flex items-center justify-center gap-1">
-                    Clé {p.label} ({p.keyNote}) <ExternalLink size={12}/>
+                    {t('ai.keyLink', { provider: p.label, note: p.keyNote, defaultValue: `Clé ${p.label} (${p.keyNote})` })} <ExternalLink size={12}/>
                   </a>
                 ))}
               </div>
@@ -121,7 +123,7 @@ export default function AiAssistantTab({
         {isAiLoading && (
           <div className="h-full flex flex-col items-center justify-center text-indigo-600 space-y-3">
             <Loader2 size={40} className="animate-spin" />
-            <p className="text-sm font-medium animate-pulse">L'IA analyse votre profil...</p>
+            <p className="text-sm font-medium animate-pulse">{t('ai.analyzing', "L'IA analyse votre profil...")}</p>
           </div>
         )}
 
@@ -137,7 +139,7 @@ export default function AiAssistantTab({
                       checked={resp.isSelectedForPdf}
                       onChange={() => toggleSelection(resp.id)}
                       className="h-4 w-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500 cursor-pointer"
-                      title="Inclure dans la compilation PDF"
+                      title={t('ai.includeInPdf', 'Inclure dans la compilation PDF')}
                     />
                     <span className="font-semibold text-sm text-slate-700">{resp.title}</span>
                   </div>

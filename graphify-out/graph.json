@@ -4,537 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "label": "tailwind.config.js",
-      "file_type": "code",
-      "source_file": "tailwind.config.js",
-      "source_location": "L1",
-      "id": "tailwind_config_js",
-      "community": 18,
-      "norm_label": "tailwind.config.js"
-    },
-    {
-      "label": "eslint.config.js",
-      "file_type": "code",
-      "source_file": "eslint.config.js",
-      "source_location": "L1",
-      "id": "eslint_config_js",
-      "community": 19,
-      "norm_label": "eslint.config.js"
-    },
-    {
-      "label": "vercel.json",
-      "file_type": "code",
-      "source_file": "vercel.json",
-      "source_location": "L1",
-      "id": "vercel_json",
-      "community": 32,
-      "norm_label": "vercel.json"
-    },
-    {
-      "label": "rewrites",
-      "file_type": "code",
-      "source_file": "vercel.json",
-      "source_location": "L2",
-      "id": "ultimate_job_tool_vercel_rewrites",
-      "community": 32,
-      "norm_label": "rewrites"
-    },
-    {
-      "label": "vite.config.js",
-      "file_type": "code",
-      "source_file": "vite.config.js",
-      "source_location": "L1",
-      "id": "vite_config_js",
-      "community": 20,
-      "norm_label": "vite.config.js"
-    },
-    {
-      "label": "App_old.jsx",
-      "file_type": "code",
-      "source_file": "App_old.jsx",
-      "source_location": "L1",
-      "id": "app_old_jsx",
-      "community": 11,
-      "norm_label": "app_old.jsx"
-    },
-    {
-      "label": "firebaseConfig",
-      "file_type": "code",
-      "source_file": "App_old.jsx",
-      "source_location": "L138",
-      "id": "ultimate_job_tool_app_old_firebaseconfig",
-      "community": 11,
-      "norm_label": "firebaseconfig"
-    },
-    {
-      "label": "App",
-      "file_type": "code",
-      "source_file": "App_old.jsx",
-      "source_location": "L145",
-      "id": "ultimate_job_tool_app_old_app",
-      "community": 11,
-      "norm_label": "app"
-    },
-    {
-      "label": "postcss.config.js",
-      "file_type": "code",
-      "source_file": "postcss.config.js",
-      "source_location": "L1",
-      "id": "postcss_config_js",
-      "community": 21,
-      "norm_label": "postcss.config.js"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "id": "package_json",
-      "community": 1,
-      "norm_label": "package.json"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "id": "ultimate_job_tool_package_name",
-      "community": 1,
-      "norm_label": "name"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "id": "ultimate_job_tool_package_private",
-      "community": 1,
-      "norm_label": "private"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "id": "ultimate_job_tool_package_version",
-      "community": 1,
-      "norm_label": "version"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "id": "ultimate_job_tool_package_type",
-      "community": 1,
-      "norm_label": "type"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "id": "ultimate_job_tool_package_scripts",
-      "community": 1,
-      "norm_label": "scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "id": "ultimate_job_tool_package_scripts_dev",
-      "community": 1,
-      "norm_label": "dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "id": "ultimate_job_tool_package_scripts_build",
-      "community": 1,
-      "norm_label": "build"
-    },
-    {
-      "label": "lint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "id": "ultimate_job_tool_package_scripts_lint",
-      "community": 1,
-      "norm_label": "lint"
-    },
-    {
-      "label": "preview",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "id": "ultimate_job_tool_package_scripts_preview",
-      "community": 1,
-      "norm_label": "preview"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L12",
-      "id": "ultimate_job_tool_package_dependencies",
-      "community": 1,
-      "norm_label": "dependencies"
-    },
-    {
-      "label": "@clerk/react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "id": "ultimate_job_tool_package_dependencies_clerk_react",
-      "community": 1,
-      "norm_label": "@clerk/react"
-    },
-    {
-      "label": "@supabase/supabase-js",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "id": "ultimate_job_tool_package_dependencies_supabase_supabase_js",
-      "community": 1,
-      "norm_label": "@supabase/supabase-js"
-    },
-    {
-      "label": "dexie",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "id": "ultimate_job_tool_package_dependencies_dexie",
-      "community": 1,
-      "norm_label": "dexie"
-    },
-    {
-      "label": "dexie-react-hooks",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks",
-      "community": 1,
-      "norm_label": "dexie-react-hooks"
-    },
-    {
-      "label": "lucide-react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "id": "ultimate_job_tool_package_dependencies_lucide_react",
-      "community": 1,
-      "norm_label": "lucide-react"
-    },
-    {
-      "label": "mammoth",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "id": "ultimate_job_tool_package_dependencies_mammoth",
-      "community": 1,
-      "norm_label": "mammoth"
-    },
-    {
-      "label": "react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "id": "ultimate_job_tool_package_dependencies_react",
-      "community": 1,
-      "norm_label": "react"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "id": "ultimate_job_tool_package_dependencies_react_dom",
-      "community": 1,
-      "norm_label": "react-dom"
-    },
-    {
-      "label": "react-pdf",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "id": "ultimate_job_tool_package_dependencies_react_pdf",
-      "community": 1,
-      "norm_label": "react-pdf"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "id": "ultimate_job_tool_package_devdependencies",
-      "community": 3,
-      "norm_label": "devdependencies"
-    },
-    {
-      "label": "@eslint/js",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_js",
-      "community": 3,
-      "norm_label": "@eslint/js"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "id": "ultimate_job_tool_package_devdependencies_types_react",
-      "community": 3,
-      "norm_label": "@types/react"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "id": "ultimate_job_tool_package_devdependencies_types_react_dom",
-      "community": 3,
-      "norm_label": "@types/react-dom"
-    },
-    {
-      "label": "@vitejs/plugin-react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react",
-      "community": 3,
-      "norm_label": "@vitejs/plugin-react"
-    },
-    {
-      "label": "autoprefixer",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "id": "ultimate_job_tool_package_devdependencies_autoprefixer",
-      "community": 3,
-      "norm_label": "autoprefixer"
-    },
-    {
-      "label": "eslint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "id": "ultimate_job_tool_package_devdependencies_eslint",
-      "community": 3,
-      "norm_label": "eslint"
-    },
-    {
-      "label": "eslint-plugin-react-hooks",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks",
-      "community": 3,
-      "norm_label": "eslint-plugin-react-hooks"
-    },
-    {
-      "label": "eslint-plugin-react-refresh",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh",
-      "community": 3,
-      "norm_label": "eslint-plugin-react-refresh"
-    },
-    {
-      "label": "globals",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "id": "ultimate_job_tool_package_devdependencies_globals",
-      "community": 3,
-      "norm_label": "globals"
-    },
-    {
-      "label": "postcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "id": "ultimate_job_tool_package_devdependencies_postcss",
-      "community": 3,
-      "norm_label": "postcss"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "id": "ultimate_job_tool_package_devdependencies_tailwindcss",
-      "community": 3,
-      "norm_label": "tailwindcss"
-    },
-    {
-      "label": "vite",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "id": "ultimate_job_tool_package_devdependencies_vite",
-      "community": 3,
-      "norm_label": "vite"
-    },
-    {
-      "label": "debug.js",
-      "file_type": "code",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "id": "scratch_debug_js",
-      "community": 31,
-      "norm_label": "debug.js"
-    },
-    {
-      "label": "{ chromium }",
-      "file_type": "code",
-      "source_file": "scratch/debug.js",
-      "source_location": "L1",
-      "id": "scratch_debug_chromium",
-      "community": 31,
-      "norm_label": "{ chromium }"
-    },
-    {
-      "label": "test-supa.js",
-      "file_type": "code",
-      "source_file": "scratch/test-supa.js",
-      "source_location": "L1",
-      "id": "scratch_test_supa_js",
-      "community": 33,
-      "norm_label": "test-supa.js"
-    },
-    {
-      "label": "{ createClient }",
-      "file_type": "code",
-      "source_file": "scratch/test-supa.js",
-      "source_location": "L1",
-      "id": "scratch_test_supa_createclient",
-      "community": 33,
-      "norm_label": "{ createclient }"
-    },
-    {
-      "label": "check-jwt.js",
-      "file_type": "code",
-      "source_file": "scratch/check-jwt.js",
-      "source_location": "L1",
-      "id": "scratch_check_jwt_js",
-      "community": 17,
-      "norm_label": "check-jwt.js"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L1",
-      "id": "scratch_package_json",
-      "community": 4,
-      "norm_label": "package.json"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L2",
-      "id": "scratch_package_name",
-      "community": 4,
-      "norm_label": "name"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L3",
-      "id": "scratch_package_version",
-      "community": 4,
-      "norm_label": "version"
-    },
-    {
-      "label": "main",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L4",
-      "id": "scratch_package_main",
-      "community": 4,
-      "norm_label": "main"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L5",
-      "id": "scratch_package_scripts",
-      "community": 4,
-      "norm_label": "scripts"
-    },
-    {
-      "label": "test",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L6",
-      "id": "scratch_package_scripts_test",
-      "community": 4,
-      "norm_label": "test"
-    },
-    {
-      "label": "keywords",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L8",
-      "id": "scratch_package_keywords",
-      "community": 4,
-      "norm_label": "keywords"
-    },
-    {
-      "label": "author",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L9",
-      "id": "scratch_package_author",
-      "community": 4,
-      "norm_label": "author"
-    },
-    {
-      "label": "license",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L10",
-      "id": "scratch_package_license",
-      "community": 4,
-      "norm_label": "license"
-    },
-    {
-      "label": "description",
-      "file_type": "code",
-      "source_file": "scratch/package.json",
-      "source_location": "L11",
-      "id": "scratch_package_description",
-      "community": 4,
-      "norm_label": "description"
-    },
-    {
-      "label": "main.jsx",
-      "file_type": "code",
-      "source_file": "src/main.jsx",
-      "source_location": "L1",
-      "id": "src_main_jsx",
-      "community": 2,
-      "norm_label": "main.jsx"
-    },
-    {
-      "label": "renderApp()",
-      "file_type": "code",
-      "source_file": "src/main.jsx",
-      "source_location": "L9",
-      "id": "src_main_renderapp",
-      "community": 2,
-      "norm_label": "renderapp()"
-    },
-    {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
@@ -562,148 +31,58 @@
       "norm_label": "app()"
     },
     {
-      "label": "fileUploadService.js",
+      "label": "AiAssistantTab.jsx",
       "file_type": "code",
-      "source_file": "src/services/fileUploadService.js",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
       "source_location": "L1",
-      "id": "src_services_fileuploadservice_js",
+      "id": "src_components_tabs_aiassistanttab_jsx",
       "community": 2,
-      "norm_label": "fileuploadservice.js"
+      "norm_label": "aiassistanttab.jsx"
     },
     {
-      "label": "extractTextFromFile()",
+      "label": "AiAssistantTab()",
       "file_type": "code",
-      "source_file": "src/services/fileUploadService.js",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
       "source_location": "L34",
-      "id": "services_fileuploadservice_extracttextfromfile",
+      "id": "tabs_aiassistanttab_aiassistanttab",
       "community": 2,
-      "norm_label": "extracttextfromfile()"
+      "norm_label": "aiassistanttab()"
     },
     {
-      "label": "buildLatexConversionPrompt()",
+      "label": "PromptsTab.jsx",
       "file_type": "code",
-      "source_file": "src/services/fileUploadService.js",
-      "source_location": "L83",
-      "id": "services_fileuploadservice_buildlatexconversionprompt",
-      "community": 2,
-      "norm_label": "buildlatexconversionprompt()"
-    },
-    {
-      "label": "pdfService.js",
-      "file_type": "code",
-      "source_file": "src/services/pdfService.js",
+      "source_file": "src/components/tabs/PromptsTab.jsx",
       "source_location": "L1",
-      "id": "src_services_pdfservice_js",
-      "community": 15,
-      "norm_label": "pdfservice.js"
+      "id": "src_components_tabs_promptstab_jsx",
+      "community": 2,
+      "norm_label": "promptstab.jsx"
     },
     {
-      "label": "compilePdfFromLatex()",
+      "label": "PromptsTab()",
       "file_type": "code",
-      "source_file": "src/services/pdfService.js",
-      "source_location": "L31",
-      "id": "services_pdfservice_compilepdffromlatex",
-      "community": 15,
-      "norm_label": "compilepdffromlatex()"
+      "source_file": "src/components/tabs/PromptsTab.jsx",
+      "source_location": "L29",
+      "id": "tabs_promptstab_promptstab",
+      "community": 2,
+      "norm_label": "promptstab()"
     },
     {
-      "label": "downloadBlobAsPdf()",
+      "label": "promptTemplates.js",
       "file_type": "code",
-      "source_file": "src/services/pdfService.js",
-      "source_location": "L78",
-      "id": "services_pdfservice_downloadblobaspdf",
-      "community": 15,
-      "norm_label": "downloadblobaspdf()"
-    },
-    {
-      "label": "aiService.js",
-      "file_type": "code",
-      "source_file": "src/services/aiService.js",
+      "source_file": "src/constants/promptTemplates.js",
       "source_location": "L1",
-      "id": "src_services_aiservice_js",
+      "id": "src_constants_prompttemplates_js",
       "community": 2,
-      "norm_label": "aiservice.js"
+      "norm_label": "prompttemplates.js"
     },
     {
-      "label": "callAIProvider()",
+      "label": "PROMPT_TEMPLATES",
       "file_type": "code",
-      "source_file": "src/services/aiService.js",
-      "source_location": "L44",
-      "id": "services_aiservice_callaiprovider",
+      "source_file": "src/constants/promptTemplates.js",
+      "source_location": "L35",
+      "id": "constants_prompttemplates_prompt_templates",
       "community": 2,
-      "norm_label": "callaiprovider()"
-    },
-    {
-      "label": "atsService.js",
-      "file_type": "code",
-      "source_file": "src/services/atsService.js",
-      "source_location": "L1",
-      "id": "src_services_atsservice_js",
-      "community": 2,
-      "norm_label": "atsservice.js"
-    },
-    {
-      "label": "buildAtsPrompt()",
-      "file_type": "code",
-      "source_file": "src/services/atsService.js",
-      "source_location": "L30",
-      "id": "services_atsservice_buildatsprompt",
-      "community": 2,
-      "norm_label": "buildatsprompt()"
-    },
-    {
-      "label": "cleanJsonResponse()",
-      "file_type": "code",
-      "source_file": "src/services/atsService.js",
-      "source_location": "L62",
-      "id": "services_atsservice_cleanjsonresponse",
-      "community": 2,
-      "norm_label": "cleanjsonresponse()"
-    },
-    {
-      "label": "runAtsAnalysis()",
-      "file_type": "code",
-      "source_file": "src/services/atsService.js",
-      "source_location": "L82",
-      "id": "services_atsservice_runatsanalysis",
-      "community": 2,
-      "norm_label": "runatsanalysis()"
-    },
-    {
-      "label": "scraperService.js",
-      "file_type": "code",
-      "source_file": "src/services/scraperService.js",
-      "source_location": "L1",
-      "id": "src_services_scraperservice_js",
-      "community": 32,
-      "norm_label": "scraperservice.js"
-    },
-    {
-      "label": "scrapeWithJina()",
-      "file_type": "code",
-      "source_file": "src/services/scraperService.js",
-      "source_location": "L40",
-      "id": "services_scraperservice_scrapewithjina",
-      "community": 32,
-      "norm_label": "scrapewithjina()"
-    },
-    {
-      "label": "scrapeWithScrapfly()",
-      "file_type": "code",
-      "source_file": "src/services/scraperService.js",
-      "source_location": "L78",
-      "id": "services_scraperservice_scrapewithscrapfly",
-      "community": 32,
-      "norm_label": "scrapewithscrapfly()"
-    },
-    {
-      "label": "cleanJinaMarkdown()",
-      "file_type": "code",
-      "source_file": "src/services/scraperService.js",
-      "source_location": "L146",
-      "id": "services_scraperservice_cleanjinamarkdown",
-      "community": 32,
-      "norm_label": "cleanjinamarkdown()"
+      "norm_label": "prompt_templates"
     },
     {
       "label": "latexUtils.js",
@@ -733,1516 +112,2146 @@
       "norm_label": "escapeampersands()"
     },
     {
+      "label": "mergeLatexResponses()",
+      "file_type": "code",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L76",
+      "id": "services_latexutils_mergelatexresponses",
+      "community": 2,
+      "norm_label": "mergelatexresponses()"
+    },
+    {
+      "label": "tailwind.config.js",
+      "file_type": "code",
+      "source_file": "tailwind.config.js",
+      "source_location": "L1",
+      "community": 18,
+      "norm_label": "tailwind.config.js",
+      "id": "tailwind_config_js"
+    },
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "eslint.config.js",
+      "source_location": "L1",
+      "community": 19,
+      "norm_label": "eslint.config.js",
+      "id": "eslint_config_js"
+    },
+    {
+      "label": "vercel.json",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "vercel.json",
+      "id": "vercel_json"
+    },
+    {
+      "label": "rewrites",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "community": 32,
+      "norm_label": "rewrites",
+      "id": "ultimate_job_tool_vercel_rewrites"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "community": 20,
+      "norm_label": "vite.config.js",
+      "id": "vite_config_js"
+    },
+    {
+      "label": "App_old.jsx",
+      "file_type": "code",
+      "source_file": "App_old.jsx",
+      "source_location": "L1",
+      "community": 11,
+      "norm_label": "app_old.jsx",
+      "id": "app_old_jsx"
+    },
+    {
+      "label": "firebaseConfig",
+      "file_type": "code",
+      "source_file": "App_old.jsx",
+      "source_location": "L138",
+      "community": 11,
+      "norm_label": "firebaseconfig",
+      "id": "ultimate_job_tool_app_old_firebaseconfig"
+    },
+    {
+      "label": "App",
+      "file_type": "code",
+      "source_file": "App_old.jsx",
+      "source_location": "L145",
+      "community": 11,
+      "norm_label": "app",
+      "id": "ultimate_job_tool_app_old_app"
+    },
+    {
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "postcss.config.js",
+      "source_location": "L1",
+      "community": 21,
+      "norm_label": "postcss.config.js",
+      "id": "postcss_config_js"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "package.json",
+      "id": "package_json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "community": 1,
+      "norm_label": "name",
+      "id": "ultimate_job_tool_package_name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "community": 1,
+      "norm_label": "private",
+      "id": "ultimate_job_tool_package_private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "community": 1,
+      "norm_label": "version",
+      "id": "ultimate_job_tool_package_version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "community": 1,
+      "norm_label": "type",
+      "id": "ultimate_job_tool_package_type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "community": 1,
+      "norm_label": "scripts",
+      "id": "ultimate_job_tool_package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "community": 1,
+      "norm_label": "dev",
+      "id": "ultimate_job_tool_package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "community": 1,
+      "norm_label": "build",
+      "id": "ultimate_job_tool_package_scripts_build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "community": 1,
+      "norm_label": "lint",
+      "id": "ultimate_job_tool_package_scripts_lint"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "community": 1,
+      "norm_label": "preview",
+      "id": "ultimate_job_tool_package_scripts_preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "community": 1,
+      "norm_label": "dependencies",
+      "id": "ultimate_job_tool_package_dependencies"
+    },
+    {
+      "label": "@clerk/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "community": 1,
+      "norm_label": "@clerk/react",
+      "id": "ultimate_job_tool_package_dependencies_clerk_react"
+    },
+    {
+      "label": "@supabase/supabase-js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "community": 1,
+      "norm_label": "@supabase/supabase-js",
+      "id": "ultimate_job_tool_package_dependencies_supabase_supabase_js"
+    },
+    {
+      "label": "dexie",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "community": 1,
+      "norm_label": "dexie",
+      "id": "ultimate_job_tool_package_dependencies_dexie"
+    },
+    {
+      "label": "dexie-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "community": 1,
+      "norm_label": "dexie-react-hooks",
+      "id": "ultimate_job_tool_package_dependencies_dexie_react_hooks"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "community": 1,
+      "norm_label": "lucide-react",
+      "id": "ultimate_job_tool_package_dependencies_lucide_react"
+    },
+    {
+      "label": "mammoth",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "community": 1,
+      "norm_label": "mammoth",
+      "id": "ultimate_job_tool_package_dependencies_mammoth"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "community": 1,
+      "norm_label": "react",
+      "id": "ultimate_job_tool_package_dependencies_react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "community": 1,
+      "norm_label": "react-dom",
+      "id": "ultimate_job_tool_package_dependencies_react_dom"
+    },
+    {
+      "label": "react-pdf",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "community": 1,
+      "norm_label": "react-pdf",
+      "id": "ultimate_job_tool_package_dependencies_react_pdf"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "community": 3,
+      "norm_label": "devdependencies",
+      "id": "ultimate_job_tool_package_devdependencies"
+    },
+    {
+      "label": "@eslint/js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "community": 3,
+      "norm_label": "@eslint/js",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_js"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "community": 3,
+      "norm_label": "@types/react",
+      "id": "ultimate_job_tool_package_devdependencies_types_react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "community": 3,
+      "norm_label": "@types/react-dom",
+      "id": "ultimate_job_tool_package_devdependencies_types_react_dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "community": 3,
+      "norm_label": "@vitejs/plugin-react",
+      "id": "ultimate_job_tool_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "community": 3,
+      "norm_label": "autoprefixer",
+      "id": "ultimate_job_tool_package_devdependencies_autoprefixer"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "community": 3,
+      "norm_label": "eslint",
+      "id": "ultimate_job_tool_package_devdependencies_eslint"
+    },
+    {
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "community": 3,
+      "norm_label": "eslint-plugin-react-hooks",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_hooks"
+    },
+    {
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "community": 3,
+      "norm_label": "eslint-plugin-react-refresh",
+      "id": "ultimate_job_tool_package_devdependencies_eslint_plugin_react_refresh"
+    },
+    {
+      "label": "globals",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "community": 3,
+      "norm_label": "globals",
+      "id": "ultimate_job_tool_package_devdependencies_globals"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "community": 3,
+      "norm_label": "postcss",
+      "id": "ultimate_job_tool_package_devdependencies_postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "community": 3,
+      "norm_label": "tailwindcss",
+      "id": "ultimate_job_tool_package_devdependencies_tailwindcss"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "community": 3,
+      "norm_label": "vite",
+      "id": "ultimate_job_tool_package_devdependencies_vite"
+    },
+    {
+      "label": "debug.js",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "debug.js",
+      "id": "scratch_debug_js"
+    },
+    {
+      "label": "{ chromium }",
+      "file_type": "code",
+      "source_file": "scratch/debug.js",
+      "source_location": "L1",
+      "community": 31,
+      "norm_label": "{ chromium }",
+      "id": "scratch_debug_chromium"
+    },
+    {
+      "label": "test-supa.js",
+      "file_type": "code",
+      "source_file": "scratch/test-supa.js",
+      "source_location": "L1",
+      "community": 33,
+      "norm_label": "test-supa.js",
+      "id": "scratch_test_supa_js"
+    },
+    {
+      "label": "{ createClient }",
+      "file_type": "code",
+      "source_file": "scratch/test-supa.js",
+      "source_location": "L1",
+      "community": 33,
+      "norm_label": "{ createclient }",
+      "id": "scratch_test_supa_createclient"
+    },
+    {
+      "label": "check-jwt.js",
+      "file_type": "code",
+      "source_file": "scratch/check-jwt.js",
+      "source_location": "L1",
+      "community": 17,
+      "norm_label": "check-jwt.js",
+      "id": "scratch_check_jwt_js"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L1",
+      "community": 4,
+      "norm_label": "package.json",
+      "id": "scratch_package_json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L2",
+      "community": 4,
+      "norm_label": "name",
+      "id": "scratch_package_name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L3",
+      "community": 4,
+      "norm_label": "version",
+      "id": "scratch_package_version"
+    },
+    {
+      "label": "main",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L4",
+      "community": 4,
+      "norm_label": "main",
+      "id": "scratch_package_main"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L5",
+      "community": 4,
+      "norm_label": "scripts",
+      "id": "scratch_package_scripts"
+    },
+    {
+      "label": "test",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L6",
+      "community": 4,
+      "norm_label": "test",
+      "id": "scratch_package_scripts_test"
+    },
+    {
+      "label": "keywords",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L8",
+      "community": 4,
+      "norm_label": "keywords",
+      "id": "scratch_package_keywords"
+    },
+    {
+      "label": "author",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L9",
+      "community": 4,
+      "norm_label": "author",
+      "id": "scratch_package_author"
+    },
+    {
+      "label": "license",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L10",
+      "community": 4,
+      "norm_label": "license",
+      "id": "scratch_package_license"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "scratch/package.json",
+      "source_location": "L11",
+      "community": 4,
+      "norm_label": "description",
+      "id": "scratch_package_description"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "main.jsx",
+      "id": "src_main_jsx"
+    },
+    {
+      "label": "renderApp()",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L9",
+      "community": 2,
+      "norm_label": "renderapp()",
+      "id": "src_main_renderapp"
+    },
+    {
+      "label": "fileUploadService.js",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "fileuploadservice.js",
+      "id": "src_services_fileuploadservice_js"
+    },
+    {
+      "label": "extractTextFromFile()",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L34",
+      "community": 2,
+      "norm_label": "extracttextfromfile()",
+      "id": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "label": "buildLatexConversionPrompt()",
+      "file_type": "code",
+      "source_file": "src/services/fileUploadService.js",
+      "source_location": "L83",
+      "community": 2,
+      "norm_label": "buildlatexconversionprompt()",
+      "id": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
+      "label": "pdfService.js",
+      "file_type": "code",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "pdfservice.js",
+      "id": "src_services_pdfservice_js"
+    },
+    {
+      "label": "compilePdfFromLatex()",
+      "file_type": "code",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L31",
+      "community": 2,
+      "norm_label": "compilepdffromlatex()",
+      "id": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "label": "downloadBlobAsPdf()",
+      "file_type": "code",
+      "source_file": "src/services/pdfService.js",
+      "source_location": "L78",
+      "community": 2,
+      "norm_label": "downloadblobaspdf()",
+      "id": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "label": "aiService.js",
+      "file_type": "code",
+      "source_file": "src/services/aiService.js",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "aiservice.js",
+      "id": "src_services_aiservice_js"
+    },
+    {
+      "label": "callAIProvider()",
+      "file_type": "code",
+      "source_file": "src/services/aiService.js",
+      "source_location": "L44",
+      "community": 2,
+      "norm_label": "callaiprovider()",
+      "id": "services_aiservice_callaiprovider"
+    },
+    {
+      "label": "atsService.js",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L1",
+      "community": 6,
+      "norm_label": "atsservice.js",
+      "id": "src_services_atsservice_js"
+    },
+    {
+      "label": "buildAtsPrompt()",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L30",
+      "community": 6,
+      "norm_label": "buildatsprompt()",
+      "id": "services_atsservice_buildatsprompt"
+    },
+    {
+      "label": "cleanJsonResponse()",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L62",
+      "community": 6,
+      "norm_label": "cleanjsonresponse()",
+      "id": "services_atsservice_cleanjsonresponse"
+    },
+    {
+      "label": "runAtsAnalysis()",
+      "file_type": "code",
+      "source_file": "src/services/atsService.js",
+      "source_location": "L82",
+      "community": 6,
+      "norm_label": "runatsanalysis()",
+      "id": "services_atsservice_runatsanalysis"
+    },
+    {
+      "label": "scraperService.js",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "scraperservice.js",
+      "id": "src_services_scraperservice_js"
+    },
+    {
+      "label": "scrapeWithJina()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L40",
+      "community": 32,
+      "norm_label": "scrapewithjina()",
+      "id": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "label": "scrapeWithScrapfly()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L78",
+      "community": 32,
+      "norm_label": "scrapewithscrapfly()",
+      "id": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "label": "cleanJinaMarkdown()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L146",
+      "community": 32,
+      "norm_label": "cleanjinamarkdown()",
+      "id": "services_scraperservice_cleanjinamarkdown"
+    },
+    {
       "label": "storageService.js",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L1",
-      "id": "src_services_storageservice_js",
       "community": 0,
-      "norm_label": "storageservice.js"
+      "norm_label": "storageservice.js",
+      "id": "src_services_storageservice_js"
     },
     {
       "label": "KEYS",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L27",
-      "id": "services_storageservice_keys",
       "community": 0,
-      "norm_label": "keys"
+      "norm_label": "keys",
+      "id": "services_storageservice_keys"
     },
     {
       "label": "getItem()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L47",
-      "id": "services_storageservice_getitem",
       "community": 0,
-      "norm_label": "getitem()"
+      "norm_label": "getitem()",
+      "id": "services_storageservice_getitem"
     },
     {
       "label": "setItem()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L56",
-      "id": "services_storageservice_setitem",
       "community": 0,
-      "norm_label": "setitem()"
+      "norm_label": "setitem()",
+      "id": "services_storageservice_setitem"
     },
     {
       "label": "getJobDescription()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L62",
-      "id": "services_storageservice_getjobdescription",
       "community": 0,
-      "norm_label": "getjobdescription()"
+      "norm_label": "getjobdescription()",
+      "id": "services_storageservice_getjobdescription"
     },
     {
       "label": "saveJobDescription()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L66",
-      "id": "services_storageservice_savejobdescription",
       "community": 0,
-      "norm_label": "savejobdescription()"
+      "norm_label": "savejobdescription()",
+      "id": "services_storageservice_savejobdescription"
     },
     {
       "label": "getCvOriginal()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L77",
-      "id": "services_storageservice_getcvoriginal",
       "community": 0,
-      "norm_label": "getcvoriginal()"
+      "norm_label": "getcvoriginal()",
+      "id": "services_storageservice_getcvoriginal"
     },
     {
       "label": "saveCvOriginal()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L81",
-      "id": "services_storageservice_savecvoriginal",
       "community": 0,
-      "norm_label": "savecvoriginal()"
+      "norm_label": "savecvoriginal()",
+      "id": "services_storageservice_savecvoriginal"
     },
     {
       "label": "getCvGenerated()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L85",
-      "id": "services_storageservice_getcvgenerated",
       "community": 0,
-      "norm_label": "getcvgenerated()"
+      "norm_label": "getcvgenerated()",
+      "id": "services_storageservice_getcvgenerated"
     },
     {
       "label": "saveCvGenerated()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L89",
-      "id": "services_storageservice_savecvgenerated",
       "community": 0,
-      "norm_label": "savecvgenerated()"
+      "norm_label": "savecvgenerated()",
+      "id": "services_storageservice_savecvgenerated"
     },
     {
       "label": "getApiKey()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L101",
-      "id": "services_storageservice_getapikey",
       "community": 0,
-      "norm_label": "getapikey()"
+      "norm_label": "getapikey()",
+      "id": "services_storageservice_getapikey"
     },
     {
       "label": "saveApiKey()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L110",
-      "id": "services_storageservice_saveapikey",
       "community": 0,
-      "norm_label": "saveapikey()"
+      "norm_label": "saveapikey()",
+      "id": "services_storageservice_saveapikey"
     },
     {
       "label": "getAiProvider()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L114",
-      "id": "services_storageservice_getaiprovider",
       "community": 0,
-      "norm_label": "getaiprovider()"
+      "norm_label": "getaiprovider()",
+      "id": "services_storageservice_getaiprovider"
     },
     {
       "label": "saveAiProvider()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L118",
-      "id": "services_storageservice_saveaiprovider",
       "community": 0,
-      "norm_label": "saveaiprovider()"
+      "norm_label": "saveaiprovider()",
+      "id": "services_storageservice_saveaiprovider"
     },
     {
       "label": "getAiModel()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L127",
-      "id": "services_storageservice_getaimodel",
       "community": 0,
-      "norm_label": "getaimodel()"
+      "norm_label": "getaimodel()",
+      "id": "services_storageservice_getaimodel"
     },
     {
       "label": "saveAiModel()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L135",
-      "id": "services_storageservice_saveaimodel",
       "community": 0,
-      "norm_label": "saveaimodel()"
+      "norm_label": "saveaimodel()",
+      "id": "services_storageservice_saveaimodel"
     },
     {
       "label": "getAiResponse()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L142",
-      "id": "services_storageservice_getairesponse",
       "community": 0,
-      "norm_label": "getairesponse()"
+      "norm_label": "getairesponse()",
+      "id": "services_storageservice_getairesponse"
     },
     {
       "label": "saveAiResponse()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L146",
-      "id": "services_storageservice_saveairesponse",
       "community": 0,
-      "norm_label": "saveairesponse()"
+      "norm_label": "saveairesponse()",
+      "id": "services_storageservice_saveairesponse"
     },
     {
       "label": "getScraperType()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L152",
-      "id": "services_storageservice_getscrapertype",
       "community": 0,
-      "norm_label": "getscrapertype()"
+      "norm_label": "getscrapertype()",
+      "id": "services_storageservice_getscrapertype"
     },
     {
       "label": "saveScraperType()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L156",
-      "id": "services_storageservice_savescrapertype",
       "community": 0,
-      "norm_label": "savescrapertype()"
+      "norm_label": "savescrapertype()",
+      "id": "services_storageservice_savescrapertype"
     },
     {
       "label": "getScrapflyKey()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L160",
-      "id": "services_storageservice_getscrapflykey",
       "community": 0,
-      "norm_label": "getscrapflykey()"
+      "norm_label": "getscrapflykey()",
+      "id": "services_storageservice_getscrapflykey"
     },
     {
       "label": "saveScrapflyKey()",
       "file_type": "code",
       "source_file": "src/services/storageService.js",
       "source_location": "L164",
-      "id": "services_storageservice_savescrapflykey",
       "community": 0,
-      "norm_label": "savescrapflykey()"
+      "norm_label": "savescrapflykey()",
+      "id": "services_storageservice_savescrapflykey"
     },
     {
       "label": "supabaseClient.js",
       "file_type": "code",
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L1",
-      "id": "src_services_supabaseclient_js",
       "community": 24,
-      "norm_label": "supabaseclient.js"
+      "norm_label": "supabaseclient.js",
+      "id": "src_services_supabaseclient_js"
     },
     {
       "label": "createAuthenticatedSupabaseClient()",
       "file_type": "code",
       "source_file": "src/services/supabaseClient.js",
       "source_location": "L22",
-      "id": "services_supabaseclient_createauthenticatedsupabaseclient",
       "community": 24,
-      "norm_label": "createauthenticatedsupabaseclient()"
-    },
-    {
-      "label": "promptTemplates.js",
-      "file_type": "code",
-      "source_file": "src/constants/promptTemplates.js",
-      "source_location": "L1",
-      "id": "src_constants_prompttemplates_js",
-      "community": 2,
-      "norm_label": "prompttemplates.js"
-    },
-    {
-      "label": "PROMPT_TEMPLATES",
-      "file_type": "code",
-      "source_file": "src/constants/promptTemplates.js",
-      "source_location": "L31",
-      "id": "constants_prompttemplates_prompt_templates",
-      "community": 2,
-      "norm_label": "prompt_templates"
+      "norm_label": "createauthenticatedsupabaseclient()",
+      "id": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "label": "aiProviders.js",
       "file_type": "code",
       "source_file": "src/constants/aiProviders.js",
       "source_location": "L1",
-      "id": "src_constants_aiproviders_js",
-      "community": 6,
-      "norm_label": "aiproviders.js"
+      "community": 2,
+      "norm_label": "aiproviders.js",
+      "id": "src_constants_aiproviders_js"
     },
     {
       "label": "AI_PROVIDERS",
       "file_type": "code",
       "source_file": "src/constants/aiProviders.js",
       "source_location": "L30",
-      "id": "constants_aiproviders_ai_providers",
-      "community": 6,
-      "norm_label": "ai_providers"
+      "community": 2,
+      "norm_label": "ai_providers",
+      "id": "constants_aiproviders_ai_providers"
     },
     {
       "label": "syntheticCv.js",
       "file_type": "code",
       "source_file": "src/constants/syntheticCv.js",
       "source_location": "L1",
-      "id": "src_constants_syntheticcv_js",
       "community": 2,
-      "norm_label": "syntheticcv.js"
+      "norm_label": "syntheticcv.js",
+      "id": "src_constants_syntheticcv_js"
     },
     {
       "label": "cvTemplates.js",
       "file_type": "code",
       "source_file": "src/constants/cvTemplates.js",
       "source_location": "L1",
-      "id": "src_constants_cvtemplates_js",
       "community": 2,
-      "norm_label": "cvtemplates.js"
+      "norm_label": "cvtemplates.js",
+      "id": "src_constants_cvtemplates_js"
     },
     {
       "label": "CV_TEMPLATES",
       "file_type": "code",
       "source_file": "src/constants/cvTemplates.js",
       "source_location": "L10",
-      "id": "constants_cvtemplates_cv_templates",
       "community": 2,
-      "norm_label": "cv_templates"
+      "norm_label": "cv_templates",
+      "id": "constants_cvtemplates_cv_templates"
     },
     {
       "label": "useToast.js",
       "file_type": "code",
       "source_file": "src/hooks/useToast.js",
       "source_location": "L1",
-      "id": "src_hooks_usetoast_js",
       "community": 2,
-      "norm_label": "usetoast.js"
+      "norm_label": "usetoast.js",
+      "id": "src_hooks_usetoast_js"
     },
     {
       "label": "useToast()",
       "file_type": "code",
       "source_file": "src/hooks/useToast.js",
       "source_location": "L34",
-      "id": "hooks_usetoast_usetoast",
       "community": 2,
-      "norm_label": "usetoast()"
+      "norm_label": "usetoast()",
+      "id": "hooks_usetoast_usetoast"
     },
     {
       "label": "useLocalStorage.js",
       "file_type": "code",
       "source_file": "src/hooks/useLocalStorage.js",
       "source_location": "L1",
-      "id": "src_hooks_uselocalstorage_js",
       "community": 2,
-      "norm_label": "uselocalstorage.js"
+      "norm_label": "uselocalstorage.js",
+      "id": "src_hooks_uselocalstorage_js"
     },
     {
       "label": "useLocalStorage()",
       "file_type": "code",
       "source_file": "src/hooks/useLocalStorage.js",
       "source_location": "L40",
-      "id": "hooks_uselocalstorage_uselocalstorage",
       "community": 2,
-      "norm_label": "uselocalstorage()"
+      "norm_label": "uselocalstorage()",
+      "id": "hooks_uselocalstorage_uselocalstorage"
     },
     {
       "label": "useDatabase.js",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L1",
-      "id": "src_hooks_usedatabase_js",
       "community": 24,
-      "norm_label": "usedatabase.js"
+      "norm_label": "usedatabase.js",
+      "id": "src_hooks_usedatabase_js"
     },
     {
       "label": "useDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L13",
-      "id": "hooks_usedatabase_usedatabase",
       "community": 24,
-      "norm_label": "usedatabase()"
+      "norm_label": "usedatabase()",
+      "id": "hooks_usedatabase_usedatabase"
     },
     {
       "label": "useLocalDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L23",
-      "id": "hooks_usedatabase_uselocaldatabase",
       "community": 24,
-      "norm_label": "uselocaldatabase()"
+      "norm_label": "uselocaldatabase()",
+      "id": "hooks_usedatabase_uselocaldatabase"
     },
     {
       "label": "useCloudDatabase()",
       "file_type": "code",
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L75",
-      "id": "hooks_usedatabase_useclouddatabase",
       "community": 24,
-      "norm_label": "useclouddatabase()"
+      "norm_label": "useclouddatabase()",
+      "id": "hooks_usedatabase_useclouddatabase"
     },
     {
       "label": "PdfMakerTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/PdfMakerTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_pdfmakertab_jsx",
       "community": 2,
-      "norm_label": "pdfmakertab.jsx"
+      "norm_label": "pdfmakertab.jsx",
+      "id": "src_components_tabs_pdfmakertab_jsx"
     },
     {
       "label": "PdfMakerTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/PdfMakerTab.jsx",
       "source_location": "L40",
-      "id": "tabs_pdfmakertab_pdfmakertab",
       "community": 2,
-      "norm_label": "pdfmakertab()"
+      "norm_label": "pdfmakertab()",
+      "id": "tabs_pdfmakertab_pdfmakertab"
     },
     {
       "label": "DashboardTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_dashboardtab_jsx",
       "community": 24,
-      "norm_label": "dashboardtab.jsx"
+      "norm_label": "dashboardtab.jsx",
+      "id": "src_components_tabs_dashboardtab_jsx"
     },
     {
       "label": "DashboardTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L12",
-      "id": "tabs_dashboardtab_dashboardtab",
       "community": 24,
-      "norm_label": "dashboardtab()"
+      "norm_label": "dashboardtab()",
+      "id": "tabs_dashboardtab_dashboardtab"
     },
     {
       "label": "AtsTestTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/AtsTestTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_atstesttab_jsx",
       "community": 2,
-      "norm_label": "atstesttab.jsx"
+      "norm_label": "atstesttab.jsx",
+      "id": "src_components_tabs_atstesttab_jsx"
     },
     {
       "label": "AtsTestTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/AtsTestTab.jsx",
       "source_location": "L28",
-      "id": "tabs_atstesttab_atstesttab",
       "community": 2,
-      "norm_label": "atstesttab()"
+      "norm_label": "atstesttab()",
+      "id": "tabs_atstesttab_atstesttab"
     },
     {
       "label": "JobOfferTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_joboffertab_jsx",
       "community": 2,
-      "norm_label": "joboffertab.jsx"
+      "norm_label": "joboffertab.jsx",
+      "id": "src_components_tabs_joboffertab_jsx"
     },
     {
       "label": "JobOfferTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L32",
-      "id": "tabs_joboffertab_joboffertab",
       "community": 2,
-      "norm_label": "joboffertab()"
+      "norm_label": "joboffertab()",
+      "id": "tabs_joboffertab_joboffertab"
     },
     {
       "label": "MyCvTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/MyCvTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_mycvtab_jsx",
       "community": 2,
-      "norm_label": "mycvtab.jsx"
+      "norm_label": "mycvtab.jsx",
+      "id": "src_components_tabs_mycvtab_jsx"
     },
     {
       "label": "MyCvTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/MyCvTab.jsx",
       "source_location": "L32",
-      "id": "tabs_mycvtab_mycvtab",
       "community": 2,
-      "norm_label": "mycvtab()"
-    },
-    {
-      "label": "PromptsTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/PromptsTab.jsx",
-      "source_location": "L1",
-      "id": "src_components_tabs_promptstab_jsx",
-      "community": 2,
-      "norm_label": "promptstab.jsx"
-    },
-    {
-      "label": "PromptsTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/PromptsTab.jsx",
-      "source_location": "L29",
-      "id": "tabs_promptstab_promptstab",
-      "community": 2,
-      "norm_label": "promptstab()"
-    },
-    {
-      "label": "AiAssistantTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/AiAssistantTab.jsx",
-      "source_location": "L1",
-      "id": "src_components_tabs_aiassistanttab_jsx",
-      "community": 6,
-      "norm_label": "aiassistanttab.jsx"
-    },
-    {
-      "label": "AiAssistantTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/AiAssistantTab.jsx",
-      "source_location": "L33",
-      "id": "tabs_aiassistanttab_aiassistanttab",
-      "community": 6,
-      "norm_label": "aiassistanttab()"
+      "norm_label": "mycvtab()",
+      "id": "tabs_mycvtab_mycvtab"
     },
     {
       "label": "TabNavigation.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L1",
-      "id": "src_components_layout_tabnavigation_jsx",
-      "community": 2,
-      "norm_label": "tabnavigation.jsx"
+      "community": 15,
+      "norm_label": "tabnavigation.jsx",
+      "id": "src_components_layout_tabnavigation_jsx"
     },
     {
       "label": "tabs",
       "file_type": "code",
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L28",
-      "id": "layout_tabnavigation_tabs",
-      "community": 2,
-      "norm_label": "tabs"
+      "community": 15,
+      "norm_label": "tabs",
+      "id": "layout_tabnavigation_tabs"
     },
     {
       "label": "TabNavigation()",
       "file_type": "code",
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L38",
-      "id": "layout_tabnavigation_tabnavigation",
-      "community": 2,
-      "norm_label": "tabnavigation()"
+      "community": 15,
+      "norm_label": "tabnavigation()",
+      "id": "layout_tabnavigation_tabnavigation"
     },
     {
       "label": "Toast.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Toast.jsx",
       "source_location": "L1",
-      "id": "src_components_layout_toast_jsx",
       "community": 2,
-      "norm_label": "toast.jsx"
+      "norm_label": "toast.jsx",
+      "id": "src_components_layout_toast_jsx"
     },
     {
       "label": "Toast()",
       "file_type": "code",
       "source_file": "src/components/layout/Toast.jsx",
       "source_location": "L21",
-      "id": "layout_toast_toast",
       "community": 2,
-      "norm_label": "toast()"
+      "norm_label": "toast()",
+      "id": "layout_toast_toast"
     },
     {
       "label": "Header.jsx",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L1",
-      "id": "src_components_layout_header_jsx",
-      "community": 6,
-      "norm_label": "header.jsx"
+      "community": 2,
+      "norm_label": "header.jsx",
+      "id": "src_components_layout_header_jsx"
     },
     {
       "label": "ClerkUserButton()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L32",
-      "id": "layout_header_clerkuserbutton",
-      "community": 6,
-      "norm_label": "clerkuserbutton()"
+      "community": 2,
+      "norm_label": "clerkuserbutton()",
+      "id": "layout_header_clerkuserbutton"
     },
     {
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/Header.jsx",
       "source_location": "L40",
-      "id": "layout_header_header",
-      "community": 6,
-      "norm_label": "header()"
+      "community": 2,
+      "norm_label": "header()",
+      "id": "layout_header_header"
     },
     {
       "label": "GRAPHIFY_GUIDE.md",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L1",
-      "id": "graphify_guide_md",
       "community": 5,
-      "norm_label": "graphify_guide.md"
+      "norm_label": "graphify_guide.md",
+      "id": "graphify_guide_md"
     },
     {
       "label": "Graphify Knowledge Graph Guide",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L1",
-      "id": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide",
       "community": 5,
-      "norm_label": "graphify knowledge graph guide"
+      "norm_label": "graphify knowledge graph guide",
+      "id": "ultimate_job_tool_graphify_guide_graphify_knowledge_graph_guide"
     },
     {
       "label": "1. What is Graphify?",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L5",
-      "id": "ultimate_job_tool_graphify_guide_1_what_is_graphify",
       "community": 5,
-      "norm_label": "1. what is graphify?"
+      "norm_label": "1. what is graphify?",
+      "id": "ultimate_job_tool_graphify_guide_1_what_is_graphify"
     },
     {
       "label": "2. Basic Installation & Setup (One-Time)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L8",
-      "id": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time",
       "community": 5,
-      "norm_label": "2. basic installation & setup (one-time)"
+      "norm_label": "2. basic installation & setup (one-time)",
+      "id": "ultimate_job_tool_graphify_guide_2_basic_installation_setup_one_time"
     },
     {
       "label": "code:bash (pip install graphifyy)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L12",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_1",
       "community": 5,
-      "norm_label": "code:bash (pip install graphifyy)"
+      "norm_label": "code:bash (pip install graphifyy)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_1"
     },
     {
       "label": "code:bash (graphify antigravity install)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L17",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_2",
       "community": 5,
-      "norm_label": "code:bash (graphify antigravity install)"
+      "norm_label": "code:bash (graphify antigravity install)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_2"
     },
     {
       "label": "code:bash (graphify hook install)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L23",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_3",
       "community": 5,
-      "norm_label": "code:bash (graphify hook install)"
+      "norm_label": "code:bash (graphify hook install)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_3"
     },
     {
       "label": "3. How to Query the Graph (As a Developer)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L28",
-      "id": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer",
       "community": 5,
-      "norm_label": "3. how to query the graph (as a developer)"
+      "norm_label": "3. how to query the graph (as a developer)",
+      "id": "ultimate_job_tool_graphify_guide_3_how_to_query_the_graph_as_a_developer"
     },
     {
       "label": "Using the AI Assistant (Easiest)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L30",
-      "id": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest",
       "community": 5,
-      "norm_label": "using the ai assistant (easiest)"
+      "norm_label": "using the ai assistant (easiest)",
+      "id": "ultimate_job_tool_graphify_guide_using_the_ai_assistant_easiest"
     },
     {
       "label": "Using the Terminal",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L35",
-      "id": "ultimate_job_tool_graphify_guide_using_the_terminal",
       "community": 5,
-      "norm_label": "using the terminal"
+      "norm_label": "using the terminal",
+      "id": "ultimate_job_tool_graphify_guide_using_the_terminal"
     },
     {
       "label": "code:bash (graphify tree)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L39",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_4",
       "community": 5,
-      "norm_label": "code:bash (graphify tree)"
+      "norm_label": "code:bash (graphify tree)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_4"
     },
     {
       "label": "code:bash (graphify query \"How does the Dexie database synchronize with)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L45",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_5",
       "community": 5,
-      "norm_label": "code:bash (graphify query \"how does the dexie database synchronize with)"
+      "norm_label": "code:bash (graphify query \"how does the dexie database synchronize with)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_5"
     },
     {
       "label": "code:bash (graphify affected \"storageService\")",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L50",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_6",
       "community": 5,
-      "norm_label": "code:bash (graphify affected \"storageservice\")"
+      "norm_label": "code:bash (graphify affected \"storageservice\")",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_6"
     },
     {
       "label": "4. How to Update the Graph",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L54",
-      "id": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph",
       "community": 5,
-      "norm_label": "4. how to update the graph"
+      "norm_label": "4. how to update the graph",
+      "id": "ultimate_job_tool_graphify_guide_4_how_to_update_the_graph"
     },
     {
       "label": "code:bash (graphify update .)",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L56",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_7",
       "community": 5,
-      "norm_label": "code:bash (graphify update .)"
+      "norm_label": "code:bash (graphify update .)",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_7"
     },
     {
       "label": "5. \ud83d\udca1 PRO TIP: Changing the LLM Backend for Semantic Extraction",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L61",
-      "id": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction",
       "community": 5,
-      "norm_label": "5. \ud83d\udca1 pro tip: changing the llm backend for semantic extraction"
+      "norm_label": "5. \ud83d\udca1 pro tip: changing the llm backend for semantic extraction",
+      "id": "ultimate_job_tool_graphify_guide_5_pro_tip_changing_the_llm_backend_for_semantic_extraction"
     },
     {
       "label": "code:bash (# Example: Using Anthropic (Claude))",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L66",
-      "id": "ultimate_job_tool_graphify_guide_codeblock_8",
       "community": 5,
-      "norm_label": "code:bash (# example: using anthropic (claude))"
+      "norm_label": "code:bash (# example: using anthropic (claude))",
+      "id": "ultimate_job_tool_graphify_guide_codeblock_8"
     },
     {
       "label": "Supported Backends:",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L83",
-      "id": "ultimate_job_tool_graphify_guide_supported_backends",
       "community": 5,
-      "norm_label": "supported backends:"
+      "norm_label": "supported backends:",
+      "id": "ultimate_job_tool_graphify_guide_supported_backends"
     },
     {
       "label": "TROUBLESHOOTING.md",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L1",
-      "id": "troubleshooting_md",
       "community": 7,
-      "norm_label": "troubleshooting.md"
+      "norm_label": "troubleshooting.md",
+      "id": "troubleshooting_md"
     },
     {
       "label": "Troubleshooting Log & Bug Fixes",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L1",
-      "id": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
       "community": 7,
-      "norm_label": "troubleshooting log & bug fixes"
+      "norm_label": "troubleshooting log & bug fixes",
+      "id": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes"
     },
     {
       "label": "1. The TeXLive PDF Compilation Failures",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L5",
-      "id": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
       "community": 7,
-      "norm_label": "1. the texlive pdf compilation failures"
+      "norm_label": "1. the texlive pdf compilation failures",
+      "id": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures"
     },
     {
       "label": "Problem 1: `filename[]` Array Formatting",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L7",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting",
       "community": 7,
-      "norm_label": "problem 1: `filename[]` array formatting"
+      "norm_label": "problem 1: `filename[]` array formatting",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting"
     },
     {
       "label": "Problem 2: Missing Multipart Encoding",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L12",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding",
       "community": 7,
-      "norm_label": "problem 2: missing multipart encoding"
+      "norm_label": "problem 2: missing multipart encoding",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding"
     },
     {
       "label": "Problem 3: Invalid LaTeX Syntax",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L17",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax",
       "community": 7,
-      "norm_label": "problem 3: invalid latex syntax"
+      "norm_label": "problem 3: invalid latex syntax",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax"
     },
     {
       "label": "2. The PDF Inline Display Challenge",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L22",
-      "id": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
       "community": 7,
-      "norm_label": "2. the pdf inline display challenge"
+      "norm_label": "2. the pdf inline display challenge",
+      "id": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge"
     },
     {
       "label": "Problem: CORS & `X-Frame-Options` Blocking",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L24",
-      "id": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking",
       "community": 7,
-      "norm_label": "problem: cors & `x-frame-options` blocking"
+      "norm_label": "problem: cors & `x-frame-options` blocking",
+      "id": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking"
     },
     {
       "label": "Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L34",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls",
       "community": 7,
-      "norm_label": "problem 2: mobile browsers blocking inline pdf `blob:` urls"
+      "norm_label": "problem 2: mobile browsers blocking inline pdf `blob:` urls",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls"
     },
     {
       "label": "Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L42",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs",
       "community": 7,
-      "norm_label": "problem 3: mobile pdf viewer scrolling & text selection bugs"
+      "norm_label": "problem 3: mobile pdf viewer scrolling & text selection bugs",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs"
     },
     {
       "label": "3. AI API Quota & Provider Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L51",
-      "id": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
       "community": 7,
-      "norm_label": "3. ai api quota & provider issues"
+      "norm_label": "3. ai api quota & provider issues",
+      "id": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues"
     },
     {
       "label": "Problem 1: Gemini \"Model Not Found\" / Deprecation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L53",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation",
       "community": 7,
-      "norm_label": "problem 1: gemini \"model not found\" / deprecation"
+      "norm_label": "problem 1: gemini \"model not found\" / deprecation",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation"
     },
     {
       "label": "Problem 2: DeepSeek \"Insufficient Balance\"",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L58",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance",
       "community": 7,
-      "norm_label": "problem 2: deepseek \"insufficient balance\""
+      "norm_label": "problem 2: deepseek \"insufficient balance\"",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance"
     },
     {
       "label": "Problem 3: React State Stagnation Across Providers",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L65",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers",
       "community": 7,
-      "norm_label": "problem 3: react state stagnation across providers"
+      "norm_label": "problem 3: react state stagnation across providers",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers"
     },
     {
       "label": "4. UI/UX Bugs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L71",
-      "id": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs",
       "community": 7,
-      "norm_label": "4. ui/ux bugs"
+      "norm_label": "4. ui/ux bugs",
+      "id": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs"
     },
     {
       "label": "Problem: Stale JSX Tags",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L73",
-      "id": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags",
       "community": 7,
-      "norm_label": "problem: stale jsx tags"
+      "norm_label": "problem: stale jsx tags",
+      "id": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags"
     },
     {
       "label": "5. AI Hallucination & Regex Challenges",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L78",
-      "id": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges",
       "community": 7,
-      "norm_label": "5. ai hallucination & regex challenges"
+      "norm_label": "5. ai hallucination & regex challenges",
+      "id": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges"
     },
     {
       "label": "Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L80",
-      "id": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands",
       "community": 7,
-      "norm_label": "problem: ai generates invalid latex (mismatched brackets & unescaped ampersands)"
+      "norm_label": "problem: ai generates invalid latex (mismatched brackets & unescaped ampersands)",
+      "id": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands"
     },
     {
       "label": "6. Job Posting Scraper (Jina AI & Scrapfly) Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L87",
-      "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
       "community": 7,
-      "norm_label": "6. job posting scraper (jina ai & scrapfly) issues"
+      "norm_label": "6. job posting scraper (jina ai & scrapfly) issues",
+      "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
     },
     {
       "label": "Problem 1: Scrapfly CORS / Direct Fetch Rejection",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L89",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection",
       "community": 7,
-      "norm_label": "problem 1: scrapfly cors / direct fetch rejection"
+      "norm_label": "problem 1: scrapfly cors / direct fetch rejection",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
     },
     {
       "label": "Problem 2: Scrapfly 422 Unprocessable Entity",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L97",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity",
       "community": 7,
-      "norm_label": "problem 2: scrapfly 422 unprocessable entity"
+      "norm_label": "problem 2: scrapfly 422 unprocessable entity",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
     },
     {
       "label": "Problem 3: Extracted Job Description Format",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L102",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format",
       "community": 7,
-      "norm_label": "problem 3: extracted job description format"
+      "norm_label": "problem 3: extracted job description format",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
     },
     {
       "label": "Problem 4: Jina AI Extractor Boilerplate Noise",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L107",
-      "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise",
       "community": 7,
-      "norm_label": "problem 4: jina ai extractor boilerplate noise"
+      "norm_label": "problem 4: jina ai extractor boilerplate noise",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
     },
     {
       "label": "Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L115",
-      "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai",
       "community": 7,
-      "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)"
+      "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)",
+      "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
     },
     {
       "label": "7. JSON Parsing from AI (ATS Tester)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L121",
-      "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester",
       "community": 7,
-      "norm_label": "7. json parsing from ai (ats tester)"
+      "norm_label": "7. json parsing from ai (ats tester)",
+      "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester"
     },
     {
       "label": "Problem: AI Hallucinating Markdown in JSON Responses",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L123",
-      "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses",
       "community": 7,
-      "norm_label": "problem: ai hallucinating markdown in json responses"
+      "norm_label": "problem: ai hallucinating markdown in json responses",
+      "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses"
     },
     {
       "label": "8. Database (Dexie.js) & Architecture Refactoring",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L134",
-      "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
       "community": 7,
-      "norm_label": "8. database (dexie.js) & architecture refactoring"
+      "norm_label": "8. database (dexie.js) & architecture refactoring",
+      "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring"
     },
     {
       "label": "Problem 1: Cascading Renders warning with `useEffect`",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L136",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
       "community": 7,
-      "norm_label": "problem 1: cascading renders warning with `useeffect`"
+      "norm_label": "problem 1: cascading renders warning with `useeffect`",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect"
     },
     {
       "label": "Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
       "community": 7,
-      "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
+      "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration"
     },
     {
       "label": "9. Graphify Knowledge Graph Generation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L146",
-      "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
       "community": 7,
-      "norm_label": "9. graphify knowledge graph generation"
+      "norm_label": "9. graphify knowledge graph generation",
+      "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation"
     },
     {
       "label": "Problem 1: `openai` package missing during extraction",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L148",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction",
       "community": 7,
-      "norm_label": "problem 1: `openai` package missing during extraction"
+      "norm_label": "problem 1: `openai` package missing during extraction",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction"
     },
     {
       "label": "Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L153",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror",
       "community": 7,
-      "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)"
+      "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror"
     },
     {
       "label": "code:bash (pip uninstall -y pydantic pydantic-core)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L157",
-      "id": "ultimate_job_tool_troubleshooting_codeblock_1",
       "community": 7,
-      "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)"
+      "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)",
+      "id": "ultimate_job_tool_troubleshooting_codeblock_1"
     },
     {
       "label": "10. Clerk + Supabase Integration Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L163",
-      "id": "ultimate_job_tool_troubleshooting_10_clerk_supabase_integration_issues",
       "community": 7,
-      "norm_label": "10. clerk + supabase integration issues"
+      "norm_label": "10. clerk + supabase integration issues",
+      "id": "ultimate_job_tool_troubleshooting_10_clerk_supabase_integration_issues"
     },
     {
       "label": "Problem 1: Vite Crash with `require()`",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L165",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_vite_crash_with_require",
       "community": 7,
-      "norm_label": "problem 1: vite crash with `require()`"
+      "norm_label": "problem 1: vite crash with `require()`",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_vite_crash_with_require"
     },
     {
       "label": "Problem 2: Supabase Client Instantiation Crash",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L170",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_supabase_client_instantiation_crash",
       "community": 7,
-      "norm_label": "problem 2: supabase client instantiation crash"
+      "norm_label": "problem 2: supabase client instantiation crash",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_supabase_client_instantiation_crash"
     },
     {
       "label": "Problem 3: Dashboard Stuck on \"Chargement...\"",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L175",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_dashboard_stuck_on_chargement",
       "community": 7,
-      "norm_label": "problem 3: dashboard stuck on \"chargement...\""
+      "norm_label": "problem 3: dashboard stuck on \"chargement...\"",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_dashboard_stuck_on_chargement"
     },
     {
       "label": "Problem 4: Missing Clerk JWT Template & Invalid JWT Secret",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L182",
-      "id": "ultimate_job_tool_troubleshooting_problem_4_missing_clerk_jwt_template_invalid_jwt_secret",
       "community": 7,
-      "norm_label": "problem 4: missing clerk jwt template & invalid jwt secret"
+      "norm_label": "problem 4: missing clerk jwt template & invalid jwt secret",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_missing_clerk_jwt_template_invalid_jwt_secret"
     },
     {
       "label": "Problem 5: RLS Type Mismatch (`uuid = text`)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L189",
-      "id": "ultimate_job_tool_troubleshooting_problem_5_rls_type_mismatch_uuid_text",
       "community": 7,
-      "norm_label": "problem 5: rls type mismatch (`uuid = text`)"
+      "norm_label": "problem 5: rls type mismatch (`uuid = text`)",
+      "id": "ultimate_job_tool_troubleshooting_problem_5_rls_type_mismatch_uuid_text"
     },
     {
       "label": "DEVELOPMENT_HISTORY.md",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L1",
-      "id": "development_history_md",
       "community": 8,
-      "norm_label": "development_history.md"
+      "norm_label": "development_history.md",
+      "id": "development_history_md"
     },
     {
       "label": "Ultimate Job Hunting Tool - Architecture & Development History",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L1",
-      "id": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history",
       "community": 8,
-      "norm_label": "ultimate job hunting tool - architecture & development history"
+      "norm_label": "ultimate job hunting tool - architecture & development history",
+      "id": "ultimate_job_tool_development_history_ultimate_job_hunting_tool_architecture_development_history"
     },
     {
       "label": "1. Project Overview & Evolution",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L5",
-      "id": "ultimate_job_tool_development_history_1_project_overview_evolution",
       "community": 8,
-      "norm_label": "1. project overview & evolution"
+      "norm_label": "1. project overview & evolution",
+      "id": "ultimate_job_tool_development_history_1_project_overview_evolution"
     },
     {
       "label": "Core Objectives of v3",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L9",
-      "id": "ultimate_job_tool_development_history_core_objectives_of_v3",
       "community": 8,
-      "norm_label": "core objectives of v3"
+      "norm_label": "core objectives of v3",
+      "id": "ultimate_job_tool_development_history_core_objectives_of_v3"
     },
     {
       "label": "2. Technical Stack",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L16",
-      "id": "ultimate_job_tool_development_history_2_technical_stack",
       "community": 8,
-      "norm_label": "2. technical stack"
+      "norm_label": "2. technical stack",
+      "id": "ultimate_job_tool_development_history_2_technical_stack"
     },
     {
       "label": "3. Core Features & Implementation Details",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L25",
-      "id": "ultimate_job_tool_development_history_3_core_features_implementation_details",
       "community": 8,
-      "norm_label": "3. core features & implementation details"
+      "norm_label": "3. core features & implementation details",
+      "id": "ultimate_job_tool_development_history_3_core_features_implementation_details"
     },
     {
       "label": "A. The Dual CV System",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L27",
-      "id": "ultimate_job_tool_development_history_a_the_dual_cv_system",
       "community": 8,
-      "norm_label": "a. the dual cv system"
+      "norm_label": "a. the dual cv system",
+      "id": "ultimate_job_tool_development_history_a_the_dual_cv_system"
     },
     {
       "label": "B. Dynamic Prompt Engine",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L33",
-      "id": "ultimate_job_tool_development_history_b_dynamic_prompt_engine",
       "community": 8,
-      "norm_label": "b. dynamic prompt engine"
+      "norm_label": "b. dynamic prompt engine",
+      "id": "ultimate_job_tool_development_history_b_dynamic_prompt_engine"
     },
     {
       "label": "C. Multi-Provider AI Integration",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L38",
-      "id": "ultimate_job_tool_development_history_c_multi_provider_ai_integration",
       "community": 8,
-      "norm_label": "c. multi-provider ai integration"
+      "norm_label": "c. multi-provider ai integration",
+      "id": "ultimate_job_tool_development_history_c_multi_provider_ai_integration"
     },
     {
       "label": "D. In-Browser PDF Compilation",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L51",
-      "id": "ultimate_job_tool_development_history_d_in_browser_pdf_compilation",
       "community": 8,
-      "norm_label": "d. in-browser pdf compilation"
+      "norm_label": "d. in-browser pdf compilation",
+      "id": "ultimate_job_tool_development_history_d_in_browser_pdf_compilation"
     },
     {
       "label": "E. Job Posting Scraping & Auto-Extraction",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L63",
-      "id": "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction",
       "community": 8,
-      "norm_label": "e. job posting scraping & auto-extraction"
+      "norm_label": "e. job posting scraping & auto-extraction",
+      "id": "ultimate_job_tool_development_history_e_job_posting_scraping_auto_extraction"
     },
     {
       "label": "F. CV Converter & ATS Testing",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L72",
-      "id": "ultimate_job_tool_development_history_f_cv_converter_ats_testing",
       "community": 8,
-      "norm_label": "f. cv converter & ats testing"
+      "norm_label": "f. cv converter & ats testing",
+      "id": "ultimate_job_tool_development_history_f_cv_converter_ats_testing"
     },
     {
       "label": "4. UI/UX Architecture",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L78",
-      "id": "ultimate_job_tool_development_history_4_ui_ux_architecture",
       "community": 8,
-      "norm_label": "4. ui/ux architecture"
+      "norm_label": "4. ui/ux architecture",
+      "id": "ultimate_job_tool_development_history_4_ui_ux_architecture"
     },
     {
       "label": "5. Development Timeline & Key Decisions",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L88",
-      "id": "ultimate_job_tool_development_history_5_development_timeline_key_decisions",
       "community": 8,
-      "norm_label": "5. development timeline & key decisions"
+      "norm_label": "5. development timeline & key decisions",
+      "id": "ultimate_job_tool_development_history_5_development_timeline_key_decisions"
     },
     {
       "label": "6. Known Constraints & Future Considerations",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
       "source_location": "L106",
-      "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
       "community": 8,
-      "norm_label": "6. known constraints & future considerations"
+      "norm_label": "6. known constraints & future considerations",
+      "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations"
     },
     {
       "label": "CONTRIBUTORS_GUIDE.md",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L1",
-      "id": "contributors_guide_md",
       "community": 14,
-      "norm_label": "contributors_guide.md"
+      "norm_label": "contributors_guide.md",
+      "id": "contributors_guide_md"
     },
     {
       "label": "\ud83d\udee0\ufe0f Contributors Guide \u2014 Ultimate Job Tool",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L1",
-      "id": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
       "community": 14,
-      "norm_label": "\ud83d\udee0\ufe0f contributors guide \u2014 ultimate job tool"
+      "norm_label": "\ud83d\udee0\ufe0f contributors guide \u2014 ultimate job tool",
+      "id": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool"
     },
     {
       "label": "\ud83d\udcc1 Project Structure (What Goes Where)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L7",
-      "id": "ultimate_job_tool_contributors_guide_project_structure_what_goes_where",
       "community": 14,
-      "norm_label": "\ud83d\udcc1 project structure (what goes where)"
+      "norm_label": "\ud83d\udcc1 project structure (what goes where)",
+      "id": "ultimate_job_tool_contributors_guide_project_structure_what_goes_where"
     },
     {
       "label": "code:block1 (ultimate-job-tool/)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L9",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_1",
       "community": 14,
-      "norm_label": "code:block1 (ultimate-job-tool/)"
+      "norm_label": "code:block1 (ultimate-job-tool/)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_1"
     },
     {
       "label": "\ud83c\udfd7\ufe0f Architecture Diagram",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L59",
-      "id": "ultimate_job_tool_contributors_guide_architecture_diagram",
       "community": 14,
-      "norm_label": "\ud83c\udfd7\ufe0f architecture diagram"
+      "norm_label": "\ud83c\udfd7\ufe0f architecture diagram",
+      "id": "ultimate_job_tool_contributors_guide_architecture_diagram"
     },
     {
       "label": "code:block2 (\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L61",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_2",
       "community": 14,
-      "norm_label": "code:block2 (\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500)"
+      "norm_label": "code:block2 (\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_2"
     },
     {
       "label": "\ud83d\udd27 How To: Common Tasks",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L85",
-      "id": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
       "community": 9,
-      "norm_label": "\ud83d\udd27 how to: common tasks"
+      "norm_label": "\ud83d\udd27 how to: common tasks",
+      "id": "ultimate_job_tool_contributors_guide_how_to_common_tasks"
     },
     {
       "label": "\u2705 Add a New AI Provider",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L87",
-      "id": "ultimate_job_tool_contributors_guide_add_a_new_ai_provider",
       "community": 9,
-      "norm_label": "\u2705 add a new ai provider"
+      "norm_label": "\u2705 add a new ai provider",
+      "id": "ultimate_job_tool_contributors_guide_add_a_new_ai_provider"
     },
     {
       "label": "code:javascript (anthropic: {)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L92",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_3",
       "community": 9,
-      "norm_label": "code:javascript (anthropic: {)"
+      "norm_label": "code:javascript (anthropic: {)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_3"
     },
     {
       "label": "code:javascript (anthropic: 'https://api.anthropic.com/v1/messages',)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L104",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_4",
       "community": 9,
-      "norm_label": "code:javascript (anthropic: 'https://api.anthropic.com/v1/messages',)"
+      "norm_label": "code:javascript (anthropic: 'https://api.anthropic.com/v1/messages',)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_4"
     },
     {
       "label": "\u2705 Add a New Prompt Template",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L113",
-      "id": "ultimate_job_tool_contributors_guide_add_a_new_prompt_template",
       "community": 9,
-      "norm_label": "\u2705 add a new prompt template"
+      "norm_label": "\u2705 add a new prompt template",
+      "id": "ultimate_job_tool_contributors_guide_add_a_new_prompt_template"
     },
     {
       "label": "code:javascript ({)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L118",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_5",
       "community": 9,
-      "norm_label": "code:javascript ({)"
+      "norm_label": "code:javascript ({)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_5"
     },
     {
       "label": "\u2705 Add a New Tab (New Feature)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L137",
-      "id": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature",
       "community": 9,
-      "norm_label": "\u2705 add a new tab (new feature)"
+      "norm_label": "\u2705 add a new tab (new feature)",
+      "id": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature"
     },
     {
       "label": "code:jsx (import React from 'react';)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L140",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_6",
       "community": 9,
-      "norm_label": "code:jsx (import react from 'react';)"
+      "norm_label": "code:jsx (import react from 'react';)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_6"
     },
     {
       "label": "code:javascript (// Add to the tabs array:)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L154",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_7",
       "community": 9,
-      "norm_label": "code:javascript (// add to the tabs array:)"
+      "norm_label": "code:javascript (// add to the tabs array:)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_7"
     },
     {
       "label": "code:jsx (import MyNewTab from './components/tabs/MyNewTab';)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L160",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_8",
       "community": 9,
-      "norm_label": "code:jsx (import mynewtab from './components/tabs/mynewtab';)"
+      "norm_label": "code:jsx (import mynewtab from './components/tabs/mynewtab';)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_8"
     },
     {
       "label": "\u2705 Add a New Scraper",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L171",
-      "id": "ultimate_job_tool_contributors_guide_add_a_new_scraper",
       "community": 9,
-      "norm_label": "\u2705 add a new scraper"
+      "norm_label": "\u2705 add a new scraper",
+      "id": "ultimate_job_tool_contributors_guide_add_a_new_scraper"
     },
     {
       "label": "code:javascript (export async function scrapeWithMyService(url, apiKey) {)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L174",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_9",
       "community": 9,
-      "norm_label": "code:javascript (export async function scrapewithmyservice(url, apikey) {)"
+      "norm_label": "code:javascript (export async function scrapewithmyservice(url, apikey) {)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_9"
     },
     {
       "label": "code:jsx (<option value=\"myservice\">My Service (Custom)</option>)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L185",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_10",
       "community": 9,
-      "norm_label": "code:jsx (<option value=\"myservice\">my service (custom)</option>)"
+      "norm_label": "code:jsx (<option value=\"myservice\">my service (custom)</option>)",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_10"
     },
     {
       "label": "\u274c Remove a Feature (e.g., the ATS Tester)",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L191",
-      "id": "ultimate_job_tool_contributors_guide_remove_a_feature_e_g_the_ats_tester",
       "community": 9,
-      "norm_label": "\u274c remove a feature (e.g., the ats tester)"
+      "norm_label": "\u274c remove a feature (e.g., the ats tester)",
+      "id": "ultimate_job_tool_contributors_guide_remove_a_feature_e_g_the_ats_tester"
     },
     {
       "label": "\ud83d\udcdd Coding Conventions",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L201",
-      "id": "ultimate_job_tool_contributors_guide_coding_conventions",
       "community": 14,
-      "norm_label": "\ud83d\udcdd coding conventions"
+      "norm_label": "\ud83d\udcdd coding conventions",
+      "id": "ultimate_job_tool_contributors_guide_coding_conventions"
     },
     {
       "label": "Comments",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L203",
-      "id": "ultimate_job_tool_contributors_guide_comments",
       "community": 14,
-      "norm_label": "comments"
+      "norm_label": "comments",
+      "id": "ultimate_job_tool_contributors_guide_comments"
     },
     {
       "label": "File Naming",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L208",
-      "id": "ultimate_job_tool_contributors_guide_file_naming",
       "community": 14,
-      "norm_label": "file naming"
+      "norm_label": "file naming",
+      "id": "ultimate_job_tool_contributors_guide_file_naming"
     },
     {
       "label": "Component Design",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L214",
-      "id": "ultimate_job_tool_contributors_guide_component_design",
       "community": 14,
-      "norm_label": "component design"
+      "norm_label": "component design",
+      "id": "ultimate_job_tool_contributors_guide_component_design"
     },
     {
       "label": "\ud83d\ude80 Running the Project",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L221",
-      "id": "ultimate_job_tool_contributors_guide_running_the_project",
       "community": 14,
-      "norm_label": "\ud83d\ude80 running the project"
+      "norm_label": "\ud83d\ude80 running the project",
+      "id": "ultimate_job_tool_contributors_guide_running_the_project"
     },
     {
       "label": "code:bash (# Install dependencies (first time only))",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L223",
-      "id": "ultimate_job_tool_contributors_guide_codeblock_11",
       "community": 14,
-      "norm_label": "code:bash (# install dependencies (first time only))"
+      "norm_label": "code:bash (# install dependencies (first time only))",
+      "id": "ultimate_job_tool_contributors_guide_codeblock_11"
     },
     {
       "label": "\ud83d\udcd6 More Documentation",
       "file_type": "document",
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L239",
-      "id": "ultimate_job_tool_contributors_guide_more_documentation",
       "community": 14,
-      "norm_label": "\ud83d\udcd6 more documentation"
+      "norm_label": "\ud83d\udcd6 more documentation",
+      "id": "ultimate_job_tool_contributors_guide_more_documentation"
     },
     {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "readme_md",
       "community": 16,
-      "norm_label": "readme.md"
+      "norm_label": "readme.md",
+      "id": "readme_md"
     },
     {
       "label": "React + Vite",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "ultimate_job_tool_readme_react_vite",
       "community": 16,
-      "norm_label": "react + vite"
+      "norm_label": "react + vite",
+      "id": "ultimate_job_tool_readme_react_vite"
     },
     {
       "label": "React Compiler",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L10",
-      "id": "ultimate_job_tool_readme_react_compiler",
       "community": 16,
-      "norm_label": "react compiler"
+      "norm_label": "react compiler",
+      "id": "ultimate_job_tool_readme_react_compiler"
     },
     {
       "label": "Expanding the ESLint configuration",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L14",
-      "id": "ultimate_job_tool_readme_expanding_the_eslint_configuration",
       "community": 16,
-      "norm_label": "expanding the eslint configuration"
+      "norm_label": "expanding the eslint configuration",
+      "id": "ultimate_job_tool_readme_expanding_the_eslint_configuration"
     },
     {
       "label": "graphify.md",
       "file_type": "document",
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L1",
-      "id": "agents_workflows_graphify_md",
       "community": 27,
-      "norm_label": "graphify.md"
+      "norm_label": "graphify.md",
+      "id": "agents_workflows_graphify_md"
     },
     {
       "label": "Workflow: graphify",
       "file_type": "document",
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L6",
-      "id": "workflows_graphify_workflow_graphify",
       "community": 27,
-      "norm_label": "workflow: graphify"
+      "norm_label": "workflow: graphify",
+      "id": "workflows_graphify_workflow_graphify"
     },
     {
       "label": "graphify.md",
       "file_type": "document",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L1",
-      "id": "agents_rules_graphify_md",
       "community": 26,
-      "norm_label": "graphify.md"
+      "norm_label": "graphify.md",
+      "id": "agents_rules_graphify_md"
     },
     {
       "label": "graphify",
       "file_type": "document",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
-      "id": "rules_graphify_graphify",
       "community": 26,
-      "norm_label": "graphify"
+      "norm_label": "graphify",
+      "id": "rules_graphify_graphify"
     },
     {
       "label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
@@ -2336,7 +2345,7 @@
       "label": "PDF Service",
       "file_type": "code",
       "source_file": "src/services/pdfService.js",
-      "community": 15,
+      "community": 2,
       "norm_label": "pdf service",
       "id": "pdf_service"
     },
@@ -2344,7 +2353,7 @@
       "label": "ATS Service",
       "file_type": "code",
       "source_file": "src/services/atsService.js",
-      "community": 2,
+      "community": 6,
       "norm_label": "ats service",
       "id": "ats_service"
     },
@@ -2365,14 +2374,6 @@
       "id": "synthetic_cv"
     },
     {
-      "label": "Prompt Templates",
-      "file_type": "code",
-      "source_file": "src/constants/promptTemplates.js",
-      "community": 22,
-      "norm_label": "prompt templates",
-      "id": "prompt_templates"
-    },
-    {
       "label": "AI Provider Configs",
       "file_type": "code",
       "source_file": "src/constants/aiProviders.js",
@@ -2384,14 +2385,14 @@
       "label": "Vite Configuration",
       "file_type": "code",
       "source_file": "vite.config.js",
-      "community": 15,
+      "community": 2,
       "norm_label": "vite configuration",
       "id": "vite_config"
     },
     {
       "label": "TeXLive.net API",
       "file_type": "concept",
-      "community": 15,
+      "community": 2,
       "norm_label": "texlive.net api",
       "id": "texlive_net"
     },
@@ -2425,6 +2426,581 @@
     }
   ],
   "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_prompttemplates_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_aiservice_callaiprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_atsservice_runatsanalysis"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_latexutils_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_latexutils_mergelatexresponses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_uselocalstorage_uselocalstorage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_authgate"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_promptstab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L106",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_aiassistanttab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main_jsx",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_syntheticcv_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_aiproviders_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_cvtemplates_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_aiservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_scraperservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_pdfservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_atsservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_fileuploadservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_storageservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_usedatabase_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_usetoast_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_header_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_tabnavigation_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_toast_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_dashboardtab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_joboffertab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_mycvtab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_pdfmakertab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_atstesttab_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_uselocalstorage_uselocalstorage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_aiassistanttab_jsx",
+      "target": "tabs_aiassistanttab_aiassistanttab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/AiAssistantTab.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_aiassistanttab_jsx",
+      "target": "src_constants_aiproviders_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/PromptsTab.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_promptstab_jsx",
+      "target": "tabs_promptstab_promptstab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/promptTemplates.js",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_prompttemplates_js",
+      "target": "constants_prompttemplates_prompt_templates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_latexutils_js",
+      "target": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_services_latexutils_js",
+      "target": "services_latexutils_escapeampersands"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "src_services_latexutils_js",
+      "target": "services_latexutils_mergelatexresponses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_latexutils_extractlatexfromresponse",
+      "target": "services_latexutils_escapeampersands"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/latexUtils.js",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "services_latexutils_mergelatexresponses",
+      "target": "services_latexutils_escapeampersands",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -2894,17 +3470,6 @@
       "target": "scratch_package_scripts_test"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/main.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_main_jsx",
-      "target": "src_app_jsx"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main.jsx",
@@ -2913,466 +3478,6 @@
       "confidence_score": 1.0,
       "source": "src_main_jsx",
       "target": "src_main_renderapp"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L47",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_syntheticcv_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_prompttemplates_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L49",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_aiproviders_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_cvtemplates_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_aiservice_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_aiservice_callaiprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_scraperservice_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_scraperservice_scrapewithjina"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_scraperservice_scrapewithscrapfly"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_pdfservice_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_pdfservice_compilepdffromlatex"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_pdfservice_downloadblobaspdf"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_atsservice_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_atsservice_runatsanalysis"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_fileuploadservice_js"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_fileuploadservice_extracttextfromfile"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_fileuploadservice_buildlatexconversionprompt"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_latexutils_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_latexutils_extractlatexfromresponse"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_storageservice_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_usedatabase_js"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_uselocalstorage_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "hooks_uselocalstorage_uselocalstorage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L65",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_usetoast_js",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_app_authgate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_header_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L100",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_tabnavigation_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L101",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_toast_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L104",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_dashboardtab_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L105",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_promptstab_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L106",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_aiassistanttab_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L107",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_joboffertab_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_mycvtab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L109",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_pdfmakertab_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L110",
-      "weight": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_atstesttab_jsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L93",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L93",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L94",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L140",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_uselocalstorage_uselocalstorage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "src_hooks_uselocalstorage_js"
     },
     {
       "relation": "contains",
@@ -3400,9 +3505,9 @@
       "source_file": "src/services/pdfService.js",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_pdfservice_js",
-      "target": "services_pdfservice_compilepdffromlatex",
-      "confidence_score": 1.0
+      "target": "services_pdfservice_compilepdffromlatex"
     },
     {
       "relation": "contains",
@@ -3410,9 +3515,9 @@
       "source_file": "src/services/pdfService.js",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_pdfservice_js",
-      "target": "services_pdfservice_downloadblobaspdf",
-      "confidence_score": 1.0
+      "target": "services_pdfservice_downloadblobaspdf"
     },
     {
       "relation": "contains",
@@ -3450,9 +3555,9 @@
       "source_file": "src/services/atsService.js",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_atsservice_js",
-      "target": "services_atsservice_buildatsprompt",
-      "confidence_score": 1.0
+      "target": "services_atsservice_buildatsprompt"
     },
     {
       "relation": "contains",
@@ -3460,9 +3565,9 @@
       "source_file": "src/services/atsService.js",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_atsservice_js",
-      "target": "services_atsservice_cleanjsonresponse",
-      "confidence_score": 1.0
+      "target": "services_atsservice_cleanjsonresponse"
     },
     {
       "relation": "contains",
@@ -3470,9 +3575,9 @@
       "source_file": "src/services/atsService.js",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_atsservice_js",
-      "target": "services_atsservice_runatsanalysis",
-      "confidence_score": 1.0
+      "target": "services_atsservice_runatsanalysis"
     },
     {
       "relation": "calls",
@@ -3532,9 +3637,9 @@
       "source_file": "src/services/scraperService.js",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_scraperservice_js",
-      "target": "services_scraperservice_scrapewithjina",
-      "confidence_score": 1.0
+      "target": "services_scraperservice_scrapewithjina"
     },
     {
       "relation": "contains",
@@ -3542,9 +3647,9 @@
       "source_file": "src/services/scraperService.js",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_scraperservice_js",
-      "target": "services_scraperservice_scrapewithscrapfly",
-      "confidence_score": 1.0
+      "target": "services_scraperservice_scrapewithscrapfly"
     },
     {
       "relation": "contains",
@@ -3552,9 +3657,9 @@
       "source_file": "src/services/scraperService.js",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_scraperservice_js",
-      "target": "services_scraperservice_cleanjinamarkdown",
-      "confidence_score": 1.0
+      "target": "services_scraperservice_cleanjinamarkdown"
     },
     {
       "relation": "calls",
@@ -3600,43 +3705,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/services/latexUtils.js",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_services_latexutils_js",
-      "target": "services_latexutils_extractlatexfromresponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/latexUtils.js",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_services_latexutils_js",
-      "target": "services_latexutils_escapeampersands"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/latexUtils.js",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_latexutils_extractlatexfromresponse",
-      "target": "services_latexutils_escapeampersands"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/services/storageService.js",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_keys",
-      "confidence_score": 1.0
+      "target": "services_storageservice_keys"
     },
     {
       "relation": "contains",
@@ -3644,9 +3718,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getitem",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getitem"
     },
     {
       "relation": "contains",
@@ -3654,9 +3728,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_setitem",
-      "confidence_score": 1.0
+      "target": "services_storageservice_setitem"
     },
     {
       "relation": "contains",
@@ -3664,9 +3738,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getjobdescription",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getjobdescription"
     },
     {
       "relation": "contains",
@@ -3674,9 +3748,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_savejobdescription",
-      "confidence_score": 1.0
+      "target": "services_storageservice_savejobdescription"
     },
     {
       "relation": "contains",
@@ -3684,9 +3758,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getcvoriginal",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getcvoriginal"
     },
     {
       "relation": "contains",
@@ -3694,9 +3768,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_savecvoriginal",
-      "confidence_score": 1.0
+      "target": "services_storageservice_savecvoriginal"
     },
     {
       "relation": "contains",
@@ -3704,9 +3778,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getcvgenerated",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getcvgenerated"
     },
     {
       "relation": "contains",
@@ -3714,9 +3788,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_savecvgenerated",
-      "confidence_score": 1.0
+      "target": "services_storageservice_savecvgenerated"
     },
     {
       "relation": "contains",
@@ -3724,9 +3798,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getapikey",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getapikey"
     },
     {
       "relation": "contains",
@@ -3734,9 +3808,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_saveapikey",
-      "confidence_score": 1.0
+      "target": "services_storageservice_saveapikey"
     },
     {
       "relation": "contains",
@@ -3744,9 +3818,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getaiprovider",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getaiprovider"
     },
     {
       "relation": "contains",
@@ -3754,9 +3828,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_saveaiprovider",
-      "confidence_score": 1.0
+      "target": "services_storageservice_saveaiprovider"
     },
     {
       "relation": "contains",
@@ -3764,9 +3838,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getaimodel",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getaimodel"
     },
     {
       "relation": "contains",
@@ -3774,9 +3848,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_saveaimodel",
-      "confidence_score": 1.0
+      "target": "services_storageservice_saveaimodel"
     },
     {
       "relation": "contains",
@@ -3784,9 +3858,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L142",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getairesponse",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getairesponse"
     },
     {
       "relation": "contains",
@@ -3794,9 +3868,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L146",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_saveairesponse",
-      "confidence_score": 1.0
+      "target": "services_storageservice_saveairesponse"
     },
     {
       "relation": "contains",
@@ -3804,9 +3878,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getscrapertype",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getscrapertype"
     },
     {
       "relation": "contains",
@@ -3814,9 +3888,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_savescrapertype",
-      "confidence_score": 1.0
+      "target": "services_storageservice_savescrapertype"
     },
     {
       "relation": "contains",
@@ -3824,9 +3898,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_getscrapflykey",
-      "confidence_score": 1.0
+      "target": "services_storageservice_getscrapflykey"
     },
     {
       "relation": "contains",
@@ -3834,9 +3908,9 @@
       "source_file": "src/services/storageService.js",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_storageservice_js",
-      "target": "services_storageservice_savescrapflykey",
-      "confidence_score": 1.0
+      "target": "services_storageservice_savescrapflykey"
     },
     {
       "relation": "contains",
@@ -4285,19 +4359,9 @@
       "source_file": "src/hooks/useDatabase.js",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hooks_usedatabase_useclouddatabase",
-      "target": "services_supabaseclient_createauthenticatedsupabaseclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/constants/promptTemplates.js",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "src_constants_prompttemplates_js",
-      "target": "constants_prompttemplates_prompt_templates",
-      "confidence_score": 1.0
+      "target": "services_supabaseclient_createauthenticatedsupabaseclient"
     },
     {
       "relation": "contains",
@@ -4308,17 +4372,6 @@
       "confidence_score": 1.0,
       "source": "src_constants_aiproviders_js",
       "target": "constants_aiproviders_ai_providers"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/AiAssistantTab.jsx",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_aiassistanttab_jsx",
-      "target": "src_constants_aiproviders_js"
     },
     {
       "relation": "imports_from",
@@ -4338,9 +4391,9 @@
       "source_file": "src/constants/cvTemplates.js",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_constants_cvtemplates_js",
-      "target": "src_constants_syntheticcv_js",
-      "confidence_score": 1.0
+      "target": "src_constants_syntheticcv_js"
     },
     {
       "relation": "contains",
@@ -4379,9 +4432,9 @@
       "source_file": "src/hooks/useLocalStorage.js",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_hooks_uselocalstorage_js",
-      "target": "hooks_uselocalstorage_uselocalstorage",
-      "confidence_score": 1.0
+      "target": "hooks_uselocalstorage_uselocalstorage"
     },
     {
       "relation": "contains",
@@ -4420,9 +4473,9 @@
       "source_file": "src/components/tabs/DashboardTab.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "src_hooks_usedatabase_js",
-      "confidence_score": 1.0
+      "target": "src_hooks_usedatabase_js"
     },
     {
       "relation": "calls",
@@ -4504,9 +4557,9 @@
       "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_joboffertab_jsx",
-      "target": "tabs_joboffertab_joboffertab",
-      "confidence_score": 1.0
+      "target": "tabs_joboffertab_joboffertab"
     },
     {
       "relation": "contains",
@@ -4521,32 +4574,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/PromptsTab.jsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "src_components_tabs_promptstab_jsx",
-      "target": "tabs_promptstab_promptstab",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/AiAssistantTab.jsx",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_aiassistanttab_jsx",
-      "target": "tabs_aiassistanttab_aiassistanttab"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_layout_tabnavigation_jsx",
-      "target": "layout_tabnavigation_tabs",
-      "confidence_score": 1.0
+      "target": "layout_tabnavigation_tabs"
     },
     {
       "relation": "contains",
@@ -4554,9 +4587,9 @@
       "source_file": "src/components/layout/TabNavigation.jsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_layout_tabnavigation_jsx",
-      "target": "layout_tabnavigation_tabnavigation",
-      "confidence_score": 1.0
+      "target": "layout_tabnavigation_tabnavigation"
     },
     {
       "relation": "contains",
@@ -5294,9 +5327,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contributors_guide_md",
-      "target": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool"
     },
     {
       "relation": "contains",
@@ -5304,9 +5337,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "target": "ultimate_job_tool_contributors_guide_project_structure_what_goes_where",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_project_structure_what_goes_where"
     },
     {
       "relation": "contains",
@@ -5314,9 +5347,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "target": "ultimate_job_tool_contributors_guide_architecture_diagram",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_architecture_diagram"
     },
     {
       "relation": "contains",
@@ -5324,9 +5357,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "target": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_how_to_common_tasks"
     },
     {
       "relation": "contains",
@@ -5334,9 +5367,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L201",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "target": "ultimate_job_tool_contributors_guide_coding_conventions",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_coding_conventions"
     },
     {
       "relation": "contains",
@@ -5344,9 +5377,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L221",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "target": "ultimate_job_tool_contributors_guide_running_the_project",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_running_the_project"
     },
     {
       "relation": "contains",
@@ -5354,9 +5387,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L239",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_contributors_guide_ultimate_job_tool",
-      "target": "ultimate_job_tool_contributors_guide_more_documentation",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_more_documentation"
     },
     {
       "relation": "contains",
@@ -5364,9 +5397,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_project_structure_what_goes_where",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_1",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_1"
     },
     {
       "relation": "contains",
@@ -5374,9 +5407,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_architecture_diagram",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_2",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_2"
     },
     {
       "relation": "contains",
@@ -5384,9 +5417,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
-      "target": "ultimate_job_tool_contributors_guide_add_a_new_ai_provider",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_add_a_new_ai_provider"
     },
     {
       "relation": "contains",
@@ -5394,9 +5427,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
-      "target": "ultimate_job_tool_contributors_guide_add_a_new_prompt_template",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_add_a_new_prompt_template"
     },
     {
       "relation": "contains",
@@ -5404,9 +5437,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
-      "target": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature"
     },
     {
       "relation": "contains",
@@ -5414,9 +5447,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
-      "target": "ultimate_job_tool_contributors_guide_add_a_new_scraper",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_add_a_new_scraper"
     },
     {
       "relation": "contains",
@@ -5424,9 +5457,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L191",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_how_to_common_tasks",
-      "target": "ultimate_job_tool_contributors_guide_remove_a_feature_e_g_the_ats_tester",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_remove_a_feature_e_g_the_ats_tester"
     },
     {
       "relation": "contains",
@@ -5434,9 +5467,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_ai_provider",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_3",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_3"
     },
     {
       "relation": "contains",
@@ -5444,9 +5477,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_ai_provider",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_4",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_4"
     },
     {
       "relation": "contains",
@@ -5454,9 +5487,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_prompt_template",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_5",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_5"
     },
     {
       "relation": "contains",
@@ -5464,9 +5497,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_6",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_6"
     },
     {
       "relation": "contains",
@@ -5474,9 +5507,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_7",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_7"
     },
     {
       "relation": "contains",
@@ -5484,9 +5517,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_tab_new_feature",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_8",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_8"
     },
     {
       "relation": "contains",
@@ -5494,9 +5527,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_scraper",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_9",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_9"
     },
     {
       "relation": "contains",
@@ -5504,9 +5537,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_add_a_new_scraper",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_10",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_10"
     },
     {
       "relation": "contains",
@@ -5514,9 +5547,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_coding_conventions",
-      "target": "ultimate_job_tool_contributors_guide_comments",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_comments"
     },
     {
       "relation": "contains",
@@ -5524,9 +5557,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_coding_conventions",
-      "target": "ultimate_job_tool_contributors_guide_file_naming",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_file_naming"
     },
     {
       "relation": "contains",
@@ -5534,9 +5567,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_coding_conventions",
-      "target": "ultimate_job_tool_contributors_guide_component_design",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_component_design"
     },
     {
       "relation": "contains",
@@ -5544,9 +5577,9 @@
       "source_file": "CONTRIBUTORS_GUIDE.md",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_contributors_guide_running_the_project",
-      "target": "ultimate_job_tool_contributors_guide_codeblock_11",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_contributors_guide_codeblock_11"
     },
     {
       "relation": "contains",
@@ -5554,9 +5587,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_md",
-      "target": "ultimate_job_tool_readme_react_vite",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_readme_react_vite"
     },
     {
       "relation": "contains",
@@ -5564,9 +5597,9 @@
       "source_file": "README.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_react_vite",
-      "target": "ultimate_job_tool_readme_react_compiler",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_readme_react_compiler"
     },
     {
       "relation": "contains",
@@ -5574,9 +5607,9 @@
       "source_file": "README.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_react_vite",
-      "target": "ultimate_job_tool_readme_expanding_the_eslint_configuration",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_readme_expanding_the_eslint_configuration"
     },
     {
       "relation": "contains",
@@ -5708,5 +5741,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "52e883750e5c0d04ed34331508791decc4734af9"
+  "built_at_commit": "e4952e5e4ce34765421299eb0dc20c10981d1581"
 }

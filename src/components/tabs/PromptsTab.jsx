@@ -25,6 +25,7 @@
 
 
 import { Settings, Copy, Download, Sparkles, RotateCcw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function PromptsTab({
   templates,
@@ -38,13 +39,14 @@ export default function PromptsTab({
   onRunAI,
   onReset,
 }) {
+  const { t } = useTranslation();
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
       {/* ── Left Column: Strategy Selector ────────────────────────────── */}
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 flex flex-col h-[70vh]">
         <h2 className="text-lg font-semibold flex items-center gap-2 mb-4">
-          <Settings size={20} className="text-indigo-600" /> Choisir une stratégie
+          <Settings size={20} className="text-indigo-600" /> {t('prompts.title', 'Choisir une stratégie')}
         </h2>
         <div className="flex-grow overflow-y-auto space-y-2 custom-scrollbar pr-2">
           {templates.map(t => {
@@ -77,10 +79,10 @@ export default function PromptsTab({
 
         {/* Toolbar */}
         <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-          <span className="font-semibold text-sm">Éditeur de Prompt</span>
+          <span className="font-semibold text-sm">{t('prompts.editorTitle', 'Éditeur de Prompt')}</span>
           <div className="flex items-center gap-2">
-            <button onClick={onReset} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600" title="Réinitialiser tout">
-              <RotateCcw size={14}/> Reset
+            <button onClick={onReset} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600" title={t('prompts.resetAll', 'Réinitialiser tout')}>
+              <RotateCcw size={14}/> {t('prompts.reset', 'Reset')}
             </button>
           </div>
         </div>
@@ -91,7 +93,7 @@ export default function PromptsTab({
           <div className="flex-1 overflow-y-auto space-y-4 custom-scrollbar pr-2">
             {selectedTemplateIds.length === 0 ? (
               <div className="h-full flex items-center justify-center text-slate-400 text-sm">
-                Veuillez sélectionner au moins une stratégie.
+                {t('prompts.empty', 'Veuillez sélectionner au moins une stratégie.')}
               </div>
             ) : (
               selectedTemplateIds.map(id => {
@@ -105,10 +107,10 @@ export default function PromptsTab({
                     <div className="flex justify-between items-center">
                       <span className="text-xs font-semibold text-slate-600">{template.title}</span>
                       <div className="flex gap-2">
-                        <button onClick={() => onDownload(compiled, id)} className="text-slate-400 hover:text-indigo-600" title="Télécharger">
+                        <button onClick={() => onDownload(compiled, id)} className="text-slate-400 hover:text-indigo-600" title={t('prompts.download', 'Télécharger')}>
                           <Download size={14} />
                         </button>
-                        <button onClick={() => onCopy(compiled)} className="text-slate-400 hover:text-indigo-600" title="Copier">
+                        <button onClick={() => onCopy(compiled)} className="text-slate-400 hover:text-indigo-600" title={t('prompts.copy', 'Copier')}>
                           <Copy size={14} />
                         </button>
                       </div>
@@ -134,14 +136,14 @@ export default function PromptsTab({
               disabled={selectedTemplateIds.length === 0}
               className="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] border border-slate-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <Copy size={18} /> Copier Tout (Externe)
+              <Copy size={18} /> {t('prompts.copyAll', 'Copier Tout (Externe)')}
             </button>
             <button
               onClick={onRunAI}
               disabled={selectedTemplateIds.length === 0}
               className="w-1/2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <Sparkles size={18} /> Générer ({selectedTemplateIds.length}) avec l'IA
+              <Sparkles size={18} /> {t('prompts.generate', { count: selectedTemplateIds.length, defaultValue: `Générer (${selectedTemplateIds.length}) avec l'IA` })}
             </button>
           </div>
         </div>

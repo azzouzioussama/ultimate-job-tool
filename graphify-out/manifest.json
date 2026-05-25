@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/App.jsx": {
-    "mtime": 1779658249.3954391,
-    "ast_hash": "ed586bbe987473c3e491a18d3116bde6",
+    "mtime": 1779736355.6350384,
+    "ast_hash": "967a03594a6b0dbd66c618886f7335c0",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/fileUploadService.js": {
@@ -70,9 +70,9 @@
     "semantic_hash": "272de6eb1123e58c60a18809f9d670f5"
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/latexUtils.js": {
-    "mtime": 1779449862.6011028,
-    "ast_hash": "7ce2a5d4cd14b40d5740582f5c771feb",
-    "semantic_hash": "7ce2a5d4cd14b40d5740582f5c771feb"
+    "mtime": 1779736277.0627077,
+    "ast_hash": "5484e8d46c52fa16340d4c07b1386ef2",
+    "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/storageService.js": {
     "mtime": 1779449722.731663,
@@ -80,9 +80,9 @@
     "semantic_hash": "5628da7cf84adb3e54ee8bacb9d741a4"
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/promptTemplates.js": {
-    "mtime": 1779449668.894235,
-    "ast_hash": "7d0b500563092f0c63d49fac5af2330d",
-    "semantic_hash": "7d0b500563092f0c63d49fac5af2330d"
+    "mtime": 1779736300.5576477,
+    "ast_hash": "f334843beabcac31b3457f3f2047fc63",
+    "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/constants/aiProviders.js": {
     "mtime": 1779449673.7844186,
@@ -130,14 +130,14 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/PromptsTab.jsx": {
-    "mtime": 1779450345.481325,
-    "ast_hash": "df0c474b61b6929eef32c9655cca6ca0",
-    "semantic_hash": "df0c474b61b6929eef32c9655cca6ca0"
+    "mtime": 1779736378.4376147,
+    "ast_hash": "e29938ec42bba84a5f7885ebe012e9db",
+    "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/AiAssistantTab.jsx": {
-    "mtime": 1779450345.4739914,
-    "ast_hash": "5a199e8f3dbee76963adcbff76558204",
-    "semantic_hash": "5a199e8f3dbee76963adcbff76558204"
+    "mtime": 1779736397.4719343,
+    "ast_hash": "0235fd90788e05e2c906c23a86463cca",
+    "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/layout/TabNavigation.jsx": {
     "mtime": 1779477672.6201231,
