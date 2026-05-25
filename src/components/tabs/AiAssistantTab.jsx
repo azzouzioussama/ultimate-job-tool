@@ -40,6 +40,7 @@ export default function AiAssistantTab({
   providerLabel,
   onRunAI,
   onExtractLatex,
+  onSaveToDocuments,
   onCopy,
   onClear,
 }) {
@@ -79,7 +80,15 @@ export default function AiAssistantTab({
                 className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg hover:bg-indigo-100 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 title={t('ai.compileTooltip', 'Compiler la sélection en PDF et le mettre dans le CV Généré')}
               >
-                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.compileSelected', { count: selectedCount, defaultValue: `Compiler Sélection (${selectedCount})` })}</span>
+                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.compileSelected', { count: selectedCount, defaultValue: `Extraire CV (${selectedCount})` })}</span>
+              </button>
+              <button
+                onClick={onSaveToDocuments}
+                disabled={selectedCount === 0}
+                className="flex-1 sm:flex-none justify-center px-3 py-1.5 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                title={t('ai.saveDocsTooltip', 'Sauvegarder les réponses sélectionnées dans l\'onglet Documents')}
+              >
+                <FileText size={14} /> <span className="hidden sm:inline">{t('ai.saveDocs', { count: selectedCount, defaultValue: `Sauvegarder Doc(s) (${selectedCount})` })}</span>
               </button>
               <button
                 onClick={() => onCopy(aiResponses.map(r => r.content).join('\n\n---\n\n'))}

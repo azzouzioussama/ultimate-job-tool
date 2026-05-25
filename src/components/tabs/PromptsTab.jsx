@@ -38,6 +38,8 @@ export default function PromptsTab({
   onDownload,
   onRunAI,
   onReset,
+  requireLatex,
+  onRequireLatexChange,
 }) {
   const { t } = useTranslation();
   return (
@@ -78,9 +80,25 @@ export default function PromptsTab({
       <div className="bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col h-[70vh]">
 
         {/* Toolbar */}
-        <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+        <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 flex-wrap gap-2">
           <span className="font-semibold text-sm">{t('prompts.editorTitle', 'Éditeur de Prompt')}</span>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
+            <label className="flex items-center gap-2 cursor-pointer group">
+              <div className="relative">
+                <input 
+                  type="checkbox" 
+                  className="sr-only" 
+                  checked={requireLatex}
+                  onChange={(e) => onRequireLatexChange(e.target.checked)}
+                />
+                <div className={`block w-8 h-5 rounded-full transition-colors ${requireLatex ? 'bg-indigo-600' : 'bg-slate-300'}`}></div>
+                <div className={`absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform ${requireLatex ? 'translate-x-3' : ''}`}></div>
+              </div>
+              <span className="text-xs font-medium text-slate-600 group-hover:text-indigo-600 transition-colors">
+                {t('prompts.requireLatex', 'Forcer format LaTeX')}
+              </span>
+            </label>
+
             <button onClick={onReset} className="text-xs flex items-center gap-1 text-slate-500 hover:text-red-600" title={t('prompts.resetAll', 'Réinitialiser tout')}>
               <RotateCcw size={14}/> {t('prompts.reset', 'Reset')}
             </button>

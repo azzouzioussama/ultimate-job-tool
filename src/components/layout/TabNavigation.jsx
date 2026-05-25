@@ -32,6 +32,7 @@ const tabs = [
   { id: 'ai',        icon: Bot,        translationKey: 'tabs.aiAssistant', defaultLabel: 'Assistant IA' },
   { id: 'job',       icon: FileText,   translationKey: 'tabs.jobOffer', defaultLabel: 'Offre' },
   { id: 'cv',        icon: User,       translationKey: 'tabs.myCv', defaultLabel: 'Mon CV' },
+  { id: 'docs',      icon: FileText,   translationKey: 'tabs.documents', defaultLabel: 'Documents' },
   { id: 'pdf',       icon: FileOutput, translationKey: 'tabs.pdfMaker', defaultLabel: 'PDF Maker' },
   { id: 'ats',       icon: Activity,   translationKey: 'tabs.atsTest', defaultLabel: 'Test ATS' },
 ];

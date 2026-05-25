@@ -41,6 +41,7 @@ import { Document, Page } from 'react-pdf';
 export default function PdfMakerTab({
   pdfSource,
   onPdfSourceChange,
+  documents = [],
   pdfBlobUrl,
   isPdfLoading,
   pdfError,
@@ -74,6 +75,11 @@ export default function PdfMakerTab({
           >
             <option value="generated">{t('pdf.sourceGenerated', 'CV Généré')}</option>
             <option value="original">{t('pdf.sourceOriginal', 'CV Original')}</option>
+            {documents.map(doc => (
+              <option key={doc.id} value={doc.id}>
+                {t('pdf.sourceDoc', { title: doc.title, defaultValue: `Doc: ${doc.title}` })}
+              </option>
+            ))}
           </select>
 
           {/* Download button (only visible after compilation) */}

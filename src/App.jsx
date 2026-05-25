@@ -108,6 +108,7 @@ import PromptsTab from './components/tabs/PromptsTab';
 import AiAssistantTab from './components/tabs/AiAssistantTab';
 import JobOfferTab from './components/tabs/JobOfferTab';
 import MyCvTab from './components/tabs/MyCvTab';
+import DocumentsTab from './components/tabs/DocumentsTab';
 import PdfMakerTab from './components/tabs/PdfMakerTab';
 import AtsTestTab from './components/tabs/AtsTestTab';
 
@@ -139,6 +140,9 @@ export default function App() {
   const [jobDescription, setJobDescription] = useState('');
   const [cvOriginal, setCvOriginal] = useState(SYNTHETIC_CV);
   const [cvGenerated, setCvGenerated] = useState('');
+  const [targetPosition, setTargetPosition] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [documents, setDocuments] = useState([]);
 
   // ── Settings (auto-saved to localStorage) ───────────────────────────────────
   const [aiResponses, setAiResponses] = useState([]);
@@ -152,9 +156,10 @@ export default function App() {
   );
   const [apiKey, setApiKey] = useState(storage.getApiKey(storage.getAiProvider()));
 
-  // ── Template State ──────────────────────────────────────────────────────────
+  // ── Template & Prompts State ────────────────────────────────────────────────
   const [selectedTemplateIds, setSelectedTemplateIds] = useState([1]);
   const [customPrompts, setCustomPrompts] = useState({});
+  const [requireLatex, setRequireLatex] = useState(true);
   const [selectedCvTemplateId, setSelectedCvTemplateId] = useLocalStorage('cv_template_id', 'french-ats');
 
   // ── Loading States ──────────────────────────────────────────────────────────
@@ -200,7 +205,9 @@ export default function App() {
             jobTitle: 'Importée',
             jobDescription: oldJob || '',
             cvOriginal: oldCv || SYNTHETIC_CV,
-            cvGenerated: oldGenerated || ''
+            cvGenerated: oldGenerated || '',
+            documents: [],
+            atsResult: null
           });
           setActiveAppId(newAppId);
         }
@@ -220,27 +227,39 @@ export default function App() {
           setJobDescription(app.jobDescription || '');
           setCvOriginal(app.cvOriginal || SYNTHETIC_CV);
           setCvGenerated(app.cvGenerated || '');
+          setTargetPosition(app.jobTitle || '');
+          setCompanyName(app.companyName || '');
+          setDocuments(app.documents || []);
+          setAtsResult(app.atsResult || null);
         }
       });
     } else {
       setJobDescription('');
       setCvOriginal(SYNTHETIC_CV);
       setCvGenerated('');
+      setTargetPosition('');
+      setCompanyName('');
+      setDocuments([]);
+      setAtsResult(null);
     }
   }, [activeAppId]);
 
-  // 3. Debounced auto-save back to Dexie when typing
+  // 3. Debounced auto-save back to DB when typing
   useEffect(() => {
     if (!activeAppId) return;
     const timer = setTimeout(() => {
       updateApplication(activeAppId, {
         jobDescription,
         cvOriginal,
-        cvGenerated
+        cvGenerated,
+        jobTitle: targetPosition,
+        companyName,
+        documents,
+        atsResult
       });
     }, 500); // Wait 500ms after user stops typing
     return () => clearTimeout(timer);
-  }, [activeAppId, jobDescription, cvOriginal, cvGenerated]);
+  }, [activeAppId, jobDescription, cvOriginal, cvGenerated, targetPosition, companyName, documents, atsResult]);
 
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -279,8 +298,13 @@ export default function App() {
       jobContent += "\n\n" + t('app.prompts.urlInstruction', "(IMPORTANT : La description de poste ci-dessus est une URL. Utilise tes outils de navigation web pour visiter ce lien et lire le contenu de l'offre d'emploi avant de générer ta réponse. Si tu ne peux pas naviguer, demande à l'utilisateur de fournir le texte.)");
     }
 
-    return final.replace(/{job_description}/g, jobContent);
-  }, [cvOriginal, jobDescription, t]);
+    let compiled = final.replace(/{job_description}/g, jobContent);
+    
+    if (requireLatex) {
+      compiled += "\n\n" + t('app.prompts.latexInstruction', "IMPORTANT: Veuillez fournir votre réponse strictement en code LaTeX valide.");
+    }
+    return compiled;
+  }, [cvOriginal, jobDescription, t, requireLatex]);
 
   // Measure the PDF container width for responsive page rendering (mobile)
   useEffect(() => {
@@ -334,6 +358,10 @@ export default function App() {
   const resetAll = () => {
     setCvOriginal(SYNTHETIC_CV);
     setCvGenerated('');
+    setTargetPosition('');
+    setCompanyName('');
+    setDocuments([]);
+    setAtsResult(null);
     setSelectedTemplateIds([1]);
     setCustomPrompts({});
     setJobDescription('');
@@ -506,9 +534,15 @@ export default function App() {
     setPdfBlobUrl(null);
 
     try {
-      const contentToCompile = pdfSource === 'generated' && cvGenerated.trim()
-        ? cvGenerated
-        : cvOriginal;
+      let contentToCompile = '';
+      if (pdfSource === 'original') {
+        contentToCompile = cvOriginal;
+      } else if (pdfSource === 'generated') {
+        contentToCompile = cvGenerated.trim() ? cvGenerated : cvOriginal;
+      } else {
+        const doc = documents.find(d => d.id === pdfSource);
+        contentToCompile = doc ? doc.content : cvOriginal;
+      }
 
       const blob = await compilePdfFromLatex(contentToCompile);
       const url = URL.createObjectURL(blob);
@@ -654,6 +688,8 @@ export default function App() {
               }}
               customPrompts={customPrompts}
               onCustomPromptChange={(id, value) => setCustomPrompts(prev => ({ ...prev, [id]: value }))}
+              requireLatex={requireLatex}
+              onRequireLatexChange={setRequireLatex}
               getCompiledPrompt={getCompiledPrompt}
               onCopy={copyToClipboard}
               onDownload={downloadAsTxt}
@@ -672,6 +708,23 @@ export default function App() {
               providerLabel={providerLabel}
               onRunAI={handleRunAI}
               onExtractLatex={handleExtractLatex}
+              onSaveToDocuments={() => {
+                const selected = aiResponses.filter(r => r.isSelectedForPdf);
+                if (selected.length === 0) return;
+                
+                const newDocs = selected.map(r => ({
+                  id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+                  title: r.title || 'Document IA',
+                  content: r.content,
+                  timestamp: new Date().toISOString()
+                }));
+                
+                setDocuments(prev => [...newDocs, ...prev]);
+                showToast(t('app.toast.docsSaved', { count: newDocs.length, defaultValue: `${newDocs.length} document(s) sauvegardé(s)` }));
+                
+                // Deselect them
+                setAiResponses(prev => prev.map(r => r.isSelectedForPdf ? { ...r, isSelectedForPdf: false } : r));
+              }}
               onCopy={copyToClipboard}
               onClear={() => setAiResponses([])}
             />
@@ -707,11 +760,20 @@ export default function App() {
             />
           </div>
 
+          {/* Documents Tab */}
+          <div className={activeTab === 'docs' ? 'block' : 'hidden'}>
+            <DocumentsTab 
+              documents={documents}
+              onDocumentsChange={setDocuments}
+            />
+          </div>
+
           {/* PDF Maker Tab */}
           <div className={activeTab === 'pdf' ? 'block' : 'hidden'}>
             <PdfMakerTab
               pdfSource={pdfSource}
               onPdfSourceChange={setPdfSource}
+              documents={documents}
               pdfBlobUrl={pdfBlobUrl}
               isPdfLoading={isPdfLoading}
               pdfError={pdfError}

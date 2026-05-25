@@ -31,7 +31,7 @@ export default function DashboardTab({ onSelectApplication }) {
 
   const handleCreate = async (e) => {
     e.preventDefault();
-    if (!newCompany.trim() || !newJobTitle.trim()) return;
+    if (!newJobTitle.trim()) return;
 
     const newAppId = await createApplication({
       companyName: newCompany.trim(),
@@ -81,19 +81,18 @@ export default function DashboardTab({ onSelectApplication }) {
       {isCreating && (
         <form onSubmit={handleCreate} className="bg-slate-50 p-4 rounded-xl mb-6 border border-slate-200 flex flex-col md:flex-row gap-4 items-end">
           <div className="flex-1 w-full">
-            <label className="block text-xs font-semibold text-slate-700 mb-1">{t('dashboard.form.company', 'Entreprise')}</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">{t('dashboard.form.company', 'Entreprise (Optionnel)')}</label>
             <input
               type="text"
               autoFocus
-              required
               className="w-full text-sm border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none"
-              placeholder={t('dashboard.form.companyPlaceholder', 'Ex: Google')}
+              placeholder={t('dashboard.form.companyPlaceholder', 'Ex: Google ou "Projet Perso"')}
               value={newCompany}
               onChange={(e) => setNewCompany(e.target.value)}
             />
           </div>
           <div className="flex-1 w-full">
-            <label className="block text-xs font-semibold text-slate-700 mb-1">{t('dashboard.form.jobTitle', 'Poste visé')}</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1">{t('dashboard.form.jobTitle', 'Poste visé / Objectif')}</label>
             <input
               type="text"
               required
@@ -154,8 +153,30 @@ export default function DashboardTab({ onSelectApplication }) {
                 {app.jobTitle}
               </h3>
               <p className="text-slate-600 text-sm font-medium mb-4 line-clamp-1">
-                {app.companyName}
+                {app.companyName || <span className="italic text-slate-400">{t('dashboard.noCompany', 'Projet libre')}</span>}
               </p>
+
+              {/* Badges / Metadata Tracker */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {app.jobDescription?.length > 10 ? (
+                  <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-semibold rounded-md border border-green-100">{t('dashboard.badge.job', 'Offre ✅')}</span>
+                ) : (
+                  <span className="px-2 py-0.5 bg-slate-50 text-slate-500 text-xs font-semibold rounded-md border border-slate-100">{t('dashboard.badge.job', 'Offre ❌')}</span>
+                )}
+                {app.cvGenerated?.length > 10 ? (
+                  <span className="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-md border border-indigo-100">{t('dashboard.badge.cv', 'CV ✅')}</span>
+                ) : (
+                  <span className="px-2 py-0.5 bg-slate-50 text-slate-500 text-xs font-semibold rounded-md border border-slate-100">{t('dashboard.badge.cv', 'CV ❌')}</span>
+                )}
+                {app.documents?.length > 0 && (
+                  <span className="px-2 py-0.5 bg-purple-50 text-purple-700 text-xs font-semibold rounded-md border border-purple-100">{app.documents.length} {t('dashboard.badge.docs', 'Doc(s)')}</span>
+                )}
+                {app.atsResult && (
+                  <span className={`px-2 py-0.5 text-xs font-semibold rounded-md border ${app.atsResult.score >= 80 ? 'bg-green-50 text-green-700 border-green-100' : 'bg-yellow-50 text-yellow-700 border-yellow-100'}`}>
+                    ATS: {app.atsResult.score}%
+                  </span>
+                )}
+              </div>
               
               <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
                 <span className="flex items-center gap-1">
