@@ -102,8 +102,28 @@
       "cv": "CV",
       "docs": "Docs",
       "ats": "ATS",
+      "status": "Statut",
+      "atsBefore": "ATS Avant",
+      "atsAfter": "ATS Après",
       "actions": "Actions"
-    }
+    },
+    "status": {
+      "draft": "Brouillon",
+      "pdfGenerated": "PDF Généré",
+      "applied": "Candidature Envoyée",
+      "interview": "Entretien",
+      "rejected": "Refusé"
+    },
+    "savedFiles": "Fichiers LaTeX Sauvegardés",
+    "noSavedFiles": "Aucun code LaTeX n'a été extrait et sauvegardé pour cette offre.",
+    "continueEditing": "Continuer l'édition",
+    "deleteDoc": "Supprimer",
+    "confirmDeletePrompt": "Voulez-vous vraiment supprimer ce document ?",
+    "downloadLatex": "Télécharger LaTeX (.tex)",
+    "downloadPdf": "Compiler & Télécharger PDF (.pdf)",
+    "downloadWord": "Télécharger Word (.doc)",
+    "compiling": "Compilation en cours...",
+    "compileError": "Erreur de compilation: "
   },
   "prompts": {
     "title": "Choisir une stratégie",
@@ -132,7 +152,9 @@
     "compileMultipleTooltip": "Compiler chaque réponse sélectionnée en un PDF distinct",
     "compileMultiple": "Compiler Séparément ({{count}})",
     "extractCv": "Fusionner CV ({{count}})",
-    "extractTooltip": "Fusionner la sélection et remplacer le CV Généré"
+    "extractTooltip": "Fusionner la sélection et remplacer le CV Généré",
+    "saveDocs": "Sauvegarder Doc(s) ({{count}})",
+    "saveDocsTooltip": "Sauvegarder les réponses sélectionnées dans l'onglet Documents"
   },
   "job": {
     "title": "Description de l'Offre",
@@ -242,6 +264,11 @@
     "emptyTitle": "Aucun document",
     "emptyDesc": "Allez dans l'onglet Assistant IA pour générer et sauvegarder des lettres de motivation ou des préparations.",
     "delete": "Supprimer",
-    "confirmDelete": "Voulez-vous vraiment supprimer ce document ?"
+    "confirmDelete": "Voulez-vous vraiment supprimer ce document ?",
+    "downloadLatex": "Télécharger LaTeX (.tex)",
+    "downloadPdf": "Compiler & Télécharger PDF (.pdf)",
+    "downloadWord": "Télécharger Word (.doc)",
+    "compiling": "Compilation en cours...",
+    "compileError": "Erreur de compilation: "
   }
 }

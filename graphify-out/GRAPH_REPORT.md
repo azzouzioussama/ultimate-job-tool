@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-05-28)
+# Graph Report - ultimate-job-tool  (2026-05-29)
 
 ## Corpus Check
-- 55 files · ~40,311 words
+- 55 files · ~40,793 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 734 nodes · 785 edges · 55 communities (41 shown, 14 thin omitted)
+- 734 nodes · 787 edges · 54 communities (40 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e0b7aeea`
+- Built from commit: `7b9f0529`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,7 +59,6 @@
 - [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
-- [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
 - [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
@@ -90,7 +89,7 @@
 - `App()` --calls--> `useLocalStorage()`  [EXTRACTED]
   src/App.jsx → src/hooks/useLocalStorage.js
 
-## Communities (55 total, 14 thin omitted)
+## Communities (54 total, 14 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -101,8 +100,8 @@ Cohesion: 0.06
 Nodes (34): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucide-react, mammoth, react (+26 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.12
-Nodes (3): callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile()
+Cohesion: 0.13
+Nodes (6): callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses()
 
 ### Community 3 - "Community 3"
 Cohesion: 0.04
@@ -217,16 +216,12 @@ Cohesion: 0.29
 Nodes (5): appStringsEn, appStringsFr, dashboardStringsEn, dashboardStringsFr, locales
 
 ### Community 47 - "Community 47"
-Cohesion: 0.50
+Cohesion: 0.38
 Nodes (4): PDF Service, compilePdfFromLatex(), downloadBlobAsPdf(), TeXLive.net API
 
 ### Community 48 - "Community 48"
 Cohesion: 0.40
 Nodes (3): locales, stringsEn, stringsFr
-
-### Community 49 - "Community 49"
-Cohesion: 0.83
-Nodes (3): escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses()
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -255,6 +250,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.12280701754385964 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12857142857142856 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._

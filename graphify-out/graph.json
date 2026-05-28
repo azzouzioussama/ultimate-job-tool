@@ -133,406 +133,10 @@
       "label": "6. Known Constraints & Future Considerations",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
-      "source_location": "L108",
+      "source_location": "L109",
       "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
       "community": 8,
       "norm_label": "6. known constraints & future considerations"
-    },
-    {
-      "label": "TROUBLESHOOTING.md",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L1",
-      "id": "troubleshooting_md",
-      "community": 7,
-      "norm_label": "troubleshooting.md"
-    },
-    {
-      "label": "Troubleshooting Log & Bug Fixes",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L1",
-      "id": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "community": 7,
-      "norm_label": "troubleshooting log & bug fixes"
-    },
-    {
-      "label": "1. The TeXLive PDF Compilation Failures",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L5",
-      "id": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures",
-      "community": 7,
-      "norm_label": "1. the texlive pdf compilation failures"
-    },
-    {
-      "label": "Problem 1: `filename[]` Array Formatting",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L7",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting",
-      "community": 7,
-      "norm_label": "problem 1: `filename[]` array formatting"
-    },
-    {
-      "label": "Problem 2: Missing Multipart Encoding",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L12",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding",
-      "community": 7,
-      "norm_label": "problem 2: missing multipart encoding"
-    },
-    {
-      "label": "Problem 3: Invalid LaTeX Syntax",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L17",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax",
-      "community": 7,
-      "norm_label": "problem 3: invalid latex syntax"
-    },
-    {
-      "label": "2. The PDF Inline Display Challenge",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L22",
-      "id": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge",
-      "community": 7,
-      "norm_label": "2. the pdf inline display challenge"
-    },
-    {
-      "label": "Problem: CORS & `X-Frame-Options` Blocking",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L24",
-      "id": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking",
-      "community": 7,
-      "norm_label": "problem: cors & `x-frame-options` blocking"
-    },
-    {
-      "label": "Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L34",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls",
-      "community": 7,
-      "norm_label": "problem 2: mobile browsers blocking inline pdf `blob:` urls"
-    },
-    {
-      "label": "Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L42",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs",
-      "community": 7,
-      "norm_label": "problem 3: mobile pdf viewer scrolling & text selection bugs"
-    },
-    {
-      "label": "3. AI API Quota & Provider Issues",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L51",
-      "id": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues",
-      "community": 7,
-      "norm_label": "3. ai api quota & provider issues"
-    },
-    {
-      "label": "Problem 1: Gemini \"Model Not Found\" / Deprecation",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L53",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation",
-      "community": 7,
-      "norm_label": "problem 1: gemini \"model not found\" / deprecation"
-    },
-    {
-      "label": "Problem 2: DeepSeek \"Insufficient Balance\"",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L58",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance",
-      "community": 7,
-      "norm_label": "problem 2: deepseek \"insufficient balance\""
-    },
-    {
-      "label": "Problem 3: React State Stagnation Across Providers",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L65",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers",
-      "community": 7,
-      "norm_label": "problem 3: react state stagnation across providers"
-    },
-    {
-      "label": "4. UI/UX Bugs",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L71",
-      "id": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs",
-      "community": 7,
-      "norm_label": "4. ui/ux bugs"
-    },
-    {
-      "label": "Problem: Stale JSX Tags",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L73",
-      "id": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags",
-      "community": 7,
-      "norm_label": "problem: stale jsx tags"
-    },
-    {
-      "label": "5. AI Hallucination & Regex Challenges",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L78",
-      "id": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges",
-      "community": 7,
-      "norm_label": "5. ai hallucination & regex challenges"
-    },
-    {
-      "label": "Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L80",
-      "id": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands",
-      "community": 7,
-      "norm_label": "problem: ai generates invalid latex (mismatched brackets & unescaped ampersands)"
-    },
-    {
-      "label": "6. Job Posting Scraper (Jina AI & Scrapfly) Issues",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L87",
-      "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
-      "community": 7,
-      "norm_label": "6. job posting scraper (jina ai & scrapfly) issues"
-    },
-    {
-      "label": "Problem 1: Scrapfly CORS / Direct Fetch Rejection",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L89",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection",
-      "community": 7,
-      "norm_label": "problem 1: scrapfly cors / direct fetch rejection"
-    },
-    {
-      "label": "Problem 2: Scrapfly 422 Unprocessable Entity",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L97",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity",
-      "community": 7,
-      "norm_label": "problem 2: scrapfly 422 unprocessable entity"
-    },
-    {
-      "label": "Problem 3: Extracted Job Description Format",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L102",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format",
-      "community": 7,
-      "norm_label": "problem 3: extracted job description format"
-    },
-    {
-      "label": "Problem 4: Jina AI Extractor Boilerplate Noise",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L107",
-      "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise",
-      "community": 7,
-      "norm_label": "problem 4: jina ai extractor boilerplate noise"
-    },
-    {
-      "label": "Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L115",
-      "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai",
-      "community": 7,
-      "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)"
-    },
-    {
-      "label": "7. JSON Parsing from AI (ATS Tester)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L121",
-      "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester",
-      "community": 7,
-      "norm_label": "7. json parsing from ai (ats tester)"
-    },
-    {
-      "label": "Problem: AI Hallucinating Markdown in JSON Responses",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L123",
-      "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses",
-      "community": 7,
-      "norm_label": "problem: ai hallucinating markdown in json responses"
-    },
-    {
-      "label": "8. Database (Dexie.js) & Architecture Refactoring",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L134",
-      "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "community": 7,
-      "norm_label": "8. database (dexie.js) & architecture refactoring"
-    },
-    {
-      "label": "Problem 1: Cascading Renders warning with `useEffect`",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L136",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
-      "community": 7,
-      "norm_label": "problem 1: cascading renders warning with `useeffect`"
-    },
-    {
-      "label": "Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L141",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
-      "community": 7,
-      "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
-    },
-    {
-      "label": "9. Graphify Knowledge Graph Generation",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L146",
-      "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
-      "community": 7,
-      "norm_label": "9. graphify knowledge graph generation"
-    },
-    {
-      "label": "Problem 1: `openai` package missing during extraction",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L148",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction",
-      "community": 7,
-      "norm_label": "problem 1: `openai` package missing during extraction"
-    },
-    {
-      "label": "Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L153",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror",
-      "community": 7,
-      "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)"
-    },
-    {
-      "label": "code:bash (pip uninstall -y pydantic pydantic-core)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L157",
-      "id": "ultimate_job_tool_troubleshooting_codeblock_1",
-      "community": 7,
-      "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)"
-    },
-    {
-      "label": "10. Clerk + Supabase Integration Issues",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L163",
-      "id": "ultimate_job_tool_troubleshooting_10_clerk_supabase_integration_issues",
-      "community": 7,
-      "norm_label": "10. clerk + supabase integration issues"
-    },
-    {
-      "label": "Problem 1: Vite Crash with `require()`",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L165",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_vite_crash_with_require",
-      "community": 7,
-      "norm_label": "problem 1: vite crash with `require()`"
-    },
-    {
-      "label": "Problem 2: Supabase Client Instantiation Crash",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L170",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_supabase_client_instantiation_crash",
-      "community": 7,
-      "norm_label": "problem 2: supabase client instantiation crash"
-    },
-    {
-      "label": "Problem 3: Dashboard Stuck on \"Chargement...\"",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L175",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_dashboard_stuck_on_chargement",
-      "community": 7,
-      "norm_label": "problem 3: dashboard stuck on \"chargement...\""
-    },
-    {
-      "label": "Problem 4: Missing Clerk JWT Template & Invalid JWT Secret",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L182",
-      "id": "ultimate_job_tool_troubleshooting_problem_4_missing_clerk_jwt_template_invalid_jwt_secret",
-      "community": 7,
-      "norm_label": "problem 4: missing clerk jwt template & invalid jwt secret"
-    },
-    {
-      "label": "Problem 5: RLS Type Mismatch (`uuid = text`)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L189",
-      "id": "ultimate_job_tool_troubleshooting_problem_5_rls_type_mismatch_uuid_text",
-      "community": 7,
-      "norm_label": "problem 5: rls type mismatch (`uuid = text`)"
-    },
-    {
-      "label": "11. WSL2 Development Server Blank Page",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L194",
-      "id": "ultimate_job_tool_troubleshooting_11_wsl2_development_server_blank_page",
-      "community": 7,
-      "norm_label": "11. wsl2 development server blank page"
-    },
-    {
-      "label": "Problem 1: Vite 8 `allowedHosts` Syntax Change",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L196",
-      "id": "ultimate_job_tool_troubleshooting_problem_1_vite_8_allowedhosts_syntax_change",
-      "community": 7,
-      "norm_label": "problem 1: vite 8 `allowedhosts` syntax change"
-    },
-    {
-      "label": "Problem 2: WSL2 Port 5173 Forwarding Broken",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L201",
-      "id": "ultimate_job_tool_troubleshooting_problem_2_wsl2_port_5173_forwarding_broken",
-      "community": 7,
-      "norm_label": "problem 2: wsl2 port 5173 forwarding broken"
-    },
-    {
-      "label": "Problem 3: ClerkProvider Missing `publishableKey` Prop",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L211",
-      "id": "ultimate_job_tool_troubleshooting_problem_3_clerkprovider_missing_publishablekey_prop",
-      "community": 7,
-      "norm_label": "problem 3: clerkprovider missing `publishablekey` prop"
-    },
-    {
-      "label": "Problem 4: Application Data Disappearing on Refresh (Supabase Schema Sync)",
-      "file_type": "document",
-      "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L216",
-      "id": "ultimate_job_tool_troubleshooting_problem_4_application_data_disappearing_on_refresh_supabase_schema_sync",
-      "community": 7,
-      "norm_label": "problem 4: application data disappearing on refresh (supabase schema sync)"
     },
     {
       "label": "App.jsx",
@@ -580,22 +184,436 @@
       "norm_label": "dashboardtab()"
     },
     {
+      "label": "DocumentsTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L1",
+      "id": "src_components_tabs_documentstab_jsx",
+      "community": 47,
+      "norm_label": "documentstab.jsx"
+    },
+    {
+      "label": "DocumentsTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L5",
+      "id": "tabs_documentstab_documentstab",
+      "community": 47,
+      "norm_label": "documentstab()"
+    },
+    {
+      "label": "TROUBLESHOOTING.md",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L1",
+      "community": 7,
+      "norm_label": "troubleshooting.md",
+      "id": "troubleshooting_md"
+    },
+    {
+      "label": "Troubleshooting Log & Bug Fixes",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L1",
+      "community": 7,
+      "norm_label": "troubleshooting log & bug fixes",
+      "id": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes"
+    },
+    {
+      "label": "1. The TeXLive PDF Compilation Failures",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L5",
+      "community": 7,
+      "norm_label": "1. the texlive pdf compilation failures",
+      "id": "ultimate_job_tool_troubleshooting_1_the_texlive_pdf_compilation_failures"
+    },
+    {
+      "label": "Problem 1: `filename[]` Array Formatting",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L7",
+      "community": 7,
+      "norm_label": "problem 1: `filename[]` array formatting",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_filename_array_formatting"
+    },
+    {
+      "label": "Problem 2: Missing Multipart Encoding",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L12",
+      "community": 7,
+      "norm_label": "problem 2: missing multipart encoding",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_missing_multipart_encoding"
+    },
+    {
+      "label": "Problem 3: Invalid LaTeX Syntax",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L17",
+      "community": 7,
+      "norm_label": "problem 3: invalid latex syntax",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_invalid_latex_syntax"
+    },
+    {
+      "label": "2. The PDF Inline Display Challenge",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L22",
+      "community": 7,
+      "norm_label": "2. the pdf inline display challenge",
+      "id": "ultimate_job_tool_troubleshooting_2_the_pdf_inline_display_challenge"
+    },
+    {
+      "label": "Problem: CORS & `X-Frame-Options` Blocking",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L24",
+      "community": 7,
+      "norm_label": "problem: cors & `x-frame-options` blocking",
+      "id": "ultimate_job_tool_troubleshooting_problem_cors_x_frame_options_blocking"
+    },
+    {
+      "label": "Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L34",
+      "community": 7,
+      "norm_label": "problem 2: mobile browsers blocking inline pdf `blob:` urls",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_mobile_browsers_blocking_inline_pdf_blob_urls"
+    },
+    {
+      "label": "Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L42",
+      "community": 7,
+      "norm_label": "problem 3: mobile pdf viewer scrolling & text selection bugs",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_mobile_pdf_viewer_scrolling_text_selection_bugs"
+    },
+    {
+      "label": "3. AI API Quota & Provider Issues",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L51",
+      "community": 7,
+      "norm_label": "3. ai api quota & provider issues",
+      "id": "ultimate_job_tool_troubleshooting_3_ai_api_quota_provider_issues"
+    },
+    {
+      "label": "Problem 1: Gemini \"Model Not Found\" / Deprecation",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L53",
+      "community": 7,
+      "norm_label": "problem 1: gemini \"model not found\" / deprecation",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_gemini_model_not_found_deprecation"
+    },
+    {
+      "label": "Problem 2: DeepSeek \"Insufficient Balance\"",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L58",
+      "community": 7,
+      "norm_label": "problem 2: deepseek \"insufficient balance\"",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_deepseek_insufficient_balance"
+    },
+    {
+      "label": "Problem 3: React State Stagnation Across Providers",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L65",
+      "community": 7,
+      "norm_label": "problem 3: react state stagnation across providers",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_react_state_stagnation_across_providers"
+    },
+    {
+      "label": "4. UI/UX Bugs",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L71",
+      "community": 7,
+      "norm_label": "4. ui/ux bugs",
+      "id": "ultimate_job_tool_troubleshooting_4_ui_ux_bugs"
+    },
+    {
+      "label": "Problem: Stale JSX Tags",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L73",
+      "community": 7,
+      "norm_label": "problem: stale jsx tags",
+      "id": "ultimate_job_tool_troubleshooting_problem_stale_jsx_tags"
+    },
+    {
+      "label": "5. AI Hallucination & Regex Challenges",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L78",
+      "community": 7,
+      "norm_label": "5. ai hallucination & regex challenges",
+      "id": "ultimate_job_tool_troubleshooting_5_ai_hallucination_regex_challenges"
+    },
+    {
+      "label": "Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L80",
+      "community": 7,
+      "norm_label": "problem: ai generates invalid latex (mismatched brackets & unescaped ampersands)",
+      "id": "ultimate_job_tool_troubleshooting_problem_ai_generates_invalid_latex_mismatched_brackets_unescaped_ampersands"
+    },
+    {
+      "label": "6. Job Posting Scraper (Jina AI & Scrapfly) Issues",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L87",
+      "community": 7,
+      "norm_label": "6. job posting scraper (jina ai & scrapfly) issues",
+      "id": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues"
+    },
+    {
+      "label": "Problem 1: Scrapfly CORS / Direct Fetch Rejection",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L89",
+      "community": 7,
+      "norm_label": "problem 1: scrapfly cors / direct fetch rejection",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_scrapfly_cors_direct_fetch_rejection"
+    },
+    {
+      "label": "Problem 2: Scrapfly 422 Unprocessable Entity",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L97",
+      "community": 7,
+      "norm_label": "problem 2: scrapfly 422 unprocessable entity",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_scrapfly_422_unprocessable_entity"
+    },
+    {
+      "label": "Problem 3: Extracted Job Description Format",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L102",
+      "community": 7,
+      "norm_label": "problem 3: extracted job description format",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_extracted_job_description_format"
+    },
+    {
+      "label": "Problem 4: Jina AI Extractor Boilerplate Noise",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L107",
+      "community": 7,
+      "norm_label": "problem 4: jina ai extractor boilerplate noise",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_jina_ai_extractor_boilerplate_noise"
+    },
+    {
+      "label": "Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L115",
+      "community": 7,
+      "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)",
+      "id": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
+    },
+    {
+      "label": "7. JSON Parsing from AI (ATS Tester)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L121",
+      "community": 7,
+      "norm_label": "7. json parsing from ai (ats tester)",
+      "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester"
+    },
+    {
+      "label": "Problem: AI Hallucinating Markdown in JSON Responses",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L123",
+      "community": 7,
+      "norm_label": "problem: ai hallucinating markdown in json responses",
+      "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses"
+    },
+    {
+      "label": "8. Database (Dexie.js) & Architecture Refactoring",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L134",
+      "community": 7,
+      "norm_label": "8. database (dexie.js) & architecture refactoring",
+      "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring"
+    },
+    {
+      "label": "Problem 1: Cascading Renders warning with `useEffect`",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L136",
+      "community": 7,
+      "norm_label": "problem 1: cascading renders warning with `useeffect`",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect"
+    },
+    {
+      "label": "Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L141",
+      "community": 7,
+      "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration"
+    },
+    {
+      "label": "9. Graphify Knowledge Graph Generation",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L146",
+      "community": 7,
+      "norm_label": "9. graphify knowledge graph generation",
+      "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation"
+    },
+    {
+      "label": "Problem 1: `openai` package missing during extraction",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L148",
+      "community": 7,
+      "norm_label": "problem 1: `openai` package missing during extraction",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction"
+    },
+    {
+      "label": "Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L153",
+      "community": 7,
+      "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror"
+    },
+    {
+      "label": "code:bash (pip uninstall -y pydantic pydantic-core)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L157",
+      "community": 7,
+      "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)",
+      "id": "ultimate_job_tool_troubleshooting_codeblock_1"
+    },
+    {
+      "label": "10. Clerk + Supabase Integration Issues",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L163",
+      "community": 7,
+      "norm_label": "10. clerk + supabase integration issues",
+      "id": "ultimate_job_tool_troubleshooting_10_clerk_supabase_integration_issues"
+    },
+    {
+      "label": "Problem 1: Vite Crash with `require()`",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L165",
+      "community": 7,
+      "norm_label": "problem 1: vite crash with `require()`",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_vite_crash_with_require"
+    },
+    {
+      "label": "Problem 2: Supabase Client Instantiation Crash",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L170",
+      "community": 7,
+      "norm_label": "problem 2: supabase client instantiation crash",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_supabase_client_instantiation_crash"
+    },
+    {
+      "label": "Problem 3: Dashboard Stuck on \"Chargement...\"",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L175",
+      "community": 7,
+      "norm_label": "problem 3: dashboard stuck on \"chargement...\"",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_dashboard_stuck_on_chargement"
+    },
+    {
+      "label": "Problem 4: Missing Clerk JWT Template & Invalid JWT Secret",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L182",
+      "community": 7,
+      "norm_label": "problem 4: missing clerk jwt template & invalid jwt secret",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_missing_clerk_jwt_template_invalid_jwt_secret"
+    },
+    {
+      "label": "Problem 5: RLS Type Mismatch (`uuid = text`)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L189",
+      "community": 7,
+      "norm_label": "problem 5: rls type mismatch (`uuid = text`)",
+      "id": "ultimate_job_tool_troubleshooting_problem_5_rls_type_mismatch_uuid_text"
+    },
+    {
+      "label": "11. WSL2 Development Server Blank Page",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L194",
+      "community": 7,
+      "norm_label": "11. wsl2 development server blank page",
+      "id": "ultimate_job_tool_troubleshooting_11_wsl2_development_server_blank_page"
+    },
+    {
+      "label": "Problem 1: Vite 8 `allowedHosts` Syntax Change",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L196",
+      "community": 7,
+      "norm_label": "problem 1: vite 8 `allowedhosts` syntax change",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_vite_8_allowedhosts_syntax_change"
+    },
+    {
+      "label": "Problem 2: WSL2 Port 5173 Forwarding Broken",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L201",
+      "community": 7,
+      "norm_label": "problem 2: wsl2 port 5173 forwarding broken",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_wsl2_port_5173_forwarding_broken"
+    },
+    {
+      "label": "Problem 3: ClerkProvider Missing `publishableKey` Prop",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L211",
+      "community": 7,
+      "norm_label": "problem 3: clerkprovider missing `publishablekey` prop",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_clerkprovider_missing_publishablekey_prop"
+    },
+    {
+      "label": "Problem 4: Application Data Disappearing on Refresh (Supabase Schema Sync)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L216",
+      "community": 7,
+      "norm_label": "problem 4: application data disappearing on refresh (supabase schema sync)",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_application_data_disappearing_on_refresh_supabase_schema_sync"
+    },
+    {
       "label": "JobOfferTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L1",
-      "id": "src_components_tabs_joboffertab_jsx",
       "community": 2,
-      "norm_label": "joboffertab.jsx"
+      "norm_label": "joboffertab.jsx",
+      "id": "src_components_tabs_joboffertab_jsx"
     },
     {
       "label": "JobOfferTab()",
       "file_type": "code",
       "source_file": "src/components/tabs/JobOfferTab.jsx",
       "source_location": "L33",
-      "id": "tabs_joboffertab_joboffertab",
       "community": 2,
-      "norm_label": "joboffertab()"
+      "norm_label": "joboffertab()",
+      "id": "tabs_joboffertab_joboffertab"
     },
     {
       "label": "AiAssistantTab.jsx",
@@ -4522,24 +4540,6 @@
       "id": "layout_tabnavigation_tabnavigation"
     },
     {
-      "label": "DocumentsTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/DocumentsTab.jsx",
-      "source_location": "L1",
-      "community": 2,
-      "norm_label": "documentstab.jsx",
-      "id": "src_components_tabs_documentstab_jsx"
-    },
-    {
-      "label": "DocumentsTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/DocumentsTab.jsx",
-      "source_location": "L4",
-      "community": 2,
-      "norm_label": "documentstab()",
-      "id": "tabs_documentstab_documentstab"
-    },
-    {
       "label": "PdfMakerTab.jsx",
       "file_type": "code",
       "source_file": "src/components/tabs/PdfMakerTab.jsx",
@@ -5219,7 +5219,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L1",
-      "community": 49,
+      "community": 2,
       "norm_label": "latexutils.js",
       "id": "src_services_latexutils_js"
     },
@@ -5228,7 +5228,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L33",
-      "community": 49,
+      "community": 2,
       "norm_label": "extractlatexfromresponse()",
       "id": "services_latexutils_extractlatexfromresponse"
     },
@@ -5237,7 +5237,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L63",
-      "community": 49,
+      "community": 2,
       "norm_label": "escapeampersands()",
       "id": "services_latexutils_escapeampersands"
     },
@@ -5246,7 +5246,7 @@
       "file_type": "code",
       "source_file": "src/services/latexUtils.js",
       "source_location": "L76",
-      "community": 49,
+      "community": 2,
       "norm_label": "mergelatexresponses()",
       "id": "services_latexutils_mergelatexresponses"
     },
@@ -6735,6 +6735,607 @@
       "target": "ultimate_job_tool_development_history_f_cv_converter_ats_testing"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_aiservice_callaiprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_atsservice_runatsanalysis"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_fileuploadservice_extracttextfromfile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_fileuploadservice_buildlatexconversionprompt"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_latexutils_mergelatexresponses"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_uselocalstorage_uselocalstorage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_authgate"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L104",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_dashboardtab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L111",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_documentstab_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_joboffertab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L106",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_aiassistanttab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_tabnavigation_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L105",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_promptstab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_pdfmakertab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_prompttemplates_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_header_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_mycvtab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_atstesttab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main_jsx",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_latexutils_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_syntheticcv_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_aiproviders_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_constants_cvtemplates_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_aiservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_scraperservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_pdfservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_atsservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_fileuploadservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_services_storageservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_usedatabase_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L64",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_usetoast_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L101",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_toast_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "constants_prompttemplates_getprompttemplates"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_uselocalstorage_uselocalstorage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "src_hooks_uselocalstorage_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "tabs_dashboardtab_dashboardtab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_dashboardtab_jsx",
+      "target": "src_hooks_usedatabase_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/tabs/DashboardTab.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "tabs_dashboardtab_dashboardtab",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_tabs_documentstab_jsx",
+      "target": "services_pdfservice_compilepdffromlatex",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_tabs_documentstab_jsx",
+      "target": "services_pdfservice_downloadblobaspdf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/DocumentsTab.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_documentstab_jsx",
+      "target": "tabs_documentstab_documentstab"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TROUBLESHOOTING.md",
@@ -7160,578 +7761,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_11_wsl2_development_server_blank_page",
-      "target": "ultimate_job_tool_troubleshooting_problem_4_application_data_disappearing_on_refresh_supabase_schema_sync",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_aiservice_callaiprovider"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_scraperservice_scrapewithjina"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_scraperservice_scrapewithscrapfly"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_pdfservice_compilepdffromlatex"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_pdfservice_downloadblobaspdf"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_atsservice_runatsanalysis"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_fileuploadservice_extracttextfromfile"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_fileuploadservice_buildlatexconversionprompt"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_latexutils_extractlatexfromresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "services_latexutils_mergelatexresponses"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "hooks_uselocalstorage_uselocalstorage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L71",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_app_authgate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L104",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_dashboardtab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_joboffertab_jsx"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L93",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L106",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_aiassistanttab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L100",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_tabnavigation_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L105",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_promptstab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L111",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_documentstab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L109",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_pdfmakertab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_prompttemplates_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_header_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L76",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_mycvtab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L110",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_atstesttab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/main.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_main_jsx",
-      "target": "src_app_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_latexutils_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L47",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_syntheticcv_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_aiproviders_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_constants_cvtemplates_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_aiservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L54",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_scraperservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_pdfservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_atsservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_fileuploadservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_services_storageservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_usedatabase_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_uselocalstorage_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L65",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_hooks_usetoast_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L101",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_layout_toast_jsx"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L125",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "constants_prompttemplates_getprompttemplates"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L93",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L94",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_usetoast_usetoast"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L140",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "hooks_uselocalstorage_uselocalstorage"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/App.jsx",
-      "source_location": "L108",
-      "weight": 1.0,
-      "source": "src_app_app",
-      "target": "src_hooks_uselocalstorage_js"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "services_pdfservice_compilepdffromlatex",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "services_pdfservice_downloadblobaspdf",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "tabs_dashboardtab_dashboardtab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_dashboardtab_jsx",
-      "target": "src_hooks_usedatabase_js"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/tabs/DashboardTab.jsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "tabs_dashboardtab_dashboardtab",
-      "target": "hooks_usedatabase_usedatabase"
+      "target": "ultimate_job_tool_troubleshooting_problem_4_application_data_disappearing_on_refresh_supabase_schema_sync"
     },
     {
       "relation": "contains",
@@ -12099,16 +12131,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/DocumentsTab.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_documentstab_jsx",
-      "target": "tabs_documentstab_documentstab"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/tabs/PdfMakerTab.jsx",
       "source_location": "L40",
       "weight": 1.0,
@@ -14518,5 +14540,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e0b7aeea2c639959c6112c797a84c0ef6da04fa3"
+  "built_at_commit": "7b9f052921cc96b86b285be90a9515f1488a6103"
 }

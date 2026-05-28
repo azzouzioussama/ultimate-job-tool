@@ -252,11 +252,11 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                           'bg-slate-50 text-slate-600 border-slate-200'
                         }`}
                       >
-                        <option value="Draft">Brouillon</option>
-                        <option value="PDF Generated">PDF Généré</option>
-                        <option value="Applied">Candidature Envoyée</option>
-                        <option value="Interview">Entretien</option>
-                        <option value="Rejected">Refusé</option>
+                        <option value="Draft">{t('dashboard.status.draft', 'Brouillon')}</option>
+                        <option value="PDF Generated">{t('dashboard.status.pdfGenerated', 'PDF Généré')}</option>
+                        <option value="Applied">{t('dashboard.status.applied', 'Candidature Envoyée')}</option>
+                        <option value="Interview">{t('dashboard.status.interview', 'Entretien')}</option>
+                        <option value="Rejected">{t('dashboard.status.rejected', 'Refusé')}</option>
                       </select>
                     </td>
                     <td className="p-4 text-center">
@@ -293,13 +293,12 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                       <td colSpan="7" className="p-6">
                         <div className="flex flex-col md:flex-row gap-8">
                           
-                          {/* LaTeX Files */}
-                          <div className="flex-1">
+                          {/* Saved LaTeX Files / AI Responses */}
+                          <div className="mt-8 border-t border-slate-100 pt-6">
                             <h4 className="font-semibold text-slate-700 mb-3 flex items-center gap-2">
-                              <Download size={16} className="text-slate-400"/> 
-                              Fichiers LaTeX Sauvegardés
+                              <Download size={16} className="text-slate-400"/> {t('dashboard.savedFiles', 'Fichiers LaTeX Sauvegardés')}
                             </h4>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
                               {app.promptResponses && Object.keys(app.promptResponses).length > 0 ? (
                                 Object.entries(app.promptResponses).map(([key, latex]) => (
                                   <div key={key} className="flex flex-col bg-white border border-slate-200 rounded-lg p-3 shadow-sm min-w-[220px]">
@@ -317,21 +316,21 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                                       <button 
                                         onClick={(e) => handleDownloadPrompt(latex, `${key}.tex`, e)} 
                                         className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title="Télécharger LaTeX (.tex)"
+                                        title={t('dashboard.downloadLatex', 'Télécharger LaTeX (.tex)')}
                                       >
-                                        <FileCode2 size={14} className="mr-1"/> .tex
+                                        <FileCode2 size={14} /> 
                                       </button>
                                       <button 
                                         onClick={(e) => handleDownloadPDF(latex, `${key}.pdf`, e)} 
                                         className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-red-50 hover:text-red-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title="Compiler & Télécharger PDF (.pdf)"
+                                        title={t('dashboard.downloadPdf', 'Compiler & Télécharger PDF (.pdf)')}
                                       >
-                                        <FileText size={14} className="mr-1"/> .pdf
+                                        <FileText size={14} /> 
                                       </button>
                                       <button 
                                         onClick={(e) => handleDownloadWord(latex, `${key}.doc`, e)} 
                                         className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title="Télécharger Word (.doc)"
+                                        title={t('dashboard.downloadWord', 'Télécharger Word (.doc)')}
                                       >
                                         <FileDown size={14} className="mr-1"/> .doc
                                       </button>
@@ -339,22 +338,21 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                                   </div>
                                 ))
                               ) : (
-                                <p className="text-sm text-slate-500 italic bg-white px-4 py-2 border border-slate-100 rounded-lg w-full">
-                                  Aucun code LaTeX n'a été extrait et sauvegardé pour cette offre.
-                                </p>
+                                <div className="text-sm text-slate-500 italic py-2">
+                                  {t('dashboard.noSavedFiles', "Aucun code LaTeX n'a été extrait et sauvegardé pour cette offre.")}
+                                </div>
                               )}
                             </div>
                           </div>
 
                           {/* Quick Actions */}
                           <div className="flex flex-col gap-3 justify-center border-t md:border-t-0 md:border-l border-slate-200 pt-4 md:pt-0 md:pl-8">
-                            <button 
-                              onClick={() => onSelectApplication(app.id)}
-                              className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-indigo-700 shadow-md transition-transform active:scale-95 flex items-center justify-center gap-2"
-                            >
-                              <Edit3 size={16} />
-                              Continuer l'édition
-                            </button>
+                            <button                                
+                                onClick={() => onSelectApplication(app.id)}
+                                className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-all shadow-sm flex items-center justify-center gap-2"
+                              >
+                                <Edit3 size={16} /> {t('dashboard.continueEditing', "Continuer l'édition")}
+                              </button>
                           </div>
 
                         </div>
