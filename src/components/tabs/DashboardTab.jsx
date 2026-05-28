@@ -74,6 +74,16 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
     URL.revokeObjectURL(url);
   };
 
+  const handleDeletePrompt = async (app, promptKey, e) => {
+    e.stopPropagation();
+    if (confirm(t('dashboard.confirmDeletePrompt', 'Voulez-vous vraiment supprimer ce document ?'))) {
+      const newResponses = { ...app.promptResponses };
+      delete newResponses[promptKey];
+      await updateApplication(app.id, { promptResponses: newResponses });
+      loadApps();
+    }
+  };
+
   const handleDownloadPDF = async (content, filename, e) => {
     e.stopPropagation();
     if (showToast) showToast(t('dashboard.compiling', 'Compilation du PDF en cours...'));
@@ -293,7 +303,16 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                               {app.promptResponses && Object.keys(app.promptResponses).length > 0 ? (
                                 Object.entries(app.promptResponses).map(([key, latex]) => (
                                   <div key={key} className="flex flex-col bg-white border border-slate-200 rounded-lg p-3 shadow-sm min-w-[220px]">
-                                    <span className="text-xs font-semibold text-slate-700 mb-2 truncate" title={key}>{key}</span>
+                                    <div className="flex justify-between items-center mb-2">
+                                      <span className="text-xs font-semibold text-slate-700 truncate" title={key}>{key}</span>
+                                      <button 
+                                        onClick={(e) => handleDeletePrompt(app, key, e)} 
+                                        className="text-slate-400 hover:text-red-500 transition-colors"
+                                        title={t('dashboard.deleteDoc', 'Supprimer')}
+                                      >
+                                        <Trash2 size={14} />
+                                      </button>
+                                    </div>
                                     <div className="flex gap-1">
                                       <button 
                                         onClick={(e) => handleDownloadPrompt(latex, `${key}.tex`, e)} 

@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-05-25)
+# Graph Report - ultimate-job-tool  (2026-05-28)
 
 ## Corpus Check
-- 55 files · ~39,153 words
+- 55 files · ~40,311 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 733 nodes · 782 edges · 55 communities (41 shown, 14 thin omitted)
+- 734 nodes · 785 edges · 55 communities (41 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1981d455`
+- Built from commit: `e0b7aeea`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -122,7 +122,7 @@ Nodes (4): ATS Service, buildAtsPrompt(), cleanJsonResponse(), runAtsAnalysis()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.05
-Nodes (42): 10. Clerk + Supabase Integration Issues, 11. WSL2 Development Server Blank Page, 1. The TeXLive PDF Compilation Failures, 2. The PDF Inline Display Challenge, 3. AI API Quota & Provider Issues, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 6. Job Posting Scraper (Jina AI & Scrapfly) Issues (+34 more)
+Nodes (43): 10. Clerk + Supabase Integration Issues, 11. WSL2 Development Server Blank Page, 1. The TeXLive PDF Compilation Failures, 2. The PDF Inline Display Challenge, 3. AI API Quota & Provider Issues, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 6. Job Posting Scraper (Jina AI & Scrapfly) Issues (+35 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -237,7 +237,7 @@ Cohesion: 0.22
 Nodes (9): tabs, aiAssistant, atsTest, dashboard, documents, jobOffer, myCv, pdfMaker (+1 more)
 
 ## Knowledge Gaps
-- **503 isolated node(s):** `apiKeyPlaceholder`, `dashboard`, `prompts`, `aiAssistant`, `jobOffer` (+498 more)
+- **504 isolated node(s):** `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System`, `B. Dynamic Prompt Engine`, `C. Multi-Provider AI Integration` (+499 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -250,8 +250,8 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Why does `templates` connect `Community 23` to `Community 3`?**
   _High betweenness centrality (0.075) - this node is a cross-community bridge._
-- **What connects `apiKeyPlaceholder`, `dashboard`, `prompts` to the rest of the system?**
-  _503 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System` to the rest of the system?**
+  _504 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

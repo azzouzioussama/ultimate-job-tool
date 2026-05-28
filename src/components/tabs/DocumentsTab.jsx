@@ -1,7 +1,8 @@
-import { FileText, Trash2, Calendar } from 'lucide-react';
+import { FileText, Trash2, Calendar, FileCode2, FileDown, Download } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 
-export default function DocumentsTab({ documents, onDocumentsChange }) {
+export default function DocumentsTab({ documents, onDocumentsChange, showToast }) {
   const { t, i18n } = useTranslation();
 
   const handleDelete = (id) => {
@@ -14,6 +15,63 @@ export default function DocumentsTab({ documents, onDocumentsChange }) {
     return new Date(timestamp).toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'fr-FR', {
       day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
     });
+  };
+
+  const handleDownloadPrompt = (content, filename, e) => {
+    e.stopPropagation();
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleDownloadPDF = async (content, filename, e) => {
+    e.stopPropagation();
+    if (showToast) showToast(t('documents.compiling', 'Compilation du PDF en cours...'));
+    try {
+      const blob = await compilePdfFromLatex(content);
+      const url = URL.createObjectURL(blob);
+      downloadBlobAsPdf(url, filename);
+    } catch (err) {
+      console.error(err);
+      if (showToast) showToast(t('documents.compileError', 'Erreur de compilation: ') + err.message);
+    }
+  };
+
+  const handleDownloadWord = (content, filename, e) => {
+    e.stopPropagation();
+    let text = content
+      .replace(/\\documentclass\[.*?\]{.*?}/g, '')
+      .replace(/\\usepackage\[.*?\]{.*?}/g, '')
+      .replace(/\\begin{document}/g, '')
+      .replace(/\\end{document}/g, '')
+      .replace(/\\textbf{(.*?)}/g, '<b>$1</b>')
+      .replace(/\\textit{(.*?)}/g, '<i>$1</i>')
+      .replace(/\\underline{(.*?)}/g, '<u>$1</u>')
+      .replace(/\\section{(.*?)}/g, '<h2>$1</h2>')
+      .replace(/\\subsection{(.*?)}/g, '<h3>$1</h3>')
+      .replace(/\\item /g, '<li>')
+      .replace(/\\begin{itemize}/g, '<ul>')
+      .replace(/\\end{itemize}/g, '</ul>')
+      .replace(/\\(%)?/g, '')
+      .replace(/\n/g, '<br/>');
+
+    const htmlContent = `
+      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+      <head><meta charset='utf-8'><title>Export</title></head>
+      <body style="font-family: Arial, sans-serif;">${text}</body>
+      </html>
+    `;
+    const blob = new Blob(['\ufeff', htmlContent], { type: 'application/msword' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -55,9 +113,32 @@ export default function DocumentsTab({ documents, onDocumentsChange }) {
               </div>
               <textarea 
                 readOnly
-                className="w-full h-32 text-xs font-mono bg-slate-50 border border-slate-100 rounded-lg p-2 resize-none outline-none custom-scrollbar"
+                className="w-full h-32 text-xs font-mono bg-slate-50 border border-slate-100 rounded-lg p-2 resize-none outline-none custom-scrollbar mb-3"
                 value={doc.content}
               />
+              <div className="flex gap-2 mt-auto">
+                <button 
+                  onClick={(e) => handleDownloadPrompt(doc.content, `${doc.title}.tex`, e)} 
+                  className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title="Télécharger LaTeX (.tex)"
+                >
+                  <FileCode2 size={14} className="mr-1"/> .tex
+                </button>
+                <button 
+                  onClick={(e) => handleDownloadPDF(doc.content, `${doc.title}.pdf`, e)} 
+                  className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-red-50 hover:text-red-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title="Compiler & Télécharger PDF (.pdf)"
+                >
+                  <FileText size={14} className="mr-1"/> .pdf
+                </button>
+                <button 
+                  onClick={(e) => handleDownloadWord(doc.content, `${doc.title}.doc`, e)} 
+                  className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title="Télécharger Word (.doc)"
+                >
+                  <FileDown size={14} className="mr-1"/> .doc
+                </button>
+              </div>
             </div>
           ))}
         </div>

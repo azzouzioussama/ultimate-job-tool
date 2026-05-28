@@ -550,7 +550,7 @@ export default function App() {
     const newDocs = [];
     const newPromptResponses = { ...promptResponses };
     
-    for (const resp of selectedResponses) {
+    for (const [index, resp] of selectedResponses.entries()) {
       let latexToCompile = extractLatexFromResponse(resp.content);
       
       if (!latexToCompile && resp.content.includes('\\documentclass')) {
@@ -580,14 +580,26 @@ export default function App() {
 
       newPromptResponses[docTitle] = latexToCompile;
       successCount++;
+      
+      // Compile and download immediately
+      try {
+        const blob = await compilePdfFromLatex(latexToCompile);
+        const url = URL.createObjectURL(blob);
+        setTimeout(() => {
+          downloadBlobAsPdf(url, `${docTitle}_${new Date().getTime()}.pdf`);
+        }, index * 800);
+      } catch (err) {
+        console.error('Error compiling response:', err);
+        showToast(t('app.toast.compileMultipleError', { title: docTitle, error: err.message, defaultValue: `Erreur pour "${docTitle}": ${err.message}` }));
+      }
     }
 
     if (successCount > 0) {
       setDocuments(prev => [...newDocs, ...prev]);
       setPromptResponses(newPromptResponses);
       setLastGeneratedDate(new Date().toISOString());
-      if (trackingStatus === 'Draft') setTrackingStatus('PDF Generated');
-      showToast(t('app.toast.compilingMultipleDone', { count: successCount, defaultValue: `${successCount} Document(s) préparé(s) et sauvegardé(s) dans le Dashboard !` }));
+      setTrackingStatus('Applied');
+      showToast(t('app.toast.compilingMultipleDone', { count: successCount, defaultValue: `${successCount} Document(s) préparé(s), sauvegardé(s) et téléchargé(s) !` }));
       // Deselect them after success
       setAiResponses(prev => prev.map(r => r.isSelectedForPdf ? { ...r, isSelectedForPdf: false } : r));
     }
