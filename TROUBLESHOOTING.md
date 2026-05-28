@@ -213,5 +213,14 @@ pip install pydantic pydantic-core openai
 **Cause**: After refactoring `main.jsx` to conditionally load Clerk, the `<ClerkProvider>` was rendered without its required `publishableKey` prop. While Clerk v6 can auto-detect the key from environment variables, explicit passing is more reliable and prevents edge-case initialization failures.
 **Fix**: Added `publishableKey={PUBLISHABLE_KEY}` to the `<ClerkProvider>` component in `main.jsx`.
 
+### Problem 4: Application Data Disappearing on Refresh (Supabase Schema Sync)
+**Issue**: When generating an AI response (CV/cover letter) or extracting a new job offer, the data seemingly does not save. Upon refreshing the page, the job description and AI history revert to their previous states or disappear entirely.
+**Cause**: Two overlapping issues:
+1. The AI chat history (`aiResponses` state) was entirely ephemeral and missing from the `updateApplication` auto-save payload, meaning it never persisted across sessions.
+2. The Supabase `applications` table schema in the cloud was missing several newly introduced columns (`trackingStatus`, `promptResponses`, `atsScoreBefore`, `atsScoreAfter`, `lastGeneratedDate`, `documents`, `atsResult`, `aiResponses`). Because PostgreSQL operates with strict schemas, `supabase-js` silently failed the entire `UPDATE` request when it encountered unrecognized fields in the JavaScript payload, preventing *any* field (even the `jobDescription`) from saving.
+**Fix**:
+1. Ran explicit `ALTER TABLE` commands in the Supabase SQL Editor to add the missing columns as `jsonb` or `text`/`integer` types.
+2. Added `aiResponses` to the local state, auto-save payload, and Supabase schema, allowing the app to successfully reload and persist chat history tied to the specific `activeAppId`.
+
 ---
 *Generated: May 2026*

@@ -40,6 +40,8 @@ export default function JobOfferTab({
   onScrape,
   isScraping,
   onClear,
+  autoCreateOffer,
+  onAutoCreateOfferChange,
 }) {
   const { t } = useTranslation();
   return (
@@ -98,6 +100,19 @@ export default function JobOfferTab({
           {isScraping ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
           {t('job.extract', 'Extraire')}
         </button>
+      </div>
+
+      {/* ── Auto-Create Toggle ────────────────────────────────────────── */}
+      <div className="px-4 py-2 bg-white border-b border-slate-100 flex items-center gap-2 text-sm text-slate-600">
+        <label className="flex items-center gap-2 cursor-pointer select-none">
+          <input 
+            type="checkbox" 
+            checked={autoCreateOffer}
+            onChange={(e) => onAutoCreateOfferChange(e.target.checked)}
+            className="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500 border-slate-300 cursor-pointer"
+          />
+          <span className="font-medium">{t('job.autoCreateToggle', 'Créer une nouvelle candidature automatiquement après extraction')}</span>
+        </label>
       </div>
 
       {/* ── Job Description Textarea ──────────────────────────────────── */}

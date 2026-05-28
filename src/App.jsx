@@ -144,6 +144,13 @@ export default function App() {
   const [companyName, setCompanyName] = useState('');
   const [documents, setDocuments] = useState([]);
 
+  // ── Tracking & Job Offer Data ───────────────────────────────────────────────
+  const [trackingStatus, setTrackingStatus] = useState('Draft');
+  const [promptResponses, setPromptResponses] = useState({});
+  const [atsScoreBefore, setAtsScoreBefore] = useState(null);
+  const [atsScoreAfter, setAtsScoreAfter] = useState(null);
+  const [lastGeneratedDate, setLastGeneratedDate] = useState(null);
+
   // ── Settings (auto-saved to localStorage) ───────────────────────────────────
   const [aiResponses, setAiResponses] = useState([]);
   const [scraperType, setScraperType] = useLocalStorage('scraper_type', 'jina');
@@ -170,6 +177,7 @@ export default function App() {
 
   // ── Scraper State ───────────────────────────────────────────────────────────
   const [jobUrl, setJobUrl] = useState('');
+  const [autoCreateOffer, setAutoCreateOffer] = useState(true);
 
   // ── ATS State ───────────────────────────────────────────────────────────────
   const [atsResult, setAtsResult] = useState(null);
@@ -207,7 +215,12 @@ export default function App() {
             cvOriginal: oldCv || SYNTHETIC_CV,
             cvGenerated: oldGenerated || '',
             documents: [],
-            atsResult: null
+            atsResult: null,
+            trackingStatus: 'Draft',
+            atsScoreBefore: null,
+            atsScoreAfter: null,
+            lastGeneratedDate: null,
+            aiResponses: []
           });
           setActiveAppId(newAppId);
         }
@@ -231,6 +244,12 @@ export default function App() {
           setCompanyName(app.companyName || '');
           setDocuments(app.documents || []);
           setAtsResult(app.atsResult || null);
+          setTrackingStatus(app.trackingStatus || 'Draft');
+          setPromptResponses(app.promptResponses || {});
+          setAtsScoreBefore(app.atsScoreBefore || null);
+          setAtsScoreAfter(app.atsScoreAfter || null);
+          setLastGeneratedDate(app.lastGeneratedDate || null);
+          setAiResponses(app.aiResponses || []);
         }
       });
     } else {
@@ -241,6 +260,12 @@ export default function App() {
       setCompanyName('');
       setDocuments([]);
       setAtsResult(null);
+      setTrackingStatus('Draft');
+      setPromptResponses({});
+      setAtsScoreBefore(null);
+      setAtsScoreAfter(null);
+      setLastGeneratedDate(null);
+      setAiResponses([]);
     }
   }, [activeAppId]);
 
@@ -255,11 +280,17 @@ export default function App() {
         jobTitle: targetPosition,
         companyName,
         documents,
-        atsResult
+        atsResult,
+        trackingStatus,
+        promptResponses,
+        atsScoreBefore,
+        atsScoreAfter,
+        lastGeneratedDate,
+        aiResponses
       });
     }, 500); // Wait 500ms after user stops typing
     return () => clearTimeout(timer);
-  }, [activeAppId, jobDescription, cvOriginal, cvGenerated, targetPosition, companyName, documents, atsResult]);
+  }, [activeAppId, jobDescription, cvOriginal, cvGenerated, targetPosition, companyName, documents, atsResult, trackingStatus, promptResponses, atsScoreBefore, atsScoreAfter, lastGeneratedDate, aiResponses]);
 
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -362,6 +393,11 @@ export default function App() {
     setCompanyName('');
     setDocuments([]);
     setAtsResult(null);
+    setTrackingStatus('Draft');
+    setPromptResponses({});
+    setAtsScoreBefore(null);
+    setAtsScoreAfter(null);
+    setLastGeneratedDate(null);
     setSelectedTemplateIds([1]);
     setCustomPrompts({});
     setJobDescription('');
@@ -468,11 +504,20 @@ export default function App() {
 
   // ── Extract LaTeX from AI Response ──────────────────────────────────────────
   const handleExtractLatex = () => {
-    const selectedTexts = aiResponses.filter(r => r.isSelectedForPdf).map(r => r.content);
-    if (selectedTexts.length === 0) {
+    const selectedResponses = aiResponses.filter(r => r.isSelectedForPdf);
+    if (selectedResponses.length === 0) {
       showToast(t('app.toast.noResponseSelected', 'Aucune réponse sélectionnée.'));
       return;
     }
+    
+    // Save the responses to promptResponses state for history
+    const newResponses = { ...promptResponses };
+    selectedResponses.forEach(r => {
+      newResponses[r.templateId || 'custom'] = r.content;
+    });
+    setPromptResponses(newResponses);
+
+    const selectedTexts = selectedResponses.map(r => r.content);
     
     // Try to merge if there are multiple or if the text isn't a full doc
     const extracted = mergeLatexResponses(cvOriginal, selectedTexts);
@@ -493,55 +538,56 @@ export default function App() {
     }
   };
 
-  // ── Compile Multiple PDFs ───────────────────────────────────────────────────
+  // ── Compile Multiple PDFs (Save to Dashboard) ───────────────────────────────
   const handleCompileMultiplePdfs = async () => {
     const selectedResponses = aiResponses.filter(r => r.isSelectedForPdf);
     if (selectedResponses.length === 0) {
       showToast(t('app.toast.noResponseSelected', 'Aucune réponse sélectionnée.'));
       return;
     }
-
-    showToast(t('app.toast.compilingMultipleStart', { count: selectedResponses.length, defaultValue: `Compilation de ${selectedResponses.length} PDFs en cours...` }));
     
     let successCount = 0;
+    const newDocs = [];
+    const newPromptResponses = { ...promptResponses };
     
-    for (const [index, resp] of selectedResponses.entries()) {
-      try {
-        // Try to extract LaTeX from the response. If not found, compile the raw text if it contains \documentclass, else fallback to cvOriginal merge.
-        // For simplicity, we assume they are either full LaTeX docs or we attempt to merge them.
-        let latexToCompile = extractLatexFromResponse(resp.content);
-        
-        if (!latexToCompile && resp.content.includes('\\documentclass')) {
-          latexToCompile = resp.content;
-        }
-
-        if (!latexToCompile) {
-          // If it's a snippet, merge it with cvOriginal
-          latexToCompile = mergeLatexResponses(cvOriginal, [resp.content]);
-        }
-        
-        if (!latexToCompile) {
-          console.warn('Could not extract or merge LaTeX for response', resp.title);
-          continue;
-        }
-
-        const blob = await compilePdfFromLatex(latexToCompile);
-        const url = URL.createObjectURL(blob);
-        
-        // Add a slight delay to avoid browser blocking multiple downloads
-        setTimeout(() => {
-          downloadBlobAsPdf(url, `Doc_${index + 1}_${new Date().getTime()}.pdf`);
-        }, index * 800);
-        
-        successCount++;
-      } catch (err) {
-        console.error('Error compiling response:', err);
-        showToast(t('app.toast.compileMultipleError', { title: resp.title, error: err.message, defaultValue: `Erreur pour "${resp.title}": ${err.message}` }));
+    for (const resp of selectedResponses) {
+      let latexToCompile = extractLatexFromResponse(resp.content);
+      
+      if (!latexToCompile && resp.content.includes('\\documentclass')) {
+        latexToCompile = resp.content;
       }
+
+      if (!latexToCompile) {
+        latexToCompile = mergeLatexResponses(cvOriginal, [resp.content]);
+      }
+      
+      if (!latexToCompile) {
+        console.warn('Could not extract or merge LaTeX for response', resp.title);
+        continue;
+      }
+
+      let baseTitle = resp.title || 'Document';
+      const existingCount = documents.filter(d => d.title === baseTitle || d.title.startsWith(`${baseTitle} (`)).length + newDocs.filter(d => d.title === baseTitle || d.title.startsWith(`${baseTitle} (`)).length;
+      
+      const docTitle = existingCount > 0 ? `${baseTitle} (${existingCount + 1})` : baseTitle;
+
+      newDocs.push({
+        id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+        title: docTitle,
+        content: latexToCompile,
+        timestamp: new Date().toISOString()
+      });
+
+      newPromptResponses[docTitle] = latexToCompile;
+      successCount++;
     }
 
     if (successCount > 0) {
-      showToast(t('app.toast.compilingMultipleDone', { count: successCount, defaultValue: `${successCount} PDF(s) compilé(s) et téléchargé(s) !` }));
+      setDocuments(prev => [...newDocs, ...prev]);
+      setPromptResponses(newPromptResponses);
+      setLastGeneratedDate(new Date().toISOString());
+      if (trackingStatus === 'Draft') setTrackingStatus('PDF Generated');
+      showToast(t('app.toast.compilingMultipleDone', { count: successCount, defaultValue: `${successCount} Document(s) préparé(s) et sauvegardé(s) dans le Dashboard !` }));
       // Deselect them after success
       setAiResponses(prev => prev.map(r => r.isSelectedForPdf ? { ...r, isSelectedForPdf: false } : r));
     }
@@ -568,9 +614,54 @@ export default function App() {
         result = await scrapeWithScrapfly(jobUrl, key);
       }
 
-      setJobDescription(result);
-      const providerName = scraperType === 'jina' ? 'Jina AI' : 'Scrapfly';
-      showToast(t('app.toast.offerExtracted', { provider: providerName, defaultValue: `Offre extraite avec succès via ${providerName} !` }));
+      if (autoCreateOffer) {
+        if (!apiKey) {
+          showToast(t('app.toast.apiKeyRequiredAutoCreate', 'Clé API requise pour extraire le titre automatiquement. L\'offre est sauvegardée dans la candidature actuelle.'));
+          setJobDescription(result);
+        } else {
+          showToast(t('app.toast.aiExtractingInfo', 'Extraction des informations par l\'IA en cours...'));
+          const prompt = `Extract the Job Title and Company Name from the following job description. Return ONLY a valid JSON object matching this schema: {"jobTitle": "...", "companyName": "..."}. If you cannot find one, return an empty string for that field.\n\nDescription:\n${result.substring(0, 3000)}`;
+          
+          const controller = new AbortController();
+          const reply = await callCurrentAI(prompt, controller.signal);
+          
+          let finalJobTitle = 'Offre extraite';
+          let finalCompanyName = '';
+
+          try {
+            const jsonStr = reply.replace(/```json/g, '').replace(/```/g, '').trim();
+            const parsed = JSON.parse(jsonStr);
+            finalJobTitle = parsed.jobTitle || 'Offre extraite';
+            finalCompanyName = parsed.companyName || '';
+          } catch (e) {
+            console.error('Failed to parse AI JSON:', e);
+          }
+
+          const newAppId = await createApplication({
+            companyName: finalCompanyName,
+            jobTitle: finalJobTitle,
+            jobDescription: result,
+            cvOriginal: cvOriginal,
+            cvGenerated: '',
+            documents: [],
+            atsResult: null,
+            trackingStatus: 'Draft',
+            promptResponses: {},
+            atsScoreBefore: null,
+            atsScoreAfter: null,
+            lastGeneratedDate: null,
+            aiResponses: []
+          });
+          
+          setActiveAppId(newAppId);
+          showToast(t('app.toast.autoCreated', 'Nouvelle candidature créée avec succès !'));
+        }
+      } else {
+        setJobDescription(result);
+        const providerName = scraperType === 'jina' ? 'Jina AI' : 'Scrapfly';
+        showToast(t('app.toast.offerExtracted', { provider: providerName, defaultValue: `Offre extraite avec succès via ${providerName} !` }));
+      }
+      
       setJobUrl('');
 
     } catch (error) {
@@ -601,6 +692,8 @@ export default function App() {
       const blob = await compilePdfFromLatex(contentToCompile);
       const url = URL.createObjectURL(blob);
       setPdfBlobUrl(url);
+      setLastGeneratedDate(new Date().toISOString());
+      if (trackingStatus === 'Draft') setTrackingStatus('PDF Generated');
       showToast(t('app.toast.pdfCompiled', 'PDF compilé avec succès !'));
     } catch (error) {
       setPdfError(error.message);
@@ -613,6 +706,8 @@ export default function App() {
   const handleDownloadPDF = () => {
     if (!pdfBlobUrl) return;
     downloadBlobAsPdf(pdfBlobUrl);
+    setLastGeneratedDate(new Date().toISOString());
+    if (trackingStatus === 'Draft' || trackingStatus === 'PDF Generated') setTrackingStatus('Applied');
     showToast(t('app.toast.pdfDownloaded', 'PDF téléchargé !'));
   };
 
@@ -634,9 +729,25 @@ export default function App() {
     const timeoutId = setTimeout(() => controller.abort(), 120000);
 
     try {
-      const cvToTest = cvGenerated || cvOriginal;
-      const result = await runAtsAnalysis(callCurrentAI, jobDescription, cvToTest, controller.signal);
-      setAtsResult(result);
+      const results = {};
+      
+      // 1. Run for cvOriginal
+      if (cvOriginal && cvOriginal.trim()) {
+        const resultBefore = await runAtsAnalysis(callCurrentAI, jobDescription, cvOriginal, controller.signal);
+        results.before = resultBefore;
+        setAtsScoreBefore(resultBefore?.score || null);
+      }
+
+      // 2. Run for cvGenerated
+      if (cvGenerated && cvGenerated.trim() && cvGenerated !== cvOriginal) {
+        const resultAfter = await runAtsAnalysis(callCurrentAI, jobDescription, cvGenerated, controller.signal);
+        results.after = resultAfter;
+        setAtsScoreAfter(resultAfter?.score || null);
+        setAtsResult(resultAfter); // Current backwards compat
+      } else if (results.before) {
+        setAtsResult(results.before);
+      }
+
       showToast(t('app.toast.atsSuccess', 'Analyse ATS terminée !'));
     } catch (error) {
       console.error(error);
@@ -727,6 +838,7 @@ export default function App() {
                 setActiveAppId(id);
                 setActiveTab('templates'); // Auto-switch to Prompts after selecting
               }}
+              showToast={showToast}
             />
           </div>
 
@@ -797,6 +909,8 @@ export default function App() {
               onScrape={handleScrape}
               isScraping={isScraping}
               onClear={() => setJobDescription('')}
+              autoCreateOffer={autoCreateOffer}
+              onAutoCreateOfferChange={setAutoCreateOffer}
             />
           </div>
 
