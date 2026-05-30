@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/App.jsx": {
-    "mtime": 1780005851.8584244,
-    "ast_hash": "0dc192b3f853f05c4c68f93106976bc9",
+    "mtime": 1780166156.789354,
+    "ast_hash": "f9cee90397f502f22f4ba179d9bc7989",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/fileUploadService.js": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/JobOfferTab.jsx": {
-    "mtime": 1779920856.0928879,
-    "ast_hash": "7e4678a3eb5efd4486fcab7195b804df",
+    "mtime": 1780166172.3894029,
+    "ast_hash": "f3ab5bdedcdae718b07d3280b636cfd9",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/MyCvTab.jsx": {
@@ -305,13 +305,13 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/locales/fr.json": {
-    "mtime": 1780006665.8097754,
-    "ast_hash": "9709bc99f0f19c5befacd4d22ab3b656",
+    "mtime": 1780166206.6094694,
+    "ast_hash": "c9c940d0861cdf4919dd5c9411f7103a",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/locales/en.json": {
-    "mtime": 1780006663.7978196,
-    "ast_hash": "2379f8fd4c4f0ac728aafbe6ad32c6ff",
+    "mtime": 1780166192.3054967,
+    "ast_hash": "c8f2b3f660a967834379625ff374efdf",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/strip-latex.js": {
@@ -325,8 +325,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DocumentsTab.jsx": {
-    "mtime": 1780005836.0408607,
-    "ast_hash": "dd9139285a1b202b716b4157006ca893",
+    "mtime": 1780166102.5774283,
+    "ast_hash": "f9f5315389199c282589846b417e3871",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/update-translations-3.js": {

@@ -222,5 +222,17 @@ pip install pydantic pydantic-core openai
 1. Ran explicit `ALTER TABLE` commands in the Supabase SQL Editor to add the missing columns as `jsonb` or `text`/`integer` types.
 2. Added `aiResponses` to the local state, auto-save payload, and Supabase schema, allowing the app to successfully reload and persist chat history tied to the specific `activeAppId`.
 
+## 9. Localization & UI Workflows
+
+### Problem 1: French Hardcoded Strings Leaking into English UI
+**Issue**: Table headers ("STATUT", "ATS Avant"), specific buttons ("Sauvegarder Doc(s)"), and dropdown statuses ("Brouillon", "Candidature Envoyée") were appearing in French even when the app language was set to English.
+**Cause**: The strings were either entirely hardcoded into the component (e.g., inside the `<select>` tag options in `DashboardTab.jsx`) or the required translation keys were missing from `en.json`, causing `react-i18next` to fall back to the provided default French string in the `t()` call.
+**Fix**: Replaced all hardcoded text with `t()` calls and explicitly defined the missing nested JSON keys (like `dashboard.status.draft`, `dashboard.table.status`) in both `en.json` and `fr.json`.
+
+### Problem 2: Missing Application Creation on Manual Paste
+**Issue**: The "Auto-Create Application" logic only triggered automatically when successfully extracting text via the Scrapfly/Jina URL scraper. If a user manually copy-pasted a job description from an unsupported site, the AI title extraction pipeline could not be triggered.
+**Cause**: The prompt injection and application saving logic (`createApplication()`) was tightly coupled inside the `handleScrape()` function in `App.jsx`.
+**Fix**: Decoupled the logic into an independent `handleAutoCreateFromText(text)` function, passed it down to `JobOfferTab.jsx`, and added a new "Create Application" button that dynamically renders whenever `jobDescription.length > 50`.
+
 ---
 *Generated: May 2026*
