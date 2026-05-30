@@ -1,4 +1,4 @@
-import { FileText, Trash2, Calendar, FileCode2, FileDown, Download } from 'lucide-react';
+import { FileText, Trash2, Calendar, FileCode2, FileDown, Eye } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 
@@ -30,11 +30,24 @@ export default function DocumentsTab({ documents, onDocumentsChange, showToast }
 
   const handleDownloadPDF = async (content, filename, e) => {
     e.stopPropagation();
-    if (showToast) showToast(t('documents.compiling', 'Compilation du PDF en cours...'));
+    if (showToast) showToast(t('documents.compiling', 'Compilation en cours...'));
     try {
       const blob = await compilePdfFromLatex(content);
       const url = URL.createObjectURL(blob);
       downloadBlobAsPdf(url, filename);
+    } catch (err) {
+      console.error(err);
+      if (showToast) showToast(t('documents.compileError', 'Erreur de compilation: ') + err.message);
+    }
+  };
+
+  const handlePreviewPDF = async (content, e) => {
+    e.stopPropagation();
+    if (showToast) showToast(t('documents.compiling', 'Compilation en cours...'));
+    try {
+      const blob = await compilePdfFromLatex(content);
+      const url = URL.createObjectURL(blob);
+      window.open(url, '_blank');
     } catch (err) {
       console.error(err);
       if (showToast) showToast(t('documents.compileError', 'Erreur de compilation: ') + err.message);
@@ -116,25 +129,32 @@ export default function DocumentsTab({ documents, onDocumentsChange, showToast }
                 className="w-full h-32 text-xs font-mono bg-slate-50 border border-slate-100 rounded-lg p-2 resize-none outline-none custom-scrollbar mb-3"
                 value={doc.content}
               />
-              <div className="flex gap-2 mt-auto">
+              <div className="flex gap-2 mt-auto flex-wrap">
+                <button 
+                  onClick={(e) => handlePreviewPDF(doc.content, e)} 
+                  className="flex-1 min-w-[30px] flex justify-center items-center py-1.5 bg-slate-50 hover:bg-green-50 hover:text-green-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title={t('documents.previewPdf', 'Aperçu PDF')}
+                >
+                  <Eye size={14} className="mr-1"/> 
+                </button>
                 <button 
                   onClick={(e) => handleDownloadPrompt(doc.content, `${doc.title}.tex`, e)} 
-                  className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                  title="Télécharger LaTeX (.tex)"
+                  className="flex-1 min-w-[30px] flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title={t('documents.downloadLatex', 'Télécharger LaTeX (.tex)')}
                 >
                   <FileCode2 size={14} className="mr-1"/> .tex
                 </button>
                 <button 
                   onClick={(e) => handleDownloadPDF(doc.content, `${doc.title}.pdf`, e)} 
-                  className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-red-50 hover:text-red-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                  title="Compiler & Télécharger PDF (.pdf)"
+                  className="flex-1 min-w-[30px] flex justify-center items-center py-1.5 bg-slate-50 hover:bg-red-50 hover:text-red-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title={t('documents.downloadPdf', 'Compiler & Télécharger PDF (.pdf)')}
                 >
                   <FileText size={14} className="mr-1"/> .pdf
                 </button>
                 <button 
                   onClick={(e) => handleDownloadWord(doc.content, `${doc.title}.doc`, e)} 
-                  className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                  title="Télécharger Word (.doc)"
+                  className="flex-1 min-w-[30px] flex justify-center items-center py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                  title={t('documents.downloadWord', 'Télécharger Word (.doc)')}
                 >
                   <FileDown size={14} className="mr-1"/> .doc
                 </button>

@@ -605,6 +605,56 @@ export default function App() {
     }
   };
 
+  const handleAutoCreateFromText = async (textToAnalyze) => {
+    if (!apiKey) {
+      showToast(t('app.toast.apiKeyRequiredAutoCreate', 'Clé API requise pour extraire le titre automatiquement.'));
+      return;
+    }
+    
+    showToast(t('app.toast.aiExtractingInfo', 'Extraction des informations par l\'IA en cours...'));
+    setIsAiLoading(true);
+    try {
+      const prompt = `Extract the Job Title and Company Name from the following job description. Return ONLY a valid JSON object matching this schema: {"jobTitle": "...", "companyName": "..."}. If you cannot find one, return an empty string for that field.\n\nDescription:\n${textToAnalyze.substring(0, 3000)}`;
+      const controller = new AbortController();
+      const reply = await callCurrentAI(prompt, controller.signal);
+      
+      let finalJobTitle = 'Offre extraite';
+      let finalCompanyName = '';
+
+      try {
+        const jsonStr = reply.replace(/```json/g, '').replace(/```/g, '').trim();
+        const parsed = JSON.parse(jsonStr);
+        finalJobTitle = parsed.jobTitle || 'Offre extraite';
+        finalCompanyName = parsed.companyName || '';
+      } catch (e) {
+        console.error('Failed to parse AI JSON:', e);
+      }
+
+      const newAppId = await createApplication({
+        companyName: finalCompanyName,
+        jobTitle: finalJobTitle,
+        jobDescription: textToAnalyze,
+        cvOriginal: cvOriginal,
+        cvGenerated: '',
+        documents: [],
+        atsResult: null,
+        trackingStatus: 'Draft',
+        promptResponses: {},
+        atsScoreBefore: null,
+        atsScoreAfter: null,
+        lastGeneratedDate: null,
+        aiResponses: []
+      });
+      
+      setActiveAppId(newAppId);
+      showToast(t('app.toast.autoCreated', 'Nouvelle candidature créée avec succès !'));
+    } catch (e) {
+      showToast(t('app.toast.error', 'Erreur: ') + e.message);
+    } finally {
+      setIsAiLoading(false);
+    }
+  };
+
   // ── Scrape Job ────────────────────────────────────────────────────────────
   const handleScrape = async () => {
     if (!jobUrl) return;
@@ -631,42 +681,7 @@ export default function App() {
           showToast(t('app.toast.apiKeyRequiredAutoCreate', 'Clé API requise pour extraire le titre automatiquement. L\'offre est sauvegardée dans la candidature actuelle.'));
           setJobDescription(result);
         } else {
-          showToast(t('app.toast.aiExtractingInfo', 'Extraction des informations par l\'IA en cours...'));
-          const prompt = `Extract the Job Title and Company Name from the following job description. Return ONLY a valid JSON object matching this schema: {"jobTitle": "...", "companyName": "..."}. If you cannot find one, return an empty string for that field.\n\nDescription:\n${result.substring(0, 3000)}`;
-          
-          const controller = new AbortController();
-          const reply = await callCurrentAI(prompt, controller.signal);
-          
-          let finalJobTitle = 'Offre extraite';
-          let finalCompanyName = '';
-
-          try {
-            const jsonStr = reply.replace(/```json/g, '').replace(/```/g, '').trim();
-            const parsed = JSON.parse(jsonStr);
-            finalJobTitle = parsed.jobTitle || 'Offre extraite';
-            finalCompanyName = parsed.companyName || '';
-          } catch (e) {
-            console.error('Failed to parse AI JSON:', e);
-          }
-
-          const newAppId = await createApplication({
-            companyName: finalCompanyName,
-            jobTitle: finalJobTitle,
-            jobDescription: result,
-            cvOriginal: cvOriginal,
-            cvGenerated: '',
-            documents: [],
-            atsResult: null,
-            trackingStatus: 'Draft',
-            promptResponses: {},
-            atsScoreBefore: null,
-            atsScoreAfter: null,
-            lastGeneratedDate: null,
-            aiResponses: []
-          });
-          
-          setActiveAppId(newAppId);
-          showToast(t('app.toast.autoCreated', 'Nouvelle candidature créée avec succès !'));
+          await handleAutoCreateFromText(result);
         }
       } else {
         setJobDescription(result);
@@ -923,6 +938,7 @@ export default function App() {
               onClear={() => setJobDescription('')}
               autoCreateOffer={autoCreateOffer}
               onAutoCreateOfferChange={setAutoCreateOffer}
+              onAutoCreateFromText={() => handleAutoCreateFromText(jobDescription)}
             />
           </div>
 

@@ -159,6 +159,9 @@
   "job": {
     "title": "Description de l'Offre",
     "clear": "Effacer",
+    "autoCreateToggle": "Créer une nouvelle candidature automatiquement après extraction",
+    "autoCreateBtn": "Créer Application",
+    "autoCreateBtnTooltip": "Extraire le titre et créer une nouvelle candidature à partir de ce texte",
     "jina": "Jina AI (Gratuit)",
     "scrapfly": "Scrapfly (Clé API)",
     "urlPlaceholder": "Coller l'URL de l'offre pour l'extraire",
@@ -268,6 +271,7 @@
     "downloadLatex": "Télécharger LaTeX (.tex)",
     "downloadPdf": "Compiler & Télécharger PDF (.pdf)",
     "downloadWord": "Télécharger Word (.doc)",
+    "previewPdf": "Aperçu PDF",
     "compiling": "Compilation en cours...",
     "compileError": "Erreur de compilation: "
   }

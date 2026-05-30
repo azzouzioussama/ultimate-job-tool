@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-05-29)
 
 ## Corpus Check
-- 55 files · ~40,793 words
+- 55 files · ~41,018 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 734 nodes · 787 edges · 54 communities (40 shown, 14 thin omitted)
+- 786 nodes · 839 edges · 58 communities (46 shown, 12 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7b9f0529`
+- Built from commit: `372d6ffc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,37 +59,41 @@
 - [[_COMMUNITY_Community 46|Community 46]]
 - [[_COMMUNITY_Community 47|Community 47]]
 - [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
 - [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
+- [[_COMMUNITY_Community 55|Community 55]]
+- [[_COMMUNITY_Community 56|Community 56]]
+- [[_COMMUNITY_Community 57|Community 57]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `toast` - 29 edges
 2. `toast` - 29 edges
-3. `Storage Service` - 22 edges
-4. `ai` - 16 edges
-5. `ai` - 16 edges
-6. `pdf` - 15 edges
-7. `pdf` - 15 edges
-8. `dashboard` - 14 edges
-9. `dashboard` - 14 edges
+3. `dashboard` - 25 edges
+4. `dashboard` - 25 edges
+5. `Storage Service` - 22 edges
+6. `ai` - 18 edges
+7. `ai` - 18 edges
+8. `pdf` - 15 edges
+9. `pdf` - 15 edges
 10. `ats` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `DashboardTab()` --calls--> `useDatabase()`  [EXTRACTED]
+  src/components/tabs/DashboardTab.jsx → src/hooks/useDatabase.js
 - `App()` --calls--> `getPromptTemplates()`  [EXTRACTED]
   src/App.jsx → src/constants/promptTemplates.js
 - `App()` --calls--> `useDatabase()`  [EXTRACTED]
   src/App.jsx → src/hooks/useDatabase.js
-- `DashboardTab()` --calls--> `useDatabase()`  [EXTRACTED]
-  src/components/tabs/DashboardTab.jsx → src/hooks/useDatabase.js
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 - `App()` --calls--> `useLocalStorage()`  [EXTRACTED]
   src/App.jsx → src/hooks/useLocalStorage.js
 
-## Communities (54 total, 14 thin omitted)
+## Communities (58 total, 12 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -100,12 +104,12 @@ Cohesion: 0.06
 Nodes (34): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucide-react, mammoth, react (+26 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.13
-Nodes (6): callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses()
+Cohesion: 0.05
+Nodes (27): ATS Service, AI_PROVIDERS, CV_TEMPLATES, getPromptTemplates(), useCloudDatabase(), useDatabase(), useLocalDatabase(), useLocalStorage() (+19 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.04
-Nodes (47): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+39 more)
+Cohesion: 0.18
+Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -116,8 +120,8 @@ Cohesion: 0.11
 Nodes (17): 1. What is Graphify?, 2. Basic Installation & Setup (One-Time), 3. How to Query the Graph (As a Developer), 4. How to Update the Graph, 5. 💡 PRO TIP: Changing the LLM Backend for Semantic Extraction, code:bash (pip install graphifyy), code:bash (graphify antigravity install), code:bash (graphify hook install) (+9 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.80
-Nodes (4): ATS Service, buildAtsPrompt(), cleanJsonResponse(), runAtsAnalysis()
+Cohesion: 0.11
+Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.05
@@ -141,7 +145,11 @@ Nodes (3): Answer, Q: How the database work, Source Nodes
 
 ### Community 14 - "Community 14"
 Cohesion: 0.04
-Nodes (43): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+35 more)
+Nodes (44): ats, adviceTitle, analyzing, clickToRun, missingCv, missingGood, missingJob, missingTitle (+36 more)
+
+### Community 15 - "Community 15"
+Cohesion: 0.17
+Nodes (12): table, actions, ats, atsAfter, atsBefore, company, cv, date (+4 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.50
@@ -156,8 +164,8 @@ Cohesion: 0.05
 Nodes (41): content, desc, title, content, desc, title, content, desc (+33 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.46
-Nodes (5): useCloudDatabase(), useDatabase(), useLocalDatabase(), createAuthenticatedSupabaseClient(), DashboardTab()
+Cohesion: 0.17
+Nodes (12): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+4 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.05
@@ -172,12 +180,12 @@ Cohesion: 0.31
 Nodes (7): Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), rewrites
 
 ### Community 34 - "Community 34"
-Cohesion: 0.06
-Nodes (34): cv, docs, job, delete, modified, open, dashboard, badge (+26 more)
+Cohesion: 0.10
+Nodes (20): dashboard, compileError, compiling, confirmDelete, confirmDeletePrompt, continueEditing, deleteDoc, downloadLatex (+12 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.06
-Nodes (34): cv, docs, job, delete, modified, open, dashboard, badge (+26 more)
+Cohesion: 0.05
+Nodes (41): cv, docs, job, delete, modified, open, dashboard, badge (+33 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.15
@@ -188,12 +196,12 @@ Cohesion: 0.13
 Nodes (15): pdf, compile, compiling, download, emptyDesc, emptyTitle, error, loadingError (+7 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.15
-Nodes (13): ats, adviceTitle, analyzing, clickToRun, missingCv, missingGood, missingJob, missingTitle (+5 more)
+Cohesion: 0.17
+Nodes (12): table, actions, ats, atsAfter, atsBefore, company, cv, date (+4 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.12
-Nodes (16): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+8 more)
+Cohesion: 0.11
+Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.11
@@ -207,49 +215,69 @@ Nodes (15): pdf, compile, compiling, download, emptyDesc, emptyTitle, error, loa
 Cohesion: 0.18
 Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
 
+### Community 43 - "Community 43"
+Cohesion: 0.20
+Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
+
 ### Community 44 - "Community 44"
-Cohesion: 0.33
-Nodes (4): getPromptTemplates(), useLocalStorage(), useToast(), App()
+Cohesion: 0.20
+Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
 
 ### Community 45 - "Community 45"
 Cohesion: 0.29
 Nodes (5): appStringsEn, appStringsFr, dashboardStringsEn, dashboardStringsFr, locales
 
+### Community 46 - "Community 46"
+Cohesion: 0.22
+Nodes (9): tabs, aiAssistant, atsTest, dashboard, documents, jobOffer, myCv, pdfMaker (+1 more)
+
 ### Community 47 - "Community 47"
-Cohesion: 0.38
-Nodes (4): PDF Service, compilePdfFromLatex(), downloadBlobAsPdf(), TeXLive.net API
+Cohesion: 0.25
+Nodes (8): job, clear, extract, jina, placeholder, scrapfly, title, urlPlaceholder
 
 ### Community 48 - "Community 48"
 Cohesion: 0.40
 Nodes (3): locales, stringsEn, stringsFr
+
+### Community 49 - "Community 49"
+Cohesion: 0.29
+Nodes (7): form, cancel, company, companyPlaceholder, create, jobTitle, jobTitlePlaceholder
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
 Nodes (3): locales, PROMPT_TEMPLATES, PROMPT_TEMPLATES_EN
 
 ### Community 51 - "Community 51"
-Cohesion: 0.22
-Nodes (9): tabs, aiAssistant, atsTest, dashboard, documents, jobOffer, myCv, pdfMaker (+1 more)
+Cohesion: 0.33
+Nodes (6): status, applied, draft, interview, pdfGenerated, rejected
+
+### Community 55 - "Community 55"
+Cohesion: 0.50
+Nodes (4): cv, docs, job, badge
+
+### Community 56 - "Community 56"
+Cohesion: 0.50
+Nodes (4): delete, modified, open, card
 
 ## Knowledge Gaps
-- **504 isolated node(s):** `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System`, `B. Dynamic Prompt Engine`, `C. Multi-Provider AI Integration` (+499 more)
+- **554 isolated node(s):** `apiKeyPlaceholder`, `dashboard`, `prompts`, `aiAssistant`, `jobOffer` (+549 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `app` connect `Community 40` to `Community 3`, `Community 30`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
-- **Why does `app` connect `Community 22` to `Community 14`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
-- **Why does `templates` connect `Community 23` to `Community 3`?**
-  _High betweenness centrality (0.075) - this node is a cross-community bridge._
-- **What connects `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System` to the rest of the system?**
-  _504 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `dashboard` connect `Community 34` to `Community 15`, `Community 49`, `Community 51`, `Community 55`, `Community 56`, `Community 57`?**
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 35` to `Community 38`, `Community 14`?**
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 40` to `Community 57`, `Community 30`?**
+  _High betweenness centrality (0.081) - this node is a cross-community bridge._
+- **What connects `apiKeyPlaceholder`, `dashboard`, `prompts` to the rest of the system?**
+  _554 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.12857142857142856 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.051715309779825906 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

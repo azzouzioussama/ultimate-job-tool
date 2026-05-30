@@ -42,6 +42,7 @@ export default function JobOfferTab({
   onClear,
   autoCreateOffer,
   onAutoCreateOfferChange,
+  onAutoCreateFromText,
 }) {
   const { t } = useTranslation();
   return (
@@ -116,12 +117,26 @@ export default function JobOfferTab({
       </div>
 
       {/* ── Job Description Textarea ──────────────────────────────────── */}
-      <textarea
-        className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar"
-        placeholder={t('job.placeholder', "Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet.")}
-        value={jobDescription}
-        onChange={(e) => onJobDescriptionChange(e.target.value)}
-      />
+      <div className="relative flex-grow flex flex-col">
+        <textarea
+          className="flex-grow w-full resize-none p-6 text-sm outline-none custom-scrollbar pb-16"
+          placeholder={t('job.placeholder', "Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet.")}
+          value={jobDescription}
+          onChange={(e) => onJobDescriptionChange(e.target.value)}
+        />
+        {jobDescription.length > 50 && (
+          <div className="absolute bottom-4 right-4">
+            <button
+              onClick={onAutoCreateFromText}
+              className="px-4 py-2 bg-indigo-100 text-indigo-700 text-sm font-medium rounded-lg hover:bg-indigo-200 shadow-sm transition-colors flex items-center gap-2"
+              title={t('job.autoCreateBtnTooltip', 'Extraire le titre et créer une nouvelle candidature à partir de ce texte')}
+            >
+              <FileText size={16} />
+              {t('job.autoCreateBtn', 'Créer Application')}
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
