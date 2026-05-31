@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-05-31)
+# Graph Report - ultimate-job-tool  (2026-06-01)
 
 ## Corpus Check
-- 57 files · ~46,726 words
+- 66 files · ~79,454 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 909 nodes · 980 edges · 82 communities (67 shown, 15 thin omitted)
+- 1011 nodes · 1075 edges · 91 communities (75 shown, 16 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8214f3e8`
+- Built from commit: `1b4b043c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -92,18 +92,21 @@
 - [[_COMMUNITY_Community 79|Community 79]]
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
+- [[_COMMUNITY_Community 82|Community 82]]
+- [[_COMMUNITY_Community 83|Community 83]]
+- [[_COMMUNITY_Community 84|Community 84]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `toast` - 29 edges
 2. `toast` - 29 edges
-3. `batch` - 26 edges
-4. `batch` - 26 edges
-5. `dashboard` - 25 edges
-6. `dashboard` - 25 edges
-7. `Storage Service` - 22 edges
-8. `ai` - 18 edges
-9. `ai` - 18 edges
-10. `pdf` - 15 edges
+3. `Similar jobs` - 28 edges
+4. `Similar jobs` - 28 edges
+5. `batch` - 26 edges
+6. `batch` - 26 edges
+7. `dashboard` - 25 edges
+8. `dashboard` - 25 edges
+9. `Storage Service` - 22 edges
+10. `ai` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `App()` --calls--> `getPromptTemplates()`  [EXTRACTED]
@@ -117,7 +120,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (82 total, 15 thin omitted)
+## Communities (91 total, 16 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -128,12 +131,12 @@ Cohesion: 0.06
 Nodes (35): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucide-react, mammoth, @phosphor-icons/react (+27 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.14
-Nodes (5): useLocalStorage(), useToast(), buildLatexConversionPrompt(), extractTextFromFile(), App()
+Cohesion: 0.13
+Nodes (6): useLocalStorage(), useToast(), callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), App()
 
 ### Community 3 - "Community 3"
-Cohesion: 0.18
-Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
+Cohesion: 0.04
+Nodes (42): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+34 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -148,8 +151,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.18
-Nodes (10): 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration, Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses (+2 more)
+Cohesion: 0.25
+Nodes (7): 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses, Problem: Stale JSX Tags, Troubleshooting Log & Bug Fixes
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -176,12 +179,12 @@ Cohesion: 0.17
 Nodes (12): table, actions, ats, atsAfter, atsBefore, company, cv, date (+4 more)
 
 ### Community 16 - "Community 16"
-Cohesion: 0.18
-Nodes (10): code:bash (git clone https://github.com/your-username/ultimate-job-tool), code:bash (npm install), code:bash (npm run dev), ⚙️ Configuration, 📖 Documentation, 🚀 Features, 📦 Installation & Setup, 📂 Project Structure (+2 more)
+Cohesion: 0.14
+Nodes (13): code:bash (git clone https://github.com/your-username/ultimate-job-tool), code:bash (npm install), code:bash (npm run dev), code:bash (pip install --ignore-installed "scrapling[all]" fastapi uvic), code:bash (python3 scratch/scrapling_server.py), ⚙️ Configuration, 📖 Documentation, 🚀 Features (+5 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.07
-Nodes (29): toast, apiKeyRequired, apiRequiredFirst, atsError, atsMissingData, atsSuccess, compileMultipleError, compilingMultipleDone (+21 more)
+Cohesion: 0.04
+Nodes (47): apiError, error, errorTitle, app, ai, auth, error, prompt (+39 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.05
@@ -196,8 +199,8 @@ Cohesion: 0.05
 Nodes (41): content, desc, title, content, desc, title, content, desc (+33 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.07
-Nodes (29): toast, apiKeyRequired, apiRequiredFirst, atsError, atsMissingData, atsSuccess, compileMultipleError, compilingMultipleDone (+21 more)
+Cohesion: 0.04
+Nodes (47): apiError, error, errorTitle, app, ai, auth, error, prompt (+39 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.33
@@ -236,12 +239,12 @@ Cohesion: 0.13
 Nodes (15): pdf, compile, compiling, download, emptyDesc, emptyTitle, error, loadingError (+7 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.04
-Nodes (44): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+36 more)
+Cohesion: 0.17
+Nodes (12): job, autoCreateBtn, autoCreateBtnTooltip, autoCreateToggle, clear, extract, jina, placeholder (+4 more)
 
 ### Community 43 - "Community 43"
-Cohesion: 0.20
-Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
+Cohesion: 0.05
+Nodes (42): [Astek](https://fr.linkedin.com/company/astek?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [Belmet](https://fr.linkedin.com/company/belmet?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [Belmet](https://fr.linkedin.com/company/belmet?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), Brest en vue hiring Technicien Support Informatique F/H in Brest, Brittany, France | LinkedIn, [Brest en vue](https://fr.linkedin.com/company/brestenvue?trk=public_jobs_topcard-org-name) Brest, Brittany, France, [Brest Métropole](https://fr.linkedin.com/company/brestmetropole?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [Brest Métropole](https://fr.linkedin.com/company/brestmetropole?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [CEVA SANTE ANIMALE](https://fr.linkedin.com/company/ceva-sante-animale?trk=public_jobs_similar-jobs_main-jobs-card-subtitle) (+34 more)
 
 ### Community 44 - "Community 44"
 Cohesion: 0.40
@@ -252,12 +255,12 @@ Cohesion: 0.29
 Nodes (5): appStringsEn, appStringsFr, dashboardStringsEn, dashboardStringsFr, locales
 
 ### Community 46 - "Community 46"
-Cohesion: 0.20
-Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
+Cohesion: 0.05
+Nodes (38): [Accor](https://fr.linkedin.com/company/accor?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [CENTURION SEARCH | Cabinet de recrutement](https://fr.linkedin.com/company/centurion-search?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [CNAM](https://fr.linkedin.com/company/cnam-caisse-nationale-assurance-maladie?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [ELSAN](https://fr.linkedin.com/company/elsan?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), Explore top content on LinkedIn, [FAYAT Group](https://fr.linkedin.com/company/fayat?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [France Travail](https://fr.linkedin.com/company/francetravail?trk=public_jobs_similar-jobs_main-jobs-card-subtitle), [France Travail](https://fr.linkedin.com/company/francetravail?trk=public_jobs_similar-jobs_main-jobs-card-subtitle) (+30 more)
 
 ### Community 47 - "Community 47"
-Cohesion: 0.25
-Nodes (8): job, clear, extract, jina, placeholder, scrapfly, title, urlPlaceholder
+Cohesion: 0.18
+Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
 
 ### Community 48 - "Community 48"
 Cohesion: 0.40
@@ -296,8 +299,8 @@ Cohesion: 0.29
 Nodes (7): form, cancel, company, companyPlaceholder, create, jobTitle, jobTitlePlaceholder
 
 ### Community 60 - "Community 60"
-Cohesion: 0.11
-Nodes (18): apiError, error, errorTitle, app, ai, auth, error, prompt (+10 more)
+Cohesion: 0.20
+Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
 
 ### Community 61 - "Community 61"
 Cohesion: 0.50
@@ -336,8 +339,8 @@ Cohesion: 0.05
 Nodes (44): compiling, completed, extracting, failed, generating, pending, saving, scraping (+36 more)
 
 ### Community 70 - "Community 70"
-Cohesion: 0.11
-Nodes (18): apiError, error, errorTitle, app, ai, auth, error, prompt (+10 more)
+Cohesion: 0.20
+Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
 
 ### Community 71 - "Community 71"
 Cohesion: 0.67
@@ -348,12 +351,12 @@ Cohesion: 0.17
 Nodes (11): code:javascript (// CURRENT FLAWED IMPLEMENTATION:), code:javascript (const [maxConcurrency, setMaxConcurrency] = useState(2); // ), code:javascript (// NEW IMPLEMENTATION IN BatchTab.jsx:), code:javascript (} finally {), Context of the Current Codebase ("What we have here"), Guide to Implementing Batch IA (Concurrency Limits) in Ultimate Job Tool V2, Instructions for the Agent, Step 1: Add a Concurrency Setting (+3 more)
 
 ### Community 73 - "Community 73"
-Cohesion: 0.33
-Nodes (6): getPromptTemplates(), callAIProvider(), escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses(), BatchTab()
+Cohesion: 0.83
+Nodes (3): escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses()
 
 ### Community 74 - "Community 74"
-Cohesion: 0.31
-Nodes (7): Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), rewrites
+Cohesion: 0.22
+Nodes (10): getPromptTemplates(), Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), scrapeWithScrapling() (+2 more)
 
 ### Community 76 - "Community 76"
 Cohesion: 0.43
@@ -367,25 +370,33 @@ Nodes (5): useCloudDatabase(), useDatabase(), useLocalDatabase(), createAuthenti
 Cohesion: 0.67
 Nodes (3): 10. Concurrency and Rate Limiting in Batch Processing, Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing
 
+### Community 82 - "Community 82"
+Cohesion: 0.50
+Nodes (4): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement
+
+### Community 84 - "Community 84"
+Cohesion: 0.67
+Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
+
 ## Knowledge Gaps
-- **655 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+650 more)
+- **735 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+730 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 42`, `Community 59`, `Community 62`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
-- **Why does `dashboard` connect `Community 34` to `Community 75`, `Community 15`, `Community 49`, `Community 51`, `Community 55`, `Community 56`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
-- **Why does `app` connect `Community 70` to `Community 42`, `Community 22`?**
-  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+- **Why does `batch` connect `Community 69` to `Community 83`?**
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 83`, `Community 59`, `Community 62`?**
+  _High betweenness centrality (0.060) - this node is a cross-community bridge._
+- **Why does `templates` connect `Community 23` to `Community 3`?**
+  _High betweenness centrality (0.058) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _655 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _735 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.1368421052631579 - nodes in this community are weakly interconnected._
-- **Should `Community 5` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12554112554112554 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._

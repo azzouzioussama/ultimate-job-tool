@@ -123,6 +123,67 @@ export async function scrapeWithScrapfly(url, apiKey, signal) {
   throw new Error("Aucune donnée extraite par le modèle Scrapfly.");
 }
 
+// ─── Scrapling Scraper ────────────────────────────────────────────────────────
+
+/**
+ * Scrape a job URL using our local Scrapling proxy server.
+ *
+ * @param {string} url    - The full URL of the job posting.
+ * @param {AbortSignal} [signal] - Optional AbortSignal.
+ * @returns {Promise<string>} The extracted job description text.
+ * @throws {Error} If the server is offline or the scraping fails.
+ */
+export async function scrapeWithScrapling(url, signal) {
+  try {
+    const response = await fetch('http://localhost:8000/scrape', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ url }),
+      signal
+    });
+
+    if (!response.ok) {
+      let errMsg = `Erreur API Scrapling (${response.status})`;
+      try {
+        const errData = await response.json();
+        if (errData.detail) {
+          errMsg += `: ${errData.detail}`;
+        }
+      } catch {}
+      throw new Error(errMsg);
+    }
+
+    const data = await response.json();
+    if (data.success && data.markdown) {
+      return data.markdown;
+    }
+    throw new Error("Format de réponse invalide du serveur Scrapling.");
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      throw err;
+    }
+    // Network/fetch errors or 502/504 Bad Gateway from Vite proxy
+    const isOffline = 
+      err.message.includes('Failed to fetch') || 
+      err.message.includes('NetworkError') || 
+      err.message.includes('502') || 
+      err.message.includes('504') ||
+      err.message.includes('Connection refused');
+      
+    if (isOffline) {
+      throw new Error(
+        "Le serveur Scrapling local est hors ligne. " +
+        "Veuillez vous assurer que le serveur Python est démarré en exécutant : " +
+        "python3 scratch/scrapling_server.py dans votre terminal."
+      );
+    }
+    throw err;
+  }
+}
+
+
 
 // ─── Jina AI Markdown Cleaner ─────────────────────────────────────────────────
 

@@ -51,7 +51,7 @@ import CV_TEMPLATES from './constants/cvTemplates';
 
 // ── Services ──────────────────────────────────────────────────────────────────
 import { callAIProvider } from './services/aiService';
-import { scrapeWithJina, scrapeWithScrapfly } from './services/scraperService';
+import { scrapeWithJina, scrapeWithScrapfly, scrapeWithScrapling } from './services/scraperService';
 import { compilePdfFromLatex, downloadBlobAsPdf } from './services/pdfService';
 import { runAtsAnalysis } from './services/atsService';
 import { extractTextFromFile, buildLatexConversionPrompt } from './services/fileUploadService';
@@ -675,6 +675,8 @@ export default function App() {
           storage.saveScrapflyKey(key);
         }
         result = await scrapeWithScrapfly(jobUrl, key);
+      } else if (scraperType === 'scrapling') {
+        result = await scrapeWithScrapling(jobUrl);
       }
 
       if (autoCreateOffer) {
@@ -686,7 +688,7 @@ export default function App() {
         }
       } else {
         setJobDescription(result);
-        const providerName = scraperType === 'jina' ? 'Jina AI' : 'Scrapfly';
+        const providerName = scraperType === 'jina' ? 'Jina AI' : scraperType === 'scrapfly' ? 'Scrapfly' : 'Scrapling';
         showToast(t('app.toast.offerExtracted', { provider: providerName, defaultValue: `Offre extraite avec succès via ${providerName} !` }));
       }
       

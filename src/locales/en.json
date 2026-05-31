@@ -162,6 +162,7 @@
     "clear": "Clear",
     "jina": "Jina AI (Free)",
     "scrapfly": "Scrapfly (API Key)",
+    "scrapling": "Scrapling (Local)",
     "urlPlaceholder": "Paste the job offer URL to extract it",
     "extract": "Extract",
     "placeholder": "The job offer text will appear here. You can also paste it manually, or paste the job offer URL directly if using an AI with internet access."

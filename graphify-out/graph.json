@@ -643,6 +643,15 @@
       "norm_label": "vite"
     },
     {
+      "label": "test_scrapling_http.py",
+      "file_type": "code",
+      "source_file": "scratch/test_scrapling_http.py",
+      "source_location": "L1",
+      "id": "scratch_test_scrapling_http_py",
+      "community": 89,
+      "norm_label": "test_scrapling_http.py"
+    },
+    {
       "label": "debug.js",
       "file_type": "code",
       "source_file": "scratch/debug.js",
@@ -661,6 +670,51 @@
       "norm_label": "{ chromium }"
     },
     {
+      "label": "test_scrapling.py",
+      "file_type": "code",
+      "source_file": "scratch/test_scrapling.py",
+      "source_location": "L1",
+      "id": "scratch_test_scrapling_py",
+      "community": 90,
+      "norm_label": "test_scrapling.py"
+    },
+    {
+      "label": "scrapling_server.py",
+      "file_type": "code",
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L1",
+      "id": "scratch_scrapling_server_py",
+      "community": 75,
+      "norm_label": "scrapling_server.py"
+    },
+    {
+      "label": "ScrapeRequest",
+      "file_type": "code",
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L20",
+      "id": "scratch_scrapling_server_scraperequest",
+      "community": 75,
+      "norm_label": "scraperequest"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 75,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "scrape_url()",
+      "file_type": "code",
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L24",
+      "id": "scratch_scrapling_server_scrape_url",
+      "community": 75,
+      "norm_label": "scrape_url()"
+    },
+    {
       "label": "test-supa.js",
       "file_type": "code",
       "source_file": "scratch/test-supa.js",
@@ -677,6 +731,24 @@
       "id": "scratch_test_supa_createclient",
       "community": 33,
       "norm_label": "{ createclient }"
+    },
+    {
+      "label": "test_jina.py",
+      "file_type": "code",
+      "source_file": "scratch/test_jina.py",
+      "source_location": "L1",
+      "id": "scratch_test_jina_py",
+      "community": 87,
+      "norm_label": "test_jina.py"
+    },
+    {
+      "label": "test_scrapling_extraction.py",
+      "file_type": "code",
+      "source_file": "scratch/test_scrapling_extraction.py",
+      "source_location": "L1",
+      "id": "scratch_test_scrapling_extraction_py",
+      "community": 88,
+      "norm_label": "test_scrapling_extraction.py"
     },
     {
       "label": "check-jwt.js",
@@ -783,7 +855,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "id": "src_main_jsx",
-      "community": 42,
+      "community": 3,
       "norm_label": "main.jsx"
     },
     {
@@ -792,7 +864,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L10",
       "id": "src_main_renderapp",
-      "community": 42,
+      "community": 3,
       "norm_label": "renderapp()"
     },
     {
@@ -801,7 +873,7 @@
       "source_file": "src/i18n.js",
       "source_location": "L1",
       "id": "src_i18n_js",
-      "community": 42,
+      "community": 3,
       "norm_label": "i18n.js"
     },
     {
@@ -837,7 +909,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L1",
       "id": "src_locales_fr_json",
-      "community": 42,
+      "community": 83,
       "norm_label": "fr.json"
     },
     {
@@ -846,7 +918,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L2",
       "id": "locales_fr_header",
-      "community": 42,
+      "community": 83,
       "norm_label": "header"
     },
     {
@@ -855,7 +927,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L3",
       "id": "locales_fr_header_apikeyplaceholder",
-      "community": 42,
+      "community": 83,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -864,7 +936,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L5",
       "id": "locales_fr_tabs",
-      "community": 42,
+      "community": 70,
       "norm_label": "tabs"
     },
     {
@@ -873,7 +945,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L6",
       "id": "locales_fr_tabs_dashboard",
-      "community": 42,
+      "community": 70,
       "norm_label": "dashboard"
     },
     {
@@ -882,7 +954,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L7",
       "id": "locales_fr_tabs_prompts",
-      "community": 42,
+      "community": 70,
       "norm_label": "prompts"
     },
     {
@@ -891,7 +963,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L8",
       "id": "locales_fr_tabs_aiassistant",
-      "community": 42,
+      "community": 70,
       "norm_label": "aiassistant"
     },
     {
@@ -900,7 +972,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L9",
       "id": "locales_fr_tabs_joboffer",
-      "community": 42,
+      "community": 70,
       "norm_label": "joboffer"
     },
     {
@@ -909,7 +981,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L10",
       "id": "locales_fr_tabs_mycv",
-      "community": 42,
+      "community": 70,
       "norm_label": "mycv"
     },
     {
@@ -918,7 +990,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L11",
       "id": "locales_fr_tabs_pdfmaker",
-      "community": 42,
+      "community": 70,
       "norm_label": "pdfmaker"
     },
     {
@@ -927,7 +999,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L12",
       "id": "locales_fr_tabs_atstest",
-      "community": 42,
+      "community": 70,
       "norm_label": "atstest"
     },
     {
@@ -936,7 +1008,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L13",
       "id": "locales_fr_tabs_batch",
-      "community": 42,
+      "community": 70,
       "norm_label": "batch"
     },
     {
@@ -945,7 +1017,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L14",
       "id": "locales_fr_tabs_documents",
-      "community": 42,
+      "community": 70,
       "norm_label": "documents"
     },
     {
@@ -954,7 +1026,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L16",
       "id": "locales_fr_app",
-      "community": 70,
+      "community": 22,
       "norm_label": "app"
     },
     {
@@ -963,7 +1035,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L17",
       "id": "locales_fr_app_auth",
-      "community": 70,
+      "community": 22,
       "norm_label": "auth"
     },
     {
@@ -972,7 +1044,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L18",
       "id": "locales_fr_auth_welcometitle",
-      "community": 70,
+      "community": 22,
       "norm_label": "welcometitle"
     },
     {
@@ -981,7 +1053,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L19",
       "id": "locales_fr_auth_welcomedesc",
-      "community": 70,
+      "community": 22,
       "norm_label": "welcomedesc"
     },
     {
@@ -990,7 +1062,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L20",
       "id": "locales_fr_auth_loginbutton",
-      "community": 70,
+      "community": 22,
       "norm_label": "loginbutton"
     },
     {
@@ -999,7 +1071,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L22",
       "id": "locales_fr_app_prompts",
-      "community": 70,
+      "community": 22,
       "norm_label": "prompts"
     },
     {
@@ -1008,7 +1080,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L23",
       "id": "locales_fr_prompts_missingcv",
-      "community": 70,
+      "community": 22,
       "norm_label": "missingcv"
     },
     {
@@ -1017,7 +1089,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L24",
       "id": "locales_fr_prompts_missingjob",
-      "community": 70,
+      "community": 22,
       "norm_label": "missingjob"
     },
     {
@@ -1026,7 +1098,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L25",
       "id": "locales_fr_prompts_urlinstruction",
-      "community": 70,
+      "community": 22,
       "norm_label": "urlinstruction"
     },
     {
@@ -1296,7 +1368,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L57",
       "id": "locales_fr_app_ai",
-      "community": 70,
+      "community": 22,
       "norm_label": "ai"
     },
     {
@@ -1305,7 +1377,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L58",
       "id": "locales_fr_ai_error",
-      "community": 70,
+      "community": 22,
       "norm_label": "error"
     },
     {
@@ -1314,7 +1386,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L59",
       "id": "locales_fr_ai_errortitle",
-      "community": 70,
+      "community": 22,
       "norm_label": "errortitle"
     },
     {
@@ -1323,7 +1395,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L60",
       "id": "locales_fr_ai_apierror",
-      "community": 70,
+      "community": 22,
       "norm_label": "apierror"
     },
     {
@@ -1332,7 +1404,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L62",
       "id": "locales_fr_app_prompt",
-      "community": 70,
+      "community": 22,
       "norm_label": "prompt"
     },
     {
@@ -1341,7 +1413,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L63",
       "id": "locales_fr_prompt_scrapflykey",
-      "community": 70,
+      "community": 22,
       "norm_label": "scrapflykey"
     },
     {
@@ -1350,7 +1422,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L65",
       "id": "locales_fr_app_error",
-      "community": 70,
+      "community": 22,
       "norm_label": "error"
     },
     {
@@ -1359,7 +1431,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L66",
       "id": "locales_fr_error_scrapflyrequired",
-      "community": 70,
+      "community": 22,
       "norm_label": "scrapflyrequired"
     },
     {
@@ -1368,7 +1440,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L67",
       "id": "locales_fr_error_invalidlatex",
-      "community": 70,
+      "community": 22,
       "norm_label": "invalidlatex"
     },
     {
@@ -1854,7 +1926,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L129",
       "id": "locales_fr_prompts",
-      "community": 42,
+      "community": 47,
       "norm_label": "prompts"
     },
     {
@@ -1863,7 +1935,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L130",
       "id": "locales_fr_prompts_title",
-      "community": 42,
+      "community": 47,
       "norm_label": "title"
     },
     {
@@ -1872,7 +1944,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L131",
       "id": "locales_fr_prompts_editortitle",
-      "community": 42,
+      "community": 47,
       "norm_label": "editortitle"
     },
     {
@@ -1881,7 +1953,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L132",
       "id": "locales_fr_prompts_resetall",
-      "community": 42,
+      "community": 47,
       "norm_label": "resetall"
     },
     {
@@ -1890,7 +1962,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L133",
       "id": "locales_fr_prompts_reset",
-      "community": 42,
+      "community": 47,
       "norm_label": "reset"
     },
     {
@@ -1899,7 +1971,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L134",
       "id": "locales_fr_prompts_empty",
-      "community": 42,
+      "community": 47,
       "norm_label": "empty"
     },
     {
@@ -1908,7 +1980,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L135",
       "id": "locales_fr_prompts_download",
-      "community": 42,
+      "community": 47,
       "norm_label": "download"
     },
     {
@@ -1917,7 +1989,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L136",
       "id": "locales_fr_prompts_copy",
-      "community": 42,
+      "community": 47,
       "norm_label": "copy"
     },
     {
@@ -1926,7 +1998,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L137",
       "id": "locales_fr_prompts_copyall",
-      "community": 42,
+      "community": 47,
       "norm_label": "copyall"
     },
     {
@@ -1935,7 +2007,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L138",
       "id": "locales_fr_prompts_generate",
-      "community": 42,
+      "community": 47,
       "norm_label": "generate"
     },
     {
@@ -1944,7 +2016,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L139",
       "id": "locales_fr_prompts_requirelatex",
-      "community": 42,
+      "community": 47,
       "norm_label": "requirelatex"
     },
     {
@@ -2182,10 +2254,19 @@
       "norm_label": "scrapfly"
     },
     {
-      "label": "urlPlaceholder",
+      "label": "scrapling",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
       "source_location": "L168",
+      "id": "locales_fr_job_scrapling",
+      "community": 42,
+      "norm_label": "scrapling"
+    },
+    {
+      "label": "urlPlaceholder",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L169",
       "id": "locales_fr_job_urlplaceholder",
       "community": 42,
       "norm_label": "urlplaceholder"
@@ -2194,7 +2275,7 @@
       "label": "extract",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L169",
+      "source_location": "L170",
       "id": "locales_fr_job_extract",
       "community": 42,
       "norm_label": "extract"
@@ -2203,7 +2284,7 @@
       "label": "placeholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L170",
+      "source_location": "L171",
       "id": "locales_fr_job_placeholder",
       "community": 42,
       "norm_label": "placeholder"
@@ -2212,97 +2293,97 @@
       "label": "cv",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L172",
+      "source_location": "L173",
       "id": "locales_fr_cv",
-      "community": 42,
+      "community": 60,
       "norm_label": "cv"
     },
     {
       "label": "templateTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L173",
+      "source_location": "L174",
       "id": "locales_fr_cv_templatetitle",
-      "community": 42,
+      "community": 60,
       "norm_label": "templatetitle"
     },
     {
       "label": "templateDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L174",
+      "source_location": "L175",
       "id": "locales_fr_cv_templatedesc",
-      "community": 42,
+      "community": 60,
       "norm_label": "templatedesc"
     },
     {
       "label": "originalTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L175",
+      "source_location": "L176",
       "id": "locales_fr_cv_originaltitle",
-      "community": 42,
+      "community": 60,
       "norm_label": "originaltitle"
     },
     {
       "label": "importBtn",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L176",
+      "source_location": "L177",
       "id": "locales_fr_cv_importbtn",
-      "community": 42,
+      "community": 60,
       "norm_label": "importbtn"
     },
     {
       "label": "importing",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L177",
+      "source_location": "L178",
       "id": "locales_fr_cv_importing",
-      "community": 42,
+      "community": 60,
       "norm_label": "importing"
     },
     {
       "label": "resetFake",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L178",
+      "source_location": "L179",
       "id": "locales_fr_cv_resetfake",
-      "community": 42,
+      "community": 60,
       "norm_label": "resetfake"
     },
     {
       "label": "generatedTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L179",
+      "source_location": "L180",
       "id": "locales_fr_cv_generatedtitle",
-      "community": 42,
+      "community": 60,
       "norm_label": "generatedtitle"
     },
     {
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L180",
+      "source_location": "L181",
       "id": "locales_fr_cv_clear",
-      "community": 42,
+      "community": 60,
       "norm_label": "clear"
     },
     {
       "label": "generatedPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L181",
+      "source_location": "L182",
       "id": "locales_fr_cv_generatedplaceholder",
-      "community": 42,
+      "community": 60,
       "norm_label": "generatedplaceholder"
     },
     {
       "label": "pdf",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L183",
+      "source_location": "L184",
       "id": "locales_fr_pdf",
       "community": 37,
       "norm_label": "pdf"
@@ -2311,7 +2392,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L184",
+      "source_location": "L185",
       "id": "locales_fr_pdf_title",
       "community": 37,
       "norm_label": "title"
@@ -2320,7 +2401,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L185",
+      "source_location": "L186",
       "id": "locales_fr_pdf_subtitle",
       "community": 37,
       "norm_label": "subtitle"
@@ -2329,7 +2410,7 @@
       "label": "sourceGenerated",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L186",
+      "source_location": "L187",
       "id": "locales_fr_pdf_sourcegenerated",
       "community": 37,
       "norm_label": "sourcegenerated"
@@ -2338,7 +2419,7 @@
       "label": "sourceOriginal",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L187",
+      "source_location": "L188",
       "id": "locales_fr_pdf_sourceoriginal",
       "community": 37,
       "norm_label": "sourceoriginal"
@@ -2347,7 +2428,7 @@
       "label": "download",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L188",
+      "source_location": "L189",
       "id": "locales_fr_pdf_download",
       "community": 37,
       "norm_label": "download"
@@ -2356,7 +2437,7 @@
       "label": "compile",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L189",
+      "source_location": "L190",
       "id": "locales_fr_pdf_compile",
       "community": 37,
       "norm_label": "compile"
@@ -2365,7 +2446,7 @@
       "label": "recompile",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L190",
+      "source_location": "L191",
       "id": "locales_fr_pdf_recompile",
       "community": 37,
       "norm_label": "recompile"
@@ -2374,7 +2455,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L191",
+      "source_location": "L192",
       "id": "locales_fr_pdf_compiling",
       "community": 37,
       "norm_label": "compiling"
@@ -2383,7 +2464,7 @@
       "label": "wait",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L192",
+      "source_location": "L193",
       "id": "locales_fr_pdf_wait",
       "community": 37,
       "norm_label": "wait"
@@ -2392,7 +2473,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L193",
+      "source_location": "L194",
       "id": "locales_fr_pdf_error",
       "community": 37,
       "norm_label": "error"
@@ -2401,7 +2482,7 @@
       "label": "loadingError",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L194",
+      "source_location": "L195",
       "id": "locales_fr_pdf_loadingerror",
       "community": 37,
       "norm_label": "loadingerror"
@@ -2410,7 +2491,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L195",
+      "source_location": "L196",
       "id": "locales_fr_pdf_emptytitle",
       "community": 37,
       "norm_label": "emptytitle"
@@ -2419,7 +2500,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L196",
+      "source_location": "L197",
       "id": "locales_fr_pdf_emptydesc",
       "community": 37,
       "norm_label": "emptydesc"
@@ -2428,7 +2509,7 @@
       "label": "sourceDoc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L197",
+      "source_location": "L198",
       "id": "locales_fr_pdf_sourcedoc",
       "community": 37,
       "norm_label": "sourcedoc"
@@ -2437,7 +2518,7 @@
       "label": "ats",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L199",
+      "source_location": "L200",
       "id": "locales_fr_ats",
       "community": 67,
       "norm_label": "ats"
@@ -2446,7 +2527,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L200",
+      "source_location": "L201",
       "id": "locales_fr_ats_title",
       "community": 67,
       "norm_label": "title"
@@ -2455,7 +2536,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L201",
+      "source_location": "L202",
       "id": "locales_fr_ats_subtitle",
       "community": 67,
       "norm_label": "subtitle"
@@ -2464,7 +2545,7 @@
       "label": "run",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L202",
+      "source_location": "L203",
       "id": "locales_fr_ats_run",
       "community": 67,
       "norm_label": "run"
@@ -2473,7 +2554,7 @@
       "label": "analyzing",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L203",
+      "source_location": "L204",
       "id": "locales_fr_ats_analyzing",
       "community": 67,
       "norm_label": "analyzing"
@@ -2482,7 +2563,7 @@
       "label": "scoreTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L204",
+      "source_location": "L205",
       "id": "locales_fr_ats_scoretitle",
       "community": 67,
       "norm_label": "scoretitle"
@@ -2491,7 +2572,7 @@
       "label": "scoreDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L205",
+      "source_location": "L206",
       "id": "locales_fr_ats_scoredesc",
       "community": 67,
       "norm_label": "scoredesc"
@@ -2500,7 +2581,7 @@
       "label": "missingTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L206",
+      "source_location": "L207",
       "id": "locales_fr_ats_missingtitle",
       "community": 67,
       "norm_label": "missingtitle"
@@ -2509,7 +2590,7 @@
       "label": "missingGood",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L207",
+      "source_location": "L208",
       "id": "locales_fr_ats_missinggood",
       "community": 67,
       "norm_label": "missinggood"
@@ -2518,7 +2599,7 @@
       "label": "adviceTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L208",
+      "source_location": "L209",
       "id": "locales_fr_ats_advicetitle",
       "community": 67,
       "norm_label": "advicetitle"
@@ -2527,7 +2608,7 @@
       "label": "missingJob",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L209",
+      "source_location": "L210",
       "id": "locales_fr_ats_missingjob",
       "community": 67,
       "norm_label": "missingjob"
@@ -2536,7 +2617,7 @@
       "label": "missingCv",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L210",
+      "source_location": "L211",
       "id": "locales_fr_ats_missingcv",
       "community": 67,
       "norm_label": "missingcv"
@@ -2545,7 +2626,7 @@
       "label": "clickToRun",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L211",
+      "source_location": "L212",
       "id": "locales_fr_ats_clicktorun",
       "community": 67,
       "norm_label": "clicktorun"
@@ -2554,7 +2635,7 @@
       "label": "templates",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L213",
+      "source_location": "L214",
       "id": "locales_fr_templates",
       "community": 29,
       "norm_label": "templates"
@@ -2563,7 +2644,7 @@
       "label": "1",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L214",
+      "source_location": "L215",
       "id": "locales_fr_templates_1",
       "community": 29,
       "norm_label": "1"
@@ -2572,7 +2653,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L215",
+      "source_location": "L216",
       "id": "locales_fr_1_title",
       "community": 29,
       "norm_label": "title"
@@ -2581,7 +2662,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L216",
+      "source_location": "L217",
       "id": "locales_fr_1_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2590,7 +2671,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L217",
+      "source_location": "L218",
       "id": "locales_fr_1_content",
       "community": 29,
       "norm_label": "content"
@@ -2599,7 +2680,7 @@
       "label": "2",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L219",
+      "source_location": "L220",
       "id": "locales_fr_templates_2",
       "community": 29,
       "norm_label": "2"
@@ -2608,7 +2689,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L220",
+      "source_location": "L221",
       "id": "locales_fr_2_title",
       "community": 29,
       "norm_label": "title"
@@ -2617,7 +2698,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L221",
+      "source_location": "L222",
       "id": "locales_fr_2_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2626,7 +2707,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L222",
+      "source_location": "L223",
       "id": "locales_fr_2_content",
       "community": 29,
       "norm_label": "content"
@@ -2635,7 +2716,7 @@
       "label": "3",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L224",
+      "source_location": "L225",
       "id": "locales_fr_templates_3",
       "community": 29,
       "norm_label": "3"
@@ -2644,7 +2725,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L225",
+      "source_location": "L226",
       "id": "locales_fr_3_title",
       "community": 29,
       "norm_label": "title"
@@ -2653,7 +2734,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L226",
+      "source_location": "L227",
       "id": "locales_fr_3_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2662,7 +2743,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L227",
+      "source_location": "L228",
       "id": "locales_fr_3_content",
       "community": 29,
       "norm_label": "content"
@@ -2671,7 +2752,7 @@
       "label": "4",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L229",
+      "source_location": "L230",
       "id": "locales_fr_templates_4",
       "community": 29,
       "norm_label": "4"
@@ -2680,7 +2761,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L230",
+      "source_location": "L231",
       "id": "locales_fr_4_title",
       "community": 29,
       "norm_label": "title"
@@ -2689,7 +2770,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L231",
+      "source_location": "L232",
       "id": "locales_fr_4_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2698,7 +2779,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L232",
+      "source_location": "L233",
       "id": "locales_fr_4_content",
       "community": 29,
       "norm_label": "content"
@@ -2707,7 +2788,7 @@
       "label": "5",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L234",
+      "source_location": "L235",
       "id": "locales_fr_templates_5",
       "community": 29,
       "norm_label": "5"
@@ -2716,7 +2797,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L235",
+      "source_location": "L236",
       "id": "locales_fr_5_title",
       "community": 29,
       "norm_label": "title"
@@ -2725,7 +2806,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L236",
+      "source_location": "L237",
       "id": "locales_fr_5_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2734,7 +2815,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L237",
+      "source_location": "L238",
       "id": "locales_fr_5_content",
       "community": 29,
       "norm_label": "content"
@@ -2743,7 +2824,7 @@
       "label": "6",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L239",
+      "source_location": "L240",
       "id": "locales_fr_templates_6",
       "community": 29,
       "norm_label": "6"
@@ -2752,7 +2833,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L240",
+      "source_location": "L241",
       "id": "locales_fr_6_title",
       "community": 29,
       "norm_label": "title"
@@ -2761,7 +2842,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L241",
+      "source_location": "L242",
       "id": "locales_fr_6_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2770,7 +2851,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L242",
+      "source_location": "L243",
       "id": "locales_fr_6_content",
       "community": 29,
       "norm_label": "content"
@@ -2779,7 +2860,7 @@
       "label": "7",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L244",
+      "source_location": "L245",
       "id": "locales_fr_templates_7",
       "community": 29,
       "norm_label": "7"
@@ -2788,7 +2869,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L245",
+      "source_location": "L246",
       "id": "locales_fr_7_title",
       "community": 29,
       "norm_label": "title"
@@ -2797,7 +2878,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L246",
+      "source_location": "L247",
       "id": "locales_fr_7_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2806,7 +2887,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L247",
+      "source_location": "L248",
       "id": "locales_fr_7_content",
       "community": 29,
       "norm_label": "content"
@@ -2815,7 +2896,7 @@
       "label": "8",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L249",
+      "source_location": "L250",
       "id": "locales_fr_templates_8",
       "community": 29,
       "norm_label": "8"
@@ -2824,7 +2905,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L250",
+      "source_location": "L251",
       "id": "locales_fr_8_title",
       "community": 29,
       "norm_label": "title"
@@ -2833,7 +2914,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L251",
+      "source_location": "L252",
       "id": "locales_fr_8_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2842,7 +2923,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L252",
+      "source_location": "L253",
       "id": "locales_fr_8_content",
       "community": 29,
       "norm_label": "content"
@@ -2851,7 +2932,7 @@
       "label": "9",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L254",
+      "source_location": "L255",
       "id": "locales_fr_templates_9",
       "community": 29,
       "norm_label": "9"
@@ -2860,7 +2941,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L255",
+      "source_location": "L256",
       "id": "locales_fr_9_title",
       "community": 29,
       "norm_label": "title"
@@ -2869,7 +2950,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L256",
+      "source_location": "L257",
       "id": "locales_fr_9_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2878,7 +2959,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L257",
+      "source_location": "L258",
       "id": "locales_fr_9_content",
       "community": 29,
       "norm_label": "content"
@@ -2887,7 +2968,7 @@
       "label": "10",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L259",
+      "source_location": "L260",
       "id": "locales_fr_templates_10",
       "community": 29,
       "norm_label": "10"
@@ -2896,7 +2977,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L260",
+      "source_location": "L261",
       "id": "locales_fr_10_title",
       "community": 29,
       "norm_label": "title"
@@ -2905,7 +2986,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L261",
+      "source_location": "L262",
       "id": "locales_fr_10_desc",
       "community": 29,
       "norm_label": "desc"
@@ -2914,7 +2995,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L262",
+      "source_location": "L263",
       "id": "locales_fr_10_content",
       "community": 29,
       "norm_label": "content"
@@ -2923,7 +3004,7 @@
       "label": "documents",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L265",
+      "source_location": "L266",
       "id": "locales_fr_documents",
       "community": 14,
       "norm_label": "documents"
@@ -2932,7 +3013,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L266",
+      "source_location": "L267",
       "id": "locales_fr_documents_title",
       "community": 14,
       "norm_label": "title"
@@ -2941,7 +3022,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L267",
+      "source_location": "L268",
       "id": "locales_fr_documents_subtitle",
       "community": 14,
       "norm_label": "subtitle"
@@ -2950,7 +3031,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L268",
+      "source_location": "L269",
       "id": "locales_fr_documents_emptytitle",
       "community": 14,
       "norm_label": "emptytitle"
@@ -2959,7 +3040,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L269",
+      "source_location": "L270",
       "id": "locales_fr_documents_emptydesc",
       "community": 14,
       "norm_label": "emptydesc"
@@ -2968,7 +3049,7 @@
       "label": "delete",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L270",
+      "source_location": "L271",
       "id": "locales_fr_documents_delete",
       "community": 14,
       "norm_label": "delete"
@@ -2977,7 +3058,7 @@
       "label": "confirmDelete",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L271",
+      "source_location": "L272",
       "id": "locales_fr_documents_confirmdelete",
       "community": 14,
       "norm_label": "confirmdelete"
@@ -2986,7 +3067,7 @@
       "label": "downloadLatex",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L272",
+      "source_location": "L273",
       "id": "locales_fr_documents_downloadlatex",
       "community": 14,
       "norm_label": "downloadlatex"
@@ -2995,7 +3076,7 @@
       "label": "downloadPdf",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L273",
+      "source_location": "L274",
       "id": "locales_fr_documents_downloadpdf",
       "community": 14,
       "norm_label": "downloadpdf"
@@ -3004,7 +3085,7 @@
       "label": "downloadWord",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L274",
+      "source_location": "L275",
       "id": "locales_fr_documents_downloadword",
       "community": 14,
       "norm_label": "downloadword"
@@ -3013,7 +3094,7 @@
       "label": "previewPdf",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L275",
+      "source_location": "L276",
       "id": "locales_fr_documents_previewpdf",
       "community": 14,
       "norm_label": "previewpdf"
@@ -3022,7 +3103,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L276",
+      "source_location": "L277",
       "id": "locales_fr_documents_compiling",
       "community": 14,
       "norm_label": "compiling"
@@ -3031,7 +3112,7 @@
       "label": "compileError",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L277",
+      "source_location": "L278",
       "id": "locales_fr_documents_compileerror",
       "community": 14,
       "norm_label": "compileerror"
@@ -3040,7 +3121,7 @@
       "label": "batch",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L279",
+      "source_location": "L280",
       "id": "locales_fr_batch",
       "community": 69,
       "norm_label": "batch"
@@ -3049,7 +3130,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L280",
+      "source_location": "L281",
       "id": "locales_fr_batch_title",
       "community": 69,
       "norm_label": "title"
@@ -3058,7 +3139,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L281",
+      "source_location": "L282",
       "id": "locales_fr_batch_subtitle",
       "community": 69,
       "norm_label": "subtitle"
@@ -3067,7 +3148,7 @@
       "label": "start",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L282",
+      "source_location": "L283",
       "id": "locales_fr_batch_start",
       "community": 69,
       "norm_label": "start"
@@ -3076,7 +3157,7 @@
       "label": "cancel",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L283",
+      "source_location": "L284",
       "id": "locales_fr_batch_cancel",
       "community": 69,
       "norm_label": "cancel"
@@ -3085,7 +3166,7 @@
       "label": "urlsLabel",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L284",
+      "source_location": "L285",
       "id": "locales_fr_batch_urlslabel",
       "community": 69,
       "norm_label": "urlslabel"
@@ -3094,7 +3175,7 @@
       "label": "urlsPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L285",
+      "source_location": "L286",
       "id": "locales_fr_batch_urlsplaceholder",
       "community": 69,
       "norm_label": "urlsplaceholder"
@@ -3103,7 +3184,7 @@
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L286",
+      "source_location": "L287",
       "id": "locales_fr_batch_clear",
       "community": 69,
       "norm_label": "clear"
@@ -3112,7 +3193,7 @@
       "label": "configPanel",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L287",
+      "source_location": "L288",
       "id": "locales_fr_batch_configpanel",
       "community": 69,
       "norm_label": "configpanel"
@@ -3121,7 +3202,7 @@
       "label": "scraper",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L288",
+      "source_location": "L289",
       "id": "locales_fr_batch_scraper",
       "community": 69,
       "norm_label": "scraper"
@@ -3130,7 +3211,7 @@
       "label": "free",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L289",
+      "source_location": "L290",
       "id": "locales_fr_batch_free",
       "community": 69,
       "norm_label": "free"
@@ -3139,7 +3220,7 @@
       "label": "apiKeyRequired",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L290",
+      "source_location": "L291",
       "id": "locales_fr_batch_apikeyrequired",
       "community": 69,
       "norm_label": "apikeyrequired"
@@ -3148,7 +3229,7 @@
       "label": "concurrency",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L291",
+      "source_location": "L292",
       "id": "locales_fr_batch_concurrency",
       "community": 69,
       "norm_label": "concurrency"
@@ -3157,7 +3238,7 @@
       "label": "concurrencyOffers",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L292",
+      "source_location": "L293",
       "id": "locales_fr_batch_concurrencyoffers",
       "community": 69,
       "norm_label": "concurrencyoffers"
@@ -3166,7 +3247,7 @@
       "label": "delay",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L293",
+      "source_location": "L294",
       "id": "locales_fr_batch_delay",
       "community": 69,
       "norm_label": "delay"
@@ -3175,7 +3256,7 @@
       "label": "delay.none",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L294",
+      "source_location": "L295",
       "id": "locales_fr_batch_delay_none",
       "community": 69,
       "norm_label": "delay.none"
@@ -3184,7 +3265,7 @@
       "label": "seconds",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L295",
+      "source_location": "L296",
       "id": "locales_fr_batch_seconds",
       "community": 69,
       "norm_label": "seconds"
@@ -3193,7 +3274,7 @@
       "label": "generateOptions",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L296",
+      "source_location": "L297",
       "id": "locales_fr_batch_generateoptions",
       "community": 69,
       "norm_label": "generateoptions"
@@ -3202,7 +3283,7 @@
       "label": "resultsLabel",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L297",
+      "source_location": "L298",
       "id": "locales_fr_batch_resultslabel",
       "community": 69,
       "norm_label": "resultslabel"
@@ -3211,7 +3292,7 @@
       "label": "noResults",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L298",
+      "source_location": "L299",
       "id": "locales_fr_batch_noresults",
       "community": 69,
       "norm_label": "noresults"
@@ -3220,7 +3301,7 @@
       "label": "noResultsDesc",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L299",
+      "source_location": "L300",
       "id": "locales_fr_batch_noresultsdesc",
       "community": 69,
       "norm_label": "noresultsdesc"
@@ -3229,7 +3310,7 @@
       "label": "progress",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L300",
+      "source_location": "L301",
       "id": "locales_fr_batch_progress",
       "community": 69,
       "norm_label": "progress"
@@ -3238,7 +3319,7 @@
       "label": "toast",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L301",
+      "source_location": "L302",
       "id": "locales_fr_batch_toast",
       "community": 69,
       "norm_label": "toast"
@@ -3247,7 +3328,7 @@
       "label": "noUrls",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L302",
+      "source_location": "L303",
       "id": "locales_fr_toast_nourls",
       "community": 69,
       "norm_label": "nourls"
@@ -3256,7 +3337,7 @@
       "label": "completed",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L303",
+      "source_location": "L304",
       "id": "locales_fr_toast_completed",
       "community": 69,
       "norm_label": "completed"
@@ -3265,7 +3346,7 @@
       "label": "cancelled",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L304",
+      "source_location": "L305",
       "id": "locales_fr_toast_cancelled",
       "community": 69,
       "norm_label": "cancelled"
@@ -3274,7 +3355,7 @@
       "label": "cancelledMsg",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L305",
+      "source_location": "L306",
       "id": "locales_fr_toast_cancelledmsg",
       "community": 69,
       "norm_label": "cancelledmsg"
@@ -3283,7 +3364,7 @@
       "label": "badge",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L307",
+      "source_location": "L308",
       "id": "locales_fr_batch_badge",
       "community": 69,
       "norm_label": "badge"
@@ -3292,7 +3373,7 @@
       "label": "pending",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L308",
+      "source_location": "L309",
       "id": "locales_fr_badge_pending",
       "community": 69,
       "norm_label": "pending"
@@ -3301,7 +3382,7 @@
       "label": "scraping",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L309",
+      "source_location": "L310",
       "id": "locales_fr_badge_scraping",
       "community": 69,
       "norm_label": "scraping"
@@ -3310,7 +3391,7 @@
       "label": "extracting",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L310",
+      "source_location": "L311",
       "id": "locales_fr_badge_extracting",
       "community": 69,
       "norm_label": "extracting"
@@ -3319,7 +3400,7 @@
       "label": "generating",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L311",
+      "source_location": "L312",
       "id": "locales_fr_badge_generating",
       "community": 69,
       "norm_label": "generating"
@@ -3328,7 +3409,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L312",
+      "source_location": "L313",
       "id": "locales_fr_badge_compiling",
       "community": 69,
       "norm_label": "compiling"
@@ -3337,7 +3418,7 @@
       "label": "saving",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L313",
+      "source_location": "L314",
       "id": "locales_fr_badge_saving",
       "community": 69,
       "norm_label": "saving"
@@ -3346,7 +3427,7 @@
       "label": "completed",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L314",
+      "source_location": "L315",
       "id": "locales_fr_badge_completed",
       "community": 69,
       "norm_label": "completed"
@@ -3355,7 +3436,7 @@
       "label": "failed",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L315",
+      "source_location": "L316",
       "id": "locales_fr_badge_failed",
       "community": 69,
       "norm_label": "failed"
@@ -3364,7 +3445,7 @@
       "label": "status",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L317",
+      "source_location": "L318",
       "id": "locales_fr_batch_status",
       "community": 69,
       "norm_label": "status"
@@ -3373,7 +3454,7 @@
       "label": "cancelled",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L318",
+      "source_location": "L319",
       "id": "locales_fr_status_cancelled",
       "community": 69,
       "norm_label": "cancelled"
@@ -3382,7 +3463,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L319",
+      "source_location": "L320",
       "id": "locales_fr_status_error",
       "community": 69,
       "norm_label": "error"
@@ -3391,7 +3472,7 @@
       "label": "extractedOffer",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L320",
+      "source_location": "L321",
       "id": "locales_fr_status_extractedoffer",
       "community": 69,
       "norm_label": "extractedoffer"
@@ -3400,7 +3481,7 @@
       "label": "running",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L321",
+      "source_location": "L322",
       "id": "locales_fr_status_running",
       "community": 69,
       "norm_label": "running"
@@ -3409,7 +3490,7 @@
       "label": "stats",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L323",
+      "source_location": "L324",
       "id": "locales_fr_batch_stats",
       "community": 69,
       "norm_label": "stats"
@@ -3418,7 +3499,7 @@
       "label": "success",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L324",
+      "source_location": "L325",
       "id": "locales_fr_stats_success",
       "community": 69,
       "norm_label": "success"
@@ -3427,7 +3508,7 @@
       "label": "failed",
       "file_type": "code",
       "source_file": "src/locales/fr.json",
-      "source_location": "L325",
+      "source_location": "L326",
       "id": "locales_fr_stats_failed",
       "community": 69,
       "norm_label": "failed"
@@ -3438,7 +3519,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L1",
       "id": "src_locales_en_json",
-      "community": 75,
+      "community": 3,
       "norm_label": "en.json"
     },
     {
@@ -3447,7 +3528,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L2",
       "id": "locales_en_header",
-      "community": 75,
+      "community": 3,
       "norm_label": "header"
     },
     {
@@ -3456,7 +3537,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L3",
       "id": "locales_en_header_apikeyplaceholder",
-      "community": 75,
+      "community": 3,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -3465,7 +3546,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L5",
       "id": "locales_en_tabs",
-      "community": 46,
+      "community": 3,
       "norm_label": "tabs"
     },
     {
@@ -3474,7 +3555,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L6",
       "id": "locales_en_tabs_dashboard",
-      "community": 46,
+      "community": 3,
       "norm_label": "dashboard"
     },
     {
@@ -3483,7 +3564,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L7",
       "id": "locales_en_tabs_prompts",
-      "community": 46,
+      "community": 3,
       "norm_label": "prompts"
     },
     {
@@ -3492,7 +3573,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L8",
       "id": "locales_en_tabs_aiassistant",
-      "community": 46,
+      "community": 3,
       "norm_label": "aiassistant"
     },
     {
@@ -3501,7 +3582,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L9",
       "id": "locales_en_tabs_joboffer",
-      "community": 46,
+      "community": 3,
       "norm_label": "joboffer"
     },
     {
@@ -3510,7 +3591,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L10",
       "id": "locales_en_tabs_mycv",
-      "community": 46,
+      "community": 3,
       "norm_label": "mycv"
     },
     {
@@ -3519,7 +3600,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L11",
       "id": "locales_en_tabs_pdfmaker",
-      "community": 46,
+      "community": 3,
       "norm_label": "pdfmaker"
     },
     {
@@ -3528,7 +3609,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L12",
       "id": "locales_en_tabs_atstest",
-      "community": 46,
+      "community": 3,
       "norm_label": "atstest"
     },
     {
@@ -3537,7 +3618,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L13",
       "id": "locales_en_tabs_batch",
-      "community": 46,
+      "community": 3,
       "norm_label": "batch"
     },
     {
@@ -3546,7 +3627,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L14",
       "id": "locales_en_tabs_documents",
-      "community": 46,
+      "community": 3,
       "norm_label": "documents"
     },
     {
@@ -3555,7 +3636,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L16",
       "id": "locales_en_app",
-      "community": 60,
+      "community": 30,
       "norm_label": "app"
     },
     {
@@ -3564,7 +3645,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L17",
       "id": "locales_en_app_auth",
-      "community": 60,
+      "community": 30,
       "norm_label": "auth"
     },
     {
@@ -3573,7 +3654,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L18",
       "id": "locales_en_auth_welcometitle",
-      "community": 60,
+      "community": 30,
       "norm_label": "welcometitle"
     },
     {
@@ -3582,7 +3663,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L19",
       "id": "locales_en_auth_welcomedesc",
-      "community": 60,
+      "community": 30,
       "norm_label": "welcomedesc"
     },
     {
@@ -3591,7 +3672,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L20",
       "id": "locales_en_auth_loginbutton",
-      "community": 60,
+      "community": 30,
       "norm_label": "loginbutton"
     },
     {
@@ -3600,7 +3681,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L22",
       "id": "locales_en_app_prompts",
-      "community": 60,
+      "community": 30,
       "norm_label": "prompts"
     },
     {
@@ -3609,7 +3690,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L23",
       "id": "locales_en_prompts_missingcv",
-      "community": 60,
+      "community": 30,
       "norm_label": "missingcv"
     },
     {
@@ -3618,7 +3699,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L24",
       "id": "locales_en_prompts_missingjob",
-      "community": 60,
+      "community": 30,
       "norm_label": "missingjob"
     },
     {
@@ -3627,7 +3708,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L25",
       "id": "locales_en_prompts_urlinstruction",
-      "community": 60,
+      "community": 30,
       "norm_label": "urlinstruction"
     },
     {
@@ -3897,7 +3978,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L57",
       "id": "locales_en_app_ai",
-      "community": 60,
+      "community": 30,
       "norm_label": "ai"
     },
     {
@@ -3906,7 +3987,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L58",
       "id": "locales_en_ai_error",
-      "community": 60,
+      "community": 30,
       "norm_label": "error"
     },
     {
@@ -3915,7 +3996,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L59",
       "id": "locales_en_ai_errortitle",
-      "community": 60,
+      "community": 30,
       "norm_label": "errortitle"
     },
     {
@@ -3924,7 +4005,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L60",
       "id": "locales_en_ai_apierror",
-      "community": 60,
+      "community": 30,
       "norm_label": "apierror"
     },
     {
@@ -3933,7 +4014,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L62",
       "id": "locales_en_app_prompt",
-      "community": 60,
+      "community": 30,
       "norm_label": "prompt"
     },
     {
@@ -3942,7 +4023,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L63",
       "id": "locales_en_prompt_scrapflykey",
-      "community": 60,
+      "community": 30,
       "norm_label": "scrapflykey"
     },
     {
@@ -3951,7 +4032,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L65",
       "id": "locales_en_app_error",
-      "community": 60,
+      "community": 30,
       "norm_label": "error"
     },
     {
@@ -3960,7 +4041,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L66",
       "id": "locales_en_error_scrapflyrequired",
-      "community": 60,
+      "community": 30,
       "norm_label": "scrapflyrequired"
     },
     {
@@ -3969,7 +4050,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L67",
       "id": "locales_en_error_invalidlatex",
-      "community": 60,
+      "community": 30,
       "norm_label": "invalidlatex"
     },
     {
@@ -4716,7 +4797,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L160",
       "id": "locales_en_job",
-      "community": 47,
+      "community": 3,
       "norm_label": "job"
     },
     {
@@ -4725,7 +4806,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L161",
       "id": "locales_en_job_title",
-      "community": 47,
+      "community": 3,
       "norm_label": "title"
     },
     {
@@ -4734,7 +4815,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L162",
       "id": "locales_en_job_clear",
-      "community": 47,
+      "community": 3,
       "norm_label": "clear"
     },
     {
@@ -4743,7 +4824,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L163",
       "id": "locales_en_job_jina",
-      "community": 47,
+      "community": 3,
       "norm_label": "jina"
     },
     {
@@ -4752,131 +4833,140 @@
       "source_file": "src/locales/en.json",
       "source_location": "L164",
       "id": "locales_en_job_scrapfly",
-      "community": 47,
+      "community": 3,
       "norm_label": "scrapfly"
+    },
+    {
+      "label": "scrapling",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L165",
+      "id": "locales_en_job_scrapling",
+      "community": 3,
+      "norm_label": "scrapling"
     },
     {
       "label": "urlPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L165",
+      "source_location": "L166",
       "id": "locales_en_job_urlplaceholder",
-      "community": 47,
+      "community": 3,
       "norm_label": "urlplaceholder"
     },
     {
       "label": "extract",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L166",
+      "source_location": "L167",
       "id": "locales_en_job_extract",
-      "community": 47,
+      "community": 3,
       "norm_label": "extract"
     },
     {
       "label": "placeholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L167",
+      "source_location": "L168",
       "id": "locales_en_job_placeholder",
-      "community": 47,
+      "community": 3,
       "norm_label": "placeholder"
     },
     {
       "label": "cv",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L169",
+      "source_location": "L170",
       "id": "locales_en_cv",
-      "community": 43,
+      "community": 3,
       "norm_label": "cv"
     },
     {
       "label": "templateTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L170",
+      "source_location": "L171",
       "id": "locales_en_cv_templatetitle",
-      "community": 43,
+      "community": 3,
       "norm_label": "templatetitle"
     },
     {
       "label": "templateDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L171",
+      "source_location": "L172",
       "id": "locales_en_cv_templatedesc",
-      "community": 43,
+      "community": 3,
       "norm_label": "templatedesc"
     },
     {
       "label": "originalTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L172",
+      "source_location": "L173",
       "id": "locales_en_cv_originaltitle",
-      "community": 43,
+      "community": 3,
       "norm_label": "originaltitle"
     },
     {
       "label": "importBtn",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L173",
+      "source_location": "L174",
       "id": "locales_en_cv_importbtn",
-      "community": 43,
+      "community": 3,
       "norm_label": "importbtn"
     },
     {
       "label": "importing",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L174",
+      "source_location": "L175",
       "id": "locales_en_cv_importing",
-      "community": 43,
+      "community": 3,
       "norm_label": "importing"
     },
     {
       "label": "resetFake",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L175",
+      "source_location": "L176",
       "id": "locales_en_cv_resetfake",
-      "community": 43,
+      "community": 3,
       "norm_label": "resetfake"
     },
     {
       "label": "generatedTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L176",
+      "source_location": "L177",
       "id": "locales_en_cv_generatedtitle",
-      "community": 43,
+      "community": 3,
       "norm_label": "generatedtitle"
     },
     {
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L177",
+      "source_location": "L178",
       "id": "locales_en_cv_clear",
-      "community": 43,
+      "community": 3,
       "norm_label": "clear"
     },
     {
       "label": "generatedPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L178",
+      "source_location": "L179",
       "id": "locales_en_cv_generatedplaceholder",
-      "community": 43,
+      "community": 3,
       "norm_label": "generatedplaceholder"
     },
     {
       "label": "pdf",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L180",
+      "source_location": "L181",
       "id": "locales_en_pdf",
       "community": 41,
       "norm_label": "pdf"
@@ -4885,7 +4975,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L181",
+      "source_location": "L182",
       "id": "locales_en_pdf_title",
       "community": 41,
       "norm_label": "title"
@@ -4894,7 +4984,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L182",
+      "source_location": "L183",
       "id": "locales_en_pdf_subtitle",
       "community": 41,
       "norm_label": "subtitle"
@@ -4903,7 +4993,7 @@
       "label": "sourceGenerated",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L183",
+      "source_location": "L184",
       "id": "locales_en_pdf_sourcegenerated",
       "community": 41,
       "norm_label": "sourcegenerated"
@@ -4912,7 +5002,7 @@
       "label": "sourceOriginal",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L184",
+      "source_location": "L185",
       "id": "locales_en_pdf_sourceoriginal",
       "community": 41,
       "norm_label": "sourceoriginal"
@@ -4921,7 +5011,7 @@
       "label": "download",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L185",
+      "source_location": "L186",
       "id": "locales_en_pdf_download",
       "community": 41,
       "norm_label": "download"
@@ -4930,7 +5020,7 @@
       "label": "compile",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L186",
+      "source_location": "L187",
       "id": "locales_en_pdf_compile",
       "community": 41,
       "norm_label": "compile"
@@ -4939,7 +5029,7 @@
       "label": "recompile",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L187",
+      "source_location": "L188",
       "id": "locales_en_pdf_recompile",
       "community": 41,
       "norm_label": "recompile"
@@ -4948,7 +5038,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L188",
+      "source_location": "L189",
       "id": "locales_en_pdf_compiling",
       "community": 41,
       "norm_label": "compiling"
@@ -4957,7 +5047,7 @@
       "label": "wait",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L189",
+      "source_location": "L190",
       "id": "locales_en_pdf_wait",
       "community": 41,
       "norm_label": "wait"
@@ -4966,7 +5056,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L190",
+      "source_location": "L191",
       "id": "locales_en_pdf_error",
       "community": 41,
       "norm_label": "error"
@@ -4975,7 +5065,7 @@
       "label": "loadingError",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L191",
+      "source_location": "L192",
       "id": "locales_en_pdf_loadingerror",
       "community": 41,
       "norm_label": "loadingerror"
@@ -4984,7 +5074,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L192",
+      "source_location": "L193",
       "id": "locales_en_pdf_emptytitle",
       "community": 41,
       "norm_label": "emptytitle"
@@ -4993,7 +5083,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L193",
+      "source_location": "L194",
       "id": "locales_en_pdf_emptydesc",
       "community": 41,
       "norm_label": "emptydesc"
@@ -5002,7 +5092,7 @@
       "label": "sourceDoc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L194",
+      "source_location": "L195",
       "id": "locales_en_pdf_sourcedoc",
       "community": 41,
       "norm_label": "sourcedoc"
@@ -5011,7 +5101,7 @@
       "label": "ats",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L196",
+      "source_location": "L197",
       "id": "locales_en_ats",
       "community": 36,
       "norm_label": "ats"
@@ -5020,7 +5110,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L197",
+      "source_location": "L198",
       "id": "locales_en_ats_title",
       "community": 36,
       "norm_label": "title"
@@ -5029,7 +5119,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L198",
+      "source_location": "L199",
       "id": "locales_en_ats_subtitle",
       "community": 36,
       "norm_label": "subtitle"
@@ -5038,7 +5128,7 @@
       "label": "run",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L199",
+      "source_location": "L200",
       "id": "locales_en_ats_run",
       "community": 36,
       "norm_label": "run"
@@ -5047,7 +5137,7 @@
       "label": "analyzing",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L200",
+      "source_location": "L201",
       "id": "locales_en_ats_analyzing",
       "community": 36,
       "norm_label": "analyzing"
@@ -5056,7 +5146,7 @@
       "label": "scoreTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L201",
+      "source_location": "L202",
       "id": "locales_en_ats_scoretitle",
       "community": 36,
       "norm_label": "scoretitle"
@@ -5065,7 +5155,7 @@
       "label": "scoreDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L202",
+      "source_location": "L203",
       "id": "locales_en_ats_scoredesc",
       "community": 36,
       "norm_label": "scoredesc"
@@ -5074,7 +5164,7 @@
       "label": "missingTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L203",
+      "source_location": "L204",
       "id": "locales_en_ats_missingtitle",
       "community": 36,
       "norm_label": "missingtitle"
@@ -5083,7 +5173,7 @@
       "label": "missingGood",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L204",
+      "source_location": "L205",
       "id": "locales_en_ats_missinggood",
       "community": 36,
       "norm_label": "missinggood"
@@ -5092,7 +5182,7 @@
       "label": "adviceTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L205",
+      "source_location": "L206",
       "id": "locales_en_ats_advicetitle",
       "community": 36,
       "norm_label": "advicetitle"
@@ -5101,7 +5191,7 @@
       "label": "missingJob",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L206",
+      "source_location": "L207",
       "id": "locales_en_ats_missingjob",
       "community": 36,
       "norm_label": "missingjob"
@@ -5110,7 +5200,7 @@
       "label": "missingCv",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L207",
+      "source_location": "L208",
       "id": "locales_en_ats_missingcv",
       "community": 36,
       "norm_label": "missingcv"
@@ -5119,7 +5209,7 @@
       "label": "clickToRun",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L208",
+      "source_location": "L209",
       "id": "locales_en_ats_clicktorun",
       "community": 36,
       "norm_label": "clicktorun"
@@ -5128,7 +5218,7 @@
       "label": "templates",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L210",
+      "source_location": "L211",
       "id": "locales_en_templates",
       "community": 23,
       "norm_label": "templates"
@@ -5137,7 +5227,7 @@
       "label": "1",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L211",
+      "source_location": "L212",
       "id": "locales_en_templates_1",
       "community": 23,
       "norm_label": "1"
@@ -5146,7 +5236,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L212",
+      "source_location": "L213",
       "id": "locales_en_1_title",
       "community": 23,
       "norm_label": "title"
@@ -5155,7 +5245,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L213",
+      "source_location": "L214",
       "id": "locales_en_1_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5164,7 +5254,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L214",
+      "source_location": "L215",
       "id": "locales_en_1_content",
       "community": 23,
       "norm_label": "content"
@@ -5173,7 +5263,7 @@
       "label": "2",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L216",
+      "source_location": "L217",
       "id": "locales_en_templates_2",
       "community": 23,
       "norm_label": "2"
@@ -5182,7 +5272,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L217",
+      "source_location": "L218",
       "id": "locales_en_2_title",
       "community": 23,
       "norm_label": "title"
@@ -5191,7 +5281,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L218",
+      "source_location": "L219",
       "id": "locales_en_2_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5200,7 +5290,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L219",
+      "source_location": "L220",
       "id": "locales_en_2_content",
       "community": 23,
       "norm_label": "content"
@@ -5209,7 +5299,7 @@
       "label": "3",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L221",
+      "source_location": "L222",
       "id": "locales_en_templates_3",
       "community": 23,
       "norm_label": "3"
@@ -5218,7 +5308,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L222",
+      "source_location": "L223",
       "id": "locales_en_3_title",
       "community": 23,
       "norm_label": "title"
@@ -5227,7 +5317,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L223",
+      "source_location": "L224",
       "id": "locales_en_3_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5236,7 +5326,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L224",
+      "source_location": "L225",
       "id": "locales_en_3_content",
       "community": 23,
       "norm_label": "content"
@@ -5245,7 +5335,7 @@
       "label": "4",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L226",
+      "source_location": "L227",
       "id": "locales_en_templates_4",
       "community": 23,
       "norm_label": "4"
@@ -5254,7 +5344,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L227",
+      "source_location": "L228",
       "id": "locales_en_4_title",
       "community": 23,
       "norm_label": "title"
@@ -5263,7 +5353,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L228",
+      "source_location": "L229",
       "id": "locales_en_4_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5272,7 +5362,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L229",
+      "source_location": "L230",
       "id": "locales_en_4_content",
       "community": 23,
       "norm_label": "content"
@@ -5281,7 +5371,7 @@
       "label": "5",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L231",
+      "source_location": "L232",
       "id": "locales_en_templates_5",
       "community": 23,
       "norm_label": "5"
@@ -5290,7 +5380,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L232",
+      "source_location": "L233",
       "id": "locales_en_5_title",
       "community": 23,
       "norm_label": "title"
@@ -5299,7 +5389,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L233",
+      "source_location": "L234",
       "id": "locales_en_5_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5308,7 +5398,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L234",
+      "source_location": "L235",
       "id": "locales_en_5_content",
       "community": 23,
       "norm_label": "content"
@@ -5317,7 +5407,7 @@
       "label": "6",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L236",
+      "source_location": "L237",
       "id": "locales_en_templates_6",
       "community": 23,
       "norm_label": "6"
@@ -5326,7 +5416,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L237",
+      "source_location": "L238",
       "id": "locales_en_6_title",
       "community": 23,
       "norm_label": "title"
@@ -5335,7 +5425,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L238",
+      "source_location": "L239",
       "id": "locales_en_6_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5344,7 +5434,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L239",
+      "source_location": "L240",
       "id": "locales_en_6_content",
       "community": 23,
       "norm_label": "content"
@@ -5353,7 +5443,7 @@
       "label": "7",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L241",
+      "source_location": "L242",
       "id": "locales_en_templates_7",
       "community": 23,
       "norm_label": "7"
@@ -5362,7 +5452,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L242",
+      "source_location": "L243",
       "id": "locales_en_7_title",
       "community": 23,
       "norm_label": "title"
@@ -5371,7 +5461,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L243",
+      "source_location": "L244",
       "id": "locales_en_7_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5380,7 +5470,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L244",
+      "source_location": "L245",
       "id": "locales_en_7_content",
       "community": 23,
       "norm_label": "content"
@@ -5389,7 +5479,7 @@
       "label": "8",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L246",
+      "source_location": "L247",
       "id": "locales_en_templates_8",
       "community": 23,
       "norm_label": "8"
@@ -5398,7 +5488,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L247",
+      "source_location": "L248",
       "id": "locales_en_8_title",
       "community": 23,
       "norm_label": "title"
@@ -5407,7 +5497,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L248",
+      "source_location": "L249",
       "id": "locales_en_8_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5416,7 +5506,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L249",
+      "source_location": "L250",
       "id": "locales_en_8_content",
       "community": 23,
       "norm_label": "content"
@@ -5425,7 +5515,7 @@
       "label": "9",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L251",
+      "source_location": "L252",
       "id": "locales_en_templates_9",
       "community": 23,
       "norm_label": "9"
@@ -5434,7 +5524,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L252",
+      "source_location": "L253",
       "id": "locales_en_9_title",
       "community": 23,
       "norm_label": "title"
@@ -5443,7 +5533,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L253",
+      "source_location": "L254",
       "id": "locales_en_9_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5452,7 +5542,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L254",
+      "source_location": "L255",
       "id": "locales_en_9_content",
       "community": 23,
       "norm_label": "content"
@@ -5461,7 +5551,7 @@
       "label": "10",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L256",
+      "source_location": "L257",
       "id": "locales_en_templates_10",
       "community": 23,
       "norm_label": "10"
@@ -5470,7 +5560,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L257",
+      "source_location": "L258",
       "id": "locales_en_10_title",
       "community": 23,
       "norm_label": "title"
@@ -5479,7 +5569,7 @@
       "label": "desc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L258",
+      "source_location": "L259",
       "id": "locales_en_10_desc",
       "community": 23,
       "norm_label": "desc"
@@ -5488,7 +5578,7 @@
       "label": "content",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L259",
+      "source_location": "L260",
       "id": "locales_en_10_content",
       "community": 23,
       "norm_label": "content"
@@ -5497,7 +5587,7 @@
       "label": "documents",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L262",
+      "source_location": "L263",
       "id": "locales_en_documents",
       "community": 24,
       "norm_label": "documents"
@@ -5506,7 +5596,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L263",
+      "source_location": "L264",
       "id": "locales_en_documents_title",
       "community": 24,
       "norm_label": "title"
@@ -5515,7 +5605,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L264",
+      "source_location": "L265",
       "id": "locales_en_documents_subtitle",
       "community": 24,
       "norm_label": "subtitle"
@@ -5524,7 +5614,7 @@
       "label": "emptyTitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L265",
+      "source_location": "L266",
       "id": "locales_en_documents_emptytitle",
       "community": 24,
       "norm_label": "emptytitle"
@@ -5533,7 +5623,7 @@
       "label": "emptyDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L266",
+      "source_location": "L267",
       "id": "locales_en_documents_emptydesc",
       "community": 24,
       "norm_label": "emptydesc"
@@ -5542,7 +5632,7 @@
       "label": "delete",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L267",
+      "source_location": "L268",
       "id": "locales_en_documents_delete",
       "community": 24,
       "norm_label": "delete"
@@ -5551,7 +5641,7 @@
       "label": "confirmDelete",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L268",
+      "source_location": "L269",
       "id": "locales_en_documents_confirmdelete",
       "community": 24,
       "norm_label": "confirmdelete"
@@ -5560,7 +5650,7 @@
       "label": "downloadLatex",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L269",
+      "source_location": "L270",
       "id": "locales_en_documents_downloadlatex",
       "community": 24,
       "norm_label": "downloadlatex"
@@ -5569,7 +5659,7 @@
       "label": "downloadPdf",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L270",
+      "source_location": "L271",
       "id": "locales_en_documents_downloadpdf",
       "community": 24,
       "norm_label": "downloadpdf"
@@ -5578,7 +5668,7 @@
       "label": "downloadWord",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L271",
+      "source_location": "L272",
       "id": "locales_en_documents_downloadword",
       "community": 24,
       "norm_label": "downloadword"
@@ -5587,7 +5677,7 @@
       "label": "previewPdf",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L272",
+      "source_location": "L273",
       "id": "locales_en_documents_previewpdf",
       "community": 24,
       "norm_label": "previewpdf"
@@ -5596,7 +5686,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L273",
+      "source_location": "L274",
       "id": "locales_en_documents_compiling",
       "community": 24,
       "norm_label": "compiling"
@@ -5605,7 +5695,7 @@
       "label": "compileError",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L274",
+      "source_location": "L275",
       "id": "locales_en_documents_compileerror",
       "community": 24,
       "norm_label": "compileerror"
@@ -5614,7 +5704,7 @@
       "label": "batch",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L276",
+      "source_location": "L277",
       "id": "locales_en_batch",
       "community": 68,
       "norm_label": "batch"
@@ -5623,7 +5713,7 @@
       "label": "title",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L277",
+      "source_location": "L278",
       "id": "locales_en_batch_title",
       "community": 68,
       "norm_label": "title"
@@ -5632,7 +5722,7 @@
       "label": "subtitle",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L278",
+      "source_location": "L279",
       "id": "locales_en_batch_subtitle",
       "community": 68,
       "norm_label": "subtitle"
@@ -5641,7 +5731,7 @@
       "label": "start",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L279",
+      "source_location": "L280",
       "id": "locales_en_batch_start",
       "community": 68,
       "norm_label": "start"
@@ -5650,7 +5740,7 @@
       "label": "cancel",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L280",
+      "source_location": "L281",
       "id": "locales_en_batch_cancel",
       "community": 68,
       "norm_label": "cancel"
@@ -5659,7 +5749,7 @@
       "label": "urlsLabel",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L281",
+      "source_location": "L282",
       "id": "locales_en_batch_urlslabel",
       "community": 68,
       "norm_label": "urlslabel"
@@ -5668,7 +5758,7 @@
       "label": "urlsPlaceholder",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L282",
+      "source_location": "L283",
       "id": "locales_en_batch_urlsplaceholder",
       "community": 68,
       "norm_label": "urlsplaceholder"
@@ -5677,7 +5767,7 @@
       "label": "clear",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L283",
+      "source_location": "L284",
       "id": "locales_en_batch_clear",
       "community": 68,
       "norm_label": "clear"
@@ -5686,7 +5776,7 @@
       "label": "configPanel",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L284",
+      "source_location": "L285",
       "id": "locales_en_batch_configpanel",
       "community": 68,
       "norm_label": "configpanel"
@@ -5695,7 +5785,7 @@
       "label": "scraper",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L285",
+      "source_location": "L286",
       "id": "locales_en_batch_scraper",
       "community": 68,
       "norm_label": "scraper"
@@ -5704,7 +5794,7 @@
       "label": "free",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L286",
+      "source_location": "L287",
       "id": "locales_en_batch_free",
       "community": 68,
       "norm_label": "free"
@@ -5713,7 +5803,7 @@
       "label": "apiKeyRequired",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L287",
+      "source_location": "L288",
       "id": "locales_en_batch_apikeyrequired",
       "community": 68,
       "norm_label": "apikeyrequired"
@@ -5722,7 +5812,7 @@
       "label": "concurrency",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L288",
+      "source_location": "L289",
       "id": "locales_en_batch_concurrency",
       "community": 68,
       "norm_label": "concurrency"
@@ -5731,7 +5821,7 @@
       "label": "concurrencyOffers",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L289",
+      "source_location": "L290",
       "id": "locales_en_batch_concurrencyoffers",
       "community": 68,
       "norm_label": "concurrencyoffers"
@@ -5740,7 +5830,7 @@
       "label": "delay",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L290",
+      "source_location": "L291",
       "id": "locales_en_batch_delay",
       "community": 68,
       "norm_label": "delay"
@@ -5749,7 +5839,7 @@
       "label": "delay.none",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L291",
+      "source_location": "L292",
       "id": "locales_en_batch_delay_none",
       "community": 68,
       "norm_label": "delay.none"
@@ -5758,7 +5848,7 @@
       "label": "seconds",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L292",
+      "source_location": "L293",
       "id": "locales_en_batch_seconds",
       "community": 68,
       "norm_label": "seconds"
@@ -5767,7 +5857,7 @@
       "label": "generateOptions",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L293",
+      "source_location": "L294",
       "id": "locales_en_batch_generateoptions",
       "community": 68,
       "norm_label": "generateoptions"
@@ -5776,7 +5866,7 @@
       "label": "resultsLabel",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L294",
+      "source_location": "L295",
       "id": "locales_en_batch_resultslabel",
       "community": 68,
       "norm_label": "resultslabel"
@@ -5785,7 +5875,7 @@
       "label": "noResults",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L295",
+      "source_location": "L296",
       "id": "locales_en_batch_noresults",
       "community": 68,
       "norm_label": "noresults"
@@ -5794,7 +5884,7 @@
       "label": "noResultsDesc",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L296",
+      "source_location": "L297",
       "id": "locales_en_batch_noresultsdesc",
       "community": 68,
       "norm_label": "noresultsdesc"
@@ -5803,7 +5893,7 @@
       "label": "progress",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L297",
+      "source_location": "L298",
       "id": "locales_en_batch_progress",
       "community": 68,
       "norm_label": "progress"
@@ -5812,7 +5902,7 @@
       "label": "toast",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L298",
+      "source_location": "L299",
       "id": "locales_en_batch_toast",
       "community": 68,
       "norm_label": "toast"
@@ -5821,7 +5911,7 @@
       "label": "noUrls",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L299",
+      "source_location": "L300",
       "id": "locales_en_toast_nourls",
       "community": 68,
       "norm_label": "nourls"
@@ -5830,7 +5920,7 @@
       "label": "completed",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L300",
+      "source_location": "L301",
       "id": "locales_en_toast_completed",
       "community": 68,
       "norm_label": "completed"
@@ -5839,7 +5929,7 @@
       "label": "cancelled",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L301",
+      "source_location": "L302",
       "id": "locales_en_toast_cancelled",
       "community": 68,
       "norm_label": "cancelled"
@@ -5848,7 +5938,7 @@
       "label": "cancelledMsg",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L302",
+      "source_location": "L303",
       "id": "locales_en_toast_cancelledmsg",
       "community": 68,
       "norm_label": "cancelledmsg"
@@ -5857,7 +5947,7 @@
       "label": "badge",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L304",
+      "source_location": "L305",
       "id": "locales_en_batch_badge",
       "community": 68,
       "norm_label": "badge"
@@ -5866,7 +5956,7 @@
       "label": "pending",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L305",
+      "source_location": "L306",
       "id": "locales_en_badge_pending",
       "community": 68,
       "norm_label": "pending"
@@ -5875,7 +5965,7 @@
       "label": "scraping",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L306",
+      "source_location": "L307",
       "id": "locales_en_badge_scraping",
       "community": 68,
       "norm_label": "scraping"
@@ -5884,7 +5974,7 @@
       "label": "extracting",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L307",
+      "source_location": "L308",
       "id": "locales_en_badge_extracting",
       "community": 68,
       "norm_label": "extracting"
@@ -5893,7 +5983,7 @@
       "label": "generating",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L308",
+      "source_location": "L309",
       "id": "locales_en_badge_generating",
       "community": 68,
       "norm_label": "generating"
@@ -5902,7 +5992,7 @@
       "label": "compiling",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L309",
+      "source_location": "L310",
       "id": "locales_en_badge_compiling",
       "community": 68,
       "norm_label": "compiling"
@@ -5911,7 +6001,7 @@
       "label": "saving",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L310",
+      "source_location": "L311",
       "id": "locales_en_badge_saving",
       "community": 68,
       "norm_label": "saving"
@@ -5920,7 +6010,7 @@
       "label": "completed",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L311",
+      "source_location": "L312",
       "id": "locales_en_badge_completed",
       "community": 68,
       "norm_label": "completed"
@@ -5929,7 +6019,7 @@
       "label": "failed",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L312",
+      "source_location": "L313",
       "id": "locales_en_badge_failed",
       "community": 68,
       "norm_label": "failed"
@@ -5938,7 +6028,7 @@
       "label": "status",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L314",
+      "source_location": "L315",
       "id": "locales_en_batch_status",
       "community": 68,
       "norm_label": "status"
@@ -5947,7 +6037,7 @@
       "label": "cancelled",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L315",
+      "source_location": "L316",
       "id": "locales_en_status_cancelled",
       "community": 68,
       "norm_label": "cancelled"
@@ -5956,7 +6046,7 @@
       "label": "error",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L316",
+      "source_location": "L317",
       "id": "locales_en_status_error",
       "community": 68,
       "norm_label": "error"
@@ -5965,7 +6055,7 @@
       "label": "extractedOffer",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L317",
+      "source_location": "L318",
       "id": "locales_en_status_extractedoffer",
       "community": 68,
       "norm_label": "extractedoffer"
@@ -5974,7 +6064,7 @@
       "label": "running",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L318",
+      "source_location": "L319",
       "id": "locales_en_status_running",
       "community": 68,
       "norm_label": "running"
@@ -5983,7 +6073,7 @@
       "label": "stats",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L320",
+      "source_location": "L321",
       "id": "locales_en_batch_stats",
       "community": 68,
       "norm_label": "stats"
@@ -5992,7 +6082,7 @@
       "label": "success",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L321",
+      "source_location": "L322",
       "id": "locales_en_stats_success",
       "community": 68,
       "norm_label": "success"
@@ -6001,7 +6091,7 @@
       "label": "failed",
       "file_type": "code",
       "source_file": "src/locales/en.json",
-      "source_location": "L322",
+      "source_location": "L323",
       "id": "locales_en_stats_failed",
       "community": 68,
       "norm_label": "failed"
@@ -6066,7 +6156,7 @@
       "source_file": "src/services/aiService.js",
       "source_location": "L1",
       "id": "src_services_aiservice_js",
-      "community": 73,
+      "community": 2,
       "norm_label": "aiservice.js"
     },
     {
@@ -6075,7 +6165,7 @@
       "source_file": "src/services/aiService.js",
       "source_location": "L44",
       "id": "services_aiservice_callaiprovider",
-      "community": 73,
+      "community": 2,
       "norm_label": "callaiprovider()"
     },
     {
@@ -6142,10 +6232,19 @@
       "norm_label": "scrapewithscrapfly()"
     },
     {
+      "label": "scrapeWithScrapling()",
+      "file_type": "code",
+      "source_file": "src/services/scraperService.js",
+      "source_location": "L136",
+      "id": "services_scraperservice_scrapewithscrapling",
+      "community": 74,
+      "norm_label": "scrapewithscrapling()"
+    },
+    {
       "label": "cleanJinaMarkdown()",
       "file_type": "code",
       "source_file": "src/services/scraperService.js",
-      "source_location": "L146",
+      "source_location": "L207",
       "id": "services_scraperservice_cleanjinamarkdown",
       "community": 74,
       "norm_label": "cleanjinamarkdown()"
@@ -6408,7 +6507,7 @@
       "source_file": "src/constants/promptTemplates.js",
       "source_location": "L1",
       "id": "src_constants_prompttemplates_js",
-      "community": 73,
+      "community": 74,
       "norm_label": "prompttemplates.js"
     },
     {
@@ -6417,7 +6516,7 @@
       "source_file": "src/constants/promptTemplates.js",
       "source_location": "L25",
       "id": "constants_prompttemplates_getprompttemplates",
-      "community": 73,
+      "community": 74,
       "norm_label": "getprompttemplates()"
     },
     {
@@ -6615,7 +6714,7 @@
       "source_file": "src/components/tabs/BatchTab.jsx",
       "source_location": "L1",
       "id": "src_components_tabs_batchtab_jsx",
-      "community": 73,
+      "community": 74,
       "norm_label": "batchtab.jsx"
     },
     {
@@ -6624,7 +6723,7 @@
       "source_file": "src/components/tabs/BatchTab.jsx",
       "source_location": "L13",
       "id": "tabs_batchtab_batchtab",
-      "community": 73,
+      "community": 74,
       "norm_label": "batchtab()"
     },
     {
@@ -7173,7 +7272,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L134",
       "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "community": 7,
+      "community": 84,
       "norm_label": "8. database (dexie.js) & architecture refactoring"
     },
     {
@@ -7182,7 +7281,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L136",
       "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
-      "community": 7,
+      "community": 84,
       "norm_label": "problem 1: cascading renders warning with `useeffect`"
     },
     {
@@ -7191,7 +7290,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
       "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
-      "community": 7,
+      "community": 84,
       "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
     },
     {
@@ -7382,6 +7481,42 @@
       "id": "ultimate_job_tool_troubleshooting_problem_2_sequential_bottlenecks_in_multi_step_lifecycle_processing",
       "community": 81,
       "norm_label": "problem 2: sequential bottlenecks in multi-step lifecycle processing"
+    },
+    {
+      "label": "11. Scrapling Scraper & Python Backend Integration",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L249",
+      "id": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
+      "community": 82,
+      "norm_label": "11. scrapling scraper & python backend integration"
+    },
+    {
+      "label": "Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L251",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_frontend_cannot_call_python_code_directly_cors_sandboxing",
+      "community": 82,
+      "norm_label": "problem 1: frontend cannot call python code directly (cors & sandboxing)"
+    },
+    {
+      "label": "Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L255",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_fastapi_startup_failure_typeerror_router_init_got_an_unexpected_keyword_argument_on_startup",
+      "community": 82,
+      "norm_label": "problem 2: fastapi startup failure (`typeerror: router.__init__() got an unexpected keyword argument 'on_startup'`)"
+    },
+    {
+      "label": "Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L260",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_playwright_patchright_missing_browser_executables_or_sudo_password_requirement",
+      "community": 82,
+      "norm_label": "problem 3: playwright/patchright missing browser executables or sudo password requirement"
     },
     {
       "label": "BATCH_AI_GUIDE.md",
@@ -7621,7 +7756,7 @@
       "label": "6. Known Constraints & Future Considerations",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
-      "source_location": "L111",
+      "source_location": "L113",
       "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
       "community": 8,
       "norm_label": "6. known constraints & future considerations"
@@ -7942,10 +8077,37 @@
       "norm_label": "code:bash (npm run dev)"
     },
     {
-      "label": "\ud83d\udcc2 Project Structure",
+      "label": "\ud83d\udc0d Scrapling Local Scraper Server Setup",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L45",
+      "id": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
+      "community": 16,
+      "norm_label": "\ud83d\udc0d scrapling local scraper server setup"
+    },
+    {
+      "label": "code:bash (pip install --ignore-installed \"scrapling[all]\" fastapi uvic)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L50",
+      "id": "ultimate_job_tool_readme_codeblock_4",
+      "community": 16,
+      "norm_label": "code:bash (pip install --ignore-installed \"scrapling[all]\" fastapi uvic)"
+    },
+    {
+      "label": "code:bash (python3 scratch/scrapling_server.py)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L56",
+      "id": "ultimate_job_tool_readme_codeblock_5",
+      "community": 16,
+      "norm_label": "code:bash (python3 scratch/scrapling_server.py)"
+    },
+    {
+      "label": "\ud83d\udcc2 Project Structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L61",
       "id": "ultimate_job_tool_readme_project_structure",
       "community": 16,
       "norm_label": "\ud83d\udcc2 project structure"
@@ -7954,7 +8116,7 @@
       "label": "\u2699\ufe0f Configuration",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L53",
+      "source_location": "L69",
       "id": "ultimate_job_tool_readme_configuration",
       "community": 16,
       "norm_label": "\u2699\ufe0f configuration"
@@ -7963,10 +8125,766 @@
       "label": "\ud83d\udcd6 Documentation",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L57",
+      "source_location": "L73",
       "id": "ultimate_job_tool_readme_documentation",
       "community": 16,
       "norm_label": "\ud83d\udcd6 documentation"
+    },
+    {
+      "label": "scrapling_4421403555.md",
+      "file_type": "document",
+      "source_file": "scratch/scrapling_4421403555.md",
+      "source_location": "L1",
+      "id": "scratch_scrapling_4421403555_md",
+      "community": 86,
+      "norm_label": "scrapling_4421403555.md"
+    },
+    {
+      "label": "jina_4420434397.md",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L1",
+      "id": "scratch_jina_4420434397_md",
+      "community": 43,
+      "norm_label": "jina_4420434397.md"
+    },
+    {
+      "label": "Brest en vue hiring Technicien Support Informatique F/H in Brest, Brittany, France | LinkedIn",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L6",
+      "id": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
+      "community": 43,
+      "norm_label": "brest en vue hiring technicien support informatique f/h in brest, brittany, france | linkedin"
+    },
+    {
+      "label": "Technicien Support Informatique F/H",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L29",
+      "id": "scratch_jina_4420434397_technicien_support_informatique_f_h",
+      "community": 43,
+      "norm_label": "technicien support informatique f/h"
+    },
+    {
+      "label": "Join or sign in to find your next job",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L36",
+      "id": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job",
+      "community": 43,
+      "norm_label": "join or sign in to find your next job"
+    },
+    {
+      "label": "Technicien Support Informatique F/H",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L58",
+      "id": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "community": 43,
+      "norm_label": "technicien support informatique f/h"
+    },
+    {
+      "label": "[Brest en vue](https://fr.linkedin.com/company/brestenvue?trk=public_jobs_topcard-org-name) Brest, Brittany, France",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L60",
+      "id": "scratch_jina_4420434397_brest_en_vue_https_fr_linkedin_com_company_brestenvue_trk_public_jobs_topcard_org_name_brest_brittany_france",
+      "community": 43,
+      "norm_label": "[brest en vue](https://fr.linkedin.com/company/brestenvue?trk=public_jobs_topcard-org-name) brest, brittany, france"
+    },
+    {
+      "label": "Join or sign in to find your next job",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L71",
+      "id": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job_71",
+      "community": 43,
+      "norm_label": "join or sign in to find your next job"
+    },
+    {
+      "label": "Use AI to assess how you fit",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L95",
+      "id": "scratch_jina_4420434397_use_ai_to_assess_how_you_fit",
+      "community": 43,
+      "norm_label": "use ai to assess how you fit"
+    },
+    {
+      "label": "Sign in to access AI-powered advices",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L102",
+      "id": "scratch_jina_4420434397_sign_in_to_access_ai_powered_advices",
+      "community": 43,
+      "norm_label": "sign in to access ai-powered advices"
+    },
+    {
+      "label": "Sign in to evaluate your skills",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L121",
+      "id": "scratch_jina_4420434397_sign_in_to_evaluate_your_skills",
+      "community": 43,
+      "norm_label": "sign in to evaluate your skills"
+    },
+    {
+      "label": "Sign in to tailor your resume",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L140",
+      "id": "scratch_jina_4420434397_sign_in_to_tailor_your_resume",
+      "community": 43,
+      "norm_label": "sign in to tailor your resume"
+    },
+    {
+      "label": "Similar jobs",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L219",
+      "id": "scratch_jina_4420434397_similar_jobs",
+      "community": 43,
+      "norm_label": "similar jobs"
+    },
+    {
+      "label": "[Brest M\u00e9tropole](https://fr.linkedin.com/company/brestmetropole?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L223",
+      "id": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[brest metropole](https://fr.linkedin.com/company/brestmetropole?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Brest M\u00e9tropole](https://fr.linkedin.com/company/brestmetropole?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L228",
+      "id": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_228",
+      "community": 43,
+      "norm_label": "[brest metropole](https://fr.linkedin.com/company/brestmetropole?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[ChapsVision](https://fr.linkedin.com/company/chapsvision?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L233",
+      "id": "scratch_jina_4420434397_chapsvision_https_fr_linkedin_com_company_chapsvision_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[chapsvision](https://fr.linkedin.com/company/chapsvision?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Stryker](https://www.linkedin.com/company/stryker?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L238",
+      "id": "scratch_jina_4420434397_stryker_https_www_linkedin_com_company_stryker_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[stryker](https://www.linkedin.com/company/stryker?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[ePackPro](https://www.linkedin.com/company/epackpro?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L243",
+      "id": "scratch_jina_4420434397_epackpro_https_www_linkedin_com_company_epackpro_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[epackpro](https://www.linkedin.com/company/epackpro?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Expectra](https://fr.linkedin.com/company/expectra?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L248",
+      "id": "scratch_jina_4420434397_expectra_https_fr_linkedin_com_company_expectra_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[expectra](https://fr.linkedin.com/company/expectra?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[NAVAL GROUP](https://fr.linkedin.com/company/naval-group?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L253",
+      "id": "scratch_jina_4420434397_naval_group_https_fr_linkedin_com_company_naval_group_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[naval group](https://fr.linkedin.com/company/naval-group?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[VFLIT - Vous faciliter l'IT](https://fr.linkedin.com/company/vflit?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L258",
+      "id": "scratch_jina_4420434397_vflit_vous_faciliter_l_it_https_fr_linkedin_com_company_vflit_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[vflit - vous faciliter l'it](https://fr.linkedin.com/company/vflit?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Leroy Merlin](https://fr.linkedin.com/company/leroy-merlin?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L263",
+      "id": "scratch_jina_4420434397_leroy_merlin_https_fr_linkedin_com_company_leroy_merlin_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[leroy merlin](https://fr.linkedin.com/company/leroy-merlin?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[GTD International](https://fr.linkedin.com/company/gtd-international?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L268",
+      "id": "scratch_jina_4420434397_gtd_international_https_fr_linkedin_com_company_gtd_international_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[gtd international](https://fr.linkedin.com/company/gtd-international?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Belmet](https://fr.linkedin.com/company/belmet?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L273",
+      "id": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[belmet](https://fr.linkedin.com/company/belmet?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Thales](https://fr.linkedin.com/company/thales?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L278",
+      "id": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[thales](https://fr.linkedin.com/company/thales?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Thales](https://fr.linkedin.com/company/thales?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L283",
+      "id": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_283",
+      "community": 43,
+      "norm_label": "[thales](https://fr.linkedin.com/company/thales?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Toyota Material Handling France](https://fr.linkedin.com/company/toyota-material-handling-france?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L288",
+      "id": "scratch_jina_4420434397_toyota_material_handling_france_https_fr_linkedin_com_company_toyota_material_handling_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[toyota material handling france](https://fr.linkedin.com/company/toyota-material-handling-france?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[ORIANCE MENUISERIES](https://fr.linkedin.com/company/oriance-menuiseries?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L293",
+      "id": "scratch_jina_4420434397_oriance_menuiseries_https_fr_linkedin_com_company_oriance_menuiseries_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[oriance menuiseries](https://fr.linkedin.com/company/oriance-menuiseries?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[fortil](https://fr.linkedin.com/company/fortil?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L298",
+      "id": "scratch_jina_4420434397_fortil_https_fr_linkedin_com_company_fortil_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[fortil](https://fr.linkedin.com/company/fortil?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Belmet](https://fr.linkedin.com/company/belmet?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L303",
+      "id": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_303",
+      "community": 43,
+      "norm_label": "[belmet](https://fr.linkedin.com/company/belmet?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[CEVA SANTE ANIMALE](https://fr.linkedin.com/company/ceva-sante-animale?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L308",
+      "id": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[ceva sante animale](https://fr.linkedin.com/company/ceva-sante-animale?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Astek](https://fr.linkedin.com/company/astek?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L313",
+      "id": "scratch_jina_4420434397_astek_https_fr_linkedin_com_company_astek_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[astek](https://fr.linkedin.com/company/astek?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[EDF](https://fr.linkedin.com/company/edf?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L318",
+      "id": "scratch_jina_4420434397_edf_https_fr_linkedin_com_company_edf_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[edf](https://fr.linkedin.com/company/edf?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[HR Path](https://fr.linkedin.com/company/hr-path?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L323",
+      "id": "scratch_jina_4420434397_hr_path_https_fr_linkedin_com_company_hr_path_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[hr path](https://fr.linkedin.com/company/hr-path?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Extia](https://fr.linkedin.com/company/extia?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L328",
+      "id": "scratch_jina_4420434397_extia_https_fr_linkedin_com_company_extia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[extia](https://fr.linkedin.com/company/extia?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[CLAUGER](https://fr.linkedin.com/company/clauger?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L333",
+      "id": "scratch_jina_4420434397_clauger_https_fr_linkedin_com_company_clauger_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[clauger](https://fr.linkedin.com/company/clauger?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[RATP Dev France-Suisse](https://fr.linkedin.com/company/ratp-dev-france-suisse?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L338",
+      "id": "scratch_jina_4420434397_ratp_dev_france_suisse_https_fr_linkedin_com_company_ratp_dev_france_suisse_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[ratp dev france-suisse](https://fr.linkedin.com/company/ratp-dev-france-suisse?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[SHOM](https://fr.linkedin.com/company/shom?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L343",
+      "id": "scratch_jina_4420434397_shom_https_fr_linkedin_com_company_shom_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[shom](https://fr.linkedin.com/company/shom?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Pennylane](https://fr.linkedin.com/company/pennylaneaccounting?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L348",
+      "id": "scratch_jina_4420434397_pennylane_https_fr_linkedin_com_company_pennylaneaccounting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 43,
+      "norm_label": "[pennylane](https://fr.linkedin.com/company/pennylaneaccounting?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[CEVA SANTE ANIMALE](https://fr.linkedin.com/company/ceva-sante-animale?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L353",
+      "id": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_353",
+      "community": 43,
+      "norm_label": "[ceva sante animale](https://fr.linkedin.com/company/ceva-sante-animale?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "People also viewed",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L359",
+      "id": "scratch_jina_4420434397_people_also_viewed",
+      "community": 43,
+      "norm_label": "people also viewed"
+    },
+    {
+      "label": "Similar Searches",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L412",
+      "id": "scratch_jina_4420434397_similar_searches",
+      "community": 43,
+      "norm_label": "similar searches"
+    },
+    {
+      "label": "Explore top content on LinkedIn",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L437",
+      "id": "scratch_jina_4420434397_explore_top_content_on_linkedin",
+      "community": 43,
+      "norm_label": "explore top content on linkedin"
+    },
+    {
+      "label": "Sign in to see who you already know at Brest en vue",
+      "file_type": "document",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L565",
+      "id": "scratch_jina_4420434397_sign_in_to_see_who_you_already_know_at_brest_en_vue",
+      "community": 43,
+      "norm_label": "sign in to see who you already know at brest en vue"
+    },
+    {
+      "label": "scrapling_4420434397.md",
+      "file_type": "document",
+      "source_file": "scratch/scrapling_4420434397.md",
+      "source_location": "L1",
+      "id": "scratch_scrapling_4420434397_md",
+      "community": 85,
+      "norm_label": "scrapling_4420434397.md"
+    },
+    {
+      "label": "jina_4421403555.md",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L1",
+      "id": "scratch_jina_4421403555_md",
+      "community": 46,
+      "norm_label": "jina_4421403555.md"
+    },
+    {
+      "label": "METALINE hiring Technicien support proximit\u00e9 in Caen, Normandy, France | LinkedIn",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L6",
+      "id": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
+      "community": 46,
+      "norm_label": "metaline hiring technicien support proximite in caen, normandy, france | linkedin"
+    },
+    {
+      "label": "Technicien support proximit\u00e9",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L31",
+      "id": "scratch_jina_4421403555_technicien_support_proximit\u00e9",
+      "community": 46,
+      "norm_label": "technicien support proximite"
+    },
+    {
+      "label": "Join or sign in to find your next job",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L38",
+      "id": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job",
+      "community": 46,
+      "norm_label": "join or sign in to find your next job"
+    },
+    {
+      "label": "Technicien support proximit\u00e9",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L60",
+      "id": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "community": 46,
+      "norm_label": "technicien support proximite"
+    },
+    {
+      "label": "[METALINE](https://fr.linkedin.com/company/metaline-entreprise?trk=public_jobs_topcard-org-name) Caen, Normandy, France",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L62",
+      "id": "scratch_jina_4421403555_metaline_https_fr_linkedin_com_company_metaline_entreprise_trk_public_jobs_topcard_org_name_caen_normandy_france",
+      "community": 46,
+      "norm_label": "[metaline](https://fr.linkedin.com/company/metaline-entreprise?trk=public_jobs_topcard-org-name) caen, normandy, france"
+    },
+    {
+      "label": "Join or sign in to find your next job",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L73",
+      "id": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job_73",
+      "community": 46,
+      "norm_label": "join or sign in to find your next job"
+    },
+    {
+      "label": "Similar jobs",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L156",
+      "id": "scratch_jina_4421403555_similar_jobs",
+      "community": 46,
+      "norm_label": "similar jobs"
+    },
+    {
+      "label": "[MEIKO France](https://fr.linkedin.com/company/meiko-france?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L160",
+      "id": "scratch_jina_4421403555_meiko_france_https_fr_linkedin_com_company_meiko_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[meiko france](https://fr.linkedin.com/company/meiko-france?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[CNAM](https://fr.linkedin.com/company/cnam-caisse-nationale-assurance-maladie?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L165",
+      "id": "scratch_jina_4421403555_cnam_https_fr_linkedin_com_company_cnam_caisse_nationale_assurance_maladie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[cnam](https://fr.linkedin.com/company/cnam-caisse-nationale-assurance-maladie?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[QUADRIA](https://fr.linkedin.com/company/heliaq-france?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L170",
+      "id": "scratch_jina_4421403555_quadria_https_fr_linkedin_com_company_heliaq_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[quadria](https://fr.linkedin.com/company/heliaq-france?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[France Travail](https://fr.linkedin.com/company/francetravail?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L175",
+      "id": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[france travail](https://fr.linkedin.com/company/francetravail?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[INNOV'IA](https://fr.linkedin.com/company/innov'ia?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L180",
+      "id": "scratch_jina_4421403555_innov_ia_https_fr_linkedin_com_company_innov_ia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[innov'ia](https://fr.linkedin.com/company/innov'ia?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[VINCI](https://fr.linkedin.com/company/vinci?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L185",
+      "id": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[vinci](https://fr.linkedin.com/company/vinci?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[FAYAT Group](https://fr.linkedin.com/company/fayat?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L190",
+      "id": "scratch_jina_4421403555_fayat_group_https_fr_linkedin_com_company_fayat_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[fayat group](https://fr.linkedin.com/company/fayat?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Hako France](https://fr.linkedin.com/company/hakofrance?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L195",
+      "id": "scratch_jina_4421403555_hako_france_https_fr_linkedin_com_company_hakofrance_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[hako france](https://fr.linkedin.com/company/hakofrance?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Siemens](https://de.linkedin.com/company/siemens?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L200",
+      "id": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[siemens](https://de.linkedin.com/company/siemens?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[NonStop Consulting](https://ch.linkedin.com/company/nonstop-consulting?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L205",
+      "id": "scratch_jina_4421403555_nonstop_consulting_https_ch_linkedin_com_company_nonstop_consulting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[nonstop consulting](https://ch.linkedin.com/company/nonstop-consulting?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[VINCI Energies](https://fr.linkedin.com/company/vinci-energies?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L218",
+      "id": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[vinci energies](https://fr.linkedin.com/company/vinci-energies?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Universit\u00e9 de Caen Normandie](https://fr.linkedin.com/school/universite-de-caen-normandie/?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L223",
+      "id": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[universite de caen normandie](https://fr.linkedin.com/school/universite-de-caen-normandie/?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[OKWIND](https://fr.linkedin.com/company/okwind?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L228",
+      "id": "scratch_jina_4421403555_okwind_https_fr_linkedin_com_company_okwind_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[okwind](https://fr.linkedin.com/company/okwind?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Siemens](https://de.linkedin.com/company/siemens?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L233",
+      "id": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_233",
+      "community": 46,
+      "norm_label": "[siemens](https://de.linkedin.com/company/siemens?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[PRODEVAL](https://fr.linkedin.com/company/prodeval?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L238",
+      "id": "scratch_jina_4421403555_prodeval_https_fr_linkedin_com_company_prodeval_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[prodeval](https://fr.linkedin.com/company/prodeval?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Netexial](https://fr.linkedin.com/company/netexial?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L243",
+      "id": "scratch_jina_4421403555_netexial_https_fr_linkedin_com_company_netexial_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[netexial](https://fr.linkedin.com/company/netexial?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[ELSAN](https://fr.linkedin.com/company/elsan?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L248",
+      "id": "scratch_jina_4421403555_elsan_https_fr_linkedin_com_company_elsan_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[elsan](https://fr.linkedin.com/company/elsan?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[France Travail](https://fr.linkedin.com/company/francetravail?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L253",
+      "id": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_253",
+      "community": 46,
+      "norm_label": "[france travail](https://fr.linkedin.com/company/francetravail?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[VINCI](https://fr.linkedin.com/company/vinci?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L258",
+      "id": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_258",
+      "community": 46,
+      "norm_label": "[vinci](https://fr.linkedin.com/company/vinci?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Universit\u00e9 de Caen Normandie](https://fr.linkedin.com/school/universite-de-caen-normandie/?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L263",
+      "id": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_263",
+      "community": 46,
+      "norm_label": "[universite de caen normandie](https://fr.linkedin.com/school/universite-de-caen-normandie/?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[L'Usine Nouvelle](https://fr.linkedin.com/company/l-usine-nouvelle?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L268",
+      "id": "scratch_jina_4421403555_l_usine_nouvelle_https_fr_linkedin_com_company_l_usine_nouvelle_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[l'usine nouvelle](https://fr.linkedin.com/company/l-usine-nouvelle?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[VINCI Energies](https://fr.linkedin.com/company/vinci-energies?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L273",
+      "id": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_273",
+      "community": 46,
+      "norm_label": "[vinci energies](https://fr.linkedin.com/company/vinci-energies?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[IMA Group](https://it.linkedin.com/company/imagroup?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L278",
+      "id": "scratch_jina_4421403555_ima_group_https_it_linkedin_com_company_imagroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[ima group](https://it.linkedin.com/company/imagroup?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Accor](https://fr.linkedin.com/company/accor?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L283",
+      "id": "scratch_jina_4421403555_accor_https_fr_linkedin_com_company_accor_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[accor](https://fr.linkedin.com/company/accor?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[Groupe Barri\u00e8re](https://fr.linkedin.com/company/groupe-barriere?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L288",
+      "id": "scratch_jina_4421403555_groupe_barri\u00e8re_https_fr_linkedin_com_company_groupe_barriere_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[groupe barriere](https://fr.linkedin.com/company/groupe-barriere?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[The Adecco Group](https://ch.linkedin.com/company/theadeccogroup?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L301",
+      "id": "scratch_jina_4421403555_the_adecco_group_https_ch_linkedin_com_company_theadeccogroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[the adecco group](https://ch.linkedin.com/company/theadeccogroup?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "[CENTURION SEARCH | Cabinet de recrutement](https://fr.linkedin.com/company/centurion-search?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L306",
+      "id": "scratch_jina_4421403555_centurion_search_cabinet_de_recrutement_https_fr_linkedin_com_company_centurion_search_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "community": 46,
+      "norm_label": "[centurion search | cabinet de recrutement](https://fr.linkedin.com/company/centurion-search?trk=public_jobs_similar-jobs_main-jobs-card-subtitle)"
+    },
+    {
+      "label": "People also viewed",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L312",
+      "id": "scratch_jina_4421403555_people_also_viewed",
+      "community": 46,
+      "norm_label": "people also viewed"
+    },
+    {
+      "label": "Similar Searches",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L365",
+      "id": "scratch_jina_4421403555_similar_searches",
+      "community": 46,
+      "norm_label": "similar searches"
+    },
+    {
+      "label": "Explore top content on LinkedIn",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L380",
+      "id": "scratch_jina_4421403555_explore_top_content_on_linkedin",
+      "community": 46,
+      "norm_label": "explore top content on linkedin"
+    },
+    {
+      "label": "Sign in to see who you already know at METALINE",
+      "file_type": "document",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L510",
+      "id": "scratch_jina_4421403555_sign_in_to_see_who_you_already_know_at_metaline",
+      "community": 46,
+      "norm_label": "sign in to see who you already know at metaline"
     },
     {
       "label": "graphify.md",
@@ -8533,9 +9451,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_package_dependencies",
-      "target": "ultimate_job_tool_package_dependencies_phosphor_icons_react",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_package_dependencies_phosphor_icons_react"
     },
     {
       "relation": "contains",
@@ -8766,6 +9684,36 @@
       "confidence_score": 1.0,
       "source": "scratch_debug_js",
       "target": "scratch_debug_chromium"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "scratch_scrapling_server_py",
+      "target": "scratch_scrapling_server_scraperequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "scratch_scrapling_server_py",
+      "target": "scratch_scrapling_server_scrape_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "scratch_scrapling_server_scraperequest",
+      "target": "basemodel",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9019,6 +9967,17 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "services_scraperservice_scrapewithscrapling",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -10974,6 +11933,16 @@
       "confidence_score": 1.0,
       "source": "locales_fr_job",
       "target": "locales_fr_job_scrapfly"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L168",
+      "weight": 1.0,
+      "source": "locales_fr_job",
+      "target": "locales_fr_job_scrapling",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13829,6 +14798,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/locales/en.json",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "locales_en_job",
+      "target": "locales_en_job_scrapling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
       "source_location": "L116",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -15289,9 +16268,9 @@
       "source_file": "src/components/tabs/BatchTab.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_pdfservice_downloadblobaspdf",
-      "confidence_score": 1.0
+      "target": "services_pdfservice_downloadblobaspdf"
     },
     {
       "relation": "imports",
@@ -15452,6 +16431,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/scraperService.js",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "src_services_scraperservice_js",
+      "target": "services_scraperservice_scrapewithscrapling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/scraperService.js",
       "source_location": "L146",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -15521,6 +16510,17 @@
       "confidence_score": 1.0,
       "source": "scraper_service",
       "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_scraperservice_scrapewithscrapling",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16453,9 +17453,9 @@
       "source_file": "src/components/tabs/BatchTab.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_hooks_usedatabase_js",
-      "confidence_score": 1.0
+      "target": "src_hooks_usedatabase_js"
     },
     {
       "relation": "calls",
@@ -16497,9 +17497,9 @@
       "source_file": "src/components/tabs/BatchTab.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_batchtab_jsx",
-      "target": "hooks_usedatabase_usedatabase",
-      "confidence_score": 1.0
+      "target": "hooks_usedatabase_usedatabase"
     },
     {
       "relation": "calls",
@@ -16987,6 +17987,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L249",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
+      "target": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -17332,6 +18342,36 @@
       "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_10_concurrency_and_rate_limiting_in_batch_processing",
       "target": "ultimate_job_tool_troubleshooting_problem_2_sequential_bottlenecks_in_multi_step_lifecycle_processing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L251",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
+      "target": "ultimate_job_tool_troubleshooting_problem_1_frontend_cannot_call_python_code_directly_cors_sandboxing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L255",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
+      "target": "ultimate_job_tool_troubleshooting_problem_2_fastapi_startup_failure_typeerror_router_init_got_an_unexpected_keyword_argument_on_startup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L260",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
+      "target": "ultimate_job_tool_troubleshooting_problem_3_playwright_patchright_missing_browser_executables_or_sudo_password_requirement",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -17889,6 +18929,16 @@
       "source_file": "README.md",
       "source_location": "L45",
       "weight": 1.0,
+      "source": "ultimate_job_tool_readme_ultimate_job_tool",
+      "target": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L45",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_ultimate_job_tool",
       "target": "ultimate_job_tool_readme_project_structure"
@@ -17942,6 +18992,826 @@
       "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_installation_setup",
       "target": "ultimate_job_tool_readme_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
+      "target": "ultimate_job_tool_readme_codeblock_4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
+      "target": "ultimate_job_tool_readme_codeblock_5",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_md",
+      "target": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_md",
+      "target": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
+      "target": "scratch_jina_4420434397_technicien_support_informatique_f_h",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
+      "target": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_brest_en_vue_https_fr_linkedin_com_company_brestenvue_trk_public_jobs_topcard_org_name_brest_brittany_france",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job_71",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_sign_in_to_access_ai_powered_advices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_sign_in_to_evaluate_your_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_sign_in_to_tailor_your_resume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_similar_jobs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L359",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_people_also_viewed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L412",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_similar_searches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L437",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_explore_top_content_on_linkedin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L565",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
+      "target": "scratch_jina_4420434397_sign_in_to_see_who_you_already_know_at_brest_en_vue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job_71",
+      "target": "scratch_jina_4420434397_use_ai_to_assess_how_you_fit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_228",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_chapsvision_https_fr_linkedin_com_company_chapsvision_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_stryker_https_www_linkedin_com_company_stryker_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_epackpro_https_www_linkedin_com_company_epackpro_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L248",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_expectra_https_fr_linkedin_com_company_expectra_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L253",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_naval_group_https_fr_linkedin_com_company_naval_group_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L258",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_vflit_vous_faciliter_l_it_https_fr_linkedin_com_company_vflit_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L263",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_leroy_merlin_https_fr_linkedin_com_company_leroy_merlin_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L268",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_gtd_international_https_fr_linkedin_com_company_gtd_international_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L283",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_283",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_toyota_material_handling_france_https_fr_linkedin_com_company_toyota_material_handling_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L293",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_oriance_menuiseries_https_fr_linkedin_com_company_oriance_menuiseries_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L298",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_fortil_https_fr_linkedin_com_company_fortil_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L303",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_303",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L313",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_astek_https_fr_linkedin_com_company_astek_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_edf_https_fr_linkedin_com_company_edf_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L323",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_hr_path_https_fr_linkedin_com_company_hr_path_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L328",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_extia_https_fr_linkedin_com_company_extia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L333",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_clauger_https_fr_linkedin_com_company_clauger_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L338",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_ratp_dev_france_suisse_https_fr_linkedin_com_company_ratp_dev_france_suisse_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L343",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_shom_https_fr_linkedin_com_company_shom_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L348",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_pennylane_https_fr_linkedin_com_company_pennylaneaccounting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4420434397.md",
+      "source_location": "L353",
+      "weight": 1.0,
+      "source": "scratch_jina_4420434397_similar_jobs",
+      "target": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_353",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_md",
+      "target": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_md",
+      "target": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
+      "target": "scratch_jina_4421403555_technicien_support_proximit\u00e9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
+      "target": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_metaline_https_fr_linkedin_com_company_metaline_entreprise_trk_public_jobs_topcard_org_name_caen_normandy_france",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job_73",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_similar_jobs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L312",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_people_also_viewed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L365",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_similar_searches",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L380",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_explore_top_content_on_linkedin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L510",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
+      "target": "scratch_jina_4421403555_sign_in_to_see_who_you_already_know_at_metaline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L160",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_meiko_france_https_fr_linkedin_com_company_meiko_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_cnam_https_fr_linkedin_com_company_cnam_caisse_nationale_assurance_maladie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L170",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_quadria_https_fr_linkedin_com_company_heliaq_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L175",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_innov_ia_https_fr_linkedin_com_company_innov_ia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_fayat_group_https_fr_linkedin_com_company_fayat_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_hako_france_https_fr_linkedin_com_company_hakofrance_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_nonstop_consulting_https_ch_linkedin_com_company_nonstop_consulting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L218",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_okwind_https_fr_linkedin_com_company_okwind_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_233",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_prodeval_https_fr_linkedin_com_company_prodeval_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L243",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_netexial_https_fr_linkedin_com_company_netexial_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L248",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_elsan_https_fr_linkedin_com_company_elsan_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L253",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_253",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L258",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_258",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L263",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_263",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L268",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_l_usine_nouvelle_https_fr_linkedin_com_company_l_usine_nouvelle_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_273",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L278",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_ima_group_https_it_linkedin_com_company_imagroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L283",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_accor_https_fr_linkedin_com_company_accor_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_groupe_barri\u00e8re_https_fr_linkedin_com_company_groupe_barriere_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L301",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_the_adecco_group_https_ch_linkedin_com_company_theadeccogroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/jina_4421403555.md",
+      "source_location": "L306",
+      "weight": 1.0,
+      "source": "scratch_jina_4421403555_similar_jobs",
+      "target": "scratch_jina_4421403555_centurion_search_cabinet_de_recrutement_https_fr_linkedin_com_company_centurion_search_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -18065,5 +19935,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8214f3e8f0992b459aeda163fa7229bcbecea4a0"
+  "built_at_commit": "1b4b043c05c931ae63933b5ad0e48802c199759a"
 }

@@ -246,5 +246,20 @@ pip install pydantic pydantic-core openai
 **Cause**: The pipeline was batch-sequential (waiting for a global scraping pass to resolve before calling a global AI extraction pass), rather than item-sequential.
 **Fix**: Refactored the architecture to process each job offer URL through its complete lifecycle (Scrape -> Extract Details -> Generate Materials -> Compile PDFs -> Save to DB) independently in a single item-level worker. If one worker fails or hangs, other slots continue executing. Added a user-adjustable delay setting and an AbortController cancellation system to stop the batch gracefully mid-run.
 
+## 11. Scrapling Scraper & Python Backend Integration
+
+### Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing)
+**Issue**: Scrapling is a Python library, but the frontend is a client-side only React app.
+**Fix**: Built a local FastAPI Python micro-server (`scratch/scrapling_server.py`) that runs on `http://localhost:8000`. Configured a proxy rule in Vite (`/api/scrapling` -> `http://localhost:8000/scrape`) to bridge the communication and bypass browser CORS limits.
+
+### Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`)
+**Issue**: Running the Python FastAPI server crashed immediately on startup.
+**Cause**: When installing the `scrapling[all]` dependencies via pip, pip upgraded `starlette` to version `1.2.1` but kept the pre-existing `fastapi==0.105.0` in Anaconda, causing a library constructor signature mismatch.
+**Fix**: Upgraded the FastAPI library to the latest version (`0.136.3`) by running `pip install --ignore-installed fastapi` to successfully bypass Anaconda's metadata lock.
+
+### Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement
+**Issue**: Running Scrapling's `StealthyFetcher` failed with a missing browser binary error (e.g., `Executable doesn't exist at ~/.cache/ms-playwright/...`). However, running the recommended `scrapling install` command failed because it tried to install system dependencies requiring a `sudo` password.
+**Fix**: Executed `python3 -m patchright install` directly, which successfully downloads the required browser binaries (including chromium v1217) locally into the user's home folder without needing root/sudo permissions. Added a fallback mechanism inside the Python backend to use standard HTTP `Fetcher` (impersonated curl) first, which bypasses LinkedIn bot checks instantly (~2s) and only invokes browser-based `StealthyFetcher` as a fallback.
+
 ---
 *Generated: May 2026*

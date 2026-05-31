@@ -4,7 +4,7 @@ import { Play, Pause, ArrowCounterClockwise, Trash, Plus, Link, FileText, CheckC
 import { useUser } from '@clerk/react';
 import { useDatabase } from '../../hooks/useDatabase';
 import { callAIProvider } from '../../services/aiService';
-import { scrapeWithJina, scrapeWithScrapfly } from '../../services/scraperService';
+import { scrapeWithJina, scrapeWithScrapfly, scrapeWithScrapling } from '../../services/scraperService';
 import { extractLatexFromResponse, mergeLatexResponses } from '../../services/latexUtils';
 import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 import * as storage from '../../services/storageService';
@@ -361,10 +361,12 @@ export default function BatchTab({
         
         if (scraperType === 'jina') {
           desc = await scrapeWithJina(currentItem.input);
-        } else {
+        } else if (scraperType === 'scrapfly') {
           let key = storage.getScrapflyKey();
           if (!key) throw new Error("Clé Scrapfly requise pour l'extraction.");
           desc = await scrapeWithScrapfly(currentItem.input, key);
+        } else if (scraperType === 'scrapling') {
+          desc = await scrapeWithScrapling(currentItem.input);
         }
         
         if (isAborted()) return;
@@ -638,6 +640,7 @@ ${desc.substring(0, 3000)}`;
               >
                 <option value="jina">{t('job.jina', 'Jina AI (Gratuit)')}</option>
                 <option value="scrapfly">{t('job.scrapfly', 'Scrapfly (Clé API)')}</option>
+                <option value="scrapling">{t('job.scrapling', 'Scrapling (Local)')}</option>
               </select>
             </div>
 

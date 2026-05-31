@@ -22,6 +22,11 @@ export default defineConfig({
         target: 'https://api.scrapfly.io',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/scrapfly/, '/scrape'),
+      },
+      '/api/scrapling': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/scrapling/, '/scrape'),
       }
     }
   }

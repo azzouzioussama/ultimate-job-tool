@@ -40,7 +40,23 @@
    ```
 
 4. **Open your browser:**
-   Navigate to `http://localhost:5173` (or the port specified by Vite) to use the app.
+   Navigate to `http://localhost:3000` (or the port specified by Vite) to use the app.
+
+## 🐍 Scrapling Local Scraper Server Setup
+
+To use the **Scrapling (Local)** scraper option in the app, you need to start the Python micro-server in the background:
+
+1. **Install Python dependencies:**
+   ```bash
+   pip install --ignore-installed "scrapling[all]" fastapi uvicorn markdownify
+   python3 -m patchright install
+   ```
+
+2. **Start the scraper server:**
+   ```bash
+   python3 scratch/scrapling_server.py
+   ```
+   The backend will run at `http://localhost:8000` and proxy scraping requests from `/api/scrapling` automatically.
 
 ## 📂 Project Structure
 

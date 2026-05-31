@@ -72,6 +72,7 @@ export default function JobOfferTab({
         >
           <option value="jina">{t('job.jina', 'Jina AI (Gratuit)')}</option>
           <option value="scrapfly">{t('job.scrapfly', 'Scrapfly (Clé API)')}</option>
+          <option value="scrapling">{t('job.scrapling', 'Scrapling (Local)')}</option>
         </select>
 
         {/* URL input */}

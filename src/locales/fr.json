@@ -165,6 +165,7 @@
     "autoCreateBtnTooltip": "Extraire le titre et créer une nouvelle candidature à partir de ce texte",
     "jina": "Jina AI (Gratuit)",
     "scrapfly": "Scrapfly (Clé API)",
+    "scrapling": "Scrapling (Local)",
     "urlPlaceholder": "Coller l'URL de l'offre pour l'extraire",
     "extract": "Extraire",
     "placeholder": "Le texte de l'offre apparaîtra ici. Vous pouvez aussi le coller manuellement, ou coller directement l'URL de l'offre si vous utilisez une IA qui a accès à internet."
