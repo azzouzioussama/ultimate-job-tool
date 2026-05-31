@@ -20,7 +20,7 @@
  */
 
 
-import { Settings, Bot, FileText, User, FileOutput, Activity, LayoutDashboard } from 'lucide-react';
+import { Settings, Bot, FileText, User, FileOutput, Activity, LayoutDashboard, Layers } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 // ── Tab Definitions ──────────────────────────────────────────────────────────
@@ -35,6 +35,7 @@ const tabs = [
   { id: 'docs',      icon: FileText,   translationKey: 'tabs.documents', defaultLabel: 'Documents' },
   { id: 'pdf',       icon: FileOutput, translationKey: 'tabs.pdfMaker', defaultLabel: 'PDF Maker' },
   { id: 'ats',       icon: Activity,   translationKey: 'tabs.atsTest', defaultLabel: 'Test ATS' },
+  { id: 'batch',     icon: Layers,     translationKey: 'tabs.batch', defaultLabel: 'Batch Tools' },
 ];
 
 export default function TabNavigation({ activeTab, onTabChange }) {

@@ -37,7 +37,7 @@
  * @returns {Promise<string>} Cleaned job description text.
  * @throws {Error} If the URL is blocked or the request fails.
  */
-export async function scrapeWithJina(url) {
+export async function scrapeWithJina(url, signal) {
   // Safety check: Indeed blocks Jina with a 403 Cloudflare challenge
   if (url.toLowerCase().includes('indeed.com')) {
     throw new Error(
@@ -47,7 +47,7 @@ export async function scrapeWithJina(url) {
   }
 
   // Jina's reader API: prefix any URL with "https://r.jina.ai/" to get Markdown
-  const response = await fetch(`https://r.jina.ai/${url}`);
+  const response = await fetch(`https://r.jina.ai/${url}`, { signal });
 
   if (!response.ok) {
     throw new Error('Erreur HTTP ' + response.status);
@@ -75,7 +75,7 @@ export async function scrapeWithJina(url) {
  * @returns {Promise<string>} The extracted job description text.
  * @throws {Error} If the API returns an error or no data is extracted.
  */
-export async function scrapeWithScrapfly(url, apiKey) {
+export async function scrapeWithScrapfly(url, apiKey, signal) {
   // Build query parameters for the Scrapfly API
   const params = new URLSearchParams({
     key: apiKey,
@@ -87,7 +87,7 @@ export async function scrapeWithScrapfly(url, apiKey) {
 
   // NOTE: We hit "/api/scrapfly" (our proxy), NOT "api.scrapfly.io" directly.
   // The proxy is configured in vite.config.js (dev) and vercel.json (prod).
-  const response = await fetch(`/api/scrapfly?${params.toString()}`);
+  const response = await fetch(`/api/scrapfly?${params.toString()}`, { signal });
 
   if (!response.ok) {
     // Try to extract a meaningful error message from Scrapfly's response

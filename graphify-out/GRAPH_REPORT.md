@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-05-30)
+# Graph Report - ultimate-job-tool  (2026-05-31)
 
 ## Corpus Check
-- 55 files · ~41,227 words
+- 57 files · ~46,726 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 791 nodes · 844 edges · 63 communities (50 shown, 13 thin omitted)
+- 909 nodes · 980 edges · 82 communities (67 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `122885db`
+- Built from commit: `8214f3e8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -73,32 +73,51 @@
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 63|Community 63]]
+- [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 65|Community 65]]
+- [[_COMMUNITY_Community 66|Community 66]]
+- [[_COMMUNITY_Community 67|Community 67]]
+- [[_COMMUNITY_Community 68|Community 68]]
+- [[_COMMUNITY_Community 69|Community 69]]
+- [[_COMMUNITY_Community 70|Community 70]]
+- [[_COMMUNITY_Community 71|Community 71]]
+- [[_COMMUNITY_Community 72|Community 72]]
+- [[_COMMUNITY_Community 73|Community 73]]
+- [[_COMMUNITY_Community 74|Community 74]]
+- [[_COMMUNITY_Community 75|Community 75]]
+- [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 77|Community 77]]
+- [[_COMMUNITY_Community 78|Community 78]]
+- [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
+- [[_COMMUNITY_Community 81|Community 81]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `toast` - 29 edges
 2. `toast` - 29 edges
-3. `dashboard` - 25 edges
-4. `dashboard` - 25 edges
-5. `Storage Service` - 22 edges
-6. `ai` - 18 edges
-7. `ai` - 18 edges
-8. `pdf` - 15 edges
-9. `pdf` - 15 edges
-10. `ats` - 13 edges
+3. `batch` - 26 edges
+4. `batch` - 26 edges
+5. `dashboard` - 25 edges
+6. `dashboard` - 25 edges
+7. `Storage Service` - 22 edges
+8. `ai` - 18 edges
+9. `ai` - 18 edges
+10. `pdf` - 15 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `App()` --calls--> `getPromptTemplates()`  [EXTRACTED]
   src/App.jsx → src/constants/promptTemplates.js
-- `DashboardTab()` --calls--> `useDatabase()`  [EXTRACTED]
-  src/components/tabs/DashboardTab.jsx → src/hooks/useDatabase.js
 - `App()` --calls--> `useDatabase()`  [EXTRACTED]
   src/App.jsx → src/hooks/useDatabase.js
+- `DashboardTab()` --calls--> `useDatabase()`  [EXTRACTED]
+  src/components/tabs/DashboardTab.jsx → src/hooks/useDatabase.js
+- `BatchTab()` --calls--> `useDatabase()`  [EXTRACTED]
+  src/components/tabs/BatchTab.jsx → src/hooks/useDatabase.js
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
-- `App()` --calls--> `useLocalStorage()`  [EXTRACTED]
-  src/App.jsx → src/hooks/useLocalStorage.js
 
-## Communities (63 total, 13 thin omitted)
+## Communities (82 total, 15 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -106,11 +125,11 @@ Nodes (23): Dexie.js (IndexedDB), getAiModel(), getAiProvider(), getAiResponse()
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (34): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucide-react, mammoth, react (+26 more)
+Nodes (35): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucide-react, mammoth, @phosphor-icons/react (+27 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.05
-Nodes (27): ATS Service, AI_PROVIDERS, CV_TEMPLATES, getPromptTemplates(), useCloudDatabase(), useDatabase(), useLocalDatabase(), useLocalStorage() (+19 more)
+Cohesion: 0.14
+Nodes (5): useLocalStorage(), useToast(), buildLatexConversionPrompt(), extractTextFromFile(), App()
 
 ### Community 3 - "Community 3"
 Cohesion: 0.18
@@ -129,8 +148,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.05
-Nodes (43): 10. Clerk + Supabase Integration Issues, 11. WSL2 Development Server Blank Page, 1. The TeXLive PDF Compilation Failures, 2. The PDF Inline Display Challenge, 3. AI API Quota & Provider Issues, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 6. Job Posting Scraper (Jina AI & Scrapfly) Issues (+35 more)
+Cohesion: 0.18
+Nodes (10): 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration, Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses (+2 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -150,15 +169,15 @@ Nodes (3): Answer, Q: How the database work, Source Nodes
 
 ### Community 14 - "Community 14"
 Cohesion: 0.15
-Nodes (13): ats, adviceTitle, analyzing, clickToRun, missingCv, missingGood, missingJob, missingTitle (+5 more)
+Nodes (13): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+5 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.17
 Nodes (12): table, actions, ats, atsAfter, atsBefore, company, cv, date (+4 more)
 
 ### Community 16 - "Community 16"
-Cohesion: 0.50
-Nodes (3): Expanding the ESLint configuration, React Compiler, React + Vite
+Cohesion: 0.18
+Nodes (10): code:bash (git clone https://github.com/your-username/ultimate-job-tool), code:bash (npm install), code:bash (npm run dev), ⚙️ Configuration, 📖 Documentation, 🚀 Features, 📦 Installation & Setup, 📂 Project Structure (+2 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.07
@@ -181,16 +200,16 @@ Cohesion: 0.07
 Nodes (29): toast, apiKeyRequired, apiRequiredFirst, atsError, atsMissingData, atsSuccess, compileMultipleError, compilingMultipleDone (+21 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.31
-Nodes (7): Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), rewrites
+Cohesion: 0.33
+Nodes (6): 10. Clerk + Supabase Integration Issues, Problem 1: Vite Crash with `require()`, Problem 2: Supabase Client Instantiation Crash, Problem 3: Dashboard Stuck on "Chargement...", Problem 4: Missing Clerk JWT Template & Invalid JWT Secret, Problem 5: RLS Type Mismatch (`uuid = text`)
 
 ### Community 34 - "Community 34"
 Cohesion: 0.10
 Nodes (20): dashboard, compileError, compiling, confirmDelete, confirmDeletePrompt, continueEditing, deleteDoc, downloadLatex (+12 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.05
-Nodes (41): cv, docs, job, delete, modified, open, dashboard, badge (+33 more)
+Cohesion: 0.10
+Nodes (20): dashboard, compileError, compiling, confirmDelete, confirmDeletePrompt, continueEditing, deleteDoc, downloadLatex (+12 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.15
@@ -209,32 +228,32 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 40 - "Community 40"
-Cohesion: 0.11
-Nodes (18): apiError, error, errorTitle, app, ai, auth, error, prompt (+10 more)
+Cohesion: 0.33
+Nodes (6): 6. Job Posting Scraper (Jina AI & Scrapfly) Issues, Problem 1: Scrapfly CORS / Direct Fetch Rejection, Problem 2: Scrapfly 422 Unprocessable Entity, Problem 3: Extracted Job Description Format, Problem 4: Jina AI Extractor Boilerplate Noise, Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.13
 Nodes (15): pdf, compile, compiling, download, emptyDesc, emptyTitle, error, loadingError (+7 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.18
-Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
+Cohesion: 0.04
+Nodes (44): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+36 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.20
 Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.20
-Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
+Cohesion: 0.40
+Nodes (5): 11. WSL2 Development Server Blank Page, Problem 1: Vite 8 `allowedHosts` Syntax Change, Problem 2: WSL2 Port 5173 Forwarding Broken, Problem 3: ClerkProvider Missing `publishableKey` Prop, Problem 4: Application Data Disappearing on Refresh (Supabase Schema Sync)
 
 ### Community 45 - "Community 45"
 Cohesion: 0.29
 Nodes (5): appStringsEn, appStringsFr, dashboardStringsEn, dashboardStringsFr, locales
 
 ### Community 46 - "Community 46"
-Cohesion: 0.22
-Nodes (9): tabs, aiAssistant, atsTest, dashboard, documents, jobOffer, myCv, pdfMaker (+1 more)
+Cohesion: 0.20
+Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.25
@@ -264,41 +283,109 @@ Nodes (4): cv, docs, job, badge
 Cohesion: 0.50
 Nodes (4): delete, modified, open, card
 
+### Community 57 - "Community 57"
+Cohesion: 0.50
+Nodes (4): 1. The TeXLive PDF Compilation Failures, Problem 1: `filename[]` Array Formatting, Problem 2: Missing Multipart Encoding, Problem 3: Invalid LaTeX Syntax
+
 ### Community 58 - "Community 58"
+Cohesion: 0.50
+Nodes (4): 2. The PDF Inline Display Challenge, Problem 2: Mobile Browsers Blocking Inline PDF `Blob:` URLs, Problem 3: Mobile PDF Viewer Scrolling & Text Selection Bugs, Problem: CORS & `X-Frame-Options` Blocking
+
+### Community 59 - "Community 59"
+Cohesion: 0.29
+Nodes (7): form, cancel, company, companyPlaceholder, create, jobTitle, jobTitlePlaceholder
+
+### Community 60 - "Community 60"
 Cohesion: 0.11
 Nodes (18): apiError, error, errorTitle, app, ai, auth, error, prompt (+10 more)
 
-### Community 59 - "Community 59"
-Cohesion: 0.15
-Nodes (13): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+5 more)
-
-### Community 60 - "Community 60"
-Cohesion: 0.18
-Nodes (11): job, autoCreateBtn, autoCreateBtnTooltip, autoCreateToggle, clear, extract, jina, placeholder (+3 more)
-
 ### Community 61 - "Community 61"
-Cohesion: 0.22
-Nodes (9): tabs, aiAssistant, atsTest, dashboard, documents, jobOffer, myCv, pdfMaker (+1 more)
+Cohesion: 0.50
+Nodes (4): 3. AI API Quota & Provider Issues, Problem 1: Gemini "Model Not Found" / Deprecation, Problem 2: DeepSeek "Insufficient Balance", Problem 3: React State Stagnation Across Providers
+
+### Community 62 - "Community 62"
+Cohesion: 0.33
+Nodes (6): status, applied, draft, interview, pdfGenerated, rejected
+
+### Community 63 - "Community 63"
+Cohesion: 0.80
+Nodes (4): ATS Service, buildAtsPrompt(), cleanJsonResponse(), runAtsAnalysis()
+
+### Community 64 - "Community 64"
+Cohesion: 0.50
+Nodes (4): 9. Graphify Knowledge Graph Generation, code:bash (pip uninstall -y pydantic pydantic-core), Problem 1: `openai` package missing during extraction, Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)
+
+### Community 65 - "Community 65"
+Cohesion: 0.50
+Nodes (4): cv, docs, job, badge
+
+### Community 66 - "Community 66"
+Cohesion: 0.50
+Nodes (4): delete, modified, open, card
+
+### Community 67 - "Community 67"
+Cohesion: 0.15
+Nodes (13): ats, adviceTitle, analyzing, clickToRun, missingCv, missingGood, missingJob, missingTitle (+5 more)
+
+### Community 68 - "Community 68"
+Cohesion: 0.05
+Nodes (44): compiling, completed, extracting, failed, generating, pending, saving, scraping (+36 more)
+
+### Community 69 - "Community 69"
+Cohesion: 0.05
+Nodes (44): compiling, completed, extracting, failed, generating, pending, saving, scraping (+36 more)
+
+### Community 70 - "Community 70"
+Cohesion: 0.11
+Nodes (18): apiError, error, errorTitle, app, ai, auth, error, prompt (+10 more)
+
+### Community 71 - "Community 71"
+Cohesion: 0.67
+Nodes (3): 9. Localization & UI Workflows, Problem 1: French Hardcoded Strings Leaking into English UI, Problem 2: Missing Application Creation on Manual Paste
+
+### Community 72 - "Community 72"
+Cohesion: 0.17
+Nodes (11): code:javascript (// CURRENT FLAWED IMPLEMENTATION:), code:javascript (const [maxConcurrency, setMaxConcurrency] = useState(2); // ), code:javascript (// NEW IMPLEMENTATION IN BatchTab.jsx:), code:javascript (} finally {), Context of the Current Codebase ("What we have here"), Guide to Implementing Batch IA (Concurrency Limits) in Ultimate Job Tool V2, Instructions for the Agent, Step 1: Add a Concurrency Setting (+3 more)
+
+### Community 73 - "Community 73"
+Cohesion: 0.33
+Nodes (6): getPromptTemplates(), callAIProvider(), escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses(), BatchTab()
+
+### Community 74 - "Community 74"
+Cohesion: 0.31
+Nodes (7): Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), rewrites
+
+### Community 76 - "Community 76"
+Cohesion: 0.43
+Nodes (4): PDF Service, compilePdfFromLatex(), downloadBlobAsPdf(), TeXLive.net API
+
+### Community 78 - "Community 78"
+Cohesion: 0.48
+Nodes (5): useCloudDatabase(), useDatabase(), useLocalDatabase(), createAuthenticatedSupabaseClient(), DashboardTab()
+
+### Community 81 - "Community 81"
+Cohesion: 0.67
+Nodes (3): 10. Concurrency and Rate Limiting in Batch Processing, Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing
 
 ## Knowledge Gaps
-- **559 isolated node(s):** `apiKeyPlaceholder`, `dashboard`, `prompts`, `aiAssistant`, `jobOffer` (+554 more)
+- **655 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+650 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dashboard` connect `Community 34` to `Community 15`, `Community 49`, `Community 51`, `Community 55`, `Community 56`, `Community 57`?**
-  _High betweenness centrality (0.092) - this node is a cross-community bridge._
-- **Why does `dashboard` connect `Community 35` to `Community 38`, `Community 62`?**
-  _High betweenness centrality (0.092) - this node is a cross-community bridge._
-- **Why does `app` connect `Community 40` to `Community 57`, `Community 30`?**
-  _High betweenness centrality (0.081) - this node is a cross-community bridge._
-- **What connects `apiKeyPlaceholder`, `dashboard`, `prompts` to the rest of the system?**
-  _559 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 42`, `Community 59`, `Community 62`?**
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 34` to `Community 75`, `Community 15`, `Community 49`, `Community 51`, `Community 55`, `Community 56`?**
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 70` to `Community 42`, `Community 22`?**
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+- **What connects `fr`, `en`, `rewrites` to the rest of the system?**
+  _655 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.051715309779825906 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1368421052631579 - nodes in this community are weakly interconnected._
 - **Should `Community 5` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

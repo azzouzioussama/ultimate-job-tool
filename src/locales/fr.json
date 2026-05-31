@@ -10,6 +10,7 @@
     "myCv": "Mon CV",
     "pdfMaker": "PDF Maker",
     "atsTest": "Test ATS",
+    "batch": "Batch Tools",
     "documents": "Documents"
   },
   "app": {
@@ -274,5 +275,54 @@
     "previewPdf": "Aperçu PDF",
     "compiling": "Compilation en cours...",
     "compileError": "Erreur de compilation: "
+  },
+  "batch": {
+    "title": "Traitement en Lot (Batch AI)",
+    "subtitle": "Collez plusieurs URL d'offres d'emploi pour extraire et créer les candidatures automatiquement.",
+    "start": "Lancer le Batch",
+    "cancel": "Annuler le Batch",
+    "urlsLabel": "Liste des URLs (une par ligne)",
+    "urlsPlaceholder": "https://www.linkedin.com/jobs/view/123\nhttps://www.indeed.com/viewjob?jk=456",
+    "clear": "Vider",
+    "configPanel": "Panneau de Configuration",
+    "scraper": "Scraper",
+    "free": "Gratuit",
+    "apiKeyRequired": "Clé requise",
+    "concurrency": "Requêtes en parallèle",
+    "concurrencyOffers": "offres",
+    "delay": "Délai entre requêtes",
+    "delay.none": "Sans délai",
+    "seconds": "secondes",
+    "generateOptions": "Générer automatiquement pour chaque candidature :",
+    "resultsLabel": "Résultats & File",
+    "noResults": "Aucune tâche dans la file.",
+    "noResultsDesc": "Collez des URLs et lancez le traitement pour voir la file s'exécuter.",
+    "progress": "Progression globale",
+    "toast": {
+      "noUrls": "Veuillez entrer au moins une URL.",
+      "completed": "Batch terminé ! {{count}} candidatures créées.",
+      "cancelled": "Batch annulé.",
+      "cancelledMsg": "Batch annulé par l'utilisateur."
+    },
+    "badge": {
+      "pending": "En attente",
+      "scraping": "Scraping...",
+      "extracting": "Extraction IA...",
+      "generating": "Génération...",
+      "compiling": "Compil PDF...",
+      "saving": "Sauvegarde...",
+      "completed": "Terminé",
+      "failed": "Échec"
+    },
+    "status": {
+      "cancelled": "Annulé",
+      "error": "Erreur",
+      "extractedOffer": "Offre extraite",
+      "running": "Traitement en cours..."
+    },
+    "stats": {
+      "success": "succès",
+      "failed": "échecs"
+    }
   }
 }

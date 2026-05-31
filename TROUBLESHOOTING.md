@@ -234,5 +234,17 @@ pip install pydantic pydantic-core openai
 **Cause**: The prompt injection and application saving logic (`createApplication()`) was tightly coupled inside the `handleScrape()` function in `App.jsx`.
 **Fix**: Decoupled the logic into an independent `handleAutoCreateFromText(text)` function, passed it down to `JobOfferTab.jsx`, and added a new "Create Application" button that dynamically renders whenever `jobDescription.length > 50`.
 
+## 10. Concurrency and Rate Limiting in Batch Processing
+
+### Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes
+**Issue**: Attempting to scrape multiple URLs and run AI extraction simultaneously for multiple job offers in a single action led to immediate rate limits (`429 Too Many Requests`) from LLM APIs and target websites.
+**Cause**: The initial batch execution processed all items concurrently by executing a `forEach` loop on all pending items simultaneously without any queue control, hitting API providers and scrapers at the exact same time.
+**Fix**: Implemented a stateful queue manager using a React `useEffect` hook, a `maxConcurrency` limit configuration, and a `runningItemIdsRef` to strictly cap the number of active pipelines executing concurrently. Newly queued items only start when an active slot becomes available.
+
+### Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing
+**Issue**: Performing batch scraping followed by batch AI analysis forced the user to wait for *all* URLs to finish scraping before the first AI extraction could begin. If one scraper hung, it blocked the entire workflow.
+**Cause**: The pipeline was batch-sequential (waiting for a global scraping pass to resolve before calling a global AI extraction pass), rather than item-sequential.
+**Fix**: Refactored the architecture to process each job offer URL through its complete lifecycle (Scrape -> Extract Details -> Generate Materials -> Compile PDFs -> Save to DB) independently in a single item-level worker. If one worker fails or hangs, other slots continue executing. Added a user-adjustable delay setting and an AbortController cancellation system to stop the batch gracefully mid-run.
+
 ---
 *Generated: May 2026*

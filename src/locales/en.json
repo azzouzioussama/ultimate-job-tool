@@ -10,6 +10,7 @@
     "myCv": "My Resume",
     "pdfMaker": "PDF Maker",
     "atsTest": "ATS Test",
+    "batch": "Batch Tools",
     "documents": "Documents"
   },
   "app": {
@@ -271,5 +272,54 @@
     "previewPdf": "Preview PDF",
     "compiling": "Compiling PDF...",
     "compileError": "Compilation error: "
+  },
+  "batch": {
+    "title": "Batch AI Processing",
+    "subtitle": "Paste multiple job URLs to automatically extract and create applications.",
+    "start": "Start Batch",
+    "cancel": "Cancel Batch",
+    "urlsLabel": "URLs List (one per line)",
+    "urlsPlaceholder": "https://www.linkedin.com/jobs/view/123\nhttps://www.indeed.com/viewjob?jk=456",
+    "clear": "Clear",
+    "configPanel": "Configuration Panel",
+    "scraper": "Scraper",
+    "free": "Free",
+    "apiKeyRequired": "API Key Required",
+    "concurrency": "Concurrency Limit",
+    "concurrencyOffers": "offers",
+    "delay": "Delay Between Requests",
+    "delay.none": "No delay",
+    "seconds": "seconds",
+    "generateOptions": "Automatically generate for each application:",
+    "resultsLabel": "Results & Queue",
+    "noResults": "No tasks in the queue.",
+    "noResultsDesc": "Paste URLs and start processing to see the queue run.",
+    "progress": "Global Progress",
+    "toast": {
+      "noUrls": "Please enter at least one URL.",
+      "completed": "Batch completed! {{count}} applications created.",
+      "cancelled": "Batch cancelled.",
+      "cancelledMsg": "Batch cancelled by user."
+    },
+    "badge": {
+      "pending": "Pending",
+      "scraping": "Scraping...",
+      "extracting": "Extracting details...",
+      "generating": "Generating...",
+      "compiling": "Compiling PDF...",
+      "saving": "Saving...",
+      "completed": "Completed",
+      "failed": "Failed"
+    },
+    "status": {
+      "cancelled": "Cancelled",
+      "error": "Error",
+      "extractedOffer": "Extracted Offer",
+      "running": "Processing..."
+    },
+    "stats": {
+      "success": "success",
+      "failed": "failed"
+    }
   }
 }

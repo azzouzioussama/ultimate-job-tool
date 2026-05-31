@@ -111,6 +111,7 @@ import MyCvTab from './components/tabs/MyCvTab';
 import DocumentsTab from './components/tabs/DocumentsTab';
 import PdfMakerTab from './components/tabs/PdfMakerTab';
 import AtsTestTab from './components/tabs/AtsTestTab';
+import BatchTab from './components/tabs/BatchTab';
 
 // ── pdf.js Worker Setup ───────────────────────────────────────────────────────
 // pdf.js needs a Web Worker to process PDF files in a background thread.
@@ -994,6 +995,21 @@ export default function App() {
               jobDescription={jobDescription}
               cvGenerated={cvGenerated}
               cvOriginal={cvOriginal}
+            />
+          </div>
+
+          {/* Batch Tools Tab */}
+          <div className={activeTab === 'batch' ? 'block' : 'hidden'}>
+            <BatchTab
+              cvOriginal={cvOriginal}
+              aiProvider={aiProvider}
+              aiModel={aiModel}
+              apiKey={apiKey}
+              scraperType={scraperType}
+              onScraperTypeChange={setScraperType}
+              showToast={showToast}
+              setActiveAppId={setActiveAppId}
+              setActiveTab={setActiveTab}
             />
           </div>
 
