@@ -212,8 +212,8 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                 <th className="p-4 font-semibold w-2/5 min-w-[200px]">{t('dashboard.table.jobTitle', 'Objectif / Poste')}</th>
                 <th className="p-4 font-semibold w-1/5 min-w-[150px]">{t('dashboard.table.company', 'Entreprise')}</th>
                 <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.status', 'Statut')}</th>
-                <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.atsBefore', 'ATS Avant')}</th>
-                <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.atsAfter', 'ATS Après')}</th>
+                <th className="p-4 font-semibold text-center whitespace-nowrap hidden sm:table-cell">{t('dashboard.table.atsBefore', 'ATS Avant')}</th>
+                <th className="p-4 font-semibold text-center whitespace-nowrap hidden sm:table-cell">{t('dashboard.table.atsAfter', 'ATS Après')}</th>
                 <th className="p-4 font-semibold text-right rounded-tr-xl whitespace-nowrap">{t('dashboard.table.actions', 'Actions')}</th>
               </tr>
             </thead>
@@ -271,10 +271,10 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                         <option value="Rejected">{t('dashboard.status.rejected', 'Refusé')}</option>
                       </select>
                     </td>
-                    <td className="p-4 text-center whitespace-nowrap">
+                    <td className="p-4 text-center whitespace-nowrap hidden sm:table-cell">
                       {app.atsScoreBefore ? <span className="text-sm font-bold text-slate-600">{app.atsScoreBefore}%</span> : <span className="text-slate-300">-</span>}
                     </td>
-                    <td className="p-4 text-center whitespace-nowrap">
+                    <td className="p-4 text-center whitespace-nowrap hidden sm:table-cell">
                       {app.atsScoreAfter ? (
                         <span className="text-sm font-bold text-indigo-600">{app.atsScoreAfter}%</span>
                       ) : app.atsResult?.score ? (
@@ -303,6 +303,20 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                   {expandedAppId === app.id && (
                     <tr className="bg-slate-50/50 border-b border-slate-200 shadow-inner">
                       <td colSpan="7" className="p-6">
+                        {/* Mobile-only stats display */}
+                        <div className="flex sm:hidden justify-between items-center bg-white border border-slate-200 rounded-xl p-3 shadow-sm mb-4 text-xs">
+                          <div>
+                            <span className="text-slate-500 font-semibold">ATS Avant : </span>
+                            <span className="font-bold text-slate-700">{app.atsScoreBefore ? `${app.atsScoreBefore}%` : '-'}</span>
+                          </div>
+                          <div>
+                            <span className="text-slate-500 font-semibold">ATS Après : </span>
+                            <span className="font-bold text-indigo-600 font-bold">
+                              {app.atsScoreAfter ? `${app.atsScoreAfter}%` : (app.atsResult?.score ? `${app.atsResult.score}%` : '-')}
+                            </span>
+                          </div>
+                        </div>
+
                         <div className="flex flex-col md:flex-row gap-8">
                           
                           {/* Saved LaTeX Files / AI Responses */}
