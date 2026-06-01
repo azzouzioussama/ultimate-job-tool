@@ -115,8 +115,15 @@ This document records every major technical problem encountered during the devel
 ### Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)
 **Issue**: When scraping Indeed URLs using Jina AI, the result was a Markdown file containing `Warning: Target URL returned error 403: Forbidden` and `# Just a moment... Additional Verification Required`.
 **Cause**: Indeed uses Cloudflare's aggressive anti-bot protection. Simple HTTP scrapers like Jina AI are instantly detected and served a CAPTCHA challenge instead of the job page.
-**Fix**: 
-2. Enabled Anti Scraping Protection (ASP) in the Scrapfly fetch call (`asp: 'true'`) to guarantee that Scrapfly routes the Indeed request through residential proxies with headless browser fingerprinting to solve the Cloudflare CAPTCHA automatically.
+**Fix**: Enabled Anti Scraping Protection (ASP) in the Scrapfly fetch call (`asp: 'true'`) to guarantee that Scrapfly routes the Indeed request through residential proxies with headless browser fingerprinting to solve the Cloudflare CAPTCHA automatically.
+
+### Problem 6: Mobile Copy-Paste URLs Contained Surrounding Text / Description
+**Issue**: When copying a job posting link from a mobile app (like LinkedIn or Indeed), the clipboard content often includes descriptive text alongside the URL (e.g. *"Check out this job... https://www.linkedin.com/jobs/view/..."*). Pasting this into the URL scraper field or batch queue importer resulted in invalid URL format errors.
+**Cause**: The input forms accepted the raw input directly without extracting and isolating the actual URL from the rest of the text.
+**Fix**: Implemented an intelligent URL extractor and normalizer in the text inputs and batch queue handlers:
+1. **Regex Extraction**: Runs a match for `/(https?:\/\/[^\s]+|www\.[^\s]+)/i` on the pasted input.
+2. **Punctuation Trimming**: Strips out trailing punctuation (like `.`, `,`, `)`, `]`, `!`, `?`) that might be part of the surrounding message context but gets caught inside the matched URL block.
+3. **Protocol Normalization**: Checks if the matched URL starts with `www.` and automatically prepends `https://` to prevent relative URL failures during network fetch calls.
 
 ## 7. JSON Parsing from AI (ATS Tester)
 
@@ -234,6 +241,15 @@ pip install pydantic pydantic-core openai
 **Cause**: The prompt injection and application saving logic (`createApplication()`) was tightly coupled inside the `handleScrape()` function in `App.jsx`.
 **Fix**: Decoupled the logic into an independent `handleAutoCreateFromText(text)` function, passed it down to `JobOfferTab.jsx`, and added a new "Create Application" button that dynamically renders whenever `jobDescription.length > 50`.
 
+### Problem 3: Invisible/Transparent Buttons in the Batch UI & Low-Contrast Dashboard Actions
+**Issue**: In the Batch tab, key control buttons (like "Ajouter", "Importer la liste", and "Démarrer la pile") were completely invisible (white-on-white text) by default, but suddenly appeared as colored buttons when hovered. In the Dashboard tab, row action buttons (Delete & Edit) were nearly invisible due to low contrast.
+**Cause**:
+1. **Batch UI**: The elements were styled with custom Tailwind color values ending in `50` (like `bg-indigo-650`, `text-slate-550`, `border-slate-350`, `border-slate-250`, etc.). Because these custom values are not extended in `tailwind.config.js` and do not exist in default Tailwind, the Tailwind compiler ignored them. Consequently, the default background color rendered as transparent, and the white text (`text-white`) became invisible against the white card backgrounds until hovered (since standard hover colors like `hover:bg-indigo-600` are valid Tailwind colors and were correctly generated).
+2. **Dashboard UI**: The buttons used `text-slate-300` as a default text color, which lacks sufficient contrast against white table rows.
+**Fix**:
+1. **Batch UI**: Refactored `BatchTab.jsx` to replace all non-standard colors with standard Tailwind increments (e.g. `bg-indigo-600`, `hover:bg-indigo-700`, `text-slate-500`, `border-slate-300`, `border-slate-200`).
+2. **Dashboard UI**: Changed the row action classes in `DashboardTab.jsx` from `text-slate-300` to `text-slate-400` to guarantee accessibility by default.
+
 ## 10. Concurrency and Rate Limiting in Batch Processing
 
 ### Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes
@@ -260,6 +276,16 @@ pip install pydantic pydantic-core openai
 ### Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement
 **Issue**: Running Scrapling's `StealthyFetcher` failed with a missing browser binary error (e.g., `Executable doesn't exist at ~/.cache/ms-playwright/...`). However, running the recommended `scrapling install` command failed because it tried to install system dependencies requiring a `sudo` password.
 **Fix**: Executed `python3 -m patchright install` directly, which successfully downloads the required browser binaries (including chromium v1217) locally into the user's home folder without needing root/sudo permissions. Added a fallback mechanism inside the Python backend to use standard HTTP `Fetcher` (impersonated curl) first, which bypasses LinkedIn bot checks instantly (~2s) and only invokes browser-based `StealthyFetcher` as a fallback.
+
+### Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)
+**Issue**: When deploying the frontend to Vercel (hosted over HTTPS), users wondered if the Scrapling (Local) option would fail due to mixed content restrictions or if the FastAPI server itself should be deployed as a Vercel serverless function.
+**Cause**:
+1. **Mixed Content Rules**: Browsers block fetching unencrypted HTTP resources from an HTTPS page.
+2. **Serverless Limitations**: Running Scrapling (and its Playwright/Patchright browser dependencies) directly inside a Vercel Serverless Function is impossible because Vercel has a 50MB deployment size limit (browser binaries are several hundred MBs), lacks system-level browser library configurations, and has execution timeout limits (10–15s).
+**Fix**:
+1. **Loopback Exemption**: Configured the frontend to make requests directly to `http://localhost:8000/scrape`. Modern browsers explicitly exempt loopback/local addresses (`localhost` and `127.0.0.1`) from mixed content blocking, treating them as "potentially trustworthy origins".
+2. **CORS Activation**: Added full CORS middleware allowing all origins (`allow_origins=["*"]`) in the local FastAPI backend to enable smooth communication.
+3. **Local Architecture Design**: The Scrapling scraper remains a local helper service that the user runs on their computer (`python3 scratch/scrapling_server.py`) while browsing the app.
 
 ---
 *Generated: May 2026*

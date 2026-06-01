@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-01)
 
 ## Corpus Check
-- 66 files · ~79,454 words
+- 66 files · ~80,234 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1011 nodes · 1075 edges · 91 communities (75 shown, 16 thin omitted)
+- 1014 nodes · 1078 edges · 95 communities (78 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1b4b043c`
+- Built from commit: `a3817c4e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -95,6 +95,10 @@
 - [[_COMMUNITY_Community 82|Community 82]]
 - [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
+- [[_COMMUNITY_Community 91|Community 91]]
+- [[_COMMUNITY_Community 92|Community 92]]
+- [[_COMMUNITY_Community 93|Community 93]]
+- [[_COMMUNITY_Community 94|Community 94]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `toast` - 29 edges
@@ -120,7 +124,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (91 total, 16 thin omitted)
+## Communities (95 total, 17 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -135,8 +139,8 @@ Cohesion: 0.13
 Nodes (6): useLocalStorage(), useToast(), callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), App()
 
 ### Community 3 - "Community 3"
-Cohesion: 0.04
-Nodes (42): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+34 more)
+Cohesion: 0.18
+Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -231,8 +235,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 40 - "Community 40"
-Cohesion: 0.33
-Nodes (6): 6. Job Posting Scraper (Jina AI & Scrapfly) Issues, Problem 1: Scrapfly CORS / Direct Fetch Rejection, Problem 2: Scrapfly 422 Unprocessable Entity, Problem 3: Extracted Job Description Format, Problem 4: Jina AI Extractor Boilerplate Noise, Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI)
+Cohesion: 0.29
+Nodes (7): 6. Job Posting Scraper (Jina AI & Scrapfly) Issues, Problem 1: Scrapfly CORS / Direct Fetch Rejection, Problem 2: Scrapfly 422 Unprocessable Entity, Problem 3: Extracted Job Description Format, Problem 4: Jina AI Extractor Boilerplate Noise, Problem 5: Indeed/Cloudflare 403 Forbidden (Jina AI), Problem 6: Mobile Copy-Paste URLs Contained Surrounding Text / Description
 
 ### Community 41 - "Community 41"
 Cohesion: 0.13
@@ -343,8 +347,8 @@ Cohesion: 0.20
 Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
 
 ### Community 71 - "Community 71"
-Cohesion: 0.67
-Nodes (3): 9. Localization & UI Workflows, Problem 1: French Hardcoded Strings Leaking into English UI, Problem 2: Missing Application Creation on Manual Paste
+Cohesion: 0.50
+Nodes (4): 9. Localization & UI Workflows, Problem 1: French Hardcoded Strings Leaking into English UI, Problem 2: Missing Application Creation on Manual Paste, Problem 3: Invisible/Transparent Buttons in the Batch UI & Low-Contrast Dashboard Actions
 
 ### Community 72 - "Community 72"
 Cohesion: 0.17
@@ -371,17 +375,29 @@ Cohesion: 0.67
 Nodes (3): 10. Concurrency and Rate Limiting in Batch Processing, Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing
 
 ### Community 82 - "Community 82"
-Cohesion: 0.50
-Nodes (4): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement
+Cohesion: 0.40
+Nodes (5): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement, Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)
 
 ### Community 84 - "Community 84"
 Cohesion: 0.67
 Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
 
+### Community 91 - "Community 91"
+Cohesion: 0.20
+Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
+
+### Community 92 - "Community 92"
+Cohesion: 0.20
+Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
+
+### Community 93 - "Community 93"
+Cohesion: 0.22
+Nodes (9): job, clear, extract, jina, placeholder, scrapfly, scrapling, title (+1 more)
+
 ## Knowledge Gaps
-- **735 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+730 more)
+- **738 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+733 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -390,13 +406,13 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 83`, `Community 59`, `Community 62`?**
   _High betweenness centrality (0.060) - this node is a cross-community bridge._
-- **Why does `templates` connect `Community 23` to `Community 3`?**
+- **Why does `templates` connect `Community 23` to `Community 94`?**
   _High betweenness centrality (0.058) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _735 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _738 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.12554112554112554 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

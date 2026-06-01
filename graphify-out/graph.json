@@ -855,7 +855,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "id": "src_main_jsx",
-      "community": 3,
+      "community": 94,
       "norm_label": "main.jsx"
     },
     {
@@ -864,7 +864,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L10",
       "id": "src_main_renderapp",
-      "community": 3,
+      "community": 94,
       "norm_label": "renderapp()"
     },
     {
@@ -873,7 +873,7 @@
       "source_file": "src/i18n.js",
       "source_location": "L1",
       "id": "src_i18n_js",
-      "community": 3,
+      "community": 94,
       "norm_label": "i18n.js"
     },
     {
@@ -3519,7 +3519,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L1",
       "id": "src_locales_en_json",
-      "community": 3,
+      "community": 94,
       "norm_label": "en.json"
     },
     {
@@ -3528,7 +3528,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L2",
       "id": "locales_en_header",
-      "community": 3,
+      "community": 94,
       "norm_label": "header"
     },
     {
@@ -3537,7 +3537,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L3",
       "id": "locales_en_header_apikeyplaceholder",
-      "community": 3,
+      "community": 94,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -3546,7 +3546,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L5",
       "id": "locales_en_tabs",
-      "community": 3,
+      "community": 92,
       "norm_label": "tabs"
     },
     {
@@ -3555,7 +3555,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L6",
       "id": "locales_en_tabs_dashboard",
-      "community": 3,
+      "community": 92,
       "norm_label": "dashboard"
     },
     {
@@ -3564,7 +3564,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L7",
       "id": "locales_en_tabs_prompts",
-      "community": 3,
+      "community": 92,
       "norm_label": "prompts"
     },
     {
@@ -3573,7 +3573,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L8",
       "id": "locales_en_tabs_aiassistant",
-      "community": 3,
+      "community": 92,
       "norm_label": "aiassistant"
     },
     {
@@ -3582,7 +3582,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L9",
       "id": "locales_en_tabs_joboffer",
-      "community": 3,
+      "community": 92,
       "norm_label": "joboffer"
     },
     {
@@ -3591,7 +3591,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L10",
       "id": "locales_en_tabs_mycv",
-      "community": 3,
+      "community": 92,
       "norm_label": "mycv"
     },
     {
@@ -3600,7 +3600,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L11",
       "id": "locales_en_tabs_pdfmaker",
-      "community": 3,
+      "community": 92,
       "norm_label": "pdfmaker"
     },
     {
@@ -3609,7 +3609,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L12",
       "id": "locales_en_tabs_atstest",
-      "community": 3,
+      "community": 92,
       "norm_label": "atstest"
     },
     {
@@ -3618,7 +3618,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L13",
       "id": "locales_en_tabs_batch",
-      "community": 3,
+      "community": 92,
       "norm_label": "batch"
     },
     {
@@ -3627,7 +3627,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L14",
       "id": "locales_en_tabs_documents",
-      "community": 3,
+      "community": 92,
       "norm_label": "documents"
     },
     {
@@ -4797,7 +4797,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L160",
       "id": "locales_en_job",
-      "community": 3,
+      "community": 93,
       "norm_label": "job"
     },
     {
@@ -4806,7 +4806,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L161",
       "id": "locales_en_job_title",
-      "community": 3,
+      "community": 93,
       "norm_label": "title"
     },
     {
@@ -4815,7 +4815,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L162",
       "id": "locales_en_job_clear",
-      "community": 3,
+      "community": 93,
       "norm_label": "clear"
     },
     {
@@ -4824,7 +4824,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L163",
       "id": "locales_en_job_jina",
-      "community": 3,
+      "community": 93,
       "norm_label": "jina"
     },
     {
@@ -4833,7 +4833,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L164",
       "id": "locales_en_job_scrapfly",
-      "community": 3,
+      "community": 93,
       "norm_label": "scrapfly"
     },
     {
@@ -4842,7 +4842,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L165",
       "id": "locales_en_job_scrapling",
-      "community": 3,
+      "community": 93,
       "norm_label": "scrapling"
     },
     {
@@ -4851,7 +4851,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L166",
       "id": "locales_en_job_urlplaceholder",
-      "community": 3,
+      "community": 93,
       "norm_label": "urlplaceholder"
     },
     {
@@ -4860,7 +4860,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L167",
       "id": "locales_en_job_extract",
-      "community": 3,
+      "community": 93,
       "norm_label": "extract"
     },
     {
@@ -4869,7 +4869,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L168",
       "id": "locales_en_job_placeholder",
-      "community": 3,
+      "community": 93,
       "norm_label": "placeholder"
     },
     {
@@ -4878,7 +4878,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L170",
       "id": "locales_en_cv",
-      "community": 3,
+      "community": 91,
       "norm_label": "cv"
     },
     {
@@ -4887,7 +4887,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L171",
       "id": "locales_en_cv_templatetitle",
-      "community": 3,
+      "community": 91,
       "norm_label": "templatetitle"
     },
     {
@@ -4896,7 +4896,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L172",
       "id": "locales_en_cv_templatedesc",
-      "community": 3,
+      "community": 91,
       "norm_label": "templatedesc"
     },
     {
@@ -4905,7 +4905,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L173",
       "id": "locales_en_cv_originaltitle",
-      "community": 3,
+      "community": 91,
       "norm_label": "originaltitle"
     },
     {
@@ -4914,7 +4914,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L174",
       "id": "locales_en_cv_importbtn",
-      "community": 3,
+      "community": 91,
       "norm_label": "importbtn"
     },
     {
@@ -4923,7 +4923,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L175",
       "id": "locales_en_cv_importing",
-      "community": 3,
+      "community": 91,
       "norm_label": "importing"
     },
     {
@@ -4932,7 +4932,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L176",
       "id": "locales_en_cv_resetfake",
-      "community": 3,
+      "community": 91,
       "norm_label": "resetfake"
     },
     {
@@ -4941,7 +4941,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L177",
       "id": "locales_en_cv_generatedtitle",
-      "community": 3,
+      "community": 91,
       "norm_label": "generatedtitle"
     },
     {
@@ -4950,7 +4950,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L178",
       "id": "locales_en_cv_clear",
-      "community": 3,
+      "community": 91,
       "norm_label": "clear"
     },
     {
@@ -4959,7 +4959,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L179",
       "id": "locales_en_cv_generatedplaceholder",
-      "community": 3,
+      "community": 91,
       "norm_label": "generatedplaceholder"
     },
     {
@@ -7249,10 +7249,19 @@
       "norm_label": "problem 5: indeed/cloudflare 403 forbidden (jina ai)"
     },
     {
+      "label": "Problem 6: Mobile Copy-Paste URLs Contained Surrounding Text / Description",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L120",
+      "id": "ultimate_job_tool_troubleshooting_problem_6_mobile_copy_paste_urls_contained_surrounding_text_description",
+      "community": 40,
+      "norm_label": "problem 6: mobile copy-paste urls contained surrounding text / description"
+    },
+    {
       "label": "7. JSON Parsing from AI (ATS Tester)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L121",
+      "source_location": "L128",
       "id": "ultimate_job_tool_troubleshooting_7_json_parsing_from_ai_ats_tester",
       "community": 7,
       "norm_label": "7. json parsing from ai (ats tester)"
@@ -7261,7 +7270,7 @@
       "label": "Problem: AI Hallucinating Markdown in JSON Responses",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L123",
+      "source_location": "L130",
       "id": "ultimate_job_tool_troubleshooting_problem_ai_hallucinating_markdown_in_json_responses",
       "community": 7,
       "norm_label": "problem: ai hallucinating markdown in json responses"
@@ -7270,7 +7279,7 @@
       "label": "8. Database (Dexie.js) & Architecture Refactoring",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L134",
+      "source_location": "L141",
       "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
       "community": 84,
       "norm_label": "8. database (dexie.js) & architecture refactoring"
@@ -7279,7 +7288,7 @@
       "label": "Problem 1: Cascading Renders warning with `useEffect`",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L136",
+      "source_location": "L143",
       "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
       "community": 84,
       "norm_label": "problem 1: cascading renders warning with `useeffect`"
@@ -7288,7 +7297,7 @@
       "label": "Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L141",
+      "source_location": "L148",
       "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
       "community": 84,
       "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
@@ -7297,7 +7306,7 @@
       "label": "9. Graphify Knowledge Graph Generation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L146",
+      "source_location": "L153",
       "id": "ultimate_job_tool_troubleshooting_9_graphify_knowledge_graph_generation",
       "community": 64,
       "norm_label": "9. graphify knowledge graph generation"
@@ -7306,7 +7315,7 @@
       "label": "Problem 1: `openai` package missing during extraction",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L148",
+      "source_location": "L155",
       "id": "ultimate_job_tool_troubleshooting_problem_1_openai_package_missing_during_extraction",
       "community": 64,
       "norm_label": "problem 1: `openai` package missing during extraction"
@@ -7315,7 +7324,7 @@
       "label": "Problem 2: Corrupted Python Environment (Pydantic `version_short` ImportError)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L153",
+      "source_location": "L160",
       "id": "ultimate_job_tool_troubleshooting_problem_2_corrupted_python_environment_pydantic_version_short_importerror",
       "community": 64,
       "norm_label": "problem 2: corrupted python environment (pydantic `version_short` importerror)"
@@ -7324,7 +7333,7 @@
       "label": "code:bash (pip uninstall -y pydantic pydantic-core)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L157",
+      "source_location": "L164",
       "id": "ultimate_job_tool_troubleshooting_codeblock_1",
       "community": 64,
       "norm_label": "code:bash (pip uninstall -y pydantic pydantic-core)"
@@ -7333,7 +7342,7 @@
       "label": "10. Clerk + Supabase Integration Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L163",
+      "source_location": "L170",
       "id": "ultimate_job_tool_troubleshooting_10_clerk_supabase_integration_issues",
       "community": 32,
       "norm_label": "10. clerk + supabase integration issues"
@@ -7342,7 +7351,7 @@
       "label": "Problem 1: Vite Crash with `require()`",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L165",
+      "source_location": "L172",
       "id": "ultimate_job_tool_troubleshooting_problem_1_vite_crash_with_require",
       "community": 32,
       "norm_label": "problem 1: vite crash with `require()`"
@@ -7351,7 +7360,7 @@
       "label": "Problem 2: Supabase Client Instantiation Crash",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L170",
+      "source_location": "L177",
       "id": "ultimate_job_tool_troubleshooting_problem_2_supabase_client_instantiation_crash",
       "community": 32,
       "norm_label": "problem 2: supabase client instantiation crash"
@@ -7360,7 +7369,7 @@
       "label": "Problem 3: Dashboard Stuck on \"Chargement...\"",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L175",
+      "source_location": "L182",
       "id": "ultimate_job_tool_troubleshooting_problem_3_dashboard_stuck_on_chargement",
       "community": 32,
       "norm_label": "problem 3: dashboard stuck on \"chargement...\""
@@ -7369,7 +7378,7 @@
       "label": "Problem 4: Missing Clerk JWT Template & Invalid JWT Secret",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L182",
+      "source_location": "L189",
       "id": "ultimate_job_tool_troubleshooting_problem_4_missing_clerk_jwt_template_invalid_jwt_secret",
       "community": 32,
       "norm_label": "problem 4: missing clerk jwt template & invalid jwt secret"
@@ -7378,7 +7387,7 @@
       "label": "Problem 5: RLS Type Mismatch (`uuid = text`)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L189",
+      "source_location": "L196",
       "id": "ultimate_job_tool_troubleshooting_problem_5_rls_type_mismatch_uuid_text",
       "community": 32,
       "norm_label": "problem 5: rls type mismatch (`uuid = text`)"
@@ -7387,7 +7396,7 @@
       "label": "11. WSL2 Development Server Blank Page",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L194",
+      "source_location": "L201",
       "id": "ultimate_job_tool_troubleshooting_11_wsl2_development_server_blank_page",
       "community": 44,
       "norm_label": "11. wsl2 development server blank page"
@@ -7396,7 +7405,7 @@
       "label": "Problem 1: Vite 8 `allowedHosts` Syntax Change",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L196",
+      "source_location": "L203",
       "id": "ultimate_job_tool_troubleshooting_problem_1_vite_8_allowedhosts_syntax_change",
       "community": 44,
       "norm_label": "problem 1: vite 8 `allowedhosts` syntax change"
@@ -7405,7 +7414,7 @@
       "label": "Problem 2: WSL2 Port 5173 Forwarding Broken",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L201",
+      "source_location": "L208",
       "id": "ultimate_job_tool_troubleshooting_problem_2_wsl2_port_5173_forwarding_broken",
       "community": 44,
       "norm_label": "problem 2: wsl2 port 5173 forwarding broken"
@@ -7414,7 +7423,7 @@
       "label": "Problem 3: ClerkProvider Missing `publishableKey` Prop",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L211",
+      "source_location": "L218",
       "id": "ultimate_job_tool_troubleshooting_problem_3_clerkprovider_missing_publishablekey_prop",
       "community": 44,
       "norm_label": "problem 3: clerkprovider missing `publishablekey` prop"
@@ -7423,7 +7432,7 @@
       "label": "Problem 4: Application Data Disappearing on Refresh (Supabase Schema Sync)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L216",
+      "source_location": "L223",
       "id": "ultimate_job_tool_troubleshooting_problem_4_application_data_disappearing_on_refresh_supabase_schema_sync",
       "community": 44,
       "norm_label": "problem 4: application data disappearing on refresh (supabase schema sync)"
@@ -7432,7 +7441,7 @@
       "label": "9. Localization & UI Workflows",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L225",
+      "source_location": "L232",
       "id": "ultimate_job_tool_troubleshooting_9_localization_ui_workflows",
       "community": 71,
       "norm_label": "9. localization & ui workflows"
@@ -7441,7 +7450,7 @@
       "label": "Problem 1: French Hardcoded Strings Leaking into English UI",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L227",
+      "source_location": "L234",
       "id": "ultimate_job_tool_troubleshooting_problem_1_french_hardcoded_strings_leaking_into_english_ui",
       "community": 71,
       "norm_label": "problem 1: french hardcoded strings leaking into english ui"
@@ -7450,16 +7459,25 @@
       "label": "Problem 2: Missing Application Creation on Manual Paste",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L232",
+      "source_location": "L239",
       "id": "ultimate_job_tool_troubleshooting_problem_2_missing_application_creation_on_manual_paste",
       "community": 71,
       "norm_label": "problem 2: missing application creation on manual paste"
     },
     {
+      "label": "Problem 3: Invisible/Transparent Buttons in the Batch UI & Low-Contrast Dashboard Actions",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L244",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_invisible_transparent_buttons_in_the_batch_ui_low_contrast_dashboard_actions",
+      "community": 71,
+      "norm_label": "problem 3: invisible/transparent buttons in the batch ui & low-contrast dashboard actions"
+    },
+    {
       "label": "10. Concurrency and Rate Limiting in Batch Processing",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L237",
+      "source_location": "L253",
       "id": "ultimate_job_tool_troubleshooting_10_concurrency_and_rate_limiting_in_batch_processing",
       "community": 81,
       "norm_label": "10. concurrency and rate limiting in batch processing"
@@ -7468,7 +7486,7 @@
       "label": "Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L239",
+      "source_location": "L255",
       "id": "ultimate_job_tool_troubleshooting_problem_1_api_rate_limiting_error_429_during_parallel_request_spikes",
       "community": 81,
       "norm_label": "problem 1: api rate limiting (error 429) during parallel request spikes"
@@ -7477,7 +7495,7 @@
       "label": "Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L244",
+      "source_location": "L260",
       "id": "ultimate_job_tool_troubleshooting_problem_2_sequential_bottlenecks_in_multi_step_lifecycle_processing",
       "community": 81,
       "norm_label": "problem 2: sequential bottlenecks in multi-step lifecycle processing"
@@ -7486,7 +7504,7 @@
       "label": "11. Scrapling Scraper & Python Backend Integration",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L249",
+      "source_location": "L265",
       "id": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
       "community": 82,
       "norm_label": "11. scrapling scraper & python backend integration"
@@ -7495,7 +7513,7 @@
       "label": "Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L251",
+      "source_location": "L267",
       "id": "ultimate_job_tool_troubleshooting_problem_1_frontend_cannot_call_python_code_directly_cors_sandboxing",
       "community": 82,
       "norm_label": "problem 1: frontend cannot call python code directly (cors & sandboxing)"
@@ -7504,7 +7522,7 @@
       "label": "Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L255",
+      "source_location": "L271",
       "id": "ultimate_job_tool_troubleshooting_problem_2_fastapi_startup_failure_typeerror_router_init_got_an_unexpected_keyword_argument_on_startup",
       "community": 82,
       "norm_label": "problem 2: fastapi startup failure (`typeerror: router.__init__() got an unexpected keyword argument 'on_startup'`)"
@@ -7513,10 +7531,19 @@
       "label": "Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L260",
+      "source_location": "L276",
       "id": "ultimate_job_tool_troubleshooting_problem_3_playwright_patchright_missing_browser_executables_or_sudo_password_requirement",
       "community": 82,
       "norm_label": "problem 3: playwright/patchright missing browser executables or sudo password requirement"
+    },
+    {
+      "label": "Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L280",
+      "id": "ultimate_job_tool_troubleshooting_problem_4_scrapling_integration_on_production_server_vercel_host_local_python_helper",
+      "community": 82,
+      "norm_label": "problem 4: scrapling integration on production server (vercel host + local python helper)"
     },
     {
       "label": "BATCH_AI_GUIDE.md",
@@ -9691,9 +9718,9 @@
       "source_file": "scratch/scrapling_server.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_scrapling_server_py",
-      "target": "scratch_scrapling_server_scraperequest",
-      "confidence_score": 1.0
+      "target": "scratch_scrapling_server_scraperequest"
     },
     {
       "relation": "contains",
@@ -9701,9 +9728,9 @@
       "source_file": "scratch/scrapling_server.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_scrapling_server_py",
-      "target": "scratch_scrapling_server_scrape_url",
-      "confidence_score": 1.0
+      "target": "scratch_scrapling_server_scrape_url"
     },
     {
       "relation": "inherits",
@@ -9711,9 +9738,9 @@
       "source_file": "scratch/scrapling_server.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_scrapling_server_scraperequest",
-      "target": "basemodel",
-      "confidence_score": 1.0
+      "target": "basemodel"
     },
     {
       "relation": "contains",
@@ -9975,9 +10002,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "services_scraperservice_scrapewithscrapling",
-      "confidence_score": 1.0
+      "target": "services_scraperservice_scrapewithscrapling"
     },
     {
       "relation": "imports_from",
@@ -11940,9 +11967,9 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L168",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_fr_job",
-      "target": "locales_fr_job_scrapling",
-      "confidence_score": 1.0
+      "target": "locales_fr_job_scrapling"
     },
     {
       "relation": "contains",
@@ -14800,9 +14827,9 @@
       "source_file": "src/locales/en.json",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "locales_en_job",
-      "target": "locales_en_job_scrapling",
-      "confidence_score": 1.0
+      "target": "locales_en_job_scrapling"
     },
     {
       "relation": "contains",
@@ -16433,9 +16460,9 @@
       "source_file": "src/services/scraperService.js",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_services_scraperservice_js",
-      "target": "services_scraperservice_scrapewithscrapling",
-      "confidence_score": 1.0
+      "target": "services_scraperservice_scrapewithscrapling"
     },
     {
       "relation": "contains",
@@ -16518,9 +16545,9 @@
       "source_file": "src/components/tabs/BatchTab.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_scraperservice_scrapewithscrapling",
-      "confidence_score": 1.0
+      "target": "services_scraperservice_scrapewithscrapling"
     },
     {
       "relation": "contains",
@@ -17989,9 +18016,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L249",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration"
     },
     {
       "relation": "contains",
@@ -18152,6 +18179,16 @@
       "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
       "target": "ultimate_job_tool_troubleshooting_problem_5_indeed_cloudflare_403_forbidden_jina_ai"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_6_job_posting_scraper_jina_ai_scrapfly_issues",
+      "target": "ultimate_job_tool_troubleshooting_problem_6_mobile_copy_paste_urls_contained_surrounding_text_description",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -18327,6 +18364,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L244",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_9_localization_ui_workflows",
+      "target": "ultimate_job_tool_troubleshooting_problem_3_invisible_transparent_buttons_in_the_batch_ui_low_contrast_dashboard_actions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
       "source_location": "L239",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -18349,9 +18396,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L251",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_frontend_cannot_call_python_code_directly_cors_sandboxing",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_problem_1_frontend_cannot_call_python_code_directly_cors_sandboxing"
     },
     {
       "relation": "contains",
@@ -18359,9 +18406,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L255",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_fastapi_startup_failure_typeerror_router_init_got_an_unexpected_keyword_argument_on_startup",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_problem_2_fastapi_startup_failure_typeerror_router_init_got_an_unexpected_keyword_argument_on_startup"
     },
     {
       "relation": "contains",
@@ -18369,8 +18416,18 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L260",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
-      "target": "ultimate_job_tool_troubleshooting_problem_3_playwright_patchright_missing_browser_executables_or_sudo_password_requirement",
+      "target": "ultimate_job_tool_troubleshooting_problem_3_playwright_patchright_missing_browser_executables_or_sudo_password_requirement"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
+      "target": "ultimate_job_tool_troubleshooting_problem_4_scrapling_integration_on_production_server_vercel_host_local_python_helper",
       "confidence_score": 1.0
     },
     {
@@ -18929,9 +18986,9 @@
       "source_file": "README.md",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_ultimate_job_tool",
-      "target": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup"
     },
     {
       "relation": "contains",
@@ -18999,9 +19056,9 @@
       "source_file": "README.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
-      "target": "ultimate_job_tool_readme_codeblock_4",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_readme_codeblock_4"
     },
     {
       "relation": "contains",
@@ -19009,9 +19066,9 @@
       "source_file": "README.md",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_readme_scrapling_local_scraper_server_setup",
-      "target": "ultimate_job_tool_readme_codeblock_5",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_readme_codeblock_5"
     },
     {
       "relation": "contains",
@@ -19019,9 +19076,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_md",
-      "target": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin"
     },
     {
       "relation": "contains",
@@ -19029,9 +19086,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_md",
-      "target": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_technicien_support_informatique_f_h_58"
     },
     {
       "relation": "contains",
@@ -19039,9 +19096,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
-      "target": "scratch_jina_4420434397_technicien_support_informatique_f_h",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_technicien_support_informatique_f_h"
     },
     {
       "relation": "contains",
@@ -19049,9 +19106,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_brest_en_vue_hiring_technicien_support_informatique_f_h_in_brest_brittany_france_linkedin",
-      "target": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job"
     },
     {
       "relation": "contains",
@@ -19059,9 +19116,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_brest_en_vue_https_fr_linkedin_com_company_brestenvue_trk_public_jobs_topcard_org_name_brest_brittany_france",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_brest_en_vue_https_fr_linkedin_com_company_brestenvue_trk_public_jobs_topcard_org_name_brest_brittany_france"
     },
     {
       "relation": "contains",
@@ -19069,9 +19126,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job_71",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job_71"
     },
     {
       "relation": "contains",
@@ -19079,9 +19136,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_sign_in_to_access_ai_powered_advices",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_sign_in_to_access_ai_powered_advices"
     },
     {
       "relation": "contains",
@@ -19089,9 +19146,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_sign_in_to_evaluate_your_skills",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_sign_in_to_evaluate_your_skills"
     },
     {
       "relation": "contains",
@@ -19099,9 +19156,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_sign_in_to_tailor_your_resume",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_sign_in_to_tailor_your_resume"
     },
     {
       "relation": "contains",
@@ -19109,9 +19166,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_similar_jobs",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_similar_jobs"
     },
     {
       "relation": "contains",
@@ -19119,9 +19176,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L359",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_people_also_viewed",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_people_also_viewed"
     },
     {
       "relation": "contains",
@@ -19129,9 +19186,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L412",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_similar_searches",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_similar_searches"
     },
     {
       "relation": "contains",
@@ -19139,9 +19196,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L437",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_explore_top_content_on_linkedin",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_explore_top_content_on_linkedin"
     },
     {
       "relation": "contains",
@@ -19149,9 +19206,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L565",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_technicien_support_informatique_f_h_58",
-      "target": "scratch_jina_4420434397_sign_in_to_see_who_you_already_know_at_brest_en_vue",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_sign_in_to_see_who_you_already_know_at_brest_en_vue"
     },
     {
       "relation": "contains",
@@ -19159,9 +19216,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_join_or_sign_in_to_find_your_next_job_71",
-      "target": "scratch_jina_4420434397_use_ai_to_assess_how_you_fit",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_use_ai_to_assess_how_you_fit"
     },
     {
       "relation": "contains",
@@ -19169,9 +19226,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19179,9 +19236,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_228",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_brest_m\u00e9tropole_https_fr_linkedin_com_company_brestmetropole_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_228"
     },
     {
       "relation": "contains",
@@ -19189,9 +19246,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L233",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_chapsvision_https_fr_linkedin_com_company_chapsvision_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_chapsvision_https_fr_linkedin_com_company_chapsvision_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19199,9 +19256,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L238",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_stryker_https_www_linkedin_com_company_stryker_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_stryker_https_www_linkedin_com_company_stryker_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19209,9 +19266,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L243",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_epackpro_https_www_linkedin_com_company_epackpro_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_epackpro_https_www_linkedin_com_company_epackpro_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19219,9 +19276,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L248",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_expectra_https_fr_linkedin_com_company_expectra_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_expectra_https_fr_linkedin_com_company_expectra_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19229,9 +19286,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_naval_group_https_fr_linkedin_com_company_naval_group_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_naval_group_https_fr_linkedin_com_company_naval_group_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19239,9 +19296,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L258",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_vflit_vous_faciliter_l_it_https_fr_linkedin_com_company_vflit_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_vflit_vous_faciliter_l_it_https_fr_linkedin_com_company_vflit_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19249,9 +19306,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L263",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_leroy_merlin_https_fr_linkedin_com_company_leroy_merlin_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_leroy_merlin_https_fr_linkedin_com_company_leroy_merlin_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19259,9 +19316,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L268",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_gtd_international_https_fr_linkedin_com_company_gtd_international_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_gtd_international_https_fr_linkedin_com_company_gtd_international_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19269,9 +19326,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19279,9 +19336,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L278",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19289,9 +19346,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L283",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_283",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_thales_https_fr_linkedin_com_company_thales_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_283"
     },
     {
       "relation": "contains",
@@ -19299,9 +19356,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_toyota_material_handling_france_https_fr_linkedin_com_company_toyota_material_handling_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_toyota_material_handling_france_https_fr_linkedin_com_company_toyota_material_handling_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19309,9 +19366,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L293",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_oriance_menuiseries_https_fr_linkedin_com_company_oriance_menuiseries_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_oriance_menuiseries_https_fr_linkedin_com_company_oriance_menuiseries_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19319,9 +19376,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L298",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_fortil_https_fr_linkedin_com_company_fortil_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_fortil_https_fr_linkedin_com_company_fortil_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19329,9 +19386,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L303",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_303",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_belmet_https_fr_linkedin_com_company_belmet_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_303"
     },
     {
       "relation": "contains",
@@ -19339,9 +19396,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L308",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19349,9 +19406,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L313",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_astek_https_fr_linkedin_com_company_astek_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_astek_https_fr_linkedin_com_company_astek_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19359,9 +19416,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L318",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_edf_https_fr_linkedin_com_company_edf_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_edf_https_fr_linkedin_com_company_edf_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19369,9 +19426,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L323",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_hr_path_https_fr_linkedin_com_company_hr_path_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_hr_path_https_fr_linkedin_com_company_hr_path_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19379,9 +19436,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L328",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_extia_https_fr_linkedin_com_company_extia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_extia_https_fr_linkedin_com_company_extia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19389,9 +19446,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L333",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_clauger_https_fr_linkedin_com_company_clauger_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_clauger_https_fr_linkedin_com_company_clauger_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19399,9 +19456,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L338",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_ratp_dev_france_suisse_https_fr_linkedin_com_company_ratp_dev_france_suisse_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_ratp_dev_france_suisse_https_fr_linkedin_com_company_ratp_dev_france_suisse_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19409,9 +19466,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L343",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_shom_https_fr_linkedin_com_company_shom_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_shom_https_fr_linkedin_com_company_shom_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19419,9 +19476,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L348",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_pennylane_https_fr_linkedin_com_company_pennylaneaccounting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_pennylane_https_fr_linkedin_com_company_pennylaneaccounting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19429,9 +19486,9 @@
       "source_file": "scratch/jina_4420434397.md",
       "source_location": "L353",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4420434397_similar_jobs",
-      "target": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_353",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4420434397_ceva_sante_animale_https_fr_linkedin_com_company_ceva_sante_animale_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_353"
     },
     {
       "relation": "contains",
@@ -19439,9 +19496,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_md",
-      "target": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin"
     },
     {
       "relation": "contains",
@@ -19449,9 +19506,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_md",
-      "target": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60"
     },
     {
       "relation": "contains",
@@ -19459,9 +19516,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
-      "target": "scratch_jina_4421403555_technicien_support_proximit\u00e9",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_technicien_support_proximit\u00e9"
     },
     {
       "relation": "contains",
@@ -19469,9 +19526,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_metaline_hiring_technicien_support_proximit\u00e9_in_caen_normandy_france_linkedin",
-      "target": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job"
     },
     {
       "relation": "contains",
@@ -19479,9 +19536,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_metaline_https_fr_linkedin_com_company_metaline_entreprise_trk_public_jobs_topcard_org_name_caen_normandy_france",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_metaline_https_fr_linkedin_com_company_metaline_entreprise_trk_public_jobs_topcard_org_name_caen_normandy_france"
     },
     {
       "relation": "contains",
@@ -19489,9 +19546,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job_73",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_join_or_sign_in_to_find_your_next_job_73"
     },
     {
       "relation": "contains",
@@ -19499,9 +19556,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_similar_jobs",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_similar_jobs"
     },
     {
       "relation": "contains",
@@ -19509,9 +19566,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L312",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_people_also_viewed",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_people_also_viewed"
     },
     {
       "relation": "contains",
@@ -19519,9 +19576,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L365",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_similar_searches",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_similar_searches"
     },
     {
       "relation": "contains",
@@ -19529,9 +19586,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L380",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_explore_top_content_on_linkedin",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_explore_top_content_on_linkedin"
     },
     {
       "relation": "contains",
@@ -19539,9 +19596,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L510",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_technicien_support_proximit\u00e9_60",
-      "target": "scratch_jina_4421403555_sign_in_to_see_who_you_already_know_at_metaline",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_sign_in_to_see_who_you_already_know_at_metaline"
     },
     {
       "relation": "contains",
@@ -19549,9 +19606,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_meiko_france_https_fr_linkedin_com_company_meiko_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_meiko_france_https_fr_linkedin_com_company_meiko_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19559,9 +19616,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_cnam_https_fr_linkedin_com_company_cnam_caisse_nationale_assurance_maladie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_cnam_https_fr_linkedin_com_company_cnam_caisse_nationale_assurance_maladie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19569,9 +19626,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L170",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_quadria_https_fr_linkedin_com_company_heliaq_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_quadria_https_fr_linkedin_com_company_heliaq_france_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19579,9 +19636,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19589,9 +19646,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_innov_ia_https_fr_linkedin_com_company_innov_ia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_innov_ia_https_fr_linkedin_com_company_innov_ia_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19599,9 +19656,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19609,9 +19666,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L190",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_fayat_group_https_fr_linkedin_com_company_fayat_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_fayat_group_https_fr_linkedin_com_company_fayat_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19619,9 +19676,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L195",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_hako_france_https_fr_linkedin_com_company_hakofrance_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_hako_france_https_fr_linkedin_com_company_hakofrance_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19629,9 +19686,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19639,9 +19696,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L205",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_nonstop_consulting_https_ch_linkedin_com_company_nonstop_consulting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_nonstop_consulting_https_ch_linkedin_com_company_nonstop_consulting_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19649,9 +19706,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L218",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19659,9 +19716,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19669,9 +19726,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_okwind_https_fr_linkedin_com_company_okwind_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_okwind_https_fr_linkedin_com_company_okwind_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19679,9 +19736,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L233",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_233",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_siemens_https_de_linkedin_com_company_siemens_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_233"
     },
     {
       "relation": "contains",
@@ -19689,9 +19746,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L238",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_prodeval_https_fr_linkedin_com_company_prodeval_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_prodeval_https_fr_linkedin_com_company_prodeval_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19699,9 +19756,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L243",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_netexial_https_fr_linkedin_com_company_netexial_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_netexial_https_fr_linkedin_com_company_netexial_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19709,9 +19766,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L248",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_elsan_https_fr_linkedin_com_company_elsan_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_elsan_https_fr_linkedin_com_company_elsan_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19719,9 +19776,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_253",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_france_travail_https_fr_linkedin_com_company_francetravail_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_253"
     },
     {
       "relation": "contains",
@@ -19729,9 +19786,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L258",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_258",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_vinci_https_fr_linkedin_com_company_vinci_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_258"
     },
     {
       "relation": "contains",
@@ -19739,9 +19796,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L263",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_263",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_universit\u00e9_de_caen_normandie_https_fr_linkedin_com_school_universite_de_caen_normandie_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_263"
     },
     {
       "relation": "contains",
@@ -19749,9 +19806,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L268",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_l_usine_nouvelle_https_fr_linkedin_com_company_l_usine_nouvelle_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_l_usine_nouvelle_https_fr_linkedin_com_company_l_usine_nouvelle_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19759,9 +19816,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_273",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_vinci_energies_https_fr_linkedin_com_company_vinci_energies_trk_public_jobs_similar_jobs_main_jobs_card_subtitle_273"
     },
     {
       "relation": "contains",
@@ -19769,9 +19826,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L278",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_ima_group_https_it_linkedin_com_company_imagroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_ima_group_https_it_linkedin_com_company_imagroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19779,9 +19836,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L283",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_accor_https_fr_linkedin_com_company_accor_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_accor_https_fr_linkedin_com_company_accor_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19789,9 +19846,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_groupe_barri\u00e8re_https_fr_linkedin_com_company_groupe_barriere_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_groupe_barri\u00e8re_https_fr_linkedin_com_company_groupe_barriere_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19799,9 +19856,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L301",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_the_adecco_group_https_ch_linkedin_com_company_theadeccogroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_the_adecco_group_https_ch_linkedin_com_company_theadeccogroup_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19809,9 +19866,9 @@
       "source_file": "scratch/jina_4421403555.md",
       "source_location": "L306",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_jina_4421403555_similar_jobs",
-      "target": "scratch_jina_4421403555_centurion_search_cabinet_de_recrutement_https_fr_linkedin_com_company_centurion_search_trk_public_jobs_similar_jobs_main_jobs_card_subtitle",
-      "confidence_score": 1.0
+      "target": "scratch_jina_4421403555_centurion_search_cabinet_de_recrutement_https_fr_linkedin_com_company_centurion_search_trk_public_jobs_similar_jobs_main_jobs_card_subtitle"
     },
     {
       "relation": "contains",
@@ -19935,5 +19992,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1b4b043c05c931ae63933b5ad0e48802c199759a"
+  "built_at_commit": "a3817c4ec804c50356490d8dd10efbe72f683a55"
 }
