@@ -637,7 +637,7 @@ ${desc.substring(0, 3000)}`;
           
           {/* QUEUE ACTIONS / ADD ITEM */}
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h2 className="text-lg font-bold text-slate-850 flex items-center gap-2">
+            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
               <Plus className="text-indigo-600 w-5 h-5" />
               Ajouter des offres
             </h2>
@@ -678,7 +678,7 @@ ${desc.substring(0, 3000)}`;
               <div className="space-y-4 pt-1">
                 {/* Single URL Input */}
                 <div className="space-y-1.5">
-                  <label className="text-xs text-slate-550 font-semibold flex items-center gap-1">
+                  <label className="text-xs text-slate-500 font-semibold flex items-center gap-1">
                     <Link className="w-3.5 h-3.5 text-indigo-500" /> Lien de l'offre (LinkedIn, Indeed, etc.)
                   </label>
                   <div className="flex gap-2">
@@ -704,7 +704,7 @@ ${desc.substring(0, 3000)}`;
                     />
                     <button 
                       onClick={() => handleAddItem('url')}
-                      className="bg-indigo-650 hover:bg-indigo-600 text-white rounded-lg px-3 py-2 text-sm font-semibold transition flex items-center justify-center shrink-0 shadow-sm"
+                      className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg px-3 py-2 text-sm font-semibold transition flex items-center justify-center shrink-0 shadow-sm"
                     >
                       Ajouter
                     </button>
@@ -719,8 +719,8 @@ ${desc.substring(0, 3000)}`;
 
                 {/* Single Text Description Area */}
                 <div className="space-y-1.5">
-                  <label className="text-xs text-slate-550 font-semibold flex items-center gap-1">
-                    <FileText className="w-3.5 h-3.5 text-indigo-550" /> Description de poste (Texte)
+                  <label className="text-xs text-slate-500 font-semibold flex items-center gap-1">
+                    <FileText className="w-3.5 h-3.5 text-indigo-500" /> Description de poste (Texte)
                   </label>
                   <textarea 
                     placeholder="Coller la description de poste ici..."
@@ -731,7 +731,7 @@ ${desc.substring(0, 3000)}`;
                   />
                   <button 
                     onClick={() => handleAddItem('text')}
-                    className="w-full bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-700 rounded-lg py-2 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm"
+                    className="w-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 rounded-lg py-2 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm"
                   >
                     <Plus className="w-4 h-4" /> Ajouter ce texte
                   </button>
@@ -740,7 +740,7 @@ ${desc.substring(0, 3000)}`;
             ) : (
               <div className="space-y-3 pt-1">
                 <div className="space-y-1.5">
-                  <label className="text-xs text-slate-550 font-semibold">
+                  <label className="text-xs text-slate-500 font-semibold">
                     Coller une liste d'URLs (1 par ligne) ou de textes (séparés par <code className="bg-slate-100 px-1 py-0.5 rounded text-indigo-600">---</code>)
                   </label>
                   <textarea 
@@ -753,7 +753,7 @@ ${desc.substring(0, 3000)}`;
                 </div>
                 <button 
                   onClick={handleBulkImport}
-                  className="w-full bg-indigo-650 hover:bg-indigo-600 text-white rounded-lg py-2.5 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg py-2.5 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm"
                 >
                   <Stack className="w-4 h-4" /> Importer la liste
                 </button>
@@ -763,7 +763,7 @@ ${desc.substring(0, 3000)}`;
 
           {/* RUN CONFIG PANEL */}
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h2 className="text-lg font-bold text-slate-850 flex items-center gap-2">
+            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
               <Terminal className="text-indigo-600 w-5 h-5" />
               Stratégies IA à lancer
             </h2>
@@ -782,7 +782,7 @@ ${desc.substring(0, 3000)}`;
                     type="checkbox"
                     checked={selectedTemplates.includes(template.id)}
                     onChange={() => toggleTemplateSelection(template.id)}
-                    className="mt-0.5 rounded text-indigo-650 focus:ring-indigo-500 border-slate-350"
+                    className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
                   />
                   <div>
                     <div className="text-xs font-semibold">{template.title}</div>
@@ -798,7 +798,7 @@ ${desc.substring(0, 3000)}`;
                   type="checkbox"
                   checked={autoCompile}
                   onChange={(e) => setAutoCompile(e.target.checked)}
-                  className="rounded text-indigo-600 focus:ring-indigo-500 border-slate-350"
+                  className="rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
                 />
                 <span className="text-xs font-bold">Compiler les documents en PDF</span>
               </label>
@@ -813,7 +813,7 @@ ${desc.substring(0, 3000)}`;
                       type="checkbox"
                       checked={autoDownload}
                       onChange={(e) => setAutoDownload(e.target.checked)}
-                      className="rounded text-indigo-600 focus:ring-indigo-500 border-slate-350"
+                      className="rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
                     />
                     <span className="text-xs font-bold">Télécharger automatiquement après génération</span>
                   </label>
@@ -839,7 +839,7 @@ ${desc.substring(0, 3000)}`;
                 className={`px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-sm transition-all duration-200 ${
                   isPlaying 
                     ? 'bg-amber-600 hover:bg-amber-500 text-white' 
-                    : 'bg-indigo-650 hover:bg-indigo-600 text-white'
+                    : 'bg-indigo-600 hover:bg-indigo-700 text-white'
                 }`}
               >
                 {isPlaying ? (
@@ -857,7 +857,7 @@ ${desc.substring(0, 3000)}`;
 
               <button 
                 onClick={handleClearAll}
-                className="bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-600 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all flex items-center justify-center shadow-sm"
+                className="bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-600 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all flex items-center justify-center shadow-sm"
                 title="Vider la pile"
               >
                 <ArrowCounterClockwise className="w-4 h-4 font-bold" />
@@ -887,7 +887,7 @@ ${desc.substring(0, 3000)}`;
 
           {/* REAL-TIME LOG CONSOLE */}
           <div className="bg-slate-950 rounded-2xl border border-slate-900 overflow-hidden shadow-md">
-            <div className="bg-slate-900 px-4 py-2.5 border-b border-slate-850 flex items-center justify-between text-xs text-slate-400 font-bold">
+            <div className="bg-slate-900 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs text-slate-400 font-bold">
               <span className="flex items-center gap-2">
                 <span className={`w-2.5 h-2.5 rounded-full ${isPlaying ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`}></span>
                 CONSOLE D'EXÉCUTION IA
@@ -905,7 +905,7 @@ ${desc.substring(0, 3000)}`;
               className="p-4 font-mono text-[11px] text-slate-300 h-40 overflow-y-auto space-y-1.5 scrollbar-thin"
             >
               {logs.length === 0 ? (
-                <div className="text-slate-650 italic">Console prête. En attente du démarrage du traitement...</div>
+                <div className="text-slate-600 italic">Console prête. En attente du démarrage du traitement...</div>
               ) : (
                 logs.map((log, index) => (
                   <div key={index} className="leading-relaxed whitespace-pre-wrap">
@@ -933,14 +933,14 @@ ${desc.substring(0, 3000)}`;
 
           {/* QUEUE LIST VIEW */}
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h2 className="text-lg font-bold text-slate-850 flex items-center gap-2">
+            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
               <Stack className="text-indigo-600 w-5 h-5" />
               Pile d'attente ({items.length} offres)
             </h2>
 
             {items.length === 0 ? (
               <div className="text-center py-8 text-slate-400 border-2 border-dashed border-slate-200 rounded-xl bg-slate-50/50">
-                <FileText className="w-10 h-10 mx-auto text-slate-350 mb-2" />
+                <FileText className="w-10 h-10 mx-auto text-slate-300 mb-2" />
                 <div className="text-sm font-semibold">Aucune offre dans la pile</div>
                 <div className="text-xs text-slate-500 mt-1">Ajoutez des liens ou du texte pour commencer.</div>
               </div>
@@ -953,12 +953,12 @@ ${desc.substring(0, 3000)}`;
                       key={item.id}
                       className={`relative flex flex-col md:flex-row items-start md:items-center justify-between p-4 rounded-xl border transition-all duration-200 ${
                         isActive 
-                          ? 'bg-indigo-50/20 border-indigo-300 shadow-sm shadow-indigo-650/5 animate-pulse' 
+                          ? 'bg-indigo-50/20 border-indigo-300 shadow-sm shadow-indigo-600/5 animate-pulse' 
                           : item.status === 'completed'
                             ? 'bg-emerald-50/30 border-emerald-100/70 hover:border-emerald-200'
                             : item.status === 'failed'
                               ? 'bg-rose-50/30 border-rose-100/70'
-                              : 'bg-slate-50/30 border-slate-200/80 hover:border-slate-250'
+                              : 'bg-slate-50/30 border-slate-200/80 hover:border-slate-300'
                       }`}
                     >
                       {/* Left: Info */}
@@ -974,7 +974,7 @@ ${desc.substring(0, 3000)}`;
                             item.status === 'scraping' ? 'bg-blue-50 text-blue-600 border-blue-200 animate-pulse' :
                             item.status === 'extracting' ? 'bg-indigo-50 text-indigo-600 border-indigo-200 animate-pulse' :
                             item.status === 'generating' ? 'bg-purple-50 text-purple-600 border-purple-200 animate-pulse' :
-                            item.status === 'compiling' ? 'bg-pink-50 text-pink-650 border-pink-200 animate-pulse' :
+                            item.status === 'compiling' ? 'bg-pink-50 text-pink-600 border-pink-200 animate-pulse' :
                             item.status === 'completed' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
                             'bg-rose-50 text-rose-700 border-rose-200'
                           }`}>
@@ -991,7 +991,7 @@ ${desc.substring(0, 3000)}`;
                         {/* Title and Company */}
                         <div className="pt-1.5 truncate">
                           {item.type === 'url' && !item.jobTitle ? (
-                            <div className="text-xs text-indigo-650 font-mono font-medium truncate max-w-xl flex items-center gap-1.5" title={item.input}>
+                            <div className="text-xs text-indigo-600 font-mono font-medium truncate max-w-xl flex items-center gap-1.5" title={item.input}>
                               <Link className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
                               {item.input}
                             </div>
@@ -1035,7 +1035,7 @@ ${desc.substring(0, 3000)}`;
                               setActiveAppId(item.appId);
                               setActiveTab('dashboard');
                             }}
-                            className="text-xs text-indigo-650 hover:text-white flex items-center gap-1 bg-indigo-50 hover:bg-indigo-600 border border-indigo-150 px-3 py-1.5 rounded-lg transition-all"
+                            className="text-xs text-indigo-600 hover:text-white flex items-center gap-1 bg-indigo-50 hover:bg-indigo-600 border border-indigo-200 px-3 py-1.5 rounded-lg transition-all"
                           >
                             <ArrowSquareOut className="w-3 h-3" />
                             Ouvrir
@@ -1045,7 +1045,7 @@ ${desc.substring(0, 3000)}`;
                         <button 
                           onClick={(e) => handleDeleteItem(item.id, e)}
                           disabled={isActive}
-                          className={`text-slate-400 hover:text-rose-600 p-2 rounded-lg transition-all ${isActive ? 'opacity-30 cursor-not-allowed' : 'hover:bg-slate-100'}`}
+                          className={`text-slate-500 hover:text-rose-600 p-2 rounded-lg transition-all ${isActive ? 'opacity-30 cursor-not-allowed' : 'hover:bg-slate-100'}`}
                           title="Supprimer de la liste"
                         >
                           <Trash className="w-4 h-4" />
