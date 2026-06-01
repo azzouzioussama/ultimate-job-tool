@@ -26,7 +26,7 @@
  */
 
 
-import { User, Sparkles, Upload, Loader2, CheckCircle2 } from 'lucide-react';
+import { User, Sparkles, Upload, Loader2, CheckCircle2, Save, FolderOpen } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import CV_TEMPLATES from '../../constants/cvTemplates';
 
@@ -40,6 +40,8 @@ export default function MyCvTab({
   isUploadingCv,
   selectedCvTemplateId,
   onSelectedCvTemplateIdChange,
+  onSaveAsGeneralCv,
+  onLoadGeneralCv,
 }) {
   const { t } = useTranslation();
   return (
@@ -90,7 +92,7 @@ export default function MyCvTab({
         {/* ── Left: Original CV ─────────────────────────────────────────── */}
         <div className="flex flex-col h-[50vh] lg:h-[75vh] bg-white rounded-2xl shadow-sm border border-slate-200">
           <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center flex-wrap gap-2">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               <h2 className="text-sm font-semibold flex items-center gap-2">
                 <User size={16} className="text-slate-500" /> {t('cv.originalTitle', 'CV Original (Source)')}
               </h2>
@@ -106,6 +108,24 @@ export default function MyCvTab({
                   disabled={isUploadingCv}
                 />
               </label>
+              {/* Save General CV button */}
+              <button
+                onClick={onSaveAsGeneralCv}
+                title={t('cv.saveGeneralTooltip', 'Enregistrer ce CV comme votre modèle général par défaut')}
+                className="text-xs font-medium text-emerald-600 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-2 py-1.5 rounded-md flex items-center gap-1.5 transition-colors"
+              >
+                <Save size={12} />
+                {t('cv.saveGeneral', 'Définir comme CV Général')}
+              </button>
+              {/* Load General CV button */}
+              <button
+                onClick={onLoadGeneralCv}
+                title={t('cv.loadGeneralTooltip', 'Charger votre CV général enregistré')}
+                className="text-xs font-medium text-amber-600 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2 py-1.5 rounded-md flex items-center gap-1.5 transition-colors"
+              >
+                <FolderOpen size={12} />
+                {t('cv.loadGeneral', 'Charger CV Général')}
+              </button>
             </div>
             <button
               onClick={onResetToSynthetic}

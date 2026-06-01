@@ -7,7 +7,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useDatabase } from '../../hooks/useDatabase';
-import { Plus, Trash2, Briefcase, Calendar, ChevronRight, ChevronDown, Download, Edit3, FileText, FileDown, FileCode2 } from 'lucide-react';
+import { Plus, Trash2, Briefcase, Calendar, ChevronRight, ChevronDown, Download, Edit3, FileText, FileDown, FileCode2, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 
@@ -39,7 +39,7 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
       companyName: newCompany.trim(),
       jobTitle: newJobTitle.trim(),
       jobDescription: '',
-      cvOriginal: '',
+      cvOriginal: localStorage.getItem('ujt_general_cv') || '',
       cvGenerated: ''
     });
 
@@ -205,16 +205,16 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse whitespace-nowrap">
+          <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-xs text-slate-500 uppercase tracking-wider">
-                <th className="p-4 font-semibold rounded-tl-xl">{t('dashboard.table.date', 'Date')}</th>
-                <th className="p-4 font-semibold">{t('dashboard.table.jobTitle', 'Objectif / Poste')}</th>
-                <th className="p-4 font-semibold">{t('dashboard.table.company', 'Entreprise')}</th>
-                <th className="p-4 font-semibold text-center">{t('dashboard.table.status', 'Statut')}</th>
-                <th className="p-4 font-semibold text-center">{t('dashboard.table.atsBefore', 'ATS Avant')}</th>
-                <th className="p-4 font-semibold text-center">{t('dashboard.table.atsAfter', 'ATS Après')}</th>
-                <th className="p-4 font-semibold text-right rounded-tr-xl">{t('dashboard.table.actions', 'Actions')}</th>
+                <th className="p-4 font-semibold rounded-tl-xl whitespace-nowrap">{t('dashboard.table.date', 'Date')}</th>
+                <th className="p-4 font-semibold w-2/5 min-w-[200px]">{t('dashboard.table.jobTitle', 'Objectif / Poste')}</th>
+                <th className="p-4 font-semibold w-1/5 min-w-[150px]">{t('dashboard.table.company', 'Entreprise')}</th>
+                <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.status', 'Statut')}</th>
+                <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.atsBefore', 'ATS Avant')}</th>
+                <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.atsAfter', 'ATS Après')}</th>
+                <th className="p-4 font-semibold text-right rounded-tr-xl whitespace-nowrap">{t('dashboard.table.actions', 'Actions')}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -224,22 +224,34 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                     onClick={() => setExpandedAppId(prev => prev === app.id ? null : app.id)}
                     className="hover:bg-slate-50 cursor-pointer transition-colors group border-b border-slate-50"
                   >
-                    <td className="p-4 text-xs text-slate-500">
+                    <td className="p-4 text-xs text-slate-500 whitespace-nowrap">
                       <div className="flex items-center gap-2">
                         {expandedAppId === app.id ? <ChevronDown size={14} className="text-slate-400"/> : <ChevronRight size={14} className="text-slate-400"/>}
                         {formatDate(app.lastGeneratedDate || app.lastUpdated)}
                       </div>
                     </td>
-                    <td className="p-4 font-bold text-slate-800">
-                      <div className="flex items-center gap-2">
-                        <Briefcase size={16} className="text-indigo-400" />
-                        {app.jobTitle}
+                    <td className="p-4 font-bold text-slate-800 break-words">
+                      <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap">
+                        <Briefcase size={16} className="text-indigo-400 shrink-0" />
+                        <span className="break-words">{app.jobTitle}</span>
+                        {app.jobUrl && (
+                          <a 
+                            href={app.jobUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            onClick={e => e.stopPropagation()}
+                            className="text-indigo-600 hover:text-indigo-800 flex items-center p-1 rounded hover:bg-indigo-50 shrink-0"
+                            title={t('dashboard.openLink', 'Ouvrir le lien de l\'offre')}
+                          >
+                            <ExternalLink size={14} />
+                          </a>
+                        )}
                       </div>
                     </td>
-                    <td className="p-4 text-sm text-slate-600">
+                    <td className="p-4 text-sm text-slate-600 break-words">
                       {app.companyName || <span className="italic text-slate-400">{t('dashboard.noCompany', 'Projet libre')}</span>}
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="p-4 text-center whitespace-nowrap">
                       <select 
                         onClick={e => e.stopPropagation()} 
                         onChange={e => handleStatusChange(app.id, e.target.value, e)}
@@ -259,17 +271,17 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                         <option value="Rejected">{t('dashboard.status.rejected', 'Refusé')}</option>
                       </select>
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="p-4 text-center whitespace-nowrap">
                       {app.atsScoreBefore ? <span className="text-sm font-bold text-slate-600">{app.atsScoreBefore}%</span> : <span className="text-slate-300">-</span>}
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="p-4 text-center whitespace-nowrap">
                       {app.atsScoreAfter ? (
                         <span className="text-sm font-bold text-indigo-600">{app.atsScoreAfter}%</span>
                       ) : app.atsResult?.score ? (
                         <span className="text-sm font-bold text-indigo-600">{app.atsResult.score}%</span>
                       ) : <span className="text-slate-300">-</span>}
                     </td>
-                    <td className="p-4 text-right">
+                    <td className="p-4 text-right whitespace-nowrap">
                       <button 
                         onClick={(e) => handleDelete(app.id, e)}
                         className="text-slate-400 hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-red-50"

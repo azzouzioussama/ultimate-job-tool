@@ -287,5 +287,20 @@ pip install pydantic pydantic-core openai
 2. **CORS Activation**: Added full CORS middleware allowing all origins (`allow_origins=["*"]`) in the local FastAPI backend to enable smooth communication.
 3. **Local Architecture Design**: The Scrapling scraper remains a local helper service that the user runs on their computer (`python3 scratch/scrapling_server.py`) while browsing the app.
 
+## 12. General CV Storage & Batch AI LaTeX CV Generation
+
+### Problem 1: General/Default CV Missing or Reverting to Synthetic CV
+**Issue**: Users had to paste their CV LaTeX text repeatedly when creating new applications manually or via batch scraping, or the CV reverted to empty/the synthetic template.
+**Fix**: Added dedicated "Définir comme CV Général" (Save) and "Charger CV Général" (Load) buttons to [MyCvTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/MyCvTab.jsx) to persist the master LaTeX CV in `localStorage` under `ujt_general_cv`. When creating a new application in [DashboardTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DashboardTab.jsx) or running a batch scraping job in [BatchTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/BatchTab.jsx), the app automatically loads this saved general CV by default.
+
+### Problem 2: Batch-Generated LaTeX CV Not Appearing in Documents or Dashboard tabs
+**Issue**: After running batch AI scraping, the generated adapted CV could not be found anywhere in the Documents tab or Dashboard tab (it could only be downloaded during the batch run if the download checkbox was checked).
+**Cause**: The batch runner was saving the adapted CV content into the database's `cvGenerated` field, but only elements in the `documents` array and the `promptResponses` dictionary were being listed in the Documents and Dashboard tabs.
+**Fix**: Updated the batch worker in [BatchTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/BatchTab.jsx) to also push the generated CV text to the application's local `documents` list and `promptResponses` object under its template title. This instantly exposes it in both tabs for previewing, copying, or downloading.
+
+### Problem 3: Motivation Letters and Other Documents Generating as Plain Text and Failing PDF Compilation
+**Issue**: In batch runs, motivation letters and other prompt documents were generated as raw, plain-text markdown, which caused the PDF compiler (TeXLive) to throw formatting errors or fail completely.
+**Fix**: Integrated a \"Générer en LaTeX (Recommandé)\" configuration toggle in [BatchTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/BatchTab.jsx). When checked (default), the runner appends strict instruction modifiers to all non-CV prompts, forcing the AI to output documents wrapped inside a valid compilable LaTeX document structure (`\documentclass{article}`, `\begin{document}`, etc.), which compiles seamlessly to PDF.
+
 ---
 *Generated: May 2026*

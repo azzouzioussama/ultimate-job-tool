@@ -177,9 +177,18 @@
     "importBtn": "Importer (PDF/Word)",
     "importing": "Import...",
     "resetFake": "Rétablir CV Fake",
+    "saveGeneral": "Définir comme CV Général",
+    "loadGeneral": "Charger CV Général",
+    "saveGeneralTooltip": "Enregistrer ce CV comme votre modèle général par défaut",
+    "loadGeneralTooltip": "Charger votre CV général enregistré",
     "generatedTitle": "CV Généré (Adapté)",
     "clear": "Vider",
-    "generatedPlaceholder": "Le code LaTeX généré par l'IA sera affiché ici. Utilisez le bouton 'Extraire CV' dans l'onglet Assistant IA."
+    "generatedPlaceholder": "Le code LaTeX généré par l'IA sera affiché ici. Utilisez le bouton 'Extraire CV' dans l'onglet Assistant IA.",
+    "toast": {
+      "savedGeneral": "Ce CV a été défini comme votre CV général par défaut.",
+      "loadedGeneral": "CV général chargé avec succès.",
+      "noGeneral": "Aucun CV général enregistré pour le moment."
+    }
   },
   "pdf": {
     "title": "Générateur PDF",
@@ -282,6 +291,8 @@
     "subtitle": "Collez plusieurs URL d'offres d'emploi pour extraire et créer les candidatures automatiquement.",
     "start": "Lancer le Batch",
     "cancel": "Annuler le Batch",
+    "requireLatex": "Générer en LaTeX (Recommandé)",
+    "requireLatexDesc": "Force l'IA à formater tous les documents générés (comme les lettres de motivation) en LaTeX valide, permettant une compilation PDF propre.",
     "urlsLabel": "Liste des URLs (une par ligne)",
     "urlsPlaceholder": "https://www.linkedin.com/jobs/view/123\nhttps://www.indeed.com/viewjob?jk=456",
     "clear": "Vider",

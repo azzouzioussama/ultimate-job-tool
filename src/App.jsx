@@ -139,7 +139,7 @@ export default function App() {
 
   // ── Core Data ───────────────────────────────────────────────────────────────
   const [jobDescription, setJobDescription] = useState('');
-  const [cvOriginal, setCvOriginal] = useState(SYNTHETIC_CV);
+  const [cvOriginal, setCvOriginal] = useState(localStorage.getItem('ujt_general_cv') || SYNTHETIC_CV);
   const [cvGenerated, setCvGenerated] = useState('');
   const [targetPosition, setTargetPosition] = useState('');
   const [companyName, setCompanyName] = useState('');
@@ -239,7 +239,7 @@ export default function App() {
       getApplication(activeAppId).then(app => {
         if (app) {
           setJobDescription(app.jobDescription || '');
-          setCvOriginal(app.cvOriginal || SYNTHETIC_CV);
+          setCvOriginal(app.cvOriginal || localStorage.getItem('ujt_general_cv') || SYNTHETIC_CV);
           setCvGenerated(app.cvGenerated || '');
           setTargetPosition(app.jobTitle || '');
           setCompanyName(app.companyName || '');
@@ -255,7 +255,7 @@ export default function App() {
       });
     } else {
       setJobDescription('');
-      setCvOriginal(SYNTHETIC_CV);
+      setCvOriginal(localStorage.getItem('ujt_general_cv') || SYNTHETIC_CV);
       setCvGenerated('');
       setTargetPosition('');
       setCompanyName('');
@@ -606,7 +606,7 @@ export default function App() {
     }
   };
 
-  const handleAutoCreateFromText = async (textToAnalyze) => {
+  const handleAutoCreateFromText = async (textToAnalyze, jobUrl = '') => {
     if (!apiKey) {
       showToast(t('app.toast.apiKeyRequiredAutoCreate', 'Clé API requise pour extraire le titre automatiquement.'));
       return;
@@ -621,7 +621,7 @@ export default function App() {
       
       let finalJobTitle = 'Offre extraite';
       let finalCompanyName = '';
-
+ 
       try {
         const jsonStr = reply.replace(/```json/g, '').replace(/```/g, '').trim();
         const parsed = JSON.parse(jsonStr);
@@ -630,11 +630,12 @@ export default function App() {
       } catch (e) {
         console.error('Failed to parse AI JSON:', e);
       }
-
+ 
       const newAppId = await createApplication({
         companyName: finalCompanyName,
         jobTitle: finalJobTitle,
         jobDescription: textToAnalyze,
+        jobUrl: jobUrl,
         cvOriginal: cvOriginal,
         cvGenerated: '',
         documents: [],
@@ -655,15 +656,15 @@ export default function App() {
       setIsAiLoading(false);
     }
   };
-
+ 
   // ── Scrape Job ────────────────────────────────────────────────────────────
   const handleScrape = async () => {
     if (!jobUrl) return;
     setIsScraping(true);
-
+ 
     try {
       let result;
-
+ 
       if (scraperType === 'jina') {
         result = await scrapeWithJina(jobUrl);
       } else if (scraperType === 'scrapfly') {
@@ -678,13 +679,13 @@ export default function App() {
       } else if (scraperType === 'scrapling') {
         result = await scrapeWithScrapling(jobUrl);
       }
-
+ 
       if (autoCreateOffer) {
         if (!apiKey) {
           showToast(t('app.toast.apiKeyRequiredAutoCreate', 'Clé API requise pour extraire le titre automatiquement. L\'offre est sauvegardée dans la candidature actuelle.'));
           setJobDescription(result);
         } else {
-          await handleAutoCreateFromText(result);
+          await handleAutoCreateFromText(result, jobUrl);
         }
       } else {
         setJobDescription(result);
@@ -830,6 +831,21 @@ export default function App() {
     }
   };
 
+  const handleSaveAsGeneralCv = () => {
+    localStorage.setItem('ujt_general_cv', cvOriginal);
+    showToast(t('cv.toast.savedGeneral', 'Ce CV a été défini comme votre CV général par défaut.'));
+  };
+
+  const handleLoadGeneralCv = () => {
+    const saved = localStorage.getItem('ujt_general_cv');
+    if (saved) {
+      setCvOriginal(saved);
+      showToast(t('cv.toast.loadedGeneral', 'CV général chargé avec succès.'));
+    } else {
+      showToast(t('cv.toast.noGeneral', 'Aucun CV général enregistré pour le moment.'));
+    }
+  };
+
 
   // ═══════════════════════════════════════════════════════════════════════════
   // RENDER
@@ -859,7 +875,7 @@ export default function App() {
 
       {/* ── Main Content Area ──────────────────────────────────────── */}
       <AuthGate>
-        <main className="max-w-5xl mx-auto p-4 sm:p-6 mt-2 w-full flex-grow flex flex-col gap-6">
+        <main className={`${(activeTab === 'dashboard' || activeTab === 'batch') ? 'max-w-[95%] px-4 sm:px-8 py-4 sm:py-6' : 'max-w-5xl p-4 sm:p-6'} mx-auto mt-2 w-full flex-grow flex flex-col gap-6`}>
 
           {/* Dashboard Tab */}
           <div className={activeTab === 'dashboard' ? 'block' : 'hidden'}>
@@ -957,6 +973,8 @@ export default function App() {
               isUploadingCv={isUploadingCv}
               selectedCvTemplateId={selectedCvTemplateId}
               onSelectedCvTemplateIdChange={setSelectedCvTemplateId}
+              onSaveAsGeneralCv={handleSaveAsGeneralCv}
+              onLoadGeneralCv={handleLoadGeneralCv}
             />
           </div>
 

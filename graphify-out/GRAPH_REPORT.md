@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-01)
 
 ## Corpus Check
-- 66 files · ~80,234 words
+- 66 files · ~81,372 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1014 nodes · 1078 edges · 95 communities (78 shown, 17 thin omitted)
+- 1038 nodes · 1102 edges · 95 communities (78 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a3817c4e`
+- Built from commit: `2e0feab4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -103,10 +103,10 @@
 ## God Nodes (most connected - your core abstractions)
 1. `toast` - 29 edges
 2. `toast` - 29 edges
-3. `Similar jobs` - 28 edges
-4. `Similar jobs` - 28 edges
-5. `batch` - 26 edges
-6. `batch` - 26 edges
+3. `batch` - 28 edges
+4. `batch` - 28 edges
+5. `Similar jobs` - 28 edges
+6. `Similar jobs` - 28 edges
 7. `dashboard` - 25 edges
 8. `dashboard` - 25 edges
 9. `Storage Service` - 22 edges
@@ -155,8 +155,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.25
-Nodes (7): 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses, Problem: Stale JSX Tags, Troubleshooting Log & Bug Fixes
+Cohesion: 0.18
+Nodes (10): 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration, Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses (+2 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -303,8 +303,8 @@ Cohesion: 0.29
 Nodes (7): form, cancel, company, companyPlaceholder, create, jobTitle, jobTitlePlaceholder
 
 ### Community 60 - "Community 60"
-Cohesion: 0.20
-Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
+Cohesion: 0.11
+Nodes (18): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, loadGeneral, loadGeneralTooltip (+10 more)
 
 ### Community 61 - "Community 61"
 Cohesion: 0.50
@@ -335,12 +335,12 @@ Cohesion: 0.15
 Nodes (13): ats, adviceTitle, analyzing, clickToRun, missingCv, missingGood, missingJob, missingTitle (+5 more)
 
 ### Community 68 - "Community 68"
-Cohesion: 0.05
-Nodes (44): compiling, completed, extracting, failed, generating, pending, saving, scraping (+36 more)
+Cohesion: 0.04
+Nodes (46): compiling, completed, extracting, failed, generating, pending, saving, scraping (+38 more)
 
 ### Community 69 - "Community 69"
-Cohesion: 0.05
-Nodes (44): compiling, completed, extracting, failed, generating, pending, saving, scraping (+36 more)
+Cohesion: 0.04
+Nodes (46): compiling, completed, extracting, failed, generating, pending, saving, scraping (+38 more)
 
 ### Community 70 - "Community 70"
 Cohesion: 0.20
@@ -379,12 +379,12 @@ Cohesion: 0.40
 Nodes (5): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement, Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)
 
 ### Community 84 - "Community 84"
-Cohesion: 0.67
-Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
+Cohesion: 0.50
+Nodes (4): 12. General CV Storage & Batch AI LaTeX CV Generation, Problem 1: General/Default CV Missing or Reverting to Synthetic CV, Problem 2: Batch-Generated LaTeX CV Not Appearing in Documents or Dashboard tabs, Problem 3: Motivation Letters and Other Documents Generating as Plain Text and Failing PDF Compilation
 
 ### Community 91 - "Community 91"
-Cohesion: 0.20
-Nodes (10): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, originalTitle, resetFake (+2 more)
+Cohesion: 0.11
+Nodes (18): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, loadGeneral, loadGeneralTooltip (+10 more)
 
 ### Community 92 - "Community 92"
 Cohesion: 0.20
@@ -395,21 +395,21 @@ Cohesion: 0.22
 Nodes (9): job, clear, extract, jina, placeholder, scrapfly, scrapling, title (+1 more)
 
 ## Knowledge Gaps
-- **738 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+733 more)
+- **759 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+754 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `batch` connect `Community 69` to `Community 83`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 83`, `Community 59`, `Community 62`?**
-  _High betweenness centrality (0.060) - this node is a cross-community bridge._
-- **Why does `templates` connect `Community 23` to `Community 94`?**
-  _High betweenness centrality (0.058) - this node is a cross-community bridge._
+  _High betweenness centrality (0.085) - this node is a cross-community bridge._
+- **Why does `batch` connect `Community 69` to `Community 83`?**
+  _High betweenness centrality (0.074) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 30` to `Community 94`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _738 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _759 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

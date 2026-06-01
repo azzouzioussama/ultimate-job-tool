@@ -32,6 +32,7 @@ export default function BatchTab({
   const userId = clerkUser ? clerkUser.id : (currentUser ? currentUser.id || currentUser.username : 'guest');
   const BATCH_ITEMS_KEY = `ujt_batch_items_${userId}`;
   const BATCH_SETTINGS_KEY = `ujt_batch_settings_${userId}`;
+  const BATCH_LOGS_KEY = `ujt_batch_logs_${userId}`;
 
   // --- State Variables ---
   const [items, setItems] = useState([]);
@@ -42,6 +43,7 @@ export default function BatchTab({
   const [selectedTemplates, setSelectedTemplates] = useState([1, 2]); // default: CV LaTeX & French Cover Letter
   const [autoCompile, setAutoCompile] = useState(true);
   const [autoDownload, setAutoDownload] = useState(true);
+  const [requireLatex, setRequireLatex] = useState(true);
   
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -55,7 +57,7 @@ export default function BatchTab({
   const logsContainerRef = useRef(null);
   const runningItemIdsRef = useRef(new Set());
 
-  // Load persisted items and settings whenever userId changes
+  // Load persisted items, settings and logs whenever userId changes
   useEffect(() => {
     setIsLoaded(false);
     
@@ -79,6 +81,7 @@ export default function BatchTab({
         if (parsed.selectedTemplates) setSelectedTemplates(parsed.selectedTemplates);
         if (parsed.autoCompile !== undefined) setAutoCompile(parsed.autoCompile);
         if (parsed.autoDownload !== undefined) setAutoDownload(parsed.autoDownload);
+        if (parsed.requireLatex !== undefined) setRequireLatex(parsed.requireLatex);
       } catch (e) {
         console.error("Failed to parse persisted batch settings:", e);
       }
@@ -86,10 +89,23 @@ export default function BatchTab({
       setSelectedTemplates([1, 2]);
       setAutoCompile(true);
       setAutoDownload(true);
+      setRequireLatex(true);
     }
 
+    // Logs
+    let initialLogs = [];
+    const storedLogs = localStorage.getItem(BATCH_LOGS_KEY);
+    if (storedLogs) {
+      try {
+        initialLogs = JSON.parse(storedLogs);
+      } catch (e) {
+        console.error("Failed to parse persisted batch logs:", e);
+      }
+    }
+    setLogs(initialLogs);
+
     setIsLoaded(true);
-  }, [userId, BATCH_ITEMS_KEY, BATCH_SETTINGS_KEY]);
+  }, [userId, BATCH_ITEMS_KEY, BATCH_SETTINGS_KEY, BATCH_LOGS_KEY]);
 
   // Persist items on change
   useEffect(() => {
@@ -97,6 +113,13 @@ export default function BatchTab({
       localStorage.setItem(BATCH_ITEMS_KEY, JSON.stringify(items));
     }
   }, [items, BATCH_ITEMS_KEY, isLoaded]);
+
+  // Persist logs on change
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem(BATCH_LOGS_KEY, JSON.stringify(logs));
+    }
+  }, [logs, BATCH_LOGS_KEY, isLoaded]);
 
   // Sync refs with state
   useEffect(() => { isPlayingRef.current = isPlaying; }, [isPlaying]);
@@ -108,10 +131,11 @@ export default function BatchTab({
       localStorage.setItem(BATCH_SETTINGS_KEY, JSON.stringify({
         selectedTemplates,
         autoCompile,
-        autoDownload
+        autoDownload,
+        requireLatex
       }));
     }
-  }, [selectedTemplates, autoCompile, autoDownload, BATCH_SETTINGS_KEY, isLoaded]);
+  }, [selectedTemplates, autoCompile, autoDownload, requireLatex, BATCH_SETTINGS_KEY, isLoaded]);
 
   // Scroll to bottom of logs console
   useEffect(() => {
@@ -431,12 +455,14 @@ ${desc.substring(0, 3000)}`;
       updateItemState(itemId, { jobTitle, companyName });
 
       // Step 3: Create App in DB
+      const activeCvOriginal = localStorage.getItem('ujt_general_cv') || cvOriginal;
       addLog(`${logPrefix} Création de la candidature en base de données...`);
       const newAppId = await createApplication({
         companyName: companyName,
         jobTitle: jobTitle,
         jobDescription: desc,
-        cvOriginal: cvOriginal,
+        jobUrl: currentItem.type === 'url' ? currentItem.input : '',
+        cvOriginal: activeCvOriginal,
         cvGenerated: '',
         documents: [],
         atsResult: null,
@@ -467,11 +493,13 @@ ${desc.substring(0, 3000)}`;
         addLog(`${logPrefix} Génération de : "${template.title}"...`);
         
         let compiledPrompt = template.content
-          .replace(/{cv_content}/g, cvOriginal)
+          .replace(/{cv_content}/g, activeCvOriginal)
           .replace(/{job_description}/g, desc);
           
         if (templateId === 1) {
           compiledPrompt += "\nFormatte le CV LaTeX final proprement. Assure-toi que les caractères spéciaux (comme '&') soient bien échappés (\\&).";
+        } else if (requireLatex) {
+          compiledPrompt += "\n\nIMPORTANT : Tu DOIS retourner le document exclusivement au format LaTeX complet et compilable (incluant le préambule \\documentclass{article}, \\usepackage[utf8]{inputenc}, \\begin{document}, et \\end{document}). Ne mets aucun texte d'introduction ou d'explication en dehors du code LaTeX. Assure-toi d'échapper correctement les caractères spéciaux LaTeX (ex: '&' doit être écrit '\\&', '%' doit être écrit '\\%').";
         }
 
         const responseText = await callAIProvider({
@@ -482,7 +510,7 @@ ${desc.substring(0, 3000)}`;
         });
 
         if (templateId === 1) {
-          const merged = mergeLatexResponses(cvOriginal, [responseText]);
+          const merged = mergeLatexResponses(activeCvOriginal, [responseText]);
           if (merged && merged.trim()) {
             cvGeneratedLocal = merged;
           } else {
@@ -490,6 +518,16 @@ ${desc.substring(0, 3000)}`;
             cvGeneratedLocal = fallbackExtracted || responseText;
           }
           addLog(`${logPrefix} CV adapté généré (LaTeX).`);
+
+          // Also push CV to documents and prompt responses so it appears in Documents Tab and Dashboard tab
+          documentsLocal.push({
+            id: Date.now().toString() + Math.random().toString(),
+            title: template.title,
+            content: cvGeneratedLocal,
+            timestamp: new Date().toISOString()
+          });
+          promptResponsesLocal[template.title] = cvGeneratedLocal;
+
           completedDocsLocal.push(template.title);
         } else {
           const docContent = extractLatexFromResponse(responseText) || responseText;
@@ -539,7 +577,9 @@ ${desc.substring(0, 3000)}`;
           }
         }
 
+        const cvTemplateTitle = templates.find(t => t.id === 1)?.title;
         for (const doc of documentsLocal) {
+          if (doc.title === cvTemplateTitle) continue;
           if (doc.content.includes('\\documentclass') || doc.content.includes('\\begin{document}')) {
             try {
               if (isAborted()) return;
@@ -796,6 +836,19 @@ ${desc.substring(0, 3000)}`;
               <label className="flex items-center gap-3 cursor-pointer text-slate-700 select-none">
                 <input 
                   type="checkbox"
+                  checked={requireLatex}
+                  onChange={(e) => setRequireLatex(e.target.checked)}
+                  className="rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
+                />
+                <span className="text-xs font-bold">{t('batch.requireLatex', 'Générer en LaTeX (Recommandé)')}</span>
+              </label>
+              <p className="text-[10px] text-slate-500 pl-6">
+                {t('batch.requireLatexDesc', "Force l'IA à formater tous les documents générés (comme les lettres de motivation) en LaTeX valide, permettant une compilation PDF propre.")}
+              </p>
+
+              <label className="flex items-center gap-3 cursor-pointer text-slate-700 select-none">
+                <input 
+                  type="checkbox"
                   checked={autoCompile}
                   onChange={(e) => setAutoCompile(e.target.checked)}
                   className="rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
@@ -993,15 +1046,29 @@ ${desc.substring(0, 3000)}`;
                           {item.type === 'url' && !item.jobTitle ? (
                             <div className="text-xs text-indigo-600 font-mono font-medium truncate max-w-xl flex items-center gap-1.5" title={item.input}>
                               <Link className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
-                              {item.input}
+                              <a href={item.input} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-1">
+                                {item.input}
+                                <ArrowSquareOut size={12} className="shrink-0" />
+                              </a>
                             </div>
                           ) : (
                             <div className="text-sm font-bold text-slate-800 flex items-center flex-wrap gap-1.5">
-                              {item.jobTitle}
+                              <span>{item.jobTitle}</span>
                               {item.companyName && (
                                 <span className="text-xs text-slate-500 font-normal">
                                   chez <strong className="text-slate-700">{item.companyName}</strong>
                                 </span>
+                              )}
+                              {item.type === 'url' && (
+                                <a 
+                                  href={item.input} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="text-indigo-600 hover:text-indigo-800 inline-flex items-center p-1 rounded hover:bg-indigo-50 shrink-0"
+                                  title="Ouvrir le lien de l'offre"
+                                >
+                                  <ArrowSquareOut size={14} />
+                                </a>
                               )}
                             </div>
                           )}
