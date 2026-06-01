@@ -300,7 +300,18 @@ pip install pydantic pydantic-core openai
 
 ### Problem 3: Motivation Letters and Other Documents Generating as Plain Text and Failing PDF Compilation
 **Issue**: In batch runs, motivation letters and other prompt documents were generated as raw, plain-text markdown, which caused the PDF compiler (TeXLive) to throw formatting errors or fail completely.
-**Fix**: Integrated a \"Générer en LaTeX (Recommandé)\" configuration toggle in [BatchTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/BatchTab.jsx). When checked (default), the runner appends strict instruction modifiers to all non-CV prompts, forcing the AI to output documents wrapped inside a valid compilable LaTeX document structure (`\documentclass{article}`, `\begin{document}`, etc.), which compiles seamlessly to PDF.
+**Fix**: Integrated a "Générer en LaTeX (Recommandé)" configuration toggle in [BatchTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/BatchTab.jsx). When checked (default), the runner appends strict instruction modifiers to all non-CV prompts, forcing the AI to output documents wrapped inside a valid compilable LaTeX document structure (`\documentclass{article}`, `\begin{document}`, etc.), which compiles seamlessly to PDF.
+
+## 13. Cloud Mode Strict Schema Constraints on Application Creation
+
+### Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode
+**Issue**: When using Clerk + Supabase cloud mode, starting a batch run or manually pasting a job description failed to save the application to the database, resulting in an empty dashboard, no document output, and an invisible "Ouvrir" button in the batch panel.
+**Cause**: The JavaScript payload contains `jobUrl` as a property. However, Supabase's cloud PostgreSQL schema does not have a `jobUrl` column. Because PostgreSQL operates under strict schema validation, PostgREST returned a fatal 400 error (`PGRST204: Could not find the 'jobUrl' column`), aborting the insert/update transaction and returning `null` for the application ID.
+**Fix**: Modified the cloud database client wrappers in [useDatabase.js](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/hooks/useDatabase.js) to:
+1. Intercept the `jobUrl` parameter on application creation/update.
+2. Store it inside the existing `promptResponses` JSONB column as a serialized key `__job_url__`.
+3. Read the serialized key on fetch and restore it as `app.jobUrl` on the returned objects.
+4. Filter out any keys starting with double underscores (`__`) from rendering in [DashboardTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DashboardTab.jsx)'s file viewer.
 
 ---
-*Generated: May 2026*
+*Generated: June 2026*

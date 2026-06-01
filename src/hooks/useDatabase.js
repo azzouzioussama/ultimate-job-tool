@@ -86,7 +86,19 @@ function useCloudDatabase() {
       if (!user) return null;
       const client = await getClient();
       if (!client) return null;
-      const newApp = { ...data, user_id: user.id };
+
+      // Extract jobUrl and store inside promptResponses.__job_url__ to match Supabase schema
+      const { jobUrl, ...rest } = data;
+      const promptResponses = rest.promptResponses || {};
+      const newApp = { 
+        ...rest, 
+        promptResponses: {
+          ...promptResponses,
+          __job_url__: jobUrl || ''
+        },
+        user_id: user.id 
+      };
+
       const { data: insertedData, error } = await client
         .from('applications').insert([newApp]).select().single();
       if (error) { console.error("Error creating application:", error); throw error; }
@@ -101,6 +113,10 @@ function useCloudDatabase() {
       const { data, error } = await client
         .from('applications').select('*').eq('id', id).single();
       if (error) { console.error("Error getting application:", error); return null; }
+      if (data) {
+        // Restore jobUrl from promptResponses.__job_url__
+        data.jobUrl = data.promptResponses?.__job_url__ || '';
+      }
       return data;
     } catch (e) { console.error(e); return null; }
   };
@@ -109,9 +125,42 @@ function useCloudDatabase() {
     try {
       const client = await getClient();
       if (!client) return;
+
+      const { jobUrl, ...rest } = updates;
+      let finalUpdates = { ...rest };
+
+      // Preserve __job_url__ if we are updating promptResponses, or merge/update it if jobUrl is provided
+      if (rest.promptResponses) {
+        const { data: currentApp } = await client
+          .from('applications')
+          .select('promptResponses')
+          .eq('id', id)
+          .single();
+        
+        const existingJobUrl = currentApp?.promptResponses?.__job_url__ || '';
+        const finalJobUrl = jobUrl !== undefined ? jobUrl : existingJobUrl;
+
+        finalUpdates.promptResponses = {
+          ...rest.promptResponses,
+          __job_url__: finalJobUrl
+        };
+      } else if (jobUrl !== undefined) {
+        const { data: currentApp } = await client
+          .from('applications')
+          .select('promptResponses')
+          .eq('id', id)
+          .single();
+        
+        const currentPromptResponses = currentApp?.promptResponses || {};
+        finalUpdates.promptResponses = {
+          ...currentPromptResponses,
+          __job_url__: jobUrl
+        };
+      }
+
       const { error } = await client
         .from('applications')
-        .update({ ...updates, lastUpdated: new Date().toISOString() })
+        .update({ ...finalUpdates, lastUpdated: new Date().toISOString() })
         .eq('id', id);
       if (error) { console.error("Error updating application:", error); throw error; }
     } catch (e) { console.error(e); }
@@ -137,7 +186,13 @@ function useCloudDatabase() {
         .eq('user_id', user.id)
         .order('lastUpdated', { ascending: false });
       if (error) { console.error("Error fetching applications:", error); return []; }
-      return data || [];
+      
+      // Restore jobUrl for all items
+      const mappedData = (data || []).map(app => ({
+        ...app,
+        jobUrl: app.promptResponses?.__job_url__ || ''
+      }));
+      return mappedData;
     } catch (e) { console.error(e); return []; }
   };
 

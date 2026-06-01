@@ -325,8 +325,10 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                               <Download size={16} className="text-slate-400"/> {t('dashboard.savedFiles', 'Fichiers LaTeX Sauvegardés')}
                             </h4>
                             <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
-                              {app.promptResponses && Object.keys(app.promptResponses).length > 0 ? (
-                                Object.entries(app.promptResponses).map(([key, latex]) => (
+                              {app.promptResponses && Object.keys(app.promptResponses).filter(k => !k.startsWith('__')).length > 0 ? (
+                                Object.entries(app.promptResponses)
+                                  .filter(([key]) => !key.startsWith('__'))
+                                  .map(([key, latex]) => (
                                   <div key={key} className="flex flex-col bg-white border border-slate-200 rounded-lg p-3 shadow-sm min-w-[220px]">
                                     <div className="flex justify-between items-center mb-2">
                                       <span className="text-xs font-semibold text-slate-700 truncate" title={key}>{key}</span>

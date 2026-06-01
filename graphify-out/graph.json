@@ -652,6 +652,60 @@
       "norm_label": "test_scrapling_http.py"
     },
     {
+      "label": "test_supabase_insert.js",
+      "file_type": "code",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L1",
+      "id": "scratch_test_supabase_insert_js",
+      "community": 94,
+      "norm_label": "test_supabase_insert.js"
+    },
+    {
+      "label": "envContent",
+      "file_type": "code",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L4",
+      "id": "scratch_test_supabase_insert_envcontent",
+      "community": 94,
+      "norm_label": "envcontent"
+    },
+    {
+      "label": "supabaseUrl",
+      "file_type": "code",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L5",
+      "id": "scratch_test_supabase_insert_supabaseurl",
+      "community": 94,
+      "norm_label": "supabaseurl"
+    },
+    {
+      "label": "supabaseKey",
+      "file_type": "code",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L6",
+      "id": "scratch_test_supabase_insert_supabasekey",
+      "community": 94,
+      "norm_label": "supabasekey"
+    },
+    {
+      "label": "validPayload",
+      "file_type": "code",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L10",
+      "id": "scratch_test_supabase_insert_validpayload",
+      "community": 94,
+      "norm_label": "validpayload"
+    },
+    {
+      "label": "inserted",
+      "file_type": "code",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L42",
+      "id": "scratch_test_supabase_insert_inserted",
+      "community": 94,
+      "norm_label": "inserted"
+    },
+    {
       "label": "debug.js",
       "file_type": "code",
       "source_file": "scratch/debug.js",
@@ -855,7 +909,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "id": "src_main_jsx",
-      "community": 83,
+      "community": 24,
       "norm_label": "main.jsx"
     },
     {
@@ -864,7 +918,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L10",
       "id": "src_main_renderapp",
-      "community": 83,
+      "community": 24,
       "norm_label": "renderapp()"
     },
     {
@@ -873,7 +927,7 @@
       "source_file": "src/i18n.js",
       "source_location": "L1",
       "id": "src_i18n_js",
-      "community": 83,
+      "community": 24,
       "norm_label": "i18n.js"
     },
     {
@@ -909,7 +963,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L1",
       "id": "src_locales_fr_json",
-      "community": 83,
+      "community": 95,
       "norm_label": "fr.json"
     },
     {
@@ -918,7 +972,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L2",
       "id": "locales_fr_header",
-      "community": 83,
+      "community": 95,
       "norm_label": "header"
     },
     {
@@ -927,7 +981,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L3",
       "id": "locales_fr_header_apikeyplaceholder",
-      "community": 83,
+      "community": 95,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -3609,7 +3663,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L1",
       "id": "src_locales_en_json",
-      "community": 94,
+      "community": 24,
       "norm_label": "en.json"
     },
     {
@@ -3618,7 +3672,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L2",
       "id": "locales_en_header",
-      "community": 94,
+      "community": 24,
       "norm_label": "header"
     },
     {
@@ -3627,7 +3681,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L3",
       "id": "locales_en_header_apikeyplaceholder",
-      "community": 94,
+      "community": 24,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -3636,7 +3690,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L5",
       "id": "locales_en_tabs",
-      "community": 92,
+      "community": 24,
       "norm_label": "tabs"
     },
     {
@@ -3645,7 +3699,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L6",
       "id": "locales_en_tabs_dashboard",
-      "community": 92,
+      "community": 24,
       "norm_label": "dashboard"
     },
     {
@@ -3654,7 +3708,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L7",
       "id": "locales_en_tabs_prompts",
-      "community": 92,
+      "community": 24,
       "norm_label": "prompts"
     },
     {
@@ -3663,7 +3717,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L8",
       "id": "locales_en_tabs_aiassistant",
-      "community": 92,
+      "community": 24,
       "norm_label": "aiassistant"
     },
     {
@@ -3672,7 +3726,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L9",
       "id": "locales_en_tabs_joboffer",
-      "community": 92,
+      "community": 24,
       "norm_label": "joboffer"
     },
     {
@@ -3681,7 +3735,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L10",
       "id": "locales_en_tabs_mycv",
-      "community": 92,
+      "community": 24,
       "norm_label": "mycv"
     },
     {
@@ -3690,7 +3744,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L11",
       "id": "locales_en_tabs_pdfmaker",
-      "community": 92,
+      "community": 24,
       "norm_label": "pdfmaker"
     },
     {
@@ -3699,7 +3753,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L12",
       "id": "locales_en_tabs_atstest",
-      "community": 92,
+      "community": 24,
       "norm_label": "atstest"
     },
     {
@@ -3708,7 +3762,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L13",
       "id": "locales_en_tabs_batch",
-      "community": 92,
+      "community": 24,
       "norm_label": "batch"
     },
     {
@@ -3717,7 +3771,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L14",
       "id": "locales_en_tabs_documents",
-      "community": 92,
+      "community": 24,
       "norm_label": "documents"
     },
     {
@@ -4626,7 +4680,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L129",
       "id": "locales_en_prompts",
-      "community": 3,
+      "community": 24,
       "norm_label": "prompts"
     },
     {
@@ -4635,7 +4689,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L130",
       "id": "locales_en_prompts_title",
-      "community": 3,
+      "community": 24,
       "norm_label": "title"
     },
     {
@@ -4644,7 +4698,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L131",
       "id": "locales_en_prompts_editortitle",
-      "community": 3,
+      "community": 24,
       "norm_label": "editortitle"
     },
     {
@@ -4653,7 +4707,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L132",
       "id": "locales_en_prompts_resetall",
-      "community": 3,
+      "community": 24,
       "norm_label": "resetall"
     },
     {
@@ -4662,7 +4716,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L133",
       "id": "locales_en_prompts_reset",
-      "community": 3,
+      "community": 24,
       "norm_label": "reset"
     },
     {
@@ -4671,7 +4725,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L134",
       "id": "locales_en_prompts_empty",
-      "community": 3,
+      "community": 24,
       "norm_label": "empty"
     },
     {
@@ -4680,7 +4734,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L135",
       "id": "locales_en_prompts_download",
-      "community": 3,
+      "community": 24,
       "norm_label": "download"
     },
     {
@@ -4689,7 +4743,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L136",
       "id": "locales_en_prompts_copy",
-      "community": 3,
+      "community": 24,
       "norm_label": "copy"
     },
     {
@@ -4698,7 +4752,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L137",
       "id": "locales_en_prompts_copyall",
-      "community": 3,
+      "community": 24,
       "norm_label": "copyall"
     },
     {
@@ -4707,7 +4761,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L138",
       "id": "locales_en_prompts_generate",
-      "community": 3,
+      "community": 24,
       "norm_label": "generate"
     },
     {
@@ -4716,7 +4770,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L139",
       "id": "locales_en_prompts_requirelatex",
-      "community": 3,
+      "community": 24,
       "norm_label": "requirelatex"
     },
     {
@@ -4887,7 +4941,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L160",
       "id": "locales_en_job",
-      "community": 93,
+      "community": 24,
       "norm_label": "job"
     },
     {
@@ -4896,7 +4950,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L161",
       "id": "locales_en_job_title",
-      "community": 93,
+      "community": 24,
       "norm_label": "title"
     },
     {
@@ -4905,7 +4959,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L162",
       "id": "locales_en_job_clear",
-      "community": 93,
+      "community": 24,
       "norm_label": "clear"
     },
     {
@@ -4914,7 +4968,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L163",
       "id": "locales_en_job_jina",
-      "community": 93,
+      "community": 24,
       "norm_label": "jina"
     },
     {
@@ -4923,7 +4977,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L164",
       "id": "locales_en_job_scrapfly",
-      "community": 93,
+      "community": 24,
       "norm_label": "scrapfly"
     },
     {
@@ -4932,7 +4986,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L165",
       "id": "locales_en_job_scrapling",
-      "community": 93,
+      "community": 24,
       "norm_label": "scrapling"
     },
     {
@@ -4941,7 +4995,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L166",
       "id": "locales_en_job_urlplaceholder",
-      "community": 93,
+      "community": 24,
       "norm_label": "urlplaceholder"
     },
     {
@@ -4950,7 +5004,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L167",
       "id": "locales_en_job_extract",
-      "community": 93,
+      "community": 24,
       "norm_label": "extract"
     },
     {
@@ -4959,7 +5013,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L168",
       "id": "locales_en_job_placeholder",
-      "community": 93,
+      "community": 24,
       "norm_label": "placeholder"
     },
     {
@@ -7762,6 +7816,24 @@
       "norm_label": "problem 3: motivation letters and other documents generating as plain text and failing pdf compilation"
     },
     {
+      "label": "13. Cloud Mode Strict Schema Constraints on Application Creation",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L305",
+      "id": "ultimate_job_tool_troubleshooting_13_cloud_mode_strict_schema_constraints_on_application_creation",
+      "community": 7,
+      "norm_label": "13. cloud mode strict schema constraints on application creation"
+    },
+    {
+      "label": "Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L307",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_batch_queue_manual_create_failing_in_clerk_supabase_cloud_mode",
+      "community": 7,
+      "norm_label": "problem 1: batch queue & manual create failing in clerk + supabase cloud mode"
+    },
+    {
       "label": "BATCH_AI_GUIDE.md",
       "file_type": "document",
       "source_file": "BATCH_AI_GUIDE.md",
@@ -7999,7 +8071,7 @@
       "label": "6. Known Constraints & Future Considerations",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
-      "source_location": "L114",
+      "source_location": "L115",
       "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
       "community": 8,
       "norm_label": "6. known constraints & future considerations"
@@ -9166,6 +9238,42 @@
       "norm_label": "graphify"
     },
     {
+      "label": "restart",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L299",
+      "community": 69,
+      "norm_label": "restart",
+      "id": "locales_fr_batch_restart"
+    },
+    {
+      "label": "restartTooltip",
+      "file_type": "code",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L300",
+      "community": 69,
+      "norm_label": "restarttooltip",
+      "id": "locales_fr_batch_restarttooltip"
+    },
+    {
+      "label": "restart",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L296",
+      "community": 68,
+      "norm_label": "restart",
+      "id": "locales_en_batch_restart"
+    },
+    {
+      "label": "restartTooltip",
+      "file_type": "code",
+      "source_file": "src/locales/en.json",
+      "source_location": "L297",
+      "community": 68,
+      "norm_label": "restarttooltip",
+      "id": "locales_en_batch_restarttooltip"
+    },
+    {
       "label": "query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "file_type": "document",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
@@ -9917,6 +10025,56 @@
       "confidence_score": 1.0,
       "source": "ultimate_job_tool_package_devdependencies",
       "target": "ultimate_job_tool_package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_supabase_insert_js",
+      "target": "scratch_test_supabase_insert_envcontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_supabase_insert_js",
+      "target": "scratch_test_supabase_insert_supabaseurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_supabase_insert_js",
+      "target": "scratch_test_supabase_insert_supabasekey"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_supabase_insert_js",
+      "target": "scratch_test_supabase_insert_validpayload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_supabase_insert.js",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scratch_test_supabase_insert_js",
+      "target": "scratch_test_supabase_insert_inserted"
     },
     {
       "relation": "contains",
@@ -13441,6 +13599,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/locales/fr.json",
+      "source_location": "L299",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locales_fr_batch",
+      "target": "locales_fr_batch_restart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
+      "source_location": "L300",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locales_fr_batch",
+      "target": "locales_fr_batch_restarttooltip"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/fr.json",
       "source_location": "L302",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -16401,6 +16579,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/locales/en.json",
+      "source_location": "L296",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locales_en_batch",
+      "target": "locales_en_batch_restart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
+      "source_location": "L297",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "locales_en_batch",
+      "target": "locales_en_batch_restarttooltip"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/locales/en.json",
       "source_location": "L299",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -18442,8 +18640,18 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
-      "target": "ultimate_job_tool_troubleshooting_12_general_cv_storage_batch_ai_latex_cv_generation",
+      "target": "ultimate_job_tool_troubleshooting_12_general_cv_storage_batch_ai_latex_cv_generation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
+      "target": "ultimate_job_tool_troubleshooting_13_cloud_mode_strict_schema_constraints_on_application_creation",
       "confidence_score": 1.0
     },
     {
@@ -18862,9 +19070,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_12_general_cv_storage_batch_ai_latex_cv_generation",
-      "target": "ultimate_job_tool_troubleshooting_problem_1_general_default_cv_missing_or_reverting_to_synthetic_cv",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_problem_1_general_default_cv_missing_or_reverting_to_synthetic_cv"
     },
     {
       "relation": "contains",
@@ -18872,9 +19080,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L296",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_12_general_cv_storage_batch_ai_latex_cv_generation",
-      "target": "ultimate_job_tool_troubleshooting_problem_2_batch_generated_latex_cv_not_appearing_in_documents_or_dashboard_tabs",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_problem_2_batch_generated_latex_cv_not_appearing_in_documents_or_dashboard_tabs"
     },
     {
       "relation": "contains",
@@ -18882,8 +19090,18 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L301",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_12_general_cv_storage_batch_ai_latex_cv_generation",
-      "target": "ultimate_job_tool_troubleshooting_problem_3_motivation_letters_and_other_documents_generating_as_plain_text_and_failing_pdf_compilation",
+      "target": "ultimate_job_tool_troubleshooting_problem_3_motivation_letters_and_other_documents_generating_as_plain_text_and_failing_pdf_compilation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L307",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_13_cloud_mode_strict_schema_constraints_on_application_creation",
+      "target": "ultimate_job_tool_troubleshooting_problem_1_batch_queue_manual_create_failing_in_clerk_supabase_cloud_mode",
       "confidence_score": 1.0
     },
     {
@@ -20448,5 +20666,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2e0feab44052f25a6fc0efae80f5bc29a0dc4e3d"
+  "built_at_commit": "0211f2bc5d55c53cca387b685ae8eb009cf0e4f3"
 }

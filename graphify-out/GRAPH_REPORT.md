@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-06-01)
+# Graph Report - ultimate-job-tool  (2026-06-02)
 
 ## Corpus Check
-- 66 files · ~81,372 words
+- 67 files · ~82,013 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1038 nodes · 1102 edges · 95 communities (78 shown, 17 thin omitted)
+- 1050 nodes · 1113 edges · 92 communities (76 shown, 16 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2e0feab4`
+- Built from commit: `0211f2bc`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,7 +18,6 @@
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
 - [[_COMMUNITY_Community 2|Community 2]]
-- [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
@@ -93,18 +92,16 @@
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
 - [[_COMMUNITY_Community 82|Community 82]]
-- [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
 - [[_COMMUNITY_Community 91|Community 91]]
-- [[_COMMUNITY_Community 92|Community 92]]
-- [[_COMMUNITY_Community 93|Community 93]]
 - [[_COMMUNITY_Community 94|Community 94]]
+- [[_COMMUNITY_Community 95|Community 95]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `toast` - 29 edges
-2. `toast` - 29 edges
-3. `batch` - 28 edges
-4. `batch` - 28 edges
+1. `batch` - 30 edges
+2. `batch` - 30 edges
+3. `toast` - 29 edges
+4. `toast` - 29 edges
 5. `Similar jobs` - 28 edges
 6. `Similar jobs` - 28 edges
 7. `dashboard` - 25 edges
@@ -124,7 +121,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (95 total, 17 thin omitted)
+## Communities (92 total, 16 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -137,10 +134,6 @@ Nodes (35): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucid
 ### Community 2 - "Community 2"
 Cohesion: 0.13
 Nodes (6): useLocalStorage(), useToast(), callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), App()
-
-### Community 3 - "Community 3"
-Cohesion: 0.18
-Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -155,8 +148,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.18
-Nodes (10): 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration, Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses (+2 more)
+Cohesion: 0.15
+Nodes (12): 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration (+4 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -195,8 +188,8 @@ Cohesion: 0.05
 Nodes (41): content, desc, title, content, desc, title, content, desc (+33 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.15
-Nodes (13): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+5 more)
+Cohesion: 0.04
+Nodes (45): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+37 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.05
@@ -336,11 +329,11 @@ Nodes (13): ats, adviceTitle, analyzing, clickToRun, missingCv, missingGood, mis
 
 ### Community 68 - "Community 68"
 Cohesion: 0.04
-Nodes (46): compiling, completed, extracting, failed, generating, pending, saving, scraping (+38 more)
+Nodes (48): compiling, completed, extracting, failed, generating, pending, saving, scraping (+40 more)
 
 ### Community 69 - "Community 69"
 Cohesion: 0.04
-Nodes (46): compiling, completed, extracting, failed, generating, pending, saving, scraping (+38 more)
+Nodes (48): compiling, completed, extracting, failed, generating, pending, saving, scraping (+40 more)
 
 ### Community 70 - "Community 70"
 Cohesion: 0.20
@@ -386,30 +379,26 @@ Nodes (4): 12. General CV Storage & Batch AI LaTeX CV Generation, Problem 1: Gen
 Cohesion: 0.11
 Nodes (18): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, loadGeneral, loadGeneralTooltip (+10 more)
 
-### Community 92 - "Community 92"
-Cohesion: 0.20
-Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
-
-### Community 93 - "Community 93"
-Cohesion: 0.22
-Nodes (9): job, clear, extract, jina, placeholder, scrapfly, scrapling, title (+1 more)
+### Community 94 - "Community 94"
+Cohesion: 0.33
+Nodes (5): envContent, inserted, supabaseKey, supabaseUrl, validPayload
 
 ## Knowledge Gaps
-- **759 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+754 more)
+- **769 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+764 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 83`, `Community 59`, `Community 62`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
-- **Why does `batch` connect `Community 69` to `Community 83`?**
-  _High betweenness centrality (0.074) - this node is a cross-community bridge._
-- **Why does `app` connect `Community 30` to `Community 94`?**
-  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 30` to `Community 24`?**
+  _High betweenness centrality (0.080) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 62`, `Community 95`?**
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+- **Why does `templates` connect `Community 29` to `Community 95`?**
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _759 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _769 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
