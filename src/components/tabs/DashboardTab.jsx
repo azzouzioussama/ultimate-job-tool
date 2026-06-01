@@ -272,14 +272,14 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                     <td className="p-4 text-right">
                       <button 
                         onClick={(e) => handleDelete(app.id, e)}
-                        className="text-slate-300 hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-red-50"
+                        className="text-slate-400 hover:text-red-500 transition-colors p-2 rounded-lg hover:bg-red-50"
                         title={t('dashboard.card.delete', 'Supprimer')}
                       >
                         <Trash2 size={16} />
                       </button>
                       <button 
                         onClick={(e) => { e.stopPropagation(); onSelectApplication(app.id); }}
-                        className="text-slate-300 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-indigo-50 ml-1"
+                        className="text-slate-400 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-indigo-50 ml-1"
                         title={t('dashboard.card.open', 'Éditer')}
                       >
                         <Edit3 size={16} />

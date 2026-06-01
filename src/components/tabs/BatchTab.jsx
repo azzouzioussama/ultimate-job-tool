@@ -129,7 +129,14 @@ export default function BatchTab({
   // --- Handlers ---
   const handleAddItem = (type) => {
     if (type === 'url') {
-      const cleanUrl = inputUrl.trim();
+      let cleanUrl = inputUrl.trim();
+      const urlMatch = cleanUrl.match(/(https?:\/\/[^\s]+|www\.[^\s]+)/i);
+      if (urlMatch) {
+        cleanUrl = urlMatch[0].replace(/[.,;!?()\[\]{}'"]+$/, '');
+        if (/^www\./i.test(cleanUrl)) {
+          cleanUrl = 'https://' + cleanUrl;
+        }
+      }
       if (!cleanUrl) return;
 
       // Duplicate Check
@@ -226,7 +233,14 @@ export default function BatchTab({
     } else {
       // Treat as list of URLs
       lines.forEach(line => {
-        const cleanUrl = line.trim();
+        let cleanUrl = line.trim();
+        const urlMatch = cleanUrl.match(/(https?:\/\/[^\s]+|www\.[^\s]+)/i);
+        if (urlMatch) {
+          cleanUrl = urlMatch[0].replace(/[.,;!?()\[\]{}'"]+$/, '');
+          if (/^www\./i.test(cleanUrl)) {
+            cleanUrl = 'https://' + cleanUrl;
+          }
+        }
         if (cleanUrl && (cleanUrl.startsWith('http://') || cleanUrl.startsWith('https://'))) {
           const isDuplicate = items.some(item => 
             item.input.toLowerCase() === cleanUrl.toLowerCase()
@@ -672,7 +686,19 @@ ${desc.substring(0, 3000)}`;
                       type="url"
                       placeholder="https://..."
                       value={inputUrl}
-                      onChange={(e) => setInputUrl(e.target.value)}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        const urlMatch = val.match(/(https?:\/\/[^\s]+|www\.[^\s]+)/i);
+                        if (urlMatch) {
+                          let cleanUrl = urlMatch[0].replace(/[.,;!?()\[\]{}'"]+$/, '');
+                          if (/^www\./i.test(cleanUrl)) {
+                            cleanUrl = 'https://' + cleanUrl;
+                          }
+                          setInputUrl(cleanUrl);
+                        } else {
+                          setInputUrl(val);
+                        }
+                      }}
                       onKeyDown={(e) => e.key === 'Enter' && handleAddItem('url')}
                       className="flex-1 bg-slate-50 border border-slate-200 focus:border-indigo-500 rounded-lg px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-indigo-500/10 focus:outline-none transition"
                     />

@@ -86,7 +86,11 @@ export default function JobOfferTab({
             // Extract URL if the user pasted extra text (e.g. from mobile app share)
             const urlMatch = val.match(/(https?:\/\/[^\s]+|www\.[^\s]+)/i);
             if (urlMatch) {
-              onJobUrlChange(urlMatch[0]);
+              let cleanUrl = urlMatch[0].replace(/[.,;!?()\[\]{}'"]+$/, '');
+              if (/^www\./i.test(cleanUrl)) {
+                cleanUrl = 'https://' + cleanUrl;
+              }
+              onJobUrlChange(cleanUrl);
             } else {
               onJobUrlChange(val);
             }

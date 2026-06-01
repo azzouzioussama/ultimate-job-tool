@@ -65,8 +65,8 @@
     "semantic_hash": "ace0ac78f23607bcc48021679dcd7948"
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/scraperService.js": {
-    "mtime": 1780264842.0118625,
-    "ast_hash": "7427093d85437a1c9e569f3d99b0e6e7",
+    "mtime": 1780265092.37073,
+    "ast_hash": "7e226020bd75abded4f9035832caf884",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/latexUtils.js": {
@@ -110,8 +110,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DashboardTab.jsx": {
-    "mtime": 1780006617.93163,
-    "ast_hash": "62cff34105dc3a4be14e2e61fceebebc",
+    "mtime": 1780288686.5809343,
+    "ast_hash": "5a6d4098e0293b7a2a9cff8aa04b4d3e",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/AtsTestTab.jsx": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/JobOfferTab.jsx": {
-    "mtime": 1780264854.3664036,
-    "ast_hash": "eb10087b44e718413a94164d7d34e72b",
+    "mtime": 1780288667.3249345,
+    "ast_hash": "cf35cf9b8d02f995438a9eaf26c2a208",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/MyCvTab.jsx": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/DEVELOPMENT_HISTORY.md": {
-    "mtime": 1780264921.3108957,
-    "ast_hash": "446ee13a28aac4d5ac9e280e48626e55",
+    "mtime": 1780288699.3209577,
+    "ast_hash": "8ee9dbe53989e71350ec8bc9f2705da4",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/index.html": {
@@ -335,8 +335,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/BatchTab.jsx": {
-    "mtime": 1780264876.7793355,
-    "ast_hash": "2245c382d02a9dd18cbd30766eb1350a",
+    "mtime": 1780288678.8529346,
+    "ast_hash": "c16ad28ee8f680f3a143b8917134c8c9",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/BATCH_AI_GUIDE.md": {
