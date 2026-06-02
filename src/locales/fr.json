@@ -124,7 +124,11 @@
     "downloadPdf": "Compiler & Télécharger PDF (.pdf)",
     "downloadWord": "Télécharger Word (.doc)",
     "compiling": "Compilation en cours...",
-    "compileError": "Erreur de compilation: "
+    "compileError": "Erreur de compilation: ",
+    "deleteSelected": "Supprimer la sélection",
+    "confirmBulkDelete": "Êtes-vous sûr de vouloir supprimer les candidatures sélectionnées ?",
+    "bulkDeleteSuccess": "Candidatures sélectionnées supprimées avec succès.",
+    "previewPdf": "Aperçu PDF"
   },
   "prompts": {
     "title": "Choisir une stratégie",

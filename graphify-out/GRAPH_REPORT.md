@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-02)
 
 ## Corpus Check
-- 67 files · ~82,013 words
+- 67 files · ~82,391 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1050 nodes · 1113 edges · 92 communities (76 shown, 16 thin omitted)
+- 1058 nodes · 1121 edges · 97 communities (80 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0211f2bc`
+- Built from commit: `403fb645`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,6 +18,7 @@
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
 - [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
@@ -92,20 +93,24 @@
 - [[_COMMUNITY_Community 80|Community 80]]
 - [[_COMMUNITY_Community 81|Community 81]]
 - [[_COMMUNITY_Community 82|Community 82]]
+- [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
 - [[_COMMUNITY_Community 91|Community 91]]
+- [[_COMMUNITY_Community 92|Community 92]]
+- [[_COMMUNITY_Community 93|Community 93]]
 - [[_COMMUNITY_Community 94|Community 94]]
 - [[_COMMUNITY_Community 95|Community 95]]
+- [[_COMMUNITY_Community 96|Community 96]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `batch` - 30 edges
 2. `batch` - 30 edges
 3. `toast` - 29 edges
-4. `toast` - 29 edges
-5. `Similar jobs` - 28 edges
-6. `Similar jobs` - 28 edges
-7. `dashboard` - 25 edges
-8. `dashboard` - 25 edges
+4. `dashboard` - 29 edges
+5. `toast` - 29 edges
+6. `dashboard` - 29 edges
+7. `Similar jobs` - 28 edges
+8. `Similar jobs` - 28 edges
 9. `Storage Service` - 22 edges
 10. `ai` - 18 edges
 
@@ -121,7 +126,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (92 total, 16 thin omitted)
+## Communities (97 total, 17 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -134,6 +139,10 @@ Nodes (35): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucid
 ### Community 2 - "Community 2"
 Cohesion: 0.13
 Nodes (6): useLocalStorage(), useToast(), callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), App()
+
+### Community 3 - "Community 3"
+Cohesion: 0.18
+Nodes (11): prompts, copy, copyAll, download, editorTitle, empty, generate, requireLatex (+3 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -148,8 +157,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.15
-Nodes (12): 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration (+4 more)
+Cohesion: 0.20
+Nodes (9): 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses, Problem: Stale JSX Tags (+1 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -188,8 +197,8 @@ Cohesion: 0.05
 Nodes (41): content, desc, title, content, desc, title, content, desc (+33 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.04
-Nodes (45): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+37 more)
+Cohesion: 0.15
+Nodes (13): documents, compileError, compiling, confirmDelete, delete, downloadLatex, downloadPdf, downloadWord (+5 more)
 
 ### Community 29 - "Community 29"
 Cohesion: 0.05
@@ -204,12 +213,12 @@ Cohesion: 0.33
 Nodes (6): 10. Clerk + Supabase Integration Issues, Problem 1: Vite Crash with `require()`, Problem 2: Supabase Client Instantiation Crash, Problem 3: Dashboard Stuck on "Chargement...", Problem 4: Missing Clerk JWT Template & Invalid JWT Secret, Problem 5: RLS Type Mismatch (`uuid = text`)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.10
-Nodes (20): dashboard, compileError, compiling, confirmDelete, confirmDeletePrompt, continueEditing, deleteDoc, downloadLatex (+12 more)
+Cohesion: 0.08
+Nodes (24): dashboard, bulkDeleteSuccess, compileError, compiling, confirmBulkDelete, confirmDelete, confirmDeletePrompt, continueEditing (+16 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.10
-Nodes (20): dashboard, compileError, compiling, confirmDelete, confirmDeletePrompt, continueEditing, deleteDoc, downloadLatex (+12 more)
+Cohesion: 0.08
+Nodes (24): dashboard, bulkDeleteSuccess, compileError, compiling, confirmBulkDelete, confirmDelete, confirmDeletePrompt, continueEditing (+16 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.15
@@ -371,6 +380,10 @@ Nodes (3): 10. Concurrency and Rate Limiting in Batch Processing, Problem 1: API
 Cohesion: 0.40
 Nodes (5): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement, Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)
 
+### Community 83 - "Community 83"
+Cohesion: 0.20
+Nodes (10): tabs, aiAssistant, atsTest, batch, dashboard, documents, jobOffer, myCv (+2 more)
+
 ### Community 84 - "Community 84"
 Cohesion: 0.50
 Nodes (4): 12. General CV Storage & Batch AI LaTeX CV Generation, Problem 1: General/Default CV Missing or Reverting to Synthetic CV, Problem 2: Batch-Generated LaTeX CV Not Appearing in Documents or Dashboard tabs, Problem 3: Motivation Letters and Other Documents Generating as Plain Text and Failing PDF Compilation
@@ -379,26 +392,34 @@ Nodes (4): 12. General CV Storage & Batch AI LaTeX CV Generation, Problem 1: Gen
 Cohesion: 0.11
 Nodes (18): cv, clear, generatedPlaceholder, generatedTitle, importBtn, importing, loadGeneral, loadGeneralTooltip (+10 more)
 
+### Community 92 - "Community 92"
+Cohesion: 0.22
+Nodes (9): job, clear, extract, jina, placeholder, scrapfly, scrapling, title (+1 more)
+
 ### Community 94 - "Community 94"
 Cohesion: 0.33
 Nodes (5): envContent, inserted, supabaseKey, supabaseUrl, validPayload
 
+### Community 96 - "Community 96"
+Cohesion: 0.67
+Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
+
 ## Knowledge Gaps
-- **769 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+764 more)
+- **777 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+772 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `app` connect `Community 30` to `Community 24`?**
-  _High betweenness centrality (0.080) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 30` to `Community 93`?**
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 62`, `Community 95`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+  _High betweenness centrality (0.082) - this node is a cross-community bridge._
 - **Why does `templates` connect `Community 29` to `Community 95`?**
-  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _769 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _777 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

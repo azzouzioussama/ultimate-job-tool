@@ -124,7 +124,11 @@
     "downloadPdf": "Compile & Download PDF (.pdf)",
     "downloadWord": "Download Word (.doc)",
     "compiling": "Compiling PDF...",
-    "compileError": "Compilation error: "
+    "compileError": "Compilation error: ",
+    "deleteSelected": "Delete Selected",
+    "confirmBulkDelete": "Are you sure you want to delete all selected applications?",
+    "bulkDeleteSuccess": "Selected applications deleted successfully.",
+    "previewPdf": "Preview PDF"
   },
   "prompts": {
     "title": "Choose a strategy",

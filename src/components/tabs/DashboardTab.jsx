@@ -7,7 +7,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useDatabase } from '../../hooks/useDatabase';
-import { Plus, Trash2, Briefcase, Calendar, ChevronRight, ChevronDown, Download, Edit3, FileText, FileDown, FileCode2, ExternalLink } from 'lucide-react';
+import { Plus, Trash2, Briefcase, Calendar, ChevronRight, ChevronDown, Download, Edit3, FileText, FileDown, FileCode2, ExternalLink, Eye } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 
@@ -19,11 +19,13 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
 
   const [applications, setApplications] = useState(null);
   const [expandedAppId, setExpandedAppId] = useState(null);
+  const [selectedAppIds, setSelectedAppIds] = useState(new Set());
   const { createApplication, deleteApplication, updateApplication, getAllApplications } = useDatabase();
 
   const loadApps = async () => {
     const apps = await getAllApplications();
     setApplications(apps);
+    setSelectedAppIds(new Set());
   };
 
   useEffect(() => {
@@ -130,6 +132,32 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
     URL.revokeObjectURL(url);
   };
 
+  const handleBulkDelete = async () => {
+    if (selectedAppIds.size === 0) return;
+    if (confirm(t('dashboard.confirmBulkDelete', 'Êtes-vous sûr de vouloir supprimer les candidatures sélectionnées ?'))) {
+      const deletePromises = Array.from(selectedAppIds).map(id => deleteApplication(id));
+      await Promise.all(deletePromises);
+      setSelectedAppIds(new Set());
+      loadApps();
+      if (showToast) {
+        showToast(t('dashboard.bulkDeleteSuccess', 'Candidatures sélectionnées supprimées avec succès.'));
+      }
+    }
+  };
+
+  const handlePreviewPDF = async (content, e) => {
+    e.stopPropagation();
+    if (showToast) showToast(t('dashboard.compiling', 'Compilation en cours...'));
+    try {
+      const blob = await compilePdfFromLatex(content);
+      const url = URL.createObjectURL(blob);
+      window.open(url, '_blank');
+    } catch (err) {
+      console.error(err);
+      if (showToast) showToast(t('dashboard.compileError', 'Erreur de compilation: ') + err.message);
+    }
+  };
+
   const formatDate = (timestamp) => {
     if (!timestamp) return t('dashboard.unknown', 'Inconnu');
     return new Date(timestamp).toLocaleDateString(i18n.language === 'en' ? 'en-US' : 'fr-FR', {
@@ -144,13 +172,24 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
           <h2 className="text-xl font-bold text-slate-800">{t('dashboard.title', 'Mes Candidatures')}</h2>
           <p className="text-sm text-slate-500">{t('dashboard.subtitle', "Gérez vos différentes versions de CV et offres d'emploi (Stockage local).")}</p>
         </div>
-        <button
-          onClick={() => setIsCreating(true)}
-          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors"
-        >
-          <Plus size={16} />
-          {t('dashboard.newApp', 'Nouvelle Candidature')}
-        </button>
+        <div className="flex gap-2 items-center">
+          {selectedAppIds.size > 0 && (
+            <button
+              onClick={handleBulkDelete}
+              className="flex items-center gap-2 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 px-4 py-2 rounded-xl text-sm font-medium transition-colors"
+            >
+              <Trash2 size={16} />
+              {t('dashboard.deleteSelected', 'Supprimer la sélection')} ({selectedAppIds.size})
+            </button>
+          )}
+          <button
+            onClick={() => setIsCreating(true)}
+            className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors"
+          >
+            <Plus size={16} />
+            {t('dashboard.newApp', 'Nouvelle Candidature')}
+          </button>
+        </div>
       </div>
 
       {isCreating && (
@@ -208,7 +247,21 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-xs text-slate-500 uppercase tracking-wider">
-                <th className="p-4 font-semibold rounded-tl-xl whitespace-nowrap">{t('dashboard.table.date', 'Date')}</th>
+                <th className="p-4 w-10 text-center rounded-tl-xl">
+                  <input 
+                    type="checkbox"
+                    checked={applications && applications.length > 0 && selectedAppIds.size === applications.length}
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setSelectedAppIds(new Set(applications.map(app => app.id)));
+                      } else {
+                        setSelectedAppIds(new Set());
+                      }
+                    }}
+                    className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer w-4 h-4"
+                  />
+                </th>
+                <th className="p-4 font-semibold whitespace-nowrap">{t('dashboard.table.date', 'Date')}</th>
                 <th className="p-4 font-semibold w-2/5 min-w-[200px]">{t('dashboard.table.jobTitle', 'Objectif / Poste')}</th>
                 <th className="p-4 font-semibold w-1/5 min-w-[150px]">{t('dashboard.table.company', 'Entreprise')}</th>
                 <th className="p-4 font-semibold text-center whitespace-nowrap">{t('dashboard.table.status', 'Statut')}</th>
@@ -224,6 +277,22 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                     onClick={() => setExpandedAppId(prev => prev === app.id ? null : app.id)}
                     className="hover:bg-slate-50 cursor-pointer transition-colors group border-b border-slate-50"
                   >
+                    <td className="p-4 text-center" onClick={e => e.stopPropagation()}>
+                      <input 
+                        type="checkbox"
+                        checked={selectedAppIds.has(app.id)}
+                        onChange={(e) => {
+                          const newSelected = new Set(selectedAppIds);
+                          if (e.target.checked) {
+                            newSelected.add(app.id);
+                          } else {
+                            newSelected.delete(app.id);
+                          }
+                          setSelectedAppIds(newSelected);
+                        }}
+                        className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer w-4 h-4"
+                      />
+                    </td>
                     <td className="p-4 text-xs text-slate-500 whitespace-nowrap">
                       <div className="flex items-center gap-2">
                         {expandedAppId === app.id ? <ChevronDown size={14} className="text-slate-400"/> : <ChevronRight size={14} className="text-slate-400"/>}
@@ -302,7 +371,7 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                   {/* Expanded Detailed View */}
                   {expandedAppId === app.id && (
                     <tr className="bg-slate-50/50 border-b border-slate-200 shadow-inner">
-                      <td colSpan="7" className="p-6">
+                      <td colSpan="8" className="p-6">
                         {/* Mobile-only stats display */}
                         <div className="flex sm:hidden justify-between items-center bg-white border border-slate-200 rounded-xl p-3 shadow-sm mb-4 text-xs">
                           <div>
@@ -341,6 +410,13 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                                       </button>
                                     </div>
                                     <div className="flex gap-1">
+                                      <button 
+                                        onClick={(e) => handlePreviewPDF(latex, e)} 
+                                        className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-green-50 hover:text-green-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                                        title={t('dashboard.previewPdf', 'Aperçu PDF')}
+                                      >
+                                        <Eye size={14} /> 
+                                      </button>
                                       <button 
                                         onClick={(e) => handleDownloadPrompt(latex, `${key}.tex`, e)} 
                                         className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
