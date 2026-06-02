@@ -81,7 +81,7 @@ function useCloudDatabase() {
     return createAuthenticatedSupabaseClient(token);
   }, [getToken]);
 
-  const createApplication = async (data) => {
+  const createApplication = useCallback(async (data) => {
     try {
       if (!user) return null;
       const client = await getClient();
@@ -104,9 +104,9 @@ function useCloudDatabase() {
       if (error) { console.error("Error creating application:", error); throw error; }
       return insertedData.id;
     } catch (e) { console.error(e); return null; }
-  };
+  }, [user, getClient]);
 
-  const getApplication = async (id) => {
+  const getApplication = useCallback(async (id) => {
     try {
       const client = await getClient();
       if (!client) return null;
@@ -119,9 +119,9 @@ function useCloudDatabase() {
       }
       return data;
     } catch (e) { console.error(e); return null; }
-  };
+  }, [getClient]);
 
-  const updateApplication = async (id, updates) => {
+  const updateApplication = useCallback(async (id, updates) => {
     try {
       const client = await getClient();
       if (!client) return;
@@ -164,9 +164,9 @@ function useCloudDatabase() {
         .eq('id', id);
       if (error) { console.error("Error updating application:", error); throw error; }
     } catch (e) { console.error(e); }
-  };
+  }, [getClient]);
 
-  const deleteApplication = async (id) => {
+  const deleteApplication = useCallback(async (id) => {
     try {
       const client = await getClient();
       if (!client) return;
@@ -174,9 +174,9 @@ function useCloudDatabase() {
         .from('applications').delete().eq('id', id);
       if (error) { console.error("Error deleting application:", error); throw error; }
     } catch (e) { console.error(e); }
-  };
+  }, [getClient]);
 
-  const getAllApplications = async () => {
+  const getAllApplications = useCallback(async () => {
     try {
       if (!user) return [];
       const client = await getClient();
@@ -194,7 +194,7 @@ function useCloudDatabase() {
       }));
       return mappedData;
     } catch (e) { console.error(e); return []; }
-  };
+  }, [user, getClient]);
 
   return { createApplication, getApplication, updateApplication, deleteApplication, getAllApplications };
 }

@@ -7,11 +7,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useDatabase } from '../../hooks/useDatabase';
-import { Plus, Trash2, Briefcase, Calendar, ChevronRight, ChevronDown, Download, Edit3, FileText, FileDown, FileCode2, ExternalLink, Eye } from 'lucide-react';
+import { Plus, Trash2, Briefcase, Calendar, ChevronRight, ChevronDown, Download, Edit3, FileText, FileDown, FileCode2, ExternalLink, Eye, MousePointerClick } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 
-export default function DashboardTab({ onSelectApplication, showToast }) {
+export default function DashboardTab({ onSelectApplication, onActivateApplication, showToast }) {
   const { t, i18n } = useTranslation();
   const [isCreating, setIsCreating] = useState(false);
   const [newCompany, setNewCompany] = useState('');
@@ -358,6 +358,15 @@ export default function DashboardTab({ onSelectApplication, showToast }) {
                       >
                         <Trash2 size={16} />
                       </button>
+                      {onActivateApplication && (
+                        <button 
+                          onClick={(e) => { e.stopPropagation(); onActivateApplication(app.id); }}
+                          className="text-slate-400 hover:text-emerald-500 transition-colors p-2 rounded-lg hover:bg-emerald-50 ml-1"
+                          title="Activer pour l'extension"
+                        >
+                          <MousePointerClick size={16} />
+                        </button>
+                      )}
                       <button 
                         onClick={(e) => { e.stopPropagation(); onSelectApplication(app.id); }}
                         className="text-slate-400 hover:text-indigo-600 transition-colors p-2 rounded-lg hover:bg-indigo-50 ml-1"

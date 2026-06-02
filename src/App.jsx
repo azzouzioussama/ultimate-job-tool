@@ -953,6 +953,10 @@ export default function App() {
                 setActiveAppId(id);
                 setActiveTab('templates'); // Auto-switch to Prompts after selecting
               }}
+              onActivateApplication={(id) => {
+                setActiveAppId(id);
+                showToast("Application activée pour l'extension");
+              }}
               showToast={showToast}
             />
           </div>
