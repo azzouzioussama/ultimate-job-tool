@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-02)
 
 ## Corpus Check
-- 67 files · ~82,391 words
+- 73 files · ~104,364 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1058 nodes · 1121 edges · 97 communities (80 shown, 17 thin omitted)
+- 1108 nodes · 1168 edges · 103 communities (86 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `403fb645`
+- Built from commit: `f511e7ea`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -101,6 +101,10 @@
 - [[_COMMUNITY_Community 94|Community 94]]
 - [[_COMMUNITY_Community 95|Community 95]]
 - [[_COMMUNITY_Community 96|Community 96]]
+- [[_COMMUNITY_Community 97|Community 97]]
+- [[_COMMUNITY_Community 98|Community 98]]
+- [[_COMMUNITY_Community 99|Community 99]]
+- [[_COMMUNITY_Community 102|Community 102]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `batch` - 30 edges
@@ -126,7 +130,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (97 total, 17 thin omitted)
+## Communities (103 total, 17 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -401,25 +405,41 @@ Cohesion: 0.33
 Nodes (5): envContent, inserted, supabaseKey, supabaseUrl, validPayload
 
 ### Community 96 - "Community 96"
+Cohesion: 0.16
+Nodes (7): cleanLatexText(), createSidebar(), personalProfile, style, triggerAutofill(), triggerResumeDownload(), updateSidebarUI()
+
+### Community 97 - "Community 97"
+Cohesion: 0.14
+Nodes (13): action, default_icon, default_popup, background, service_worker, content_scripts, description, icons (+5 more)
+
+### Community 98 - "Community 98"
+Cohesion: 0.17
+Nodes (11): 1. Synchronisation, 1. Synchronisation (Local et Vercel), 2. Configuration du Profil Autofill, 3. Remplissage des Formulaires de Candidature, Guide d'Installation de l'Extension Ultimate Job Tool Companion, 🔒 Limite de sécurité du navigateur et Contournement (Drag & Drop), Pour Google Chrome, Brave, Microsoft Edge ou Opera :, 🛠️ Étape 1 : Charger l'extension dans votre navigateur (+3 more)
+
+### Community 99 - "Community 99"
+Cohesion: 0.29
+Nodes (6): appCard, btnAutofillNow, btnOpenApp, existingTab, statusBadge, statusText
+
+### Community 102 - "Community 102"
 Cohesion: 0.67
 Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
 
 ## Knowledge Gaps
-- **777 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+772 more)
+- **803 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+798 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `app` connect `Community 30` to `Community 93`?**
-  _High betweenness centrality (0.093) - this node is a cross-community bridge._
-- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 62`, `Community 95`?**
-  _High betweenness centrality (0.082) - this node is a cross-community bridge._
-- **Why does `templates` connect `Community 29` to `Community 95`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 30` to `Community 95`?**
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 93`, `Community 62`?**
+  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+- **Why does `templates` connect `Community 29` to `Community 93`?**
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _777 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _803 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

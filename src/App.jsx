@@ -144,6 +144,7 @@ export default function App() {
   const [targetPosition, setTargetPosition] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [documents, setDocuments] = useState([]);
+  const [currentJobUrl, setCurrentJobUrl] = useState('');
 
   // ── Tracking & Job Offer Data ───────────────────────────────────────────────
   const [trackingStatus, setTrackingStatus] = useState('Draft');
@@ -251,6 +252,7 @@ export default function App() {
           setAtsScoreAfter(app.atsScoreAfter || null);
           setLastGeneratedDate(app.lastGeneratedDate || null);
           setAiResponses(app.aiResponses || []);
+          setCurrentJobUrl(app.jobUrl || '');
         }
       });
     } else {
@@ -267,6 +269,7 @@ export default function App() {
       setAtsScoreAfter(null);
       setLastGeneratedDate(null);
       setAiResponses([]);
+      setCurrentJobUrl('');
     }
   }, [activeAppId]);
 
@@ -287,11 +290,35 @@ export default function App() {
         atsScoreBefore,
         atsScoreAfter,
         lastGeneratedDate,
-        aiResponses
+        aiResponses,
+        jobUrl: currentJobUrl
       });
     }, 500); // Wait 500ms after user stops typing
     return () => clearTimeout(timer);
-  }, [activeAppId, jobDescription, cvOriginal, cvGenerated, targetPosition, companyName, documents, atsResult, trackingStatus, promptResponses, atsScoreBefore, atsScoreAfter, lastGeneratedDate, aiResponses]);
+  }, [activeAppId, jobDescription, cvOriginal, cvGenerated, targetPosition, companyName, documents, atsResult, trackingStatus, promptResponses, atsScoreBefore, atsScoreAfter, lastGeneratedDate, aiResponses, currentJobUrl]);
+
+  // 4. Dispatch custom event for the browser extension companion
+  useEffect(() => {
+    if (!activeAppId) {
+      window.dispatchEvent(new CustomEvent('UJT_ACTIVE_APP_CHANGED', { detail: null }));
+      return;
+    }
+    
+    const eventData = {
+      id: activeAppId,
+      companyName,
+      jobTitle: targetPosition,
+      jobDescription,
+      jobUrl: currentJobUrl,
+      trackingStatus,
+      promptResponses,
+      documents: documents.map(d => ({ id: d.id, title: d.title, content: d.content })),
+      cvGenerated,
+      cvOriginal
+    };
+    
+    window.dispatchEvent(new CustomEvent('UJT_ACTIVE_APP_CHANGED', { detail: eventData }));
+  }, [activeAppId, companyName, targetPosition, jobDescription, currentJobUrl, trackingStatus, promptResponses, documents, cvGenerated, cvOriginal]);
 
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -684,11 +711,13 @@ export default function App() {
         if (!apiKey) {
           showToast(t('app.toast.apiKeyRequiredAutoCreate', 'Clé API requise pour extraire le titre automatiquement. L\'offre est sauvegardée dans la candidature actuelle.'));
           setJobDescription(result);
+          setCurrentJobUrl(jobUrl);
         } else {
           await handleAutoCreateFromText(result, jobUrl);
         }
       } else {
         setJobDescription(result);
+        setCurrentJobUrl(jobUrl);
         const providerName = scraperType === 'jina' ? 'Jina AI' : scraperType === 'scrapfly' ? 'Scrapfly' : 'Scrapling';
         showToast(t('app.toast.offerExtracted', { provider: providerName, defaultValue: `Offre extraite avec succès via ${providerName} !` }));
       }

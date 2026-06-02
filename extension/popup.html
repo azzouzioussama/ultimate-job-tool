@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ultimate Job Tool Companion</title>
+  <style>
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 16px;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    
+    .title {
+      font-size: 15px;
+      font-weight: 700;
+      background: linear-gradient(to right, #a5b4fc, #c7d2fe);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+    
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    
+    .status-badge.connected {
+      background-color: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+    }
+    
+    .status-badge.disconnected {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+    }
+    
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+    
+    .section-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .card {
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    
+    .app-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin: 0 0 4px 0;
+    }
+    
+    .app-company {
+      font-size: 12px;
+      color: #94a3b8;
+      margin: 0 0 8px 0;
+    }
+    
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+    
+    .btn {
+      width: 100%;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 16px;
+      transition: background-color 0.2s;
+    }
+    
+    .btn:hover {
+      background: #4338ca;
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 8px;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="icon">J</div>
+    <div>
+      <h1 class="title">Ultimate Job Tool</h1>
+      <div id="status-badge" class="status-badge disconnected">
+        <span class="status-dot"></span>
+        <span id="status-text">Hors ligne</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Candidature Active</div>
+  <div class="card" id="app-card">
+    <div style="font-size: 12px; color: #64748b; font-style: italic; text-align: center; padding: 12px 0;">
+      Aucune candidature synchronisée
+    </div>
+  </div>
+
+  <button class="btn" id="btn-open-app">Ouvrir Ultimate Job Tool</button>
+  <button class="btn btn-secondary" id="btn-autofill-now" disabled>Autoremplir cette page</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

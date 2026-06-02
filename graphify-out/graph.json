@@ -909,7 +909,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L1",
       "id": "src_main_jsx",
-      "community": 95,
+      "community": 93,
       "norm_label": "main.jsx"
     },
     {
@@ -918,7 +918,7 @@
       "source_file": "src/main.jsx",
       "source_location": "L10",
       "id": "src_main_renderapp",
-      "community": 95,
+      "community": 93,
       "norm_label": "renderapp()"
     },
     {
@@ -927,7 +927,7 @@
       "source_file": "src/i18n.js",
       "source_location": "L1",
       "id": "src_i18n_js",
-      "community": 95,
+      "community": 93,
       "norm_label": "i18n.js"
     },
     {
@@ -963,7 +963,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L1",
       "id": "src_locales_fr_json",
-      "community": 95,
+      "community": 93,
       "norm_label": "fr.json"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L2",
       "id": "locales_fr_header",
-      "community": 95,
+      "community": 93,
       "norm_label": "header"
     },
     {
@@ -981,7 +981,7 @@
       "source_file": "src/locales/fr.json",
       "source_location": "L3",
       "id": "locales_fr_header_apikeyplaceholder",
-      "community": 95,
+      "community": 93,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -3699,7 +3699,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L1",
       "id": "src_locales_en_json",
-      "community": 93,
+      "community": 95,
       "norm_label": "en.json"
     },
     {
@@ -3708,7 +3708,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L2",
       "id": "locales_en_header",
-      "community": 93,
+      "community": 95,
       "norm_label": "header"
     },
     {
@@ -3717,7 +3717,7 @@
       "source_file": "src/locales/en.json",
       "source_location": "L3",
       "id": "locales_en_header_apikeyplaceholder",
-      "community": 93,
+      "community": 95,
       "norm_label": "apikeyplaceholder"
     },
     {
@@ -7177,6 +7177,348 @@
       "norm_label": "header()"
     },
     {
+      "label": "content_app.js",
+      "file_type": "code",
+      "source_file": "extension/content_app.js",
+      "source_location": "L1",
+      "id": "extension_content_app_js",
+      "community": 101,
+      "norm_label": "content_app.js"
+    },
+    {
+      "label": "background.js",
+      "file_type": "code",
+      "source_file": "extension/background.js",
+      "source_location": "L1",
+      "id": "extension_background_js",
+      "community": 100,
+      "norm_label": "background.js"
+    },
+    {
+      "label": "popup.js",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L1",
+      "id": "extension_popup_js",
+      "community": 99,
+      "norm_label": "popup.js"
+    },
+    {
+      "label": "statusBadge",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L4",
+      "id": "extension_popup_statusbadge",
+      "community": 99,
+      "norm_label": "statusbadge"
+    },
+    {
+      "label": "statusText",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L5",
+      "id": "extension_popup_statustext",
+      "community": 99,
+      "norm_label": "statustext"
+    },
+    {
+      "label": "appCard",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L6",
+      "id": "extension_popup_appcard",
+      "community": 99,
+      "norm_label": "appcard"
+    },
+    {
+      "label": "btnOpenApp",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L7",
+      "id": "extension_popup_btnopenapp",
+      "community": 99,
+      "norm_label": "btnopenapp"
+    },
+    {
+      "label": "btnAutofillNow",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L8",
+      "id": "extension_popup_btnautofillnow",
+      "community": 99,
+      "norm_label": "btnautofillnow"
+    },
+    {
+      "label": "existingTab",
+      "file_type": "code",
+      "source_file": "extension/popup.js",
+      "source_location": "L63",
+      "id": "extension_popup_existingtab",
+      "community": 99,
+      "norm_label": "existingtab"
+    },
+    {
+      "label": "content_filler.js",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L1",
+      "id": "extension_content_filler_js",
+      "community": 96,
+      "norm_label": "content_filler.js"
+    },
+    {
+      "label": "style",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L8",
+      "id": "extension_content_filler_style",
+      "community": 96,
+      "norm_label": "style"
+    },
+    {
+      "label": "personalProfile",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L256",
+      "id": "extension_content_filler_personalprofile",
+      "community": 96,
+      "norm_label": "personalprofile"
+    },
+    {
+      "label": "createFAB()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L296",
+      "id": "extension_content_filler_createfab",
+      "community": 96,
+      "norm_label": "createfab()"
+    },
+    {
+      "label": "createSidebar()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L325",
+      "id": "extension_content_filler_createsidebar",
+      "community": 96,
+      "norm_label": "createsidebar()"
+    },
+    {
+      "label": "toggleSidebar()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L429",
+      "id": "extension_content_filler_togglesidebar",
+      "community": 96,
+      "norm_label": "togglesidebar()"
+    },
+    {
+      "label": "updateSidebarUI()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L437",
+      "id": "extension_content_filler_updatesidebarui",
+      "community": 96,
+      "norm_label": "updatesidebarui()"
+    },
+    {
+      "label": "updateProfileFieldsUI()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L575",
+      "id": "extension_content_filler_updateprofilefieldsui",
+      "community": 96,
+      "norm_label": "updateprofilefieldsui()"
+    },
+    {
+      "label": "saveProfileData()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L594",
+      "id": "extension_content_filler_saveprofiledata",
+      "community": 96,
+      "norm_label": "saveprofiledata()"
+    },
+    {
+      "label": "copyTextToClipboard()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L625",
+      "id": "extension_content_filler_copytexttoclipboard",
+      "community": 96,
+      "norm_label": "copytexttoclipboard()"
+    },
+    {
+      "label": "triggerAutofill()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L637",
+      "id": "extension_content_filler_triggerautofill",
+      "community": 96,
+      "norm_label": "triggerautofill()"
+    },
+    {
+      "label": "triggerResumeDownload()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L778",
+      "id": "extension_content_filler_triggerresumedownload",
+      "community": 96,
+      "norm_label": "triggerresumedownload()"
+    },
+    {
+      "label": "getLabelForInput()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L793",
+      "id": "extension_content_filler_getlabelforinput",
+      "community": 96,
+      "norm_label": "getlabelforinput()"
+    },
+    {
+      "label": "setValueAndDispatch()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L826",
+      "id": "extension_content_filler_setvalueanddispatch",
+      "community": 96,
+      "norm_label": "setvalueanddispatch()"
+    },
+    {
+      "label": "cleanLatexText()",
+      "file_type": "code",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L838",
+      "id": "extension_content_filler_cleanlatextext",
+      "community": 96,
+      "norm_label": "cleanlatextext()"
+    },
+    {
+      "label": "manifest.json",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L1",
+      "id": "extension_manifest_json",
+      "community": 97,
+      "norm_label": "manifest.json"
+    },
+    {
+      "label": "manifest_version",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L2",
+      "id": "extension_manifest_manifest_version",
+      "community": 97,
+      "norm_label": "manifest_version"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L3",
+      "id": "extension_manifest_name",
+      "community": 97,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L4",
+      "id": "extension_manifest_version",
+      "community": 97,
+      "norm_label": "version"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L5",
+      "id": "extension_manifest_description",
+      "community": 97,
+      "norm_label": "description"
+    },
+    {
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L6",
+      "id": "extension_manifest_permissions",
+      "community": 97,
+      "norm_label": "permissions"
+    },
+    {
+      "label": "background",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L10",
+      "id": "extension_manifest_background",
+      "community": 97,
+      "norm_label": "background"
+    },
+    {
+      "label": "service_worker",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L11",
+      "id": "extension_manifest_background_service_worker",
+      "community": 97,
+      "norm_label": "service_worker"
+    },
+    {
+      "label": "content_scripts",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L13",
+      "id": "extension_manifest_content_scripts",
+      "community": 97,
+      "norm_label": "content_scripts"
+    },
+    {
+      "label": "action",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L38",
+      "id": "extension_manifest_action",
+      "community": 97,
+      "norm_label": "action"
+    },
+    {
+      "label": "default_popup",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L39",
+      "id": "extension_manifest_action_default_popup",
+      "community": 97,
+      "norm_label": "default_popup"
+    },
+    {
+      "label": "default_icon",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L40",
+      "id": "extension_manifest_action_default_icon",
+      "community": 97,
+      "norm_label": "default_icon"
+    },
+    {
+      "label": "icons",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L42",
+      "id": "extension_manifest_icons",
+      "community": 97,
+      "norm_label": "icons"
+    },
+    {
+      "label": "128",
+      "file_type": "code",
+      "source_file": "extension/manifest.json",
+      "source_location": "L43",
+      "id": "extension_manifest_icons_128",
+      "community": 97,
+      "norm_label": "128"
+    },
+    {
       "label": "GRAPHIFY_GUIDE.md",
       "file_type": "document",
       "source_file": "GRAPHIFY_GUIDE.md",
@@ -7587,7 +7929,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
       "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "community": 96,
+      "community": 102,
       "norm_label": "8. database (dexie.js) & architecture refactoring"
     },
     {
@@ -7596,7 +7938,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L143",
       "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
-      "community": 96,
+      "community": 102,
       "norm_label": "problem 1: cascading renders warning with `useeffect`"
     },
     {
@@ -7605,7 +7947,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L148",
       "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
-      "community": 96,
+      "community": 102,
       "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
     },
     {
@@ -9308,6 +9650,114 @@
       "id": "rules_graphify_graphify",
       "community": 26,
       "norm_label": "graphify"
+    },
+    {
+      "label": "extension_guide.md",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L1",
+      "id": "extension_extension_guide_md",
+      "community": 98,
+      "norm_label": "extension_guide.md"
+    },
+    {
+      "label": "Guide d'Installation de l'Extension Ultimate Job Tool Companion",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L1",
+      "id": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion",
+      "community": 98,
+      "norm_label": "guide d'installation de l'extension ultimate job tool companion"
+    },
+    {
+      "label": "\ud83d\udee0\ufe0f \u00c9tape 1 : Charger l'extension dans votre navigateur",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L7",
+      "id": "extension_extension_guide_\u00e9tape_1_charger_l_extension_dans_votre_navigateur",
+      "community": 98,
+      "norm_label": "\ud83d\udee0\ufe0f etape 1 : charger l'extension dans votre navigateur"
+    },
+    {
+      "label": "Pour Google Chrome, Brave, Microsoft Edge ou Opera :",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L11",
+      "id": "extension_extension_guide_pour_google_chrome_brave_microsoft_edge_ou_opera",
+      "community": 98,
+      "norm_label": "pour google chrome, brave, microsoft edge ou opera :"
+    },
+    {
+      "label": "\ud83d\udcc2 \u00c9tape 2 : Ic\u00f4ne de l'extension",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L26",
+      "id": "extension_extension_guide_\u00e9tape_2_ic\u00f4ne_de_l_extension",
+      "community": 98,
+      "norm_label": "\ud83d\udcc2 etape 2 : icone de l'extension"
+    },
+    {
+      "label": "\ud83d\ude80 \u00c9tape 3 : Comment l'utiliser",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L32",
+      "id": "extension_extension_guide_\u00e9tape_3_comment_l_utiliser",
+      "community": 98,
+      "norm_label": "\ud83d\ude80 etape 3 : comment l'utiliser"
+    },
+    {
+      "label": "1. Synchronisation (Local et Vercel)",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L34",
+      "id": "extension_extension_guide_1_synchronisation_local_et_vercel",
+      "community": 98,
+      "norm_label": "1. synchronisation (local et vercel)"
+    },
+    {
+      "label": "2. Configuration du Profil Autofill",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L42",
+      "id": "extension_extension_guide_2_configuration_du_profil_autofill",
+      "community": 98,
+      "norm_label": "2. configuration du profil autofill"
+    },
+    {
+      "label": "3. Remplissage des Formulaires de Candidature",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L48",
+      "id": "extension_extension_guide_3_remplissage_des_formulaires_de_candidature",
+      "community": 98,
+      "norm_label": "3. remplissage des formulaires de candidature"
+    },
+    {
+      "label": "\ud83d\udd12 Limite de s\u00e9curit\u00e9 du navigateur et Contournement (Drag & Drop)",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L59",
+      "id": "extension_extension_guide_limite_de_s\u00e9curit\u00e9_du_navigateur_et_contournement_drag_drop",
+      "community": 98,
+      "norm_label": "\ud83d\udd12 limite de securite du navigateur et contournement (drag & drop)"
+    },
+    {
+      "label": "\ud83d\udcc2 \u00c9tape 2 : Copier l'ic\u00f4ne de l'extension (Recommand\u00e9)",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L24",
+      "community": 98,
+      "norm_label": "\ud83d\udcc2 etape 2 : copier l'icone de l'extension (recommande)",
+      "id": "extension_extension_guide_\u00e9tape_2_copier_l_ic\u00f4ne_de_l_extension_recommand\u00e9"
+    },
+    {
+      "label": "1. Synchronisation",
+      "file_type": "document",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L33",
+      "community": 98,
+      "norm_label": "1. synchronisation",
+      "id": "extension_extension_guide_1_synchronisation"
     },
     {
       "label": "restart",
@@ -18469,6 +18919,369 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "extension/popup.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_popup_js",
+      "target": "extension_popup_statusbadge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/popup.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_popup_js",
+      "target": "extension_popup_statustext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/popup.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_popup_js",
+      "target": "extension_popup_appcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/popup.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_popup_js",
+      "target": "extension_popup_btnopenapp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/popup.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_popup_js",
+      "target": "extension_popup_btnautofillnow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/popup.js",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_popup_js",
+      "target": "extension_popup_existingtab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_style"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L256",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_personalprofile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L296",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_createfab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L325",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_createsidebar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L429",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_togglesidebar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L437",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_updatesidebarui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L575",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_updateprofilefieldsui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L594",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_saveprofiledata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L625",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_copytexttoclipboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L637",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_triggerautofill"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L778",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_triggerresumedownload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L793",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_getlabelforinput"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L826",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_setvalueanddispatch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L838",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_js",
+      "target": "extension_content_filler_cleanlatextext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L426",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_createsidebar",
+      "target": "extension_content_filler_updatesidebarui"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L661",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_triggerautofill",
+      "target": "extension_content_filler_cleanlatextext"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_filler.js",
+      "source_location": "L760",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_content_filler_triggerautofill",
+      "target": "extension_content_filler_triggerresumedownload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_manifest_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_description"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_permissions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_background"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_content_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_action"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_json",
+      "target": "extension_manifest_icons"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_background",
+      "target": "extension_manifest_background_service_worker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_action",
+      "target": "extension_manifest_action_default_popup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_action",
+      "target": "extension_manifest_action_default_icon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/manifest.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_manifest_icons",
+      "target": "extension_manifest_icons_128"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "GRAPHIFY_GUIDE.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -20719,6 +21532,116 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_md",
+      "target": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion",
+      "target": "extension_extension_guide_\u00e9tape_1_charger_l_extension_dans_votre_navigateur"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion",
+      "target": "extension_extension_guide_\u00e9tape_2_ic\u00f4ne_de_l_extension"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion",
+      "target": "extension_extension_guide_\u00e9tape_3_comment_l_utiliser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion",
+      "target": "extension_extension_guide_limite_de_s\u00e9curit\u00e9_du_navigateur_et_contournement_drag_drop"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_guide_d_installation_de_l_extension_ultimate_job_tool_companion",
+      "target": "extension_extension_guide_\u00e9tape_2_copier_l_ic\u00f4ne_de_l_extension_recommand\u00e9"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_\u00e9tape_1_charger_l_extension_dans_votre_navigateur",
+      "target": "extension_extension_guide_pour_google_chrome_brave_microsoft_edge_ou_opera"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_\u00e9tape_3_comment_l_utiliser",
+      "target": "extension_extension_guide_1_synchronisation_local_et_vercel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_\u00e9tape_3_comment_l_utiliser",
+      "target": "extension_extension_guide_2_configuration_du_profil_autofill"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_\u00e9tape_3_comment_l_utiliser",
+      "target": "extension_extension_guide_3_remplissage_des_formulaires_de_candidature"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/extension_guide.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "extension_extension_guide_\u00e9tape_3_comment_l_utiliser",
+      "target": "extension_extension_guide_1_synchronisation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "graphify-out/memory/query_20260523_202727_how_does_the_ats_scoring_logic_work.md",
       "source_location": "L9",
       "weight": 1.0,
@@ -20818,5 +21741,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "403fb6455e5caba7c92ea4228c2633234b53eafa"
+  "built_at_commit": "f511e7ea97a5fe0db2a78fea7ef46d3d43b9f1ca"
 }

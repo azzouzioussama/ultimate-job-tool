@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Ultimate Job Tool Companion",
+  "version": "1.0.0",
+  "description": "Companion extension for the Ultimate Job Hunting Tool. Automates cover letter insertion, CV syncing, and form autofilling on ATS boards.",
+  "permissions": [
+    "storage",
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:3000/*",
+        "http://localhost:3001/*",
+        "https://*.vercel.app/*",
+        "https://ultimate-job-tool.vercel.app/*"
+      ],
+      "js": ["content_app.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.greenhouse.io/*",
+        "*://*.lever.co/*",
+        "*://*.myworkdayjobs.com/*",
+        "*://*.indeed.com/*",
+        "*://*.linkedin.com/*",
+        "*://*.smartrecruiters.com/*",
+        "*://*.workable.com/*"
+      ],
+      "js": ["content_filler.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon128.png"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
