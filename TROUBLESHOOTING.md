@@ -313,5 +313,17 @@ pip install pydantic pydantic-core openai
 3. Read the serialized key on fetch and restore it as `app.jobUrl` on the returned objects.
 4. Filter out any keys starting with double underscores (`__`) from rendering in [DashboardTab.jsx](file:///home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/components/tabs/DashboardTab.jsx)'s file viewer.
 
+## 14. Chrome Extension Companion Integration
+
+### Problem 1: Content Security Policy (CSP) Blocking Inline Scripts
+**Issue**: The extension's `content_app.js` was blocked from injecting inline scripts into the React app's context to bridge `localStorage` with a CSP violation error (`script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules'`).
+**Cause**: Manifest V3 enforces strict CSP policies that prohibit executing inline JavaScript strings injected via DOM manipulation (e.g., `script.textContent = "..."`) from content scripts.
+**Fix**: Removed the inline script injection approach entirely. Switched to relying purely on DOM events (`window.dispatchEvent(new CustomEvent(...))`) and `window.postMessage()` for robust communication across the isolated world boundary between the React application and the extension's content script.
+
+### Problem 2: Active Application Data Always Null on Initial Load
+**Issue**: The extension successfully connected and received messages, but the synced application data payload was consistently `null`, even when applications existed in the database. The `UJT_EXTENSION_PING` requests always returned empty.
+**Cause**: A race condition during app initialization in cloud mode (Clerk + Supabase). The `initDB()` effect in `App.jsx` ran on mount with an empty dependency array `[]`. At this exact moment, Clerk authentication had not yet resolved, meaning `user` was `null`, and `getAllApplications()` returned `[]`. Because the dependency array was empty, `initDB()` never re-ran after Clerk auth completed, leaving the `activeAppId` permanently `null` until a user manually clicked a row in the dashboard.
+**Fix**: Updated the `initDB()` `useEffect` dependency from `[]` to `[getAllApplications]`. Because `getAllApplications` is derived from `useDatabase` which internally depends on the Clerk user state, its reference updates when auth completes. The effect now correctly re-runs when the user becomes authenticated, automatically setting the first application as the active `activeAppId` and successfully syncing it to the extension. Added an `else if (!activeAppId)` guard to prevent overwriting the selected app on subsequent re-renders.
+
 ---
 *Generated: June 2026*

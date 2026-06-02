@@ -8,17 +8,25 @@ chrome.runtime.onInstalled.addListener(() => {
     if (!result.activeApp) {
       chrome.storage.local.set({ activeApp: null });
       console.log("Initialized activeApp storage to null.");
+    } else {
+      console.log("Existing activeApp found:", result.activeApp?.companyName, "-", result.activeApp?.jobTitle);
     }
   });
 });
 
-// Message listener to coordinate between the React web app, job boards, and the popup
+// Message listener to coordinate between the React web app, job boards, and the popup.
+// IMPORTANT: Every branch must call sendResponse() to prevent "message channel closed" errors.
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "SET_ACTIVE_APPLICATION") {
     // Save application data received from content_app.js
     chrome.storage.local.set({ activeApp: message.data }, () => {
-      console.log("Updated active application state:", message.data?.companyName, "-", message.data?.jobTitle);
-      sendResponse({ status: "success" });
+      if (chrome.runtime.lastError) {
+        console.error("Failed to save active app:", chrome.runtime.lastError.message);
+        sendResponse({ status: "error", error: chrome.runtime.lastError.message });
+      } else {
+        console.log("Updated active application state:", message.data?.companyName, "-", message.data?.jobTitle);
+        sendResponse({ status: "success" });
+      }
     });
     return true; // Keep message channel open for async response
   } 
@@ -26,7 +34,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   else if (message.action === "GET_ACTIVE_APPLICATION") {
     // Return saved active application data to content_filler.js or popup.js
     chrome.storage.local.get(["activeApp"], (result) => {
-      sendResponse({ data: result.activeApp || null });
+      if (chrome.runtime.lastError) {
+        sendResponse({ data: null, error: chrome.runtime.lastError.message });
+      } else {
+        sendResponse({ data: result.activeApp || null });
+      }
     });
     return true;
   }
@@ -36,7 +48,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const { url, filename } = message;
     if (!url) {
       sendResponse({ status: "error", error: "Missing download URL" });
-      return;
+      return false;
     }
     
     chrome.downloads.download({
@@ -61,7 +73,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const { text, filename } = message;
     if (!text) {
       sendResponse({ status: "error", error: "Missing text content" });
-      return;
+      return false;
     }
     
     const dataUrl = "data:text/plain;charset=utf-8," + encodeURIComponent(text);
@@ -78,5 +90,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       }
     });
     return true;
+  }
+  
+  // Default: unknown action — respond immediately to prevent channel leak
+  else {
+    console.log("Unknown message action:", message.action);
+    sendResponse({ status: "ignored", error: "Unknown action" });
+    return false;
   }
 });

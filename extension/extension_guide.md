@@ -32,9 +32,9 @@ L'icône `icon128.png` a déjà été automatiquement générée et placée dans
 ## 🚀 Étape 3 : Comment l'utiliser
 
 ### 1. Synchronisation (Local et Vercel)
-L'extension est pré-configurée pour fonctionner à la fois sur votre serveur local WSL (port `3001`) et sur votre déploiement de production Vercel (grâce aux motifs d'écoute `http://localhost:3000/*`, `http://localhost:3001/*` et `https://*.vercel.app/*`).
+L'extension est pré-configurée pour fonctionner à la fois sur votre serveur local WSL et sur votre déploiement de production Vercel (grâce aux motifs d'écoute `http://localhost/*`, `http://127.0.0.1/*` et `https://*.vercel.app/*`). *Note : Chrome n'autorise pas la spécification de ports dans les motifs d'extension, les masquant à la place pour correspondre automatiquement à n'importe quel port sur localhost.*
 
-1. Ouvrez l'application Ultimate Job Tool, soit en local sur `http://localhost:3001`, soit sur votre lien **Vercel** de production.
+1. Ouvrez l'application Ultimate Job Tool, soit en local sur `http://localhost:3001` (ou `http://127.0.0.1:3001`), soit sur votre lien **Vercel** de production.
 2. Allez sur le **Tableau de Bord** et sélectionnez une de vos candidatures pour l'activer.
 3. L'extension détecte instantanément l'application active et se synchronise en arrière-plan.
 4. Cliquez sur l'icône de l'extension dans votre barre d'outils pour vérifier que le titre et l'entreprise s'affichent correctement.

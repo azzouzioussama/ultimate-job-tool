@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Load the active application status
   chrome.runtime.sendMessage({ action: "GET_ACTIVE_APPLICATION" }, (response) => {
+    if (chrome.runtime.lastError) {
+      console.error("Failed to get active application:", chrome.runtime.lastError.message);
+      statusBadge.className = "status-badge disconnected";
+      statusText.textContent = "Erreur de connexion";
+      return;
+    }
+    
     const activeApp = response?.data;
     
     if (activeApp) {
@@ -27,18 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
         docCount += 1;
       }
 
-      appCard.innerHTML = `
-        <h2 class="app-title">${activeApp.jobTitle || "Poste non défini"}</h2>
-        <p class="app-company">${activeApp.companyName || "Entreprise non définie"}</p>
-        <div class="info-row">
-          <span>Statut :</span>
-          <span style="font-weight:600; color:#818cf8;">${activeApp.trackingStatus || "Draft"}</span>
-        </div>
-        <div class="info-row">
-          <span>Documents prêts :</span>
-          <span>${docCount} document(s)</span>
-        </div>
-      `;
+      // Build UI safely using DOM methods to prevent XSS
+      appCard.innerHTML = '';
+      const titleEl = document.createElement('h2');
+      titleEl.className = 'app-title';
+      titleEl.textContent = activeApp.jobTitle || "Poste non défini";
+      
+      const companyEl = document.createElement('p');
+      companyEl.className = 'app-company';
+      companyEl.textContent = activeApp.companyName || "Entreprise non définie";
+      
+      const statusRow = document.createElement('div');
+      statusRow.className = 'info-row';
+      statusRow.innerHTML = `<span>Statut :</span>`;
+      const statusVal = document.createElement('span');
+      statusVal.style.cssText = 'font-weight:600; color:#818cf8;';
+      statusVal.textContent = activeApp.trackingStatus || "Draft";
+      statusRow.appendChild(statusVal);
+      
+      const docRow = document.createElement('div');
+      docRow.className = 'info-row';
+      docRow.innerHTML = `<span>Documents prêts :</span><span>${docCount} document(s)</span>`;
+      
+      appCard.append(titleEl, companyEl, statusRow, docRow);
       
       // Enable autofill button
       btnAutofillNow.disabled = false;
@@ -61,9 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Look for existing tab matching the local server or vercel deployment
     chrome.tabs.query({}, (tabs) => {
       const existingTab = tabs.find(tab => 
-        tab.url.startsWith("http://localhost:3000") || 
-        tab.url.startsWith("http://localhost:3001") || 
-        tab.url.includes("ultimate-job-tool.vercel.app")
+        tab.url?.startsWith("http://localhost:3000") || 
+        tab.url?.startsWith("http://localhost:3001") || 
+        tab.url?.includes("ultimate-job-tool.vercel.app")
       );
       
       if (existingTab) {

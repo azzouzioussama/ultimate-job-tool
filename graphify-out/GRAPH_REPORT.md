@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-02)
 
 ## Corpus Check
-- 73 files · ~104,364 words
+- 73 files · ~104,628 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1108 nodes · 1168 edges · 103 communities (86 shown, 17 thin omitted)
+- 1111 nodes · 1171 edges · 102 communities (84 shown, 18 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f511e7ea`
+- Built from commit: `7e587701`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -104,7 +104,7 @@
 - [[_COMMUNITY_Community 97|Community 97]]
 - [[_COMMUNITY_Community 98|Community 98]]
 - [[_COMMUNITY_Community 99|Community 99]]
-- [[_COMMUNITY_Community 102|Community 102]]
+- [[_COMMUNITY_Community 101|Community 101]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `batch` - 30 edges
@@ -130,7 +130,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (103 total, 17 thin omitted)
+## Communities (102 total, 18 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -161,8 +161,8 @@ Cohesion: 0.11
 Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, compileSelected, compileTooltip, copyAll (+10 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.20
-Nodes (9): 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem: AI Generates Invalid LaTeX (Mismatched Brackets & Unescaped Ampersands), Problem: AI Hallucinating Markdown in JSON Responses, Problem: Stale JSX Tags (+1 more)
+Cohesion: 0.15
+Nodes (12): 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration (+4 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -420,26 +420,22 @@ Nodes (11): 1. Synchronisation, 1. Synchronisation (Local et Vercel), 2. Configu
 Cohesion: 0.29
 Nodes (6): appCard, btnAutofillNow, btnOpenApp, existingTab, statusBadge, statusText
 
-### Community 102 - "Community 102"
-Cohesion: 0.67
-Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
-
 ## Knowledge Gaps
-- **803 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+798 more)
+- **805 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+800 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `app` connect `Community 30` to `Community 95`?**
-  _High betweenness centrality (0.088) - this node is a cross-community bridge._
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 93`, `Community 62`?**
-  _High betweenness centrality (0.078) - this node is a cross-community bridge._
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **Why does `templates` connect `Community 29` to `Community 93`?**
   _High betweenness centrality (0.068) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _803 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _805 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

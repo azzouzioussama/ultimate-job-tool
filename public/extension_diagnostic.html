@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UJT Extension Diagnostic</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 24px;
+            min-height: 100vh;
+        }
+        h1 { color: #818cf8; margin-bottom: 8px; font-size: 24px; }
+        .subtitle { color: #64748b; margin-bottom: 24px; font-size: 14px; }
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .card h2 { font-size: 16px; color: #a5b4fc; margin-bottom: 12px; }
+        .test-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        .test-row:last-child { border: none; }
+        .indicator {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .indicator.pending { background: #475569; }
+        .indicator.pass { background: #22c55e; box-shadow: 0 0 8px #22c55e66; }
+        .indicator.fail { background: #ef4444; box-shadow: 0 0 8px #ef444466; }
+        .indicator.warn { background: #f59e0b; box-shadow: 0 0 8px #f59e0b66; }
+        .test-label { font-size: 14px; flex: 1; }
+        .test-detail { font-size: 12px; color: #94a3b8; font-family: monospace; }
+        button {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        button:hover { background: #4f46e5; }
+        button:disabled { background: #475569; cursor: not-allowed; }
+        .log-area {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Cascadia Code', 'Fira Code', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            margin-top: 12px;
+        }
+        .log-entry { padding: 2px 0; }
+        .log-entry.info { color: #38bdf8; }
+        .log-entry.success { color: #22c55e; }
+        .log-entry.error { color: #ef4444; }
+        .log-entry.warn { color: #f59e0b; }
+        .actions { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <h1>🔧 UJT Extension Diagnostic Tool</h1>
+    <p class="subtitle">Open this page at <strong>http://localhost:3001/extension_diagnostic.html</strong> (or wherever your app is served) to test the extension integration.</p>
+    
+    <div class="card">
+        <h2>🔌 Connection Tests</h2>
+        <div class="test-row">
+            <div class="indicator pending" id="ind-page"></div>
+            <span class="test-label">Page loaded on correct URL</span>
+            <span class="test-detail" id="det-page">-</span>
+        </div>
+        <div class="test-row">
+            <div class="indicator pending" id="ind-ls"></div>
+            <span class="test-label">localStorage has app data</span>
+            <span class="test-detail" id="det-ls">-</span>
+        </div>
+        <div class="test-row">
+            <div class="indicator pending" id="ind-ext"></div>
+            <span class="test-label">Extension content script injected</span>
+            <span class="test-detail" id="det-ext">-</span>
+        </div>
+        <div class="test-row">
+            <div class="indicator pending" id="ind-msg"></div>
+            <span class="test-label">postMessage roundtrip works</span>
+            <span class="test-detail" id="det-msg">-</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🧪 Actions</h2>
+        <div class="actions">
+            <button id="btn-simulate">Simulate App Data → localStorage</button>
+            <button id="btn-broadcast">Broadcast postMessage Event</button>
+            <button id="btn-clear">Clear Test Data</button>
+            <button id="btn-run-all">▶ Run All Tests</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📋 Live Log</h2>
+        <div class="log-area" id="log-area"></div>
+    </div>
+
+    <script>
+        const logArea = document.getElementById('log-area');
+        
+        function log(msg, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            const ts = new Date().toLocaleTimeString();
+            entry.textContent = `[${ts}] ${msg}`;
+            logArea.appendChild(entry);
+            logArea.scrollTop = logArea.scrollHeight;
+        }
+
+        function setIndicator(id, status, detail) {
+            document.getElementById(`ind-${id}`).className = `indicator ${status}`;
+            document.getElementById(`det-${id}`).textContent = detail;
+        }
+
+        // Test 1: Page URL
+        function testPageUrl() {
+            const url = window.location.href;
+            const isLocal = url.includes('localhost') || url.includes('127.0.0.1');
+            const isVercel = url.includes('vercel.app');
+            
+            if (isLocal || isVercel) {
+                setIndicator('page', 'pass', url);
+                log(`✅ Page URL is valid: ${url}`, 'success');
+                return true;
+            } else {
+                setIndicator('page', 'fail', `Bad URL: ${url}`);
+                log(`❌ Page is NOT on localhost or vercel.app. Extension won't inject here. URL: ${url}`, 'error');
+                return false;
+            }
+        }
+
+        // Test 2: localStorage
+        function testLocalStorage() {
+            try {
+                const data = localStorage.getItem('ujt_active_app_sync');
+                if (data) {
+                    const parsed = JSON.parse(data);
+                    setIndicator('ls', 'pass', `${parsed.jobTitle} @ ${parsed.companyName}`);
+                    log(`✅ localStorage has app data: "${parsed.jobTitle}" at "${parsed.companyName}"`, 'success');
+                    return true;
+                } else {
+                    setIndicator('ls', 'warn', 'No data — select an app first');
+                    log('⚠️ localStorage key "ujt_active_app_sync" is empty. Select a job application in the main app first.', 'warn');
+                    return false;
+                }
+            } catch(e) {
+                setIndicator('ls', 'fail', e.message);
+                log(`❌ Failed to read localStorage: ${e.message}`, 'error');
+                return false;
+            }
+        }
+
+        // Test 3: Extension detection
+        function testExtension() {
+            // The content script adds a marker attribute when injected
+            return new Promise((resolve) => {
+                // Method 1: Try sending a message that only works if the extension is installed
+                // We'll use a custom event the extension listens for
+                let received = false;
+                
+                const handler = (event) => {
+                    if (event.source === window && event.data && event.data.type === 'UJT_EXTENSION_PONG') {
+                        received = true;
+                        window.removeEventListener('message', handler);
+                        setIndicator('ext', 'pass', 'Content script detected!');
+                        log('✅ Extension content script IS running on this page.', 'success');
+                        resolve(true);
+                    }
+                };
+                window.addEventListener('message', handler);
+                
+                // Send a ping and wait
+                window.postMessage({ type: 'UJT_DIAGNOSTIC_PING' }, '*');
+                
+                // Timeout after 2 seconds
+                setTimeout(() => {
+                    if (!received) {
+                        window.removeEventListener('message', handler);
+                        setIndicator('ext', 'fail', 'No response — content script NOT injected');
+                        log('❌ Extension content script is NOT running on this page. This is likely the main problem.', 'error');
+                        log('   → Did you reload the extension after changes? (Edge → Extensions → reload button)', 'warn');
+                        log('   → Did you refresh THIS page after reloading the extension?', 'warn');
+                        log('   → Check edge://extensions for any errors on the extension card.', 'warn');
+                        resolve(false);
+                    }
+                }, 2000);
+            });
+        }
+
+        // Test 4: postMessage roundtrip
+        function testPostMessage() {
+            return new Promise((resolve) => {
+                let received = false;
+                
+                const handler = (event) => {
+                    if (event.source === window && event.data && event.data.type === 'UJT_ACTIVE_APP_CHANGED') {
+                        received = true;
+                        window.removeEventListener('message', handler);
+                        setIndicator('msg', 'pass', 'Roundtrip OK');
+                        log('✅ postMessage roundtrip works. Extension can receive app data.', 'success');
+                        resolve(true);
+                    }
+                };
+                window.addEventListener('message', handler);
+                
+                // Simulate the React app dispatching
+                const testData = {
+                    id: 'diagnostic_test',
+                    companyName: 'Test Corp',
+                    jobTitle: 'Test Position',
+                    jobDescription: 'Diagnostic test data',
+                    jobUrl: 'https://example.com',
+                    trackingStatus: 'Draft',
+                    promptResponses: {},
+                    documents: [],
+                    cvGenerated: null,
+                    cvOriginal: null
+                };
+                window.postMessage({ type: 'UJT_ACTIVE_APP_CHANGED', detail: testData }, '*');
+                
+                setTimeout(() => {
+                    if (!received) {
+                        window.removeEventListener('message', handler);
+                        setIndicator('msg', 'warn', 'No echo — but may still work');
+                        log('⚠️ postMessage was sent but no echo received. This is normal if content_app.js is not injected.', 'warn');
+                        resolve(false);
+                    }
+                }, 2000);
+            });
+        }
+
+        // Simulate data
+        document.getElementById('btn-simulate').addEventListener('click', () => {
+            const mockData = {
+                id: 'diag_' + Date.now(),
+                companyName: 'Google',
+                jobTitle: 'Software Engineer',
+                jobDescription: 'An exciting engineering role.',
+                jobUrl: 'https://careers.google.com/1234',
+                trackingStatus: 'Applied',
+                promptResponses: { coverLetter: 'Dear Hiring Manager...' },
+                documents: [{ id: 'cv1', title: 'My CV', content: 'CV content here' }],
+                cvGenerated: 'Generated CV content',
+                cvOriginal: 'Original CV content'
+            };
+            localStorage.setItem('ujt_active_app_sync', JSON.stringify(mockData));
+            log('📝 Wrote mock app data to localStorage as "Google - Software Engineer"', 'success');
+            testLocalStorage();
+        });
+
+        // Broadcast
+        document.getElementById('btn-broadcast').addEventListener('click', () => {
+            const data = localStorage.getItem('ujt_active_app_sync');
+            if (!data) {
+                log('⚠️ No data in localStorage to broadcast. Click "Simulate" first.', 'warn');
+                return;
+            }
+            const parsed = JSON.parse(data);
+            window.postMessage({ type: 'UJT_ACTIVE_APP_CHANGED', detail: parsed }, '*');
+            window.dispatchEvent(new CustomEvent('UJT_ACTIVE_APP_CHANGED', { detail: parsed }));
+            log(`📡 Broadcasted postMessage + CustomEvent for "${parsed.jobTitle}"`, 'info');
+        });
+
+        // Clear
+        document.getElementById('btn-clear').addEventListener('click', () => {
+            localStorage.removeItem('ujt_active_app_sync');
+            window.postMessage({ type: 'UJT_ACTIVE_APP_CHANGED', detail: null }, '*');
+            log('🗑️ Cleared localStorage and sent null event.', 'info');
+            setIndicator('ls', 'pending', '-');
+        });
+
+        // Run all
+        document.getElementById('btn-run-all').addEventListener('click', async () => {
+            log('═══════════ Running all diagnostics... ═══════════', 'info');
+            testPageUrl();
+            testLocalStorage();
+            await testExtension();
+            await testPostMessage();
+            log('═══════════ Diagnostic complete ═══════════', 'info');
+        });
+
+        // Auto-run on load
+        window.addEventListener('load', () => {
+            log('🚀 Diagnostic page loaded. Click "▶ Run All Tests" to begin.', 'info');
+            testPageUrl(); // This one is instant
+        });
+    </script>
+</body>
+</html>

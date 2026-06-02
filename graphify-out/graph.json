@@ -7186,6 +7186,33 @@
       "norm_label": "content_app.js"
     },
     {
+      "label": "syncToBackground()",
+      "file_type": "code",
+      "source_file": "extension/content_app.js",
+      "source_location": "L7",
+      "id": "extension_content_app_synctobackground",
+      "community": 101,
+      "norm_label": "synctobackground()"
+    },
+    {
+      "label": "cachedData",
+      "file_type": "code",
+      "source_file": "extension/content_app.js",
+      "source_location": "L26",
+      "id": "extension_content_app_cacheddata",
+      "community": 101,
+      "norm_label": "cacheddata"
+    },
+    {
+      "label": "appData",
+      "file_type": "code",
+      "source_file": "extension/content_app.js",
+      "source_location": "L28",
+      "id": "extension_content_app_appdata",
+      "community": 101,
+      "norm_label": "appdata"
+    },
+    {
       "label": "background.js",
       "file_type": "code",
       "source_file": "extension/background.js",
@@ -7929,7 +7956,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
       "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "community": 102,
+      "community": 7,
       "norm_label": "8. database (dexie.js) & architecture refactoring"
     },
     {
@@ -7938,7 +7965,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L143",
       "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
-      "community": 102,
+      "community": 7,
       "norm_label": "problem 1: cascading renders warning with `useeffect`"
     },
     {
@@ -7947,7 +7974,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L148",
       "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
-      "community": 102,
+      "community": 7,
       "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
     },
     {
@@ -18919,6 +18946,36 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "extension/content_app.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "extension_content_app_js",
+      "target": "extension_content_app_synctobackground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_app.js",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "extension_content_app_js",
+      "target": "extension_content_app_cacheddata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "extension/content_app.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "extension_content_app_js",
+      "target": "extension_content_app_appdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "extension/popup.js",
       "source_location": "L4",
       "weight": 1.0,
@@ -21741,5 +21798,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f511e7ea97a5fe0db2a78fea7ef46d3d43b9f1ca"
+  "built_at_commit": "7e587701a129b8592d284a6d00df7db890b72606"
 }

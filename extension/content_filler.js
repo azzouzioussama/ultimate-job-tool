@@ -637,127 +637,35 @@
   function triggerAutofill() {
     if (!activeApp) return;
     console.log("Ultimate Job Tool Companion: Starting autofill sequence...");
-    
-    // Find cover letter text
-    let coverLetterText = "";
-    if (activeApp.promptResponses) {
-      // Find template 2 (FR) or template 3 (EN)
-      coverLetterText = activeApp.promptResponses["2"] || activeApp.promptResponses["3"] || "";
-      if (!coverLetterText) {
-        // Find any response text that has Cover Letter/Lettre in its key name or body
-        const keys = Object.keys(activeApp.promptResponses);
-        for (const key of keys) {
-          const body = activeApp.promptResponses[key];
-          if (body && (key.toLowerCase().includes("lettre") || key.toLowerCase().includes("cover") || body.includes("Madame, Monsieur") || body.includes("Dear Hiring Manager"))) {
-            coverLetterText = body;
-            break;
-          }
-        }
+
+    // Make sure engine is loaded
+    if (!window.UJTAutofillEngine) {
+      console.error("Ultimate Job Tool Companion: Autofill Engine not found! Ensure it was loaded in manifest.json.");
+      const btn = document.getElementById("ujt-btn-autofill");
+      if (btn) {
+        btn.textContent = "Erreur: Moteur Introuvable";
+        btn.style.backgroundColor = "#ef4444";
+        setTimeout(() => {
+          btn.innerHTML = `
+            <svg style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;" viewBox="0 0 24 24">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            Autoremplir le Formulaire
+          `;
+          btn.style.backgroundColor = "";
+        }, 3000);
       }
-    }
-    
-    // Clean up LaTeX formatting syntax if AI returned letter enclosed in LaTeX macros
-    if (coverLetterText) {
-      coverLetterText = cleanLatexText(coverLetterText);
+      return;
     }
 
-    // Heuristics mapping labels/placeholders to values
-    const fieldMapping = [
-      {
-        keys: ["first name", "given name", "prénom", "prenom"],
-        value: personalProfile.firstName
-      },
-      {
-        keys: ["last name", "family name", "surname", "nom de famille", "nom"],
-        value: personalProfile.lastName
-      },
-      {
-        keys: ["email", "e-mail", "courriel", "adresse électronique"],
-        value: personalProfile.email
-      },
-      {
-        keys: ["phone", "telephone", "téléphone", "mobile", "gsm"],
-        value: personalProfile.phone
-      },
-      {
-        keys: ["linkedin", "profil linkedin"],
-        value: personalProfile.linkedin
-      },
-      {
-        keys: ["github", "dépôt github", "compte github"],
-        value: personalProfile.github
-      },
-      {
-        keys: ["website", "portfolio", "site web", "personal website", "personal site", "blog"],
-        value: personalProfile.website
-      }
-    ];
-
-    let filledCount = 0;
-    
-    // Iterate through all inputs and textareas on the webpage
-    const inputs = document.querySelectorAll("input, textarea");
-    
-    inputs.forEach(input => {
-      // Avoid filling hidden inputs
-      if (input.type === "hidden" || input.style.display === "none" || input.style.visibility === "hidden" || input.id === "ujt-fab" || input.classList.contains("ujt-input")) {
-        return;
-      }
-      
-      const labelText = getLabelForInput(input).toLowerCase();
-      const inputName = (input.name || "").toLowerCase();
-      const inputId = (input.id || "").toLowerCase();
-      const inputPlaceholder = (input.placeholder || "").toLowerCase();
-      
-      // Match Cover Letter Textarea
-      if (input.tagName.toLowerCase() === "textarea" && coverLetterText) {
-        const coverLetterKeywords = ["cover letter", "motivation", "lettre de motivation", "additional info", "message to the", "lettre", "remarques", "note"];
-        const matchesCoverLetter = coverLetterKeywords.some(kw => 
-          labelText.includes(kw) || inputName.includes(kw) || inputId.includes(kw) || inputPlaceholder.includes(kw)
-        );
-        
-        if (matchesCoverLetter && !input.value) {
-          setValueAndDispatch(input, coverLetterText);
-          filledCount++;
-          return;
-        }
-      }
-
-      // Match Standard Inputs
-      for (const mapping of fieldMapping) {
-        if (!mapping.value) continue;
-        
-        const isMatch = mapping.keys.some(key => 
-          labelText.includes(key) || inputName.includes(key) || inputId.includes(key) || inputPlaceholder.includes(key)
-        );
-
-        if (isMatch) {
-          // If full name field is found and we only have first/last name
-          if (mapping.keys.includes("nom") && labelText.includes("nom complet") && personalProfile.firstName && personalProfile.lastName) {
-            if (!input.value) {
-              setValueAndDispatch(input, `${personalProfile.firstName} ${personalProfile.lastName}`);
-              filledCount++;
-            }
-            break;
-          }
-          
-          if (!input.value) {
-            setValueAndDispatch(input, mapping.value);
-            filledCount++;
-          }
-          break;
-        }
-      }
-    });
+    // Run the engine
+    const filledCount = window.UJTAutofillEngine.run(activeApp, personalProfile);
 
     // Provide visual feedback in the sidebar
     const btn = document.getElementById("ujt-btn-autofill");
     if (filledCount > 0) {
       btn.textContent = `${filledCount} Champs Remplis !`;
       btn.style.backgroundColor = "#10b981";
-      
-      // Trigger tailored resume auto-download as a convenience so user can drag-drop it immediately
-      triggerResumeDownload();
     } else {
       btn.textContent = "Aucun champ détecté";
       btn.style.backgroundColor = "#f59e0b";
@@ -772,88 +680,6 @@
       `;
       btn.style.backgroundColor = "";
     }, 3000);
-  }
-
-  // ── AUTO-DOWNLOAD CUSTOM CV (If available) ──────────────────────────────────
-  function triggerResumeDownload() {
-    let cvToDownload = null;
-    let filename = `CV_${activeApp.companyName.replace(/\s+/g, "_")}.pdf`;
-
-    // Try to find if there is a compiled CV PDF URL generated
-    // Since browser security forbids extensions from accessing blob urls across tabs unless initiated,
-    // we notify background page or display a alert prompt or check if we can trigger download.
-    // Actually, background page's DOWNLOAD_FILE requires a download URL. 
-    // If we can't compile LaTeX directly in the extension script, we notify the user.
-    // The downloaded file from the main App.jsx compile action will already be in the Downloads folder,
-    // which the user can drag-drop. We can download the LaTeX code as a .tex fallback,
-    // or trigger download via window message if React tab is still open!
-  }
-
-  // ── SECURE DOM HEURISTICS FOR LABELS ─────────────────────────────────────────
-  function getLabelForInput(input) {
-    // 1. Direct label parent
-    if (input.parentElement && input.parentElement.tagName.toLowerCase() === "label") {
-      return input.parentElement.textContent || "";
-    }
-    
-    // 2. Label with 'for' attribute matching input id
-    if (input.id) {
-      const label = document.querySelector(`label[for="${input.id}"]`);
-      if (label) return label.textContent || "";
-    }
-    
-    // 3. Search closest sibling or parent with text content
-    let sibling = input.previousElementSibling;
-    while (sibling) {
-      if (sibling.tagName.toLowerCase() === "label" || sibling.textContent.trim().length > 0) {
-        return sibling.textContent || "";
-      }
-      sibling = sibling.previousElementSibling;
-    }
-
-    // 4. Search aria-label or placeholder
-    if (input.getAttribute("aria-label")) {
-      return input.getAttribute("aria-label");
-    }
-    if (input.placeholder) {
-      return input.placeholder;
-    }
-
-    return "";
-  }
-
-  // ── HELPERS: DISPATCH EVENT TO REACT/VUE FORMS ──────────────────────────────
-  function setValueAndDispatch(input, value) {
-    input.value = value;
-    // Dispatch standard browser events to trigger input change listeners
-    input.dispatchEvent(new Event("input", { bubbles: true }));
-    input.dispatchEvent(new Event("change", { bubbles: true }));
-    
-    // Focus and blur to satisfy some active field validations
-    input.focus();
-    input.blur();
-  }
-
-  // ── HELPER: STRIP LATEX MARKS FOR WEB FORMS ─────────────────────────────────
-  function cleanLatexText(text) {
-    let clean = text;
-    // Strip standard LaTeX macros commonly generated by our LLM prompts
-    clean = clean.replace(/\\documentclass\[.*?\]\{.*?\}/g, "");
-    clean = clean.replace(/\\usepackage\{.*?\}/g, "");
-    clean = clean.replace(/\\begin\{document\}/g, "");
-    clean = clean.replace(/\\end\{document\}/g, "");
-    clean = clean.replace(/\\begin\{itemize\}/g, "");
-    clean = clean.replace(/\\end\{itemize\}/g, "");
-    clean = clean.replace(/\\item/g, "-");
-    clean = clean.replace(/\\section\*?\{.*?\}/g, "");
-    clean = clean.replace(/\\subsection\*?\{.*?\}/g, "");
-    clean = clean.replace(/\\textbf\{(.*?)\}/g, "$1");
-    clean = clean.replace(/\\textit\{(.*?)\}/g, "$1");
-    clean = clean.replace(/\\href\{.*?\}\{(.*?)\}/g, "$1");
-    clean = clean.replace(/\\%/g, "%");
-    clean = clean.replace(/\\&/g, "&");
-    clean = clean.replace(/\\_/g, "_");
-    clean = clean.replace(/\\\\/g, "\n");
   }
 
   // Listen for messages from popup.js to trigger autofill

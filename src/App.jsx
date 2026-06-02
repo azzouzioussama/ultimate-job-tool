@@ -200,9 +200,14 @@ export default function App() {
   // ═══════════════════════════════════════════════════════════════════════════
 
   // 1. One-time migration & initial load
+  // NOTE: getAllApplications depends on Clerk user state internally.
+  // On first mount, user is null so it returns []. Once Clerk loads and
+  // user becomes available, getAllApplications changes reference and this
+  // effect re-runs, correctly loading the first application.
   useEffect(() => {
     async function initDB() {
       const allApps = await getAllApplications();
+      console.log('[UJT App] initDB: found', allApps.length, 'applications, activeAppId =', activeAppId);
       if (allApps.length === 0) {
         // Migration from old localStorage
         const oldCv = storage.getCvOriginal();
@@ -226,13 +231,13 @@ export default function App() {
           });
           setActiveAppId(newAppId);
         }
-      } else {
-        // Load the most recently updated application
+      } else if (!activeAppId) {
+        // Load the most recently updated application (only if no app is already selected)
         setActiveAppId(allApps[0].id);
       }
     }
     initDB();
-  }, []);
+  }, [getAllApplications]);
 
   // 2. Load data when activeAppId changes
   useEffect(() => {
@@ -299,12 +304,7 @@ export default function App() {
 
   // 4. Dispatch custom event for the browser extension companion
   useEffect(() => {
-    if (!activeAppId) {
-      window.dispatchEvent(new CustomEvent('UJT_ACTIVE_APP_CHANGED', { detail: null }));
-      return;
-    }
-    
-    const eventData = {
+    const eventData = activeAppId ? {
       id: activeAppId,
       companyName,
       jobTitle: targetPosition,
@@ -315,9 +315,49 @@ export default function App() {
       documents: documents.map(d => ({ id: d.id, title: d.title, content: d.content })),
       cvGenerated,
       cvOriginal
-    };
+    } : null;
     
+    console.log('[UJT App] Extension dispatch — activeAppId:', activeAppId, '| eventData:', eventData ? `"${eventData.jobTitle}" at "${eventData.companyName}"` : 'null');
+    
+    // Save to localStorage for instant content script reading on load
+    try {
+      if (eventData) {
+        localStorage.setItem('ujt_active_app_sync', JSON.stringify(eventData));
+      } else {
+        localStorage.removeItem('ujt_active_app_sync');
+      }
+    } catch (e) {
+      console.error('Failed to write active app to localStorage:', e);
+    }
+    
+    // Broadcast via window.postMessage for reliable isolated world extension communication
+    window.postMessage({ type: 'UJT_ACTIVE_APP_CHANGED', detail: eventData }, '*');
+    
+    // Also dispatch as custom DOM event for backwards compatibility
     window.dispatchEvent(new CustomEvent('UJT_ACTIVE_APP_CHANGED', { detail: eventData }));
+  }, [activeAppId, companyName, targetPosition, jobDescription, currentJobUrl, trackingStatus, promptResponses, documents, cvGenerated, cvOriginal]);
+
+  // 5. Listen for extension heartbeats (requests for current application data)
+  useEffect(() => {
+    const handleExtensionPing = (e) => {
+      if (e.source === window && e.data && e.data.type === 'UJT_EXTENSION_PING') {
+        const eventData = activeAppId ? {
+          id: activeAppId,
+          companyName,
+          jobTitle: targetPosition,
+          jobDescription,
+          jobUrl: currentJobUrl,
+          trackingStatus,
+          promptResponses,
+          documents: documents.map(d => ({ id: d.id, title: d.title, content: d.content })),
+          cvGenerated,
+          cvOriginal
+        } : null;
+        window.postMessage({ type: 'UJT_ACTIVE_APP_CHANGED', detail: eventData }, '*');
+      }
+    };
+    window.addEventListener('message', handleExtensionPing);
+    return () => window.removeEventListener('message', handleExtensionPing);
   }, [activeAppId, companyName, targetPosition, jobDescription, currentJobUrl, trackingStatus, promptResponses, documents, cvGenerated, cvOriginal]);
 
 

@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/App.jsx": {
-    "mtime": 1780428452.5262365,
-    "ast_hash": "77ca3ae54e9545ee2a4a1127a0901f42",
+    "mtime": 1780429564.5356915,
+    "ast_hash": "f734fd44811fecddad4b3a7b3d43808c",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/src/services/fileUploadService.js": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/extension/content_app.js": {
-    "mtime": 1780428497.2650392,
-    "ast_hash": "737518dc5f7ae4d8ed119133636a3923",
+    "mtime": 1780429574.5707843,
+    "ast_hash": "227a5a7c26708310dcd59bcb9d8be57b",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/extension/background.js": {
@@ -430,13 +430,13 @@
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/extension/manifest.json": {
-    "mtime": 1780429300.932177,
-    "ast_hash": "c4f4b73ac95c594ad172277f38c0119b",
+    "mtime": 1780429741.314805,
+    "ast_hash": "aaf484f88b27638770ed0900f7bddea5",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/extension/extension_guide.md": {
-    "mtime": 1780429316.5948074,
-    "ast_hash": "62351738bb20b78de534fa0e915f73c3",
+    "mtime": 1780429750.050026,
+    "ast_hash": "c21325072ca642eb2e2140ca752a6dcf",
     "semantic_hash": ""
   },
   "/home/koukou/HELPDESK/Job_prompt_generator/ultimate-job-tool/extension/popup.html": {
