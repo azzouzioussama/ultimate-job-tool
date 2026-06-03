@@ -65,7 +65,20 @@ export default function DashboardTab({ onSelectApplication, onActivateApplicatio
     loadApps();
   };
 
-  const handleDownloadPrompt = (content, filename, e) => {
+  const markAsApplied = async (app) => {
+    if (app.trackingStatus !== 'Applied') {
+      await updateApplication(app.id, { trackingStatus: 'Applied' });
+      loadApps();
+      if (showToast) showToast(t('dashboard.statusUpdated', 'Statut mis à jour : Postulée'));
+    }
+    
+    // Open the application link if it exists
+    if (app.jobUrl) {
+      window.open(app.jobUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleDownloadPrompt = async (app, content, filename, e) => {
     e.stopPropagation();
     const blob = new Blob([content], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -74,6 +87,7 @@ export default function DashboardTab({ onSelectApplication, onActivateApplicatio
     a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+    await markAsApplied(app);
   };
 
   const handleDeletePrompt = async (app, promptKey, e) => {
@@ -86,20 +100,21 @@ export default function DashboardTab({ onSelectApplication, onActivateApplicatio
     }
   };
 
-  const handleDownloadPDF = async (content, filename, e) => {
+  const handleDownloadPDF = async (app, content, filename, e) => {
     e.stopPropagation();
     if (showToast) showToast(t('dashboard.compiling', 'Compilation du PDF en cours...'));
     try {
       const blob = await compilePdfFromLatex(content);
       const url = URL.createObjectURL(blob);
       downloadBlobAsPdf(url, filename);
+      await markAsApplied(app);
     } catch (err) {
       console.error(err);
       if (showToast) showToast(t('dashboard.compileError', 'Erreur de compilation: ') + err.message);
     }
   };
 
-  const handleDownloadWord = (content, filename, e) => {
+  const handleDownloadWord = async (app, content, filename, e) => {
     e.stopPropagation();
     let text = content
       .replace(/\\documentclass\[.*?\]{.*?}/g, '')
@@ -130,6 +145,7 @@ export default function DashboardTab({ onSelectApplication, onActivateApplicatio
     a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+    await markAsApplied(app);
   };
 
   const handleBulkDelete = async () => {
@@ -406,50 +422,56 @@ export default function DashboardTab({ onSelectApplication, onActivateApplicatio
                               {app.promptResponses && Object.keys(app.promptResponses).filter(k => !k.startsWith('__')).length > 0 ? (
                                 Object.entries(app.promptResponses)
                                   .filter(([key]) => !key.startsWith('__'))
-                                  .map(([key, latex]) => (
-                                  <div key={key} className="flex flex-col bg-white border border-slate-200 rounded-lg p-3 shadow-sm min-w-[220px]">
-                                    <div className="flex justify-between items-center mb-2">
-                                      <span className="text-xs font-semibold text-slate-700 truncate" title={key}>{key}</span>
-                                      <button 
-                                        onClick={(e) => handleDeletePrompt(app, key, e)} 
-                                        className="text-slate-400 hover:text-red-500 transition-colors"
-                                        title={t('dashboard.deleteDoc', 'Supprimer')}
-                                      >
-                                        <Trash2 size={14} />
-                                      </button>
-                                    </div>
-                                    <div className="flex gap-1">
-                                      <button 
-                                        onClick={(e) => handlePreviewPDF(latex, e)} 
-                                        className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-green-50 hover:text-green-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title={t('dashboard.previewPdf', 'Aperçu PDF')}
-                                      >
-                                        <Eye size={14} /> 
-                                      </button>
-                                      <button 
-                                        onClick={(e) => handleDownloadPrompt(latex, `${key}.tex`, e)} 
-                                        className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title={t('dashboard.downloadLatex', 'Télécharger LaTeX (.tex)')}
-                                      >
-                                        <FileCode2 size={14} /> 
-                                      </button>
-                                      <button 
-                                        onClick={(e) => handleDownloadPDF(latex, `${key}.pdf`, e)} 
-                                        className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-red-50 hover:text-red-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title={t('dashboard.downloadPdf', 'Compiler & Télécharger PDF (.pdf)')}
-                                      >
-                                        <FileText size={14} /> 
-                                      </button>
-                                      <button 
-                                        onClick={(e) => handleDownloadWord(latex, `${key}.doc`, e)} 
-                                        className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
-                                        title={t('dashboard.downloadWord', 'Télécharger Word (.doc)')}
-                                      >
-                                        <FileDown size={14} className="mr-1"/> .doc
-                                      </button>
-                                    </div>
-                                  </div>
-                                ))
+                                  .map(([key, latex]) => {
+                                      let base = key.toLowerCase().includes('cover') || key.toLowerCase().includes('lettre') || key.toLowerCase().includes('motivation') ? 'Lettre' : 'CV';
+                                      let safeName = `${base}_${app.companyName || 'Entreprise'}_${app.jobTitle || 'Poste'}`;
+                                      safeName = safeName.replace(/[^a-zA-Z0-9_À-ÿ\-]/g, '_').replace(/_+/g, '_');
+                                      
+                                      return (
+                                        <div key={key} className="flex flex-col bg-white border border-slate-200 rounded-lg p-3 shadow-sm min-w-[220px]">
+                                          <div className="flex justify-between items-center mb-2">
+                                            <span className="text-xs font-semibold text-slate-700 truncate" title={key}>{key}</span>
+                                            <button 
+                                              onClick={(e) => handleDeletePrompt(app, key, e)} 
+                                              className="text-slate-400 hover:text-red-500 transition-colors"
+                                              title={t('dashboard.deleteDoc', 'Supprimer')}
+                                            >
+                                              <Trash2 size={14} />
+                                            </button>
+                                          </div>
+                                          <div className="flex gap-1">
+                                            <button 
+                                              onClick={(e) => handlePreviewPDF(latex, e)} 
+                                              className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-green-50 hover:text-green-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                                              title={t('dashboard.previewPdf', 'Aperçu PDF')}
+                                            >
+                                              <Eye size={14} /> 
+                                            </button>
+                                            <button 
+                                              onClick={(e) => handleDownloadPrompt(app, latex, `${safeName}.tex`, e)} 
+                                              className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                                              title={t('dashboard.downloadLatex', 'Télécharger LaTeX (.tex)')}
+                                            >
+                                              <FileCode2 size={14} /> 
+                                            </button>
+                                            <button 
+                                              onClick={(e) => handleDownloadPDF(app, latex, `${safeName}.pdf`, e)} 
+                                              className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-red-50 hover:text-red-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                                              title={t('dashboard.downloadPdf', 'Compiler & Télécharger PDF (.pdf)')}
+                                            >
+                                              <FileText size={14} /> 
+                                            </button>
+                                            <button 
+                                              onClick={(e) => handleDownloadWord(app, latex, `${safeName}.doc`, e)} 
+                                              className="flex-1 flex justify-center items-center py-1.5 bg-slate-50 hover:bg-blue-50 hover:text-blue-600 rounded border border-slate-200 text-xs font-medium text-slate-600 transition-colors" 
+                                              title={t('dashboard.downloadWord', 'Télécharger Word (.doc)')}
+                                            >
+                                              <FileDown size={14} className="mr-1"/> .doc
+                                            </button>
+                                          </div>
+                                        </div>
+                                      );
+                                    })
                               ) : (
                                 <div className="text-sm text-slate-500 italic py-2">
                                   {t('dashboard.noSavedFiles', "Aucun code LaTeX n'a été extrait et sauvegardé pour cette offre.")}

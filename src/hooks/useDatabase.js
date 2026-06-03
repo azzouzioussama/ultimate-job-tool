@@ -63,7 +63,7 @@ function useLocalDatabase() {
   }, []);
 
   const getAllApplications = useCallback(async () => {
-    return getStoredApps().sort((a, b) => 
+    return getStoredApps().sort((a, b) =>
       new Date(b.lastUpdated) - new Date(a.lastUpdated)
     );
   }, []);
@@ -90,13 +90,13 @@ function useCloudDatabase() {
       // Extract jobUrl and store inside promptResponses.__job_url__ to match Supabase schema
       const { jobUrl, ...rest } = data;
       const promptResponses = rest.promptResponses || {};
-      const newApp = { 
-        ...rest, 
+      const newApp = {
+        ...rest,
         promptResponses: {
           ...promptResponses,
           __job_url__: jobUrl || ''
         },
-        user_id: user.id 
+        user_id: user.id
       };
 
       const { data: insertedData, error } = await client
@@ -136,7 +136,7 @@ function useCloudDatabase() {
           .select('promptResponses')
           .eq('id', id)
           .single();
-        
+
         const existingJobUrl = currentApp?.promptResponses?.__job_url__ || '';
         const finalJobUrl = jobUrl !== undefined ? jobUrl : existingJobUrl;
 
@@ -150,7 +150,7 @@ function useCloudDatabase() {
           .select('promptResponses')
           .eq('id', id)
           .single();
-        
+
         const currentPromptResponses = currentApp?.promptResponses || {};
         finalUpdates.promptResponses = {
           ...currentPromptResponses,
@@ -158,9 +158,13 @@ function useCloudDatabase() {
         };
       }
 
+      // Only update lastUpdated if we are doing more than just changing the status
+      const isStatusOnly = Object.keys(updates).length === 1 && updates.trackingStatus !== undefined;
+      const payload = isStatusOnly ? finalUpdates : { ...finalUpdates, lastUpdated: new Date().toISOString() };
+
       const { error } = await client
         .from('applications')
-        .update({ ...finalUpdates, lastUpdated: new Date().toISOString() })
+        .update(payload)
         .eq('id', id);
       if (error) { console.error("Error updating application:", error); throw error; }
     } catch (e) { console.error(e); }
@@ -186,7 +190,7 @@ function useCloudDatabase() {
         .eq('user_id', user.id)
         .order('lastUpdated', { ascending: false });
       if (error) { console.error("Error fetching applications:", error); return []; }
-      
+
       // Restore jobUrl for all items
       const mappedData = (data || []).map(app => ({
         ...app,

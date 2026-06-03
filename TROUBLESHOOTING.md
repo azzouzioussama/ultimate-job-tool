@@ -320,10 +320,27 @@ pip install pydantic pydantic-core openai
 **Cause**: Manifest V3 enforces strict CSP policies that prohibit executing inline JavaScript strings injected via DOM manipulation (e.g., `script.textContent = "..."`) from content scripts.
 **Fix**: Removed the inline script injection approach entirely. Switched to relying purely on DOM events (`window.dispatchEvent(new CustomEvent(...))`) and `window.postMessage()` for robust communication across the isolated world boundary between the React application and the extension's content script.
 
-### Problem 2: Active Application Data Always Null on Initial Load
-**Issue**: The extension successfully connected and received messages, but the synced application data payload was consistently `null`, even when applications existed in the database. The `UJT_EXTENSION_PING` requests always returned empty.
-**Cause**: A race condition during app initialization in cloud mode (Clerk + Supabase). The `initDB()` effect in `App.jsx` ran on mount with an empty dependency array `[]`. At this exact moment, Clerk authentication had not yet resolved, meaning `user` was `null`, and `getAllApplications()` returned `[]`. Because the dependency array was empty, `initDB()` never re-ran after Clerk auth completed, leaving the `activeAppId` permanently `null` until a user manually clicked a row in the dashboard.
-**Fix**: Updated the `initDB()` `useEffect` dependency from `[]` to `[getAllApplications]`. Because `getAllApplications` is derived from `useDatabase` which internally depends on the Clerk user state, its reference updates when auth completes. The effect now correctly re-runs when the user becomes authenticated, automatically setting the first application as the active `activeAppId` and successfully syncing it to the extension. Added an `else if (!activeAppId)` guard to prevent overwriting the selected app on subsequent re-renders.
+### Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item
+**Issue**: The extension successfully connected and received messages, but the synced application data payload was consistently `null`, or the dashboard kept forcibly selecting the very first application in the list, completely overriding the user's manual clicks.
+**Cause**: Two overlapping issues:
+1. **Race Condition**: The `initDB()` effect in `App.jsx` ran on mount with an empty dependency array `[]`. At this exact moment, Clerk authentication had not yet resolved, meaning `user` was `null`, and `getAllApplications()` returned `[]`. Because the dependency array was empty, `initDB()` never re-ran after Clerk auth completed, leaving the `activeAppId` permanently `null`.
+2. **Missing useCallback (Stale Closures & Infinite Render)**: The database methods (`getAllApplications`, `createApplication`, etc.) inside `useDatabase.js` were standard functions, meaning their references changed on every single render. This caused `App.jsx`'s `useEffect` (which depended on `getAllApplications`) to constantly re-fire in an infinite loop, constantly triggering the fallback code that resets `activeAppId` to the first application.
+**Fix**: 
+1. Updated the `initDB()` `useEffect` dependency to include `[getAllApplications]`.
+2. Wrapped all exported database methods inside `useDatabase.js` with `useCallback` to guarantee stable references, breaking the infinite render loop and allowing manual selections to persist.
+
+## 15. Dashboard UI & List Stability
+
+### Problem 1: Application List Jumping Chaotically on Status Change
+**Issue**: When a user modified an application's tracking status (e.g. from "Draft" to "Applied"), the application row instantly disappeared from its current position and jumped to the very top or bottom of the list, forcing the user to lose their scroll position.
+**Cause**: The dashboard list was sorted chronologically. However, the Supabase schema lacked a true `created_at` column, causing the app to rely on `lastUpdated`. Every time `updateApplication()` was called to change a status, it aggressively overwrote `lastUpdated: new Date().toISOString()`. The React state updated, the list re-sorted, and the recently modified application was pushed out of order.
+**Fix**: Refactored the `updateApplication()` logic in `useDatabase.js` to intelligently analyze the payload. If the *only* field being updated is `trackingStatus`, it skips the `lastUpdated` timestamp override. This allows the application to retain its original chronological position while displaying the new status label.
+
+### Problem 2: Download Workflow Disconnected from Submission
+**Issue**: Users downloaded their CVs from the dashboard to apply on external job boards, but then had to manually change the dashboard status to "Applied" and manually search for the job URL again to actually submit it.
+**Fix**: Intertwined the workflows:
+1. When downloading a document (PDF, LaTeX, or Word) from the dashboard, the app now automatically triggers an `updateApplication` call to mark the status as "Applied" (`Postulée`) in the background.
+2. The download handler checks for `app.jobUrl` and executes `window.open(app.jobUrl, '_blank')`, instantly opening the target job posting in an adjacent tab so the user can immediately submit the newly downloaded document.
 
 ---
 *Generated: June 2026*
