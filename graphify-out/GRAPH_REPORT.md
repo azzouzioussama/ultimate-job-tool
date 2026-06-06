@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-06-02)
+# Graph Report - ultimate-job-tool  (2026-06-04)
 
 ## Corpus Check
-- 83 files · ~107,828 words
+- 84 files · ~109,076 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1161 nodes · 1209 edges · 113 communities (91 shown, 22 thin omitted)
+- 1169 nodes · 1217 edges · 115 communities (93 shown, 22 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c4bfd287`
+- Built from commit: `1e466385`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -115,6 +115,7 @@
 - [[_COMMUNITY_Community 110|Community 110]]
 - [[_COMMUNITY_Community 111|Community 111]]
 - [[_COMMUNITY_Community 112|Community 112]]
+- [[_COMMUNITY_Community 113|Community 113]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `batch` - 30 edges
@@ -126,7 +127,7 @@
 7. `Similar jobs` - 28 edges
 8. `Similar jobs` - 28 edges
 9. `Storage Service` - 22 edges
-10. `Troubleshooting Log & Bug Fixes` - 18 edges
+10. `Troubleshooting Log & Bug Fixes` - 19 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `App()` --calls--> `getPromptTemplates()`  [EXTRACTED]
@@ -140,7 +141,7 @@
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
 
-## Communities (113 total, 22 thin omitted)
+## Communities (115 total, 22 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -151,8 +152,8 @@ Cohesion: 0.06
 Nodes (35): dependencies, @clerk/react, dexie, dexie-react-hooks, i18next, lucide-react, mammoth, @phosphor-icons/react (+27 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.13
-Nodes (6): useLocalStorage(), useToast(), callAIProvider(), buildLatexConversionPrompt(), extractTextFromFile(), App()
+Cohesion: 0.14
+Nodes (5): useLocalStorage(), useToast(), buildLatexConversionPrompt(), extractTextFromFile(), App()
 
 ### Community 3 - "Community 3"
 Cohesion: 0.18
@@ -375,8 +376,8 @@ Cohesion: 0.83
 Nodes (3): escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses()
 
 ### Community 74 - "Community 74"
-Cohesion: 0.22
-Nodes (10): getPromptTemplates(), Jina AI Reader, Scraper Service, Scrapfly API, cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly(), scrapeWithScrapling() (+2 more)
+Cohesion: 0.19
+Nodes (11): getPromptTemplates(), Jina AI Reader, Scraper Service, Scrapfly API, callAIProvider(), cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly() (+3 more)
 
 ### Community 76 - "Community 76"
 Cohesion: 0.43
@@ -448,31 +449,35 @@ Nodes (3): genericAdapter, keys, label
 
 ### Community 110 - "Community 110"
 Cohesion: 0.67
-Nodes (3): 14. Chrome Extension Companion Integration, Problem 1: Content Security Policy (CSP) Blocking Inline Scripts, Problem 2: Active Application Data Always Null on Initial Load
+Nodes (3): 14. Chrome Extension Companion Integration, Problem 1: Content Security Policy (CSP) Blocking Inline Scripts, Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item
 
 ### Community 111 - "Community 111"
 Cohesion: 0.67
 Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
 
+### Community 113 - "Community 113"
+Cohesion: 0.67
+Nodes (3): 15. Dashboard UI & List Stability, Problem 1: Application List Jumping Chaotically on Status Change, Problem 2: Download Workflow Disconnected from Submission
+
 ## Knowledge Gaps
-- **841 isolated node(s):** `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System`, `B. Dynamic Prompt Engine`, `C. Multi-Provider AI Integration` (+836 more)
+- **843 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+838 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `app` connect `Community 22` to `Community 109`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
-- **Why does `batch` connect `Community 69` to `Community 109`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
-- **Why does `batch` connect `Community 68` to `Community 93`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
-- **What connects `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System` to the rest of the system?**
-  _841 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `app` connect `Community 30` to `Community 109`?**
+  _High betweenness centrality (0.083) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 93`, `Community 62`?**
+  _High betweenness centrality (0.072) - this node is a cross-community bridge._
+- **Why does `templates` connect `Community 29` to `Community 93`?**
+  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+- **What connects `fr`, `en`, `rewrites` to the rest of the system?**
+  _843 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.12554112554112554 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1368421052631579 - nodes in this community are weakly interconnected._
 - **Should `Community 5` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

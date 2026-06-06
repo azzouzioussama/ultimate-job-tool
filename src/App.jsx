@@ -112,6 +112,7 @@ import DocumentsTab from './components/tabs/DocumentsTab';
 import PdfMakerTab from './components/tabs/PdfMakerTab';
 import AtsTestTab from './components/tabs/AtsTestTab';
 import BatchTab from './components/tabs/BatchTab';
+import ProfileTab from './components/tabs/ProfileTab';
 
 // ── pdf.js Worker Setup ───────────────────────────────────────────────────────
 // pdf.js needs a Web Worker to process PDF files in a background thread.
@@ -932,6 +933,7 @@ export default function App() {
           onProviderChange={handleProviderChange}
           onModelChange={handleModelChange}
           onApiKeyChange={handleSaveApiKey}
+          onOpenProfile={() => setActiveTab('profile')}
         />
         <TabNavigation
           activeTab={activeTab}
@@ -1104,6 +1106,11 @@ export default function App() {
               setActiveAppId={setActiveAppId}
               setActiveTab={setActiveTab}
             />
+          </div>
+
+          {/* Profile Tab */}
+          <div className={activeTab === 'profile' ? 'block' : 'hidden'}>
+            <ProfileTab getAllApplications={getAllApplications} />
           </div>
 
         </main>

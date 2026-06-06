@@ -22,7 +22,7 @@
  */
 
 
-import { Briefcase, KeyRound, Globe } from 'lucide-react';
+import { Briefcase, KeyRound, Globe, User } from 'lucide-react';
 import { UserButton } from '@clerk/react';
 import { useTranslation } from 'react-i18next';
 import AI_PROVIDERS from '../../constants/aiProviders';
@@ -45,6 +45,7 @@ export default function Header({
   onProviderChange,
   onModelChange,
   onApiKeyChange,
+  onOpenProfile
 }) {
   const { t, i18n } = useTranslation();
 
@@ -121,6 +122,15 @@ export default function Header({
         </div>
 
         {isClerkAvailable && <ClerkUserButton />}
+        
+        {/* Profile Button */}
+        <button
+          onClick={onOpenProfile}
+          className="ml-1 p-1.5 text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-full transition-colors flex items-center justify-center"
+          title="Mon Profil"
+        >
+          <User size={20} />
+        </button>
       </div>
     </div>
   );
