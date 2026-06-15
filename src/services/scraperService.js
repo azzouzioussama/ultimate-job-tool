@@ -378,13 +378,57 @@ export function cleanJinaMarkdown(md) {
 
 /**
  * Scrape a job search page to extract individual job posting URLs.
- * Currently supports LinkedIn search URLs via the local Scrapling proxy.
+ * Supports the local Scrapling proxy (deep scraping) or Jina AI (mobile fallback).
  *
  * @param {string} searchUrl - The search page URL to scrape.
+ * @param {string} engine - 'scrapling' or 'jina'
  * @param {AbortSignal} [signal] - Optional AbortSignal.
  * @returns {Promise<string[]>} Array of extracted job URLs.
  */
-export async function scrapeJobSearchLinks(searchUrl, signal) {
+export async function scrapeJobSearchLinks(searchUrl, engine = 'scrapling', signal) {
+  if (engine === 'jina') {
+    try {
+      const response = await fetch(`https://r.jina.ai/${searchUrl}`, {
+        signal
+      });
+      if (!response.ok) throw new Error(`Jina AI Error: ${response.status}`);
+      const md = await response.text();
+      
+      const linkRegex = /\]\((https?:\/\/[^\s\)]+)\)/g;
+      const extracted = [];
+      let match;
+      while ((match = linkRegex.exec(md)) !== null) {
+        const url = match[1].split('?')[0]; // Remove query params for cleaner links
+        const lowerUrl = url.toLowerCase();
+        
+        // Skip search index pages
+        if (lowerUrl.includes('jobs/search') || lowerUrl.includes('jobs-guest/jobs/api')) continue;
+
+        // Match generic job link patterns
+        if (
+          lowerUrl.includes('linkedin.com/jobs/view/') ||
+          lowerUrl.includes('indeed.com/viewjob') ||
+          (lowerUrl.includes('hellowork.com') && lowerUrl.includes('/emplois/')) ||
+          (lowerUrl.includes('free-work.com') && lowerUrl.includes('/job-mission/')) ||
+          (lowerUrl.includes('welcometothejungle.com') && lowerUrl.includes('/jobs/')) ||
+          (lowerUrl.includes('/jobs/') && !lowerUrl.endsWith('/jobs/') && !lowerUrl.endsWith('/jobs')) ||
+          lowerUrl.includes('/job/') ||
+          lowerUrl.includes('/emploi/') ||
+          lowerUrl.includes('/offres/')
+        ) {
+          if (!extracted.includes(url)) {
+            extracted.push(url);
+          }
+        }
+      }
+      return extracted;
+    } catch (err) {
+      if (err.name === 'AbortError') throw err;
+      throw new Error(`Erreur Jina AI : ${err.message}`);
+    }
+  }
+
+  // Default Scrapling logic
   try {
     const response = await fetch('http://localhost:8000/scrape-search', {
       method: 'POST',

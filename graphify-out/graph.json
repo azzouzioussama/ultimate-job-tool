@@ -133,7 +133,7 @@
       "label": "6. Known Constraints & Future Considerations",
       "file_type": "document",
       "source_file": "DEVELOPMENT_HISTORY.md",
-      "source_location": "L118",
+      "source_location": "L120",
       "id": "ultimate_job_tool_development_history_6_known_constraints_future_considerations",
       "community": 8,
       "norm_label": "6. known constraints & future considerations"
@@ -387,7 +387,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L141",
       "id": "ultimate_job_tool_troubleshooting_8_database_dexie_js_architecture_refactoring",
-      "community": 111,
+      "community": 7,
       "norm_label": "8. database (dexie.js) & architecture refactoring"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L143",
       "id": "ultimate_job_tool_troubleshooting_problem_1_cascading_renders_warning_with_useeffect",
-      "community": 111,
+      "community": 7,
       "norm_label": "problem 1: cascading renders warning with `useeffect`"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L148",
       "id": "ultimate_job_tool_troubleshooting_problem_2_data_loss_risk_during_localstorage_to_indexeddb_migration",
-      "community": 111,
+      "community": 7,
       "norm_label": "problem 2: data loss risk during `localstorage` to indexeddb migration"
     },
     {
@@ -499,10 +499,46 @@
       "norm_label": "problem 5: rls type mismatch (`uuid = text`)"
     },
     {
-      "label": "11. WSL2 Development Server Blank Page",
+      "label": "11. Job Scraper Pagination Issues",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L201",
+      "id": "ultimate_job_tool_troubleshooting_11_job_scraper_pagination_issues",
+      "community": 109,
+      "norm_label": "11. job scraper pagination issues"
+    },
+    {
+      "label": "Problem 1: Frontend Pagination Yields Limited Links (LinkedIn)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L203",
+      "id": "ultimate_job_tool_troubleshooting_problem_1_frontend_pagination_yields_limited_links_linkedin",
+      "community": 109,
+      "norm_label": "problem 1: frontend pagination yields limited links (linkedin)"
+    },
+    {
+      "label": "Problem 2: Cloudflare Anti-Bot Blocks Pagination (Indeed)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L208",
+      "id": "ultimate_job_tool_troubleshooting_problem_2_cloudflare_anti_bot_blocks_pagination_indeed",
+      "community": 109,
+      "norm_label": "problem 2: cloudflare anti-bot blocks pagination (indeed)"
+    },
+    {
+      "label": "Problem 3: React SPA Job Links Missing (Welcome To The Jungle)",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L213",
+      "id": "ultimate_job_tool_troubleshooting_problem_3_react_spa_job_links_missing_welcome_to_the_jungle",
+      "community": 109,
+      "norm_label": "problem 3: react spa job links missing (welcome to the jungle)"
+    },
+    {
+      "label": "11. WSL2 Development Server Blank Page",
+      "file_type": "document",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L218",
       "id": "ultimate_job_tool_troubleshooting_11_wsl2_development_server_blank_page",
       "community": 44,
       "norm_label": "11. wsl2 development server blank page"
@@ -511,7 +547,7 @@
       "label": "Problem 1: Vite 8 `allowedHosts` Syntax Change",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L203",
+      "source_location": "L220",
       "id": "ultimate_job_tool_troubleshooting_problem_1_vite_8_allowedhosts_syntax_change",
       "community": 44,
       "norm_label": "problem 1: vite 8 `allowedhosts` syntax change"
@@ -520,7 +556,7 @@
       "label": "Problem 2: WSL2 Port 5173 Forwarding Broken",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L208",
+      "source_location": "L225",
       "id": "ultimate_job_tool_troubleshooting_problem_2_wsl2_port_5173_forwarding_broken",
       "community": 44,
       "norm_label": "problem 2: wsl2 port 5173 forwarding broken"
@@ -529,7 +565,7 @@
       "label": "Problem 3: ClerkProvider Missing `publishableKey` Prop",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L218",
+      "source_location": "L235",
       "id": "ultimate_job_tool_troubleshooting_problem_3_clerkprovider_missing_publishablekey_prop",
       "community": 44,
       "norm_label": "problem 3: clerkprovider missing `publishablekey` prop"
@@ -538,7 +574,7 @@
       "label": "Problem 4: Application Data Disappearing on Refresh (Supabase Schema Sync)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L223",
+      "source_location": "L240",
       "id": "ultimate_job_tool_troubleshooting_problem_4_application_data_disappearing_on_refresh_supabase_schema_sync",
       "community": 44,
       "norm_label": "problem 4: application data disappearing on refresh (supabase schema sync)"
@@ -547,43 +583,43 @@
       "label": "9. Localization & UI Workflows",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L232",
+      "source_location": "L249",
       "id": "ultimate_job_tool_troubleshooting_9_localization_ui_workflows",
-      "community": 71,
+      "community": 7,
       "norm_label": "9. localization & ui workflows"
     },
     {
       "label": "Problem 1: French Hardcoded Strings Leaking into English UI",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L234",
+      "source_location": "L251",
       "id": "ultimate_job_tool_troubleshooting_problem_1_french_hardcoded_strings_leaking_into_english_ui",
-      "community": 71,
+      "community": 7,
       "norm_label": "problem 1: french hardcoded strings leaking into english ui"
     },
     {
       "label": "Problem 2: Missing Application Creation on Manual Paste",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L239",
+      "source_location": "L256",
       "id": "ultimate_job_tool_troubleshooting_problem_2_missing_application_creation_on_manual_paste",
-      "community": 71,
+      "community": 7,
       "norm_label": "problem 2: missing application creation on manual paste"
     },
     {
       "label": "Problem 3: Invisible/Transparent Buttons in the Batch UI & Low-Contrast Dashboard Actions",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L244",
+      "source_location": "L261",
       "id": "ultimate_job_tool_troubleshooting_problem_3_invisible_transparent_buttons_in_the_batch_ui_low_contrast_dashboard_actions",
-      "community": 71,
+      "community": 7,
       "norm_label": "problem 3: invisible/transparent buttons in the batch ui & low-contrast dashboard actions"
     },
     {
       "label": "10. Concurrency and Rate Limiting in Batch Processing",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L253",
+      "source_location": "L270",
       "id": "ultimate_job_tool_troubleshooting_10_concurrency_and_rate_limiting_in_batch_processing",
       "community": 73,
       "norm_label": "10. concurrency and rate limiting in batch processing"
@@ -592,7 +628,7 @@
       "label": "Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L255",
+      "source_location": "L272",
       "id": "ultimate_job_tool_troubleshooting_problem_1_api_rate_limiting_error_429_during_parallel_request_spikes",
       "community": 73,
       "norm_label": "problem 1: api rate limiting (error 429) during parallel request spikes"
@@ -601,7 +637,7 @@
       "label": "Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L260",
+      "source_location": "L277",
       "id": "ultimate_job_tool_troubleshooting_problem_2_sequential_bottlenecks_in_multi_step_lifecycle_processing",
       "community": 73,
       "norm_label": "problem 2: sequential bottlenecks in multi-step lifecycle processing"
@@ -610,7 +646,7 @@
       "label": "11. Scrapling Scraper & Python Backend Integration",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L265",
+      "source_location": "L282",
       "id": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
       "community": 82,
       "norm_label": "11. scrapling scraper & python backend integration"
@@ -619,7 +655,7 @@
       "label": "Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L267",
+      "source_location": "L284",
       "id": "ultimate_job_tool_troubleshooting_problem_1_frontend_cannot_call_python_code_directly_cors_sandboxing",
       "community": 82,
       "norm_label": "problem 1: frontend cannot call python code directly (cors & sandboxing)"
@@ -628,7 +664,7 @@
       "label": "Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L271",
+      "source_location": "L288",
       "id": "ultimate_job_tool_troubleshooting_problem_2_fastapi_startup_failure_typeerror_router_init_got_an_unexpected_keyword_argument_on_startup",
       "community": 82,
       "norm_label": "problem 2: fastapi startup failure (`typeerror: router.__init__() got an unexpected keyword argument 'on_startup'`)"
@@ -637,7 +673,7 @@
       "label": "Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L276",
+      "source_location": "L293",
       "id": "ultimate_job_tool_troubleshooting_problem_3_playwright_patchright_missing_browser_executables_or_sudo_password_requirement",
       "community": 82,
       "norm_label": "problem 3: playwright/patchright missing browser executables or sudo password requirement"
@@ -646,7 +682,7 @@
       "label": "Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L280",
+      "source_location": "L297",
       "id": "ultimate_job_tool_troubleshooting_problem_4_scrapling_integration_on_production_server_vercel_host_local_python_helper",
       "community": 82,
       "norm_label": "problem 4: scrapling integration on production server (vercel host + local python helper)"
@@ -655,7 +691,7 @@
       "label": "Problem 5: Scrapling Server 500 Error (Strict 200 HTTP Check on LinkedIn)",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L290",
+      "source_location": "L307",
       "id": "ultimate_job_tool_troubleshooting_problem_5_scrapling_server_500_error_strict_200_http_check_on_linkedin",
       "community": 82,
       "norm_label": "problem 5: scrapling server 500 error (strict 200 http check on linkedin)"
@@ -664,7 +700,7 @@
       "label": "Problem 6: Playwright Sync API inside Asyncio Loop Crash",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L295",
+      "source_location": "L312",
       "id": "ultimate_job_tool_troubleshooting_problem_6_playwright_sync_api_inside_asyncio_loop_crash",
       "community": 82,
       "norm_label": "problem 6: playwright sync api inside asyncio loop crash"
@@ -673,7 +709,7 @@
       "label": "12. General CV Storage & Batch AI LaTeX CV Generation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L300",
+      "source_location": "L317",
       "id": "ultimate_job_tool_troubleshooting_12_general_cv_storage_batch_ai_latex_cv_generation",
       "community": 84,
       "norm_label": "12. general cv storage & batch ai latex cv generation"
@@ -682,7 +718,7 @@
       "label": "Problem 1: General/Default CV Missing or Reverting to Synthetic CV",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L302",
+      "source_location": "L319",
       "id": "ultimate_job_tool_troubleshooting_problem_1_general_default_cv_missing_or_reverting_to_synthetic_cv",
       "community": 84,
       "norm_label": "problem 1: general/default cv missing or reverting to synthetic cv"
@@ -691,7 +727,7 @@
       "label": "Problem 2: Batch-Generated LaTeX CV Not Appearing in Documents or Dashboard tabs",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L306",
+      "source_location": "L323",
       "id": "ultimate_job_tool_troubleshooting_problem_2_batch_generated_latex_cv_not_appearing_in_documents_or_dashboard_tabs",
       "community": 84,
       "norm_label": "problem 2: batch-generated latex cv not appearing in documents or dashboard tabs"
@@ -700,7 +736,7 @@
       "label": "Problem 3: Motivation Letters and Other Documents Generating as Plain Text and Failing PDF Compilation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L311",
+      "source_location": "L328",
       "id": "ultimate_job_tool_troubleshooting_problem_3_motivation_letters_and_other_documents_generating_as_plain_text_and_failing_pdf_compilation",
       "community": 84,
       "norm_label": "problem 3: motivation letters and other documents generating as plain text and failing pdf compilation"
@@ -709,7 +745,7 @@
       "label": "13. Cloud Mode Strict Schema Constraints on Application Creation",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L315",
+      "source_location": "L332",
       "id": "ultimate_job_tool_troubleshooting_13_cloud_mode_strict_schema_constraints_on_application_creation",
       "community": 7,
       "norm_label": "13. cloud mode strict schema constraints on application creation"
@@ -718,7 +754,7 @@
       "label": "Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L317",
+      "source_location": "L334",
       "id": "ultimate_job_tool_troubleshooting_problem_1_batch_queue_manual_create_failing_in_clerk_supabase_cloud_mode",
       "community": 7,
       "norm_label": "problem 1: batch queue & manual create failing in clerk + supabase cloud mode"
@@ -727,34 +763,34 @@
       "label": "14. Chrome Extension Companion Integration",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L326",
+      "source_location": "L343",
       "id": "ultimate_job_tool_troubleshooting_14_chrome_extension_companion_integration",
-      "community": 7,
+      "community": 115,
       "norm_label": "14. chrome extension companion integration"
     },
     {
       "label": "Problem 1: Content Security Policy (CSP) Blocking Inline Scripts",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L328",
+      "source_location": "L345",
       "id": "ultimate_job_tool_troubleshooting_problem_1_content_security_policy_csp_blocking_inline_scripts",
-      "community": 7,
+      "community": 115,
       "norm_label": "problem 1: content security policy (csp) blocking inline scripts"
     },
     {
       "label": "Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L333",
+      "source_location": "L350",
       "id": "ultimate_job_tool_troubleshooting_problem_3_active_application_data_always_null_or_forcibly_resetting_to_first_item",
-      "community": 7,
+      "community": 115,
       "norm_label": "problem 3: active application data always null or forcibly resetting to first item"
     },
     {
       "label": "15. Dashboard UI & List Stability",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L342",
+      "source_location": "L359",
       "id": "ultimate_job_tool_troubleshooting_15_dashboard_ui_list_stability",
       "community": 113,
       "norm_label": "15. dashboard ui & list stability"
@@ -763,7 +799,7 @@
       "label": "Problem 1: Application List Jumping Chaotically on Status Change",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L344",
+      "source_location": "L361",
       "id": "ultimate_job_tool_troubleshooting_problem_1_application_list_jumping_chaotically_on_status_change",
       "community": 113,
       "norm_label": "problem 1: application list jumping chaotically on status change"
@@ -772,7 +808,7 @@
       "label": "Problem 2: Download Workflow Disconnected from Submission",
       "file_type": "document",
       "source_file": "TROUBLESHOOTING.md",
-      "source_location": "L349",
+      "source_location": "L366",
       "id": "ultimate_job_tool_troubleshooting_problem_2_download_workflow_disconnected_from_submission",
       "community": 113,
       "norm_label": "problem 2: download workflow disconnected from submission"
@@ -782,54 +818,243 @@
       "file_type": "code",
       "source_file": "scratch/scrapling_server.py",
       "source_location": "L1",
+      "id": "scratch_scrapling_server_py",
       "community": 75,
-      "norm_label": "scrapling_server.py",
-      "id": "scratch_scrapling_server_py"
+      "norm_label": "scrapling_server.py"
     },
     {
       "label": "ScrapeRequest",
       "file_type": "code",
       "source_file": "scratch/scrapling_server.py",
-      "source_location": "L21",
+      "source_location": "L23",
+      "id": "scratch_scrapling_server_scraperequest",
       "community": 75,
-      "norm_label": "scraperequest",
-      "id": "scratch_scrapling_server_scraperequest"
+      "norm_label": "scraperequest"
     },
     {
       "label": "BaseModel",
       "file_type": "code",
       "source_file": "",
       "source_location": "",
+      "id": "basemodel",
       "community": 75,
-      "norm_label": "basemodel",
-      "id": "basemodel"
+      "norm_label": "basemodel"
     },
     {
       "label": "SearchScrapeRequest",
       "file_type": "code",
       "source_file": "scratch/scrapling_server.py",
-      "source_location": "L24",
+      "source_location": "L26",
+      "id": "scratch_scrapling_server_searchscraperequest",
       "community": 75,
-      "norm_label": "searchscraperequest",
-      "id": "scratch_scrapling_server_searchscraperequest"
+      "norm_label": "searchscraperequest"
     },
     {
       "label": "scrape_url()",
       "file_type": "code",
       "source_file": "scratch/scrapling_server.py",
-      "source_location": "L28",
+      "source_location": "L30",
+      "id": "scratch_scrapling_server_scrape_url",
       "community": 75,
-      "norm_label": "scrape_url()",
-      "id": "scratch_scrapling_server_scrape_url"
+      "norm_label": "scrape_url()"
     },
     {
       "label": "scrape_search_url()",
       "file_type": "code",
       "source_file": "scratch/scrapling_server.py",
-      "source_location": "L121",
+      "source_location": "L123",
+      "id": "scratch_scrapling_server_scrape_search_url",
       "community": 75,
-      "norm_label": "scrape_search_url()",
-      "id": "scratch_scrapling_server_scrape_search_url"
+      "norm_label": "scrape_search_url()"
+    },
+    {
+      "label": "test_job_boards.py",
+      "file_type": "code",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L1",
+      "id": "scratch_test_job_boards_py",
+      "community": 71,
+      "norm_label": "test_job_boards.py"
+    },
+    {
+      "label": "test_freework()",
+      "file_type": "code",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L5",
+      "id": "scratch_test_job_boards_test_freework",
+      "community": 71,
+      "norm_label": "test_freework()"
+    },
+    {
+      "label": "test_indeed()",
+      "file_type": "code",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L18",
+      "id": "scratch_test_job_boards_test_indeed",
+      "community": 71,
+      "norm_label": "test_indeed()"
+    },
+    {
+      "label": "test_welcometothejungle()",
+      "file_type": "code",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L32",
+      "id": "scratch_test_job_boards_test_welcometothejungle",
+      "community": 71,
+      "norm_label": "test_welcometothejungle()"
+    },
+    {
+      "label": "test_job_search_scraping.py",
+      "file_type": "code",
+      "source_file": "scratch/test_job_search_scraping.py",
+      "source_location": "L1",
+      "id": "scratch_test_job_search_scraping_py",
+      "community": 116,
+      "norm_label": "test_job_search_scraping.py"
+    },
+    {
+      "label": "test_scrape()",
+      "file_type": "code",
+      "source_file": "scratch/test_job_search_scraping.py",
+      "source_location": "L12",
+      "id": "scratch_test_job_search_scraping_test_scrape",
+      "community": 116,
+      "norm_label": "test_scrape()"
+    },
+    {
+      "label": "test_job_search_scraping2.py",
+      "file_type": "code",
+      "source_file": "scratch/test_job_search_scraping2.py",
+      "source_location": "L1",
+      "id": "scratch_test_job_search_scraping2_py",
+      "community": 123,
+      "norm_label": "test_job_search_scraping2.py"
+    },
+    {
+      "label": "test_job_search_scraping3.py",
+      "file_type": "code",
+      "source_file": "scratch/test_job_search_scraping3.py",
+      "source_location": "L1",
+      "id": "scratch_test_job_search_scraping3_py",
+      "community": 111,
+      "norm_label": "test_job_search_scraping3.py"
+    },
+    {
+      "label": "extract_links()",
+      "file_type": "code",
+      "source_file": "scratch/test_job_search_scraping3.py",
+      "source_location": "L13",
+      "id": "scratch_test_job_search_scraping3_extract_links",
+      "community": 111,
+      "norm_label": "extract_links()"
+    },
+    {
+      "label": "test_fetchers()",
+      "file_type": "code",
+      "source_file": "scratch/test_job_search_scraping3.py",
+      "source_location": "L41",
+      "id": "scratch_test_job_search_scraping3_test_fetchers",
+      "community": 111,
+      "norm_label": "test_fetchers()"
+    },
+    {
+      "label": "test_pagination.py",
+      "file_type": "code",
+      "source_file": "scratch/test_pagination.py",
+      "source_location": "L1",
+      "id": "scratch_test_pagination_py",
+      "community": 75,
+      "norm_label": "test_pagination.py"
+    },
+    {
+      "label": "extract_links_from_page()",
+      "file_type": "code",
+      "source_file": "scratch/test_pagination.py",
+      "source_location": "L7",
+      "id": "scratch_test_pagination_extract_links_from_page",
+      "community": 75,
+      "norm_label": "extract_links_from_page()"
+    },
+    {
+      "label": "test_pagination()",
+      "file_type": "code",
+      "source_file": "scratch/test_pagination.py",
+      "source_location": "L29",
+      "id": "scratch_test_pagination_test_pagination",
+      "community": 75,
+      "norm_label": "test_pagination()"
+    },
+    {
+      "label": "test_stealthy.py",
+      "file_type": "code",
+      "source_file": "scratch/test_stealthy.py",
+      "source_location": "L1",
+      "id": "scratch_test_stealthy_py",
+      "community": 121,
+      "norm_label": "test_stealthy.py"
+    },
+    {
+      "label": "test_wttj_stealthy()",
+      "file_type": "code",
+      "source_file": "scratch/test_stealthy.py",
+      "source_location": "L4",
+      "id": "scratch_test_stealthy_test_wttj_stealthy",
+      "community": 121,
+      "norm_label": "test_wttj_stealthy()"
+    },
+    {
+      "label": "test_wttj.py",
+      "file_type": "code",
+      "source_file": "scratch/test_wttj.py",
+      "source_location": "L1",
+      "id": "scratch_test_wttj_py",
+      "community": 122,
+      "norm_label": "test_wttj.py"
+    },
+    {
+      "label": "test_wttj()",
+      "file_type": "code",
+      "source_file": "scratch/test_wttj.py",
+      "source_location": "L4",
+      "id": "scratch_test_wttj_test_wttj",
+      "community": 122,
+      "norm_label": "test_wttj()"
+    },
+    {
+      "label": "BatchTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L1",
+      "id": "src_components_tabs_batchtab_jsx",
+      "community": 74,
+      "norm_label": "batchtab.jsx"
+    },
+    {
+      "label": "BatchTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L14",
+      "id": "tabs_batchtab_batchtab",
+      "community": 78,
+      "norm_label": "batchtab()"
+    },
+    {
+      "label": "JobSearchScraperTab.jsx",
+      "file_type": "code",
+      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
+      "source_location": "L1",
+      "id": "src_components_tabs_jobsearchscrapertab_jsx",
+      "community": 74,
+      "norm_label": "jobsearchscrapertab.jsx"
+    },
+    {
+      "label": "JobSearchScraperTab()",
+      "file_type": "code",
+      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
+      "source_location": "L6",
+      "id": "tabs_jobsearchscrapertab_jobsearchscrapertab",
+      "community": 74,
+      "norm_label": "jobsearchscrapertab()"
     },
     {
       "label": "test_scrape_search.py",
@@ -902,42 +1127,6 @@
       "community": 80,
       "norm_label": "tabnavigation()",
       "id": "layout_tabnavigation_tabnavigation"
-    },
-    {
-      "label": "BatchTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L1",
-      "community": 74,
-      "norm_label": "batchtab.jsx",
-      "id": "src_components_tabs_batchtab_jsx"
-    },
-    {
-      "label": "BatchTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L14",
-      "community": 78,
-      "norm_label": "batchtab()",
-      "id": "tabs_batchtab_batchtab"
-    },
-    {
-      "label": "JobSearchScraperTab.jsx",
-      "file_type": "code",
-      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
-      "source_location": "L1",
-      "community": 74,
-      "norm_label": "jobsearchscrapertab.jsx",
-      "id": "src_components_tabs_jobsearchscrapertab_jsx"
-    },
-    {
-      "label": "JobSearchScraperTab()",
-      "file_type": "code",
-      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
-      "source_location": "L6",
-      "community": 74,
-      "norm_label": "jobsearchscrapertab()",
-      "id": "tabs_jobsearchscrapertab_jobsearchscrapertab"
     },
     {
       "label": "scraperService.js",
@@ -1889,7 +2078,7 @@
       "file_type": "code",
       "source_file": "src/locales/fr.json",
       "source_location": "L1",
-      "community": 93,
+      "community": 110,
       "norm_label": "fr.json",
       "id": "src_locales_fr_json"
     },
@@ -1898,7 +2087,7 @@
       "file_type": "code",
       "source_file": "src/locales/fr.json",
       "source_location": "L2",
-      "community": 93,
+      "community": 110,
       "norm_label": "header",
       "id": "locales_fr_header"
     },
@@ -1907,7 +2096,7 @@
       "file_type": "code",
       "source_file": "src/locales/fr.json",
       "source_location": "L3",
-      "community": 93,
+      "community": 110,
       "norm_label": "apikeyplaceholder",
       "id": "locales_fr_header_apikeyplaceholder"
     },
@@ -4625,7 +4814,7 @@
       "file_type": "code",
       "source_file": "src/locales/en.json",
       "source_location": "L1",
-      "community": 109,
+      "community": 93,
       "norm_label": "en.json",
       "id": "src_locales_en_json"
     },
@@ -4634,7 +4823,7 @@
       "file_type": "code",
       "source_file": "src/locales/en.json",
       "source_location": "L2",
-      "community": 109,
+      "community": 93,
       "norm_label": "header",
       "id": "locales_en_header"
     },
@@ -4643,7 +4832,7 @@
       "file_type": "code",
       "source_file": "src/locales/en.json",
       "source_location": "L3",
-      "community": 109,
+      "community": 93,
       "norm_label": "apikeyplaceholder",
       "id": "locales_en_header_apikeyplaceholder"
     },
@@ -10836,6 +11025,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_troubleshooting_log_bug_fixes",
+      "target": "ultimate_job_tool_troubleshooting_11_job_scraper_pagination_issues",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
       "source_location": "L194",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11196,6 +11395,36 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L203",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_job_scraper_pagination_issues",
+      "target": "ultimate_job_tool_troubleshooting_problem_1_frontend_pagination_yields_limited_links_linkedin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_job_scraper_pagination_issues",
+      "target": "ultimate_job_tool_troubleshooting_problem_2_cloudflare_anti_bot_blocks_pagination_indeed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
+      "source_location": "L213",
+      "weight": 1.0,
+      "source": "ultimate_job_tool_troubleshooting_11_job_scraper_pagination_issues",
+      "target": "ultimate_job_tool_troubleshooting_problem_3_react_spa_job_links_missing_welcome_to_the_jungle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "TROUBLESHOOTING.md",
       "source_location": "L196",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11328,9 +11557,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
-      "target": "ultimate_job_tool_troubleshooting_problem_5_scrapling_server_500_error_strict_200_http_check_on_linkedin",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_problem_5_scrapling_server_500_error_strict_200_http_check_on_linkedin"
     },
     {
       "relation": "contains",
@@ -11338,9 +11567,9 @@
       "source_file": "TROUBLESHOOTING.md",
       "source_location": "L295",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ultimate_job_tool_troubleshooting_11_scrapling_scraper_python_backend_integration",
-      "target": "ultimate_job_tool_troubleshooting_problem_6_playwright_sync_api_inside_asyncio_loop_crash",
-      "confidence_score": 1.0
+      "target": "ultimate_job_tool_troubleshooting_problem_6_playwright_sync_api_inside_asyncio_loop_crash"
     },
     {
       "relation": "contains",
@@ -11481,6 +11710,412 @@
       "confidence_score": 1.0,
       "source": "scratch_scrapling_server_searchscraperequest",
       "target": "basemodel"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scratch/scrapling_server.py",
+      "source_location": "L180",
+      "weight": 1.0,
+      "source": "scratch_scrapling_server_scrape_search_url",
+      "target": "scratch_test_pagination_extract_links_from_page"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "scratch_test_job_boards_py",
+      "target": "scratch_test_job_boards_test_freework",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "scratch_test_job_boards_py",
+      "target": "scratch_test_job_boards_test_indeed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_boards.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "scratch_test_job_boards_py",
+      "target": "scratch_test_job_boards_test_welcometothejungle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_search_scraping.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "scratch_test_job_search_scraping_py",
+      "target": "scratch_test_job_search_scraping_test_scrape",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_search_scraping3.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "scratch_test_job_search_scraping3_py",
+      "target": "scratch_test_job_search_scraping3_extract_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_search_scraping3.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "scratch_test_job_search_scraping3_py",
+      "target": "scratch_test_job_search_scraping3_test_fetchers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_job_search_scraping3.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "scratch_test_job_search_scraping3_test_fetchers",
+      "target": "scratch_test_job_search_scraping3_extract_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pagination.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "scratch_test_pagination_py",
+      "target": "scratch_test_pagination_extract_links_from_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pagination.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "scratch_test_pagination_py",
+      "target": "scratch_test_pagination_test_pagination",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_pagination.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "scratch_test_pagination_test_pagination",
+      "target": "scratch_test_pagination_extract_links_from_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_stealthy.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_test_stealthy_py",
+      "target": "scratch_test_stealthy_test_wttj_stealthy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_wttj.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_test_wttj_py",
+      "target": "scratch_test_wttj_test_wttj",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_aiservice_callaiprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_scraperservice_scrapewithjina"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_scraperservice_scrapewithscrapfly"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_scraperservice_scrapewithscrapling"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_atsservice_runatsanalysis"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_latexutils_extractlatexfromresponse"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_latexutils_mergelatexresponses"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_pdfservice_compilepdffromlatex"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "services_pdfservice_downloadblobaspdf"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "tabs_batchtab_batchtab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L114",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_batchtab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_services_scraperservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_services_pdfservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_services_aiservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_services_latexutils_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_services_storageservice_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_constants_prompttemplates_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_batchtab_jsx",
+      "target": "src_hooks_usedatabase_js"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "tabs_batchtab_batchtab",
+      "target": "constants_prompttemplates_getprompttemplates"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/tabs/BatchTab.jsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "tabs_batchtab_batchtab",
+      "target": "hooks_usedatabase_usedatabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_jobsearchscrapertab_jsx",
+      "target": "services_scraperservice_scrapejobsearchlinks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_jobsearchscrapertab_jsx",
+      "target": "tabs_jobsearchscrapertab_jobsearchscrapertab"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_tabs_jobsearchscrapertab_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_tabs_jobsearchscrapertab_jsx",
+      "target": "src_services_scraperservice_js"
     },
     {
       "relation": "imports",
@@ -11667,28 +12302,6 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_components_layout_tabnavigation_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L107",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_jobsearchscrapertab_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L114",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_tabs_batchtab_jsx"
     },
     {
       "relation": "contains",
@@ -12059,257 +12672,6 @@
       "confidence_score": 1.0,
       "source": "layout_tabnavigation_tabnavigation",
       "target": "layout_tabnavigation_tabs"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_aiservice_callaiprovider"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_services_scraperservice_js"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_scraperservice_scrapewithjina"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_scraperservice_scrapewithscrapfly"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_scraperservice_scrapewithscrapling"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_atsservice_runatsanalysis"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_latexutils_extractlatexfromresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_latexutils_mergelatexresponses"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_pdfservice_compilepdffromlatex"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "services_pdfservice_downloadblobaspdf"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "tabs_batchtab_batchtab"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_services_pdfservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_services_aiservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_services_latexutils_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_services_storageservice_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_constants_prompttemplates_js"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_batchtab_jsx",
-      "target": "src_hooks_usedatabase_js"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "tabs_batchtab_batchtab",
-      "target": "constants_prompttemplates_getprompttemplates"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/tabs/BatchTab.jsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "tabs_batchtab_batchtab",
-      "target": "hooks_usedatabase_usedatabase"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_jobsearchscrapertab_jsx",
-      "target": "src_services_scraperservice_js"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_jobsearchscrapertab_jsx",
-      "target": "services_scraperservice_scrapejobsearchlinks"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/tabs/JobSearchScraperTab.jsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_tabs_jobsearchscrapertab_jsx",
-      "target": "tabs_jobsearchscrapertab_jobsearchscrapertab"
     },
     {
       "relation": "contains",
@@ -22920,5 +23282,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ee41363d0ed9700abd7805ff94d9b73cd7dc409e"
+  "built_at_commit": "b6a4762bd742a6cf08ce7f79add7d128e71d4083"
 }

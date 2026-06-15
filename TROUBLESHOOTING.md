@@ -215,6 +215,11 @@ pip install pydantic pydantic-core openai
 **Cause**: Modern job boards use Single Page Application frameworks and external search APIs (like Algolia) to load job cards *after* the initial page loads. The server-rendered HTML does not contain the job URLs.
 **Fix**: The user is advised that generic extraction cannot parse undocumented dynamic JSON endpoints. For full support, these sites require custom API hooks similar to the LinkedIn implementation.
 
+### Problem 4: Jina AI Fails on Cloudflare and Active-Consent SPAs
+**Issue**: When using Jina AI Cloud as a fallback scraper for mobile devices, it successfully extracted links from standard sites (like Free-Work) but consistently returned 0 job links for Indeed and WelcomeToTheJungle.
+**Cause**: Jina AI Reader is a stateless conversion engine. It gets instantly blocked by Cloudflare (Indeed). Furthermore, injecting headers like `x-wait-for-selector` or `x-remove-selector: #axeptio_overlay` failed on WTTJ because the React app refuses to trigger the Algolia search XHR requests until a user actively clicks the "Accept Cookies" button, which Jina cannot do.
+**Fix**: Disabled Server-Sent Events (`text/event-stream`) in the fetch call to ensure the raw Markdown arrives intact for regex parsing, improving extraction on supported sites. Jina is maintained as a fallback for simple sites, but users are advised that highly protected enterprise sites mandate the local Python backend with TLS fingerprinting.
+
 ## 11. WSL2 Development Server Blank Page
 
 ### Problem 1: Vite 8 `allowedHosts` Syntax Change

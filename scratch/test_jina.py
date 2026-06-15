@@ -1,29 +1,25 @@
 import urllib.request
-import os
 
-urls = [
-    "https://www.linkedin.com/jobs/view/4420434397/",
-    "https://www.linkedin.com/jobs/view/4421403555/"
-]
-
-# Ensure scratch directory exists
-os.makedirs("scratch", exist_ok=True)
-
-for url in urls:
-    job_id = url.split("/view/")[1].split("/")[0]
-    jina_url = f"https://r.jina.ai/{url}"
-    print(f"Scraping with Jina AI: {jina_url}")
+def scrape_jina(url):
+    print(f"\n--- Jina AI on: {url} ---")
+    req = urllib.request.Request(f"https://r.jina.ai/{url}")
     try:
-        req = urllib.request.Request(
-            jina_url, 
-            headers={'User-Agent': 'Mozilla/5.0'}
-        )
-        with urllib.request.urlopen(req) as response:
-            content = response.read().decode('utf-8')
-            
-        out_path = f"scratch/jina_{job_id}.md"
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(content)
-        print(f"Saved to {out_path} ({len(content)} chars)")
+        response = urllib.request.urlopen(req)
+        md = response.read().decode('utf-8')
+        
+        # very simple print of all urls to see what Jina actually extracted
+        import re
+        links = re.findall(r'\]\((https?://[^\s\)]+)\)', md)
+        job_links = [l.split('?')[0] for l in links if 'job' in l.lower() or 'emploi' in l.lower()]
+        
+        print(f"Total links found: {len(links)}")
+        print(f"Job links found: {len(set(job_links))}")
+        if job_links:
+            print(f"Sample: {list(set(job_links))[:3]}")
     except Exception as e:
-        print(f"Error scraping {url} with Jina: {str(e)}")
+        print(f"Error: {e}")
+
+scrape_jina("https://www.linkedin.com/jobs/search/?keywords=helpdesk")
+scrape_jina("https://fr.indeed.com/jobs?q=helpdesk&l=France")
+scrape_jina("https://www.free-work.com/fr/tech-it/jobs?query=helpdesk")
+scrape_jina("https://www.welcometothejungle.com/fr/jobs?query=helpdesk")

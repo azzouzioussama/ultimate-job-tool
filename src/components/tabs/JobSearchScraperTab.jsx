@@ -19,6 +19,7 @@ export default function JobSearchScraperTab({ showToast }) {
   const [directUrl, setDirectUrl] = useState('');
 
   // Scraper State
+  const [scraperEngine, setScraperEngine] = useState('scrapling');
   const [isScraping, setIsScraping] = useState(false);
   const [links, setLinks] = useState([]);
 
@@ -113,7 +114,7 @@ export default function JobSearchScraperTab({ showToast }) {
     setLinks([]);
 
     try {
-      const resultLinks = await scrapeJobSearchLinks(searchUrl);
+      const resultLinks = await scrapeJobSearchLinks(searchUrl, scraperEngine);
       if (resultLinks && resultLinks.length > 0) {
         setLinks(resultLinks);
         showToast(`${resultLinks.length} liens trouvés !`, 'success');
@@ -271,7 +272,23 @@ export default function JobSearchScraperTab({ showToast }) {
           </div>
         )}
 
-        <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-4">
+          {/* Engine Selector */}
+          <div className="flex items-center justify-between p-3 bg-slate-50 border border-slate-200 rounded-lg">
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold text-slate-700">Moteur de Scraping</span>
+              <span className="text-[11px] text-slate-500">Choisissez la méthode d'extraction</span>
+            </div>
+            <select
+              value={scraperEngine}
+              onChange={(e) => setScraperEngine(e.target.value)}
+              className="bg-white border border-slate-200 rounded-md px-3 py-1.5 text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-indigo-500/20"
+            >
+              <option value="scrapling">Scrapling (Local - Rapide & Profond)</option>
+              <option value="jina">Jina AI (Cloud - Mobile/Fallback)</option>
+            </select>
+          </div>
+
           <button
             onClick={handleScrape}
             disabled={isScraping}
