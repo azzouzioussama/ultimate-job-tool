@@ -104,6 +104,7 @@ import Toast from './components/layout/Toast';
 
 // ── Tab Components ────────────────────────────────────────────────────────────
 import DashboardTab from './components/tabs/DashboardTab';
+import JobSearchScraperTab from './components/tabs/JobSearchScraperTab';
 import PromptsTab from './components/tabs/PromptsTab';
 import AiAssistantTab from './components/tabs/AiAssistantTab';
 import JobOfferTab from './components/tabs/JobOfferTab';
@@ -961,6 +962,11 @@ export default function App() {
               }}
               showToast={showToast}
             />
+          </div>
+
+          {/* Job Search Scraper Tab */}
+          <div className={activeTab === 'job_search' ? 'block' : 'hidden'}>
+            <JobSearchScraperTab showToast={showToast} />
           </div>
 
           {/* Prompts Tab */}

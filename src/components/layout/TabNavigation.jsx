@@ -20,7 +20,7 @@
  */
 
 
-import { Settings, Bot, FileText, User, FileOutput, Activity, LayoutDashboard, Layers } from 'lucide-react';
+import { Settings, Bot, FileText, User, FileOutput, Activity, LayoutDashboard, Layers, Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 // ── Tab Definitions ──────────────────────────────────────────────────────────
@@ -28,6 +28,7 @@ import { useTranslation } from 'react-i18next';
 // and a label (displayed in the UI).
 const tabs = [
   { id: 'dashboard', icon: LayoutDashboard, translationKey: 'tabs.dashboard', defaultLabel: 'Dashboard' },
+  { id: 'job_search', icon: Search,        translationKey: 'tabs.jobSearch', defaultLabel: 'Job Search' },
   { id: 'templates', icon: Settings,   translationKey: 'tabs.prompts', defaultLabel: 'Prompts' },
   { id: 'ai',        icon: Bot,        translationKey: 'tabs.aiAssistant', defaultLabel: 'Assistant IA' },
   { id: 'job',       icon: FileText,   translationKey: 'tabs.jobOffer', defaultLabel: 'Offre' },

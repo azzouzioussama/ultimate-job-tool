@@ -373,3 +373,59 @@ export function cleanJinaMarkdown(md) {
   // Collapse 3+ consecutive blank lines into a maximum of 2
   return cleaned.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
+
+// ─── Search Scraper (Job Links) ───────────────────────────────────────────────
+
+/**
+ * Scrape a job search page to extract individual job posting URLs.
+ * Currently supports LinkedIn search URLs via the local Scrapling proxy.
+ *
+ * @param {string} searchUrl - The search page URL to scrape.
+ * @param {AbortSignal} [signal] - Optional AbortSignal.
+ * @returns {Promise<string[]>} Array of extracted job URLs.
+ */
+export async function scrapeJobSearchLinks(searchUrl, signal) {
+  try {
+    const response = await fetch('http://localhost:8000/scrape-search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ url: searchUrl }),
+      signal
+    });
+
+    if (!response.ok) {
+      let errMsg = `Erreur API Scrapling (${response.status})`;
+      try {
+        const errData = await response.json();
+        if (errData.detail) {
+          errMsg += `: ${errData.detail}`;
+        }
+      } catch {}
+      throw new Error(errMsg);
+    }
+
+    const data = await response.json();
+    if (data.success && Array.isArray(data.links)) {
+      return data.links;
+    }
+    throw new Error("Format de réponse invalide du serveur Scrapling.");
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      throw err;
+    }
+    const isOffline = 
+      err.message.includes('Failed to fetch') || 
+      err.message.includes('NetworkError') || 
+      err.message.includes('Connection refused');
+      
+    if (isOffline) {
+      throw new Error(
+        "Le serveur Scrapling local est hors ligne. " +
+        "Démarrez-le avec : python3 scratch/scrapling_server.py"
+      );
+    }
+    throw err;
+  }
+}

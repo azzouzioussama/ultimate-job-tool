@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Play, Pause, ArrowCounterClockwise, Trash, Plus, Link, FileText, CheckCircle, WarningCircle, Spinner, Download, Stack, ArrowSquareOut, CaretRight, Terminal } from '@phosphor-icons/react';
+import { Play, Pause, ArrowCounterClockwise, Trash, Plus, Link, FileText, CheckCircle, WarningCircle, Spinner, Download, Stack, ArrowSquareOut, CaretRight, Terminal, Gear } from '@phosphor-icons/react';
 import { useUser } from '@clerk/react';
 import { useDatabase } from '../../hooks/useDatabase';
 import { callAIProvider } from '../../services/aiService';
 import { scrapeWithJina, scrapeWithScrapfly, scrapeWithScrapling } from '../../services/scraperService';
+import { runAtsAnalysis } from '../../services/atsService';
 import { extractLatexFromResponse, mergeLatexResponses } from '../../services/latexUtils';
 import { compilePdfFromLatex, downloadBlobAsPdf } from '../../services/pdfService';
 import * as storage from '../../services/storageService';
@@ -44,6 +45,7 @@ export default function BatchTab({
   const [autoCompile, setAutoCompile] = useState(true);
   const [autoDownload, setAutoDownload] = useState(true);
   const [requireLatex, setRequireLatex] = useState(true);
+  const [atsThreshold, setAtsThreshold] = useState(0);
   
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -82,6 +84,7 @@ export default function BatchTab({
         if (parsed.autoCompile !== undefined) setAutoCompile(parsed.autoCompile);
         if (parsed.autoDownload !== undefined) setAutoDownload(parsed.autoDownload);
         if (parsed.requireLatex !== undefined) setRequireLatex(parsed.requireLatex);
+        if (parsed.atsThreshold !== undefined) setAtsThreshold(parsed.atsThreshold);
       } catch (e) {
         console.error("Failed to parse persisted batch settings:", e);
       }
@@ -90,6 +93,7 @@ export default function BatchTab({
       setAutoCompile(true);
       setAutoDownload(true);
       setRequireLatex(true);
+      setAtsThreshold(0);
     }
 
     // Logs
@@ -132,10 +136,11 @@ export default function BatchTab({
         selectedTemplates,
         autoCompile,
         autoDownload,
-        requireLatex
+        requireLatex,
+        atsThreshold
       }));
     }
-  }, [selectedTemplates, autoCompile, autoDownload, requireLatex, BATCH_SETTINGS_KEY, isLoaded]);
+  }, [selectedTemplates, autoCompile, autoDownload, requireLatex, atsThreshold, BATCH_SETTINGS_KEY, isLoaded]);
 
   // Scroll to bottom of logs console
   useEffect(() => {
@@ -477,6 +482,44 @@ ${desc.substring(0, 3000)}`;
 
       if (isAborted()) return;
 
+      // Optional: ATS Analysis to skip generation if score is too low
+      let atsScore = null;
+      let atsResultLocal = null;
+      if (atsThreshold > 0) {
+        addLog(`${logPrefix} Analyse ATS préalable (seuil: ${atsThreshold}%)...`);
+        try {
+          const atsResponse = await runAtsAnalysis(callAIProvider, desc, activeCvOriginal, null, aiProvider, aiModel, apiKey);
+          atsResultLocal = atsResponse;
+          atsScore = atsResponse?.score || 0;
+          addLog(`${logPrefix} Score ATS obtenu : ${atsScore}%`);
+          
+          if (atsScore < atsThreshold) {
+            addLog(`${logPrefix} ⚠️ Offre ignorée car le score ATS (${atsScore}%) est inférieur au seuil (${atsThreshold}%).`);
+            updateItemState(itemId, { status: 'failed', error: `Score ATS insuffisant (${atsScore}%)` });
+            runningItemIdsRef.current.delete(itemId);
+            
+            // Optionally update DB to save the ATS result
+            await updateApplication(newAppId, {
+              atsResult: atsResultLocal,
+              atsScoreBefore: atsScore,
+              trackingStatus: 'Rejected (Low ATS)'
+            });
+            return;
+          } else {
+            addLog(`${logPrefix} Score ATS satisfaisant, poursuite de la génération...`);
+            // Update the DB with the passing ATS score
+            await updateApplication(newAppId, {
+              atsResult: atsResultLocal,
+              atsScoreBefore: atsScore
+            });
+          }
+        } catch (atsError) {
+          addLog(`${logPrefix} Erreur lors du calcul ATS: ${atsError.message}. Ignoré.`);
+        }
+      }
+
+      if (isAborted()) return;
+
       // Step 4: AI Generation
       updateItemState(itemId, { status: 'generating' });
       
@@ -799,6 +842,41 @@ ${desc.substring(0, 3000)}`;
                 </button>
               </div>
             )}
+          </div>
+          
+          {/* OPTIONS SECTION */}
+          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+              <Gear className="text-indigo-600 w-5 h-5" />
+              Paramètres du Batch
+            </h2>
+
+            <div className="space-y-4 pt-1">
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-500">
+                  Seuil ATS minimum (0% = désactivé)
+                </label>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="5"
+                    value={atsThreshold}
+                    onChange={(e) => setAtsThreshold(parseInt(e.target.value))}
+                    className="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                  />
+                  <span className="text-xs font-bold w-8 text-right text-indigo-600">
+                    {atsThreshold}%
+                  </span>
+                </div>
+                <p className="text-[10px] text-slate-400 leading-tight">
+                  S'il est activé, l'IA évaluera votre CV original par rapport à l'offre. Si le score est inférieur à ce seuil, l'offre sera ignorée sans générer de documents.
+                </p>
+              </div>
+
+              <div className="border-t border-slate-100 my-2"></div>
+            </div>
           </div>
 
           {/* RUN CONFIG PANEL */}

@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from scrapling.fetchers import Fetcher, StealthyFetcher
 import markdownify
+from urllib.parse import urljoin
 
 app = FastAPI(title="Scrapling Proxy Server")
 
@@ -18,6 +19,9 @@ app.add_middleware(
 )
 
 class ScrapeRequest(BaseModel):
+    url: str
+
+class SearchScrapeRequest(BaseModel):
     url: str
 
 @app.post("/scrape")
@@ -112,6 +116,38 @@ async def scrape_url(request: ScrapeRequest):
                 "selector": "raw_html",
                 "url": url
             }
+
+@app.post("/scrape-search")
+def scrape_search_url(request: SearchScrapeRequest):
+    url = request.url
+    print(f"\n--- New search scrape request for URL: {url} ---")
+    
+    try:
+        # Search pages like LinkedIn are heavily protected, we need StealthyFetcher
+        print("Using StealthyFetcher to fetch search page...")
+        page = StealthyFetcher.fetch(url, headless=True)
+        print(f"StealthyFetcher response status: {page.status}")
+        
+        # We don't raise an exception on page.status != 200 because LinkedIn
+        # often returns 999 for automated requests while still serving the actual HTML page!
+        
+        # Extract links
+        links = []
+        for a_tag in page.css('a'):
+            href = a_tag.attrib.get('href')
+            if href and '/jobs/view/' in href:
+                absolute_url = urljoin(url, href)
+                # Clean URL (remove query parameters like ?trk=... which pollute the URL)
+                base_url = absolute_url.split('?')[0]
+                if base_url not in links:
+                    links.append(base_url)
+                    
+        print(f"Found {len(links)} unique job links.")
+        return {"success": True, "links": links, "url": url}
+    except Exception as e:
+        error_msg = f"StealthyFetcher failed: {str(e)}"
+        print(error_msg)
+        raise HTTPException(status_code=500, detail=error_msg)
 
 if __name__ == "__main__":
     print("Starting Scrapling Proxy Server on http://localhost:8000")
