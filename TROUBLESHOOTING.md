@@ -287,6 +287,16 @@ pip install pydantic pydantic-core openai
 2. **CORS Activation**: Added full CORS middleware allowing all origins (`allow_origins=["*"]`) in the local FastAPI backend to enable smooth communication.
 3. **Local Architecture Design**: The Scrapling scraper remains a local helper service that the user runs on their computer (`python3 scratch/scrapling_server.py`) while browsing the app.
 
+### Problem 5: Scrapling Server 500 Error (Strict 200 HTTP Check on LinkedIn)
+**Issue**: Extracting LinkedIn job links via the Python server returned a `500 Internal Server Error`.
+**Cause**: The server was programmed to raise a fatal exception if `page.status != 200`. However, LinkedIn heavily utilizes anti-bot measures and routinely returns a `999` status code for automated requests, even though it still delivers the complete HTML page with all job links!
+**Fix**: Removed the strict HTTP status code check in `scrapling_server.py`. The scraper now proceeds to extract `<a>` tags regardless of the HTTP status, successfully harvesting links even on `999` responses.
+
+### Problem 6: Playwright Sync API inside Asyncio Loop Crash
+**Issue**: Fetching URLs with Scrapling's `StealthyFetcher` threw `StealthyFetcher failed: It looks like you are using Playwright Sync API inside the asyncio loop. Please use the Async API instead.`
+**Cause**: The `/scrape-search` FastAPI route was defined with `async def`. FastAPI executes asynchronous routes directly on its main event loop. However, `StealthyFetcher` uses the synchronous Playwright API under the hood, which is forbidden from running inside an active asyncio loop.
+**Fix**: Changed the route definition to a standard synchronous function (`def scrape_search_url()`). FastAPI automatically detects synchronous routes and executes them inside an external threadpool, completely bypassing the asyncio event loop restriction and allowing the synchronous Playwright code to run flawlessly.
+
 ## 12. General CV Storage & Batch AI LaTeX CV Generation
 
 ### Problem 1: General/Default CV Missing or Reverting to Synthetic CV

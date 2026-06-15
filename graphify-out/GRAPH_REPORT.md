@@ -1,16 +1,16 @@
-# Graph Report - ultimate-job-tool  (2026-06-04)
+# Graph Report - ultimate-job-tool  (2026-06-15)
 
 ## Corpus Check
-- 84 files · ~109,076 words
+- 87 files · ~110,470 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1169 nodes · 1217 edges · 115 communities (93 shown, 22 thin omitted)
+- 1175 nodes · 1221 edges · 121 communities (99 shown, 22 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1e466385`
+- Built from commit: `f2e7fb2f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -116,6 +116,10 @@
 - [[_COMMUNITY_Community 111|Community 111]]
 - [[_COMMUNITY_Community 112|Community 112]]
 - [[_COMMUNITY_Community 113|Community 113]]
+- [[_COMMUNITY_Community 115|Community 115]]
+- [[_COMMUNITY_Community 116|Community 116]]
+- [[_COMMUNITY_Community 117|Community 117]]
+- [[_COMMUNITY_Community 118|Community 118]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `batch` - 30 edges
@@ -136,12 +140,12 @@
   src/App.jsx → src/hooks/useDatabase.js
 - `DashboardTab()` --calls--> `useDatabase()`  [EXTRACTED]
   src/components/tabs/DashboardTab.jsx → src/hooks/useDatabase.js
-- `BatchTab()` --calls--> `useDatabase()`  [EXTRACTED]
-  src/components/tabs/BatchTab.jsx → src/hooks/useDatabase.js
 - `App()` --calls--> `useToast()`  [EXTRACTED]
   src/App.jsx → src/hooks/useToast.js
+- `App()` --calls--> `useLocalStorage()`  [EXTRACTED]
+  src/App.jsx → src/hooks/useLocalStorage.js
 
-## Communities (115 total, 22 thin omitted)
+## Communities (121 total, 22 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -220,8 +224,8 @@ Cohesion: 0.05
 Nodes (41): content, desc, title, content, desc, title, content, desc (+33 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.04
-Nodes (47): apiError, error, errorTitle, app, ai, auth, error, prompt (+39 more)
+Cohesion: 0.07
+Nodes (29): toast, apiKeyRequired, apiRequiredFirst, atsError, atsMissingData, atsSuccess, compileMultipleError, compilingMultipleDone (+21 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.33
@@ -372,20 +376,24 @@ Cohesion: 0.17
 Nodes (11): code:javascript (// CURRENT FLAWED IMPLEMENTATION:), code:javascript (const [maxConcurrency, setMaxConcurrency] = useState(2); // ), code:javascript (// NEW IMPLEMENTATION IN BatchTab.jsx:), code:javascript (} finally {), Context of the Current Codebase ("What we have here"), Guide to Implementing Batch IA (Concurrency Limits) in Ultimate Job Tool V2, Instructions for the Agent, Step 1: Add a Concurrency Setting (+3 more)
 
 ### Community 73 - "Community 73"
-Cohesion: 0.83
-Nodes (3): escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses()
+Cohesion: 0.50
+Nodes (4): apiError, error, errorTitle, ai
 
 ### Community 74 - "Community 74"
-Cohesion: 0.19
-Nodes (11): getPromptTemplates(), Jina AI Reader, Scraper Service, Scrapfly API, callAIProvider(), cleanJinaMarkdown(), scrapeWithJina(), scrapeWithScrapfly() (+3 more)
+Cohesion: 0.23
+Nodes (9): callAIProvider(), escapeAmpersands(), extractLatexFromResponse(), mergeLatexResponses(), cleanJinaMarkdown(), scrapeJobSearchLinks(), scrapeWithJina(), scrapeWithScrapfly() (+1 more)
+
+### Community 75 - "Community 75"
+Cohesion: 0.40
+Nodes (3): BaseModel, ScrapeRequest, SearchScrapeRequest
 
 ### Community 76 - "Community 76"
 Cohesion: 0.43
 Nodes (4): PDF Service, compilePdfFromLatex(), downloadBlobAsPdf(), TeXLive.net API
 
 ### Community 78 - "Community 78"
-Cohesion: 0.48
-Nodes (5): useCloudDatabase(), useDatabase(), useLocalDatabase(), createAuthenticatedSupabaseClient(), DashboardTab()
+Cohesion: 0.29
+Nodes (7): getPromptTemplates(), useCloudDatabase(), useDatabase(), useLocalDatabase(), createAuthenticatedSupabaseClient(), BatchTab(), DashboardTab()
 
 ### Community 81 - "Community 81"
 Cohesion: 0.18
@@ -447,6 +455,10 @@ Nodes (4): clText, customFields, labels, labelText
 Cohesion: 0.50
 Nodes (3): genericAdapter, keys, label
 
+### Community 109 - "Community 109"
+Cohesion: 0.22
+Nodes (8): app, error, prompt, invalidLatex, scrapflyRequired, header, apiKeyPlaceholder, scrapflyKey
+
 ### Community 110 - "Community 110"
 Cohesion: 0.67
 Nodes (3): 14. Chrome Extension Companion Integration, Problem 1: Content Security Policy (CSP) Blocking Inline Scripts, Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item
@@ -459,6 +471,14 @@ Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascadi
 Cohesion: 0.67
 Nodes (3): 15. Dashboard UI & List Stability, Problem 1: Application List Jumping Chaotically on Status Change, Problem 2: Download Workflow Disconnected from Submission
 
+### Community 115 - "Community 115"
+Cohesion: 0.50
+Nodes (4): auth, loginButton, welcomeDesc, welcomeTitle
+
+### Community 116 - "Community 116"
+Cohesion: 0.50
+Nodes (4): prompts, missingCv, missingJob, urlInstruction
+
 ## Knowledge Gaps
 - **843 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+838 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -467,12 +487,12 @@ Nodes (3): 15. Dashboard UI & List Stability, Problem 1: Application List Jumpin
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `app` connect `Community 30` to `Community 109`?**
-  _High betweenness centrality (0.083) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 93`, `Community 62`?**
-  _High betweenness centrality (0.072) - this node is a cross-community bridge._
-- **Why does `templates` connect `Community 29` to `Community 93`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `app` connect `Community 109` to `Community 73`, `Community 115`, `Community 116`, `Community 30`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `dashboard` connect `Community 34` to `Community 109`, `Community 15`, `Community 49`, `Community 51`, `Community 55`, `Community 56`?**
+  _High betweenness centrality (0.060) - this node is a cross-community bridge._
 - **What connects `fr`, `en`, `rewrites` to the rest of the system?**
   _843 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
