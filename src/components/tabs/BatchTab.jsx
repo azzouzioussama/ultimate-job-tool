@@ -46,6 +46,7 @@ export default function BatchTab({
   const [autoDownload, setAutoDownload] = useState(true);
   const [requireLatex, setRequireLatex] = useState(true);
   const [atsThreshold, setAtsThreshold] = useState(0);
+  const [maxConcurrency, setMaxConcurrency] = useState(5);
   
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -85,6 +86,7 @@ export default function BatchTab({
         if (parsed.autoDownload !== undefined) setAutoDownload(parsed.autoDownload);
         if (parsed.requireLatex !== undefined) setRequireLatex(parsed.requireLatex);
         if (parsed.atsThreshold !== undefined) setAtsThreshold(parsed.atsThreshold);
+        if (parsed.maxConcurrency !== undefined) setMaxConcurrency(parsed.maxConcurrency);
       } catch (e) {
         console.error("Failed to parse persisted batch settings:", e);
       }
@@ -94,6 +96,7 @@ export default function BatchTab({
       setAutoDownload(true);
       setRequireLatex(true);
       setAtsThreshold(0);
+      setMaxConcurrency(5);
     }
 
     // Logs
@@ -137,10 +140,11 @@ export default function BatchTab({
         autoCompile,
         autoDownload,
         requireLatex,
-        atsThreshold
+        atsThreshold,
+        maxConcurrency
       }));
     }
-  }, [selectedTemplates, autoCompile, autoDownload, requireLatex, atsThreshold, BATCH_SETTINGS_KEY, isLoaded]);
+  }, [selectedTemplates, autoCompile, autoDownload, requireLatex, atsThreshold, maxConcurrency, BATCH_SETTINGS_KEY, isLoaded]);
 
   // Scroll to bottom of logs console
   useEffect(() => {
@@ -662,12 +666,20 @@ ${desc.substring(0, 3000)}`;
   useEffect(() => {
     if (!isPlaying) return;
 
+    const runningCount = runningItemIdsRef.current.size;
+    if (runningCount >= maxConcurrency) return;
+
+    const availableSlots = maxConcurrency - runningCount;
+    let started = 0;
+
     items.forEach((item, index) => {
-      if (item.status === 'pending') {
+      if (started >= availableSlots) return;
+      if (item.status === 'pending' && !runningItemIdsRef.current.has(item.id)) {
         processItem(item.id, index);
+        started++;
       }
     });
-  }, [isPlaying, items.length]);
+  }, [isPlaying, items, maxConcurrency]);
 
   // Check if all active items are finished to stop isPlaying
   useEffect(() => {
@@ -876,6 +888,40 @@ ${desc.substring(0, 3000)}`;
               </div>
 
               <div className="border-t border-slate-100 my-2"></div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-500">
+                  Requêtes simultanées max
+                </label>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    step="1"
+                    value={maxConcurrency}
+                    onChange={(e) => setMaxConcurrency(parseInt(e.target.value))}
+                    className="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                  />
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    value={maxConcurrency}
+                    onChange={(e) => {
+                      let val = parseInt(e.target.value);
+                      if (isNaN(val)) val = 1;
+                      if (val > 100) val = 100;
+                      if (val < 1) val = 1;
+                      setMaxConcurrency(val);
+                    }}
+                    className="w-16 text-xs font-bold text-center border border-slate-200 rounded-md py-1 text-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  />
+                </div>
+                <p className="text-[10px] text-slate-400 leading-tight">
+                  Contrôle le nombre de tâches (scraping + IA) exécutées en même temps pour éviter le "Rate Limit".
+                </p>
+              </div>
             </div>
           </div>
 

@@ -1,4 +1,6 @@
 import os
+import time
+import urllib.parse
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -123,29 +125,145 @@ def scrape_search_url(request: SearchScrapeRequest):
     print(f"\n--- New search scrape request for URL: {url} ---")
     
     try:
-        # Search pages like LinkedIn are heavily protected, we need StealthyFetcher
-        print("Using StealthyFetcher to fetch search page...")
-        page = StealthyFetcher.fetch(url, headless=True)
-        print(f"StealthyFetcher response status: {page.status}")
-        
-        # We don't raise an exception on page.status != 200 because LinkedIn
-        # often returns 999 for automated requests while still serving the actual HTML page!
-        
-        # Extract links
+        # Pre-process URLs if necessary
+        if "linkedin.com/jobs/search-results/" in url:
+            url = url.replace("/search-results/", "/search/")
+            print(f"Converted LinkedIn URL to bypass auth wall: {url}")
+            
+        def extract_links_from_page(page, url_origin):
+            extracted = []
+            if "linkedin.com" in url_origin:
+                for a_tag in page.css('a'):
+                    href = a_tag.attrib.get('href')
+                    if href and '/jobs/view/' in href:
+                        base_url = urljoin(url_origin, href).split('?')[0]
+                        if base_url not in extracted: extracted.append(base_url)
+            elif "hellowork.com" in url_origin:
+                for a_tag in page.css('a'):
+                    href = a_tag.attrib.get('href')
+                    if href and '/fr-fr/emplois/' in href and href.endswith('.html'):
+                        base_url = urljoin(url_origin, href).split('?')[0]
+                        if base_url not in extracted: extracted.append(base_url)
+            elif "indeed.com" in url_origin:
+                for a_tag in page.css('a[data-jk]'):
+                    jk = a_tag.attrib.get('data-jk')
+                    if jk:
+                        base_url = f"https://fr.indeed.com/viewjob?jk={jk}"
+                        if base_url not in extracted: extracted.append(base_url)
+            elif "free-work.com" in url_origin:
+                for a_tag in page.css('a'):
+                    href = a_tag.attrib.get('href')
+                    if href and '/jobs/' in href and not href.endswith('/jobs'):
+                        base_url = urljoin(url_origin, href).split('?')[0]
+                        if base_url not in extracted: extracted.append(base_url)
+            else:
+                for a_tag in page.css('a'):
+                    href = a_tag.attrib.get('href')
+                    if href and ('/job/' in href or '/jobs/' in href or '/emploi/' in href or '/offres/' in href):
+                        base_url = urljoin(url_origin, href).split('?')[0]
+                        if base_url not in extracted: extracted.append(base_url)
+            return extracted
+
         links = []
-        for a_tag in page.css('a'):
-            href = a_tag.attrib.get('href')
-            if href and '/jobs/view/' in href:
-                absolute_url = urljoin(url, href)
-                # Clean URL (remove query parameters like ?trk=... which pollute the URL)
-                base_url = absolute_url.split('?')[0]
-                if base_url not in links:
-                    links.append(base_url)
-                    
-        print(f"Found {len(links)} unique job links.")
+        fetcher = Fetcher()
+        
+        # 1. LinkedIn Hidden API Pagination
+        if "linkedin.com" in url:
+            parsed = urllib.parse.urlparse(url)
+            base_api = f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?{parsed.query}"
+            print("Using LinkedIn seeMoreJobPostings API for deep pagination...")
+            for start_offset in range(0, 1000, 25): # Try up to 40 pages (1000 jobs)
+                page_url = f"{base_api}&start={start_offset}"
+                try:
+                    page = fetcher.get(page_url)
+                    if page.status != 200: break
+                    page_links = extract_links_from_page(page, "https://www.linkedin.com")
+                    if not page_links: break
+                    for link in page_links:
+                        if link not in links: links.append(link)
+                    print(f"LinkedIn offset {start_offset}: found {len(page_links)} links.")
+                    time.sleep(0.5)
+                except Exception as e:
+                    print(f"LinkedIn pagination failed at {start_offset}: {e}")
+                    break
+
+        # 2. Indeed Pagination
+        elif "indeed.com" in url:
+            for start_offset in range(0, 50, 10): # 5 pages max
+                separator = "&" if "?" in url else "?"
+                page_url = f"{url}{separator}start={start_offset}"
+                try:
+                    page = fetcher.get(page_url)
+                    if page.status != 200: break
+                    page_links = extract_links_from_page(page, url)
+                    if not page_links:
+                        # Fallback to StealthyFetcher if Fetcher gets blocked by Cloudflare on pagination
+                        print(f"Indeed: Fetcher found 0 links on offset {start_offset}. Trying StealthyFetcher...")
+                        page = StealthyFetcher.fetch(page_url, headless=True)
+                        page_links = extract_links_from_page(page, url)
+                        if not page_links: break
+                    for link in page_links:
+                        if link not in links: links.append(link)
+                    print(f"Indeed offset {start_offset}: found {len(page_links)} links.")
+                    time.sleep(1)
+                except Exception:
+                    break
+
+        # 3. HelloWork Pagination
+        elif "hellowork.com" in url:
+            for page_num in range(1, 6): # 5 pages max
+                separator = "&" if "?" in url else "?"
+                page_url = f"{url}{separator}p={page_num}"
+                try:
+                    page = fetcher.get(page_url)
+                    if page.status != 200: break
+                    page_links = extract_links_from_page(page, url)
+                    if not page_links: break
+                    for link in page_links:
+                        if link not in links: links.append(link)
+                    print(f"HelloWork page {page_num}: found {len(page_links)} links.")
+                    time.sleep(0.5)
+                except Exception:
+                    break
+
+        # 4. Free-Work Pagination
+        elif "free-work.com" in url:
+            for page_num in range(1, 6): # 5 pages max
+                separator = "&" if "?" in url else "?"
+                page_url = f"{url}{separator}page={page_num}"
+                try:
+                    page = fetcher.get(page_url)
+                    if page.status != 200: break
+                    page_links = extract_links_from_page(page, url)
+                    if not page_links: break
+                    for link in page_links:
+                        if link not in links: links.append(link)
+                    print(f"Free-Work page {page_num}: found {len(page_links)} links.")
+                    time.sleep(0.5)
+                except Exception:
+                    break
+
+        # 5. Standard Fetcher or StealthyFetcher Fallback for others (or if something failed)
+        if not links:
+            try:
+                print("Attempting with fast Fetcher...")
+                page = fetcher.get(url)
+                links = extract_links_from_page(page, url)
+            except Exception as e:
+                print(f"Fetcher failed: {e}")
+                
+            if not links:
+                try:
+                    print("Falling back to StealthyFetcher...")
+                    page = StealthyFetcher.fetch(url, headless=True)
+                    links = extract_links_from_page(page, url)
+                except Exception as e:
+                    print(f"StealthyFetcher failed: {e}")
+
+        print(f"Found a total of {len(links)} unique job links.")
         return {"success": True, "links": links, "url": url}
     except Exception as e:
-        error_msg = f"StealthyFetcher failed: {str(e)}"
+        error_msg = f"Search scraping failed completely: {str(e)}"
         print(error_msg)
         raise HTTPException(status_code=500, detail=error_msg)
 

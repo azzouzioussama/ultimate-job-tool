@@ -198,6 +198,23 @@ pip install pydantic pydantic-core openai
 **Cause**: The initial SQL used `USING (auth.uid() = user_id)`. `auth.uid()` expects a standard UUID format, but Clerk user IDs are strings (e.g., `user_2Nne...`), which were stored in a `text` column.
 **Fix**: Modified the RLS policies to extract the user ID directly from the Clerk JWT payload as text using `(auth.jwt() ->> 'sub') = user_id`.
 
+## 11. Job Scraper Pagination Issues
+
+### Problem 1: Frontend Pagination Yields Limited Links (LinkedIn)
+**Issue**: Using `StealthyFetcher` or `Fetcher` on `https://www.linkedin.com/jobs/search/` only returned ~15-25 links total, regardless of how many results the search claimed to have.
+**Cause**: LinkedIn's frontend relies on infinite scrolling. The initial HTML payload stops at 25 items. Playwright can scroll, but it's slow and prone to breaking on dynamic lazy-loading.
+**Fix**: Completely bypassed the frontend UI by hooking into LinkedIn's hidden "Guest" API (`https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=...&start={offset}`). The Python backend loops this API dynamically, fetching up to 40 pages (1000 links) seamlessly and rapidly using raw HTTP requests.
+
+### Problem 2: Cloudflare Anti-Bot Blocks Pagination (Indeed)
+**Issue**: Fetching `&start=0` on Indeed worked perfectly, but attempting `&start=10` returned 0 links and redirected to a `secure.indeed.com/auth` Cloudflare checkpoint.
+**Cause**: Indeed heavily monitors pagination. While the very first page is often allowed through, clicking "Next Page" programmatically triggers Cloudflare's invisible CAPTCHA challenge. 
+**Fix**: The backend is configured to use fast `Fetcher` for `&start=0`, and gracefully fall back to headless Firefox (`StealthyFetcher`) if it encounters a block on subsequent pages. However, bypassing Cloudflare entirely for deep scraping on Indeed remains a known constraint without using commercial proxy solutions (like Scrapfly ASP).
+
+### Problem 3: React SPA Job Links Missing (Welcome To The Jungle)
+**Issue**: Scraping other job boards like Welcome To The Jungle returned 0 actual job links (e.g. `/fr/companies/.../jobs/...`), returning only generic SEO routing links (`/fr/pages/emploi-lyon`).
+**Cause**: Modern job boards use Single Page Application frameworks and external search APIs (like Algolia) to load job cards *after* the initial page loads. The server-rendered HTML does not contain the job URLs.
+**Fix**: The user is advised that generic extraction cannot parse undocumented dynamic JSON endpoints. For full support, these sites require custom API hooks similar to the LinkedIn implementation.
+
 ## 11. WSL2 Development Server Blank Page
 
 ### Problem 1: Vite 8 `allowedHosts` Syntax Change

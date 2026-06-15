@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-15)
 
 ## Corpus Check
-- 87 files · ~110,470 words
+- 87 files · ~110,813 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1175 nodes · 1221 edges · 121 communities (99 shown, 22 thin omitted)
+- 1177 nodes · 1223 edges · 118 communities (95 shown, 23 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f2e7fb2f`
+- Built from commit: `ee41363d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -112,12 +112,9 @@
 - [[_COMMUNITY_Community 107|Community 107]]
 - [[_COMMUNITY_Community 108|Community 108]]
 - [[_COMMUNITY_Community 109|Community 109]]
-- [[_COMMUNITY_Community 110|Community 110]]
 - [[_COMMUNITY_Community 111|Community 111]]
 - [[_COMMUNITY_Community 112|Community 112]]
 - [[_COMMUNITY_Community 113|Community 113]]
-- [[_COMMUNITY_Community 115|Community 115]]
-- [[_COMMUNITY_Community 116|Community 116]]
 - [[_COMMUNITY_Community 117|Community 117]]
 - [[_COMMUNITY_Community 118|Community 118]]
 
@@ -145,7 +142,7 @@
 - `App()` --calls--> `useLocalStorage()`  [EXTRACTED]
   src/App.jsx → src/hooks/useLocalStorage.js
 
-## Communities (121 total, 22 thin omitted)
+## Communities (118 total, 23 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -177,7 +174,7 @@ Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, co
 
 ### Community 7 - "Community 7"
 Cohesion: 0.15
-Nodes (12): 10. Concurrency and Rate Limiting in Batch Processing, 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing (+4 more)
+Nodes (12): 13. Cloud Mode Strict Schema Constraints on Application Creation, 14. Chrome Extension Companion Integration, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem 1: Content Security Policy (CSP) Blocking Inline Scripts, Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item (+4 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -224,8 +221,8 @@ Cohesion: 0.05
 Nodes (41): content, desc, title, content, desc, title, content, desc (+33 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.07
-Nodes (29): toast, apiKeyRequired, apiRequiredFirst, atsError, atsMissingData, atsSuccess, compileMultipleError, compilingMultipleDone (+21 more)
+Cohesion: 0.04
+Nodes (47): apiError, error, errorTitle, app, ai, auth, error, prompt (+39 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.33
@@ -376,8 +373,8 @@ Cohesion: 0.17
 Nodes (11): code:javascript (// CURRENT FLAWED IMPLEMENTATION:), code:javascript (const [maxConcurrency, setMaxConcurrency] = useState(2); // ), code:javascript (// NEW IMPLEMENTATION IN BatchTab.jsx:), code:javascript (} finally {), Context of the Current Codebase ("What we have here"), Guide to Implementing Batch IA (Concurrency Limits) in Ultimate Job Tool V2, Instructions for the Agent, Step 1: Add a Concurrency Setting (+3 more)
 
 ### Community 73 - "Community 73"
-Cohesion: 0.50
-Nodes (4): apiError, error, errorTitle, ai
+Cohesion: 0.67
+Nodes (3): 10. Concurrency and Rate Limiting in Batch Processing, Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing
 
 ### Community 74 - "Community 74"
 Cohesion: 0.23
@@ -400,8 +397,8 @@ Cohesion: 0.18
 Nodes (10): coverLetterKeywords, coverLetterText, fieldMapping, inputId, inputName, inputPlaceholder, inputs, isMatch (+2 more)
 
 ### Community 82 - "Community 82"
-Cohesion: 0.40
-Nodes (5): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement, Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper)
+Cohesion: 0.29
+Nodes (7): 11. Scrapling Scraper & Python Backend Integration, Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing), Problem 2: FastAPI Startup Failure (`TypeError: Router.__init__() got an unexpected keyword argument 'on_startup'`), Problem 3: Playwright/Patchright Missing Browser Executables or Sudo Password Requirement, Problem 4: Scrapling Integration on Production Server (Vercel Host + Local Python Helper), Problem 5: Scrapling Server 500 Error (Strict 200 HTTP Check on LinkedIn), Problem 6: Playwright Sync API inside Asyncio Loop Crash
 
 ### Community 83 - "Community 83"
 Cohesion: 0.20
@@ -455,14 +452,6 @@ Nodes (4): clText, customFields, labels, labelText
 Cohesion: 0.50
 Nodes (3): genericAdapter, keys, label
 
-### Community 109 - "Community 109"
-Cohesion: 0.22
-Nodes (8): app, error, prompt, invalidLatex, scrapflyRequired, header, apiKeyPlaceholder, scrapflyKey
-
-### Community 110 - "Community 110"
-Cohesion: 0.67
-Nodes (3): 14. Chrome Extension Companion Integration, Problem 1: Content Security Policy (CSP) Blocking Inline Scripts, Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item
-
 ### Community 111 - "Community 111"
 Cohesion: 0.67
 Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascading Renders warning with `useEffect`, Problem 2: Data Loss Risk during `localStorage` to IndexedDB Migration
@@ -471,30 +460,22 @@ Nodes (3): 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: Cascadi
 Cohesion: 0.67
 Nodes (3): 15. Dashboard UI & List Stability, Problem 1: Application List Jumping Chaotically on Status Change, Problem 2: Download Workflow Disconnected from Submission
 
-### Community 115 - "Community 115"
-Cohesion: 0.50
-Nodes (4): auth, loginButton, welcomeDesc, welcomeTitle
-
-### Community 116 - "Community 116"
-Cohesion: 0.50
-Nodes (4): prompts, missingCv, missingJob, urlInstruction
-
 ## Knowledge Gaps
-- **843 isolated node(s):** `fr`, `en`, `rewrites`, `locales`, `stringsFr` (+838 more)
+- **845 isolated node(s):** `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System`, `B. Dynamic Prompt Engine`, `C. Multi-Provider AI Integration` (+840 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `app` connect `Community 30` to `Community 109`?**
+  _High betweenness centrality (0.069) - this node is a cross-community bridge._
+- **Why does `templates` connect `Community 29` to `Community 93`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 59`, `Community 93`, `Community 62`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
-- **Why does `app` connect `Community 109` to `Community 73`, `Community 115`, `Community 116`, `Community 30`?**
-  _High betweenness centrality (0.065) - this node is a cross-community bridge._
-- **Why does `dashboard` connect `Community 34` to `Community 109`, `Community 15`, `Community 49`, `Community 51`, `Community 55`, `Community 56`?**
-  _High betweenness centrality (0.060) - this node is a cross-community bridge._
-- **What connects `fr`, `en`, `rewrites` to the rest of the system?**
-  _843 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.058) - this node is a cross-community bridge._
+- **What connects `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System` to the rest of the system?**
+  _845 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
