@@ -1,16 +1,16 @@
 # Graph Report - ultimate-job-tool  (2026-06-15)
 
 ## Corpus Check
-- 94 files · ~113,445 words
+- 99 files · ~114,413 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1198 nodes · 1240 edges · 124 communities (100 shown, 24 thin omitted)
+- 1212 nodes · 1250 edges · 129 communities (105 shown, 24 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b6a4762b`
+- Built from commit: `3c5199cb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -118,6 +118,7 @@
 - [[_COMMUNITY_Community 115|Community 115]]
 - [[_COMMUNITY_Community 117|Community 117]]
 - [[_COMMUNITY_Community 118|Community 118]]
+- [[_COMMUNITY_Community 124|Community 124]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `batch` - 30 edges
@@ -143,7 +144,7 @@
 - `BatchTab()` --calls--> `getPromptTemplates()`  [EXTRACTED]
   src/components/tabs/BatchTab.jsx → src/constants/promptTemplates.js
 
-## Communities (124 total, 24 thin omitted)
+## Communities (129 total, 24 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.22
@@ -175,7 +176,7 @@ Nodes (18): ai, analyzing, clearAll, compileMultiple, compileMultipleTooltip, co
 
 ### Community 7 - "Community 7"
 Cohesion: 0.12
-Nodes (16): 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, 9. Localization & UI Workflows, Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode, Problem 1: Cascading Renders warning with `useEffect` (+8 more)
+Nodes (15): 10. Concurrency and Rate Limiting in Batch Processing, 13. Cloud Mode Strict Schema Constraints on Application Creation, 4. UI/UX Bugs, 5. AI Hallucination & Regex Challenges, 7. JSON Parsing from AI (ATS Tester), 8. Database (Dexie.js) & Architecture Refactoring, Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 1: Batch Queue & Manual Create failing in Clerk + Supabase Cloud Mode (+7 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.13
@@ -371,7 +372,7 @@ Nodes (11): code:javascript (// CURRENT FLAWED IMPLEMENTATION:), code:javascript
 
 ### Community 73 - "Community 73"
 Cohesion: 0.67
-Nodes (3): 10. Concurrency and Rate Limiting in Batch Processing, Problem 1: API Rate Limiting (Error 429) During Parallel Request Spikes, Problem 2: Sequential Bottlenecks in Multi-Step Lifecycle Processing
+Nodes (3): fs, run(), scrapeJina()
 
 ### Community 74 - "Community 74"
 Cohesion: 0.23
@@ -450,8 +451,8 @@ Cohesion: 0.50
 Nodes (3): genericAdapter, keys, label
 
 ### Community 109 - "Community 109"
-Cohesion: 0.50
-Nodes (4): 11. Job Scraper Pagination Issues, Problem 1: Frontend Pagination Yields Limited Links (LinkedIn), Problem 2: Cloudflare Anti-Bot Blocks Pagination (Indeed), Problem 3: React SPA Job Links Missing (Welcome To The Jungle)
+Cohesion: 0.40
+Nodes (5): 11. Job Scraper Pagination Issues, Problem 1: Frontend Pagination Yields Limited Links (LinkedIn), Problem 2: Cloudflare Anti-Bot Blocks Pagination (Indeed), Problem 3: React SPA Job Links Missing (Welcome To The Jungle), Problem 4: Jina AI Fails on Cloudflare and Active-Consent SPAs
 
 ### Community 113 - "Community 113"
 Cohesion: 0.67
@@ -461,22 +462,26 @@ Nodes (3): 15. Dashboard UI & List Stability, Problem 1: Application List Jumpin
 Cohesion: 0.67
 Nodes (3): 14. Chrome Extension Companion Integration, Problem 1: Content Security Policy (CSP) Blocking Inline Scripts, Problem 3: Active Application Data Always Null or Forcibly Resetting to First Item
 
+### Community 124 - "Community 124"
+Cohesion: 0.50
+Nodes (4): 9. Localization & UI Workflows, Problem 1: French Hardcoded Strings Leaking into English UI, Problem 2: Missing Application Creation on Manual Paste, Problem 3: Invisible/Transparent Buttons in the Batch UI & Low-Contrast Dashboard Actions
+
 ## Knowledge Gaps
-- **848 isolated node(s):** `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System`, `B. Dynamic Prompt Engine`, `C. Multi-Provider AI Integration` (+843 more)
+- **850 isolated node(s):** `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System`, `B. Dynamic Prompt Engine`, `C. Multi-Provider AI Integration` (+845 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `templates` connect `Community 29` to `Community 110`?**
-  _High betweenness centrality (0.065) - this node is a cross-community bridge._
 - **Why does `dashboard` connect `Community 35` to `Community 65`, `Community 66`, `Community 38`, `Community 110`, `Community 59`, `Community 62`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `app` connect `Community 30` to `Community 93`?**
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+- **Why does `templates` connect `Community 29` to `Community 110`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `batch` connect `Community 69` to `Community 110`?**
   _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **What connects `Core Objectives of v3`, `2. Technical Stack`, `A. The Dual CV System` to the rest of the system?**
-  _848 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _850 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

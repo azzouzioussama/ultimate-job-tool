@@ -47,6 +47,7 @@ export default function BatchTab({
   const [requireLatex, setRequireLatex] = useState(true);
   const [atsThreshold, setAtsThreshold] = useState(0);
   const [maxConcurrency, setMaxConcurrency] = useState(5);
+  const [selectedItemIds, setSelectedItemIds] = useState([]);
   
   const [isLoaded, setIsLoaded] = useState(false);
   
@@ -313,6 +314,7 @@ export default function BatchTab({
     e.stopPropagation();
     setItems(prev => prev.filter(item => item.id !== id));
     runningItemIdsRef.current.delete(id);
+    setSelectedItemIds(prev => prev.filter(itemId => itemId !== id));
     addLog("Offre retirée de la pile.");
   };
 
@@ -321,7 +323,51 @@ export default function BatchTab({
     setIsPlaying(false);
     setLogs([]);
     runningItemIdsRef.current.clear();
+    setSelectedItemIds([]);
     addLog("Pile réinitialisée.");
+  };
+
+  const handleRestartItem = (id, e) => {
+    e.stopPropagation();
+    setItems(prev => prev.map(item => 
+      item.id === id 
+        ? { ...item, status: 'pending', error: '', completedDocs: [] }
+        : item
+    ));
+    addLog("Offre remise en attente.");
+    if (!isPlaying) setIsPlaying(true);
+  };
+
+  const toggleSelection = (id) => {
+    setSelectedItemIds(prev => 
+      prev.includes(id) ? prev.filter(itemId => itemId !== id) : [...prev, id]
+    );
+  };
+
+  const toggleSelectAll = () => {
+    if (selectedItemIds.length === items.length && items.length > 0) {
+      setSelectedItemIds([]);
+    } else {
+      setSelectedItemIds(items.map(i => i.id));
+    }
+  };
+
+  const handleDeleteSelected = () => {
+    setItems(prev => prev.filter(item => !selectedItemIds.includes(item.id)));
+    selectedItemIds.forEach(id => runningItemIdsRef.current.delete(id));
+    setSelectedItemIds([]);
+    addLog(`${selectedItemIds.length} offre(s) supprimée(s).`);
+  };
+
+  const handleRestartSelected = () => {
+    setItems(prev => prev.map(item => 
+      selectedItemIds.includes(item.id) 
+        ? { ...item, status: 'pending', error: '', completedDocs: [] }
+        : item
+    ));
+    setSelectedItemIds([]);
+    addLog(`Relance de ${selectedItemIds.length} offre(s).`);
+    if (!isPlaying) setIsPlaying(true);
   };
 
   const toggleTemplateSelection = (id) => {
@@ -341,8 +387,11 @@ export default function BatchTab({
         return;
       }
 
-      const hasJobsToRun = items.some(item => item.status !== 'completed');
-      if (!hasJobsToRun) {
+      const hasPendingJobs = items.some(item => item.status === 'pending');
+      const hasFailedJobs = items.some(item => item.status === 'failed');
+      const allCompleted = items.every(item => item.status === 'completed');
+
+      if (allCompleted) {
         // Reset all items if they were all finished
         setItems(prev => prev.map(item => ({
           ...item,
@@ -351,16 +400,13 @@ export default function BatchTab({
           completedDocs: []
         })));
         addLog("Démarrage du traitement de la pile...");
-      } else {
-        // Reset failed tasks so they run again, leave completed alone
-        setItems(prev => prev.map(item => 
-          item.status === 'failed'
-            ? { ...item, status: 'pending', error: '', completedDocs: [] }
-            : item
-        ));
+        setIsPlaying(true);
+      } else if (hasPendingJobs) {
         addLog("Reprise du traitement en parallèle...");
+        setIsPlaying(true);
+      } else if (hasFailedJobs) {
+        showToast("Sélectionnez individuellement les offres échouées à relancer avec le bouton 'Relancer'.", "info");
       }
-      setIsPlaying(true);
     } else {
       setIsPlaying(false);
       addLog("Traitement mis en pause.");
@@ -1110,10 +1156,46 @@ ${desc.substring(0, 3000)}`;
 
           {/* QUEUE LIST VIEW */}
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-              <Stack className="text-indigo-600 w-5 h-5" />
-              Pile d'attente ({items.length} offres)
-            </h2>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                <Stack className="text-indigo-600 w-5 h-5" />
+                Pile d'attente ({items.length} offres)
+              </h2>
+              {items.length > 0 && (
+                <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 px-3 py-2 rounded-lg">
+                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
+                    <input 
+                      type="checkbox" 
+                      checked={items.length > 0 && selectedItemIds.length === items.length}
+                      onChange={toggleSelectAll}
+                      className="rounded text-indigo-600 border-slate-300 focus:ring-indigo-500 cursor-pointer w-4 h-4"
+                    />
+                    Tout sélectionner
+                  </label>
+                  
+                  {selectedItemIds.length > 0 && (
+                    <div className="flex items-center gap-2 border-l border-slate-200 pl-3 ml-1">
+                      <button 
+                        onClick={handleRestartSelected}
+                        className="text-xs flex items-center gap-1 px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 rounded transition-colors"
+                        title="Relancer la sélection"
+                      >
+                        <ArrowCounterClockwise className="w-3 h-3" />
+                        <span className="hidden sm:inline">Relancer</span> ({selectedItemIds.length})
+                      </button>
+                      <button 
+                        onClick={handleDeleteSelected}
+                        className="text-xs flex items-center gap-1 px-2 py-1 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 rounded transition-colors"
+                        title="Supprimer la sélection"
+                      >
+                        <Trash className="w-3 h-3" />
+                        <span className="hidden sm:inline">Supprimer</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
             {items.length === 0 ? (
               <div className="text-center py-8 text-slate-400 border-2 border-dashed border-slate-200 rounded-xl bg-slate-50/50">
@@ -1138,6 +1220,16 @@ ${desc.substring(0, 3000)}`;
                               : 'bg-slate-50/30 border-slate-200/80 hover:border-slate-300'
                       }`}
                     >
+                      {/* Checkbox */}
+                      <div className="pt-1 md:pt-0 pr-3 shrink-0 self-center">
+                        <input 
+                          type="checkbox"
+                          checked={selectedItemIds.includes(item.id)}
+                          onChange={() => toggleSelection(item.id)}
+                          className="rounded text-indigo-600 border-slate-300 focus:ring-indigo-500 cursor-pointer w-4 h-4 mt-0.5"
+                        />
+                      </div>
+
                       {/* Left: Info */}
                       <div className="flex-grow space-y-1 min-w-0 pr-4">
                         <div className="flex flex-wrap items-center gap-2">
@@ -1220,6 +1312,20 @@ ${desc.substring(0, 3000)}`;
 
                       {/* Right: Actions */}
                       <div className="flex items-center gap-2 shrink-0 mt-4 md:mt-0 w-full md:w-auto justify-end border-t md:border-t-0 border-slate-100 pt-2.5 md:pt-0">
+                        <button
+                          onClick={(e) => handleRestartItem(item.id, e)}
+                          disabled={isActive}
+                          className={`text-xs flex items-center gap-1 px-3 py-1.5 rounded-lg transition-all border ${
+                            isActive 
+                              ? 'text-slate-400 bg-slate-50 border-slate-200 cursor-not-allowed opacity-50' 
+                              : 'text-amber-600 hover:text-white bg-amber-50 hover:bg-amber-600 border-amber-200'
+                          }`}
+                          title="Relancer cette offre"
+                        >
+                          <ArrowCounterClockwise className="w-3 h-3" />
+                          Relancer
+                        </button>
+
                         {item.appId && (
                           <button
                             onClick={() => {
