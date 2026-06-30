@@ -194,7 +194,7 @@ export default function BatchTab({
         appId: null,
         completedDocs: []
       };
-      setItems(prev => [...prev, newItem]);
+      setItems(prev => [newItem, ...prev]);
       setInputUrl('');
       addLog(`Offre URL ajoutée : ${newItem.input}`);
     } else {
@@ -222,7 +222,7 @@ export default function BatchTab({
         appId: null,
         completedDocs: []
       };
-      setItems(prev => [...prev, newItem]);
+      setItems(prev => [newItem, ...prev]);
       setInputText('');
       addLog("Offre textuelle brute ajoutée.");
     }
@@ -231,8 +231,8 @@ export default function BatchTab({
   const handleBulkImport = () => {
     if (!bulkInput.trim()) return;
     const lines = bulkInput.split('\n');
-    let addedCount = 0;
     let duplicateCount = 0;
+    const newItems = [];
     
     // Check if separating by ---
     if (bulkInput.includes('---')) {
@@ -242,13 +242,14 @@ export default function BatchTab({
         if (cleanBlock) {
           const isDuplicate = items.some(item => 
             item.input.toLowerCase() === cleanBlock.toLowerCase()
-          );
+          ) || newItems.some(item => item.input.toLowerCase() === cleanBlock.toLowerCase());
+          
           if (isDuplicate) {
             duplicateCount++;
             return;
           }
 
-          const newItem = {
+          newItems.push({
             id: Date.now().toString() + Math.random().toString(36).substring(2, 5),
             type: 'text',
             input: cleanBlock,
@@ -259,9 +260,7 @@ export default function BatchTab({
             extractedDescription: cleanBlock,
             appId: null,
             completedDocs: []
-          };
-          setItems(prev => [...prev, newItem]);
-          addedCount++;
+          });
         }
       });
     } else {
@@ -278,13 +277,14 @@ export default function BatchTab({
         if (cleanUrl && (cleanUrl.startsWith('http://') || cleanUrl.startsWith('https://'))) {
           const isDuplicate = items.some(item => 
             item.input.toLowerCase() === cleanUrl.toLowerCase()
-          );
+          ) || newItems.some(item => item.input.toLowerCase() === cleanUrl.toLowerCase());
+          
           if (isDuplicate) {
             duplicateCount++;
             return;
           }
 
-          const newItem = {
+          newItems.push({
             id: Date.now().toString() + Math.random().toString(36).substring(2, 5),
             type: 'url',
             input: cleanUrl,
@@ -295,17 +295,19 @@ export default function BatchTab({
             extractedDescription: '',
             appId: null,
             completedDocs: []
-          };
-          setItems(prev => [...prev, newItem]);
-          addedCount++;
+          });
         }
       });
+    }
+
+    if (newItems.length > 0) {
+      setItems(prev => [...newItems, ...prev]);
     }
 
     if (duplicateCount > 0) {
       showToast(`${duplicateCount} offre(s) en doublon ignorée(s).`, "warning");
     }
-    addLog(`${addedCount} offre(s) importée(s) en vrac (${duplicateCount} doublons ignorés).`);
+    addLog(`${newItems.length} offre(s) importée(s) en vrac (${duplicateCount} doublons ignorés).`);
     setBulkInput('');
     setShowBulkInput(false);
   };
