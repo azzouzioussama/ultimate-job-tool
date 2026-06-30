@@ -291,6 +291,11 @@ pip install pydantic pydantic-core openai
 1. **Individual Control**: Disabled the automatic global reset of failed jobs in `handleStartPause`. Added an individual "Relancer" button for each item that resets its status to `pending` and immediately triggers the processing queue.
 2. **Bulk Selection**: Added a `selectedItemIds` state array with checkbox inputs on every queue item. Implemented "Tout sélectionner" (Select All) logic in the list header alongside bulk action buttons for "Relancer la sélection" (Restart Selected) and "Supprimer la sélection" (Delete Selected), giving users full granular control over queue management.
 
+### Problem 4: Queue Scrolling Fatigue on Bulk Addition
+**Issue**: When pasting multiple new job URLs or importing text blocks into a large batch queue, the new items were appended to the very bottom of the list. The user had to constantly scroll down to verify that their jobs were added successfully.
+**Cause**: The state updater used `setItems(prev => [...prev, newItem])`, which inherently pushes elements to the end of the React array.
+**Fix**: Refactored both the single `handleAddItem` and the loop-based `handleBulkImport` to use `setItems(prev => [newItem, ...prev])` (or `[...newItems, ...prev]` for grouped bulk additions). This instantly prepends new jobs to the top of the UI list without altering the processing engine's logic.
+
 ## 11. Scrapling Scraper & Python Backend Integration
 
 ### Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing)
