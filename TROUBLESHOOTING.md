@@ -284,6 +284,13 @@ pip install pydantic pydantic-core openai
 **Cause**: The pipeline was batch-sequential (waiting for a global scraping pass to resolve before calling a global AI extraction pass), rather than item-sequential.
 **Fix**: Refactored the architecture to process each job offer URL through its complete lifecycle (Scrape -> Extract Details -> Generate Materials -> Compile PDFs -> Save to DB) independently in a single item-level worker. If one worker fails or hangs, other slots continue executing. Added a user-adjustable delay setting and an AbortController cancellation system to stop the batch gracefully mid-run.
 
+### Problem 3: Lack of Granular Control over Failed Batch Jobs
+**Issue**: When the batch processing queue encountered errors (like rate limits or scraping failures), all failed jobs were bundled together. Clicking "Play" to resume the queue automatically reset and restarted *all* failed jobs simultaneously, which prevented the user from retrying a specific job or selecting only certain jobs to regenerate.
+**Cause**: The `handleStartPause` logic aggressively mapped over the entire `items` array and reset every item with `status === 'failed'` back to `pending`. There was no UI mechanism to interact with individual items or select groups of items.
+**Fix**: 
+1. **Individual Control**: Disabled the automatic global reset of failed jobs in `handleStartPause`. Added an individual "Relancer" button for each item that resets its status to `pending` and immediately triggers the processing queue.
+2. **Bulk Selection**: Added a `selectedItemIds` state array with checkbox inputs on every queue item. Implemented "Tout sélectionner" (Select All) logic in the list header alongside bulk action buttons for "Relancer la sélection" (Restart Selected) and "Supprimer la sélection" (Delete Selected), giving users full granular control over queue management.
+
 ## 11. Scrapling Scraper & Python Backend Integration
 
 ### Problem 1: Frontend Cannot Call Python Code Directly (CORS & Sandboxing)
